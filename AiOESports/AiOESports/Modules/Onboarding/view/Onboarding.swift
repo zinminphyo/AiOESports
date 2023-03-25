@@ -46,12 +46,12 @@ extension Onboarding {
     private func configureScrollView() {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.backgroundColor = UIColor.black
+        scrollView.backgroundColor = Colors.Theme.mainColor
         scrollView.delegate = self
     }
     
     private func configureContainerView() {
-        containerView.backgroundColor = UIColor.black
+        containerView.backgroundColor = Colors.Theme.mainColor
     }
     
     private func configureLogoImageView() {
@@ -77,6 +77,7 @@ extension Onboarding {
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.numberOfLines = 2
         titleLabel.textAlignment = .center
+        titleLabel.textColor = Colors.Text.primaryText
     }
     
     private func configureSubtitleLabel() {
@@ -84,6 +85,7 @@ extension Onboarding {
         subtitleLabel.font = .systemFont(ofSize: 14, weight: .regular)
         subtitleLabel.numberOfLines = 2
         subtitleLabel.textAlignment = .center
+        subtitleLabel.textColor = Colors.Text.primaryText
     }
     
     private func configurePageControl() {
@@ -102,6 +104,10 @@ extension Onboarding {
         } else {
             nextBtn.setTitle("Next", for: .normal)
         }
+        nextBtn.backgroundColor = Colors.Button.secondaryColor
+        nextBtn.layer.borderWidth = 0.3
+        nextBtn.layer.borderColor = UIColor.white.cgColor
+        nextBtn.layer.cornerRadius = 10 
         nextBtn.addTarget(self, action: #selector(didTapNextBtn(_:)), for: .touchUpInside)
     }
 }
