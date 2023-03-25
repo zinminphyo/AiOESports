@@ -17,6 +17,8 @@ class Onboarding: UIViewController {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var nextBtn: UIButton!
+    
+    var viewModel: OnboardingViewModel? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,13 +101,17 @@ extension Onboarding {
     }
     
     private func configureNextBtn() {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 15.0, *) {
             var configuration = UIButton.Configuration.plain()
-            configuration.title = "Next"
+            var container = AttributeContainer()
+            container.foregroundColor = Colors.Text.primaryText
+            configuration.attributedTitle = AttributedString("Next", attributes: container)
             nextBtn.configuration = configuration
         } else {
             nextBtn.setTitle("Next", for: .normal)
+            
         }
+        nextBtn.setTitleColor(Colors.Text.primaryText, for: .normal)
         nextBtn.backgroundColor = Colors.Button.secondaryColor
         nextBtn.layer.borderWidth = 0.3
         nextBtn.layer.borderColor = UIColor.white.cgColor
@@ -133,6 +139,16 @@ extension Onboarding: UICollectionViewDataSource, UICollectionViewDelegate, UISc
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = scrollView.contentOffset.x / scrollView.frame.width
         pageControl.currentPage = Int(index)
+        viewModel?.set(currentPage: Int(index + 1))
+    }
+}
+
+
+// MARK: - Onboarding View Protocol.
+extension Onboarding: OnboardingViewProtocol {
+    func didReachedLastPage(isReached: Bool) {
+        nextBtn.backgroundColor = isReached ? Colors.Button.primaryColor : Colors.Button.secondaryColor
+        nextBtn.layer.borderWidth = isReached ? 0.0 : 0.3
     }
 }
 

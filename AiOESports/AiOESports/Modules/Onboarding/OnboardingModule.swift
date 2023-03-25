@@ -15,6 +15,9 @@ enum OnboardingModule {
         let identifier = String(describing: Onboarding.self)
         let st = UIStoryboard(name: stName, bundle: .main)
         let vc = st.instantiateViewController(withIdentifier: identifier) as? Onboarding
+        let vm = OnboardingViewModel()
+        vc?.viewModel = vm
+        vm.delegate = vc
         return vc
     }
 }

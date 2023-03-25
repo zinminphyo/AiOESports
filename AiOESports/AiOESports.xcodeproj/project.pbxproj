@@ -14,6 +14,8 @@
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
 		849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2A29CEEDF700F1C2D2 /* Images.swift */; };
+		849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2D29CEEF2100F1C2D2 /* OnboardingViewModel.swift */; };
+		849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2F29CEEF9800F1C2D2 /* OnboardingViewProtocol.swift */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		849B9C2A29CEEDF700F1C2D2 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		849B9C2D29CEEF2100F1C2D2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		849B9C2F29CEEF9800F1C2D2 /* OnboardingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewProtocol.swift; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		849B9C2C29CEEF0300F1C2D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				849B9C2D29CEEF2100F1C2D2 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		84F6C5A129CA12E800D21EE2 = {
 			isa = PBXGroup;
 			children = (
@@ -205,7 +217,8 @@
 		84F6C5DD29CA146E00D21EE2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				84F6C5E029CA150700D21EE2 /* view */,
+				849B9C2C29CEEF0300F1C2D2 /* ViewModel */,
+				84F6C5E029CA150700D21EE2 /* View */,
 				84F6C5E629CA183500D21EE2 /* OnboardingModule.swift */,
 			);
 			path = Onboarding;
@@ -227,14 +240,15 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		84F6C5E029CA150700D21EE2 /* view */ = {
+		84F6C5E029CA150700D21EE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				84F6C5E829CA18CD00D21EE2 /* cell */,
 				84F6C5E129CA151100D21EE2 /* Onboarding.storyboard */,
 				84F6C5E329CA17B300D21EE2 /* Onboarding.swift */,
+				849B9C2F29CEEF9800F1C2D2 /* OnboardingViewProtocol.swift */,
 			);
-			path = view;
+			path = View;
 			sourceTree = "<group>";
 		};
 		84F6C5E829CA18CD00D21EE2 /* cell */ = {
@@ -498,9 +512,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
+				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
+				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
