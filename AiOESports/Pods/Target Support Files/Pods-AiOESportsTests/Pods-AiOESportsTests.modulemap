@@ -1,0 +1,6 @@
+framework module Pods_AiOESportsTests {
+  umbrella header "Pods-AiOESportsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

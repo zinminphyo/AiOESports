@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58204C26DBF6D55964E5CE6E /* Pods_AiOESports_AiOESportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */; };
+		6E5CBA7023461F336228CAA1 /* Pods_AiOESportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */; };
+		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESports_AiOESportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,12 @@
 		84F6C5E329CA17B300D21EE2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		84F6C5E629CA183500D21EE2 /* OnboardingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModule.swift; sourceTree = "<group>"; };
 		84F6C5E929CA18F400D21EE2 /* OnboardingImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageCollectionCell.swift; sourceTree = "<group>"; };
+		882687CC2D25024B2EF13FEB /* Pods-AiOESports-AiOESportsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports-AiOESportsUITests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.release.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.release.xcconfig"; sourceTree = "<group>"; };
+		C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34498E5D3AEACAB60725DED /* Pods-AiOESports-AiOESportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports-AiOESportsUITests.release.xcconfig"; path = "Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D965947AF4975E5DF3819BD6 /* Pods-AiOESports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.debug.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.debug.xcconfig"; sourceTree = "<group>"; };
+		F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5CBA7023461F336228CAA1 /* Pods_AiOESportsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +92,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58204C26DBF6D55964E5CE6E /* Pods_AiOESports_AiOESportsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35DA280BECAD2A396D39BFCC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D965947AF4975E5DF3819BD6 /* Pods-AiOESports.debug.xcconfig */,
+				8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */,
+				882687CC2D25024B2EF13FEB /* Pods-AiOESports-AiOESportsUITests.debug.xcconfig */,
+				C34498E5D3AEACAB60725DED /* Pods-AiOESports-AiOESportsUITests.release.xcconfig */,
+				585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */,
+				9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84F6C5A129CA12E800D21EE2 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +120,8 @@
 				84F6C5C329CA12E900D21EE2 /* AiOESportsTests */,
 				84F6C5CD29CA12E900D21EE2 /* AiOESportsUITests */,
 				84F6C5AB29CA12E800D21EE2 /* Products */,
+				35DA280BECAD2A396D39BFCC /* Pods */,
+				E7D31D3FDF2B0AC70D518417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +210,16 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		E7D31D3FDF2B0AC70D518417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */,
+				52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */,
+				C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F6C5D429CA12E900D21EE2 /* Build configuration list for PBXNativeTarget "AiOESports" */;
 			buildPhases = (
+				15220E06B472DD8B0025EFF5 /* [CP] Check Pods Manifest.lock */,
 				84F6C5A629CA12E800D21EE2 /* Sources */,
 				84F6C5A729CA12E800D21EE2 /* Frameworks */,
 				84F6C5A829CA12E800D21EE2 /* Resources */,
+				CAF819FFDF3E6AF0EE0F0C4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F6C5D729CA12E900D21EE2 /* Build configuration list for PBXNativeTarget "AiOESportsTests" */;
 			buildPhases = (
+				FA85916E447A60E50E2904A9 /* [CP] Check Pods Manifest.lock */,
 				84F6C5BC29CA12E900D21EE2 /* Sources */,
 				84F6C5BD29CA12E900D21EE2 /* Frameworks */,
 				84F6C5BE29CA12E900D21EE2 /* Resources */,
@@ -221,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F6C5DA29CA12E900D21EE2 /* Build configuration list for PBXNativeTarget "AiOESportsUITests" */;
 			buildPhases = (
+				50FDEBAE6C88DC1B4512F938 /* [CP] Check Pods Manifest.lock */,
 				84F6C5C629CA12E900D21EE2 /* Sources */,
 				84F6C5C729CA12E900D21EE2 /* Frameworks */,
 				84F6C5C829CA12E900D21EE2 /* Resources */,
+				5414C35BA563EA5A1C33E829 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +351,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15220E06B472DD8B0025EFF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AiOESports-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50FDEBAE6C88DC1B4512F938 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AiOESports-AiOESportsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5414C35BA563EA5A1C33E829 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF819FFDF3E6AF0EE0F0C4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AiOESports/Pods-AiOESports-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AiOESports/Pods-AiOESports-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AiOESports/Pods-AiOESports-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA85916E447A60E50E2904A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AiOESportsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84F6C5A629CA12E800D21EE2 /* Sources */ = {
@@ -488,6 +637,7 @@
 		};
 		84F6C5D529CA12E900D21EE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D965947AF4975E5DF3819BD6 /* Pods-AiOESports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -516,6 +666,7 @@
 		};
 		84F6C5D629CA12E900D21EE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -544,6 +695,7 @@
 		};
 		84F6C5D829CA12E900D21EE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -564,6 +716,7 @@
 		};
 		84F6C5D929CA12E900D21EE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -584,6 +737,7 @@
 		};
 		84F6C5DB29CA12E900D21EE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 882687CC2D25024B2EF13FEB /* Pods-AiOESports-AiOESportsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,6 +756,7 @@
 		};
 		84F6C5DC29CA12E900D21EE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C34498E5D3AEACAB60725DED /* Pods-AiOESports-AiOESportsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
