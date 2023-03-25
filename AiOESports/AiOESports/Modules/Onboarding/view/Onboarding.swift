@@ -55,7 +55,7 @@ extension Onboarding {
     }
     
     private func configureLogoImageView() {
-        logoImageView.image = .add
+        logoImageView.image = Images.logo
     }
     
     private func configureCollectionView() {
@@ -63,6 +63,8 @@ extension Onboarding {
             OnboardingImageCollectionCell.self,
             forCellWithReuseIdentifier: OnboardingImageCollectionCell.reuseIdentifier)
         collectionView.backgroundColor = UIColor.clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()

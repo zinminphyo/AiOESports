@@ -12,6 +12,8 @@
 		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
+		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
+		849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2A29CEEDF700F1C2D2 /* Images.swift */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -50,6 +52,8 @@
 		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		849B9C2A29CEEDF700F1C2D2 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				849B9C2729CEEDC200F1C2D2 /* Images */,
 				849B9C2229CEEAF400F1C2D2 /* Colors */,
 			);
 			path = Shared;
@@ -131,6 +136,15 @@
 				849B9C2529CEEB3400F1C2D2 /* Colors.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		849B9C2729CEEDC200F1C2D2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */,
+				849B9C2A29CEEDF700F1C2D2 /* Images.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		84F6C5A129CA12E800D21EE2 = {
@@ -353,6 +367,7 @@
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
+				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
 				84F6C5B529CA12E800D21EE2 /* Main.storyboard in Resources */,
 				84F6C5E229CA151100D21EE2 /* Onboarding.storyboard in Resources */,
 			);
@@ -487,6 +502,7 @@
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
+				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,
 			);
