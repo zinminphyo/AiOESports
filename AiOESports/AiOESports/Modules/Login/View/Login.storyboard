@@ -32,6 +32,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZJJ-MN-KBm" secondAttribute="trailing" constant="24" id="n7f-gd-7JK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pinView" destination="ZJJ-MN-KBm" id="avJ-Tg-t54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

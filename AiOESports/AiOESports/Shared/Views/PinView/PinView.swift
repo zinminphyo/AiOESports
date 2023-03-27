@@ -14,6 +14,12 @@ class PinView: UIView, NibLoadable {
         case sixDigits
     }
     
+    enum PinViewConfirmState {
+        case intial
+        case confirm
+        case enter
+    }
+    
     private var containerViews: [UIView] = []
     private var contentViews: [UITextField] = []
     
@@ -21,7 +27,11 @@ class PinView: UIView, NibLoadable {
     @IBOutlet weak var stackView: UIStackView!
     
     var digitStyle: PinViewDigitStyle = .sixDigits
-
+    var state: PinViewConfirmState = .intial
+    var delegate: PinViewDelegate? = nil
+    
+    private(set) var passcode: String = ""
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadedByNib()
@@ -101,9 +111,57 @@ class PinView: UIView, NibLoadable {
     @objc func didChangedDigit(txtField: UITextField) {
         guard txtField.text?.isEmpty == false else { return }
         guard let index = contentViews.firstIndex(of: txtField) else { return }
-        txtField.resignFirstResponder()
-        guard index < contentViews.count - 1 else { return }
+        passcodeStateHandle()
+        guard index < contentViews.count - 1 else {
+            txtField.resignFirstResponder()
+            return
+        }
         contentViews[index + 1].becomeFirstResponder()
+    }
+    
+    private func passcodeStateHandle() {
+        switch state {
+        case .intial:
+            saveInitialPIN()
+            resetTxtFields()
+        case .confirm:
+            checkConfirmPIN()
+        case .enter:
+            print("Check with enter passcode.")
+        }
+    }
+    
+    private func saveInitialPIN() {
+        passcode = ""
+        contentViews.forEach{
+            passcode += $0.text ?? ""
+        }
+    }
+    
+    private func resetTxtFields() {
+        switch digitStyle {
+        case .fourDigits:
+            guard passcode.count == 4 else { return }
+        case .sixDigits:
+            guard passcode.count == 6 else { return }
+        }
+        contentViews.forEach{
+            $0.text = ""
+        }
+        contentViews.first?.becomeFirstResponder()
+        state = .confirm
+    }
+    
+    private func checkConfirmPIN() {
+        var confirmPIN: String = ""
+        contentViews.forEach {
+            confirmPIN += $0.text ?? ""
+        }
+        if confirmPIN == passcode {
+            self.delegate?.didFinishedConfirmCode(isMatched: true)
+        } else {
+            self.delegate?.didFinishedConfirmCode(isMatched: false)
+        }
     }
 
 }
@@ -112,8 +170,10 @@ class PinView: UIView, NibLoadable {
 extension PinView: PinTextFieldDelegate {
     func didTapDeleteBackward(txtField: UITextField) {
         guard let index = contentViews.firstIndex(of: txtField) else { return }
-        txtField.resignFirstResponder()
-        guard index > 0 else { return }
+        guard index > 0 else {
+            txtField.resignFirstResponder()
+            return
+        }
         contentViews[index - 1].becomeFirstResponder()
     }
 }
