@@ -76,10 +76,15 @@ class PinView: UIView, NibLoadable {
         let view = UIView()
         view.backgroundColor = Colors.Theme.inputColor
         view.layer.cornerRadius = 5
-        let txtField = UITextField()
+        let txtField = PinTextField()
         txtField.isSecureTextEntry = true
+        txtField.deleteDelegate = self
         txtField.keyboardType = .numberPad
+        txtField.textAlignment = .center
+        txtField.tintColor = Colors.Text.primaryText
+        txtField.textColor = Colors.Text.primaryText
         view.addSubview(txtField)
+        txtField.addTarget(self, action: #selector(didChangedDigit), for: .editingChanged)
         txtField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             txtField.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
@@ -93,6 +98,22 @@ class PinView: UIView, NibLoadable {
     }
     
     
-    
+    @objc func didChangedDigit(txtField: UITextField) {
+        guard txtField.text?.isEmpty == false else { return }
+        guard let index = contentViews.firstIndex(of: txtField) else { return }
+        txtField.resignFirstResponder()
+        guard index < contentViews.count - 1 else { return }
+        contentViews[index + 1].becomeFirstResponder()
+    }
 
+}
+
+// MARK: - PinTextField Custom Delegate.
+extension PinView: PinTextFieldDelegate {
+    func didTapDeleteBackward(txtField: UITextField) {
+        guard let index = contentViews.firstIndex(of: txtField) else { return }
+        txtField.resignFirstResponder()
+        guard index > 0 else { return }
+        contentViews[index - 1].becomeFirstResponder()
+    }
 }

@@ -22,6 +22,7 @@
 		849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C3C29D18AAB00F1C2D2 /* Login.storyboard */; };
 		849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C3E29D18AB700F1C2D2 /* LoginModule.swift */; };
 		849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C4029D18B1D00F1C2D2 /* Login.swift */; };
+		849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C4329D1956B00F1C2D2 /* PinTextField.swift */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 		849B9C3C29D18AAB00F1C2D2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		849B9C3E29D18AB700F1C2D2 /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
 		849B9C4029D18B1D00F1C2D2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		849B9C4329D1956B00F1C2D2 /* PinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTextField.swift; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				849B9C4229D1955200F1C2D2 /* PinTextField */,
 				849B9C3229D1857B00F1C2D2 /* PinView */,
 				849B9C3429D185D100F1C2D2 /* NibLoadable.swift */,
 			);
@@ -206,6 +209,14 @@
 				849B9C4029D18B1D00F1C2D2 /* Login.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		849B9C4229D1955200F1C2D2 /* PinTextField */ = {
+			isa = PBXGroup;
+			children = (
+				849B9C4329D1956B00F1C2D2 /* PinTextField.swift */,
+			);
+			path = PinTextField;
 			sourceTree = "<group>";
 		};
 		84F6C5A129CA12E800D21EE2 = {
@@ -576,6 +587,7 @@
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
+				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
