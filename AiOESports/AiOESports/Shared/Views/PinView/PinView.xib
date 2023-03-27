@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinView" customModule="AiOESports" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="mkK-Ez-hd5" id="stm-Pn-tvy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkK-Ez-hd5">
+                    <rect key="frame" x="0.0" y="0.0" width="337" height="80"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mkK-Ez-hd5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="16S-s3-EWT"/>
+                <constraint firstAttribute="trailing" secondItem="mkK-Ez-hd5" secondAttribute="trailing" id="7t8-oz-anz"/>
+                <constraint firstItem="mkK-Ez-hd5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vqt-vT-Nuv"/>
+                <constraint firstAttribute="bottom" secondItem="mkK-Ez-hd5" secondAttribute="bottom" id="Zw4-ex-fyb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-70.992366412213741" y="13.380281690140846"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
