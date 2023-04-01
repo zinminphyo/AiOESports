@@ -10,6 +10,7 @@
 		58204C26DBF6D55964E5CE6E /* Pods_AiOESports_AiOESportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */; };
 		6E5CBA7023461F336228CAA1 /* Pods_AiOESportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */; };
 		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
+		842DF92629D88A6200B24F1A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DF92529D88A6200B24F1A /* Fonts.swift */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -60,6 +61,7 @@
 		52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESports_AiOESportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
+		842DF92529D88A6200B24F1A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -140,9 +142,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		842DF92429D88A5900B24F1A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				842DF92529D88A6200B24F1A /* Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				842DF92429D88A5900B24F1A /* Fonts */,
 				849B9C3129D1850600F1C2D2 /* Views */,
 				849B9C2729CEEDC200F1C2D2 /* Images */,
 				849B9C2229CEEAF400F1C2D2 /* Colors */,
@@ -584,6 +595,7 @@
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
+				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,
 				849B9C3529D185D100F1C2D2 /* NibLoadable.swift in Sources */,
 				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
