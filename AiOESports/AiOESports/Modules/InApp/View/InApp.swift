@@ -24,18 +24,17 @@ class InApp: UITabBarController {
     private func configureHierarchy() {
         
         if let homeVC = HomeModule.createModule(),
-           let rankVC = RankModule.createModule() {
-            
-            homeVC.tabBarItem.title = "Home"
-            homeVC.tabBarItem.image = Images.InAppImages.homelogo
-            
-            rankVC.tabBarItem.title = "Rank"
-            rankVC.tabBarItem.image = Images.InAppImages.ranklogo
-            
+           let rankVC = RankModule.createModule(),
+           let matchVC = MatchModule.createModule(),
+           let tourVC = TourModule.createModule(),
+           let shopVC = ShopModule.createModule() {
             
             self.viewControllers = [
                 homeVC,
-                rankVC
+                rankVC,
+                matchVC,
+                tourVC,
+                shopVC
             ]
         }
         

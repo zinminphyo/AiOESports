@@ -15,6 +15,8 @@ enum HomeModule {
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Home.self)) as? Home else {
             return nil
         }
+        vc.tabBarItem.image = Images.InAppImages.homelogo
+        vc.tabBarItem.title = "HOME"
         return vc
     }
 }

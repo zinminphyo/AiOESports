@@ -15,6 +15,8 @@ enum RankModule {
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Rank.self)) as? Rank else {
             return nil
         }
+        vc.tabBarItem.image = Images.InAppImages.ranklogo
+        vc.tabBarItem.title = "RANK"
         return vc
     }
 }

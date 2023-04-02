@@ -18,5 +18,8 @@ class Images {
     enum InAppImages {
         static let homelogo = UIImage(named: "homelogo", in: .main, compatibleWith: nil)
         static let ranklogo = UIImage(named: "ranklogo", in: .main, compatibleWith: nil)
+        static let matchlogo = UIImage(named: "matchlogo", in: .main, compatibleWith: nil)
+        static let tourlogo = UIImage(named: "tourlogo", in: .main, compatibleWith: nil)
+        static let shoplogo = UIImage(named: "shoplogo", in: .main, compatibleWith: nil)
     }
 }
