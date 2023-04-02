@@ -18,10 +18,13 @@ class InApp: UITabBarController {
         
         
         if let homeVC = HomeModule.createModule() {
+            homeVC.tabBarItem.image = Images.InAppImages.homelogo
             homeVC.tabBarItem.title = "Home"
-            homeVC.tabBarItem.image = Images.countryImage
             self.viewControllers = [ homeVC ]
         }
+        self.tabBar.tintColor = Colors.Button.primaryColor
+        self.tabBar.backgroundColor = Colors.Theme.mainColor
+        self.tabBar.unselectedItemTintColor = Colors.Button.secondaryColor
     }
     
 
