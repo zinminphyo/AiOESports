@@ -25,6 +25,7 @@ class PinView: UIView, NibLoadable {
     
     
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var containerView: UIView!
     
     var digitStyle: PinViewDigitStyle = .sixDigits
     var state: PinViewConfirmState = .intial
@@ -46,8 +47,13 @@ class PinView: UIView, NibLoadable {
     
     
     private func configureHierarchy() {
+        configureContainerView()
         configureStackView()
         configurePinViews()
+    }
+    
+    private func configureContainerView() {
+        containerView.backgroundColor = Colors.Theme.mainColor
     }
     
     private func configureStackView() {

@@ -302,17 +302,9 @@
 			isa = PBXGroup;
 			children = (
 				849B9C3A29D18A9D00F1C2D2 /* Login */,
-				84F6C5DF29CA147F00D21EE2 /* Splash */,
 				84F6C5DD29CA146E00D21EE2 /* Onboarding */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		84F6C5DF29CA147F00D21EE2 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		84F6C5E029CA150700D21EE2 /* View */ = {

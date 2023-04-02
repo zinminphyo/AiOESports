@@ -39,7 +39,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKv-Wd-0TF">
                                         <rect key="frame" x="24" y="32.333333333333343" width="345" height="70"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Kzi-kV-BLF"/>
                                         </constraints>
@@ -57,7 +57,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="2Ie-tR-es7" firstAttribute="leading" secondItem="XNK-Ya-6tV" secondAttribute="leading" id="Dxf-Q9-fYG"/>
                                                     <constraint firstItem="2Ie-tR-es7" firstAttribute="top" secondItem="XNK-Ya-6tV" secondAttribute="top" id="oEd-ib-gQq"/>
@@ -75,7 +75,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="LJv-tD-N5T" firstAttribute="leading" secondItem="6PJ-em-WBP" secondAttribute="leading" constant="24" id="DQN-EL-Rgj"/>
                                     <constraint firstAttribute="trailing" secondItem="XKv-Wd-0TF" secondAttribute="trailing" constant="24" id="F2l-26-zIX"/>
@@ -117,7 +117,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="JmI-CM-hsg" firstAttribute="top" secondItem="n2L-Yf-45A" secondAttribute="top" id="U4A-1q-X8T"/>
                                                     <constraint firstAttribute="bottom" secondItem="JmI-CM-hsg" secondAttribute="bottom" id="XtS-QI-vQM"/>
@@ -135,7 +135,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZJJ-MN-KBm" firstAttribute="leading" secondItem="Sff-Gn-yMa" secondAttribute="leading" constant="24" id="8UX-BK-4rF"/>
                                     <constraint firstAttribute="trailing" secondItem="ZJJ-MN-KBm" secondAttribute="trailing" constant="24" id="FMG-Og-YtW"/>
@@ -206,6 +206,8 @@
                     </view>
                     <connections>
                         <outlet property="donotHaveAccountTitleLabel" destination="yYc-ZC-JEn" id="KRn-BO-zcD"/>
+                        <outlet property="incorrectPasswordLabel" destination="2Ie-tR-es7" id="Id4-lM-cd1"/>
+                        <outlet property="incorrectPinLabel" destination="JmI-CM-hsg" id="3hM-az-aRo"/>
                         <outlet property="loginButton" destination="9uM-83-k58" id="xpB-B0-0W3"/>
                         <outlet property="passwordLabel" destination="rnV-ty-Eyb" id="EXa-jQ-40w"/>
                         <outlet property="phoneNumberLabel" destination="LJv-tD-N5T" id="RKV-WJ-M6O"/>

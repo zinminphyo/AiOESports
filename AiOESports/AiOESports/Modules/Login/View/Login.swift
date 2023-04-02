@@ -14,6 +14,8 @@ class Login: UIViewController {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var incorrectPasswordLabel: UILabel!
+    @IBOutlet weak var incorrectPinLabel: UILabel!
     @IBOutlet weak var rememberInfoLabel: UILabel!
     @IBOutlet weak var forgotPasswordLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
@@ -106,6 +108,10 @@ class Login: UIViewController {
             registerButton.titleLabel?.font = Fonts.titleFont
             registerButton.titleLabel?.textColor = Colors.Text.primaryText
         }
+        registerButton.backgroundColor = Colors.Button.primaryColor
+        registerButton.layer.cornerRadius = 10
+        registerButton.layer.borderColor = UIColor.lightGray.cgColor
+        registerButton.layer.borderWidth = 0.4
     }
 
 }

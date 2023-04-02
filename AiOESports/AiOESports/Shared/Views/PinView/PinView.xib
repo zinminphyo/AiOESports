@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinView" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="fRa-HH-94P"/>
                 <outlet property="stackView" destination="mkK-Ez-hd5" id="stm-Pn-tvy"/>
             </connections>
         </placeholder>
