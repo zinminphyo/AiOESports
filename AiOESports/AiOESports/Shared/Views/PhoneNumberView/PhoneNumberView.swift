@@ -43,6 +43,7 @@ class PhoneNumberView: UIView, NibLoadable {
         countryCodeContainerView.layer.cornerRadius = 10
         countryCodeLabel.font = Fonts.subtitleFont
         countryCodeLabel.textColor = Colors.Text.primaryText
+        countryCodeImageView.image = Images.countryImage
         countryCodeLabel.text = "+95"
     }
     

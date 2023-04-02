@@ -32,10 +32,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="118" height="59"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BcK-fL-tJb">
-                                            <rect key="frame" x="4" y="20.666666666666664" width="35.333333333333336" height="17.666666666666664"/>
+                                            <rect key="frame" x="8" y="20.666666666666664" width="30" height="17.666666666666664"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="izM-vR-uge"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQ0-xt-IDu">
-                                            <rect key="frame" x="41.333333333333336" y="19.333333333333336" width="72.666666666666657" height="20.333333333333336"/>
+                                            <rect key="frame" x="40" y="19.333333333333336" width="70" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -43,12 +46,11 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="BcK-fL-tJb" firstAttribute="width" secondItem="C8p-zt-fqY" secondAttribute="width" multiplier="0.3" id="IUg-iZ-qeA"/>
                                         <constraint firstItem="uQ0-xt-IDu" firstAttribute="leading" secondItem="BcK-fL-tJb" secondAttribute="trailing" constant="2" id="Rdo-f4-3wc"/>
-                                        <constraint firstAttribute="trailing" secondItem="uQ0-xt-IDu" secondAttribute="trailing" constant="4" id="VdH-om-PIn"/>
+                                        <constraint firstAttribute="trailing" secondItem="uQ0-xt-IDu" secondAttribute="trailing" constant="8" id="VdH-om-PIn"/>
                                         <constraint firstItem="BcK-fL-tJb" firstAttribute="height" secondItem="C8p-zt-fqY" secondAttribute="height" multiplier="0.3" id="l54-FH-go6"/>
                                         <constraint firstItem="uQ0-xt-IDu" firstAttribute="centerY" secondItem="BcK-fL-tJb" secondAttribute="centerY" id="mZo-Vf-Mn8"/>
-                                        <constraint firstItem="BcK-fL-tJb" firstAttribute="leading" secondItem="C8p-zt-fqY" secondAttribute="leading" constant="4" id="paN-JA-SqL"/>
+                                        <constraint firstItem="BcK-fL-tJb" firstAttribute="leading" secondItem="C8p-zt-fqY" secondAttribute="leading" constant="8" id="paN-JA-SqL"/>
                                         <constraint firstItem="BcK-fL-tJb" firstAttribute="centerY" secondItem="C8p-zt-fqY" secondAttribute="centerY" id="qIe-oA-WyQ"/>
                                     </constraints>
                                 </view>
@@ -76,7 +78,6 @@
                     <constraints>
                         <constraint firstItem="d5Z-EG-Esd" firstAttribute="leading" secondItem="64N-XL-aSx" secondAttribute="leading" id="Fg5-gf-A8e"/>
                         <constraint firstAttribute="bottom" secondItem="d5Z-EG-Esd" secondAttribute="bottom" id="O1t-lM-y0m"/>
-                        <constraint firstItem="C8p-zt-fqY" firstAttribute="width" secondItem="64N-XL-aSx" secondAttribute="width" multiplier="0.3" id="gGU-2R-Rzs"/>
                         <constraint firstAttribute="trailing" secondItem="d5Z-EG-Esd" secondAttribute="trailing" id="kQl-Kc-6vj"/>
                         <constraint firstItem="d5Z-EG-Esd" firstAttribute="top" secondItem="64N-XL-aSx" secondAttribute="top" id="wjR-8f-3h3"/>
                     </constraints>
