@@ -25,6 +25,7 @@ class Colors {
     
     enum Text {
         static let primaryText = UIColor(named: "PrimaryText", in: .main, compatibleWith: nil)
+        static let incorrectText = UIColor(named: "IncorrectText", in: .main, compatibleWith: nil)
     }
     
 }

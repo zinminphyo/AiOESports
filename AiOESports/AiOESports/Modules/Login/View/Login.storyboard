@@ -206,13 +206,16 @@
                     </view>
                     <connections>
                         <outlet property="donotHaveAccountTitleLabel" destination="yYc-ZC-JEn" id="KRn-BO-zcD"/>
-                        <outlet property="incorrectPasswordLabel" destination="2Ie-tR-es7" id="Id4-lM-cd1"/>
+                        <outlet property="incorrectPasswordContainerView" destination="n2L-Yf-45A" id="Tl9-Cz-10U"/>
+                        <outlet property="incorrectPhoneNumberContainerView" destination="XNK-Ya-6tV" id="kkG-cn-hFU"/>
+                        <outlet property="incorrectPhoneNumberLabel" destination="2Ie-tR-es7" id="9M3-Cr-fNR"/>
                         <outlet property="incorrectPinLabel" destination="JmI-CM-hsg" id="3hM-az-aRo"/>
                         <outlet property="loginButton" destination="9uM-83-k58" id="xpB-B0-0W3"/>
                         <outlet property="passwordLabel" destination="rnV-ty-Eyb" id="EXa-jQ-40w"/>
                         <outlet property="phoneNumberLabel" destination="LJv-tD-N5T" id="RKV-WJ-M6O"/>
                         <outlet property="pinView" destination="ZJJ-MN-KBm" id="avJ-Tg-t54"/>
                         <outlet property="registerButton" destination="NDj-Zs-LGz" id="a1D-PQ-l0q"/>
+                        <outlet property="saveInfoContainerView" destination="l5H-BH-b9I" id="o6i-fY-fYI"/>
                         <outlet property="subtitleLabel" destination="sMn-EM-0dj" id="pe3-AV-aRJ"/>
                         <outlet property="titleLabel" destination="Uvv-Da-cua" id="bLv-QN-lKf"/>
                     </connections>
