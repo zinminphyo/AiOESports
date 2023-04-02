@@ -58,7 +58,7 @@
                                     <rect key="frame" x="128" y="0.0" width="265" height="59"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1z-fi-rnq">
-                                            <rect key="frame" x="4" y="4" width="257" height="51"/>
+                                            <rect key="frame" x="8" y="4" width="249" height="51"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -66,9 +66,9 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="U1z-fi-rnq" secondAttribute="bottom" constant="4" id="4vI-lk-teg"/>
-                                        <constraint firstItem="U1z-fi-rnq" firstAttribute="leading" secondItem="V6P-5b-DP8" secondAttribute="leading" constant="4" id="9gD-2I-6cA"/>
+                                        <constraint firstItem="U1z-fi-rnq" firstAttribute="leading" secondItem="V6P-5b-DP8" secondAttribute="leading" constant="8" id="9gD-2I-6cA"/>
                                         <constraint firstItem="U1z-fi-rnq" firstAttribute="top" secondItem="V6P-5b-DP8" secondAttribute="top" constant="4" id="Vj3-lE-S7X"/>
-                                        <constraint firstAttribute="trailing" secondItem="U1z-fi-rnq" secondAttribute="trailing" constant="4" id="YA4-Zd-isW"/>
+                                        <constraint firstAttribute="trailing" secondItem="U1z-fi-rnq" secondAttribute="trailing" constant="8" id="YA4-Zd-isW"/>
                                     </constraints>
                                 </view>
                             </subviews>

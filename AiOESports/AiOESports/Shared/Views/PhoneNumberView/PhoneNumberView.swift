@@ -50,6 +50,7 @@ class PhoneNumberView: UIView, NibLoadable {
     private func configurePhoneNumberView() {
         phoneNumberView.backgroundColor = Colors.Theme.inputColor
         phoneNumberTxtField.backgroundColor = Colors.Theme.inputColor
+        phoneNumberTxtField.textColor = Colors.Text.primaryText
         phoneNumberTxtField.borderStyle = .none
         phoneNumberView.layer.cornerRadius = 10
     }
