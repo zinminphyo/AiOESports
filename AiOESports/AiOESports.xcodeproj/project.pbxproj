@@ -33,6 +33,9 @@
 		84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09F129D9E8B700F87400 /* InAppModule.swift */; };
 		84CF09F429D9E91400F87400 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09F329D9E91400F87400 /* Home.swift */; };
 		84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09F529D9E92800F87400 /* HomeModule.swift */; };
+		84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09F929D9F7A000F87400 /* Rank.storyboard */; };
+		84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09FB29D9F7AF00F87400 /* Rank.swift */; };
+		84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09FD29D9F7C500F87400 /* RankModule.swift */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -92,6 +95,9 @@
 		84CF09F129D9E8B700F87400 /* InAppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppModule.swift; sourceTree = "<group>"; };
 		84CF09F329D9E91400F87400 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		84CF09F529D9E92800F87400 /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		84CF09F929D9F7A000F87400 /* Rank.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rank.storyboard; sourceTree = "<group>"; };
+		84CF09FB29D9F7AF00F87400 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		84CF09FD29D9F7C500F87400 /* RankModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankModule.swift; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,6 +301,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84CF09F729D9F79200F87400 /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				84CF09F829D9F79900F87400 /* View */,
+				84CF09FD29D9F7C500F87400 /* RankModule.swift */,
+			);
+			path = Rank;
+			sourceTree = "<group>";
+		};
+		84CF09F829D9F79900F87400 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CF09F929D9F7A000F87400 /* Rank.storyboard */,
+				84CF09FB29D9F7AF00F87400 /* Rank.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84F6C5A129CA12E800D21EE2 = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +387,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84CF09F729D9F79200F87400 /* Rank */,
 				84CF09EB29D9E87200F87400 /* Home */,
 				84CF09E629D9E7EC00F87400 /* InApp */,
 				849B9C3A29D18A9D00F1C2D2 /* Login */,
@@ -515,6 +540,7 @@
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
+				84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */,
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
 				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
 				84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */,
@@ -653,6 +679,7 @@
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
+				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
@@ -667,6 +694,7 @@
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
+				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,
 			);

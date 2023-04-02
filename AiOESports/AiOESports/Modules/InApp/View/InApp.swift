@@ -14,17 +14,31 @@ class InApp: UITabBarController {
 
         // Do any additional setup after loading the view.
         
+        configureHierarchy()
         
-        
-        
-        if let homeVC = HomeModule.createModule() {
-            homeVC.tabBarItem.image = Images.InAppImages.homelogo
-            homeVC.tabBarItem.title = "Home"
-            self.viewControllers = [ homeVC ]
-        }
         self.tabBar.tintColor = Colors.Button.primaryColor
         self.tabBar.backgroundColor = Colors.Theme.mainColor
-        self.tabBar.unselectedItemTintColor = Colors.Button.secondaryColor
+        self.tabBar.unselectedItemTintColor = UIColor.gray
+    }
+    
+    private func configureHierarchy() {
+        
+        if let homeVC = HomeModule.createModule(),
+           let rankVC = RankModule.createModule() {
+            
+            homeVC.tabBarItem.title = "Home"
+            homeVC.tabBarItem.image = Images.InAppImages.homelogo
+            
+            rankVC.tabBarItem.title = "Rank"
+            rankVC.tabBarItem.image = Images.InAppImages.ranklogo
+            
+            
+            self.viewControllers = [
+                homeVC,
+                rankVC
+            ]
+        }
+        
     }
     
 
