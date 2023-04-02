@@ -27,6 +27,12 @@
 		849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C4529D1E6EB00F1C2D2 /* PinViewDelegate.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
+		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
+		84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09ED29D9E87C00F87400 /* Home.storyboard */; };
+		84CF09F029D9E8A400F87400 /* InApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09EF29D9E8A400F87400 /* InApp.swift */; };
+		84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09F129D9E8B700F87400 /* InAppModule.swift */; };
+		84CF09F429D9E91400F87400 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09F329D9E91400F87400 /* Home.swift */; };
+		84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09F529D9E92800F87400 /* HomeModule.swift */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -80,6 +86,12 @@
 		849B9C4529D1E6EB00F1C2D2 /* PinViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewDelegate.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
+		84CF09ED29D9E87C00F87400 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		84CF09EF29D9E8A400F87400 /* InApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InApp.swift; sourceTree = "<group>"; };
+		84CF09F129D9E8B700F87400 /* InAppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppModule.swift; sourceTree = "<group>"; };
+		84CF09F329D9E91400F87400 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		84CF09F529D9E92800F87400 /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +259,42 @@
 			path = PhoneNumberView;
 			sourceTree = "<group>";
 		};
+		84CF09E629D9E7EC00F87400 /* InApp */ = {
+			isa = PBXGroup;
+			children = (
+				84CF09E829D9E81200F87400 /* View */,
+				84CF09F129D9E8B700F87400 /* InAppModule.swift */,
+			);
+			path = InApp;
+			sourceTree = "<group>";
+		};
+		84CF09E829D9E81200F87400 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CF09E929D9E82100F87400 /* InApp.storyboard */,
+				84CF09EF29D9E8A400F87400 /* InApp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84CF09EB29D9E87200F87400 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84CF09EC29D9E87600F87400 /* View */,
+				84CF09F529D9E92800F87400 /* HomeModule.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84CF09EC29D9E87600F87400 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CF09ED29D9E87C00F87400 /* Home.storyboard */,
+				84CF09F329D9E91400F87400 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84F6C5A129CA12E800D21EE2 = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +363,8 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84CF09EB29D9E87200F87400 /* Home */,
+				84CF09E629D9E7EC00F87400 /* InApp */,
 				849B9C3A29D18A9D00F1C2D2 /* Login */,
 				84F6C5DD29CA146E00D21EE2 /* Onboarding */,
 			);
@@ -460,6 +510,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
+				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
+				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
@@ -599,13 +651,17 @@
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
+				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
+				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
+				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
 				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,
 				849B9C3529D185D100F1C2D2 /* NibLoadable.swift in Sources */,
+				84CF09F429D9E91400F87400 /* Home.swift in Sources */,
 				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,

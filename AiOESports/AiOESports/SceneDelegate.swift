@@ -19,8 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
 //        guard let onboarding = OnboardingModule.createModule() else { return }
-        guard let login = LoginModule.createModule() else { return }
-        window?.rootViewController = login
+//        guard let login = LoginModule.createModule() else { return }
+        guard let InApp = InAppModule.createModule() else { return }
+        window?.rootViewController = InApp
         window?.makeKeyAndVisible()
     }
 
