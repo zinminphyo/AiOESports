@@ -20,6 +20,7 @@ class Login: UIViewController {
     @IBOutlet weak var incorrectPhoneNumberContainerView: UIView!
     @IBOutlet weak var rememberInfoLabel: UILabel!
     @IBOutlet weak var forgotPasswordLabel: UILabel!
+    @IBOutlet weak var rememberInfoFlagImageView: UIImageView!
     @IBOutlet weak var saveInfoContainerView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var donotHaveAccountTitleLabel: UILabel!
@@ -140,6 +141,15 @@ class Login: UIViewController {
     
     private func configureSaveInfoView() {
         saveInfoContainerView.backgroundColor = Colors.Theme.mainColor
+        rememberInfoLabel.text = "Remember Info"
+        rememberInfoLabel.font = Fonts.subtitleFont
+        rememberInfoLabel.textColor = Colors.Text.primaryText
+        
+        forgotPasswordLabel.text = "Forgot password?"
+        forgotPasswordLabel.font = Fonts.subtitleFont
+        forgotPasswordLabel.textColor = Colors.Text.primaryText
+        
+        rememberInfoFlagImageView.image = Images.rememberFalse
     }
 
 }
