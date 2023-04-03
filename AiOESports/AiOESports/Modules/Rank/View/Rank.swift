@@ -51,7 +51,12 @@ class Rank: UIViewController {
     }
     
     private func configureTableView() {
-        
+        tableView.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.reuseIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.separatorStyle = .none
     }
 
 }
@@ -77,5 +82,21 @@ extension Rank: UICollectionViewDataSource {
         } else {
             return UICollectionViewCell()
         }
+    }
+}
+
+extension Rank: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as? RankingTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.set(teamImage: Images.TeamImages.teamlogo, teamName: "Blacklist", gameImage: Images.TeamImages.gamecategorylogo, location: "Yangon")
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
     }
 }

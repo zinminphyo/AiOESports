@@ -29,4 +29,9 @@ class Images {
         static let filterlogo = UIImage(named: "filterlogo", in: .main, compatibleWith: nil)
         static let searchlogo = UIImage(named: "searchlogo", in: .main, compatibleWith: nil)
     }
+    
+    enum TeamImages {
+        static let gamecategorylogo = UIImage(named: "gamecategorylogo", in: .main, compatibleWith: nil)
+        static let teamlogo = UIImage(named: "teamlogo", in: .main, compatibleWith: nil)
+    }
 }
