@@ -24,4 +24,9 @@ class Images {
         static let tourlogo = UIImage(named: "tourlogo", in: .main, compatibleWith: nil)
         static let shoplogo = UIImage(named: "shoplogo", in: .main, compatibleWith: nil)
     }
+    
+    enum RankModuleImages {
+        static let filterlogo = UIImage(named: "filterlogo", in: .main, compatibleWith: nil)
+        static let searchlogo = UIImage(named: "searchlogo", in: .main, compatibleWith: nil)
+    }
 }
