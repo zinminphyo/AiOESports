@@ -10,6 +10,7 @@
 		58204C26DBF6D55964E5CE6E /* Pods_AiOESports_AiOESportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */; };
 		6E5CBA7023461F336228CAA1 /* Pods_AiOESportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */; };
 		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
+		842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */; };
 		842DF92629D88A6200B24F1A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DF92529D88A6200B24F1A /* Fonts.swift */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
@@ -81,6 +82,7 @@
 		52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESports_AiOESportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
+		842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		842DF92529D88A6200B24F1A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 				9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		842AE8C429DB16360036FF05 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		842DF92429D88A5900B24F1A /* Fonts */ = {
@@ -313,6 +323,7 @@
 		84CF09EC29D9E87600F87400 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				842AE8C429DB16360036FF05 /* cell */,
 				84CF09ED29D9E87C00F87400 /* Home.storyboard */,
 				84CF09F329D9E91400F87400 /* Home.swift */,
 			);
@@ -773,6 +784,7 @@
 				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
 				84CF0A0429D9FA4800F87400 /* Match.swift in Sources */,
+				842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
