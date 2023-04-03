@@ -39,7 +39,15 @@ class Rank: UIViewController {
     }
     
     private func configureGameCategoryCollectionView() {
-        
+        gameCategoryCollectionView.register(GameCategoryCollectionViewCell.self, forCellWithReuseIdentifier: GameCategoryCollectionViewCell.reuseIdentifier)
+        gameCategoryCollectionView.dataSource = self
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: gameCategoryCollectionView.frame.height, height: gameCategoryCollectionView.frame.height)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 10
+        gameCategoryCollectionView.collectionViewLayout = flowLayout
+        gameCategoryCollectionView.showsVerticalScrollIndicator = false
+        gameCategoryCollectionView.showsHorizontalScrollIndicator = false
     }
     
     private func configureTableView() {
@@ -51,13 +59,23 @@ class Rank: UIViewController {
 
 extension Rank: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return collectionView == categoryCollectionView ? 4 : 10
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.resuseIdentifier, for: indexPath) as? CategoryCollectionViewCell else {
+        if collectionView == categoryCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.resuseIdentifier, for: indexPath) as? CategoryCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.set(name: "TEAMS", isSelected: indexPath.row == 0)
+            return cell
+        } else if collectionView == gameCategoryCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCategoryCollectionViewCell.reuseIdentifier, for: indexPath) as? GameCategoryCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.set(image: UIImage(named: "All"))
+            return cell
+        } else {
             return UICollectionViewCell()
         }
-        cell.set(name: "TEAMS", isSelected: indexPath.row == 0)
-        return cell
     }
 }

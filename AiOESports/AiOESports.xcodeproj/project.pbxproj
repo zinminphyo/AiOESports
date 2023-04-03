@@ -12,6 +12,7 @@
 		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
 		842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */; };
 		842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */; };
+		842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */; };
 		842DF92629D88A6200B24F1A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DF92529D88A6200B24F1A /* Fonts.swift */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
@@ -85,6 +86,7 @@
 		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
 		842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		842DF92529D88A6200B24F1A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */,
+				842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
+				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
