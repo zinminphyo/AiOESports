@@ -33,6 +33,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="filterlogo"/>
+                                        <connections>
+                                            <action selector="didTapFilterBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0OE-Cu-XmZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-gb-cMN">
                                         <rect key="frame" x="317" y="10" width="30" height="30"/>
@@ -42,6 +45,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="searchlogo"/>
+                                        <connections>
+                                            <action selector="didTapSearchBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cDt-3H-r6Q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="ThemeColor"/>

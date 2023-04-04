@@ -17,6 +17,13 @@ enum RankModule {
         }
         vc.tabBarItem.image = Images.InAppImages.ranklogo
         vc.tabBarItem.title = "RANK"
+        
+        let presenter = RankPresenter()
+        let router = RankRouter()
+        vc.presenter = presenter
+        presenter.router = router
+        router.viewController = vc
+        
         return vc
     }
 }

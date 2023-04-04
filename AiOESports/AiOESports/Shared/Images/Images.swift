@@ -34,4 +34,9 @@ class Images {
         static let gamecategorylogo = UIImage(named: "gamecategorylogo", in: .main, compatibleWith: nil)
         static let teamlogo = UIImage(named: "teamlogo", in: .main, compatibleWith: nil)
     }
+    
+    enum FilterSettings {
+        static let selectedIcon = UIImage(named: "selected", in: .main, compatibleWith: nil)
+        static let unselectedIcon = UIImage(named: "unselected", in: .main, compatibleWith: nil)
+    }
 }

@@ -12,6 +12,8 @@ class Rank: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var gameCategoryCollectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var presenter: RankPresenting?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +63,20 @@ class Rank: UIViewController {
         tableView.showsHorizontalScrollIndicator = false
         tableView.separatorStyle = .none
     }
+    
+    @IBAction func didTapSearchBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func didTapFilterBtn(_ sender: UIButton) {
+        presenter?.tappedFilerSettingBtn()
+    }
+    
+    
+}
 
+
+extension Rank: RankViewDelegate {
+    
 }
 
 

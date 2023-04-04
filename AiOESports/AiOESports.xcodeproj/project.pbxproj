@@ -49,6 +49,16 @@
 		84CF0A1229D9FB1D00F87400 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF0A1129D9FB1D00F87400 /* Shop.storyboard */; };
 		84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1329D9FB2800F87400 /* Shop.swift */; };
 		84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1529D9FB3900F87400 /* ShopModule.swift */; };
+		84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F602E629DC7EB800250C25 /* FilterSetting.storyboard */; };
+		84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602E829DC7ECF00250C25 /* FilterSetting.swift */; };
+		84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */; };
+		84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602EE29DC809A00250C25 /* FilterSettingTableViewCell.swift */; };
+		84F602F129DC809A00250C25 /* FilterSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F602EF29DC809A00250C25 /* FilterSettingTableViewCell.xib */; };
+		84F602F529DC84E000250C25 /* RankPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602F429DC84E000250C25 /* RankPresenting.swift */; };
+		84F602F729DC851400250C25 /* RankPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602F629DC851400250C25 /* RankPresenter.swift */; };
+		84F602F929DC852F00250C25 /* RankRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602F829DC852F00250C25 /* RankRouting.swift */; };
+		84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602FA29DC85A400250C25 /* RankRouter.swift */; };
+		84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602FC29DC861B00250C25 /* RankViewDelegate.swift */; };
 		84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */; };
 		84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */; };
 		84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5B129CA12E800D21EE2 /* ViewController.swift */; };
@@ -124,6 +134,16 @@
 		84CF0A1129D9FB1D00F87400 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		84CF0A1329D9FB2800F87400 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		84CF0A1529D9FB3900F87400 /* ShopModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModule.swift; sourceTree = "<group>"; };
+		84F602E629DC7EB800250C25 /* FilterSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterSetting.storyboard; sourceTree = "<group>"; };
+		84F602E829DC7ECF00250C25 /* FilterSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSetting.swift; sourceTree = "<group>"; };
+		84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingModule.swift; sourceTree = "<group>"; };
+		84F602EE29DC809A00250C25 /* FilterSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingTableViewCell.swift; sourceTree = "<group>"; };
+		84F602EF29DC809A00250C25 /* FilterSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSettingTableViewCell.xib; sourceTree = "<group>"; };
+		84F602F429DC84E000250C25 /* RankPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankPresenting.swift; sourceTree = "<group>"; };
+		84F602F629DC851400250C25 /* RankPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankPresenter.swift; sourceTree = "<group>"; };
+		84F602F829DC852F00250C25 /* RankRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankRouting.swift; sourceTree = "<group>"; };
+		84F602FA29DC85A400250C25 /* RankRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankRouter.swift; sourceTree = "<group>"; };
+		84F602FC29DC861B00250C25 /* RankViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AA29CA12E800D21EE2 /* AiOESports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiOESports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6C5AD29CA12E800D21EE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6C5AF29CA12E800D21EE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +369,8 @@
 		84CF09F729D9F79200F87400 /* Rank */ = {
 			isa = PBXGroup;
 			children = (
+				84F602F329DC84D100250C25 /* Presenter */,
+				84F602F229DC84CC00250C25 /* Router */,
 				84CF09F829D9F79900F87400 /* View */,
 				84CF09FD29D9F7C500F87400 /* RankModule.swift */,
 			);
@@ -361,6 +383,7 @@
 				842AE8C729DB3FA30036FF05 /* cell */,
 				84CF09F929D9F7A000F87400 /* Rank.storyboard */,
 				84CF09FB29D9F7AF00F87400 /* Rank.swift */,
+				84F602FC29DC861B00250C25 /* RankViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +440,52 @@
 				84CF0A1329D9FB2800F87400 /* Shop.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84F602E429DC7E9700250C25 /* FilterSetting */ = {
+			isa = PBXGroup;
+			children = (
+				84F602E529DC7EAF00250C25 /* View */,
+				84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */,
+			);
+			path = FilterSetting;
+			sourceTree = "<group>";
+		};
+		84F602E529DC7EAF00250C25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84F602EC29DC807D00250C25 /* cell */,
+				84F602E629DC7EB800250C25 /* FilterSetting.storyboard */,
+				84F602E829DC7ECF00250C25 /* FilterSetting.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84F602EC29DC807D00250C25 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F602EE29DC809A00250C25 /* FilterSettingTableViewCell.swift */,
+				84F602EF29DC809A00250C25 /* FilterSettingTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84F602F229DC84CC00250C25 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				84F602F829DC852F00250C25 /* RankRouting.swift */,
+				84F602FA29DC85A400250C25 /* RankRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		84F602F329DC84D100250C25 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84F602F429DC84E000250C25 /* RankPresenting.swift */,
+				84F602F629DC851400250C25 /* RankPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		84F6C5A129CA12E800D21EE2 = {
@@ -487,6 +556,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84F602E429DC7E9700250C25 /* FilterSetting */,
 				84CF0A0F29D9FB1200F87400 /* Shop */,
 				84CF0A0729D9FA9F00F87400 /* Tour */,
 				84CF09FF29D9FA1400F87400 /* Match */,
@@ -640,6 +710,7 @@
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
 				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
+				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
@@ -650,6 +721,7 @@
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
 				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
 				84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */,
+				84F602F129DC809A00250C25 /* FilterSettingTableViewCell.xib in Resources */,
 				84F6C5B529CA12E800D21EE2 /* Main.storyboard in Resources */,
 				84F6C5E229CA151100D21EE2 /* Onboarding.storyboard in Resources */,
 			);
@@ -780,8 +852,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */,
+				84F602F729DC851400250C25 /* RankPresenter.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
+				84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */,
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
+				84F602F529DC84E000250C25 /* RankPresenting.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
@@ -789,6 +864,7 @@
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
+				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
@@ -796,6 +872,7 @@
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
+				84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */,
 				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,
 				849B9C3529D185D100F1C2D2 /* NibLoadable.swift in Sources */,
@@ -807,9 +884,12 @@
 				842AE8CD29DB4B580036FF05 /* RankingCollectionViewCell.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
+				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
+				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
+				84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,
