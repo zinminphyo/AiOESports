@@ -29,6 +29,7 @@ class Rank: UIViewController {
     private func configureCategoryCollectionView() {
         categoryCollectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.resuseIdentifier)
         categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 10
@@ -36,6 +37,8 @@ class Rank: UIViewController {
         categoryCollectionView.showsVerticalScrollIndicator = false
         categoryCollectionView.showsHorizontalScrollIndicator = false
         categoryCollectionView.collectionViewLayout = flowLayout
+        categoryCollectionView.allowsMultipleSelection = false
+        categoryCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
     private func configureGameCategoryCollectionView() {
@@ -62,7 +65,7 @@ class Rank: UIViewController {
 }
 
 
-extension Rank: UICollectionViewDataSource {
+extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionView == categoryCollectionView ? 4 : 10
     }
@@ -82,6 +85,16 @@ extension Rank: UICollectionViewDataSource {
         } else {
             return UICollectionViewCell()
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard collectionView == categoryCollectionView else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
+        cell.set(isSelected: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard collectionView == categoryCollectionView, let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
+        cell.set(isSelected: false)
     }
 }
 

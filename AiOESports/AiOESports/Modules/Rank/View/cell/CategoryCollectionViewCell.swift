@@ -68,4 +68,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.selectionView.backgroundColor = isSelected ? Colors.Button.primaryColor : Colors.Button.secondaryColor
         return self
     }
+    
+    @discardableResult
+    func set(isSelected: Bool) -> Self {
+        self.selectionView.backgroundColor = isSelected ? Colors.Button.primaryColor : Colors.Button.secondaryColor
+        return self
+    }
 }
