@@ -59,6 +59,8 @@ class FilterSetting: UIViewController {
         filterSettingTableView.delegate = self
         filterSettingTableView.isScrollEnabled = false
         filterSettingTableViewHeight.constant = FilterSettingTableViewCell.cellHeight * CGFloat(5)
+        filterSettingTableView.allowsMultipleSelection = false
+        filterSettingTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
     }
     
     @objc func didTapDismissView() {
@@ -68,6 +70,8 @@ class FilterSetting: UIViewController {
 
 }
 
+
+// MARK: - UITable View Delegate Conformance
 extension FilterSetting: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -82,11 +86,19 @@ extension FilterSetting: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return FilterSettingTableViewCell.cellHeight
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? FilterSettingTableViewCell else {return}
+        cell.set(isSelected: true)
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? FilterSettingTableViewCell else {return}
+        cell.set(isSelected: false)
+    }
 }
 
 
+// MARK: - UIGesture Recognizer Delegate
 extension FilterSetting: UIGestureRecognizerDelegate {
-    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return touch.view?.isDescendant(of: filterSettingTableView) ?? true == false
     }

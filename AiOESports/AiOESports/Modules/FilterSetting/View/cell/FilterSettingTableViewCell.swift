@@ -16,7 +16,7 @@ class FilterSettingTableViewCell: UITableViewCell {
         return String(describing: Self.self)
     }
     
-    static let cellHeight: CGFloat = 40.0
+    static let cellHeight: CGFloat = 50.0
 
     override func awakeFromNib() {
         super.awakeFromNib()
