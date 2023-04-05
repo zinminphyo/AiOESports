@@ -33,6 +33,9 @@ class FilterSetting: UIViewController {
     
     private func configureBackgroundView() {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapDismissView))
+        tapGesture.delegate = self
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     private func configureContentContainerView() {
@@ -58,6 +61,10 @@ class FilterSetting: UIViewController {
         filterSettingTableViewHeight.constant = FilterSettingTableViewCell.cellHeight * CGFloat(5)
     }
     
+    @objc func didTapDismissView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
@@ -74,5 +81,13 @@ extension FilterSetting: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return FilterSettingTableViewCell.cellHeight
+    }
+}
+
+
+extension FilterSetting: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return touch.view?.isDescendant(of: filterSettingTableView) ?? true == false
     }
 }
