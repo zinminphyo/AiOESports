@@ -10,5 +10,6 @@ import Foundation
 
 protocol RankPresenting {
     var router: RankRouting? { get set }
+    func fetchTeamLists()
     func tappedFilerSettingBtn()
 }

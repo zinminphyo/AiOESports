@@ -15,6 +15,11 @@
 		842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */; };
 		842AE8CD29DB4B580036FF05 /* RankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8CC29DB4B580036FF05 /* RankingCollectionViewCell.swift */; };
 		842DF92629D88A6200B24F1A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DF92529D88A6200B24F1A /* Fonts.swift */; };
+		8459D57B29DDBD4C00DDF266 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D57A29DDBD4C00DDF266 /* NetworkError.swift */; };
+		8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D57C29DDBDD900DDF266 /* ApiRouter.swift */; };
+		8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D57E29DDC0CF00DDF266 /* NetworkService.swift */; };
+		8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D58129DDC99500DDF266 /* TeamObject.swift */; };
+		8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D58329DDC9BB00DDF266 /* BaseNetworkResponse.swift */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -100,6 +105,11 @@
 		842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		842AE8CC29DB4B580036FF05 /* RankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCollectionViewCell.swift; sourceTree = "<group>"; };
 		842DF92529D88A6200B24F1A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8459D57A29DDBD4C00DDF266 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8459D57C29DDBDD900DDF266 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		8459D57E29DDC0CF00DDF266 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8459D58129DDC99500DDF266 /* TeamObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamObject.swift; sourceTree = "<group>"; };
+		8459D58329DDC9BB00DDF266 /* BaseNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkResponse.swift; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -236,9 +246,30 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8459D57929DDBB4500DDF266 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				8459D57A29DDBD4C00DDF266 /* NetworkError.swift */,
+				8459D57C29DDBDD900DDF266 /* ApiRouter.swift */,
+				8459D57E29DDC0CF00DDF266 /* NetworkService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		8459D58029DDC98100DDF266 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8459D58129DDC99500DDF266 /* TeamObject.swift */,
+				8459D58329DDC9BB00DDF266 /* BaseNetworkResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8459D58029DDC98100DDF266 /* Models */,
+				8459D57929DDBB4500DDF266 /* ApiService */,
 				842DF92429D88A5900B24F1A /* Fonts */,
 				849B9C3129D1850600F1C2D2 /* Views */,
 				849B9C2729CEEDC200F1C2D2 /* Images */,
@@ -864,12 +895,15 @@
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
+				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
+				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
 				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
+				8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
 				84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */,
@@ -883,12 +917,14 @@
 				842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */,
 				842AE8CD29DB4B580036FF05 /* RankingCollectionViewCell.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
+				8459D57B29DDBD4C00DDF266 /* NetworkError.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
+				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
 				84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,

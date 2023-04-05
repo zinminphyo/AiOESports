@@ -20,6 +20,8 @@ class Rank: UIViewController {
 
         // Do any additional setup after loading the view.
         configureHierarchy()
+        
+        presenter?.fetchTeamLists()
     }
     
     private func configureHierarchy() {
