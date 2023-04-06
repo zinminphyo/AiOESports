@@ -14,6 +14,9 @@ class Rank: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: RankPresenting?
+    
+    private var teamLists: [TeamObject] = []
+    private var loadingLists: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,7 @@ class Rank: UIViewController {
         // Do any additional setup after loading the view.
         configureHierarchy()
         
-        presenter?.fetchTeamLists()
+        presenter?.fetchTeamLists(gameType: .all, status: .active)
     }
     
     private func configureHierarchy() {
@@ -59,6 +62,7 @@ class Rank: UIViewController {
     
     private func configureTableView() {
         tableView.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.reuseIdentifier)
+        tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.showsVerticalScrollIndicator = false
@@ -76,9 +80,22 @@ class Rank: UIViewController {
     
 }
 
-
+// MARK: - View Delegate
 extension Rank: RankViewDelegate {
     
+    func renderTeamLists(teamLists: [TeamObject]) {
+        self.teamLists = teamLists
+        self.tableView.reloadSections([0], with: .automatic)
+    }
+    
+    func renderLoadingLists(loadingLists: [String]) {
+        self.loadingLists = loadingLists
+        self.tableView.reloadSections([1], with: .automatic)
+    }
+    
+    func renderError(error: String) {
+        
+    }
 }
 
 
@@ -116,17 +133,31 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
 }
 
 extension Rank: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        if section == 0 {
+            return teamLists.count
+        } else {
+            return loadingLists.count
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as? RankingTableViewCell else {
-            return UITableViewCell()
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as? RankingTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.set(teamImage: Images.TeamImages.teamlogo, teamName: "Blacklist", gameImage: Images.TeamImages.gamecategorylogo, location: "Yangon")
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as? LoadingTableViewCell else { return UITableViewCell() }
+            cell.startAnimation()
+            return cell
         }
-        cell.set(teamImage: Images.TeamImages.teamlogo, teamName: "Blacklist", gameImage: Images.TeamImages.gamecategorylogo, location: "Yangon")
-        return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70.0
+        return indexPath.section == 0 ? 70 : 50
     }
+    
 }

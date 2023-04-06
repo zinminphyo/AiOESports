@@ -22,6 +22,7 @@ enum RankModule {
         let router = RankRouter()
         vc.presenter = presenter
         presenter.router = router
+        presenter.viewDelegate = vc
         router.viewController = vc
         
         return vc

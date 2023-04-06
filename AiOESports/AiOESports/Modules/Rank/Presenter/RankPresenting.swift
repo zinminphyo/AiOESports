@@ -10,6 +10,10 @@ import Foundation
 
 protocol RankPresenting {
     var router: RankRouting? { get set }
-    func fetchTeamLists()
+    var viewDelegate: RankViewDelegate? { get set }
+    func fetchTeamLists(gameType: GameType, status: FilterStatus)
+    func fetchPlayerLists(gameType: GameType, status: FilterStatus)
+    func fetchCasterLists(gameType: GameType, status: FilterStatus)
+    func fetchCreatorLists(gameType: GameType, status: FilterStatus)
     func tappedFilerSettingBtn()
 }

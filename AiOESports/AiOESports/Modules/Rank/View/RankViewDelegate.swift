@@ -11,4 +11,7 @@ import UIKit
 
 protocol RankViewDelegate {
     var presenter: RankPresenting? { get set }
+    func renderTeamLists(teamLists: [TeamObject])
+    func renderLoadingLists(loadingLists: [String])
+    func renderError(error: String)
 }
