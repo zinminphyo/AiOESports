@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,16 +47,26 @@
                                     <constraint firstItem="Dv8-bv-Zwb" firstAttribute="leading" secondItem="yhC-Tc-uSy" secondAttribute="leading" constant="8" id="lTa-ih-goJ"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bwc-AF-M8M">
+                                <rect key="frame" x="0.0" y="117" width="393" height="735"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ThemeColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bwc-AF-M8M" secondAttribute="trailing" id="9DQ-iW-9Vf"/>
                             <constraint firstItem="yhC-Tc-uSy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Sk2-B9-LeY"/>
                             <constraint firstItem="yhC-Tc-uSy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YQX-79-HaM"/>
+                            <constraint firstAttribute="bottom" secondItem="bwc-AF-M8M" secondAttribute="bottom" id="dOm-Sa-waJ"/>
+                            <constraint firstItem="bwc-AF-M8M" firstAttribute="top" secondItem="yhC-Tc-uSy" secondAttribute="bottom" constant="8" id="l9h-Ld-1az"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yhC-Tc-uSy" secondAttribute="trailing" id="uB1-W2-2s0"/>
+                            <constraint firstItem="bwc-AF-M8M" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yfp-dj-HWD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="Dv8-bv-Zwb" id="LQc-wL-ee8"/>
+                        <outlet property="resultTableView" destination="bwc-AF-M8M" id="j3K-IT-AAX"/>
                         <outlet property="searchInputTxtField" destination="khx-DQ-si4" id="X93-1A-QFl"/>
                     </connections>
                 </viewController>
@@ -72,5 +83,8 @@
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

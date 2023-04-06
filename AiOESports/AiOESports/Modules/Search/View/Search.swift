@@ -10,6 +10,8 @@ import UIKit
 class Search: UIViewController {
     
     @IBOutlet weak var searchInputTxtField: UITextField!
+    @IBOutlet weak var resultTableView: UITableView!
+    @IBOutlet weak var backBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,13 @@ class Search: UIViewController {
     }
     
     private func configureHierarchy() {
+        configureBackButton()
         configureSearchInputTextField()
+        configureTableView()
+    }
+    
+    private func configureBackButton() {
+        backBtn.addTarget(self, action: #selector(didTapBackBtn), for: .touchUpInside)
     }
     
     private func configureSearchInputTextField() {
@@ -39,8 +47,33 @@ class Search: UIViewController {
         searchInputTxtField.rightViewMode = .always
     }
     
+    private func configureTableView() {
+        resultTableView.register(UINib(nibName: String(describing: SearchTableViewCell.self), bundle: nil), forCellReuseIdentifier: SearchTableViewCell.reuseIdentifier)
+        resultTableView.separatorStyle = .none
+        resultTableView.dataSource = self
+        resultTableView.estimatedRowHeight = UITableView.automaticDimension
+        resultTableView.backgroundColor = UIColor.clear
+    }
+    
     @objc func didTapSearchBtn() {
-        
+        print("Search Button Clicked.")
+    }
+    
+    @objc func didTapBackBtn() {
+        self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+
+extension Search: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        let mockTeamModel = TeamSearchResultModel(teamName: "FALCON", id: 5, teamImage: "images/game/mlbb/Team/falcon_profile.png", game: "mlbb", fullName: "Falcon Esports")
+        cell.set(forTeam: mockTeamModel)
+        return cell
+    }
 }
