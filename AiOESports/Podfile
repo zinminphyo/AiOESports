@@ -6,6 +6,7 @@ def shared_pods
   use_frameworks!
   pod 'Alamofire'
   pod 'Kingfisher', '~> 7.0'
+  pod 'SVProgressHUD'
 end
 
 target 'AiOESports' do

@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.6.4)
   - Kingfisher (7.6.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher (~> 7.0)
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Kingfisher: b9bb0cd6907813593db268be80ddb931423c33b2
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 1be875f419134dad18c430230552a7c0f50b0299
+PODFILE CHECKSUM: 5d8a751dcaff846938e6e6530a97c46806fc2833
 
 COCOAPODS: 1.11.3

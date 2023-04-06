@@ -14,4 +14,6 @@ protocol RankViewDelegate {
     func renderTeamLists(teamLists: [TeamObject])
     func renderLoadingLists(loadingLists: [String])
     func renderError(error: String)
+    func showLoading()
+    func hideLoading()
 }

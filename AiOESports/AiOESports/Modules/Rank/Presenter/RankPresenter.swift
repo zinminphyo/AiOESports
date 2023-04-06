@@ -17,7 +17,7 @@ class RankPresenter: RankPresenting {
     private var teamLists: [TeamObject] = []
     
     func fetchTeamLists(gameType: GameType, status: FilterStatus) {
-        
+        viewDelegate?.showLoading()
         let router = ApiRouter.fetchTeamLists(gameType, status)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<TeamObject>,NetworkError>) in
             switch result {
@@ -25,8 +25,10 @@ class RankPresenter: RankPresenting {
                 self.teamLists = success.data
                 self.viewDelegate?.renderTeamLists(teamLists: self.teamLists)
                 self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"])
+                self.viewDelegate?.hideLoading()
             case .failure(let failure):
                 self.viewDelegate?.renderError(error: failure.localizedDescription)
+                self.viewDelegate?.hideLoading()
             }
         }
          

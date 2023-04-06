@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class Rank: UIViewController {
     
@@ -95,6 +96,14 @@ extension Rank: RankViewDelegate {
     
     func renderError(error: String) {
         
+    }
+    
+    func showLoading() {
+        SVProgressHUD.show()
+    }
+    
+    func hideLoading() {
+        SVProgressHUD.dismiss()
     }
 }
 
