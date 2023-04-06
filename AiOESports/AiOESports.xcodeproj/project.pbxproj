@@ -64,6 +64,12 @@
 		84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAFF29DEB46500734CAE /* SearchTableViewCell.xib */; };
 		84F5FB0329DEB82C00734CAE /* TeamSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0229DEB82C00734CAE /* TeamSearchResultModel.swift */; };
 		84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0429DEBCD200734CAE /* PlayerSearchResultModel.swift */; };
+		84F5FB0B29DEC48200734CAE /* SearchPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0A29DEC48200734CAE /* SearchPresenting.swift */; };
+		84F5FB0D29DEC49D00734CAE /* SearchViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0C29DEC49D00734CAE /* SearchViewDelegate.swift */; };
+		84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0E29DEC56F00734CAE /* SearchInteracting.swift */; };
+		84F5FB1129DEC5DC00734CAE /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB1029DEC5DC00734CAE /* SearchInteractor.swift */; };
+		84F5FB1329DEC66700734CAE /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB1229DEC66700734CAE /* SearchPresenter.swift */; };
+		84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB1529DECD0000734CAE /* LoadingPresentable.swift */; };
 		84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F602E629DC7EB800250C25 /* FilterSetting.storyboard */; };
 		84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602E829DC7ECF00250C25 /* FilterSetting.swift */; };
 		84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */; };
@@ -164,6 +170,12 @@
 		84F5FAFF29DEB46500734CAE /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		84F5FB0229DEB82C00734CAE /* TeamSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchResultModel.swift; sourceTree = "<group>"; };
 		84F5FB0429DEBCD200734CAE /* PlayerSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchResultModel.swift; sourceTree = "<group>"; };
+		84F5FB0A29DEC48200734CAE /* SearchPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenting.swift; sourceTree = "<group>"; };
+		84F5FB0C29DEC49D00734CAE /* SearchViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewDelegate.swift; sourceTree = "<group>"; };
+		84F5FB0E29DEC56F00734CAE /* SearchInteracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteracting.swift; sourceTree = "<group>"; };
+		84F5FB1029DEC5DC00734CAE /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		84F5FB1229DEC66700734CAE /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		84F5FB1529DECD0000734CAE /* LoadingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresentable.swift; sourceTree = "<group>"; };
 		84F602E629DC7EB800250C25 /* FilterSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterSetting.storyboard; sourceTree = "<group>"; };
 		84F602E829DC7ECF00250C25 /* FilterSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSetting.swift; sourceTree = "<group>"; };
 		84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingModule.swift; sourceTree = "<group>"; };
@@ -300,6 +312,7 @@
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				84F5FB1429DECCEA00734CAE /* Base */,
 				8459D58529DDF65200DDF266 /* Enums */,
 				8459D58029DDC98100DDF266 /* Models */,
 				8459D57929DDBB4500DDF266 /* ApiService */,
@@ -509,6 +522,9 @@
 		84F5FAF529DEAE2600734CAE /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				84F5FB0929DEC47400734CAE /* Router */,
+				84F5FB0729DEC46B00734CAE /* Interactor */,
+				84F5FB0629DEC45F00734CAE /* Presenter */,
 				84F5FAF629DEAE2B00734CAE /* View */,
 				84F5FAFB29DEB13A00734CAE /* SearchModule.swift */,
 			);
@@ -521,6 +537,7 @@
 				84F5FAFD29DEB44F00734CAE /* cell */,
 				84F5FAF729DEAE3300734CAE /* Search.storyboard */,
 				84F5FAF929DEAFCB00734CAE /* Search.swift */,
+				84F5FB0C29DEC49D00734CAE /* SearchViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -532,6 +549,39 @@
 				84F5FAFF29DEB46500734CAE /* SearchTableViewCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		84F5FB0629DEC45F00734CAE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84F5FB0A29DEC48200734CAE /* SearchPresenting.swift */,
+				84F5FB1229DEC66700734CAE /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84F5FB0729DEC46B00734CAE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				84F5FB0E29DEC56F00734CAE /* SearchInteracting.swift */,
+				84F5FB1029DEC5DC00734CAE /* SearchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		84F5FB0929DEC47400734CAE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		84F5FB1429DECCEA00734CAE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84F5FB1529DECD0000734CAE /* LoadingPresentable.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		84F602E429DC7E9700250C25 /* FilterSetting */ = {
@@ -948,10 +998,12 @@
 			files = (
 				842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */,
 				84F5FAFC29DEB13A00734CAE /* SearchModule.swift in Sources */,
+				84F5FB1329DEC66700734CAE /* SearchPresenter.swift in Sources */,
 				84F602F729DC851400250C25 /* RankPresenter.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */,
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
+				84F5FB1129DEC5DC00734CAE /* SearchInteractor.swift in Sources */,
 				84F602F529DC84E000250C25 /* RankPresenting.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
@@ -960,7 +1012,9 @@
 				84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				84F5FB0329DEB82C00734CAE /* TeamSearchResultModel.swift in Sources */,
+				84F5FB0B29DEC48200734CAE /* SearchPresenting.swift in Sources */,
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
+				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
 				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
@@ -993,12 +1047,14 @@
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
+				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
 				84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
+				84F5FB0D29DEC49D00734CAE /* SearchViewDelegate.swift in Sources */,
 				8459D58729DDF66B00DDF266 /* Enums.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,
 			);

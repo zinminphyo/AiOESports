@@ -18,7 +18,6 @@ class NetworkService {
         do {
             let request = try router.asURL()
             AF.request(request, method: router.method, parameters: router.parameter, encoding: router.encoding, headers: router.header, interceptor: nil, requestModifier: nil)
-                .validate(statusCode: 200...500)
                 .responseDecodable { (response: DataResponse<T,AFError>) in
                     switch response.result {
                     case .success(let result):

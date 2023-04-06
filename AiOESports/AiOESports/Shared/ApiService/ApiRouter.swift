@@ -28,8 +28,10 @@ enum ApiRouter: URLConvertible {
     
     var path: String {
         switch self {
-        case .fetchTeamLists, .teamSearch:
+        case .fetchTeamLists:
             return "team"
+        case  .teamSearch:
+            return "team/search"
         }
     }
     
@@ -42,7 +44,7 @@ enum ApiRouter: URLConvertible {
         case .fetchTeamLists:
             return URLEncoding.default
         case .teamSearch:
-            return URLEncoding.httpBody
+            return JSONEncoding.prettyPrinted
         }
     }
     

@@ -12,6 +12,9 @@ class Search: UIViewController {
     @IBOutlet weak var searchInputTxtField: UITextField!
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var backBtn: UIButton!
+    
+    var presenter: SearchPresenting?
+    private var teamLists: [TeamSearchResultModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +40,12 @@ class Search: UIViewController {
         attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.primaryText!, range: NSRange(location: 0, length: placeHolder.count))
         searchInputTxtField.attributedPlaceholder = attributedPlaceHolder
         
-        let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
         searchButton.addTarget(self, action: #selector(didTapSearchBtn), for: .touchUpInside)
-        searchButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 10)
         searchButton.backgroundColor = UIColor.clear
         searchButton.setImage(Images.RankModuleImages.searchlogo, for: .normal)
         searchButton.tintColor = UIColor.white
+        searchInputTxtField.textColor = Colors.Text.primaryText		
         searchInputTxtField.rightView = searchButton
         searchInputTxtField.rightViewMode = .always
         searchInputTxtField.addTarget(self, action: #selector(didChangeKeyword), for: .editingChanged)
@@ -70,21 +73,28 @@ class Search: UIViewController {
     }
 
     @objc func fetchSearchingApi() {
-        print("Searching Api.")
+        presenter?.searchTeamLists(keyword: searchInputTxtField.text ?? "")
     }
     
 }
 
-
+extension Search: SearchViewDelegate {
+    func renderTeamLists(teamLists: [TeamSearchResultModel]) {
+        self.teamLists = teamLists
+        self.resultTableView.reloadData()
+    }
+    func renderError(error: String) {
+        
+    }
+}
 
 extension Search: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return teamLists.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
-        let mockTeamModel = TeamSearchResultModel(teamName: "FALCON", id: 5, teamImage: "images/game/mlbb/Team/falcon_profile.png", game: "mlbb", fullName: "Falcon Esports")
-        cell.set(forTeam: mockTeamModel)
+        cell.set(forTeam: teamLists[indexPath.row])
         return cell
     }
 }
