@@ -50,6 +50,10 @@ class RankPresenter: RankPresenting {
     func tappedFilerSettingBtn() {
         router?.routeToFilterSettings()
     }
+    
+    func tappedSearchBtn() {
+        router?.routeToSearch()
+    }
 }
 
 

@@ -80,6 +80,7 @@ class Rank: UIViewController {
     }
     
     @IBAction func didTapSearchBtn(_ sender: UIButton) {
+        presenter?.tappedSearchBtn()
     }
     
     @IBAction func didTapFilterBtn(_ sender: UIButton) {

@@ -18,5 +18,10 @@ class RankRouter: RankRouting {
         viewController?.present(vc, animated: true)
     }
     
+    func routeToSearch() {
+        guard let vc = SearchModule.createModule() else { return }
+        viewController?.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

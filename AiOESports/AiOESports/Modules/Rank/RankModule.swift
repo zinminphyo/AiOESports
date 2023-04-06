@@ -10,7 +10,7 @@ import UIKit
 
 
 enum RankModule {
-    static func createModule() -> Rank? {
+    static func createModule() -> UIViewController? {
         let st = UIStoryboard(name: "Rank", bundle: .main)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Rank.self)) as? Rank else {
             return nil
@@ -24,7 +24,9 @@ enum RankModule {
         presenter.router = router
         presenter.viewDelegate = vc
         router.viewController = vc
-        
-        return vc
+        let nav = UINavigationController(rootViewController: vc)
+        nav.setNavigationBarHidden(true, animated: false)
+        nav.hidesBottomBarWhenPushed = true
+        return nav
     }
 }

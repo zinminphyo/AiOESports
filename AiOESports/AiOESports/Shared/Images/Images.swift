@@ -16,6 +16,7 @@ class Images {
     static let rememberFalse = UIImage(named: "rememberFalse", in: .main, compatibleWith: nil)
     static let menulogo = UIImage(named: "menulogo", in: .main, compatibleWith: nil)
     static let notilogo = UIImage(named: "notilogo", in: .main, compatibleWith: nil)
+    static let backlogo = UIImage(named: "backlogo", in: .main, compatibleWith: nil)
     
     enum InAppImages {
         static let homelogo = UIImage(named: "homelogo", in: .main, compatibleWith: nil)

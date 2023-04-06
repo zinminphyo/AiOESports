@@ -11,4 +11,5 @@ import UIKit
 protocol RankRouting {
     var viewController: Rank? { get set }
     func routeToFilterSettings()
+    func routeToSearch()
 }
