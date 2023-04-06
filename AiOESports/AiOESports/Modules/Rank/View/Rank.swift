@@ -10,6 +10,7 @@ import SVProgressHUD
 
 class Rank: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var gameCategoryCollectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -25,13 +26,20 @@ class Rank: UIViewController {
         // Do any additional setup after loading the view.
         configureHierarchy()
         
-        presenter?.fetchTeamLists(gameType: .all, status: .active)
+        presenter?.fetchTeamLists(gameType: .All, status: .active)
     }
     
     private func configureHierarchy() {
+        configureHeaderView()
         configureCategoryCollectionView()
         configureGameCategoryCollectionView()
         configureTableView()
+    }
+    
+    private func configureHeaderView() {
+        titleLabel.font = Fonts.titleFont
+        titleLabel.textColor = Colors.Text.primaryText
+        titleLabel.text = "Rank"
     }
     
     private func configureCategoryCollectionView() {
@@ -39,8 +47,8 @@ class Rank: UIViewController {
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 10
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = 0
         flowLayout.estimatedItemSize = CGSize(width: 100, height: categoryCollectionView.frame.height)
         categoryCollectionView.showsVerticalScrollIndicator = false
         categoryCollectionView.showsHorizontalScrollIndicator = false
@@ -110,20 +118,20 @@ extension Rank: RankViewDelegate {
 
 extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == categoryCollectionView ? 4 : 10
+        return collectionView == categoryCollectionView ? RankCategory.allCases.count : GameType.allCases.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.resuseIdentifier, for: indexPath) as? CategoryCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.set(name: "TEAMS", isSelected: indexPath.row == 0)
+            cell.set(name: RankCategory.allCases[indexPath.row].title, isSelected: indexPath.row == 0)
             return cell
         } else if collectionView == gameCategoryCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCategoryCollectionViewCell.reuseIdentifier, for: indexPath) as? GameCategoryCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.set(image: UIImage(named: "All"))
+            cell.set(image: GameType.allCases[indexPath.row].image)
             return cell
         } else {
             return UICollectionViewCell()

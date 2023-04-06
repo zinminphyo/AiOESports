@@ -6,27 +6,84 @@
 //
 
 import Foundation
+import UIKit
 
-
-enum GameType {
-    case all
-    case mobilLegend
-    case dota
-    case aov
-    case pubg
+enum GameType: CaseIterable {
+    case All
+    case MobileLegend
+    case Dota
+    case AOV
+    case PUBGM
+    case CSGO
+    case Valorant
+    case LolWR
+    case HOK
+    case FIFA
     
     var value: String {
         switch self {
-        case .all:
+        case .All:
             return "all"
-        case .mobilLegend:
-            return "mobilelegend"
-        case .dota:
-            return ""
-        case .aov:
-            return ""
-        case .pubg:
-            return ""
+        case .MobileLegend:
+            return "mlbb"
+        case .Dota:
+            return "dota"
+        case .AOV:
+            return "aov"
+        case .PUBGM:
+            return "pubg"
+        case .CSGO:
+            return "csgo"
+        case .Valorant:
+            return "valorant"
+        case .LolWR:
+            return "lolwr"
+        case .HOK:
+            return "hok"
+        case .FIFA:
+            return "fifa"
+        }
+    }
+    
+    var image: UIImage? {
+        switch self {
+        case .All:
+            return Images.GameLogo.ALL
+        case .MobileLegend:
+            return Images.GameLogo.MLBB
+        case .Dota:
+            return Images.GameLogo.DOTA
+        case .AOV:
+            return Images.GameLogo.AOV
+        case .PUBGM:
+            return Images.GameLogo.PUBGM
+        case .CSGO:
+            return Images.GameLogo.AOV
+        case .Valorant:
+            return Images.GameLogo.PUBGM
+        case .LolWR:
+            return Images.GameLogo.LOLWR
+        case .HOK:
+            return Images.GameLogo.PUBGM
+        case .FIFA:
+            return Images.GameLogo.DOTA
+        }
+    }
+}
+
+enum TeamFilterStatus: CaseIterable {
+    case active
+    case inActive
+    case disbanded
+    
+    var value: String {
+        switch self {
+        case .active:
+            return "Active"
+        case .inActive:
+            return "InActive"
+        case .disbanded:
+            return "disbanded"
         }
     }
 }

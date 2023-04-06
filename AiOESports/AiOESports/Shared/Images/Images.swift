@@ -39,4 +39,14 @@ class Images {
         static let selectedIcon = UIImage(named: "selected", in: .main, compatibleWith: nil)
         static let unselectedIcon = UIImage(named: "unselected", in: .main, compatibleWith: nil)
     }
+    
+    enum GameLogo {
+        static let ALL = UIImage(named: "All", in: .main, compatibleWith: nil)
+        static let AOV = UIImage(named: "AOV", in: .main, compatibleWith: nil)
+        static let DOTA = UIImage(named: "DOTA", in: .main, compatibleWith: nil)
+        static let LOLWR = UIImage(named: "LOLWR", in: .main, compatibleWith: nil)
+        static let MLBB = UIImage(named: "MLBB", in: .main, compatibleWith: nil)
+        static let PUBGM = UIImage(named: "PUBGM", in: .main, compatibleWith: nil)
+        static let VALORANT = UIImage(named: "VALORANT", in: .main, compatibleWith: nil)
+    }
 }

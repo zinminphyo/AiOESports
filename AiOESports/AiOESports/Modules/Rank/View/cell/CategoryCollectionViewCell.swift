@@ -40,7 +40,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     private func configureCategoryLabel() {
         self.addSubview(categoryLabel)
         categoryLabel.textColor = Colors.Text.primaryText
-        categoryLabel.font = Fonts.titleFont
+        categoryLabel.font = Fonts.subtitleFont
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             categoryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 4),

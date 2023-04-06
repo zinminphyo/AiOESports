@@ -46,7 +46,7 @@ class GameCategoryCollectionViewCell: UICollectionViewCell {
     
     private func configureImageView() {
         self.addSubview(gameCategoryImageView)
-        gameCategoryImageView.contentMode = .scaleToFill
+        gameCategoryImageView.contentMode = .scaleAspectFit
         gameCategoryImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             gameCategoryImageView.widthAnchor.constraint(equalToConstant: 30),

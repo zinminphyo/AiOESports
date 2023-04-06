@@ -65,7 +65,7 @@
                                 <rect key="frame" x="0.0" y="109" width="393" height="60"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-gv-dj0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                        <rect key="frame" x="10" y="0.0" width="383" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PTS-Az-0gD">
                                             <size key="itemSize" width="128" height="128"/>
@@ -81,7 +81,7 @@
                                     <constraint firstAttribute="trailing" secondItem="2ZP-gv-dj0" secondAttribute="trailing" id="4vU-Cw-4Tj"/>
                                     <constraint firstItem="2ZP-gv-dj0" firstAttribute="top" secondItem="caH-td-oZX" secondAttribute="top" id="Lg0-qV-yeR"/>
                                     <constraint firstAttribute="bottom" secondItem="2ZP-gv-dj0" secondAttribute="bottom" id="Sj2-wt-0Zf"/>
-                                    <constraint firstItem="2ZP-gv-dj0" firstAttribute="leading" secondItem="caH-td-oZX" secondAttribute="leading" id="fpe-Or-WhP"/>
+                                    <constraint firstItem="2ZP-gv-dj0" firstAttribute="leading" secondItem="caH-td-oZX" secondAttribute="leading" constant="10" id="fpe-Or-WhP"/>
                                     <constraint firstAttribute="height" constant="60" id="mPr-4q-Lhc"/>
                                 </constraints>
                             </view>
@@ -157,6 +157,7 @@
                         <outlet property="categoryCollectionView" destination="2ZP-gv-dj0" id="1Dj-Ad-Eby"/>
                         <outlet property="gameCategoryCollectionView" destination="avK-Iu-4g4" id="ah1-Ug-t6u"/>
                         <outlet property="tableView" destination="yEh-kh-Awu" id="oeX-Nj-0Cl"/>
+                        <outlet property="titleLabel" destination="8rn-rv-CYT" id="hPH-bq-GEj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
