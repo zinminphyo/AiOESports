@@ -63,6 +63,7 @@
 		84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAFE29DEB46500734CAE /* SearchTableViewCell.swift */; };
 		84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAFF29DEB46500734CAE /* SearchTableViewCell.xib */; };
 		84F5FB0329DEB82C00734CAE /* TeamSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0229DEB82C00734CAE /* TeamSearchResultModel.swift */; };
+		84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FB0429DEBCD200734CAE /* PlayerSearchResultModel.swift */; };
 		84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F602E629DC7EB800250C25 /* FilterSetting.storyboard */; };
 		84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602E829DC7ECF00250C25 /* FilterSetting.swift */; };
 		84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */; };
@@ -162,6 +163,7 @@
 		84F5FAFE29DEB46500734CAE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		84F5FAFF29DEB46500734CAE /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		84F5FB0229DEB82C00734CAE /* TeamSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchResultModel.swift; sourceTree = "<group>"; };
+		84F5FB0429DEBCD200734CAE /* PlayerSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchResultModel.swift; sourceTree = "<group>"; };
 		84F602E629DC7EB800250C25 /* FilterSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterSetting.storyboard; sourceTree = "<group>"; };
 		84F602E829DC7ECF00250C25 /* FilterSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSetting.swift; sourceTree = "<group>"; };
 		84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingModule.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				8459D58329DDC9BB00DDF266 /* BaseNetworkResponse.swift */,
 				84F5FAF129DE81D800734CAE /* Pagination.swift */,
 				84F5FB0229DEB82C00734CAE /* TeamSearchResultModel.swift */,
+				84F5FB0429DEBCD200734CAE /* PlayerSearchResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
+				84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */,
 				84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */,
 				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,

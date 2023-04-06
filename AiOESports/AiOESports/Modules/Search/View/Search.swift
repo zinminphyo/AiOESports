@@ -34,7 +34,7 @@ class Search: UIViewController {
     private func configureSearchInputTextField() {
         let placeHolder = "Enter PLAYER Name"
         let attributedPlaceHolder = NSMutableAttributedString(string: placeHolder)
-        attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.primaryText, range: NSRange(location: 0, length: placeHolder.count))
+        attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.primaryText!, range: NSRange(location: 0, length: placeHolder.count))
         searchInputTxtField.attributedPlaceholder = attributedPlaceHolder
         
         let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
@@ -45,6 +45,7 @@ class Search: UIViewController {
         searchButton.tintColor = UIColor.white
         searchInputTxtField.rightView = searchButton
         searchInputTxtField.rightViewMode = .always
+        searchInputTxtField.addTarget(self, action: #selector(didChangeKeyword), for: .editingChanged)
     }
     
     private func configureTableView() {
@@ -62,8 +63,18 @@ class Search: UIViewController {
     @objc func didTapBackBtn() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @objc func didChangeKeyword() {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(fetchSearchingApi), object: nil)
+        perform(#selector(fetchSearchingApi), with: nil, afterDelay: 1)
+    }
 
+    @objc func fetchSearchingApi() {
+        print("Searching Api.")
+    }
+    
 }
+
 
 
 extension Search: UITableViewDataSource {
