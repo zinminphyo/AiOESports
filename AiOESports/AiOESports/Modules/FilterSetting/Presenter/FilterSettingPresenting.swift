@@ -13,4 +13,5 @@ protocol FilterSettingPresenting {
     func set(category: RankCategory)
     func getSettingCount() -> Int
     func getSettingTitle(index: Int) -> String
+    func getSettingValue(index: Int) -> String
 }

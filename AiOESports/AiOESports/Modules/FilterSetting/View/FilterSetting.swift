@@ -17,6 +17,7 @@ class FilterSetting: UIViewController {
     
     var presenter: FilterSettingPresenting?
     
+    var delegate: FilterSettingDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +104,7 @@ extension FilterSetting: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? FilterSettingTableViewCell else {return}
         cell.set(isSelected: true)
+        delegate?.didFinishedSelectionSetting(filterName: presenter?.getSettingValue(index: indexPath.row) ?? "")
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? FilterSettingTableViewCell else {return}

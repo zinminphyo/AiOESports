@@ -180,3 +180,10 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+
+extension Rank: FilterSettingDelegate {
+    func didFinishedSelectionSetting(filterName: String) {
+        print("FilterName is \(filterName)")
+    }
+}

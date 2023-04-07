@@ -14,7 +14,8 @@ class RankRouter: RankRouting {
     var viewController: Rank?
     
     func routeToFilterSettings(category: RankCategory) {
-        guard let vc = FilterSettingModule.createModule(category: category) else { return }
+        guard let delegate = viewController else { return }
+        guard let vc = FilterSettingModule.createModule(category: category, delegate: delegate) else { return }
         viewController?.present(vc, animated: true)
     }
     

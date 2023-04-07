@@ -45,5 +45,18 @@ class FilterSettingPresenter: FilterSettingPresenting {
         }
     }
     
+    func getSettingValue(index: Int) -> String {
+        switch category {
+        case .team:
+            return TeamFilterStatus.allCases[index].value
+        case .player:
+            return PlayerFilterStatus.allCases[index].value
+        case .caster:
+            return TeamFilterStatus.allCases[index].value
+        case .creator:
+            return TeamFilterStatus.allCases[index].value
+        }
+    }
+    
     
 }
