@@ -22,6 +22,8 @@ enum SearchModule {
         
         vc.presenter = presenter
         
+        vc.hidesBottomBarWhenPushed = true
+        
         return vc
     }
 }

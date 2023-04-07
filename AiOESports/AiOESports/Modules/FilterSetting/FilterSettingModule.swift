@@ -17,6 +17,7 @@ enum FilterSettingModule {
         }
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overCurrentContext
+        vc.hidesBottomBarWhenPushed = true
         return vc
     }
 }

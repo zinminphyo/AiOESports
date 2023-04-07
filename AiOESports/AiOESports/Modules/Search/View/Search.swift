@@ -45,7 +45,7 @@ class Search: UIViewController {
         searchButton.backgroundColor = UIColor.clear
         searchButton.setImage(Images.RankModuleImages.searchlogo, for: .normal)
         searchButton.tintColor = UIColor.white
-        searchInputTxtField.textColor = Colors.Text.primaryText		
+        searchInputTxtField.textColor = Colors.Text.primaryText
         searchInputTxtField.rightView = searchButton
         searchInputTxtField.rightViewMode = .always
         searchInputTxtField.addTarget(self, action: #selector(didChangeKeyword), for: .editingChanged)
