@@ -79,11 +79,55 @@ enum TeamFilterStatus: CaseIterable {
     var value: String {
         switch self {
         case .active:
+            return "active"
+        case .inActive:
+            return "inActive"
+        case .disbanded:
+            return "disbanded"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .active:
             return "Active"
         case .inActive:
             return "InActive"
         case .disbanded:
-            return "disbanded"
+            return "Disbanded"
+        }
+    }
+}
+
+enum PlayerFilterStatus: CaseIterable {
+    case active
+    case inactive
+    case retired
+    case free
+    
+    var title: String {
+        switch self {
+        case .active:
+            return "Active"
+        case .inactive:
+            return "InActive"
+        case .retired:
+            return "Retried"
+        case .free:
+            return "Free Agent"
+        }
+    }
+    
+    var value: String {
+        switch self {
+        case .active:
+            return "active"
+        case .inactive:
+            return "inactive"
+        case .retired:
+            return "retired"
+        case .free:
+            return "Free"
         }
     }
 }

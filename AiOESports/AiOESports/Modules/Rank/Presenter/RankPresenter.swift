@@ -16,6 +16,8 @@ class RankPresenter: RankPresenting {
     
     private var teamLists: [TeamObject] = []
     
+    private var selectedCategory: RankCategory = .team
+    
     func fetchTeamLists(gameType: GameType, status: FilterStatus) {
         viewDelegate?.showLoading()
         let router = ApiRouter.fetchTeamLists(gameType, status)
@@ -48,11 +50,15 @@ class RankPresenter: RankPresenting {
     }
     
     func tappedFilerSettingBtn() {
-        router?.routeToFilterSettings()
+        router?.routeToFilterSettings(category: selectedCategory)
     }
     
     func tappedSearchBtn() {
         router?.routeToSearch()
+    }
+    
+    func changedRankCategory(category: RankCategory) {
+        self.selectedCategory = category
     }
 }
 

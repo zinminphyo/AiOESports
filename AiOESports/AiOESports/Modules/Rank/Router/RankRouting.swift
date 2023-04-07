@@ -10,6 +10,6 @@ import UIKit
 
 protocol RankRouting {
     var viewController: Rank? { get set }
-    func routeToFilterSettings()
+    func routeToFilterSettings(category: RankCategory)
     func routeToSearch()
 }

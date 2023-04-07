@@ -21,6 +21,9 @@
 		8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D58129DDC99500DDF266 /* TeamObject.swift */; };
 		8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D58329DDC9BB00DDF266 /* BaseNetworkResponse.swift */; };
 		8459D58729DDF66B00DDF266 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D58629DDF66B00DDF266 /* Enums.swift */; };
+		84725AAD29E07DB8003658CD /* FilterSettingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */; };
+		84725AAF29E07E69003658CD /* FilterSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AAE29E07E69003658CD /* FilterSettingPresenter.swift */; };
+		84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AB029E07EAF003658CD /* FilterSettingViewDelegate.swift */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -127,6 +130,9 @@
 		8459D58129DDC99500DDF266 /* TeamObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamObject.swift; sourceTree = "<group>"; };
 		8459D58329DDC9BB00DDF266 /* BaseNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkResponse.swift; sourceTree = "<group>"; };
 		8459D58629DDF66B00DDF266 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingPresenting.swift; sourceTree = "<group>"; };
+		84725AAE29E07E69003658CD /* FilterSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingPresenter.swift; sourceTree = "<group>"; };
+		84725AB029E07EAF003658CD /* FilterSettingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingViewDelegate.swift; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -307,6 +313,15 @@
 				8459D58629DDF66B00DDF266 /* Enums.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		84725AAB29E07D9B003658CD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */,
+				84725AAE29E07E69003658CD /* FilterSettingPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
@@ -587,6 +602,7 @@
 		84F602E429DC7E9700250C25 /* FilterSetting */ = {
 			isa = PBXGroup;
 			children = (
+				84725AAB29E07D9B003658CD /* Presenter */,
 				84F602E529DC7EAF00250C25 /* View */,
 				84F602EA29DC7EE600250C25 /* FilterSettingModule.swift */,
 			);
@@ -599,6 +615,7 @@
 				84F602EC29DC807D00250C25 /* cell */,
 				84F602E629DC7EB800250C25 /* FilterSetting.storyboard */,
 				84F602E829DC7ECF00250C25 /* FilterSetting.swift */,
+				84725AB029E07EAF003658CD /* FilterSettingViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1024,9 +1041,11 @@
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84F5FAFA29DEAFCB00734CAE /* Search.swift in Sources */,
+				84725AAF29E07E69003658CD /* FilterSettingPresenter.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
 				8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */,
+				84725AAD29E07DB8003658CD /* FilterSettingPresenting.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
 				84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */,
@@ -1046,6 +1065,7 @@
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
+				84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,

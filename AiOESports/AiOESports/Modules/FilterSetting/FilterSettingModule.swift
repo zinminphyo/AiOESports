@@ -10,11 +10,15 @@ import UIKit
 
 
 enum FilterSettingModule {
-    static func createModule() -> FilterSetting? {
+    static func createModule(category: RankCategory) -> FilterSetting? {
         let st = UIStoryboard(name: "FilterSetting", bundle: .main)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: FilterSetting.self)) as? FilterSetting else {
             return nil
         }
+        let presenter = FilterSettingPresenter()
+        presenter.set(category: category)
+        presenter.viewDelegate = vc
+        vc.presenter = presenter
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overCurrentContext
         vc.hidesBottomBarWhenPushed = true

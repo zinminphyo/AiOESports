@@ -15,6 +15,7 @@ protocol RankPresenting {
     func fetchPlayerLists(gameType: GameType, status: FilterStatus)
     func fetchCasterLists(gameType: GameType, status: FilterStatus)
     func fetchCreatorLists(gameType: GameType, status: FilterStatus)
+    func changedRankCategory(category: RankCategory)
     func tappedFilerSettingBtn()
     func tappedSearchBtn()
 }

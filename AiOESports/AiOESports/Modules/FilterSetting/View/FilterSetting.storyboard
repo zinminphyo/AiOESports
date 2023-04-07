@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCh-5C-p4g">
-                                <rect key="frame" x="0.0" y="552" width="393" height="300"/>
+                                <rect key="frame" x="0.0" y="502" width="393" height="350"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nye-t3-nLD">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -38,7 +38,7 @@
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="djM-Yf-6a4">
                                         <rect key="frame" x="0.0" y="50" width="393" height="200"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="8SA-0O-jzD"/>
                                         </constraints>
@@ -47,7 +47,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Nye-t3-nLD" firstAttribute="top" secondItem="oCh-5C-p4g" secondAttribute="top" id="5ct-fu-gU8"/>
-                                    <constraint firstAttribute="bottom" secondItem="djM-Yf-6a4" secondAttribute="bottom" constant="50" id="EMI-R6-F7n"/>
+                                    <constraint firstAttribute="bottom" secondItem="djM-Yf-6a4" secondAttribute="bottom" constant="100" id="EMI-R6-F7n"/>
                                     <constraint firstAttribute="trailing" secondItem="Nye-t3-nLD" secondAttribute="trailing" id="PjA-LQ-XZd"/>
                                     <constraint firstAttribute="trailing" secondItem="djM-Yf-6a4" secondAttribute="trailing" id="h8w-qN-AUL"/>
                                     <constraint firstItem="Nye-t3-nLD" firstAttribute="leading" secondItem="oCh-5C-p4g" secondAttribute="leading" id="lFu-9H-6An"/>

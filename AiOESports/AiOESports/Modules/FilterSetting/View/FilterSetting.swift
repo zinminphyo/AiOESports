@@ -14,6 +14,9 @@ class FilterSetting: UIViewController {
     @IBOutlet weak var filterSettingTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var filterTopView: UIView!
     @IBOutlet weak var filterTitleLabel: UILabel!
+    
+    var presenter: FilterSettingPresenting?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +61,7 @@ class FilterSetting: UIViewController {
         filterSettingTableView.dataSource = self
         filterSettingTableView.delegate = self
         filterSettingTableView.isScrollEnabled = false
-        filterSettingTableViewHeight.constant = FilterSettingTableViewCell.cellHeight * CGFloat(5)
+        filterSettingTableViewHeight.constant = FilterSettingTableViewCell.cellHeight * CGFloat(presenter?.getSettingCount() ?? 0)
         filterSettingTableView.allowsMultipleSelection = false
         filterSettingTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
     }
@@ -71,16 +74,27 @@ class FilterSetting: UIViewController {
 }
 
 
+// MARK: - Filter Setting View Delegate.
+extension FilterSetting: FilterSettingViewDelegate {
+    func updateFilterSetting() {
+        filterSettingTableView.reloadData()
+        filterSettingTableViewHeight.constant = FilterSettingTableViewCell.cellHeight * CGFloat(presenter?.getSettingCount() ?? 0)
+        self.view.layoutIfNeeded()
+    }
+}
+
+
 // MARK: - UITable View Delegate Conformance
 extension FilterSetting: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return presenter?.getSettingCount() ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FilterSettingTableViewCell.reuseIdentifier, for: indexPath) as? FilterSettingTableViewCell else {
             return UITableViewCell()
         }
         cell.set(isSelected: indexPath.row == 0)
+            .set(settingName: presenter?.getSettingTitle(index: indexPath.row) ?? "")
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

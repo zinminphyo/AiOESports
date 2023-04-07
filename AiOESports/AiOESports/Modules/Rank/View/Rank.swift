@@ -142,6 +142,7 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
         guard collectionView == categoryCollectionView else { return }
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
         cell.set(isSelected: true)
+        presenter?.changedRankCategory(category: RankCategory.allCases[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
