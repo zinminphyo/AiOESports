@@ -57,6 +57,10 @@ class RankPresenter: RankPresenting {
         router?.routeToSearch()
     }
     
+    func tappedRankItem() {
+        router?.routeToDetails()
+    }
+    
     func changedRankCategory(category: RankCategory) {
         self.selectedCategory = category
     }

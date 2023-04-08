@@ -18,4 +18,5 @@ protocol RankPresenting {
     func changedRankCategory(category: RankCategory)
     func tappedFilerSettingBtn()
     func tappedSearchBtn()
+    func tappedRankItem()
 }

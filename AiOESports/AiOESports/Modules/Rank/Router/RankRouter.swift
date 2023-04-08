@@ -24,4 +24,9 @@ class RankRouter: RankRouting {
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    func routeToDetails() {
+        guard let vc = DetailsModuel.createModule() else { return }
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

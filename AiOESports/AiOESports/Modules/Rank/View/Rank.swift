@@ -179,6 +179,10 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
         return indexPath.section == 0 ? 70 : 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.tappedRankItem()
+    }
+    
 }
 
 
