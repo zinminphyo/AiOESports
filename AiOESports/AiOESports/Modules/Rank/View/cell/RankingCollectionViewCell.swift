@@ -81,6 +81,7 @@ class RankingTableViewCell: UITableViewCell {
     private func configureTeamImageView() {
         containerView.addSubview(teamImageView)
         teamImageView.contentMode = .scaleAspectFill
+        teamImageView.clipsToBounds = true
         teamImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             teamImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
@@ -132,6 +133,15 @@ class RankingTableViewCell: UITableViewCell {
         teamNameLabel.text = teamName
         gameCategoryImageView.image = gameImage
         locationLabel.text = location
+        return self
+    }
+    
+    @discardableResult
+    func set(team: TeamObject) -> Self {
+        teamImageView.kf.setImage(with: URL(string: team.coverImageFullPath))
+        teamNameLabel.text = team.name
+        gameCategoryImageView.image = Images.TeamImages.gamecategorylogo
+        locationLabel.text = team.location
         return self
     }
     
