@@ -37,9 +37,9 @@ class SquadTableViewCell: UITableViewCell {
     private func configureHierarchy() {
         self.backgroundColor = Colors.Theme.inputColor
         mainImageView.layer.cornerRadius = 10
-        nameLabel.font = Fonts.titleFont
+        nameLabel.font = Fonts.ForCell.titleFont
         nameLabel.textColor = Colors.Text.primaryText
-        locationLabel.font = Fonts.subtitleFont
+        locationLabel.font = Fonts.ForCell.subtitleFont
         locationLabel.textColor = Colors.Text.primaryText
         nameLabel.text = "PVNDV"
         locationLabel.text = "Yangon"
