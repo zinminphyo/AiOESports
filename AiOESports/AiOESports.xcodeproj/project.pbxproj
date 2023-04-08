@@ -33,6 +33,11 @@
 		84725AC329E12BF8003658CD /* SquadModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AC229E12BF8003658CD /* SquadModule.swift */; };
 		84725AC729E12C95003658CD /* SquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AC529E12C95003658CD /* SquadTableViewCell.swift */; };
 		84725AC829E12C95003658CD /* SquadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84725AC629E12C95003658CD /* SquadTableViewCell.xib */; };
+		84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84725ACB29E16AE4003658CD /* Achivement.storyboard */; };
+		84725ACE29E16B0F003658CD /* Achivement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725ACD29E16B0F003658CD /* Achivement.swift */; };
+		84725AD029E16B2E003658CD /* AchivementModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725ACF29E16B2E003658CD /* AchivementModule.swift */; };
+		84725AD429E16BA5003658CD /* AchivementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AD229E16BA5003658CD /* AchivementTableViewCell.swift */; };
+		84725AD529E16BA5003658CD /* AchivementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84725AD329E16BA5003658CD /* AchivementTableViewCell.xib */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -151,6 +156,11 @@
 		84725AC229E12BF8003658CD /* SquadModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModule.swift; sourceTree = "<group>"; };
 		84725AC529E12C95003658CD /* SquadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadTableViewCell.swift; sourceTree = "<group>"; };
 		84725AC629E12C95003658CD /* SquadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadTableViewCell.xib; sourceTree = "<group>"; };
+		84725ACB29E16AE4003658CD /* Achivement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Achivement.storyboard; sourceTree = "<group>"; };
+		84725ACD29E16B0F003658CD /* Achivement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achivement.swift; sourceTree = "<group>"; };
+		84725ACF29E16B2E003658CD /* AchivementModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementModule.swift; sourceTree = "<group>"; };
+		84725AD229E16BA5003658CD /* AchivementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementTableViewCell.swift; sourceTree = "<group>"; };
+		84725AD329E16BA5003658CD /* AchivementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchivementTableViewCell.xib; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -384,6 +394,34 @@
 			children = (
 				84725AC529E12C95003658CD /* SquadTableViewCell.swift */,
 				84725AC629E12C95003658CD /* SquadTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84725AC929E16AC2003658CD /* Achivement */ = {
+			isa = PBXGroup;
+			children = (
+				84725ACA29E16AC9003658CD /* View */,
+				84725ACF29E16B2E003658CD /* AchivementModule.swift */,
+			);
+			path = Achivement;
+			sourceTree = "<group>";
+		};
+		84725ACA29E16AC9003658CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84725AD129E16B8B003658CD /* cell */,
+				84725ACB29E16AE4003658CD /* Achivement.storyboard */,
+				84725ACD29E16B0F003658CD /* Achivement.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84725AD129E16B8B003658CD /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84725AD229E16BA5003658CD /* AchivementTableViewCell.swift */,
+				84725AD329E16BA5003658CD /* AchivementTableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -780,6 +818,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84725AC929E16AC2003658CD /* Achivement */,
 				84725ABC29E12AF1003658CD /* Squad */,
 				84725AB429E120F4003658CD /* Details */,
 				84F5FAF529DEAE2600734CAE /* Search */,
@@ -938,6 +977,7 @@
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
 				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
+				84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
@@ -952,6 +992,7 @@
 				84725ABF29E12B18003658CD /* Squad.storyboard in Resources */,
 				84725AB729E1211F003658CD /* Details.storyboard in Resources */,
 				84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */,
+				84725AD529E16BA5003658CD /* AchivementTableViewCell.xib in Resources */,
 				84725AC829E12C95003658CD /* SquadTableViewCell.xib in Resources */,
 				84F602F129DC809A00250C25 /* FilterSettingTableViewCell.xib in Resources */,
 				84F6C5B529CA12E800D21EE2 /* Main.storyboard in Resources */,
@@ -1084,10 +1125,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */,
+				84725ACE29E16B0F003658CD /* Achivement.swift in Sources */,
 				84F5FAFC29DEB13A00734CAE /* SearchModule.swift in Sources */,
 				84F5FB1329DEC66700734CAE /* SearchPresenter.swift in Sources */,
 				84F602F729DC851400250C25 /* RankPresenter.swift in Sources */,
 				84725ABB29E12767003658CD /* DetailsModule.swift in Sources */,
+				84725AD429E16BA5003658CD /* AchivementTableViewCell.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */,
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
@@ -1133,6 +1176,7 @@
 				842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */,
 				842AE8CD29DB4B580036FF05 /* RankingCollectionViewCell.swift in Sources */,
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
+				84725AD029E16B2E003658CD /* AchivementModule.swift in Sources */,
 				8459D57B29DDBD4C00DDF266 /* NetworkError.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
