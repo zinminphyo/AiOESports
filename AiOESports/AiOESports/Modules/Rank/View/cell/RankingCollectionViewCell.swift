@@ -145,4 +145,13 @@ class RankingTableViewCell: UITableViewCell {
         return self
     }
     
+    @discardableResult
+    func set(presentable: RankPresentable) -> Self {
+        teamImageView.kf.setImage(with: URL(string: presentable.getImageURLPath()))
+        teamNameLabel.text = presentable.getName()
+        gameCategoryImageView.image = Images.TeamImages.gamecategorylogo
+        locationLabel.text = presentable.getLocation()
+        return self
+    }
+    
 }

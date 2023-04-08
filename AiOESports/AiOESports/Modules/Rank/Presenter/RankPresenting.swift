@@ -12,7 +12,7 @@ protocol RankPresenting {
     var router: RankRouting? { get set }
     var viewDelegate: RankViewDelegate? { get set }
     func fetchTeamLists(gameType: GameType, status: FilterStatus)
-    func fetchPlayerLists(gameType: GameType, status: FilterStatus)
+    func fetchPlayerLists(gameType: GameType, status: PlayerFilterStatus)
     func fetchCasterLists(gameType: GameType, status: FilterStatus)
     func fetchCreatorLists(gameType: GameType, status: FilterStatus)
     func changedRankCategory(category: RankCategory)

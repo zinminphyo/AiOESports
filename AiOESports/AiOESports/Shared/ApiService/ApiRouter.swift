@@ -12,6 +12,7 @@ import Alamofire
 enum ApiRouter: URLConvertible {
     
     case fetchTeamLists(_ gameType: GameType, _ filterStatus: FilterStatus,_ page: Int)
+    case fetchPlayerLists(_ gameType: GameType, _ filterStatus: PlayerFilterStatus, _ page: Int)
     case teamSearch(_ keyword: String)
     
     func asURL() throws -> URL {
@@ -30,6 +31,8 @@ enum ApiRouter: URLConvertible {
         switch self {
         case .fetchTeamLists:
             return "team"
+        case .fetchPlayerLists:
+            return "player"
         case  .teamSearch:
             return "team/search"
         }
@@ -41,7 +44,7 @@ enum ApiRouter: URLConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchTeamLists:
+        case .fetchTeamLists, .fetchPlayerLists:
             return URLEncoding.default
         case .teamSearch:
             return JSONEncoding.prettyPrinted
@@ -50,7 +53,7 @@ enum ApiRouter: URLConvertible {
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists:
             return nil
         }
     }
@@ -63,6 +66,12 @@ enum ApiRouter: URLConvertible {
                 "status" : filterstatus.value,
                 "page" : page
             ]
+        case let .fetchPlayerLists(gameType, filterStatus, page):
+            return [
+                "gameType" : gameType.value,
+                "status" : filterStatus.value,
+                "page" : page
+            ]
         case let .teamSearch(keyword):
             return [
                 "keyword" : keyword
@@ -73,6 +82,8 @@ enum ApiRouter: URLConvertible {
     var method: HTTPMethod {
         switch self {
         case .fetchTeamLists:
+            return .get
+        case .fetchPlayerLists:
             return .get
         case .teamSearch:
             return .post

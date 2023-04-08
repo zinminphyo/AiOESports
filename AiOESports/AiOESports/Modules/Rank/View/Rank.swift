@@ -18,7 +18,9 @@ class Rank: UIViewController {
     var presenter: RankPresenting?
     
     private var teamLists: [TeamObject] = []
+    private var playerLists: [PlayerObject] = []
     private var loadingLists: [String] = []
+    private var filterLists: [RankPresentable] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class Rank: UIViewController {
         // Do any additional setup after loading the view.
         configureHierarchy()
         
-        presenter?.fetchTeamLists(gameType: .All, status: .all)
+        presenter?.fetchPlayerLists(gameType: .All, status: .active)
     }
     
     private func configureHierarchy() {
@@ -109,7 +111,14 @@ extension Rank: RankViewDelegate {
         }
         self.tableView.insertRows(at: toInsertIndexPaths, with: .fade)
          */
+//        self.filterLists = teamLists
         self.teamLists = teamLists
+        self.tableView.reloadSections([0], with: .fade)
+    }
+    
+    func renderPlayerLists(playerLists: [PlayerObject]) {
+        self.filterLists = playerLists
+//        self.playerLists = playerLists
         self.tableView.reloadSections([0], with: .fade)
     }
     
@@ -131,6 +140,11 @@ extension Rank: RankViewDelegate {
          */
         self.loadingLists = loadingLists
         self.tableView.reloadData()
+    }
+    
+    func renderRankLists(lists: [RankPresentable]) {
+        self.filterLists = lists
+        self.tableView.reloadSections([0], with: .fade)
     }
     
     func renderError(error: String) {
@@ -187,7 +201,7 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return teamLists.count
+            return filterLists.count
         } else {
             return loadingLists.count
         }
@@ -197,7 +211,8 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as? RankingTableViewCell else {
                 return UITableViewCell()
             }
-            cell.set(team: teamLists[indexPath.row])
+//            cell.set(team: teamLists[indexPath.row])
+            cell.set(presentable: filterLists[indexPath.row])
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as? LoadingTableViewCell else { return UITableViewCell() }

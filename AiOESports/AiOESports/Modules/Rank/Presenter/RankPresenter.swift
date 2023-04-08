@@ -15,6 +15,7 @@ class RankPresenter: RankPresenting {
     var viewDelegate: RankViewDelegate?
     
     private var teamLists: [TeamObject] = []
+    private var rankLists: [RankPresentable] = []
     
     private var selectedCategory: RankCategory = .team
     private var currentPage: Int = 1
@@ -43,8 +44,28 @@ class RankPresenter: RankPresenting {
         }
     }
     
-    func fetchPlayerLists(gameType: GameType, status: FilterStatus) {
-        
+    func fetchPlayerLists(gameType: GameType, status: PlayerFilterStatus) {
+        if self.currentPage == 1 {
+            viewDelegate?.showLoading()
+        }
+        let router = ApiRouter.fetchPlayerLists(gameType, status, currentPage)
+        NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<PlayerObject>,NetworkError>) in
+            switch result {
+            case .success(let success):
+                if success.pagination.currentPage == 1 {
+                    self.rankLists = success.data
+                } else {
+                    self.rankLists.append(contentsOf: success.data)
+                }
+                self.currentPage = success.pagination.currentPage + 1
+                self.viewDelegate?.renderRankLists(lists: self.rankLists)
+                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.viewDelegate?.hideLoading()
+            case .failure(let failure):
+                self.viewDelegate?.renderError(error: failure.localizedDescription)
+                self.viewDelegate?.hideLoading()
+            }
+        }
     }
     
     func fetchCasterLists(gameType: GameType, status: FilterStatus) {
