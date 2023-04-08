@@ -14,7 +14,7 @@ struct PlayerSearchResultModel: Decodable {
     let id: Int
     let playerImage: String
     var playerImageFullURL: String {
-        return ApiRouter.fetchTeamLists(.MobileLegend, .active).baseURL + "/" + playerImage
+        return ApiRouter.fetchTeamLists(.MobileLegend, .active, 0).baseURL + "/" + playerImage
     }
     let game: String
     let fullName: String?

@@ -26,7 +26,7 @@ class Rank: UIViewController {
         // Do any additional setup after loading the view.
         configureHierarchy()
         
-        presenter?.fetchTeamLists(gameType: .All, status: .active)
+        presenter?.fetchTeamLists(gameType: .All, status: .all)
     }
     
     private func configureHierarchy() {
@@ -94,13 +94,43 @@ class Rank: UIViewController {
 extension Rank: RankViewDelegate {
     
     func renderTeamLists(teamLists: [TeamObject]) {
+        /*
+        let toDeleteIndexs = self.teamLists.indices
+        var toDeleteIndexPaths: [IndexPath] = []
+        for i in toDeleteIndexs {
+            toDeleteIndexPaths.append(IndexPath(row: i, section: 0))
+        }
+        self.teamLists = []
+        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .fade)
         self.teamLists = teamLists
-        self.tableView.reloadSections([0], with: .automatic)
+        var toInsertIndexPaths: [IndexPath] = []
+        for index in 0..<teamLists.count {
+            toInsertIndexPaths.append(IndexPath(row: index, section: 0))
+        }
+        self.tableView.insertRows(at: toInsertIndexPaths, with: .fade)
+         */
+        self.teamLists = teamLists
+        self.tableView.reloadSections([0], with: .fade)
     }
     
     func renderLoadingLists(loadingLists: [String]) {
+        /*
+        let toDeleteIndexs = self.loadingLists.indices
+        var toDeleteIndexPaths: [IndexPath] = []
+        for i in toDeleteIndexs {
+            toDeleteIndexPaths.append(IndexPath(row: i, section: 1))
+        }
+        self.loadingLists = []
+        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .fade)
         self.loadingLists = loadingLists
-        self.tableView.reloadSections([1], with: .automatic)
+        var toInsertIndexPaths: [IndexPath] = []
+        for index in 0..<loadingLists.count {
+            toInsertIndexPaths.append(IndexPath(row: index, section: 1))
+        }
+        self.tableView.insertRows(at: toInsertIndexPaths, with: .top)
+         */
+        self.loadingLists = loadingLists
+        self.tableView.reloadData()
     }
     
     func renderError(error: String) {
@@ -183,6 +213,10 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
         presenter?.tappedRankItem()
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let _ = cell as? LoadingTableViewCell, indexPath.section == 1 else { return }
+        presenter?.fetchTeamLists(gameType: .All, status: .all)
+    }
 }
 
 

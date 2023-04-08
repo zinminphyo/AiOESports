@@ -17,24 +17,30 @@ class RankPresenter: RankPresenting {
     private var teamLists: [TeamObject] = []
     
     private var selectedCategory: RankCategory = .team
+    private var currentPage: Int = 1
     
     func fetchTeamLists(gameType: GameType, status: FilterStatus) {
-        viewDelegate?.showLoading()
-        let router = ApiRouter.fetchTeamLists(gameType, status)
+        if self.currentPage == 1 {
+            viewDelegate?.showLoading()
+        }
+        let router = ApiRouter.fetchTeamLists(gameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<TeamObject>,NetworkError>) in
             switch result {
             case .success(let success):
-                self.teamLists = success.data
+                if success.pagination.currentPage == 1 {
+                    self.teamLists = success.data
+                } else {
+                    self.teamLists.append(contentsOf: success.data)
+                }
                 self.viewDelegate?.renderTeamLists(teamLists: self.teamLists)
-                self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"])
+                self.currentPage = success.pagination.currentPage + 1
+                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
                 self.viewDelegate?.hideLoading()
             case .failure(let failure):
                 self.viewDelegate?.renderError(error: failure.localizedDescription)
                 self.viewDelegate?.hideLoading()
             }
         }
-         
-//        self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"])
     }
     
     func fetchPlayerLists(gameType: GameType, status: FilterStatus) {

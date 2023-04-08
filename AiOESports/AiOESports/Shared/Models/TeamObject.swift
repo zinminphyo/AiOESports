@@ -14,10 +14,10 @@ struct TeamObject: Codable {
     
     let id: Int
     let name: String
-    let teamImage: String
+    let teamImage: String?
     let coverImage: String?
     var coverImageFullPath: String {
-        return ApiRouter.fetchTeamLists(.All, .active).baseURL + "/" + (coverImage ?? "")
+        return ApiRouter.fetchTeamLists(.All, .active, 0).baseURL + "/" + (coverImage ?? "")
     }
     let game: String
     let city: String
