@@ -38,7 +38,9 @@ class SquadTableViewCell: UITableViewCell {
         self.backgroundColor = Colors.Theme.inputColor
         mainImageView.layer.cornerRadius = 10
         nameLabel.font = Fonts.titleFont
+        nameLabel.textColor = Colors.Text.primaryText
         locationLabel.font = Fonts.subtitleFont
+        locationLabel.textColor = Colors.Text.primaryText
         nameLabel.text = "PVNDV"
         locationLabel.text = "Yangon"
         countryImageView.image = Images.countryImage

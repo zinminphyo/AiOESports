@@ -26,7 +26,7 @@ class Squad: UIViewController {
     }
     
     private func configureContainerView() {
-        self.view.backgroundColor = Colors.Theme.inputColor
+        self.view.backgroundColor = Colors.Theme.mainColor
     }
     
     private func configureTableView() {
@@ -34,6 +34,8 @@ class Squad: UIViewController {
         squadTableView.dataSource = self
         squadTableView.delegate = self
         squadTableView.separatorStyle = .none
+        squadTableView.showsVerticalScrollIndicator = false
+        squadTableView.showsHorizontalScrollIndicator = false
     }
 
 }
@@ -52,13 +54,43 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SquadTableViewCell.cellHeight
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: squadTableView.frame.width, height: 60))
+        let label = UILabel(frame: .zero)
+        view.addSubview(label)
+        label.font = Fonts.subtitleFont
+        label.textColor = Colors.Text.primaryText
         if section == 0 {
-            return "Head Coach".uppercased()
+            label.text = "Head Coach".uppercased()
         } else if section == 1 {
-            return "Assistant Coach".uppercased()
+            label.text = "Assistant Coach".uppercased()
         } else {
-            return "Rosters".uppercased()
+            label.text = "Rosters".uppercased()
         }
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
+        ])
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.layer.cornerRadius = 10
+        view.backgroundColor = Colors.Theme.inputColor
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: squadTableView.frame.width, height: 10))
+        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        view.layer.cornerRadius = 10
+        view.backgroundColor = Colors.Theme.inputColor
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
 }

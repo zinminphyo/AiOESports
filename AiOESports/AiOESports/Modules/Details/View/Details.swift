@@ -9,6 +9,7 @@ import UIKit
 
 class Details: UIViewController {
     
+    @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
 
     override func viewDidLoad() {
@@ -21,7 +22,18 @@ class Details: UIViewController {
     
 
     private func configureHierarchy() {
+        configureContainerView()
+        configureContainerScrollView()
         configureContentScrollView()
+    }
+    
+    private func configureContainerView() {
+        self.view.backgroundColor = Colors.Theme.mainColor
+    }
+    
+    private func configureContainerScrollView() {
+        self.containerScrollView.showsVerticalScrollIndicator = false
+        self.containerScrollView.showsHorizontalScrollIndicator = false
     }
     
     private func configureContentScrollView() {

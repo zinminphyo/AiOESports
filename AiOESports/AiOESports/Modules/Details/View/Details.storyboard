@@ -102,6 +102,7 @@
                                                     </collectionView>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIk-b1-A2T">
                                                         <rect key="frame" x="0.0" y="50" width="393" height="683.33333333333337"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </scrollView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -151,6 +152,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerScrollView" destination="ywY-sY-uXS" id="RkB-ak-n6z"/>
                         <outlet property="contentScrollView" destination="AIk-b1-A2T" id="bOu-Xc-PSr"/>
                     </connections>
                 </viewController>
