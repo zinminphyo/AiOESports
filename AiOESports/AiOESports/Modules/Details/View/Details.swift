@@ -11,6 +11,8 @@ class Details: UIViewController {
     
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
+    
+    var presenter: DetailsPresenting?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class Details: UIViewController {
         // Do any additional setup after loading the view.
         
         configureHierarchy()
+        
+        presenter?.fetchDetails(id: 4)
     }
     
 
@@ -76,4 +80,11 @@ class Details: UIViewController {
         }
     }
 
+}
+
+
+extension Details: DetailsViewDelegate {
+    func renderDetails(details: TeamDetails) {
+        
+    }
 }

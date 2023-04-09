@@ -14,6 +14,9 @@ enum DetailsModuel {
         let st = UIStoryboard(name: "Details", bundle: .main)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Details.self)) as? Details else { return nil }
         vc.hidesBottomBarWhenPushed = true
+        let presenter = DetailsPresenter()
+        presenter.viewDelegate = vc
+        vc.presenter = presenter
         return vc
     }
 }
