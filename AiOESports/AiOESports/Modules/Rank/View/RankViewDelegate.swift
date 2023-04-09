@@ -15,6 +15,7 @@ protocol RankViewDelegate {
     func renderPlayerLists(playerLists: [PlayerObject])
     func renderRankLists(lists: [RankPresentable])
     func renderLoadingLists(loadingLists: [String])
+    func renderCoverImage(url: String)
     func renderError(error: String)
     func showLoading()
     func hideLoading()

@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import Kingfisher
 
 class Rank: UIViewController {
     
@@ -96,48 +97,16 @@ class Rank: UIViewController {
 extension Rank: RankViewDelegate {
     
     func renderTeamLists(teamLists: [TeamObject]) {
-        /*
-        let toDeleteIndexs = self.teamLists.indices
-        var toDeleteIndexPaths: [IndexPath] = []
-        for i in toDeleteIndexs {
-            toDeleteIndexPaths.append(IndexPath(row: i, section: 0))
-        }
-        self.teamLists = []
-        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .fade)
-        self.teamLists = teamLists
-        var toInsertIndexPaths: [IndexPath] = []
-        for index in 0..<teamLists.count {
-            toInsertIndexPaths.append(IndexPath(row: index, section: 0))
-        }
-        self.tableView.insertRows(at: toInsertIndexPaths, with: .fade)
-         */
-//        self.filterLists = teamLists
         self.teamLists = teamLists
         self.tableView.reloadSections([0], with: .fade)
     }
     
     func renderPlayerLists(playerLists: [PlayerObject]) {
         self.filterLists = playerLists
-//        self.playerLists = playerLists
         self.tableView.reloadSections([0], with: .fade)
     }
     
     func renderLoadingLists(loadingLists: [String]) {
-        /*
-        let toDeleteIndexs = self.loadingLists.indices
-        var toDeleteIndexPaths: [IndexPath] = []
-        for i in toDeleteIndexs {
-            toDeleteIndexPaths.append(IndexPath(row: i, section: 1))
-        }
-        self.loadingLists = []
-        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .fade)
-        self.loadingLists = loadingLists
-        var toInsertIndexPaths: [IndexPath] = []
-        for index in 0..<loadingLists.count {
-            toInsertIndexPaths.append(IndexPath(row: index, section: 1))
-        }
-        self.tableView.insertRows(at: toInsertIndexPaths, with: .top)
-         */
         self.loadingLists = loadingLists
         self.tableView.reloadData()
     }
@@ -145,6 +114,10 @@ extension Rank: RankViewDelegate {
     func renderRankLists(lists: [RankPresentable]) {
         self.filterLists = lists
         self.tableView.reloadSections([0], with: .fade)
+    }
+    
+    func renderCoverImage(url: String) {
+        tableView.tableHeaderView = createTableHeaderView(url: url)
     }
     
     func renderError(error: String) {
@@ -211,7 +184,6 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as? RankingTableViewCell else {
                 return UITableViewCell()
             }
-//            cell.set(team: teamLists[indexPath.row])
             cell.set(presentable: filterLists[indexPath.row])
             return cell
         } else {
@@ -232,11 +204,31 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
         guard let _ = cell as? LoadingTableViewCell, indexPath.section == 1 else { return }
         presenter?.continuePagination()
     }
+    
 }
 
 
 extension Rank: FilterSettingDelegate {
     func didFinishedSelectionSetting(filterName: String) {
         print("FilterName is \(filterName)")
+    }
+}
+
+
+extension Rank {
+    private func createTableHeaderView(url: String) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.width * 0.5))
+        view.backgroundColor = UIColor.clear
+        let imgView = UIImageView(frame: .zero)
+        imgView.kf.setImage(with: URL(string: url))
+        view.addSubview(imgView)
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            imgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            imgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            imgView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        ])
+        return view
     }
 }

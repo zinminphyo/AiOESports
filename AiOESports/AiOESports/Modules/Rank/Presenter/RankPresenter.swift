@@ -30,6 +30,7 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
+                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullPath ?? "")
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
@@ -54,6 +55,7 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
+                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullURL ?? "")
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
@@ -78,6 +80,7 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
+                    self.viewDelegate?.renderCoverImage(url: success.data.last?.coverImageFullPath ?? "")
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
@@ -102,6 +105,7 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
+                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullURL ?? "")
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }

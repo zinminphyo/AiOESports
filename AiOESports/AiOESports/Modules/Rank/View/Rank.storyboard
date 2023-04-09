@@ -110,26 +110,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iud-Nv-2i6">
-                                <rect key="frame" x="8" y="219" width="377" height="599"/>
+                                <rect key="frame" x="8" y="227" width="377" height="591"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WrP-vQ-648">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="FLa-gt-7iq"/>
-                                        </constraints>
-                                    </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-kh-Awu">
-                                        <rect key="frame" x="0.0" y="150" width="377" height="449"/>
+                                        <rect key="frame" x="0.0" y="8" width="377" height="583"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="WrP-vQ-648" secondAttribute="trailing" id="8H6-EM-ZNU"/>
-                                    <constraint firstItem="yEh-kh-Awu" firstAttribute="top" secondItem="WrP-vQ-648" secondAttribute="bottom" id="NkS-N6-yaQ"/>
-                                    <constraint firstItem="WrP-vQ-648" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" id="W70-Fk-zwQ"/>
+                                    <constraint firstItem="yEh-kh-Awu" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" constant="8" id="5vz-QB-5Dd"/>
                                     <constraint firstAttribute="trailing" secondItem="yEh-kh-Awu" secondAttribute="trailing" id="et1-e7-jB3"/>
-                                    <constraint firstItem="WrP-vQ-648" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="fqh-Vx-lfU"/>
                                     <constraint firstItem="yEh-kh-Awu" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="ozz-jd-LYe"/>
                                     <constraint firstAttribute="bottom" secondItem="yEh-kh-Awu" secondAttribute="bottom" id="pYT-Ho-5tl"/>
                                 </constraints>
@@ -146,7 +137,7 @@
                             <constraint firstItem="opf-qe-sgg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UjK-WY-Jrs"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iud-Nv-2i6" secondAttribute="bottom" id="aYo-OL-iNT"/>
                             <constraint firstItem="opf-qe-sgg" firstAttribute="top" secondItem="caH-td-oZX" secondAttribute="bottom" id="dxe-So-UEQ"/>
-                            <constraint firstItem="iud-Nv-2i6" firstAttribute="top" secondItem="opf-qe-sgg" secondAttribute="bottom" id="f5O-lc-NcA"/>
+                            <constraint firstItem="iud-Nv-2i6" firstAttribute="top" secondItem="opf-qe-sgg" secondAttribute="bottom" constant="8" id="f5O-lc-NcA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="caH-td-oZX" secondAttribute="trailing" id="h8o-YL-xXC"/>
                             <constraint firstItem="u2b-YK-7eV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jJa-fA-WZB"/>
                             <constraint firstItem="iud-Nv-2i6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="lXC-Jl-cNW"/>
