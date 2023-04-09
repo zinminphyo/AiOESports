@@ -16,7 +16,10 @@ protocol RankPresenting {
     func fetchCasterLists(gameType: GameType, status: FilterStatus)
     func fetchCreatorLists(gameType: GameType, status: FilterStatus)
     func changedRankCategory(category: RankCategory)
+    func continuePagination()
     func tappedFilerSettingBtn()
     func tappedSearchBtn()
     func tappedRankItem()
+    func resetPagination()
+    func resetData()
 }

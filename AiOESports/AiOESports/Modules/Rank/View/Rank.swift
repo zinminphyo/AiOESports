@@ -28,7 +28,7 @@ class Rank: UIViewController {
         // Do any additional setup after loading the view.
         configureHierarchy()
         
-        presenter?.fetchPlayerLists(gameType: .All, status: .active)
+        presenter?.fetchTeamLists(gameType: .All, status: .all)
     }
     
     private func configureHierarchy() {
@@ -230,7 +230,7 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let _ = cell as? LoadingTableViewCell, indexPath.section == 1 else { return }
-        presenter?.fetchTeamLists(gameType: .All, status: .all)
+        presenter?.continuePagination()
     }
 }
 

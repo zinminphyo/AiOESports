@@ -32,3 +32,26 @@ struct TeamObject: Codable {
         case sortNo = "sort_no"
     }
 }
+
+
+// MARK: - Rank Presentable.
+extension TeamObject: RankPresentable {
+    
+    func getImageURLPath() -> String {
+        return coverImageFullPath
+    }
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getGameType() -> String {
+        return game
+    }
+    
+    func getLocation() -> String {
+        return location
+    }
+    
+    
+}

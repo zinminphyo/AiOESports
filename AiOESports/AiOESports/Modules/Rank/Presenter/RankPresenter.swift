@@ -29,11 +29,11 @@ class RankPresenter: RankPresenting {
             switch result {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
-                    self.teamLists = success.data
+                    self.rankLists = success.data
                 } else {
-                    self.teamLists.append(contentsOf: success.data)
+                    self.rankLists.append(contentsOf: success.data)
                 }
-                self.viewDelegate?.renderTeamLists(teamLists: self.teamLists)
+                self.viewDelegate?.renderRankLists(lists: self.rankLists)
                 self.currentPage = success.pagination.currentPage + 1
                 success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
                 self.viewDelegate?.hideLoading()
@@ -76,6 +76,19 @@ class RankPresenter: RankPresenting {
         
     }
     
+    func continuePagination() {
+        switch selectedCategory {
+        case .team:
+            fetchTeamLists(gameType: .All, status: .all)
+        case .player:
+            fetchPlayerLists(gameType: .All, status: .active)
+        case .caster:
+            fetchTeamLists(gameType: .All, status: .active)
+        case .creator:
+            fetchPlayerLists(gameType: .All, status: .active)
+        }
+    }
+    
     func tappedFilerSettingBtn() {
         router?.routeToFilterSettings(category: selectedCategory)
     }
@@ -89,8 +102,30 @@ class RankPresenter: RankPresenting {
     }
     
     func changedRankCategory(category: RankCategory) {
+        guard category != self.selectedCategory else { return }
+        self.resetPagination()
+        self.resetData()
         self.selectedCategory = category
+        switch category {
+        case .team:
+            self.fetchTeamLists(gameType: .All, status: .all)
+        case .player:
+            self.fetchPlayerLists(gameType: .All, status: .active)
+        case .caster:
+            self.fetchTeamLists(gameType: .All, status: .all)
+        case .creator:
+            self.fetchPlayerLists(gameType: .All, status: .active)
+        }
     }
+    
+    func resetPagination() {
+        self.currentPage = 1
+    }
+    
+    func resetData() {
+        self.rankLists = []
+    }
+    
 }
 
 
