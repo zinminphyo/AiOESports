@@ -107,13 +107,48 @@ extension Rank: RankViewDelegate {
     }
     
     func renderLoadingLists(loadingLists: [String]) {
+        /*
+        var toDeleteIndexPaths: [IndexPath] = []
+        self.loadingLists.indices.forEach{
+            toDeleteIndexPaths.append(IndexPath(row: $0, section: 1))
+        }
+        self.loadingLists.removeAll()
+        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .automatic)
+        
+        var toInsertIndexPaths: [IndexPath] = []
+        loadingLists.indices.forEach{
+            toInsertIndexPaths.append(IndexPath(row: $0, section: 1))
+        }
+        
         self.loadingLists = loadingLists
-        self.tableView.reloadData()
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: toInsertIndexPaths, with: .automatic)
+        self.tableView.endUpdates()
+         */
+        self.loadingLists = loadingLists
+        self.tableView.reloadSections([1], with: .none)
     }
     
     func renderRankLists(lists: [RankPresentable]) {
+        /*
+        var toDeleteIndexPaths: [IndexPath] = []
+        filterLists.indices.forEach {
+            toDeleteIndexPaths.append(IndexPath(row: $0, section: 0))
+        }
+        filterLists.removeAll()
+        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .automatic)
+        
+        var toInsertIndexPaths: [IndexPath] = []
+        lists.indices.forEach{
+            toInsertIndexPaths.append(IndexPath(row: $0, section: 0))
+        }
         self.filterLists = lists
-        self.tableView.reloadSections([0], with: .fade)
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: toInsertIndexPaths, with: .automatic)
+        self.tableView.endUpdates()
+         */
+        self.filterLists = lists
+        self.tableView.reloadSections([0], with: .none)
     }
     
     func renderCoverImage(url: String) {
