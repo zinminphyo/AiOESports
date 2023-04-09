@@ -50,7 +50,7 @@ extension TeamObject: RankPresentable {
     }
     
     func getLocation() -> String {
-        return location
+        return city
     }
     
     

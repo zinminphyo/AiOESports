@@ -49,7 +49,7 @@ extension PlayerObject: RankPresentable {
     }
     
     func getLocation() -> String {
-        return location ?? "Location"
+        return city ?? "Location"
     }
     
 }

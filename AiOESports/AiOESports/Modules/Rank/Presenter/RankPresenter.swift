@@ -69,11 +69,50 @@ class RankPresenter: RankPresenting {
     }
     
     func fetchCasterLists(gameType: GameType, status: FilterStatus) {
-        
+        if self.currentPage == 1 {
+            viewDelegate?.showLoading()
+        }
+        let router = ApiRouter.fetchCasterLists(gameType, status, currentPage)
+        NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<CasterObject>,NetworkError>) in
+            switch result {
+            case .success(let success):
+                if success.pagination.currentPage == 1 {
+                    self.rankLists = success.data
+                } else {
+                    self.rankLists.append(contentsOf: success.data)
+                }
+                self.currentPage = success.pagination.currentPage + 1
+                self.viewDelegate?.renderRankLists(lists: self.rankLists)
+                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.viewDelegate?.hideLoading()
+            case .failure(let failure):
+                self.viewDelegate?.renderError(error: failure.localizedDescription)
+                self.viewDelegate?.hideLoading()
+            }
+        }
     }
     
     func fetchCreatorLists(gameType: GameType, status: FilterStatus) {
-        
+        if self.currentPage == 1 {
+            viewDelegate?.showLoading()
+        }
+        let router = ApiRouter.fetchCreatorLists(gameType, status, currentPage)
+        NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<CreatorObject>, NetworkError>) in
+            switch result {
+            case .success(let success):
+                if success.pagination.currentPage == 1 {
+                    self.rankLists = success.data
+                } else {
+                    self.rankLists.append(contentsOf: success.data)
+                }
+                self.viewDelegate?.renderRankLists(lists: self.rankLists)
+                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.viewDelegate?.hideLoading()
+            case .failure(let failure):
+                self.viewDelegate?.renderError(error: failure.localizedDescription)
+                self.viewDelegate?.hideLoading()
+            }
+        }
     }
     
     func continuePagination() {
@@ -83,9 +122,9 @@ class RankPresenter: RankPresenting {
         case .player:
             fetchPlayerLists(gameType: .All, status: .active)
         case .caster:
-            fetchTeamLists(gameType: .All, status: .active)
+            fetchCasterLists(gameType: .All, status: .active)
         case .creator:
-            fetchPlayerLists(gameType: .All, status: .active)
+            fetchCreatorLists(gameType: .All, status: .active)
         }
     }
     
@@ -112,9 +151,9 @@ class RankPresenter: RankPresenting {
         case .player:
             self.fetchPlayerLists(gameType: .All, status: .active)
         case .caster:
-            self.fetchTeamLists(gameType: .All, status: .all)
+            self.fetchCasterLists(gameType: .All, status: .active)
         case .creator:
-            self.fetchPlayerLists(gameType: .All, status: .active)
+            self.fetchCreatorLists(gameType: .All, status: .active)
         }
     }
     

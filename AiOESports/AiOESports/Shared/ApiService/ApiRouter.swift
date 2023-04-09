@@ -13,6 +13,8 @@ enum ApiRouter: URLConvertible {
     
     case fetchTeamLists(_ gameType: GameType, _ filterStatus: FilterStatus,_ page: Int)
     case fetchPlayerLists(_ gameType: GameType, _ filterStatus: PlayerFilterStatus, _ page: Int)
+    case fetchCreatorLists(_ gameType: GameType, _ filterStatus: FilterStatus, _ page: Int)
+    case fetchCasterLists(_ gameType: GameType, _ filterStatus: FilterStatus, _ page: Int)
     case teamSearch(_ keyword: String)
     
     func asURL() throws -> URL {
@@ -20,7 +22,8 @@ enum ApiRouter: URLConvertible {
     }
     
     var baseURL: String {
-        return "https://40ff4fbc07a9ea57c3758da089c572b1.aioesports.com"
+//        return "https://40ff4fbc07a9ea57c3758da089c572b1.aioesports.com"
+        return NetworkBaseURLs.shared.baseURL
     }
     
     var api: String {
@@ -33,6 +36,10 @@ enum ApiRouter: URLConvertible {
             return "team"
         case .fetchPlayerLists:
             return "player"
+        case .fetchCreatorLists:
+            return "creator"
+        case .fetchCasterLists:
+            return "caster"
         case  .teamSearch:
             return "team/search"
         }
@@ -44,7 +51,7 @@ enum ApiRouter: URLConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchTeamLists, .fetchPlayerLists:
+        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists :
             return URLEncoding.default
         case .teamSearch:
             return JSONEncoding.prettyPrinted
@@ -53,7 +60,7 @@ enum ApiRouter: URLConvertible {
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists:
             return nil
         }
     }
@@ -72,6 +79,18 @@ enum ApiRouter: URLConvertible {
                 "status" : filterStatus.value,
                 "page" : page
             ]
+        case let .fetchCasterLists(gameType, status, page):
+            return [
+                "gameType" : gameType.value,
+                "status" : status.value,
+                "page" : page
+            ]
+        case let .fetchCreatorLists(gameType, status, page):
+            return [
+                "gameType" : gameType.value,
+                "status" : status.value,
+                "page" : page
+            ]
         case let .teamSearch(keyword):
             return [
                 "keyword" : keyword
@@ -84,6 +103,10 @@ enum ApiRouter: URLConvertible {
         case .fetchTeamLists:
             return .get
         case .fetchPlayerLists:
+            return .get
+        case .fetchCasterLists:
+            return .get
+        case .fetchCreatorLists:
             return .get
         case .teamSearch:
             return .post
