@@ -103,78 +103,36 @@ import Foundation
 
 struct TeamDetails: Decodable {
     
-    let headcoach: Coach?
-    let asistcoach: Coach?
-    let technicaldirector: Coach?
-    let analyst: Coach?
-    let roster: [Roster]
-    
+    let detail: TeamDetailsModel
+    let social: [SocialModel]
+    let squad: SquadModel
+    let achivemets: [AchivementModel]
+    let sponsors: [SponsorModel]
+    let formerPlayers: [FormerPlayerModel]
     
     enum CodingKeys: String, CodingKey {
-        case headcoach, asistcoach, technicaldirector, analyst, roster
+        case squad = "player"
+        case achivements = "achieve"
+        case sponsors = "sponsor"
+        case formerPlayers = "former_player"
         case result
         case data
-        case player
+        case stats
+        case detail
+        case social
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let resultContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let dataContainer = try resultContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
-        let playerContainer = try dataContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .player)
-        headcoach = try playerContainer.decodeIfPresent(Coach.self, forKey: .headcoach)
-        asistcoach = try playerContainer.decodeIfPresent(Coach.self, forKey: .headcoach)
-        technicaldirector = try playerContainer.decodeIfPresent(Coach.self, forKey: .technicaldirector)
-        analyst = try playerContainer.decodeIfPresent(Coach.self, forKey: .analyst)
-        roster = try playerContainer.decodeIfPresent([Roster].self, forKey: .roster) ?? []
+        squad = try dataContainer.decode(SquadModel.self, forKey: .squad)
+        achivemets = try dataContainer.decodeIfPresent([AchivementModel].self, forKey: .achivements) ?? []
+        sponsors = try dataContainer.decodeIfPresent([SponsorModel].self, forKey: .sponsors) ?? []
+        formerPlayers = try dataContainer.decodeIfPresent([FormerPlayerModel].self, forKey: .formerPlayers) ?? []
+        
+        let statsContainer = try dataContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .stats)
+        detail = try statsContainer.decode(TeamDetailsModel.self, forKey: .detail)
+        social = try statsContainer.decodeIfPresent([SocialModel].self, forKey: .social) ?? []
     }
-    
-    struct Coach: Decodable {
-        let id: Int
-        let teamID, talent, name, status: String?
-        let fullName, birthday, location, city: String?
-        let bio, game, role, playerImage: String?
-        let coverImage, sortNo, visable: String?
-        let createdAt: String
-        let updatedAt: String
-        
-        var playerImageFullURL: String {
-            return NetworkBaseURLs.shared.baseURL + "/" + (playerImage ?? "")
-        }
-        
-        var coverImageFullURL: String {
-            return NetworkBaseURLs.shared.baseURL + "/" + (coverImage ?? "")
-        }
-        
-        enum CodingKeys: String, CodingKey {
-            case id
-            case teamID = "team_id"
-            case talent, name, status
-            case fullName = "full_name"
-            case birthday, location, city, bio, game, role
-            case playerImage = "player_image"
-            case coverImage = "cover_image"
-            case sortNo = "sort_no"
-            case visable
-            case createdAt = "created_at"
-            case updatedAt = "updated_at"
-        }
-    }
-    
-    struct Roster: Decodable {
-        let id: Int
-        let name, talent, playerImage, game: String?
-        let location, city: String?
-        
-        var playerImageFullURL: String {
-            return NetworkBaseURLs.shared.baseURL + "/" + (playerImage ?? "")
-        }
-        
-        enum CodingKeys: String, CodingKey {
-            case id, name, talent
-            case playerImage = "player_image"
-            case game, location, city
-        }
-    }
-    
 }
