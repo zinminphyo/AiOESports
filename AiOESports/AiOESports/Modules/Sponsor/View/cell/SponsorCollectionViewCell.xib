@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SponsorCollectionViewCell" id="gTV-IL-0wX" customClass="SponsorCollectionViewCell" customModule="AiOESports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="118"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="190" height="118"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40g-bX-k04">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="118"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJI-M5-l1d">
+                                <rect key="frame" x="8" y="8" width="174" height="81.333333333333329"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="185-8G-ZAa">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="81.333333333333329"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="185-8G-ZAa" firstAttribute="leading" secondItem="uJI-M5-l1d" secondAttribute="leading" id="4dX-1Q-gZg"/>
+                                    <constraint firstItem="185-8G-ZAa" firstAttribute="top" secondItem="uJI-M5-l1d" secondAttribute="top" id="JNA-7x-6SG"/>
+                                    <constraint firstAttribute="width" secondItem="uJI-M5-l1d" secondAttribute="height" multiplier="3:1.4" id="dw0-ql-ADh"/>
+                                    <constraint firstAttribute="trailing" secondItem="185-8G-ZAa" secondAttribute="trailing" id="jqY-UD-9pk"/>
+                                    <constraint firstAttribute="bottom" secondItem="185-8G-ZAa" secondAttribute="bottom" id="l7Y-f0-Q1i"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-jw-w9o">
+                                <rect key="frame" x="74" y="94.333333333333329" width="42" height="18.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="PrimaryText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TO1-jw-w9o" secondAttribute="bottom" constant="5" id="4nk-Xf-y35"/>
+                            <constraint firstItem="TO1-jw-w9o" firstAttribute="centerX" secondItem="40g-bX-k04" secondAttribute="centerX" id="HrN-Hx-k8l"/>
+                            <constraint firstItem="TO1-jw-w9o" firstAttribute="top" secondItem="uJI-M5-l1d" secondAttribute="bottom" constant="5" id="WEL-4W-gt8"/>
+                            <constraint firstItem="uJI-M5-l1d" firstAttribute="top" secondItem="40g-bX-k04" secondAttribute="top" constant="8" id="ceT-qB-5wg"/>
+                            <constraint firstItem="uJI-M5-l1d" firstAttribute="leading" secondItem="40g-bX-k04" secondAttribute="leading" constant="8" id="lfD-hb-LXs"/>
+                            <constraint firstAttribute="trailing" secondItem="uJI-M5-l1d" secondAttribute="trailing" constant="8" id="zT6-Y6-2wu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="40g-bX-k04" secondAttribute="trailing" id="9ed-3f-r6U"/>
+                <constraint firstItem="40g-bX-k04" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VT9-fM-xbR"/>
+                <constraint firstAttribute="bottom" secondItem="40g-bX-k04" secondAttribute="bottom" id="Xmx-9R-EgR"/>
+                <constraint firstItem="40g-bX-k04" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jo9-rW-0Jo"/>
+            </constraints>
+            <size key="customSize" width="190" height="118"/>
+            <connections>
+                <outlet property="imageContainerView" destination="uJI-M5-l1d" id="Cls-XK-i8i"/>
+                <outlet property="sponsorImageView" destination="185-8G-ZAa" id="f1F-aD-BhH"/>
+                <outlet property="sponsorTypeLabel" destination="TO1-jw-w9o" id="wxV-yl-OXu"/>
+            </connections>
+            <point key="canvasLocation" x="195.41984732824426" y="11.267605633802818"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

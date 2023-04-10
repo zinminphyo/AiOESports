@@ -75,6 +75,14 @@
 		84B7457E29E490B80086C708 /* FormerPlayersPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457D29E490B80086C708 /* FormerPlayersPresenting.swift */; };
 		84B7458029E490DC0086C708 /* FormerPlayersViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457F29E490DC0086C708 /* FormerPlayersViewDelegate.swift */; };
 		84B7458229E491730086C708 /* FormerPlayersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7458129E491730086C708 /* FormerPlayersPresenter.swift */; };
+		84B7458629E494690086C708 /* Sponsor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7458529E494690086C708 /* Sponsor.storyboard */; };
+		84B7458829E494960086C708 /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7458729E494960086C708 /* Sponsor.swift */; };
+		84B7458A29E494AD0086C708 /* SponsorModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7458929E494AD0086C708 /* SponsorModule.swift */; };
+		84B7458E29E495960086C708 /* SponsorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7458C29E495960086C708 /* SponsorCollectionViewCell.swift */; };
+		84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B7458D29E495960086C708 /* SponsorCollectionViewCell.xib */; };
+		84B7459229E499930086C708 /* SponsorPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7459129E499930086C708 /* SponsorPresenting.swift */; };
+		84B7459429E499B30086C708 /* SponsorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7459329E499B30086C708 /* SponsorViewDelegate.swift */; };
+		84B7459629E49A320086C708 /* SponsorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7459529E49A320086C708 /* SponsorPresenter.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -228,6 +236,14 @@
 		84B7457D29E490B80086C708 /* FormerPlayersPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersPresenting.swift; sourceTree = "<group>"; };
 		84B7457F29E490DC0086C708 /* FormerPlayersViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersViewDelegate.swift; sourceTree = "<group>"; };
 		84B7458129E491730086C708 /* FormerPlayersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersPresenter.swift; sourceTree = "<group>"; };
+		84B7458529E494690086C708 /* Sponsor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sponsor.storyboard; sourceTree = "<group>"; };
+		84B7458729E494960086C708 /* Sponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsor.swift; sourceTree = "<group>"; };
+		84B7458929E494AD0086C708 /* SponsorModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorModule.swift; sourceTree = "<group>"; };
+		84B7458C29E495960086C708 /* SponsorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorCollectionViewCell.swift; sourceTree = "<group>"; };
+		84B7458D29E495960086C708 /* SponsorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SponsorCollectionViewCell.xib; sourceTree = "<group>"; };
+		84B7459129E499930086C708 /* SponsorPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorPresenting.swift; sourceTree = "<group>"; };
+		84B7459329E499B30086C708 /* SponsorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorViewDelegate.swift; sourceTree = "<group>"; };
+		84B7459529E49A320086C708 /* SponsorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorPresenter.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -650,6 +666,45 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		84B7458329E494580086C708 /* Sponsor */ = {
+			isa = PBXGroup;
+			children = (
+				84B7459029E499890086C708 /* Presenter */,
+				84B7458429E4945F0086C708 /* View */,
+				84B7458929E494AD0086C708 /* SponsorModule.swift */,
+			);
+			path = Sponsor;
+			sourceTree = "<group>";
+		};
+		84B7458429E4945F0086C708 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B7458B29E4957F0086C708 /* cell */,
+				84B7458529E494690086C708 /* Sponsor.storyboard */,
+				84B7458729E494960086C708 /* Sponsor.swift */,
+				84B7459329E499B30086C708 /* SponsorViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B7458B29E4957F0086C708 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84B7458C29E495960086C708 /* SponsorCollectionViewCell.swift */,
+				84B7458D29E495960086C708 /* SponsorCollectionViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84B7459029E499890086C708 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84B7459129E499930086C708 /* SponsorPresenting.swift */,
+				84B7459529E49A320086C708 /* SponsorPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,6 +1018,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84B7458329E494580086C708 /* Sponsor */,
 				84B7456F29E487960086C708 /* FormerPlayers */,
 				84725AC929E16AC2003658CD /* Achivement */,
 				84725ABC29E12AF1003658CD /* Squad */,
@@ -1124,6 +1180,7 @@
 				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
 				84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */,
+				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
 				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
@@ -1131,6 +1188,7 @@
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
 				84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */,
+				84B7458629E494690086C708 /* Sponsor.storyboard in Resources */,
 				84CF0A1229D9FB1D00F87400 /* Shop.storyboard in Resources */,
 				84CF0A0A29D9FAAE00F87400 /* Tour.storyboard in Resources */,
 				84CF0A0229D9FA2200F87400 /* Match.storyboard in Resources */,
@@ -1296,6 +1354,7 @@
 				84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */,
 				84B7455A29E460EF0086C708 /* FormerPlayerModel.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
+				84B7458829E494960086C708 /* Sponsor.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
 				84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */,
 				84B7457429E487C30086C708 /* FormerPlayers.swift in Sources */,
@@ -1333,13 +1392,16 @@
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
 				84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */,
+				84B7459229E499930086C708 /* SponsorPresenting.swift in Sources */,
 				84725AC729E12C95003658CD /* SquadTableViewCell.swift in Sources */,
 				84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */,
 				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
+				84B7459629E49A320086C708 /* SponsorPresenter.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,
 				849B9C3529D185D100F1C2D2 /* NibLoadable.swift in Sources */,
 				84CF09F429D9E91400F87400 /* Home.swift in Sources */,
 				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
+				84B7458A29E494AD0086C708 /* SponsorModule.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
 				84CF0A0429D9FA4800F87400 /* Match.swift in Sources */,
 				842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */,
@@ -1347,9 +1409,11 @@
 				849B9C2B29CEEDF700F1C2D2 /* Images.swift in Sources */,
 				84725AD029E16B2E003658CD /* AchivementModule.swift in Sources */,
 				84B7456229E46AA50086C708 /* SocialModel.swift in Sources */,
+				84B7458E29E495960086C708 /* SponsorCollectionViewCell.swift in Sources */,
 				8459D57B29DDBD4C00DDF266 /* NetworkError.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
 				84B7457E29E490B80086C708 /* FormerPlayersPresenting.swift in Sources */,
+				84B7459429E499B30086C708 /* SponsorViewDelegate.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */,

@@ -79,7 +79,7 @@ class Details: UIViewController {
             guard let vc = FormerPlayersModule.createModule(formerPlayers: details.formerPlayers) else {return UIViewController()}
             return vc
         case 3:
-            guard let vc = AchivementModule.createModule(achivementLists: details.achivemets) else { return UIViewController() }
+            guard let vc = SponsorModule.createModule(sponsorLists: details.sponsors) else { return UIViewController() }
             return vc
         default:
             return UIViewController()
