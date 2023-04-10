@@ -28,6 +28,14 @@ struct TeamDetailsModel: Decodable {
     let createdAt: String
     let updatedAt: String
     
+    var teamImageFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + teamImage
+    }
+    
+    var coverImageFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + coverImage
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, status, location, city, owner, manager, bio, game, role, visable
         case name = "team_name"

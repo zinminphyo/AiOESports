@@ -19,6 +19,10 @@ struct SponsorModel: Decodable {
     let createdAt: String
     let updatedAt: String
     
+    var sponsorLogoFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + sponsorLogo
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, name
         case tourId = "tour_id"

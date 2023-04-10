@@ -15,6 +15,10 @@ struct AchivementModel: Decodable {
     let place: String
     let sortNum: Int
     
+    var logoFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + logo
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name = "tour_name"
         case logo = "tour_logo"

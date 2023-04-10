@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AchivementTableViewCell: UITableViewCell {
     
@@ -48,6 +49,13 @@ class AchivementTableViewCell: UITableViewCell {
         achivementPlaceLabel.font = Fonts.ForCell.subtitleFont
         achivementPlaceLabel.textColor = Colors.Text.primaryText
         achivementPlaceLabel.text = "5th - 6th Place"
+    }
+    
+    func renderUI(achivement: AchivementModel) {
+        achivementImageView.kf.setImage(with: URL(string: achivement.logoFullPath))
+        achivementNameLabel.text = achivement.name
+        achivementTireLabel.text = achivement.tier
+        achivementPlaceLabel.text = achivement.place == "1" ? "FIRST PLACE" : achivement.place
     }
     
 }

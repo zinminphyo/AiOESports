@@ -132,15 +132,15 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return squadModel?.headCoach == nil ? 0 : 50
+            return squadModel?.headCoach == nil ? 0 : 40
         case 1:
-            return squadModel?.assistantCoach == nil ? 0 : 50
+            return squadModel?.assistantCoach == nil ? 0 : 40
         case 2:
-            return squadModel?.technicalDirector == nil ? 0 : 50
+            return squadModel?.technicalDirector == nil ? 0 : 40
         case 3:
-            return squadModel?.analyst == nil ? 0 : 50
+            return squadModel?.analyst == nil ? 0 : 40
         case 4:
-            return squadModel?.roster.count == 0 ? 0 : 50
+            return squadModel?.roster.count == 0 ? 0 : 40
         default:
             return 0
         }

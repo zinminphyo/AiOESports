@@ -64,6 +64,9 @@
 		84B7456229E46AA50086C708 /* SocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456129E46AA50086C708 /* SocialModel.swift */; };
 		84B7456529E46EC00086C708 /* SquadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456429E46EC00086C708 /* SquadViewModel.swift */; };
 		84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456629E46F0C0086C708 /* SquadViewDelegate.swift */; };
+		84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456929E484FC0086C708 /* AchivementPresenting.swift */; };
+		84B7456C29E4851D0086C708 /* AchivementViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456B29E4851D0086C708 /* AchivementViewDelegate.swift */; };
+		84B7456E29E4857E0086C708 /* AchivementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456D29E4857E0086C708 /* AchivementPresenter.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -206,6 +209,9 @@
 		84B7456129E46AA50086C708 /* SocialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialModel.swift; sourceTree = "<group>"; };
 		84B7456429E46EC00086C708 /* SquadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadViewModel.swift; sourceTree = "<group>"; };
 		84B7456629E46F0C0086C708 /* SquadViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadViewDelegate.swift; sourceTree = "<group>"; };
+		84B7456929E484FC0086C708 /* AchivementPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementPresenting.swift; sourceTree = "<group>"; };
+		84B7456B29E4851D0086C708 /* AchivementViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementViewDelegate.swift; sourceTree = "<group>"; };
+		84B7456D29E4857E0086C708 /* AchivementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementPresenter.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -457,6 +463,7 @@
 		84725AC929E16AC2003658CD /* Achivement */ = {
 			isa = PBXGroup;
 			children = (
+				84B7456829E484EF0086C708 /* Presenter */,
 				84725ACA29E16AC9003658CD /* View */,
 				84725ACF29E16B2E003658CD /* AchivementModule.swift */,
 			);
@@ -469,6 +476,7 @@
 				84725AD129E16B8B003658CD /* cell */,
 				84725ACB29E16AE4003658CD /* Achivement.storyboard */,
 				84725ACD29E16B0F003658CD /* Achivement.swift */,
+				84B7456B29E4851D0086C708 /* AchivementViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -576,6 +584,15 @@
 				84B7456429E46EC00086C708 /* SquadViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84B7456829E484EF0086C708 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84B7456929E484FC0086C708 /* AchivementPresenting.swift */,
+				84B7456D29E4857E0086C708 /* AchivementPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
@@ -1199,6 +1216,7 @@
 			files = (
 				84D9C46C29E27E08006B06DD /* NetworkBaseURLs.swift in Sources */,
 				842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */,
+				84B7456E29E4857E0086C708 /* AchivementPresenter.swift in Sources */,
 				84725ACE29E16B0F003658CD /* Achivement.swift in Sources */,
 				84F5FAFC29DEB13A00734CAE /* SearchModule.swift in Sources */,
 				84F5FB1329DEC66700734CAE /* SearchPresenter.swift in Sources */,
@@ -1209,10 +1227,12 @@
 				84725AD429E16BA5003658CD /* AchivementTableViewCell.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				84B7455C29E4629C0086C708 /* SponsorModel.swift in Sources */,
+				84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */,
 				84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */,
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
 				84F5FB1129DEC5DC00734CAE /* SearchInteractor.swift in Sources */,
 				84F602F529DC84E000250C25 /* RankPresenting.swift in Sources */,
+				84B7456C29E4851D0086C708 /* AchivementViewDelegate.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */,
 				84B7455A29E460EF0086C708 /* FormerPlayerModel.swift in Sources */,
