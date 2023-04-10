@@ -76,7 +76,7 @@ class Details: UIViewController {
             guard let vc = AchivementModule.createModule(achivementLists: details.achivemets) else { return UIViewController() }
             return vc
         case 2:
-            guard let vc = SquadModule.createModule(squad: details.squad) else {return UIViewController()}
+            guard let vc = FormerPlayersModule.createModule(formerPlayers: details.formerPlayers) else {return UIViewController()}
             return vc
         case 3:
             guard let vc = AchivementModule.createModule(achivementLists: details.achivemets) else { return UIViewController() }

@@ -24,6 +24,14 @@ struct FormerPlayerModel: Decodable {
         return NetworkBaseURLs.shared.baseURL + "/" + playerImage
     }
     
+    var locationImageFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + location
+    }
+    
+    var teamImageFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + teamImage
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, talent, name, game, location, city
         case playerImage = "player_image"

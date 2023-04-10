@@ -38,6 +38,7 @@ class Achivement: UIViewController {
         achivementTableView.dataSource = self
         achivementTableView.delegate = self
         achivementTableView.separatorStyle = .none
+        achivementTableView.backgroundColor = Colors.Theme.inputColor
     }
 
 }

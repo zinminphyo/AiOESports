@@ -67,6 +67,14 @@
 		84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456929E484FC0086C708 /* AchivementPresenting.swift */; };
 		84B7456C29E4851D0086C708 /* AchivementViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456B29E4851D0086C708 /* AchivementViewDelegate.swift */; };
 		84B7456E29E4857E0086C708 /* AchivementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456D29E4857E0086C708 /* AchivementPresenter.swift */; };
+		84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7457129E487AC0086C708 /* FormerPlayers.storyboard */; };
+		84B7457429E487C30086C708 /* FormerPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457329E487C30086C708 /* FormerPlayers.swift */; };
+		84B7457629E487CF0086C708 /* FormerPlayersModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457529E487CF0086C708 /* FormerPlayersModule.swift */; };
+		84B7457A29E489090086C708 /* FormerPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457829E489090086C708 /* FormerPlayerTableViewCell.swift */; };
+		84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B7457929E489090086C708 /* FormerPlayerTableViewCell.xib */; };
+		84B7457E29E490B80086C708 /* FormerPlayersPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457D29E490B80086C708 /* FormerPlayersPresenting.swift */; };
+		84B7458029E490DC0086C708 /* FormerPlayersViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7457F29E490DC0086C708 /* FormerPlayersViewDelegate.swift */; };
+		84B7458229E491730086C708 /* FormerPlayersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7458129E491730086C708 /* FormerPlayersPresenter.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -212,6 +220,14 @@
 		84B7456929E484FC0086C708 /* AchivementPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementPresenting.swift; sourceTree = "<group>"; };
 		84B7456B29E4851D0086C708 /* AchivementViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementViewDelegate.swift; sourceTree = "<group>"; };
 		84B7456D29E4857E0086C708 /* AchivementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementPresenter.swift; sourceTree = "<group>"; };
+		84B7457129E487AC0086C708 /* FormerPlayers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormerPlayers.storyboard; sourceTree = "<group>"; };
+		84B7457329E487C30086C708 /* FormerPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayers.swift; sourceTree = "<group>"; };
+		84B7457529E487CF0086C708 /* FormerPlayersModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersModule.swift; sourceTree = "<group>"; };
+		84B7457829E489090086C708 /* FormerPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		84B7457929E489090086C708 /* FormerPlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormerPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		84B7457D29E490B80086C708 /* FormerPlayersPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersPresenting.swift; sourceTree = "<group>"; };
+		84B7457F29E490DC0086C708 /* FormerPlayersViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersViewDelegate.swift; sourceTree = "<group>"; };
+		84B7458129E491730086C708 /* FormerPlayersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormerPlayersPresenter.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -595,6 +611,45 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		84B7456F29E487960086C708 /* FormerPlayers */ = {
+			isa = PBXGroup;
+			children = (
+				84B7457C29E490A90086C708 /* Presenter */,
+				84B7457029E487A10086C708 /* View */,
+				84B7457529E487CF0086C708 /* FormerPlayersModule.swift */,
+			);
+			path = FormerPlayers;
+			sourceTree = "<group>";
+		};
+		84B7457029E487A10086C708 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B7457729E488EE0086C708 /* cell */,
+				84B7457129E487AC0086C708 /* FormerPlayers.storyboard */,
+				84B7457329E487C30086C708 /* FormerPlayers.swift */,
+				84B7457F29E490DC0086C708 /* FormerPlayersViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B7457729E488EE0086C708 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84B7457829E489090086C708 /* FormerPlayerTableViewCell.swift */,
+				84B7457929E489090086C708 /* FormerPlayerTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84B7457C29E490A90086C708 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84B7457D29E490B80086C708 /* FormerPlayersPresenting.swift */,
+				84B7458129E491730086C708 /* FormerPlayersPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
 			isa = PBXGroup;
 			children = (
@@ -908,6 +963,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84B7456F29E487960086C708 /* FormerPlayers */,
 				84725AC929E16AC2003658CD /* Achivement */,
 				84725ABC29E12AF1003658CD /* Squad */,
 				84725AB429E120F4003658CD /* Details */,
@@ -1069,6 +1125,8 @@
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
 				84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
+				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
+				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
@@ -1225,6 +1283,7 @@
 				84B7456029E467940086C708 /* TeamDetailsModel.swift in Sources */,
 				84725ABB29E12767003658CD /* DetailsModule.swift in Sources */,
 				84725AD429E16BA5003658CD /* AchivementTableViewCell.swift in Sources */,
+				84B7458029E490DC0086C708 /* FormerPlayersViewDelegate.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				84B7455C29E4629C0086C708 /* SponsorModel.swift in Sources */,
 				84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */,
@@ -1239,6 +1298,7 @@
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
 				84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */,
+				84B7457429E487C30086C708 /* FormerPlayers.swift in Sources */,
 				84CF0A0629D9FA5D00F87400 /* MatchModule.swift in Sources */,
 				84D9C47529E2CAAE006B06DD /* DetailsPresenter.swift in Sources */,
 				84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */,
@@ -1252,6 +1312,7 @@
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
 				84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */,
+				84B7457A29E489090086C708 /* FormerPlayerTableViewCell.swift in Sources */,
 				84D9C47029E2C56F006B06DD /* TeamDetails.swift in Sources */,
 				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
 				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
@@ -1288,6 +1349,7 @@
 				84B7456229E46AA50086C708 /* SocialModel.swift in Sources */,
 				8459D57B29DDBD4C00DDF266 /* NetworkError.swift in Sources */,
 				84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */,
+				84B7457E29E490B80086C708 /* FormerPlayersPresenting.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */,
@@ -1306,7 +1368,9 @@
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
 				84725AC129E12BE1003658CD /* Squad.swift in Sources */,
 				84F5FB0D29DEC49D00734CAE /* SearchViewDelegate.swift in Sources */,
+				84B7458229E491730086C708 /* FormerPlayersPresenter.swift in Sources */,
 				84725AC329E12BF8003658CD /* SquadModule.swift in Sources */,
+				84B7457629E487CF0086C708 /* FormerPlayersModule.swift in Sources */,
 				8459D58729DDF66B00DDF266 /* Enums.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,
 			);
