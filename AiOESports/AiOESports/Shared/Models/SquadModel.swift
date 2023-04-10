@@ -15,4 +15,12 @@ struct SquadModel: Decodable {
     let technicalDirector: CoachModel?
     let analyst: CoachModel?
     let roster: [RosterModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case headCoach = "headcoach"
+        case assistantCoach = "asistcoach"
+        case technicalDirector = "technicaldirector"
+        case analyst = "analyst"
+        case roster
+    }
 }

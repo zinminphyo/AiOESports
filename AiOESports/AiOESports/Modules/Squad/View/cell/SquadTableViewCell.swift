@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SquadTableViewCell: UITableViewCell {
     
@@ -45,6 +46,20 @@ class SquadTableViewCell: UITableViewCell {
         locationLabel.text = "Yangon"
         countryImageView.image = Images.countryImage
         mainImageView.image = Images.TeamImages.teamlogo
+    }
+    
+    @discardableResult
+    func set(coach: CoachModel?) -> Self {
+        nameLabel.text = coach?.name ?? ""
+        locationLabel.text = coach?.city ?? ""
+        return self
+    }
+    
+    @discardableResult
+    func set(roster: RosterModel?) -> Self {
+        nameLabel.text = roster?.name ?? ""
+        locationLabel.text = roster?.city ?? ""
+        return self
     }
     
 }

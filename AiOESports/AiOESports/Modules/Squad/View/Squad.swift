@@ -10,6 +10,8 @@ import UIKit
 class Squad: UIViewController {
     
     @IBOutlet weak var squadTableView: UITableView!
+    private var squadModel: SquadModel? = nil
+    var viewModel: SquadViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,8 @@ class Squad: UIViewController {
         // Do any additional setup after loading the view.
         
         configureHierarchy()
+        
+        viewModel?.viewDidLoad()
     }
     
 
@@ -36,19 +40,54 @@ class Squad: UIViewController {
         squadTableView.separatorStyle = .none
         squadTableView.showsVerticalScrollIndicator = false
         squadTableView.showsHorizontalScrollIndicator = false
+        squadTableView.sectionHeaderTopPadding = 10.0
     }
 
 }
 
+
+extension Squad: SquadViewDelegate {
+    func renderView(squad: SquadModel) {
+        self.squadModel = squad
+        squadTableView.reloadData()
+    }
+}
+
 extension Squad: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 5
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 2 ? 10 : 1
+        if section == 0 {
+            return squadModel?.headCoach == nil ? 0 : 1
+        } else if section == 1 {
+            return squadModel?.assistantCoach == nil ? 0 : 1
+        } else if section == 2 {
+            return squadModel?.technicalDirector == nil ? 0 : 1
+        } else if section == 3 {
+            return squadModel?.analyst == nil ? 0 : 1
+        } else {
+            return squadModel?.roster.count ?? 0
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SquadTableViewCell.reuseIdentifier, for: indexPath) as? SquadTableViewCell else { return UITableViewCell() }
+        let section = indexPath.section
+        guard let model = squadModel else { return UITableViewCell() }
+        switch section {
+        case 0:
+            cell.set(coach: model.headCoach)
+        case 1:
+            cell.set(coach: model.assistantCoach)
+        case 2:
+            cell.set(coach: model.technicalDirector)
+        case 3:
+            cell.set(coach: model.analyst)
+        case 4:
+            cell.set(roster: model.roster[indexPath.row])
+        default:
+            break
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,8 +103,12 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
             label.text = "Head Coach".uppercased()
         } else if section == 1 {
             label.text = "Assistant Coach".uppercased()
+        } else if section == 2 {
+            label.text = "Technical Director".uppercased()
+        } else if section == 3 {
+            label.text = "Analyst".uppercased()
         } else {
-            label.text = "Rosters".uppercased()
+            label.text = "Roster".uppercased()
         }
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -87,10 +130,37 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        switch section {
+        case 0:
+            return squadModel?.headCoach == nil ? 0 : 50
+        case 1:
+            return squadModel?.assistantCoach == nil ? 0 : 50
+        case 2:
+            return squadModel?.technicalDirector == nil ? 0 : 50
+        case 3:
+            return squadModel?.analyst == nil ? 0 : 50
+        case 4:
+            return squadModel?.roster.count == 0 ? 0 : 50
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return squadModel?.headCoach == nil ? 0 : 15
+        case 1:
+            return squadModel?.assistantCoach == nil ? 0 : 15
+        case 2:
+            return squadModel?.technicalDirector == nil ? 0 : 15
+        case 3:
+            return squadModel?.analyst == nil ? 0 : 15
+        case 4:
+            return squadModel?.roster.count == 0 ? 0 : 15
+        default:
+            return 0
+        }
         return 15
     }
 }

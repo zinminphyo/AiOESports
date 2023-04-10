@@ -37,6 +37,10 @@ struct TeamObject: Codable {
 // MARK: - Rank Presentable.
 extension TeamObject: RankPresentable {
     
+    func getId() -> Int {
+        return id
+    }
+    
     func getImageURLPath() -> String {
         return coverImageFullPath
     }

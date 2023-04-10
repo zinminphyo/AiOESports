@@ -12,6 +12,10 @@ class Details: UIViewController {
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
     
+    @IBAction func didTapBackBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     var presenter: DetailsPresenting?
 
     override func viewDidLoad() {
@@ -21,7 +25,7 @@ class Details: UIViewController {
         
         configureHierarchy()
         
-        presenter?.fetchDetails(id: 4)
+        presenter?.fetchDetails()
     }
     
 
@@ -44,12 +48,14 @@ class Details: UIViewController {
         contentScrollView.showsHorizontalScrollIndicator = false
         contentScrollView.showsVerticalScrollIndicator = false
         contentScrollView.isPagingEnabled = true
-        
+    }
+    
+    private func updateContainerView(details: TeamDetails) {
         let iRange = 0...3
         var x: CGFloat = 0
         for i in iRange {
             x = CGFloat(i) * contentScrollView.frame.width
-            let vc = generateContentView(for: i)
+            let vc = generateContentView(for: i, details: details)
             let contentView = vc.view ?? UIView(frame: .zero)
             contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
             
@@ -61,19 +67,19 @@ class Details: UIViewController {
         contentScrollView.contentSize = CGSize(width: CGFloat(iRange.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
     }
     
-    private func generateContentView(for index: Int) -> UIViewController {
+    private func generateContentView(for index: Int, details: TeamDetails) -> UIViewController {
         switch index {
         case 0:
-            guard let vc = SquadModule.createModule() else {return UIViewController()}
+            guard let vc = SquadModule.createModule(squad: details.squad) else {return UIViewController()}
             return vc
         case 1:
             guard let vc = AchivementModule.createModule() else { return UIViewController() }
             return vc
         case 2:
-            guard let vc = SquadModule.createModule() else { return UIViewController() }
+            guard let vc = AchivementModule.createModule() else { return UIViewController() }
             return vc
         case 3:
-            guard let vc = SquadModule.createModule() else { return UIViewController() }
+            guard let vc = AchivementModule.createModule() else { return UIViewController() }
             return vc
         default:
             return UIViewController()
@@ -85,6 +91,6 @@ class Details: UIViewController {
 
 extension Details: DetailsViewDelegate {
     func renderDetails(details: TeamDetails) {
-        
+        updateContainerView(details: details)
     }
 }

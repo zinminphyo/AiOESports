@@ -10,5 +10,5 @@ import Foundation
 
 protocol DetailsPresenting {
     var viewDelegate: DetailsViewDelegate? { get set }
-    func fetchDetails(id: Int)
+    func fetchDetails()
 }

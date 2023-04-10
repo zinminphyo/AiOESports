@@ -45,6 +45,10 @@ struct PlayerObject: Decodable {
 
 extension PlayerObject: RankPresentable {
     
+    func getId() -> Int {
+        return id
+    }
+    
     func getImageURLPath() -> String {
         return ApiRouter.fetchPlayerLists(.All, .active, 1).baseURL + "/" + (playerImage ?? "")
     }

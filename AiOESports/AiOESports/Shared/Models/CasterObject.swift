@@ -41,7 +41,10 @@ struct CasterObject: Decodable {
 
 
 extension CasterObject: RankPresentable {
-    
+    func getId() -> Int {
+        return id
+    }
+ 
     func getImageURLPath() -> String {
         return playerImageFullPath
     }

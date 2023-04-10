@@ -12,5 +12,5 @@ protocol RankRouting {
     var viewController: Rank? { get set }
     func routeToFilterSettings(category: RankCategory)
     func routeToSearch()
-    func routeToDetails()
+    func routeToDetails(category: RankCategory, id: Int)
 }

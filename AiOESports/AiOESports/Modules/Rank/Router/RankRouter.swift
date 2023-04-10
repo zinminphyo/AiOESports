@@ -25,8 +25,8 @@ class RankRouter: RankRouting {
     }
     
     
-    func routeToDetails() {
-        guard let vc = DetailsModuel.createModule() else { return }
+    func routeToDetails(category: RankCategory, id: Int) {
+        guard let vc = DetailsModuel.createModule(category: category, id: id) else { return }
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

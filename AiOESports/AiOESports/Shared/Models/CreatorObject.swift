@@ -72,6 +72,10 @@ struct CreatorObject: Decodable {
 
 extension CreatorObject: RankPresentable {
     
+    func getId() -> Int {
+        return id
+    }
+    
     func getImageURLPath() -> String {
         return playerImageFullURL
     }

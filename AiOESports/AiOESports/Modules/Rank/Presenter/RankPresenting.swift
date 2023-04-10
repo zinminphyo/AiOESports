@@ -19,7 +19,7 @@ protocol RankPresenting {
     func continuePagination()
     func tappedFilerSettingBtn()
     func tappedSearchBtn()
-    func tappedRankItem()
+    func tappedRankItem(id: Int)
     func resetPagination()
     func resetData()
 }

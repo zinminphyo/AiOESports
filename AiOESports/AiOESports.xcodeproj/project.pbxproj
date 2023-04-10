@@ -62,6 +62,8 @@
 		84B7455E29E4643A0086C708 /* AchivementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455D29E4643A0086C708 /* AchivementModel.swift */; };
 		84B7456029E467940086C708 /* TeamDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455F29E467940086C708 /* TeamDetailsModel.swift */; };
 		84B7456229E46AA50086C708 /* SocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456129E46AA50086C708 /* SocialModel.swift */; };
+		84B7456529E46EC00086C708 /* SquadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456429E46EC00086C708 /* SquadViewModel.swift */; };
+		84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7456629E46F0C0086C708 /* SquadViewDelegate.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -202,6 +204,8 @@
 		84B7455D29E4643A0086C708 /* AchivementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementModel.swift; sourceTree = "<group>"; };
 		84B7455F29E467940086C708 /* TeamDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsModel.swift; sourceTree = "<group>"; };
 		84B7456129E46AA50086C708 /* SocialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialModel.swift; sourceTree = "<group>"; };
+		84B7456429E46EC00086C708 /* SquadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadViewModel.swift; sourceTree = "<group>"; };
+		84B7456629E46F0C0086C708 /* SquadViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadViewDelegate.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -423,6 +427,7 @@
 		84725ABC29E12AF1003658CD /* Squad */ = {
 			isa = PBXGroup;
 			children = (
+				84B7456329E46EB10086C708 /* ViewModel */,
 				84725ABD29E12AFC003658CD /* View */,
 				84725AC229E12BF8003658CD /* SquadModule.swift */,
 			);
@@ -435,6 +440,7 @@
 				84725AC429E12C64003658CD /* cell */,
 				84725ABE29E12B18003658CD /* Squad.storyboard */,
 				84725AC029E12BE1003658CD /* Squad.swift */,
+				84B7456629E46F0C0086C708 /* SquadViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -562,6 +568,14 @@
 				849B9C4329D1956B00F1C2D2 /* PinTextField.swift */,
 			);
 			path = PinTextField;
+			sourceTree = "<group>";
+		};
+		84B7456329E46EB10086C708 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B7456429E46EC00086C708 /* SquadViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
@@ -1189,6 +1203,7 @@
 				84F5FAFC29DEB13A00734CAE /* SearchModule.swift in Sources */,
 				84F5FB1329DEC66700734CAE /* SearchPresenter.swift in Sources */,
 				84F602F729DC851400250C25 /* RankPresenter.swift in Sources */,
+				84B7456529E46EC00086C708 /* SquadViewModel.swift in Sources */,
 				84B7456029E467940086C708 /* TeamDetailsModel.swift in Sources */,
 				84725ABB29E12767003658CD /* DetailsModule.swift in Sources */,
 				84725AD429E16BA5003658CD /* AchivementTableViewCell.swift in Sources */,
@@ -1203,6 +1218,7 @@
 				84B7455A29E460EF0086C708 /* FormerPlayerModel.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
+				84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */,
 				84CF0A0629D9FA5D00F87400 /* MatchModule.swift in Sources */,
 				84D9C47529E2CAAE006B06DD /* DetailsPresenter.swift in Sources */,
 				84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */,

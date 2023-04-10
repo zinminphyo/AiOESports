@@ -232,7 +232,7 @@ extension Rank: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.tappedRankItem()
+        presenter?.tappedRankItem(id: self.filterLists[indexPath.row].getId())
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

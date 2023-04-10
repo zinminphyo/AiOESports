@@ -9,6 +9,7 @@ import Foundation
 
 
 protocol RankPresentable {
+    func getId() -> Int
     func getImageURLPath() -> String
     func getName() -> String
     func getGameType() -> String
