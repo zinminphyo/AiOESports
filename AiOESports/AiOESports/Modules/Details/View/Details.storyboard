@@ -71,7 +71,6 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="KjU-7w-Qab" firstAttribute="leading" secondItem="9g2-OM-J4d" secondAttribute="leading" constant="16" id="7gf-vy-C0J"/>
                                                     <constraint firstItem="AG7-8u-SGY" firstAttribute="leading" secondItem="KjU-7w-Qab" secondAttribute="trailing" constant="10" id="JKg-YE-NZ4"/>
@@ -178,9 +177,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityNameLabel" destination="Yvb-WB-WNl" id="oQU-JE-GP2"/>
                         <outlet property="colletionView" destination="eGq-78-sMi" id="5tY-Yh-Xmb"/>
                         <outlet property="containerScrollView" destination="ywY-sY-uXS" id="RkB-ak-n6z"/>
                         <outlet property="contentScrollView" destination="AIk-b1-A2T" id="bOu-Xc-PSr"/>
+                        <outlet property="coverImageView" destination="yUa-lQ-7fD" id="rpy-AZ-dNs"/>
+                        <outlet property="locationCOntainerView" destination="nQA-5V-uyM" id="4s2-nZ-2rT"/>
+                        <outlet property="locationImageView" destination="ycm-BR-ucZ" id="sGB-Hz-8fu"/>
+                        <outlet property="teamImageView" destination="KjU-7w-Qab" id="dIM-A8-ha6"/>
+                        <outlet property="teamInfoContainerView" destination="9g2-OM-J4d" id="ZbM-W1-nCF"/>
+                        <outlet property="teamNameLabel" destination="AG7-8u-SGY" id="uKA-dB-kgO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

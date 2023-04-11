@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class Details: UIViewController {
     
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var colletionView: UICollectionView!
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var teamImageView: UIImageView!
+    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var locationImageView: UIImageView!
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var teamInfoContainerView: UIView!
+    @IBOutlet weak var locationCOntainerView: UIView!
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -33,6 +41,12 @@ class Details: UIViewController {
     private func configureHierarchy() {
         configureContainerView()
         configureContainerScrollView()
+        configureCoverImageView()
+        configureTeamInfoContainerView()
+        configureCoverImageView()
+        configureTeamImageView()
+        configureLocationContainerView()
+        configureCityLabel()
         configureCollectionView()
         configureContentScrollView()
     }
@@ -44,6 +58,33 @@ class Details: UIViewController {
     private func configureContainerScrollView() {
         self.containerScrollView.showsVerticalScrollIndicator = false
         self.containerScrollView.showsHorizontalScrollIndicator = false
+    }
+    
+    private func configureCoverImageView() {
+        coverImageView.contentMode = .scaleAspectFill
+    }
+    
+    private func configureTeamInfoContainerView() {
+        teamInfoContainerView.backgroundColor = Colors.Theme.inputColor
+    }
+    
+    private func configureTeamNameLabel() {
+        teamNameLabel.textColor = Colors.Text.primaryText
+        teamNameLabel.font = Fonts.titleFont
+    }
+    
+    private func configureTeamImageView() {
+        teamImageView.contentMode = .scaleAspectFit
+    }
+    
+    private func configureCityLabel() {
+        cityNameLabel.textColor = Colors.Text.primaryText
+        cityNameLabel.font = Fonts.subtitleFont
+    }
+    
+    private func configureLocationContainerView() {
+        locationCOntainerView.layer.cornerRadius = 5
+        locationCOntainerView.backgroundColor = Colors.Text.secondaryText
     }
     
     private func configureCollectionView() {
@@ -65,10 +106,11 @@ class Details: UIViewController {
         contentScrollView.showsHorizontalScrollIndicator = false
         contentScrollView.showsVerticalScrollIndicator = false
         contentScrollView.isPagingEnabled = true
+        contentScrollView.bounces = false
     }
     
     private func updateContainerView(details: TeamDetails) {
-        let iRange = 0...3
+        let iRange = 0...4
         var x: CGFloat = 0
         for i in iRange {
             x = CGFloat(i) * contentScrollView.frame.width
@@ -93,9 +135,12 @@ class Details: UIViewController {
             guard let vc = AchivementModule.createModule(achivementLists: details.achivemets) else { return UIViewController() }
             return vc
         case 2:
-            guard let vc = FormerPlayersModule.createModule(formerPlayers: details.formerPlayers) else {return UIViewController()}
+            guard let vc = SquadModule.createModule(squad: details.squad) else { return UIViewController() }
             return vc
         case 3:
+            guard let vc = FormerPlayersModule.createModule(formerPlayers: details.formerPlayers) else {return UIViewController()}
+            return vc
+        case 4:
             guard let vc = SponsorModule.createModule(sponsorLists: details.sponsors) else { return UIViewController() }
             return vc
         default:
@@ -118,13 +163,18 @@ extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailsContentCollectionViewCell.reuseIdentifier, for: indexPath) as? DetailsContentCollectionViewCell else { return UICollectionViewCell() }
         cell.set(title: TeamDetailsContent.allCases[indexPath.row].title)
-            .set(isSelected: indexPath.row == 0)
+        if let selectedRow = collectionView.indexPathsForSelectedItems?.first {
+            cell.set(isSelected: selectedRow == indexPath)
+        } else {
+            cell.set(isSelected: indexPath.row == 0)
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? DetailsContentCollectionViewCell else { return }
         cell.set(isSelected: true)
         scrollToContentView(for: indexPath.row)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -137,5 +187,10 @@ extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
 extension Details: DetailsViewDelegate {
     func renderDetails(details: TeamDetails) {
         updateContainerView(details: details)
+        coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath))
+        teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
+        teamNameLabel.text = details.detail.fullName
+        locationImageView.kf.setImage(with: URL(string: details.detail.locationImageFullPath))
+        cityNameLabel.text = details.detail.city
     }
 }

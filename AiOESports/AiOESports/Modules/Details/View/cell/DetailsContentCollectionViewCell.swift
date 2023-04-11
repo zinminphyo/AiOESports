@@ -16,6 +16,7 @@ class DetailsContentCollectionViewCell: UICollectionViewCell {
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
