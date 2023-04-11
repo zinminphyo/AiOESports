@@ -171,3 +171,28 @@ enum RankCategory: CaseIterable {
         }
     }
 }
+
+
+enum TeamDetailsContent: CaseIterable {
+    
+    case overview
+    case achivement
+    case roster
+    case formerPlayer
+    case sponsor
+    
+    var title: String {
+        switch self {
+        case .overview:
+            return "OVERVIEW"
+        case .achivement:
+            return "ACHIVEMENTS"
+        case .roster:
+            return "ROSTER"
+        case .formerPlayer:
+            return "FORMER PLAYER"
+        case .sponsor:
+            return "SPONSOR"
+        }
+    }
+}
