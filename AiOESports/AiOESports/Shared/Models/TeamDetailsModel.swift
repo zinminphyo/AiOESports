@@ -36,6 +36,10 @@ struct TeamDetailsModel: Decodable {
         return NetworkBaseURLs.shared.baseURL + "/" + coverImage
     }
     
+    var locationImageFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + location
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, status, location, city, owner, manager, bio, game, role, visable
         case name = "team_name"

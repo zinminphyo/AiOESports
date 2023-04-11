@@ -50,4 +50,8 @@ class Images {
         static let PUBGM = UIImage(named: "PUBGM", in: .main, compatibleWith: nil)
         static let VALORANT = UIImage(named: "VALORANT", in: .main, compatibleWith: nil)
     }
+    
+    enum SocialLogo {
+        static let facebook = UIImage(named: "facebook", in: .main, compatibleWith: nil)
+    }
 }

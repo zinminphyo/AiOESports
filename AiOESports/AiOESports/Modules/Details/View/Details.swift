@@ -70,7 +70,7 @@ class Details: UIViewController {
     private func generateContentView(for index: Int, details: TeamDetails) -> UIViewController {
         switch index {
         case 0:
-            guard let vc = SquadModule.createModule(squad: details.squad) else {return UIViewController()}
+            guard let vc = TeamOverviewModule.createModule(teamDetails: details.detail, social: details.social) else {return UIViewController()}
             return vc
         case 1:
             guard let vc = AchivementModule.createModule(achivementLists: details.achivemets) else { return UIViewController() }
