@@ -129,6 +129,27 @@ class Details: UIViewController {
         contentScrollView.contentSize = CGSize(width: CGFloat(iRange.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
     }
     
+    private func updateContainerViewForPlayer(details: PlayerDetails) {
+        let iRange = 0...2
+        var x: CGFloat = 0
+        for i in iRange {
+            x = CGFloat(i) * contentScrollView.frame.width
+            guard let vc = PlayerOverviewModule.createModule(playerDetails: details.details, social: details.social) else  { return }
+            let contentView = vc.view ?? UIView(frame: .zero)
+            contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
+            vc.willMove(toParent: self)
+            addChild(vc)
+            vc.didMove(toParent: self)
+            contentScrollView.addSubview(contentView)
+        }
+        contentScrollView.contentSize = CGSize(width: CGFloat(iRange.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
+    }
+    
+    private func removeALLContentSubViews() {
+        let subViews = contentScrollView.subviews
+        subViews.forEach{ $0.removeFromSuperview() }
+    }
+    
     private func generateContentView(for index: Int, details: TeamDetails) -> UIViewController {
         switch index {
         case 0:
@@ -189,11 +210,18 @@ extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
 
 extension Details: DetailsViewDelegate {
     func renderDetails(details: TeamDetails) {
+        removeALLContentSubViews()
         updateContainerView(details: details)
         coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath))
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
         teamNameLabel.text = details.detail.fullName
         locationImageView.kf.setImage(with: URL(string: details.detail.locationImageFullPath))
         cityNameLabel.text = details.detail.city
+    }
+    
+    func renderPlayerDetails(details: PlayerDetails) {
+        removeALLContentSubViews()
+        updateContainerViewForPlayer(details: details)
+        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
     }
 }

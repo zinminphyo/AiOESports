@@ -21,15 +21,49 @@ class DetailsPresenter: DetailsPresenting {
     private var id: Int = 0
     
     func fetchDetails() {
-        let router = ApiRouter.teamDetails(id)
-        NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
-            switch result {
-            case .success(let success):
-                self.viewDelegate?.renderDetails(details: success)
-            case .failure(let failure):
-                print("Failure is \(failure)")
+        switch category {
+        case .team:
+            let router = ApiRouter.teamDetails(id)
+            NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
+                switch result {
+                case .success(let success):
+                    self.viewDelegate?.renderDetails(details: success)
+                case .failure(let failure):
+                    print("Failure is \(failure)")
+                }
+            }
+        case .player:
+            let router = ApiRouter.playerDetails(id)
+            NetworkService.shared.request(router: router) { (result: Result<PlayerDetails, NetworkError>) in
+                switch result {
+                case .success(let success):
+                    self.viewDelegate?.renderPlayerDetails(details: success)
+                case .failure(let failure):
+                    print("Player detials error is \(failure.localizedDescription)")
+                }
+            }
+        case .caster:
+            let router = ApiRouter.teamDetails(id)
+            NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
+                switch result {
+                case .success(let success):
+                    self.viewDelegate?.renderDetails(details: success)
+                case .failure(let failure):
+                    print("Failure is \(failure)")
+                }
+            }
+        case .creator:
+            let router = ApiRouter.teamDetails(id)
+            NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
+                switch result {
+                case .success(let success):
+                    self.viewDelegate?.renderDetails(details: success)
+                case .failure(let failure):
+                    print("Failure is \(failure)")
+                }
             }
         }
+        
     }
     
     
