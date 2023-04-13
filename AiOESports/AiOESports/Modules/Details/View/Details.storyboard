@@ -104,7 +104,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </scrollView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="eGq-78-sMi" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="88Y-PG-PmK"/>
                                                     <constraint firstItem="AIk-b1-A2T" firstAttribute="top" secondItem="eGq-78-sMi" secondAttribute="bottom" id="eAX-Ov-W74"/>
@@ -116,7 +116,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="W3j-gL-NgD" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="Amg-NV-bss"/>
                                             <constraint firstItem="9g2-OM-J4d" firstAttribute="top" secondItem="yUa-lQ-7fD" secondAttribute="bottom" id="CSu-Ck-zfQ"/>

@@ -58,6 +58,7 @@ class Details: UIViewController {
     private func configureContainerScrollView() {
         self.containerScrollView.showsVerticalScrollIndicator = false
         self.containerScrollView.showsHorizontalScrollIndicator = false
+        contentScrollView.backgroundColor = UIColor.clear
     }
     
     private func configureCoverImageView() {
@@ -107,6 +108,8 @@ class Details: UIViewController {
         contentScrollView.showsVerticalScrollIndicator = false
         contentScrollView.isPagingEnabled = true
         contentScrollView.bounces = false
+//        contentScrollView.isScrollEnabled = false
+        contentScrollView.backgroundColor = UIColor.clear
     }
     
     private func updateContainerView(details: TeamDetails) {
