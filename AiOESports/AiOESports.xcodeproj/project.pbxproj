@@ -86,6 +86,8 @@
 		84A050E229E92C16004D582B /* CareerPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050E129E92C16004D582B /* CareerPresenting.swift */; };
 		84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050E329E92C2F004D582B /* CareerViewDelegate.swift */; };
 		84A050E629E92C6D004D582B /* CareerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050E529E92C6D004D582B /* CareerPresenter.swift */; };
+		84A050E929E95184004D582B /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A050E829E95184004D582B /* EmptyView.xib */; };
+		84A050EB29E951CA004D582B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050EA29E951CA004D582B /* EmptyView.swift */; };
 		84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455329E45F5E0086C708 /* SquadModel.swift */; };
 		84B7455629E45FB90086C708 /* CoachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455529E45FB90086C708 /* CoachModel.swift */; };
 		84B7455829E460080086C708 /* RosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455729E460080086C708 /* RosterModel.swift */; };
@@ -279,6 +281,8 @@
 		84A050E129E92C16004D582B /* CareerPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPresenting.swift; sourceTree = "<group>"; };
 		84A050E329E92C2F004D582B /* CareerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerViewDelegate.swift; sourceTree = "<group>"; };
 		84A050E529E92C6D004D582B /* CareerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPresenter.swift; sourceTree = "<group>"; };
+		84A050E829E95184004D582B /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		84A050EA29E951CA004D582B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		84B7455329E45F5E0086C708 /* SquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
 		84B7455529E45FB90086C708 /* CoachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachModel.swift; sourceTree = "<group>"; };
 		84B7455729E460080086C708 /* RosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterModel.swift; sourceTree = "<group>"; };
@@ -673,6 +677,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84A050E729E95174004D582B /* EmptyView */,
 				84CF09E129D990E100F87400 /* PhoneNumberView */,
 				849B9C4229D1955200F1C2D2 /* PinTextField */,
 				849B9C3229D1857B00F1C2D2 /* PinView */,
@@ -822,6 +827,15 @@
 				84A050E529E92C6D004D582B /* CareerPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84A050E729E95174004D582B /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				84A050E829E95184004D582B /* EmptyView.xib */,
+				84A050EA29E951CA004D582B /* EmptyView.swift */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		84B7456329E46EB10086C708 /* ViewModel */ = {
@@ -1397,6 +1411,7 @@
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
 				842FC9B429E849D800C5F354 /* OverviewTableViewCell.xib in Resources */,
 				84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */,
+				84A050E929E95184004D582B /* EmptyView.xib in Resources */,
 				84A050DB29E92A6A004D582B /* Career.storyboard in Resources */,
 				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
@@ -1666,6 +1681,7 @@
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
+				84A050EB29E951CA004D582B /* EmptyView.swift in Sources */,
 				84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */,
 				84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
