@@ -45,6 +45,7 @@ class Details: UIViewController {
         configureTeamInfoContainerView()
         configureCoverImageView()
         configureTeamImageView()
+        configureTeamNameLabel()
         configureLocationContainerView()
         configureCityLabel()
         configureCollectionView()
@@ -113,11 +114,11 @@ class Details: UIViewController {
     }
     
     private func updateContainerView(details: TeamDetails) {
-        let iRange = 0...4
+        let iRange = TeamDetailsContent.allCases.count
         var x: CGFloat = 0
-        for i in iRange {
+        for i in 0..<iRange {
             x = CGFloat(i) * contentScrollView.frame.width
-            let vc = generateContentView(for: i, details: details)
+            guard let vc = presenter?.getContentView(for: .team, at: i) else { return }
             let contentView = vc.view ?? UIView(frame: .zero)
             contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
             
@@ -126,61 +127,44 @@ class Details: UIViewController {
             vc.didMove(toParent: self)
             contentScrollView.addSubview(contentView)
         }
-        contentScrollView.contentSize = CGSize(width: CGFloat(iRange.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
+        contentScrollView.contentSize = CGSize(width: CGFloat(iRange) * contentScrollView.frame.width, height: contentScrollView.frame.height)
     }
     
     private func updateContainerViewForPlayer(details: PlayerDetails) {
-        let iRange = 0...3
+        let iRange = PlayerDetailsContent.allCases.count
         var x: CGFloat = 0
-        for i in iRange {
+        for i in 0..<iRange {
             x = CGFloat(i) * contentScrollView.frame.width
-            if i == iRange.count - 1 {
-                guard let vc = CareerModule.createModule(careerLists: details.career) else { return }
-                let contentView = vc.view ?? UIView(frame: .zero)
-                contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
-                vc.willMove(toParent: self)
-                addChild(vc)
-                vc.didMove(toParent: self)
-                contentScrollView.addSubview(contentView)
-            } else {
-                guard let vc = PlayerOverviewModule.createModule(playerDetails: details.details, social: details.social, signatureLists: details.signature) else  { return }
-                let contentView = vc.view ?? UIView(frame: .zero)
-                contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
-                vc.willMove(toParent: self)
-                addChild(vc)
-                vc.didMove(toParent: self)
-                contentScrollView.addSubview(contentView)
-            }
-            
+            guard let vc = presenter?.getContentView(for: .player, at: i) else { return }
+            let contentView = vc.view ?? UIView(frame: .zero)
+            contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
+            vc.willMove(toParent: self)
+            addChild(vc)
+            vc.didMove(toParent: self)
+            contentScrollView.addSubview(contentView)
         }
-        contentScrollView.contentSize = CGSize(width: CGFloat(iRange.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
+        contentScrollView.contentSize = CGSize(width: CGFloat(iRange) * contentScrollView.frame.width, height: contentScrollView.frame.height)
+    }
+    
+    private func updateContainerViewForCaster() {
+        let iRange = CasterDetailsContent.allCases.count
+        var x: CGFloat = 0
+        for i in 0..<iRange {
+            x = CGFloat(i) * contentScrollView.frame.width
+            guard let vc = presenter?.getContentView(for: .caster, at: i) else { return }
+            let contentView = vc.view ?? UIView(frame: .zero)
+            contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
+            vc.willMove(toParent: self)
+            addChild(vc)
+            vc.didMove(toParent: self)
+            contentScrollView.addSubview(contentView)
+        }
+        contentScrollView.contentSize = CGSize(width: CGFloat(iRange) * contentScrollView.frame.width, height: contentScrollView.frame.height)
     }
     
     private func removeALLContentSubViews() {
         let subViews = contentScrollView.subviews
         subViews.forEach{ $0.removeFromSuperview() }
-    }
-    
-    private func generateContentView(for index: Int, details: TeamDetails) -> UIViewController {
-        switch index {
-        case 0:
-            guard let vc = TeamOverviewModule.createModule(teamDetails: details.detail, social: details.social) else {return UIViewController()}
-            return vc
-        case 1:
-            guard let vc = AchivementModule.createModule(achivementLists: details.achivemets) else { return UIViewController() }
-            return vc
-        case 2:
-            guard let vc = SquadModule.createModule(squad: details.squad) else { return UIViewController() }
-            return vc
-        case 3:
-            guard let vc = FormerPlayersModule.createModule(formerPlayers: details.formerPlayers) else {return UIViewController()}
-            return vc
-        case 4:
-            guard let vc = SponsorModule.createModule(sponsorLists: details.sponsors) else { return UIViewController() }
-            return vc
-        default:
-            return UIViewController()
-        }
     }
     
     private func scrollToContentView(for index: Int) {
@@ -263,4 +247,17 @@ extension Details: DetailsViewDelegate {
         locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
         cityNameLabel.text = details.details.city
     }
+    
+    func renderCasterDetails(details: PlayerDetails) {
+        removeALLContentSubViews()
+        colletionView.reloadData()
+        updateContainerViewForCaster()
+        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
+        teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
+        teamNameLabel.text = details.details.name
+        locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
+        cityNameLabel.text = details.details.city
+    }
 }
+
+

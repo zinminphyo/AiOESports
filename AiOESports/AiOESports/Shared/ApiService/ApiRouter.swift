@@ -18,6 +18,7 @@ enum ApiRouter: URLConvertible {
     case teamSearch(_ keyword: String)
     case teamDetails(Int)
     case playerDetails(Int)
+    case casterDetails(Int)
     
     func asURL() throws -> URL {
         return URL(string: url)!
@@ -48,6 +49,8 @@ enum ApiRouter: URLConvertible {
             return "team/\(id)"
         case let .playerDetails(id):
             return "player/\(id)"
+        case let .casterDetails(id):
+            return "caster/\(id)"
         }
     }
     
@@ -57,7 +60,7 @@ enum ApiRouter: URLConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails :
+        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails :
             return URLEncoding.default
         case .teamSearch:
             return JSONEncoding.prettyPrinted
@@ -66,7 +69,7 @@ enum ApiRouter: URLConvertible {
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails:
             return nil
         }
     }
@@ -103,7 +106,7 @@ enum ApiRouter: URLConvertible {
             ]
         case .teamDetails:
             return nil
-        case .playerDetails:
+        case .playerDetails, .casterDetails:
             return nil
         }
     }
@@ -122,7 +125,7 @@ enum ApiRouter: URLConvertible {
             return .post
         case .teamDetails:
             return .get
-        case .playerDetails:
+        case .playerDetails, .casterDetails:
             return .get
         }
     }

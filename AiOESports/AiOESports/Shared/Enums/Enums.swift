@@ -200,7 +200,6 @@ enum TeamDetailsContent: CaseIterable {
 enum PlayerDetailsContent: CaseIterable {
     case overview
     case achivement
-    case sponsor
     case career
     
     var title: String {
@@ -209,10 +208,23 @@ enum PlayerDetailsContent: CaseIterable {
             return "OVERVIEW"
         case .achivement:
             return "ACHIVEMENT"
-        case .sponsor:
-            return "SPONSOR"
         case .career:
             return "CAREER"
+        }
+    }
+}
+
+
+enum CasterDetailsContent: CaseIterable {
+    case overview
+    case achivement
+    
+    var title: String {
+        switch self {
+        case .overview:
+            return "OVERVIEW"
+        case .achivement:
+            return "ACHIVEMENT"
         }
     }
 }

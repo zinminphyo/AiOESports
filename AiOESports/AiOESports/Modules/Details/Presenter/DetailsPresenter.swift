@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class DetailsPresenter: DetailsPresenting {
     
@@ -20,6 +20,10 @@ class DetailsPresenter: DetailsPresenting {
     private var category: RankCategory = .team
     private var id: Int = 0
     
+    private var teamDetails: TeamDetails? = nil
+    private var playerDetails: PlayerDetails? = nil
+    private var casterDetails: PlayerDetails? = nil
+    
     func fetchDetails() {
         switch category {
         case .team:
@@ -27,6 +31,7 @@ class DetailsPresenter: DetailsPresenting {
             NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
                 switch result {
                 case .success(let success):
+                    self.teamDetails = success
                     self.viewDelegate?.renderDetails(details: success)
                 case .failure(let failure):
                     print("Failure is \(failure)")
@@ -37,17 +42,19 @@ class DetailsPresenter: DetailsPresenting {
             NetworkService.shared.request(router: router) { (result: Result<PlayerDetails, NetworkError>) in
                 switch result {
                 case .success(let success):
+                    self.playerDetails = success
                     self.viewDelegate?.renderPlayerDetails(details: success)
                 case .failure(let failure):
                     print("Player detials error is \(failure.localizedDescription)")
                 }
             }
         case .caster:
-            let router = ApiRouter.teamDetails(id)
-            NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
+            let router = ApiRouter.casterDetails(id)
+            NetworkService.shared.request(router: router) { (result: Result<PlayerDetails,NetworkError>) in
                 switch result {
                 case .success(let success):
-                    self.viewDelegate?.renderDetails(details: success)
+                    self.casterDetails = success
+                    self.viewDelegate?.renderCasterDetails(details: success)
                 case .failure(let failure):
                     print("Failure is \(failure)")
                 }
@@ -74,7 +81,7 @@ class DetailsPresenter: DetailsPresenting {
         case .player:
             return PlayerDetailsContent.allCases.count
         case .caster:
-            return 0
+            return CasterDetailsContent.allCases.count
         case .creator:
             return 0
         }
@@ -87,10 +94,75 @@ class DetailsPresenter: DetailsPresenting {
         case .player:
             return PlayerDetailsContent.allCases[index].title
         case .caster:
-            return ""
+            return CasterDetailsContent.allCases[index].title
         case .creator:
             return ""
         }
     }
     
+    
+    func getContentView(for category: RankCategory, at index: Int) -> UIViewController {
+        switch category {
+        case .team:
+            return getContentForGameCategory(for: index)
+        case .player:
+            return getContentForPlayerCategory(for: index)
+        case .caster:
+            return  getContentForCasterCategory(for: index)
+        case .creator:
+            return getContentForPlayerCategory(for: index)
+        }
+    }
+    
+    private func getContentForGameCategory(for index: Int) -> UIViewController {
+        guard let teamDetails = teamDetails else { return UIViewController() }
+        switch index {
+        case 0:
+            guard let vc = TeamOverviewModule.createModule(teamDetails: teamDetails.detail, social: teamDetails.social) else { return UIViewController() }
+            return vc
+        case 1:
+            guard let vc = AchivementModule.createModule(achivementLists: teamDetails.achivemets) else { return UIViewController() }
+            return vc
+        case 2:
+            guard let vc = SquadModule.createModule(squad: teamDetails.squad) else { return UIViewController() }
+            return vc
+        case 3:
+            guard let vc = FormerPlayersModule.createModule(formerPlayers: teamDetails.formerPlayers) else { return UIViewController() }
+            return vc
+        case 4:
+            guard let vc = SponsorModule.createModule(sponsorLists: teamDetails.sponsors) else { return UIViewController() }
+            return vc
+        default:
+            return UIViewController()
+        }
+    }
+    
+    private func getContentForPlayerCategory(for index: Int) -> UIViewController {
+        guard let playerDetails = playerDetails else { return UIViewController() }
+        switch index {
+        case 0:
+            guard let vc = PlayerOverviewModule.createModule(playerDetails: playerDetails.details, social: playerDetails.social, signatureLists: playerDetails.signature) else { return UIViewController() }
+            return vc
+        case 1:
+            guard let vc = PlayerOverviewModule.createModule(playerDetails: playerDetails.details, social: playerDetails.social, signatureLists: playerDetails.signature) else { return UIViewController() }
+            return vc
+        case 2:
+            guard let vc = CareerModule.createModule(careerLists: playerDetails.career) else { return UIViewController() }
+            return vc
+        default:
+            return UIViewController()
+        }
+    }
+    
+    private func getContentForCasterCategory(for index: Int) -> UIViewController {
+        guard let casterDetails = casterDetails else { return UIViewController() }
+        switch index {
+        case 0:
+            guard let vc = CasterOverviewModule.createModule(details: casterDetails) else { return UIViewController() }
+            return vc
+        default:
+            guard let vc = CasterOverviewModule.createModule(details: casterDetails) else { return UIViewController() }
+            return vc
+        }
+    }
 }
