@@ -228,3 +228,15 @@ enum CasterDetailsContent: CaseIterable {
         }
     }
 }
+
+
+enum CreatorDetailContent: CaseIterable {
+    case overview
+    
+    var title: String {
+        switch self {
+        case .overview:
+            return "OVERVIEW"
+        }
+    }
+}

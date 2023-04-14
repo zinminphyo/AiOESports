@@ -162,6 +162,21 @@ class Details: UIViewController {
         contentScrollView.contentSize = CGSize(width: CGFloat(iRange) * contentScrollView.frame.width, height: contentScrollView.frame.height)
     }
     
+    private func updateContainerViewForCreator() {
+        var x: CGFloat = 0
+        for i in 0..<CreatorDetailContent.allCases.count {
+            x = CGFloat(i) * contentScrollView.frame.width
+            guard let vc = presenter?.getContentView(for: .creator, at: i) else { return }
+            let contentView = vc.view ?? UIView(frame: .zero)
+            contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
+            vc.willMove(toParent: self)
+            addChild(vc)
+            vc.didMove(toParent: self)
+            contentScrollView.addSubview(contentView)
+        }
+        contentScrollView.contentSize = CGSize(width: CGFloat(CreatorDetailContent.allCases.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
+    }
+    
     private func removeALLContentSubViews() {
         let subViews = contentScrollView.subviews
         subViews.forEach{ $0.removeFromSuperview() }
@@ -252,6 +267,17 @@ extension Details: DetailsViewDelegate {
         removeALLContentSubViews()
         colletionView.reloadData()
         updateContainerViewForCaster()
+        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
+        teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
+        teamNameLabel.text = details.details.name
+        locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
+        cityNameLabel.text = details.details.city
+    }
+    
+    func renderCreatorDetails(details: PlayerDetails) {
+        removeALLContentSubViews()
+        colletionView.reloadData()
+        updateContainerViewForCreator()
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name

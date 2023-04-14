@@ -19,13 +19,13 @@ enum ApiRouter: URLConvertible {
     case teamDetails(Int)
     case playerDetails(Int)
     case casterDetails(Int)
+    case creatorDetails(Int)
     
     func asURL() throws -> URL {
         return URL(string: url)!
     }
     
     var baseURL: String {
-//        return "https://40ff4fbc07a9ea57c3758da089c572b1.aioesports.com"
         return NetworkBaseURLs.shared.baseURL
     }
     
@@ -51,6 +51,8 @@ enum ApiRouter: URLConvertible {
             return "player/\(id)"
         case let .casterDetails(id):
             return "caster/\(id)"
+        case let .creatorDetails(id):
+            return "creator/\(id)"
         }
     }
     
@@ -60,7 +62,7 @@ enum ApiRouter: URLConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails :
+        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails :
             return URLEncoding.default
         case .teamSearch:
             return JSONEncoding.prettyPrinted
@@ -69,7 +71,7 @@ enum ApiRouter: URLConvertible {
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails:
             return nil
         }
     }
@@ -106,7 +108,7 @@ enum ApiRouter: URLConvertible {
             ]
         case .teamDetails:
             return nil
-        case .playerDetails, .casterDetails:
+        case .playerDetails, .casterDetails, .creatorDetails:
             return nil
         }
     }
@@ -125,7 +127,7 @@ enum ApiRouter: URLConvertible {
             return .post
         case .teamDetails:
             return .get
-        case .playerDetails, .casterDetails:
+        case .playerDetails, .casterDetails, .creatorDetails:
             return .get
         }
     }

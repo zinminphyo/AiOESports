@@ -13,4 +13,5 @@ protocol DetailsViewDelegate {
     func renderDetails(details: TeamDetails)
     func renderPlayerDetails(details: PlayerDetails)
     func renderCasterDetails(details: PlayerDetails)
+    func renderCreatorDetails(details: PlayerDetails)
 }

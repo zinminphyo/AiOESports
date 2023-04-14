@@ -60,11 +60,11 @@ class DetailsPresenter: DetailsPresenting {
                 }
             }
         case .creator:
-            let router = ApiRouter.teamDetails(id)
-            NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
+            let router = ApiRouter.creatorDetails(id)
+            NetworkService.shared.request(router: router) { (result: Result<PlayerDetails, NetworkError>) in
                 switch result {
                 case .success(let success):
-                    self.viewDelegate?.renderDetails(details: success)
+                    self.viewDelegate?.renderCreatorDetails(details: success)
                 case .failure(let failure):
                     print("Failure is \(failure)")
                 }
@@ -83,7 +83,7 @@ class DetailsPresenter: DetailsPresenting {
         case .caster:
             return CasterDetailsContent.allCases.count
         case .creator:
-            return 0
+            return CreatorDetailContent.allCases.count
         }
     }
     
@@ -96,7 +96,7 @@ class DetailsPresenter: DetailsPresenting {
         case .caster:
             return CasterDetailsContent.allCases[index].title
         case .creator:
-            return ""
+            return CreatorDetailContent.allCases[index].title
         }
     }
     
@@ -110,7 +110,7 @@ class DetailsPresenter: DetailsPresenting {
         case .caster:
             return  getContentForCasterCategory(for: index)
         case .creator:
-            return getContentForPlayerCategory(for: index)
+            return getContentForCreatorCategory(for: index)
         }
     }
     
@@ -163,6 +163,16 @@ class DetailsPresenter: DetailsPresenting {
         default:
             guard let vc = SquadModule.createModule(playerAchivement: casterDetails.playerAchivement) else { return UIViewController() }
             return vc
+        }
+    }
+    
+    private func getContentForCreatorCategory(for index: Int) -> UIViewController {
+        switch index {
+        case 0:
+            guard let vc = CreatorOverviewModule.createModuel() else { return UIViewController() }
+            return vc
+        default:
+            return UIViewController()
         }
     }
 }
