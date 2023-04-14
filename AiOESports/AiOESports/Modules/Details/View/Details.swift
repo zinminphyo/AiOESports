@@ -100,7 +100,7 @@ class Details: UIViewController {
         colletionView.collectionViewLayout = flowLayout
         colletionView.backgroundColor = Colors.Theme.inputColor
         colletionView.allowsMultipleSelection = false
-        colletionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        
     }
     
     private func configureContentScrollView() {
@@ -108,8 +108,8 @@ class Details: UIViewController {
         contentScrollView.showsVerticalScrollIndicator = false
         contentScrollView.isPagingEnabled = true
         contentScrollView.bounces = false
-//        contentScrollView.isScrollEnabled = false
         contentScrollView.backgroundColor = UIColor.clear
+        contentScrollView.delegate = self
     }
     
     private func updateContainerView(details: TeamDetails) {
@@ -130,11 +130,11 @@ class Details: UIViewController {
     }
     
     private func updateContainerViewForPlayer(details: PlayerDetails) {
-        let iRange = 0...2
+        let iRange = 0...3
         var x: CGFloat = 0
         for i in iRange {
             x = CGFloat(i) * contentScrollView.frame.width
-            guard let vc = PlayerOverviewModule.createModule(playerDetails: details.details, social: details.social) else  { return }
+            guard let vc = PlayerOverviewModule.createModule(playerDetails: details.details, social: details.social, signatureLists: details.signature) else  { return }
             let contentView = vc.view ?? UIView(frame: .zero)
             contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
             vc.willMove(toParent: self)
@@ -180,16 +180,20 @@ class Details: UIViewController {
 
 }
 
+
+
+// MARK: - UICollectionView Protocol Conformance
 extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return TeamDetailsContent.allCases.count
+        return presenter?.getNumberOfContentCount() ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailsContentCollectionViewCell.reuseIdentifier, for: indexPath) as? DetailsContentCollectionViewCell else { return UICollectionViewCell() }
-        cell.set(title: TeamDetailsContent.allCases[indexPath.row].title)
+        cell.set(title: presenter?.getContentTitle(for: indexPath.row) ?? "")
         if let selectedRow = collectionView.indexPathsForSelectedItems?.first {
             cell.set(isSelected: selectedRow == indexPath)
         } else {
+            colletionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
             cell.set(isSelected: indexPath.row == 0)
         }
         return cell
@@ -208,9 +212,28 @@ extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
 }
 
 
+// MARK: - UIScrollView Delegate Conformance.
+extension Details: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index: Int = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        let indexPath: IndexPath = IndexPath(row: index, section: 0)
+        if let lastSelectedIndexPath = colletionView.indexPathsForSelectedItems?.last {
+            colletionView.deselectItem(at: lastSelectedIndexPath, animated: true)
+            guard let cell = colletionView.cellForItem(at: lastSelectedIndexPath) as? DetailsContentCollectionViewCell else { return }
+            cell.set(isSelected: false)
+        }
+        colletionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        guard let cell = colletionView.cellForItem(at: indexPath) as? DetailsContentCollectionViewCell else { return }
+        cell.set(isSelected: true)
+    }
+}
+
+
+// MARK: - View Delegate Protocol Conformance.
 extension Details: DetailsViewDelegate {
     func renderDetails(details: TeamDetails) {
         removeALLContentSubViews()
+        colletionView.reloadData()
         updateContainerView(details: details)
         coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath))
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
@@ -221,7 +244,12 @@ extension Details: DetailsViewDelegate {
     
     func renderPlayerDetails(details: PlayerDetails) {
         removeALLContentSubViews()
+        colletionView.reloadData()
         updateContainerViewForPlayer(details: details)
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
+        teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
+        teamNameLabel.text = details.details.name
+        locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
+        cityNameLabel.text = details.details.city
     }
 }

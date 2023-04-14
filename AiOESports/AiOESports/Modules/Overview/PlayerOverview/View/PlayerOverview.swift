@@ -51,7 +51,9 @@ class PlayerOverview: UIViewController {
     
     private func configureTableView() {
         tableView.register(UINib(nibName: String(describing: OverviewTableViewCell.self), bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: String(describing: OverviewCellWithMultipleImages.self), bundle: nil), forCellReuseIdentifier: OverviewCellWithMultipleImages.reuseIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.clear
@@ -78,12 +80,22 @@ extension PlayerOverview: UICollectionViewDataSource {
 }
 
 
-extension PlayerOverview: UITableViewDataSource {
+extension PlayerOverview: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
-        return cell
+        if indexPath.row == 5 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewCellWithMultipleImages.reuseIdentifier, for: indexPath) as? OverviewCellWithMultipleImages else { return UITableViewCell() }
+            cell.renderUI(title: "Signature", signatureLists: presenter?.getSignatureLists() ?? [])
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
+            cell.render(title: presenter?.getTitleForCell(at: indexPath.row) ?? "", value: presenter?.getValueForCell(at: indexPath.row) ?? "", imageURL: presenter?.getImageURLForCell(at: indexPath.row))
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }

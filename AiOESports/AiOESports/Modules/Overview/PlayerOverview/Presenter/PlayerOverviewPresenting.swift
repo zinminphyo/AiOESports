@@ -11,4 +11,8 @@ import Foundation
 protocol PlayerOverviewPresenting {
     var viewDelegate: PlayerOverviewViewDelegate? { get set }
     func viewDidLoad()
+    func getTitleForCell(at index: Int) -> String
+    func getValueForCell(at index: Int) -> String
+    func getImageURLForCell(at index: Int) -> String?
+    func getSignatureLists() -> [SignatureModel]
 }

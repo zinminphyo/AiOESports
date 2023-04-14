@@ -52,5 +52,9 @@ class SocialCollectionViewCell: UICollectionViewCell {
         
     }
     
+    func renderUI(signature: SignatureModel) {
+        socialTypeImageView.kf.setImage(with: URL(string: signature.signatureImageFullPath))
+    }
+    
 }
 

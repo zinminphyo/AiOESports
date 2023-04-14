@@ -19,6 +19,7 @@ struct PlayerDetailsModel: Decodable {
     let location: String
     let city: String
     let bio: String
+    let role: String
     let playerImage: String
     let coverImage: String
     let teamName: String
@@ -36,8 +37,12 @@ struct PlayerDetailsModel: Decodable {
         return NetworkBaseURLs.shared.baseURL + "/" + teamImage
     }
     
+    var locationImageFullPath: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + location
+    }
+    
     enum CodingKeys: String, CodingKey {
-        case id, talent, name, status, birthday, location, city, bio
+        case id, talent, name, status, birthday, location, city, bio, role
         case teamId = "team_id"
         case fullName = "full_name"
         case playerImge = "player_image"
@@ -57,6 +62,7 @@ struct PlayerDetailsModel: Decodable {
         location = try container.decodeIfPresent(String.self, forKey: .location) ?? ""
         city = try container.decodeIfPresent(String.self, forKey: .city) ?? ""
         bio = try container.decodeIfPresent(String.self, forKey: .bio) ?? ""
+        role = try container.decodeIfPresent(String.self, forKey: .role) ?? ""
         fullName = try container.decodeIfPresent(String.self, forKey: .fullName) ?? ""
         playerImage = try container.decodeIfPresent(String.self, forKey: .playerImge) ?? ""
         coverImage = try container.decodeIfPresent(String.self, forKey: .coverImage) ?? ""

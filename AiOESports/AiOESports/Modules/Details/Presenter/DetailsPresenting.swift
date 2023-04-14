@@ -11,4 +11,6 @@ import Foundation
 protocol DetailsPresenting {
     var viewDelegate: DetailsViewDelegate? { get set }
     func fetchDetails()
+    func getNumberOfContentCount() -> Int
+    func getContentTitle(for index: Int) -> String
 }

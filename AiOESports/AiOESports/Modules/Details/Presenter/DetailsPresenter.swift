@@ -67,4 +67,30 @@ class DetailsPresenter: DetailsPresenting {
     }
     
     
+    func getNumberOfContentCount() -> Int {
+        switch category {
+        case .team:
+            return TeamDetailsContent.allCases.count
+        case .player:
+            return PlayerDetailsContent.allCases.count
+        case .caster:
+            return 0
+        case .creator:
+            return 0
+        }
+    }
+    
+    func getContentTitle(for index: Int) -> String {
+        switch category {
+        case .team:
+            return TeamDetailsContent.allCases[index].title
+        case .player:
+            return PlayerDetailsContent.allCases[index].title
+        case .caster:
+            return ""
+        case .creator:
+            return ""
+        }
+    }
+    
 }

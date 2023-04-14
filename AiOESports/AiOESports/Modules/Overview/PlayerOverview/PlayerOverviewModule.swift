@@ -11,12 +11,12 @@ import UIKit
 
 
 enum PlayerOverviewModule {
-    static func createModule(playerDetails: PlayerDetailsModel, social: [SocialModel]) -> PlayerOverview? {
+    static func createModule(playerDetails: PlayerDetailsModel, social: [SocialModel], signatureLists: [SignatureModel]) -> PlayerOverview? {
         let st = UIStoryboard(name: String(describing: PlayerOverview.self), bundle: nil)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: PlayerOverview.self)) as? PlayerOverview else {
             return nil
         }
-        let presenter = PlayerOverviewPresenter(details: playerDetails, social: social)
+        let presenter = PlayerOverviewPresenter(details: playerDetails, social: social, signatureLists: signatureLists)
         presenter.viewDelegate = vc
         vc.presenter = presenter
         return vc
