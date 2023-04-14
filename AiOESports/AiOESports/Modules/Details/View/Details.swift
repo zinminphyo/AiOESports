@@ -85,7 +85,7 @@ class Details: UIViewController {
     
     private func configureLocationContainerView() {
         locationCOntainerView.layer.cornerRadius = 5
-        locationCOntainerView.backgroundColor = Colors.Text.secondaryText
+        locationCOntainerView.backgroundColor = Colors.Theme.mainColor
     }
     
     private func configureCollectionView() {
@@ -134,13 +134,24 @@ class Details: UIViewController {
         var x: CGFloat = 0
         for i in iRange {
             x = CGFloat(i) * contentScrollView.frame.width
-            guard let vc = PlayerOverviewModule.createModule(playerDetails: details.details, social: details.social, signatureLists: details.signature) else  { return }
-            let contentView = vc.view ?? UIView(frame: .zero)
-            contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
-            vc.willMove(toParent: self)
-            addChild(vc)
-            vc.didMove(toParent: self)
-            contentScrollView.addSubview(contentView)
+            if i == iRange.count - 1 {
+                guard let vc = CareerModule.createModule(careerLists: details.career) else { return }
+                let contentView = vc.view ?? UIView(frame: .zero)
+                contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
+                vc.willMove(toParent: self)
+                addChild(vc)
+                vc.didMove(toParent: self)
+                contentScrollView.addSubview(contentView)
+            } else {
+                guard let vc = PlayerOverviewModule.createModule(playerDetails: details.details, social: details.social, signatureLists: details.signature) else  { return }
+                let contentView = vc.view ?? UIView(frame: .zero)
+                contentView.frame = CGRect(x: x, y: 0, width: contentScrollView.frame.width, height: contentScrollView.frame.height)
+                vc.willMove(toParent: self)
+                addChild(vc)
+                vc.didMove(toParent: self)
+                contentScrollView.addSubview(contentView)
+            }
+            
         }
         contentScrollView.contentSize = CGSize(width: CGFloat(iRange.count) * contentScrollView.frame.width, height: contentScrollView.frame.height)
     }

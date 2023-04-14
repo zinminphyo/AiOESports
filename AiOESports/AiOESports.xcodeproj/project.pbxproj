@@ -80,6 +80,12 @@
 		84A050C829E90654004D582B /* OverviewCellWithMultipleImages.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A050C629E90654004D582B /* OverviewCellWithMultipleImages.xib */; };
 		84A050D629E925E7004D582B /* OverviewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050D429E925E7004D582B /* OverviewImageCollectionViewCell.swift */; };
 		84A050D729E925E7004D582B /* OverviewImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A050D529E925E7004D582B /* OverviewImageCollectionViewCell.xib */; };
+		84A050DB29E92A6A004D582B /* Career.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A050DA29E92A6A004D582B /* Career.storyboard */; };
+		84A050DD29E92A9E004D582B /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050DC29E92A9E004D582B /* Career.swift */; };
+		84A050DF29E92BC6004D582B /* CareerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050DE29E92BC6004D582B /* CareerModule.swift */; };
+		84A050E229E92C16004D582B /* CareerPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050E129E92C16004D582B /* CareerPresenting.swift */; };
+		84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050E329E92C2F004D582B /* CareerViewDelegate.swift */; };
+		84A050E629E92C6D004D582B /* CareerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A050E529E92C6D004D582B /* CareerPresenter.swift */; };
 		84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455329E45F5E0086C708 /* SquadModel.swift */; };
 		84B7455629E45FB90086C708 /* CoachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455529E45FB90086C708 /* CoachModel.swift */; };
 		84B7455829E460080086C708 /* RosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455729E460080086C708 /* RosterModel.swift */; };
@@ -267,6 +273,12 @@
 		84A050C629E90654004D582B /* OverviewCellWithMultipleImages.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewCellWithMultipleImages.xib; sourceTree = "<group>"; };
 		84A050D429E925E7004D582B /* OverviewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		84A050D529E925E7004D582B /* OverviewImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		84A050DA29E92A6A004D582B /* Career.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Career.storyboard; sourceTree = "<group>"; };
+		84A050DC29E92A9E004D582B /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
+		84A050DE29E92BC6004D582B /* CareerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerModule.swift; sourceTree = "<group>"; };
+		84A050E129E92C16004D582B /* CareerPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPresenting.swift; sourceTree = "<group>"; };
+		84A050E329E92C2F004D582B /* CareerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerViewDelegate.swift; sourceTree = "<group>"; };
+		84A050E529E92C6D004D582B /* CareerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerPresenter.swift; sourceTree = "<group>"; };
 		84B7455329E45F5E0086C708 /* SquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
 		84B7455529E45FB90086C708 /* CoachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachModel.swift; sourceTree = "<group>"; };
 		84B7455729E460080086C708 /* RosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterModel.swift; sourceTree = "<group>"; };
@@ -783,6 +795,35 @@
 			path = OverviewImageCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		84A050D829E92A54004D582B /* Career */ = {
+			isa = PBXGroup;
+			children = (
+				84A050E029E92C0A004D582B /* Presenter */,
+				84A050D929E92A63004D582B /* View */,
+				84A050DE29E92BC6004D582B /* CareerModule.swift */,
+			);
+			path = Career;
+			sourceTree = "<group>";
+		};
+		84A050D929E92A63004D582B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A050DA29E92A6A004D582B /* Career.storyboard */,
+				84A050DC29E92A9E004D582B /* Career.swift */,
+				84A050E329E92C2F004D582B /* CareerViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84A050E029E92C0A004D582B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84A050E129E92C16004D582B /* CareerPresenting.swift */,
+				84A050E529E92C6D004D582B /* CareerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		84B7456329E46EB10086C708 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1191,6 +1232,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84A050D829E92A54004D582B /* Career */,
 				849BCE0529E51D930033C63A /* Overview */,
 				84B7458329E494580086C708 /* Sponsor */,
 				84B7456F29E487960086C708 /* FormerPlayers */,
@@ -1355,6 +1397,7 @@
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
 				842FC9B429E849D800C5F354 /* OverviewTableViewCell.xib in Resources */,
 				84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */,
+				84A050DB29E92A6A004D582B /* Career.storyboard in Resources */,
 				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
 				84A050C829E90654004D582B /* OverviewCellWithMultipleImages.xib in Resources */,
@@ -1548,6 +1591,7 @@
 				84D9C47529E2CAAE006B06DD /* DetailsPresenter.swift in Sources */,
 				84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */,
 				849BCE0D29E520960033C63A /* TeamOverviewModule.swift in Sources */,
+				84A050DF29E92BC6004D582B /* CareerModule.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				842FC9AF29E8433600C5F354 /* PlayerDetails.swift in Sources */,
 				842FC9BF29E84DB100C5F354 /* PlayerOverviewPresenting.swift in Sources */,
@@ -1566,6 +1610,7 @@
 				84D9C47029E2C56F006B06DD /* TeamDetails.swift in Sources */,
 				842FC9C329E84E3700C5F354 /* PlayerOverviewPresenter.swift in Sources */,
 				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
+				84A050E229E92C16004D582B /* CareerPresenting.swift in Sources */,
 				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */,
@@ -1597,6 +1642,7 @@
 				849B9C3529D185D100F1C2D2 /* NibLoadable.swift in Sources */,
 				84CF09F429D9E91400F87400 /* Home.swift in Sources */,
 				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
+				84A050E629E92C6D004D582B /* CareerPresenter.swift in Sources */,
 				849BCE1D29E5522D0033C63A /* DetailsContentCollectionViewCell.swift in Sources */,
 				84B7458A29E494AD0086C708 /* SponsorModule.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
@@ -1613,12 +1659,14 @@
 				849BCE1229E5213E0033C63A /* TeamOverviewViewDelegate.swift in Sources */,
 				84B7459429E499B30086C708 /* SponsorViewDelegate.swift in Sources */,
 				842FC9BC29E84D2400C5F354 /* PlayerOverviewModule.swift in Sources */,
+				84A050DD29E92A9E004D582B /* Career.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
+				84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */,
 				84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,

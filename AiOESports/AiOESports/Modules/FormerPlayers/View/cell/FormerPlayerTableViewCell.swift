@@ -99,4 +99,14 @@ class FormerPlayerTableViewCell: UITableViewCell {
         fromValueLabel.text = formerPlayer.fromTime
         toValueLabel.text = formerPlayer.toTime
     }
+    
+    func updateUI(careerModel: CareerModel) {
+        playerImageView.kf.setImage(with: URL(string: careerModel.teamImageFullPath))
+        playerNameLabel.text = careerModel.teamName
+        cityNameLabel.text = careerModel.city
+        locationImageView.kf.setImage(with: URL(string: careerModel.locationImageFullPath))
+        fromValueLabel.text = careerModel.fromTime
+        toValueLabel.text = careerModel.toTime
+        currentTeamImageView.isHidden = true
+    }
 }
