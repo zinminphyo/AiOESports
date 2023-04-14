@@ -15,6 +15,7 @@ class CasterOverview: UIViewController {
     
     private var socialLists: [SocialModel] = []
     private var gameLists: [String] = []
+    private var details: PlayerDetails? = nil
 
     var presenter: CasterOverviewPresenting?
     
@@ -54,6 +55,7 @@ class CasterOverview: UIViewController {
     
     private func configureTableView() {
         tableView.register(UINib(nibName: String(describing: OverviewTableViewCell.self), bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: String(describing: OverviewCellWithMultipleImages.self), bundle: nil), forCellReuseIdentifier: OverviewCellWithMultipleImages.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -80,7 +82,28 @@ extension CasterOverview: UITableViewDataSource, UITableViewDelegate {
         return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 5 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewCellWithMultipleImages.reuseIdentifier, for: indexPath) as? OverviewCellWithMultipleImages else { return UITableViewCell() }
+            cell.renderUI(title: "Games", signatureLists: [])
+            return cell
+        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell()}
+        switch indexPath.row {
+        case 0:
+            cell.render(title: "Status", value: details?.details.status ?? "", imageURL: nil)
+        case 1:
+            cell.render(title: "Real Name", value: details?.details.fullName ?? "", imageURL: nil)
+        case 2:
+            cell.render(title: "Birthday", value: details?.details.birthday ?? "", imageURL: nil)
+        case 3:
+            cell.render(title: "Location", value: details?.details.city ?? "", imageURL: details?.details.locationImageFullPath)
+        case 4:
+            cell.render(title: "Role", value: details?.details.role ?? "", imageURL: nil)
+        default:
+            break
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,6 +116,7 @@ extension CasterOverview: CasterOverviewViewDelegate {
     func renderUI(details: PlayerDetails) {
         self.socialLists = details.social
         self.collectionView.reloadData()
+        self.details = details
         self.tableView.reloadData()
     }
 }

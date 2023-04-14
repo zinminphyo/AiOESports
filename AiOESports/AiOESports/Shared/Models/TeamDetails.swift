@@ -126,7 +126,7 @@ struct TeamDetails: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let resultContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let dataContainer = try resultContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
-        squad = try dataContainer.decode(SquadModel.self, forKey: .squad)
+        squad = try dataContainer.decodeIfPresent(SquadModel.self, forKey: .squad) ?? SquadModel(headCoach: nil, assistantCoach: nil, technicalDirector: nil, analyst: nil, roster: [])
         achivemets = try dataContainer.decodeIfPresent([AchivementModel].self, forKey: .achivements) ?? []
         sponsors = try dataContainer.decodeIfPresent([SponsorModel].self, forKey: .sponsors) ?? []
         formerPlayers = try dataContainer.decodeIfPresent([FormerPlayerModel].self, forKey: .formerPlayers) ?? []

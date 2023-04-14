@@ -11,4 +11,5 @@ import Foundation
 protocol SquadViewDelegate {
     var viewModel: SquadViewModel? { get set }
     func renderView(squad: SquadModel)
+    func renderView(achivement: PlayerAchivement)
 }

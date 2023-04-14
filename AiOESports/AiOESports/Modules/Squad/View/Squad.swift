@@ -11,6 +11,7 @@ class Squad: UIViewController {
     
     @IBOutlet weak var squadTableView: UITableView!
     private var squadModel: SquadModel? = nil
+    private var playerAchivementModel: PlayerAchivement? = nil
     var viewModel: SquadViewModel?
 
     override func viewDidLoad() {
@@ -51,13 +52,34 @@ extension Squad: SquadViewDelegate {
         self.squadModel = squad
         squadTableView.reloadData()
     }
+    
+    func renderView(achivement: PlayerAchivement) {
+        self.playerAchivementModel = achivement
+        squadTableView.reloadData()
+    }
+    
 }
 
 extension Squad: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
+       
+        if let _ = playerAchivementModel {
+            return 3
+        }
         return 5
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if let achivementModel = playerAchivementModel {
+            if section == 0 {
+                return achivementModel.asCoach.count
+            } else if section == 1 {
+                return achivementModel.asPlayer.count
+            } else {
+                return achivementModel.asCasters.count
+            }
+        } 
         if section == 0 {
             return squadModel?.headCoach == nil ? 0 : 1
         } else if section == 1 {
@@ -71,22 +93,37 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SquadTableViewCell.reuseIdentifier, for: indexPath) as? SquadTableViewCell else { return UITableViewCell() }
         let section = indexPath.section
-        guard let model = squadModel else { return UITableViewCell() }
-        switch section {
-        case 0:
-            cell.set(coach: model.headCoach)
-        case 1:
-            cell.set(coach: model.assistantCoach)
-        case 2:
-            cell.set(coach: model.technicalDirector)
-        case 3:
-            cell.set(coach: model.analyst)
-        case 4:
-            cell.set(roster: model.roster[indexPath.row])
-        default:
-            break
+        
+        if let achivementModel = playerAchivementModel {
+            switch section {
+            case 0:
+                cell.set(achivement: achivementModel.asCoach[indexPath.row])
+            case 1:
+                cell.set(achivement: achivementModel.asPlayer[indexPath.row])
+            case 2:
+                cell.set(achivement: achivementModel.asCasters[indexPath.row])
+            default:
+                break
+            }
+        } else {
+            guard let model = squadModel else { return UITableViewCell() }
+            switch section {
+            case 0:
+                cell.set(coach: model.headCoach)
+            case 1:
+                cell.set(coach: model.assistantCoach)
+            case 2:
+                cell.set(coach: model.technicalDirector)
+            case 3:
+                cell.set(coach: model.analyst)
+            case 4:
+                cell.set(roster: model.roster[indexPath.row])
+            default:
+                break
+            }
         }
         return cell
     }
@@ -99,17 +136,30 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         view.addSubview(label)
         label.font = Fonts.subtitleFont
         label.textColor = Colors.Text.primaryText
-        if section == 0 {
-            label.text = "Head Coach".uppercased()
-        } else if section == 1 {
-            label.text = "Assistant Coach".uppercased()
-        } else if section == 2 {
-            label.text = "Technical Director".uppercased()
-        } else if section == 3 {
-            label.text = "Analyst".uppercased()
+        
+        if let _ = playerAchivementModel {
+            if section == 0 {
+                label.text = "As Coach"
+            } else if section == 1 {
+                label.text = "As Player"
+            } else {
+                label.text = "As Caster"
+            }
         } else {
-            label.text = "Roster".uppercased()
+            if section == 0 {
+                label.text = "Head Coach".uppercased()
+            } else if section == 1 {
+                label.text = "Assistant Coach".uppercased()
+            } else if section == 2 {
+                label.text = "Technical Director".uppercased()
+            } else if section == 3 {
+                label.text = "Analyst".uppercased()
+            } else {
+                label.text = "Roster".uppercased()
+            }
         }
+        
+        
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
@@ -130,6 +180,20 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if let achivementModel = playerAchivementModel {
+            switch section {
+            case 0:
+                return achivementModel.asCoach.count == 0 ? 0 : 40
+            case 1:
+                return achivementModel.asPlayer.count == 0 ? 0 : 40
+            case 2:
+                return achivementModel.asCasters.count == 0 ? 0 : 40
+            default :
+                return 0
+            }
+        }
+        
         switch section {
         case 0:
             return squadModel?.headCoach == nil ? 0 : 40
@@ -147,6 +211,20 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if let achivementModel = playerAchivementModel {
+            switch section {
+            case 0:
+                return achivementModel.asCoach.count == 0 ? 0 : 15
+            case 1:
+                return achivementModel.asPlayer.count == 0 ? 0 : 15
+            case 2:
+                return achivementModel.asCasters.count == 0 ? 0 : 15
+            default:
+                return 0
+            }
+        }
+        
         switch section {
         case 0:
             return squadModel?.headCoach == nil ? 0 : 15
@@ -161,6 +239,5 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         default:
             return 0
         }
-        return 15
     }
 }

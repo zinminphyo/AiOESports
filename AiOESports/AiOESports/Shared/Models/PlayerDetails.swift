@@ -13,6 +13,7 @@ struct PlayerDetails: Decodable {
     let signature: [SignatureModel]
     let social: [SocialModel]
     let career: [CareerModel]
+    let playerAchivement: PlayerAchivement
     let mainGame: String
     
     enum CodingKeys: String, CodingKey {
@@ -25,6 +26,7 @@ struct PlayerDetails: Decodable {
         case social
         case mainGame = "main_game"
         case subGames = "sub_games"
+        case playerAchivement = "achieve"
     }
     
     init(from decoder: Decoder) throws {
@@ -32,6 +34,7 @@ struct PlayerDetails: Decodable {
         let result = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let data = try result.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         career = try data.decodeIfPresent([CareerModel].self, forKey: .career) ?? []
+        playerAchivement = try data.decode(PlayerAchivement.self, forKey: .playerAchivement)
         let status = try data.nestedContainer(keyedBy: CodingKeys.self, forKey: .stats)
         details = try status.decode(PlayerDetailsModel.self, forKey: .details)
         signature = try status.decodeIfPresent([SignatureModel].self, forKey: .signature) ?? []

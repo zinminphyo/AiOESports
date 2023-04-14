@@ -17,4 +17,14 @@ enum SquadModule {
         vc.viewModel = viewModel
         return vc
     }
+    
+    static func createModule(playerAchivement: PlayerAchivement) -> Squad? {
+        let st = UIStoryboard(name: "Squad", bundle: .main)
+        guard let vc = st.instantiateViewController(withIdentifier: String(describing: Squad.self)) as? Squad else { return nil }
+        let viewModel = SquadViewModel(achivementModel: playerAchivement)
+        viewModel.viewDelegate = vc
+        vc.viewModel = viewModel
+        return vc
+    }
+    
 }

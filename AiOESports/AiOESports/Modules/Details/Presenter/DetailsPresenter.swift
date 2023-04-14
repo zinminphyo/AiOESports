@@ -144,7 +144,7 @@ class DetailsPresenter: DetailsPresenting {
             guard let vc = PlayerOverviewModule.createModule(playerDetails: playerDetails.details, social: playerDetails.social, signatureLists: playerDetails.signature) else { return UIViewController() }
             return vc
         case 1:
-            guard let vc = PlayerOverviewModule.createModule(playerDetails: playerDetails.details, social: playerDetails.social, signatureLists: playerDetails.signature) else { return UIViewController() }
+            guard let vc = SquadModule.createModule(playerAchivement: playerDetails.playerAchivement) else { return UIViewController() }
             return vc
         case 2:
             guard let vc = CareerModule.createModule(careerLists: playerDetails.career) else { return UIViewController() }
@@ -161,7 +161,7 @@ class DetailsPresenter: DetailsPresenting {
             guard let vc = CasterOverviewModule.createModule(details: casterDetails) else { return UIViewController() }
             return vc
         default:
-            guard let vc = CasterOverviewModule.createModule(details: casterDetails) else { return UIViewController() }
+            guard let vc = SquadModule.createModule(playerAchivement: casterDetails.playerAchivement) else { return UIViewController() }
             return vc
         }
     }

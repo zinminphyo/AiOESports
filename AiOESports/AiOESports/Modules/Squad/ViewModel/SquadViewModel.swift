@@ -13,12 +13,22 @@ class SquadViewModel {
     var viewDelegate: SquadViewDelegate? = nil
     
     private var squadModel: SquadModel? = nil
+    private var achivementModel: PlayerAchivement? = nil
     
     init(squadModel: SquadModel) {
         self.squadModel = squadModel
     }
     
+    init(achivementModel: PlayerAchivement) {
+        self.achivementModel = achivementModel
+    }
+    
+    
     func viewDidLoad() {
+        if let achivementModel = achivementModel {
+            self.viewDelegate?.renderView(achivement: achivementModel)
+        }
+        
         guard let squadModel = squadModel else { return }
         self.viewDelegate?.renderView(squad: squadModel)
     }
