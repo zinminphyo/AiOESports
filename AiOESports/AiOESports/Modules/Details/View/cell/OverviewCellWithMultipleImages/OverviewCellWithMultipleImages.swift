@@ -46,11 +46,13 @@ class OverviewCellWithMultipleImages: UITableViewCell {
     }
     
     private func configureCollectionView() {
-        collectionView.register(UINib(nibName: String(describing: SocialCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SocialCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: String(describing: OverviewImageCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: OverviewImageCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        flowLayout.itemSize = CGSize(width: collectionView.frame.height * 1.4, height: collectionView.frame.height)
         flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 4
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.collectionViewLayout = flowLayout
@@ -72,8 +74,8 @@ extension OverviewCellWithMultipleImages: UICollectionViewDataSource {
         return signatureLists.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SocialCollectionViewCell.reuseIdentifier, for: indexPath) as? SocialCollectionViewCell else { return UICollectionViewCell() }
-        cell.renderUI(signature: signatureLists[indexPath.row])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OverviewImageCollectionViewCell.reuseIdentifier, for: indexPath) as? OverviewImageCollectionViewCell else { return UICollectionViewCell() }
+        cell.renderUI(url: signatureLists[indexPath.row].signatureImageFullPath)
         return cell
     }
 }

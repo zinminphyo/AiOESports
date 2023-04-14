@@ -37,6 +37,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 0.5
+        self.clipsToBounds = true
     }
     
     private func configureImageView() {
@@ -53,6 +54,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @discardableResult
     func set(image: UIImage?) -> Self {
         self.imageView.image = image
+        return self
+    }
+    
+    @discardableResult
+    func set(url: String) -> Self {
+        imageView.kf.setImage(with: URL(string: url))
         return self
     }
 }

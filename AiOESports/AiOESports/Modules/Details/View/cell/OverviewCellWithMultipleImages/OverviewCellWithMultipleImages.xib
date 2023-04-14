@@ -23,8 +23,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9Zj-0E-flF">
-                        <rect key="frame" x="122" y="5" width="215" height="45"/>
+                        <rect key="frame" x="122" y="12.666666666666657" width="215" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="QRL-oa-NZR"/>
+                        </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MZP-JY-LZq">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -36,10 +39,9 @@
                 <constraints>
                     <constraint firstItem="9Zj-0E-flF" firstAttribute="leading" secondItem="bwe-S4-WbW" secondAttribute="trailing" id="3hY-Fv-fE4"/>
                     <constraint firstItem="bwe-S4-WbW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5ya-ac-hzS"/>
-                    <constraint firstAttribute="bottom" secondItem="9Zj-0E-flF" secondAttribute="bottom" constant="5" id="AhK-bZ-5x5"/>
+                    <constraint firstItem="9Zj-0E-flF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XMq-m0-dUg"/>
                     <constraint firstItem="bwe-S4-WbW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="cNg-OH-Awq"/>
                     <constraint firstAttribute="trailing" secondItem="9Zj-0E-flF" secondAttribute="trailing" constant="16" id="cwx-JO-SbN"/>
-                    <constraint firstItem="9Zj-0E-flF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="jKl-aj-EsQ"/>
                     <constraint firstItem="bwe-S4-WbW" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="yYI-bv-5g2"/>
                 </constraints>
             </tableViewCellContentView>
