@@ -41,7 +41,7 @@ class PlayerOverview: UIViewController {
         collectionView.register(UINib(nibName: String(describing: SocialCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SocialCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.estimatedItemSize = CGSize(width: 100, height: collectionView.frame.height)
+        flowLayout.estimatedItemSize = SizeInspector.socialIconSize
         flowLayout.scrollDirection = .horizontal
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false

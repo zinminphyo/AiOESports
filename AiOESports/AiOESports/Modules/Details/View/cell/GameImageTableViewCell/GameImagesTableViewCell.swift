@@ -58,14 +58,14 @@ class GameImagesTableViewCell: UITableViewCell {
     }
     
     private func configureSeperatorView() {
-        seperatorView.backgroundColor = UIColor.opaqueSeparator
+        seperatorView.backgroundColor = Colors.Theme.SecondaryBackground
     }
     
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: String(describing: GameImageCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: GameImageCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        flowLayout.itemSize = SizeInspector.overviewGameIconSize
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 4
         collectionView.showsVerticalScrollIndicator = false

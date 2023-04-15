@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Qy-Wl-esA">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                        <rect key="frame" x="0.0" y="8" width="393" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cae-NF-IRd"/>
@@ -44,7 +44,7 @@
                                         </cells>
                                     </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y0N-IM-nLa">
-                                        <rect key="frame" x="0.0" y="60" width="393" height="699"/>
+                                        <rect key="frame" x="0.0" y="68" width="393" height="691"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -52,7 +52,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Y0N-IM-nLa" secondAttribute="trailing" id="C5v-gb-pwF"/>
                                     <constraint firstItem="3Qy-Wl-esA" firstAttribute="leading" secondItem="4uP-RT-Xxh" secondAttribute="leading" id="ZjK-Xc-8Qb"/>
-                                    <constraint firstItem="3Qy-Wl-esA" firstAttribute="top" secondItem="4uP-RT-Xxh" secondAttribute="top" id="cRv-fa-qHP"/>
+                                    <constraint firstItem="3Qy-Wl-esA" firstAttribute="top" secondItem="4uP-RT-Xxh" secondAttribute="top" constant="8" id="cRv-fa-qHP"/>
                                     <constraint firstAttribute="bottom" secondItem="Y0N-IM-nLa" secondAttribute="bottom" id="cXg-cd-FwK"/>
                                     <constraint firstItem="Y0N-IM-nLa" firstAttribute="leading" secondItem="4uP-RT-Xxh" secondAttribute="leading" id="faP-eQ-3Lh"/>
                                     <constraint firstItem="Y0N-IM-nLa" firstAttribute="top" secondItem="3Qy-Wl-esA" secondAttribute="bottom" constant="10" id="jj2-zX-425"/>

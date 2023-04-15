@@ -46,16 +46,16 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQA-5V-uyM">
-                                                        <rect key="frame" x="76" y="35.000000000000028" width="75" height="25"/>
+                                                        <rect key="frame" x="76" y="35.000000000000028" width="71" height="25"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycm-BR-ucZ">
-                                                                <rect key="frame" x="4" y="2" width="21" height="21"/>
+                                                                <rect key="frame" x="5" y="5" width="15" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="ycm-BR-ucZ" secondAttribute="height" multiplier="1:1" id="8Fg-TK-gmg"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-WB-WNl">
-                                                                <rect key="frame" x="29" y="2" width="42" height="21"/>
+                                                                <rect key="frame" x="24" y="2" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -64,10 +64,10 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Yvb-WB-WNl" firstAttribute="leading" secondItem="ycm-BR-ucZ" secondAttribute="trailing" constant="4" id="E2f-JA-xRP"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Yvb-WB-WNl" secondAttribute="trailing" constant="4" id="YvB-yn-E6O"/>
-                                                            <constraint firstItem="ycm-BR-ucZ" firstAttribute="leading" secondItem="nQA-5V-uyM" secondAttribute="leading" constant="4" id="eSc-8x-eYg"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ycm-BR-ucZ" secondAttribute="bottom" constant="2" id="gTD-yJ-v1G"/>
-                                                            <constraint firstItem="ycm-BR-ucZ" firstAttribute="top" secondItem="nQA-5V-uyM" secondAttribute="top" constant="2" id="wKq-sC-3RP"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Yvb-WB-WNl" secondAttribute="trailing" constant="5" id="YvB-yn-E6O"/>
+                                                            <constraint firstItem="ycm-BR-ucZ" firstAttribute="leading" secondItem="nQA-5V-uyM" secondAttribute="leading" constant="5" id="eSc-8x-eYg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ycm-BR-ucZ" secondAttribute="bottom" constant="5" id="gTD-yJ-v1G"/>
+                                                            <constraint firstItem="ycm-BR-ucZ" firstAttribute="top" secondItem="nQA-5V-uyM" secondAttribute="top" constant="5" id="wKq-sC-3RP"/>
                                                             <constraint firstItem="Yvb-WB-WNl" firstAttribute="centerY" secondItem="nQA-5V-uyM" secondAttribute="centerY" id="wc9-ze-0xY"/>
                                                         </constraints>
                                                     </view>
@@ -84,7 +84,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-gL-NgD">
-                                                <rect key="frame" x="0.0" y="266.66666666666669" width="393" height="733.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="276.66666666666669" width="393" height="723.33333333333326"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-78-sMi">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -100,18 +100,28 @@
                                                         </collectionViewFlowLayout>
                                                         <cells/>
                                                     </collectionView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2h-z0-p3f">
+                                                        <rect key="frame" x="0.0" y="49" width="393" height="1"/>
+                                                        <color key="backgroundColor" name="SecondaryBackground"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="x2w-cL-v6c"/>
+                                                        </constraints>
+                                                    </view>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIk-b1-A2T">
-                                                        <rect key="frame" x="0.0" y="50" width="393" height="683.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="50" width="393" height="673.33333333333337"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </scrollView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="eGq-78-sMi" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="88Y-PG-PmK"/>
-                                                    <constraint firstItem="AIk-b1-A2T" firstAttribute="top" secondItem="eGq-78-sMi" secondAttribute="bottom" id="eAX-Ov-W74"/>
+                                                    <constraint firstItem="j2h-z0-p3f" firstAttribute="bottom" secondItem="eGq-78-sMi" secondAttribute="bottom" id="YOf-F8-soZ"/>
+                                                    <constraint firstItem="AIk-b1-A2T" firstAttribute="top" secondItem="j2h-z0-p3f" secondAttribute="bottom" id="eAX-Ov-W74"/>
                                                     <constraint firstAttribute="bottom" secondItem="AIk-b1-A2T" secondAttribute="bottom" id="jul-xd-Pm6"/>
                                                     <constraint firstAttribute="trailing" secondItem="AIk-b1-A2T" secondAttribute="trailing" id="l7k-fI-CVC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="j2h-z0-p3f" secondAttribute="trailing" id="oiK-tP-9hk"/>
                                                     <constraint firstAttribute="trailing" secondItem="eGq-78-sMi" secondAttribute="trailing" id="peL-f8-LBt"/>
+                                                    <constraint firstItem="j2h-z0-p3f" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="rAz-9g-nDt"/>
                                                     <constraint firstItem="AIk-b1-A2T" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="rlq-WY-9Ls"/>
                                                     <constraint firstItem="eGq-78-sMi" firstAttribute="top" secondItem="W3j-gL-NgD" secondAttribute="top" id="wj9-tM-LY3"/>
                                                 </constraints>
@@ -123,7 +133,7 @@
                                             <constraint firstItem="9g2-OM-J4d" firstAttribute="top" secondItem="yUa-lQ-7fD" secondAttribute="bottom" id="CSu-Ck-zfQ"/>
                                             <constraint firstAttribute="trailing" secondItem="W3j-gL-NgD" secondAttribute="trailing" id="Elk-QP-Tbc"/>
                                             <constraint firstAttribute="trailing" secondItem="9g2-OM-J4d" secondAttribute="trailing" id="EyA-eT-BFF"/>
-                                            <constraint firstItem="W3j-gL-NgD" firstAttribute="top" secondItem="9g2-OM-J4d" secondAttribute="bottom" id="Oqh-EK-2X2"/>
+                                            <constraint firstItem="W3j-gL-NgD" firstAttribute="top" secondItem="9g2-OM-J4d" secondAttribute="bottom" constant="10" id="Oqh-EK-2X2"/>
                                             <constraint firstAttribute="trailing" secondItem="yUa-lQ-7fD" secondAttribute="trailing" id="UxN-s9-fwy"/>
                                             <constraint firstItem="9g2-OM-J4d" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="Vcf-rl-WEK"/>
                                             <constraint firstItem="yUa-lQ-7fD" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="cu1-dc-oXc"/>
@@ -183,6 +193,7 @@
                         <outlet property="containerScrollView" destination="ywY-sY-uXS" id="RkB-ak-n6z"/>
                         <outlet property="contentScrollView" destination="AIk-b1-A2T" id="bOu-Xc-PSr"/>
                         <outlet property="coverImageView" destination="yUa-lQ-7fD" id="rpy-AZ-dNs"/>
+                        <outlet property="detailsInfoContainerView" destination="W3j-gL-NgD" id="bHh-fR-Jbt"/>
                         <outlet property="locationCOntainerView" destination="nQA-5V-uyM" id="4s2-nZ-2rT"/>
                         <outlet property="locationImageView" destination="ycm-BR-ucZ" id="sGB-Hz-8fu"/>
                         <outlet property="teamImageView" destination="KjU-7w-Qab" id="dIM-A8-ha6"/>
@@ -200,6 +211,9 @@
         <image name="backlogo" width="9" height="15"/>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryBackground">
+            <color red="0.16078431372549021" green="0.20000000000000001" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

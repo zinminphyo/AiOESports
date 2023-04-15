@@ -57,7 +57,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             selectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             selectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             selectionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 4),
-            selectionView.heightAnchor.constraint(equalToConstant: 5),
+            selectionView.heightAnchor.constraint(equalToConstant: 3),
             selectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ])
     }

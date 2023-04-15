@@ -28,20 +28,21 @@
                         <rect key="frame" x="122.33333333333333" y="11" width="215.66666666666669" height="30"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HXv-yt-OBo">
-                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <rect key="frame" x="0.0" y="5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HXv-yt-OBo" secondAttribute="height" multiplier="1:1" id="IlW-Ez-Jcf"/>
+                                    <constraint firstAttribute="height" constant="20" id="R73-WQ-fM4"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-og-kwp">
-                                <rect key="frame" x="38.000000000000014" y="4" width="2" height="22"/>
+                                <rect key="frame" x="28.000000000000014" y="5" width="2" height="20"/>
                                 <color key="backgroundColor" name="InputColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="MHD-Ls-JPM"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7ai-qR-WEX">
-                                <rect key="frame" x="48.000000000000014" y="0.0" width="167.66666666666669" height="30"/>
+                                <rect key="frame" x="38.000000000000014" y="0.0" width="177.66666666666669" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sEn-Wb-XLw">
                                     <size key="itemSize" width="128" height="128"/>
@@ -55,15 +56,14 @@
                         <constraints>
                             <constraint firstItem="7ai-qR-WEX" firstAttribute="top" secondItem="6EL-0y-ST1" secondAttribute="top" id="71i-sy-KKf"/>
                             <constraint firstAttribute="height" constant="30" id="AF2-c3-uSk"/>
-                            <constraint firstItem="HcN-og-kwp" firstAttribute="top" secondItem="6EL-0y-ST1" secondAttribute="top" constant="4" id="Bs6-Xu-2G8"/>
-                            <constraint firstItem="HXv-yt-OBo" firstAttribute="top" secondItem="6EL-0y-ST1" secondAttribute="top" id="Fey-K2-GJx"/>
+                            <constraint firstItem="HcN-og-kwp" firstAttribute="top" secondItem="HXv-yt-OBo" secondAttribute="top" id="HlT-uN-MoY"/>
                             <constraint firstItem="7ai-qR-WEX" firstAttribute="leading" secondItem="HcN-og-kwp" secondAttribute="trailing" constant="8" id="KA5-0a-2PK"/>
-                            <constraint firstAttribute="bottom" secondItem="HXv-yt-OBo" secondAttribute="bottom" id="LAb-DQ-so6"/>
                             <constraint firstAttribute="trailing" secondItem="7ai-qR-WEX" secondAttribute="trailing" id="Q4z-Bh-Bw7"/>
                             <constraint firstItem="HXv-yt-OBo" firstAttribute="leading" secondItem="6EL-0y-ST1" secondAttribute="leading" id="dL4-UL-ozf"/>
-                            <constraint firstAttribute="bottom" secondItem="HcN-og-kwp" secondAttribute="bottom" constant="4" id="m14-hb-xX6"/>
                             <constraint firstItem="HcN-og-kwp" firstAttribute="leading" secondItem="HXv-yt-OBo" secondAttribute="trailing" constant="8" id="mQv-UI-q24"/>
+                            <constraint firstItem="HXv-yt-OBo" firstAttribute="centerY" secondItem="6EL-0y-ST1" secondAttribute="centerY" id="pa9-1u-0qP"/>
                             <constraint firstAttribute="bottom" secondItem="7ai-qR-WEX" secondAttribute="bottom" id="vmR-Wp-RjS"/>
+                            <constraint firstItem="HcN-og-kwp" firstAttribute="bottom" secondItem="HXv-yt-OBo" secondAttribute="bottom" id="wr5-LG-hM3"/>
                         </constraints>
                     </view>
                 </subviews>

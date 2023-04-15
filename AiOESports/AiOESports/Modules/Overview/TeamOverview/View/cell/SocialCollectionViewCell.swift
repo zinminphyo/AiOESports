@@ -49,7 +49,7 @@ class SocialCollectionViewCell: UICollectionViewCell {
     }
     
     func renderUI(social: SocialModel) {
-        
+        socialTypeImageView.image = Images.SocialLogo.getImage(socialName: social.platform)
     }
     
     func renderUI(signature: SignatureModel) {

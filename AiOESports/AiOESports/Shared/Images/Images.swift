@@ -80,5 +80,27 @@ class Images {
     
     enum SocialLogo {
         static let facebook = UIImage(named: "facebook", in: .main, compatibleWith: nil)
+        static let youtube = UIImage(named: "youtube", in: .main, compatibleWith: nil)
+        static let twitch = UIImage(named: "twitch", in: .main, compatibleWith: nil)
+        static let line = UIImage(named: "line", in: .main, compatibleWith: nil)
+        
+        static func getImage(socialName: String) -> UIImage? {
+            switch socialName {
+            case "facebook_page":
+                return facebook
+            case "facebook":
+                return facebook
+            case "youtube":
+                return youtube
+            case "twitch":
+                return twitch
+            case "line":
+                return line
+            case "instagram":
+                return line
+            default:
+                return nil
+            }
+        }
     }
 }

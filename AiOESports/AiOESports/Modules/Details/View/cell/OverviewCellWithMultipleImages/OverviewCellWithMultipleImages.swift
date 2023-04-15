@@ -49,7 +49,7 @@ class OverviewCellWithMultipleImages: UITableViewCell {
         collectionView.register(UINib(nibName: String(describing: OverviewImageCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: OverviewImageCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: collectionView.frame.height * 1.4, height: collectionView.frame.height)
+        flowLayout.itemSize = CGSize(width: collectionView.frame.height * 1.5, height: collectionView.frame.height)
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 4

@@ -15,6 +15,7 @@ class Colors {
     enum Theme {
         static let mainColor = UIColor(named: "ThemeColor", in: .main, compatibleWith: nil)
         static let inputColor = UIColor(named: "InputColor", in: .main, compatibleWith: nil)
+        static let SecondaryBackground = UIColor(named: "SecondaryBackground", in: .main, compatibleWith: nil)
     }
     
     enum Button {

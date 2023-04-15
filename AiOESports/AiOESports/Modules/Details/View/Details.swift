@@ -20,6 +20,7 @@ class Details: UIViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var teamInfoContainerView: UIView!
     @IBOutlet weak var locationCOntainerView: UIView!
+    @IBOutlet weak var detailsInfoContainerView: UIView!
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -48,6 +49,7 @@ class Details: UIViewController {
         configureTeamNameLabel()
         configureLocationContainerView()
         configureCityLabel()
+        configureDetailsInfoContainerView()
         configureCollectionView()
         configureContentScrollView()
     }
@@ -67,7 +69,7 @@ class Details: UIViewController {
     }
     
     private func configureTeamInfoContainerView() {
-        teamInfoContainerView.backgroundColor = Colors.Theme.inputColor
+        teamInfoContainerView.backgroundColor = Colors.Theme.mainColor
     }
     
     private func configureTeamNameLabel() {
@@ -77,6 +79,7 @@ class Details: UIViewController {
     
     private func configureTeamImageView() {
         teamImageView.contentMode = .scaleAspectFit
+        teamImageView.layer.cornerRadius = 8
     }
     
     private func configureCityLabel() {
@@ -86,7 +89,13 @@ class Details: UIViewController {
     
     private func configureLocationContainerView() {
         locationCOntainerView.layer.cornerRadius = 5
-        locationCOntainerView.backgroundColor = Colors.Theme.mainColor
+        locationCOntainerView.backgroundColor = Colors.Theme.SecondaryBackground
+    }
+    
+    private func configureDetailsInfoContainerView() {
+        detailsInfoContainerView.clipsToBounds = true
+        detailsInfoContainerView.layer.cornerRadius = 20
+        detailsInfoContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     private func configureCollectionView() {

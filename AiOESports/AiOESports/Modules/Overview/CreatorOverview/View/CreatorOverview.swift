@@ -52,7 +52,7 @@ class CreatorOverview: UIViewController {
         collectionView.register(UINib(nibName: String(describing: SocialCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SocialCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        flowLayout.itemSize = SizeInspector.socialIconSize
         flowLayout.scrollDirection = .horizontal
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -70,7 +70,7 @@ class CreatorOverview: UIViewController {
     }
     
     private func configureSeperatorView() {
-        seperatorView.backgroundColor = UIColor.opaqueSeparator
+        seperatorView.backgroundColor = Colors.Theme.SecondaryBackground
     }
     
     private func configureBioView() {

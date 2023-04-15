@@ -80,13 +80,14 @@ class RankingTableViewCell: UITableViewCell {
     
     private func configureTeamImageView() {
         containerView.addSubview(teamImageView)
-        teamImageView.contentMode = .scaleAspectFit
+        teamImageView.contentMode = .scaleAspectFill
         teamImageView.clipsToBounds = true
+        teamImageView.layer.cornerRadius = 7
         teamImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             teamImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
-            teamImageView.widthAnchor.constraint(equalToConstant: 30),
-            teamImageView.heightAnchor.constraint(equalToConstant: 30),
+            teamImageView.widthAnchor.constraint(equalToConstant: 40),
+            teamImageView.heightAnchor.constraint(equalToConstant: 40),
             teamImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0)
         ])
     }

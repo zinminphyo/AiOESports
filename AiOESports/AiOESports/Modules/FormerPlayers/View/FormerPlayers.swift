@@ -37,6 +37,7 @@ class FormerPlayers: UIViewController {
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.isScrollEnabled = false
     }
 
 }
