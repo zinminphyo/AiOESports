@@ -14,8 +14,7 @@ class CasterOverview: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var socialLists: [SocialModel] = []
-    private var gameLists: [String] = []
-    private var details: PlayerDetails? = nil
+    private var details: PlayerDetails! = nil
 
     var presenter: CasterOverviewPresenting?
     
@@ -55,7 +54,7 @@ class CasterOverview: UIViewController {
     
     private func configureTableView() {
         tableView.register(UINib(nibName: String(describing: OverviewTableViewCell.self), bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
-        tableView.register(UINib(nibName: String(describing: OverviewCellWithMultipleImages.self), bundle: nil), forCellReuseIdentifier: OverviewCellWithMultipleImages.reuseIdentifier)
+        tableView.register(UINib(nibName: String(describing: GameImagesTableViewCell.self), bundle: nil), forCellReuseIdentifier: GameImagesTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -84,8 +83,8 @@ extension CasterOverview: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 5 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewCellWithMultipleImages.reuseIdentifier, for: indexPath) as? OverviewCellWithMultipleImages else { return UITableViewCell() }
-            cell.renderUI(title: "Games", signatureLists: [])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GameImagesTableViewCell.reuseIdentifier, for: indexPath) as? GameImagesTableViewCell else { return UITableViewCell() }
+            cell.renderUI(title: "Games", mainGame: details.mainGame, subGames: details.subGames)
             return cell
         }
         

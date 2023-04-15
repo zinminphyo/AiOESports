@@ -17,6 +17,9 @@ class CreatorOverview: UIViewController {
     @IBOutlet weak var bioValueLabel: UILabel!
     
     private var socialLists: [SocialModel] = []
+    private var details: PlayerDetails! = nil
+    
+    var presenter: CreatorOverviewPresenting?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,8 @@ class CreatorOverview: UIViewController {
         // Do any additional setup after loading the view.
         
         configureHierarchy()
+        
+        presenter?.viewDidLoad()
     }
     
     private func configureHierarchy() {
@@ -57,6 +62,7 @@ class CreatorOverview: UIViewController {
     
     private func configureTableView() {
         tableView.register(UINib(nibName: String(describing: OverviewTableViewCell.self), bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: String(describing: GameImagesTableViewCell.self), bundle: nil), forCellReuseIdentifier: GameImagesTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -64,12 +70,13 @@ class CreatorOverview: UIViewController {
     }
     
     private func configureSeperatorView() {
-        seperatorView.backgroundColor = Colors.Theme.inputColor
+        seperatorView.backgroundColor = UIColor.opaqueSeparator
     }
     
     private func configureBioView() {
         bioTitleLabel.font = Fonts.titleFont
         bioTitleLabel.textColor = Colors.Text.primaryText
+        bioTitleLabel.text = "Bio"
         
         bioValueLabel.font = Fonts.subtitleFont
         bioValueLabel.textColor = Colors.Text.primaryText
@@ -97,10 +104,40 @@ extension CreatorOverview: UITableViewDataSource, UITableViewDelegate {
         return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 5 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GameImagesTableViewCell.reuseIdentifier, for: indexPath) as? GameImagesTableViewCell else { return UITableViewCell() }
+            cell.renderUI(title: "Games", mainGame: details.mainGame, subGames: details.subGames)
+            return cell
+        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
+        switch indexPath.row {
+        case 0:
+            cell.render(title: "Staus", value: details.details.status, imageURL: nil)
+        case 1:
+            cell.render(title: "Real Name", value: details.details.fullName, imageURL: nil)
+        case 2:
+            cell.render(title: "Birthday", value: details.details.birthday, imageURL: nil)
+        case 3:
+            cell.render(title: "Location", value: details.details.city, imageURL: details.details.locationImageFullPath)
+        case 4:
+            cell.render(title: "Role", value: details.details.role, imageURL: nil)
+        default:
+            break
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+}
+
+
+extension CreatorOverview: CreatorOverviewViewDelegate {
+    func renderUI(details: PlayerDetails) {
+        self.details = details
+        self.socialLists = details.social
+        self.collectionView.reloadData()
+        self.tableView.reloadData()
+        bioValueLabel.text = details.details.bio
     }
 }

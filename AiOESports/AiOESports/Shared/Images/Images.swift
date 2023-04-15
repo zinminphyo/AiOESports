@@ -49,6 +49,33 @@ class Images {
         static let MLBB = UIImage(named: "MLBB", in: .main, compatibleWith: nil)
         static let PUBGM = UIImage(named: "PUBGM", in: .main, compatibleWith: nil)
         static let VALORANT = UIImage(named: "VALORANT", in: .main, compatibleWith: nil)
+        
+        static let DOTA_IMAGE = UIImage(named: "Dota_Image", in: .main, compatibleWith: nil)
+        static let MLBB_IMAGE = UIImage(named: "MLBB_Image", in: .main, compatibleWith: nil)
+        static let PUBG_IMAGE = UIImage(named: "PUBG_Image", in: .main, compatibleWith: nil)
+        static let CSGO_IMAGE = UIImage(named: "CSGO_Image", in: .main, compatibleWith: nil)
+        static let WILDRIFE_IMAGE = UIImage(named: "WildRife_Image", in: .main, compatibleWith: nil)
+        
+        static func getImage(gameName: String) -> UIImage? {
+            switch gameName {
+            case "mlbb" :
+                return MLBB_IMAGE
+            case "dota":
+                return DOTA_IMAGE
+            case "csgo":
+                return CSGO_IMAGE
+            case "pubg":
+                return PUBG_IMAGE
+            case "lolwr":
+                return WILDRIFE_IMAGE
+            case "aov":
+                return AOV
+            case "valorant":
+                return VALORANT
+            default:
+                return nil
+            }
+        }
     }
     
     enum SocialLogo {

@@ -23,6 +23,7 @@ class DetailsPresenter: DetailsPresenting {
     private var teamDetails: TeamDetails? = nil
     private var playerDetails: PlayerDetails? = nil
     private var casterDetails: PlayerDetails? = nil
+    private var creatorDetails: PlayerDetails? = nil
     
     func fetchDetails() {
         switch category {
@@ -64,6 +65,7 @@ class DetailsPresenter: DetailsPresenting {
             NetworkService.shared.request(router: router) { (result: Result<PlayerDetails, NetworkError>) in
                 switch result {
                 case .success(let success):
+                    self.creatorDetails = success
                     self.viewDelegate?.renderCreatorDetails(details: success)
                 case .failure(let failure):
                     print("Failure is \(failure)")
@@ -167,9 +169,10 @@ class DetailsPresenter: DetailsPresenting {
     }
     
     private func getContentForCreatorCategory(for index: Int) -> UIViewController {
+        guard let creatorDetails = creatorDetails else { return UIViewController() }
         switch index {
         case 0:
-            guard let vc = CreatorOverviewModule.createModuel() else { return UIViewController() }
+            guard let vc = CreatorOverviewModule.createModuel(creatorDetails: creatorDetails) else { return UIViewController() }
             return vc
         default:
             return UIViewController()

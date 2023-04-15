@@ -15,6 +15,7 @@ struct PlayerDetails: Decodable {
     let career: [CareerModel]
     let playerAchivement: PlayerAchivement
     let mainGame: String
+    let subGames: [SubGameModel]
     
     enum CodingKeys: String, CodingKey {
         case result
@@ -40,5 +41,6 @@ struct PlayerDetails: Decodable {
         signature = try status.decodeIfPresent([SignatureModel].self, forKey: .signature) ?? []
         social = try status.decodeIfPresent([SocialModel].self, forKey: .social) ?? []
         mainGame = try status.decodeIfPresent(String.self, forKey: .mainGame) ?? ""
+        subGames = try status.decodeIfPresent([SubGameModel].self, forKey: .subGames) ?? []
     }
 }
