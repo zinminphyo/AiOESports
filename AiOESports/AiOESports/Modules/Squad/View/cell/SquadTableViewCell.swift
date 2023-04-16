@@ -51,7 +51,7 @@ class SquadTableViewCell: UITableViewCell {
     @discardableResult
     func set(coach: CoachModel?) -> Self {
         nameLabel.text = coach?.name ?? ""
-        mainImageView.kf.setImage(with: URL(string: coach?.playerImageFullURL ?? ""))
+        mainImageView.kf.setImage(with: URL(string: coach?.playerImageFullURL ?? ""), placeholder: Images.Placeholder.profile)
         locationLabel.text = coach?.city ?? ""
         return self
     }
@@ -60,7 +60,7 @@ class SquadTableViewCell: UITableViewCell {
     func set(roster: RosterModel?) -> Self {
         nameLabel.text = roster?.name ?? ""
         locationLabel.text = roster?.city ?? ""
-        mainImageView.kf.setImage(with: URL(string: roster?.playerImageFullURL ?? ""))
+        mainImageView.kf.setImage(with: URL(string: roster?.playerImageFullURL ?? ""), placeholder: Images.Placeholder.profile)
         return self
     }
     
@@ -68,7 +68,7 @@ class SquadTableViewCell: UITableViewCell {
     func set(achivement: AchivementModel) -> Self {
         nameLabel.text = achivement.name
         locationLabel.text = achivement.place
-        mainImageView.kf.setImage(with: URL(string: achivement.logoFullPath))
+        mainImageView.kf.setImage(with: URL(string: achivement.logoFullPath), placeholder: Images.Placeholder.profile)
         return self
     }
     

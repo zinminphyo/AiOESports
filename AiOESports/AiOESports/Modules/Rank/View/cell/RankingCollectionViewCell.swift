@@ -150,7 +150,7 @@ class RankingTableViewCell: UITableViewCell {
     func set(presentable: RankPresentable) -> Self {
         teamImageView.kf.setImage(with: URL(string: presentable.getImageURLPath()), placeholder: Images.Placeholder.profile)
         teamNameLabel.text = presentable.getName()
-        gameCategoryImageView.image = Images.TeamImages.gamecategorylogo
+        gameCategoryImageView.image = Images.GameImages.getImage(gameName: presentable.getGameType())
         locationLabel.text = presentable.getLocation()
         return self
     }

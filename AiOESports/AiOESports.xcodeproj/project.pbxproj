@@ -61,6 +61,9 @@
 		84725AD529E16BA5003658CD /* AchivementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84725AD329E16BA5003658CD /* AchivementTableViewCell.xib */; };
 		84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AD629E1D4EA003658CD /* PlayerObject.swift */; };
 		84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AD829E1D8D9003658CD /* RankPresentable.swift */; };
+		8479C5BD29EBF7BE008C97B9 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */; };
+		8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */; };
+		8479C5BF29EBF7BE008C97B9 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -275,6 +278,9 @@
 		84725AD329E16BA5003658CD /* AchivementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchivementTableViewCell.xib; sourceTree = "<group>"; };
 		84725AD629E1D4EA003658CD /* PlayerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObject.swift; sourceTree = "<group>"; };
 		84725AD829E1D8D9003658CD /* RankPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankPresentable.swift; sourceTree = "<group>"; };
+		8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -490,6 +496,9 @@
 		842DF92429D88A5900B24F1A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */,
+				8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */,
+				8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */,
 				842DF92529D88A6200B24F1A /* Fonts.swift */,
 			);
 			path = Fonts;
@@ -1546,9 +1555,12 @@
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
 				84A050C829E90654004D582B /* OverviewCellWithMultipleImages.xib in Resources */,
 				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
+				8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
+				8479C5BD29EBF7BE008C97B9 /* DMSans-Regular.ttf in Resources */,
+				8479C5BF29EBF7BE008C97B9 /* DMSans-Medium.ttf in Resources */,
 				84A050EF29E96249004D582B /* CasterOverview.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
 				84A0510029E99678004D582B /* CreatorOverview.storyboard in Resources */,

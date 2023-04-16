@@ -11,11 +11,11 @@ import UIKit
 
 
 class Fonts {
-    static let titleFont = UIFont.systemFont(ofSize: 20, weight: .medium)
-    static let subtitleFont = UIFont.systemFont(ofSize: 14, weight: .regular)
+    static let titleFont = UIFont(name: "DMSans-Medium", size: 20)
+    static let subtitleFont = UIFont(name: "DMSans-Regular", size: 14)
     
     enum ForCell {
-        static let titleFont = UIFont.systemFont(ofSize: 13, weight: .medium)
-        static let subtitleFont = UIFont.systemFont(ofSize: 12, weight: .regular)
+        static let titleFont = UIFont(name: "DMSans-Medium", size: 13)
+        static let subtitleFont = UIFont(name: "DMSans-Regular", size: 12)
     }
 }

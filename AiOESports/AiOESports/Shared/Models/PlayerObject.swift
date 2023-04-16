@@ -58,7 +58,7 @@ extension PlayerObject: RankPresentable {
     }
     
     func getGameType() -> String {
-        return "MLBB"
+        return game ?? "" 
     }
     
     func getLocation() -> String {
