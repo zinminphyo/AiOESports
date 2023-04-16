@@ -62,8 +62,16 @@ class SearchTableViewCell: UITableViewCell {
     @discardableResult
     func set(forTeam: TeamSearchResultModel) -> Self {
         searchMainImageView.kf.setImage(with: URL(string: forTeam.teamImageFullURL))
-        gameTypeImageView.image = GameType.MobileLegend.image
+        gameTypeImageView.image = Images.GameLogo.getImage(gameName: forTeam.game)
         nameLabel.text = forTeam.teamName
+        return self
+    }
+    
+    @discardableResult
+    func set(forPlayer: PlayerSearchResultModel) -> Self {
+        searchMainImageView.kf.setImage(with: URL(string: forPlayer.playerImageFullURL))
+        gameTypeImageView.image = Images.GameLogo.getImage(gameName: forPlayer.game)
+        nameLabel.text = forPlayer.name
         return self
     }
     

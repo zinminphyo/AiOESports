@@ -12,5 +12,13 @@ protocol SearchPresenting {
     var viewDelegate: SearchViewDelegate? { get set }
     var interactor: SearchInteracting? { get set } 
     func searchTeamLists(keyword: String)
-    func didFinishedSearching(result: [TeamSearchResultModel]?, error: String?)
+    func searchPlayerLists(keyword: String)
+    func searchCasterLists(keyword: String)
+    func searchCreatorLists(keyword: String)
+    func didFinishedSearchingForGames(result: [TeamSearchResultModel]?, error: String?)
+    func didFinishedSearchingForPlayers(result: [PlayerSearchResultModel]?, error: String?)
+    func didFinishedSearchingForCasters(result: [PlayerSearchResultModel]?, error: String?)
+    func didFinishedSearchingForCreators(result: [PlayerSearchResultModel]?, error: String?)
+    func searchLists(keyword: String)
+    func getRankCategory() -> RankCategory
 }

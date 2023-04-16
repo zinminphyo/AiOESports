@@ -15,6 +15,7 @@ class Search: UIViewController {
     
     var presenter: SearchPresenting?
     private var teamLists: [TeamSearchResultModel] = []
+    private var playerLists: [PlayerSearchResultModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +54,10 @@ class Search: UIViewController {
     
     private func configureTableView() {
         resultTableView.register(UINib(nibName: String(describing: SearchTableViewCell.self), bundle: nil), forCellReuseIdentifier: SearchTableViewCell.reuseIdentifier)
-        resultTableView.separatorStyle = .none
         resultTableView.dataSource = self
         resultTableView.estimatedRowHeight = UITableView.automaticDimension
         resultTableView.backgroundColor = UIColor.clear
+        resultTableView.keyboardDismissMode = .onDrag
     }
     
     @objc func didTapSearchBtn() {
@@ -73,7 +74,8 @@ class Search: UIViewController {
     }
 
     @objc func fetchSearchingApi() {
-        presenter?.searchTeamLists(keyword: searchInputTxtField.text ?? "")
+//        presenter?.searchTeamLists(keyword: searchInputTxtField.text ?? "")
+        presenter?.searchLists(keyword: searchInputTxtField.text ?? "")
     }
     
 }
@@ -86,15 +88,42 @@ extension Search: SearchViewDelegate {
     func renderError(error: String) {
         
     }
+    
+    func renderPlayerLists(playerLists: [PlayerSearchResultModel]) {
+        self.playerLists = playerLists
+        self.resultTableView.reloadData()
+    }
 }
 
 extension Search: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teamLists.count
+        switch presenter?.getRankCategory() {
+        case .team:
+            return teamLists.count
+        case .player:
+            return playerLists.count
+        case .caster:
+            return playerLists.count
+        case .creator:
+            return playerLists.count
+        default:
+            return 0
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
-        cell.set(forTeam: teamLists[indexPath.row])
+        switch presenter?.getRankCategory() {
+        case .team:
+            cell.set(forTeam: teamLists[indexPath.row])
+        case .player:
+            cell.set(forPlayer: playerLists[indexPath.row])
+        case .caster:
+            cell.set(forPlayer: playerLists[indexPath.row])
+        case .creator:
+            cell.set(forPlayer: playerLists[indexPath.row])
+        default:
+            break
+        }
         return cell
     }
 }

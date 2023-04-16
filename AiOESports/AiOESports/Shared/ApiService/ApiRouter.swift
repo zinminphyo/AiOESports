@@ -16,6 +16,9 @@ enum ApiRouter: URLConvertible {
     case fetchCreatorLists(_ gameType: GameType, _ filterStatus: FilterStatus, _ page: Int)
     case fetchCasterLists(_ gameType: GameType, _ filterStatus: FilterStatus, _ page: Int)
     case teamSearch(_ keyword: String)
+    case playerSearch(_  keyword: String)
+    case casterSearch(_ keyword: String)
+    case creatorSearch(_ keyword: String)
     case teamDetails(Int)
     case playerDetails(Int)
     case casterDetails(Int)
@@ -45,6 +48,12 @@ enum ApiRouter: URLConvertible {
             return "caster"
         case  .teamSearch:
             return "team/search"
+        case .playerSearch:
+            return "player/search"
+        case .casterSearch:
+            return "caster/search"
+        case .creatorSearch:
+            return "creator/search"
         case let .teamDetails(id):
             return "team/\(id)"
         case let .playerDetails(id):
@@ -64,14 +73,14 @@ enum ApiRouter: URLConvertible {
         switch self {
         case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails :
             return URLEncoding.default
-        case .teamSearch:
+        case .teamSearch, .playerSearch, .casterSearch, .creatorSearch:
             return JSONEncoding.prettyPrinted
         }
     }
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch:
             return nil
         }
     }
@@ -106,6 +115,18 @@ enum ApiRouter: URLConvertible {
             return [
                 "keyword" : keyword
             ]
+        case let .playerSearch(keyword):
+            return [
+                "keyword" : keyword
+            ]
+        case let .casterSearch(keyword):
+            return [
+                "keyword" : keyword
+            ]
+        case let .creatorSearch(keyword):
+            return [
+                "keyword" : keyword
+            ]
         case .teamDetails:
             return nil
         case .playerDetails, .casterDetails, .creatorDetails:
@@ -123,7 +144,7 @@ enum ApiRouter: URLConvertible {
             return .get
         case .fetchCreatorLists:
             return .get
-        case .teamSearch:
+        case .teamSearch, .playerSearch, .casterSearch, .creatorSearch:
             return .post
         case .teamDetails:
             return .get

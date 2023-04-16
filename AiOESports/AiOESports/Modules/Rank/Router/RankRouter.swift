@@ -19,8 +19,8 @@ class RankRouter: RankRouting {
         viewController?.present(vc, animated: true)
     }
     
-    func routeToSearch() {
-        guard let vc = SearchModule.createModule() else { return }
+    func routeToSearch(category: RankCategory) {
+        guard let vc = SearchModule.createModule(category: category) else { return }
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

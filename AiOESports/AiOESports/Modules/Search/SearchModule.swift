@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 enum SearchModule {
-    static func createModule() -> Search? {
+    static func createModule(category: RankCategory) -> Search? {
         let st = UIStoryboard(name: "Search", bundle: .main)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Search.self)) as? Search else { return nil }
-        let presenter = SearchPresenter()
+        let presenter = SearchPresenter(category: category)
         let interactor = SearchInteractor()
         
         presenter.viewDelegate = vc

@@ -24,4 +24,13 @@ struct PlayerSearchResultModel: Decodable {
         case playerImage = "player_image"
         case fullName = "full_name"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        id = try container.decode(Int.self, forKey: .id)
+        playerImage = try container.decodeIfPresent(String.self, forKey: .playerImage) ?? ""
+        game = try container.decodeIfPresent(String.self, forKey: .game) ?? ""
+        fullName = try container.decodeIfPresent(String.self, forKey: .fullName)
+    }
 }
