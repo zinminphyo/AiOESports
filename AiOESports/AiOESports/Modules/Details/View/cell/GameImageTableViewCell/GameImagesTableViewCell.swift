@@ -76,7 +76,7 @@ class GameImagesTableViewCell: UITableViewCell {
     
     func renderUI(title: String, mainGame: String, subGames: [SubGameModel]) {
         titleLabel.text = title
-        mainGameImageView.image = Images.GameLogo.getImage(gameName: mainGame)
+        mainGameImageView.image = Images.GameImages.getImage(gameName: mainGame)
         seperatorView.isHidden = subGames.count == 0
         self.subGames = subGames
         self.collectionView.reloadData()

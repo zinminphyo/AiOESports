@@ -254,7 +254,7 @@ extension Details: DetailsViewDelegate {
         removeALLContentSubViews()
         colletionView.reloadData()
         updateContainerView(details: details)
-        coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath))
+        coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
         teamNameLabel.text = details.detail.fullName
         locationImageView.kf.setImage(with: URL(string: details.detail.locationImageFullPath))
@@ -265,7 +265,7 @@ extension Details: DetailsViewDelegate {
         removeALLContentSubViews()
         colletionView.reloadData()
         updateContainerViewForPlayer(details: details)
-        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
+        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
         locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
@@ -276,7 +276,7 @@ extension Details: DetailsViewDelegate {
         removeALLContentSubViews()
         colletionView.reloadData()
         updateContainerViewForCaster()
-        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
+        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
         locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
@@ -287,7 +287,7 @@ extension Details: DetailsViewDelegate {
         removeALLContentSubViews()
         colletionView.reloadData()
         updateContainerViewForCreator()
-        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath))
+        coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
         locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))

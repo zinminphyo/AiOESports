@@ -208,7 +208,7 @@
     </scenes>
     <resources>
         <image name="Rectangle 206" width="330" height="156"/>
-        <image name="backlogo" width="9" height="15"/>
+        <image name="backlogo" width="24" height="24"/>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

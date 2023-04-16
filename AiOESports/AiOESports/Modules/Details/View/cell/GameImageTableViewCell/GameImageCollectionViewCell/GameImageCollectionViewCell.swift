@@ -28,7 +28,7 @@ class GameImageCollectionViewCell: UICollectionViewCell {
     }
     
     func set(gameName: String) {
-        imageView.image = Images.GameLogo.getImage(gameName: gameName)
+        imageView.image = Images.GameImages.getImage(gameName: gameName)
     }
     
 
