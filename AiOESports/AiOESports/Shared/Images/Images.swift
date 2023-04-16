@@ -49,7 +49,28 @@ class Images {
         static let MLBB = UIImage(named: "MLBB", in: .main, compatibleWith: nil)
         static let PUBGM = UIImage(named: "PUBGM", in: .main, compatibleWith: nil)
         static let VALORANT = UIImage(named: "VALORANT", in: .main, compatibleWith: nil)
+        static let CSGO = UIImage(named: "CSGO", in: .main, compatibleWith: nil)
+        static let APEX_LEGEND = UIImage(named: "APEX_LEGEND", in: .main, compatibleWith: nil)
+        static let FORTNITE = UIImage(named: "FORTNITE", in: .main, compatibleWith: nil)
+        static let COD = UIImage(named: "COD", in: .main, compatibleWith: nil)
+        static let FIFA = UIImage(named: "FIFA", in: .main, compatibleWith: nil)
+        static let FREEFIRE = UIImage(named: "FREEFIRE", in: .main, compatibleWith: nil)
+        static let AUTO_CHESS = UIImage(named: "AUTOCHESS", in: .main, compatibleWith: nil)
         
+        static let ALL_Selected = UIImage(named: "All_Selected", in: .main, compatibleWith: nil)
+        static let AOV_Selected = UIImage(named: "AOV_Selected", in: .main, compatibleWith: nil)
+        static let DOTA_Selected = UIImage(named: "DOTA_Selected", in: .main, compatibleWith: nil)
+        static let LOLWR_Selected = UIImage(named: "LOLWR_Selected", in: .main, compatibleWith: nil)
+        static let MLBB_Selected = UIImage(named: "MLBB_Selected", in: .main, compatibleWith: nil)
+        static let PUBGM_Selected = UIImage(named: "PUBGM_Selected", in: .main, compatibleWith: nil)
+        static let VALORANT_Selected = UIImage(named: "VALORANT_Selected", in: .main, compatibleWith: nil)
+        static let CSGO_Selected = UIImage(named: "CSGO_Selected", in: .main, compatibleWith: nil)
+        static let APEX_LEGEND_Selected = UIImage(named: "APEX_LEGEND_Selected", in: .main, compatibleWith: nil)
+        static let FORTNITE_Selected = UIImage(named: "FORTNITE_Selected", in: .main, compatibleWith: nil)
+        static let COD_Selected = UIImage(named: "COD_Selected", in: .main, compatibleWith: nil)
+        static let FIFA_Selected = UIImage(named: "FIFA_Selected", in: .main, compatibleWith: nil)
+        static let FREEFIRE_Selected = UIImage(named: "FREEFIRE_Selected", in: .main, compatibleWith: nil)
+        static let AUTO_CHESS_Selected = UIImage(named: "AUTOCHESS_Selected", in: .main, compatibleWith: nil)
        
     }
     

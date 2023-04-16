@@ -63,13 +63,16 @@ class Rank: UIViewController {
     private func configureGameCategoryCollectionView() {
         gameCategoryCollectionView.register(GameCategoryCollectionViewCell.self, forCellWithReuseIdentifier: GameCategoryCollectionViewCell.reuseIdentifier)
         gameCategoryCollectionView.dataSource = self
+        gameCategoryCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: gameCategoryCollectionView.frame.height, height: gameCategoryCollectionView.frame.height)
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 10
+        gameCategoryCollectionView.allowsMultipleSelection = false
         gameCategoryCollectionView.collectionViewLayout = flowLayout
         gameCategoryCollectionView.showsVerticalScrollIndicator = false
         gameCategoryCollectionView.showsHorizontalScrollIndicator = false
+        gameCategoryCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
     private func configureTableView() {
@@ -126,7 +129,7 @@ extension Rank: RankViewDelegate {
         self.tableView.endUpdates()
          */
         self.loadingLists = loadingLists
-        self.tableView.reloadSections([1], with: .none)
+        self.tableView.reloadData()
     }
     
     func renderRankLists(lists: [RankPresentable]) {
@@ -184,13 +187,21 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCategoryCollectionViewCell.reuseIdentifier, for: indexPath) as? GameCategoryCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.set(image: GameType.allCases[indexPath.row].image)
+            cell.set(image: GameType.allCases[indexPath.row].unselectedStateImage)
+            if let selectedIndexPath = gameCategoryCollectionView.indexPathsForSelectedItems?.last, let cell = gameCategoryCollectionView.cellForItem(at: selectedIndexPath) as? GameCategoryCollectionViewCell {
+                cell.set(image: GameType.allCases[selectedIndexPath.row].selectedStateImage)
+            }
             return cell
         } else {
             return UICollectionViewCell()
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == gameCategoryCollectionView {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? GameCategoryCollectionViewCell else { return }
+            cell.set(image: GameType.allCases[indexPath.row].selectedStateImage)
+            presenter?.changedGameType(game: GameType.allCases[indexPath.row])
+        }
         guard collectionView == categoryCollectionView else { return }
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
         cell.set(isSelected: true)
@@ -198,6 +209,10 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == gameCategoryCollectionView {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? GameCategoryCollectionViewCell else { return }
+            cell.set(image: GameType.allCases[indexPath.row].unselectedStateImage)
+        }
         guard collectionView == categoryCollectionView, let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
         cell.set(isSelected: false)
     }

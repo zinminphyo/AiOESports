@@ -40,17 +40,17 @@ class GameCategoryCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureContainerView() {
-        
+        self.clipsToBounds = true
         self.backgroundColor = Colors.Theme.inputColor
     }
     
     private func configureImageView() {
         self.addSubview(gameCategoryImageView)
-        gameCategoryImageView.contentMode = .scaleAspectFit
+        gameCategoryImageView.contentMode = .scaleAspectFill
         gameCategoryImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            gameCategoryImageView.widthAnchor.constraint(equalToConstant: 30),
-            gameCategoryImageView.heightAnchor.constraint(equalToConstant: 30),
+            gameCategoryImageView.widthAnchor.constraint(equalToConstant: 50),
+            gameCategoryImageView.heightAnchor.constraint(equalToConstant: 50),
             gameCategoryImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
             gameCategoryImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0)
         ])

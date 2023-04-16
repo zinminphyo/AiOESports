@@ -19,6 +19,8 @@ enum GameType: CaseIterable {
     case LolWR
     case HOK
     case FIFA
+    case APEXLEGEND
+    case AUTOCHESS
     
     var value: String {
         switch self {
@@ -42,10 +44,14 @@ enum GameType: CaseIterable {
             return "hok"
         case .FIFA:
             return "fifa"
+        case .APEXLEGEND:
+            return "apexlegend"
+        case .AUTOCHESS:
+            return "autochess"
         }
     }
     
-    var image: UIImage? {
+    var unselectedStateImage: UIImage? {
         switch self {
         case .All:
             return Images.GameLogo.ALL
@@ -58,17 +64,51 @@ enum GameType: CaseIterable {
         case .PUBGM:
             return Images.GameLogo.PUBGM
         case .CSGO:
-            return Images.GameLogo.AOV
+            return Images.GameLogo.CSGO
         case .Valorant:
-            return Images.GameLogo.PUBGM
+            return Images.GameLogo.VALORANT
         case .LolWR:
             return Images.GameLogo.LOLWR
         case .HOK:
-            return Images.GameLogo.PUBGM
+            return Images.GameLogo.AUTO_CHESS
         case .FIFA:
-            return Images.GameLogo.DOTA
+            return Images.GameLogo.FIFA
+        case .APEXLEGEND:
+            return Images.GameLogo.APEX_LEGEND
+        case .AUTOCHESS:
+            return Images.GameLogo.AUTO_CHESS
         }
     }
+    
+    var selectedStateImage: UIImage? {
+        switch self {
+        case .All:
+            return Images.GameLogo.ALL_Selected
+        case .MobileLegend:
+            return Images.GameLogo.MLBB_Selected
+        case .Dota:
+            return Images.GameLogo.DOTA_Selected
+        case .AOV:
+            return Images.GameLogo.AOV_Selected
+        case .PUBGM:
+            return Images.GameLogo.PUBGM_Selected
+        case .CSGO:
+            return Images.GameLogo.CSGO_Selected
+        case .Valorant:
+            return Images.GameLogo.VALORANT_Selected
+        case .LolWR:
+            return Images.GameLogo.LOLWR_Selected
+        case .HOK:
+            return Images.GameLogo.AUTO_CHESS_Selected
+        case .FIFA:
+            return Images.GameLogo.FIFA_Selected
+        case .APEXLEGEND:
+            return Images.GameLogo.APEX_LEGEND_Selected
+        case .AUTOCHESS:
+            return Images.GameLogo.AUTO_CHESS_Selected
+        }
+    }
+    
 }
 
 enum TeamFilterStatus: CaseIterable {

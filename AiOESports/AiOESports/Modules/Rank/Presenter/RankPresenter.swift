@@ -18,13 +18,14 @@ class RankPresenter: RankPresenting {
     private var rankLists: [RankPresentable] = []
     
     private var selectedCategory: RankCategory = .team
+    private var selectedGameType: GameType = .All
     private var currentPage: Int = 1
     
     func fetchTeamLists(gameType: GameType, status: FilterStatus) {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchTeamLists(gameType, status, currentPage)
+        let router = ApiRouter.fetchTeamLists(selectedGameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<TeamObject>,NetworkError>) in
             switch result {
             case .success(let success):
@@ -49,7 +50,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchPlayerLists(gameType, status, currentPage)
+        let router = ApiRouter.fetchPlayerLists(selectedGameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<PlayerObject>,NetworkError>) in
             switch result {
             case .success(let success):
@@ -74,7 +75,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchCasterLists(gameType, status, currentPage)
+        let router = ApiRouter.fetchCasterLists(selectedGameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<CasterObject>,NetworkError>) in
             switch result {
             case .success(let success):
@@ -99,7 +100,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchCreatorLists(gameType, status, currentPage)
+        let router = ApiRouter.fetchCreatorLists(selectedGameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<CreatorObject>, NetworkError>) in
             switch result {
             case .success(let success):
@@ -151,13 +152,30 @@ class RankPresenter: RankPresenting {
         self.selectedCategory = category
         switch category {
         case .team:
-            self.fetchTeamLists(gameType: .All, status: .all)
+            self.fetchTeamLists(gameType: selectedGameType, status: .all)
         case .player:
-            self.fetchPlayerLists(gameType: .All, status: .active)
+            self.fetchPlayerLists(gameType: selectedGameType, status: .active)
         case .caster:
-            self.fetchCasterLists(gameType: .All, status: .active)
+            self.fetchCasterLists(gameType: selectedGameType, status: .active)
         case .creator:
-            self.fetchCreatorLists(gameType: .All, status: .active)
+            self.fetchCreatorLists(gameType: selectedGameType, status: .active)
+        }
+    }
+    
+    func changedGameType(game: GameType) {
+        guard game != selectedGameType else { return }
+        self.resetPagination()
+        self.resetData()
+        self.selectedGameType = game
+        switch selectedCategory {
+        case .team:
+            self.fetchTeamLists(gameType: game, status: .all)
+        case .player:
+            self.fetchPlayerLists(gameType: game, status: .active)
+        case .caster:
+            self.fetchCasterLists(gameType: game, status: .active)
+        case .creator:
+            self.fetchCreatorLists(gameType: game, status: .active)
         }
     }
     
