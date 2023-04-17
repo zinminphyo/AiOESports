@@ -21,6 +21,7 @@ class PlayerOverviewPresenter: PlayerOverviewPresenting {
     }
     
     var viewDelegate: PlayerOverviewViewDelegate?
+    var router: PlayerOverviewRouting?
     
     func viewDidLoad() {
         guard let details = details else { return }
@@ -80,5 +81,15 @@ class PlayerOverviewPresenter: PlayerOverviewPresenting {
         return self.signatureLists
     }
     
+    
+    func didTapSocial(social: SocialModel) {
+        print("Platform is \(social.platform)")
+        switch social.platform {
+        case "facebook_page":
+            router?.routeToFacebook(id: social.link)
+        default:
+            break
+        }
+    }
     
 }

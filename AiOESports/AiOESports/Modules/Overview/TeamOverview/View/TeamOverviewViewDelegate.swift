@@ -11,4 +11,5 @@ import Foundation
 protocol TeamOverviewViewDelegate {
     var presenter: TeamOverviewPresenting? { get set }
     func updateUI(details: TeamDetailsModel, social: [SocialModel])
+    
 }

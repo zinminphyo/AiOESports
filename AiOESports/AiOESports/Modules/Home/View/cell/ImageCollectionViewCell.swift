@@ -59,7 +59,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @discardableResult
     func set(url: String) -> Self {
-        imageView.kf.setImage(with: URL(string: url))
+        imageView.kf.setImage(with: URL(string: url), placeholder: Images.Placeholder.cover)
         return self
     }
 }

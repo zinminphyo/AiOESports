@@ -40,6 +40,7 @@ class PlayerOverview: UIViewController {
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: String(describing: SocialCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SocialCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
+        collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.estimatedItemSize = SizeInspector.socialIconSize
         flowLayout.scrollDirection = .horizontal
@@ -68,7 +69,7 @@ extension PlayerOverview: PlayerOverviewViewDelegate {
     }
 }
 
-extension PlayerOverview: UICollectionViewDataSource {
+extension PlayerOverview: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return socialLists.count
     }
@@ -76,6 +77,9 @@ extension PlayerOverview: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SocialCollectionViewCell.reuseIdentifier, for: indexPath) as? SocialCollectionViewCell else { return UICollectionViewCell() }
         cell.renderUI(social: socialLists[indexPath.row])
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didTapSocial(social: socialLists[indexPath.row])
     }
 }
 

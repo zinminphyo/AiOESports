@@ -11,6 +11,7 @@ import Alamofire
 
 enum ApiRouter: URLConvertible {
     
+    case home
     case fetchTeamLists(_ gameType: GameType, _ filterStatus: FilterStatus,_ page: Int)
     case fetchPlayerLists(_ gameType: GameType, _ filterStatus: PlayerFilterStatus, _ page: Int)
     case fetchCreatorLists(_ gameType: GameType, _ filterStatus: FilterStatus, _ page: Int)
@@ -38,6 +39,8 @@ enum ApiRouter: URLConvertible {
     
     var path: String {
         switch self {
+        case .home:
+            return "home"
         case .fetchTeamLists:
             return "team"
         case .fetchPlayerLists:
@@ -71,7 +74,7 @@ enum ApiRouter: URLConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails :
+        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .home :
             return URLEncoding.default
         case .teamSearch, .playerSearch, .casterSearch, .creatorSearch:
             return JSONEncoding.prettyPrinted
@@ -80,7 +83,7 @@ enum ApiRouter: URLConvertible {
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch, .home:
             return nil
         }
     }
@@ -129,7 +132,7 @@ enum ApiRouter: URLConvertible {
             ]
         case .teamDetails:
             return nil
-        case .playerDetails, .casterDetails, .creatorDetails:
+        case .playerDetails, .casterDetails, .creatorDetails, .home:
             return nil
         }
     }
@@ -148,7 +151,7 @@ enum ApiRouter: URLConvertible {
             return .post
         case .teamDetails:
             return .get
-        case .playerDetails, .casterDetails, .creatorDetails:
+        case .playerDetails, .casterDetails, .creatorDetails, .home:
             return .get
         }
     }

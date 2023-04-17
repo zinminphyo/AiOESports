@@ -51,6 +51,7 @@ class TeamOverview: UIViewController {
     private func configureSocialCollectionView() {
         collectionView.register(UINib(nibName: String(describing: SocialCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SocialCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
+        collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = SizeInspector.socialIconSize
         flowLayout.scrollDirection = .horizontal
@@ -114,7 +115,7 @@ extension TeamOverview: TeamOverviewViewDelegate {
 }
 
 
-extension TeamOverview: UICollectionViewDataSource {
+extension TeamOverview: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return socialLists.count
     }
@@ -123,4 +124,9 @@ extension TeamOverview: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SocialCollectionViewCell.reuseIdentifier, for: indexPath) as? SocialCollectionViewCell else { return UICollectionViewCell() }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didTapSocial(social: socialLists[indexPath.row])
+    }
+    
 }

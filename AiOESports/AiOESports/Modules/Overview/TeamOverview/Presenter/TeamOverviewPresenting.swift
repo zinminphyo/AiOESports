@@ -10,5 +10,7 @@ import Foundation
 
 protocol TeamOverviewPresenting {
     var viewDelegate: TeamOverviewViewDelegate? { get set }
+    var routing: TeamOverviewRouting? { get set }
     func viewDidLoad()
+    func didTapSocial(social: SocialModel)
 }

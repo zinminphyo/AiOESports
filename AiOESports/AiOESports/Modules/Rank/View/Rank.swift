@@ -270,7 +270,7 @@ extension Rank {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.width * 0.5))
         view.backgroundColor = UIColor.clear
         let imgView = UIImageView(frame: .zero)
-        imgView.kf.setImage(with: URL(string: url))
+        imgView.kf.setImage(with: URL(string: url), placeholder: Images.Placeholder.cover)
         view.addSubview(imgView)
         imgView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

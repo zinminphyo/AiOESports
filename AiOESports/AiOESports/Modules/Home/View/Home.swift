@@ -14,6 +14,11 @@ class Home: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var advertisementTitleLabel: UILabel!
+    
+    var presenter: HomePresenting?
+    
+    private var bannerLists: [BannerModel] = []
+    private var adLists: [AdvertisementModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,8 @@ class Home: UIViewController {
         // Do any additional setup after loading the view.
         
         configureHierarchy()
+        
+        presenter?.viewDidLoad()
     }
     
     private func configureHierarchy() {
@@ -61,13 +68,22 @@ class Home: UIViewController {
 
 extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if collectionView == advertisementCollectionView {
+            return adLists.count
+        } else {
+            return bannerLists.count
+        }
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier, for: indexPath) as? ImageCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.set(image: UIImage(named: "Rectangle 206"))
+        if collectionView == advertisementCollectionView {
+            cell.set(url: adLists[indexPath.row].urlFullPath)
+        } else {
+            cell.set(url: bannerLists[indexPath.row].urlFullPath)
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -75,5 +91,19 @@ extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+
+extension Home: HomeViewDelegate {
+    func renderUI(bannerLists: [BannerModel], adLists: [AdvertisementModel]) {
+        self.bannerLists = bannerLists
+        self.collectionView.reloadData()
+        self.adLists = adLists
+        self.advertisementCollectionView.reloadData()
+    }
+    
+    func renderError(string: String) {
+        showError(error: string)
     }
 }

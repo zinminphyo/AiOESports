@@ -11,6 +11,7 @@ import Foundation
 class TeamOverviewPresenter: TeamOverviewPresenting {
     
     var viewDelegate: TeamOverviewViewDelegate?
+    var routing: TeamOverviewRouting?
     
     private var teamDetails: TeamDetailsModel? = nil
     private var socialLists: [SocialModel] = []
@@ -25,6 +26,14 @@ class TeamOverviewPresenter: TeamOverviewPresenting {
         self.socialLists = social
     }
     
-    
+    func didTapSocial(social: SocialModel) {
+        print("Social is \(social.platform)")
+        switch social.platform {
+        case "facebook_page":
+            self.routing?.routeToFacebookPage(id: social.link)
+        default:
+            break
+        }
+    }
     
 }

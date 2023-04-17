@@ -17,6 +17,13 @@ enum HomeModule {
         }
         vc.tabBarItem.image = Images.InAppImages.homelogo
         vc.tabBarItem.title = "HOME"
+        
+        let presenter = HomePresenter()
+        let interactor = HomeInteractor()
+        presenter.viewDelegate = vc
+        presenter.interactor = interactor
+        interactor.presenterDelegate = presenter
+        vc.presenter = presenter
         return vc
     }
 }

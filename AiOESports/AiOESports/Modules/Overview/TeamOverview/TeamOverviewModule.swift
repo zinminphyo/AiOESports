@@ -13,8 +13,10 @@ enum TeamOverviewModule {
     static func createModule(teamDetails: TeamDetailsModel, social: [SocialModel]) -> TeamOverview? {
         let st = UIStoryboard(name: "TeamOverview", bundle: .main)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: TeamOverview.self)) as? TeamOverview else { return nil }
+        let router = TeamOverviewRouter()
         let presenter = TeamOverviewPresenter()
         presenter.viewDelegate = vc
+        presenter.routing = router
         presenter.set(details: teamDetails, social: social)
         vc.presenter = presenter
         return vc

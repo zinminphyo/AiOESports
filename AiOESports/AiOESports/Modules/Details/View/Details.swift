@@ -110,6 +110,7 @@ class Details: UIViewController {
         colletionView.collectionViewLayout = flowLayout
         colletionView.backgroundColor = Colors.Theme.inputColor
         colletionView.allowsMultipleSelection = false
+        colletionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
         
     }
     
@@ -209,11 +210,9 @@ extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailsContentCollectionViewCell.reuseIdentifier, for: indexPath) as? DetailsContentCollectionViewCell else { return UICollectionViewCell() }
         cell.set(title: presenter?.getContentTitle(for: indexPath.row) ?? "")
-        if let selectedRow = collectionView.indexPathsForSelectedItems?.first {
-            cell.set(isSelected: selectedRow == indexPath)
-        } else {
-            colletionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
-            cell.set(isSelected: indexPath.row == 0)
+        cell.set(isSelected: false)
+        if let selectedRow = collectionView.indexPathsForSelectedItems?.last {
+            cell.set(isSelected: indexPath == selectedRow)
         }
         return cell
     }
@@ -234,6 +233,7 @@ extension Details: UICollectionViewDataSource, UICollectionViewDelegate {
 // MARK: - UIScrollView Delegate Conformance.
 extension Details: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard scrollView == contentScrollView else { return }
         let index: Int = Int(scrollView.contentOffset.x / scrollView.frame.width)
         let indexPath: IndexPath = IndexPath(row: index, section: 0)
         if let lastSelectedIndexPath = colletionView.indexPathsForSelectedItems?.last {
@@ -252,7 +252,7 @@ extension Details: UIScrollViewDelegate {
 extension Details: DetailsViewDelegate {
     func renderDetails(details: TeamDetails) {
         removeALLContentSubViews()
-        colletionView.reloadData()
+        configureCollectionView()
         updateContainerView(details: details)
         coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
@@ -263,7 +263,7 @@ extension Details: DetailsViewDelegate {
     
     func renderPlayerDetails(details: PlayerDetails) {
         removeALLContentSubViews()
-        colletionView.reloadData()
+        configureCollectionView()
         updateContainerViewForPlayer(details: details)
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
@@ -274,7 +274,7 @@ extension Details: DetailsViewDelegate {
     
     func renderCasterDetails(details: PlayerDetails) {
         removeALLContentSubViews()
-        colletionView.reloadData()
+        configureCollectionView()
         updateContainerViewForCaster()
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
@@ -285,7 +285,7 @@ extension Details: DetailsViewDelegate {
     
     func renderCreatorDetails(details: PlayerDetails) {
         removeALLContentSubViews()
-        colletionView.reloadData()
+        configureCollectionView()
         updateContainerViewForCreator()
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
