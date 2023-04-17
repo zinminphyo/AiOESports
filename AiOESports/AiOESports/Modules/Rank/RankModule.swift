@@ -15,8 +15,10 @@ enum RankModule {
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Rank.self)) as? Rank else {
             return nil
         }
-        vc.tabBarItem.image = Images.InAppImages.ranklogo
+        vc.tabBarItem.image = Images.InAppImages.rank_unselected
+        vc.tabBarItem.selectedImage = Images.InAppImages.rank_selected
         vc.tabBarItem.title = "RANK"
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:Colors.TabItem.rank], for: .normal)
         
         let presenter = RankPresenter()
         let router = RankRouter()

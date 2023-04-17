@@ -15,8 +15,10 @@ enum HomeModule {
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Home.self)) as? Home else {
             return nil
         }
-        vc.tabBarItem.image = Images.InAppImages.homelogo
+        vc.tabBarItem.image = Images.InAppImages.home_unselected
         vc.tabBarItem.title = "HOME"
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor : Colors.TabItem.home], for: .normal)
+        vc.tabBarItem.selectedImage = Images.InAppImages.home_selected
         
         let presenter = HomePresenter()
         let interactor = HomeInteractor()

@@ -16,7 +16,7 @@ class InApp: UITabBarController {
         
         configureHierarchy()
         
-        self.tabBar.tintColor = Colors.Button.primaryColor
+
         self.tabBar.backgroundColor = Colors.Theme.mainColor
         self.tabBar.unselectedItemTintColor = UIColor.gray
     }

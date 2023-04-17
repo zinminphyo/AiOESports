@@ -16,7 +16,9 @@ enum TourModule {
             return nil
         }
         vc.tabBarItem.title = "TOUR"
-        vc.tabBarItem.image = Images.InAppImages.tourlogo
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:Colors.TabItem.tour], for: .normal)
+        vc.tabBarItem.image = Images.InAppImages.tour_unselected
+        vc.tabBarItem.selectedImage = Images.InAppImages.tour_selected
         return vc
     }
 }

@@ -30,4 +30,12 @@ class Colors {
         static let secondaryText = UIColor(named: "SecondaryText", in: .main, compatibleWith: nil)
     }
     
+    enum TabItem {
+        static let home = UIColor(named: "Home", in: .main, compatibleWith: nil)!
+        static let rank = UIColor(named: "Rank", in: .main, compatibleWith: nil)!
+        static let match = UIColor(named: "Match", in: .main, compatibleWith: nil)!
+        static let shop = UIColor(named: "Shop", in: .main, compatibleWith: nil)!
+        static let tour = UIColor(named: "Tour", in: .main, compatibleWith: nil)!
+    }
+    
 }

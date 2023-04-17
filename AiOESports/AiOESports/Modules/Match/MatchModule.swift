@@ -17,7 +17,9 @@ enum MatchModule {
             return nil
         }
         vc.tabBarItem.title = "MATCH"
-        vc.tabBarItem.image = Images.InAppImages.matchlogo
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor : Colors.TabItem.match], for: .normal)
+        vc.tabBarItem.image = Images.InAppImages.match_unselected
+        vc.tabBarItem.selectedImage = Images.InAppImages.match_selected
         return vc
     }
 }

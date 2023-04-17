@@ -16,7 +16,9 @@ enum ShopModule {
             return nil
         }
         vc.tabBarItem.title = "SHOP"
-        vc.tabBarItem.image = Images.InAppImages.shoplogo
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor : Colors.TabItem.shop], for: .normal)
+        vc.tabBarItem.image = Images.InAppImages.shop_unselected
+        vc.tabBarItem.selectedImage = Images.InAppImages.shop_selected
         return vc
     }
 }

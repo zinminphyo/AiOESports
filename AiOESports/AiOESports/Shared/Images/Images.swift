@@ -19,11 +19,16 @@ class Images {
     static let backlogo = UIImage(named: "backlogo", in: .main, compatibleWith: nil)
     
     enum InAppImages {
-        static let homelogo = UIImage(named: "homelogo", in: .main, compatibleWith: nil)
-        static let ranklogo = UIImage(named: "ranklogo", in: .main, compatibleWith: nil)
-        static let matchlogo = UIImage(named: "matchlogo", in: .main, compatibleWith: nil)
-        static let tourlogo = UIImage(named: "tourlogo", in: .main, compatibleWith: nil)
-        static let shoplogo = UIImage(named: "shoplogo", in: .main, compatibleWith: nil)
+        static let home_selected = UIImage(named: "home_selected", in: .main, compatibleWith: nil)
+        static let home_unselected = UIImage(named: "home_unselected", in: .main, compatibleWith: nil)
+        static let rank_selected = UIImage(named: "rank_selected", in: .main, compatibleWith: nil)
+        static let rank_unselected = UIImage(named: "rank_unselected", in: .main, compatibleWith: nil)
+        static let match_selected = UIImage(named: "match_selected", in: .main, compatibleWith: nil)
+        static let match_unselected = UIImage(named: "match_unselected", in: .main, compatibleWith: nil)
+        static let tour_selected = UIImage(named: "tour_selected", in: .main, compatibleWith: nil)
+        static let tour_unselected = UIImage(named: "tour_unselected", in: .main, compatibleWith: nil)
+        static let shop_selected = UIImage(named: "shop_selected", in: .main, compatibleWith: nil)
+        static let shop_unselected = UIImage(named: "shop_unselected", in: .main, compatibleWith: nil)
     }
     
     enum RankModuleImages {
