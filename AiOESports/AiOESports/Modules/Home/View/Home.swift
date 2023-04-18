@@ -41,9 +41,8 @@ class Home: UIViewController {
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.itemSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.itemSize = CGSize(width: collectionView.frame.width - 10, height: collectionView.frame.height)
         collectionView.collectionViewLayout = flowLayout
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInsetAdjustmentBehavior = .never
@@ -66,7 +65,7 @@ class Home: UIViewController {
 }
 
 
-extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == advertisementCollectionView {
             return adLists.count
@@ -86,11 +85,9 @@ extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         }
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index: Int = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        self.pageControl.currentPage = index
     }
 }
 
@@ -101,6 +98,7 @@ extension Home: HomeViewDelegate {
         self.collectionView.reloadData()
         self.adLists = adLists
         self.advertisementCollectionView.reloadData()
+        self.pageControl.numberOfPages = bannerLists.count
     }
     
     func renderError(string: String) {
