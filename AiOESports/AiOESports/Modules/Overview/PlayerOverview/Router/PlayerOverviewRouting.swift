@@ -9,5 +9,7 @@ import Foundation
 
 
 protocol PlayerOverviewRouting {
-    func routeToFacebook(id: String)
+    func routeToFacebookPage(id: String)
+    func routeToYoutube(id: String)
+    func routeToFacebookProfile(url: String)
 }

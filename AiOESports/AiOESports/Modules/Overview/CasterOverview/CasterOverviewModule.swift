@@ -15,6 +15,8 @@ enum CasterOverviewModule {
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: CasterOverview.self)) as? CasterOverview else { return nil }
         let presenter = CasterOverviewPresenter(casterDetails: details)
         presenter.viewDelegate = vc
+        let router = CasterOverviewRouter()
+        presenter.router = router
         vc.presenter = presenter
         return vc
     }

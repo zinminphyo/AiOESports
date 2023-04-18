@@ -39,6 +39,7 @@ class Achivement: UIViewController {
         achivementTableView.delegate = self
         achivementTableView.separatorStyle = .none
         achivementTableView.backgroundColor = Colors.Theme.inputColor
+        achivementTableView.isScrollEnabled = true
     }
 
 }

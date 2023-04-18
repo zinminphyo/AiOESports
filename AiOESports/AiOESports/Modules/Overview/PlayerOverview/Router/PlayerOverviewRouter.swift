@@ -9,10 +9,24 @@ import Foundation
 import UIKit
 
 class PlayerOverviewRouter: PlayerOverviewRouting {
-    func routeToFacebook(id: String) {
-        guard let url = URL(string: "fb://profile?id=\(id)") else { return }
+    func routeToFacebookPage(id: String) {
+        guard let url = URL(string: id) else { return }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func routeToYoutube(id: String) {
+        guard let url = URL(string: id) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func routeToFacebookProfile(url: String) {
+        guard let url = URL(string: url) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
         }
     }
 }

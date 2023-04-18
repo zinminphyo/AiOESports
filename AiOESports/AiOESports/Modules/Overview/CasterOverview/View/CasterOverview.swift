@@ -43,6 +43,7 @@ class CasterOverview: UIViewController {
     private func configureColletionView() {
         collectionView.register(UINib(nibName: String(describing: SocialCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SocialCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
+        collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = SizeInspector.socialIconSize
         flowLayout.scrollDirection = .horizontal
@@ -64,7 +65,7 @@ class CasterOverview: UIViewController {
 }
 
 
-extension CasterOverview: UICollectionViewDataSource {
+extension CasterOverview: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return socialLists.count
     }
@@ -72,6 +73,9 @@ extension CasterOverview: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SocialCollectionViewCell.reuseIdentifier, for: indexPath) as? SocialCollectionViewCell else { return UICollectionViewCell() }
         cell.renderUI(social: socialLists[indexPath.row])
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didTapSocial(social: socialLists[indexPath.row])
     }
 }
 

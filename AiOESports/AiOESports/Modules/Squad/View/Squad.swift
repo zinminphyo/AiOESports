@@ -42,6 +42,8 @@ class Squad: UIViewController {
         squadTableView.showsVerticalScrollIndicator = false
         squadTableView.showsHorizontalScrollIndicator = false
         squadTableView.sectionHeaderTopPadding = 10.0
+        squadTableView.isScrollEnabled = true
+        
     }
 
 }

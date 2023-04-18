@@ -83,10 +83,13 @@ class PlayerOverviewPresenter: PlayerOverviewPresenting {
     
     
     func didTapSocial(social: SocialModel) {
-        print("Platform is \(social.platform)")
         switch social.platform {
+        case "facebook":
+            router?.routeToFacebookProfile(url: social.link)
         case "facebook_page":
-            router?.routeToFacebook(id: social.link)
+            router?.routeToFacebookPage(id: social.link)
+        case "youtube":
+            router?.routeToYoutube(id: social.link)
         default:
             break
         }

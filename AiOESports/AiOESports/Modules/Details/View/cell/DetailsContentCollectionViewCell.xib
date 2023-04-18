@@ -20,13 +20,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="324" height="57"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oub-Xp-RGt">
-                                <rect key="frame" x="10" y="10" width="304" height="27"/>
+                                <rect key="frame" x="10" y="10" width="304" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9Q-vN-xON">
-                                <rect key="frame" x="10" y="47" width="304" height="2"/>
+                                <rect key="frame" x="10" y="55" width="304" height="2"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="0cy-eg-cgd"/>
@@ -41,7 +41,7 @@
                             <constraint firstAttribute="trailing" secondItem="Oub-Xp-RGt" secondAttribute="trailing" constant="10" id="UP4-ci-6wd"/>
                             <constraint firstItem="y9Q-vN-xON" firstAttribute="leading" secondItem="Oub-Xp-RGt" secondAttribute="leading" id="kqZ-UN-abq"/>
                             <constraint firstItem="y9Q-vN-xON" firstAttribute="top" secondItem="Oub-Xp-RGt" secondAttribute="bottom" constant="10" id="l9u-dW-t1B"/>
-                            <constraint firstAttribute="bottom" secondItem="y9Q-vN-xON" secondAttribute="bottom" constant="8" id="udV-Cm-RLP"/>
+                            <constraint firstAttribute="bottom" secondItem="y9Q-vN-xON" secondAttribute="bottom" id="udV-Cm-RLP"/>
                         </constraints>
                     </view>
                 </subviews>

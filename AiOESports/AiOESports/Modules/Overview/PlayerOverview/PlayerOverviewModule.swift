@@ -18,6 +18,8 @@ enum PlayerOverviewModule {
         }
         let presenter = PlayerOverviewPresenter(details: playerDetails, social: social, signatureLists: signatureLists)
         presenter.viewDelegate = vc
+        let router = PlayerOverviewRouter()
+        presenter.router = router
         vc.presenter = presenter
         return vc
     }

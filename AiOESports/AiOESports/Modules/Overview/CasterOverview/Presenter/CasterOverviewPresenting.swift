@@ -10,5 +10,7 @@ import Foundation
 
 protocol CasterOverviewPresenting {
     var viewDelegate: CasterOverviewViewDelegate? { get set }
+    var router: CasterOverviewRouting? { get set }
     func viewDidLoad()
+    func didTapSocial(social: SocialModel)
 }

@@ -21,9 +21,9 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ye6-fn-uOa">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 206" translatesAutoresizingMaskIntoConstraints="NO" id="yUa-lQ-7fD">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yUa-lQ-7fD">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="196.66666666666666"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yUa-lQ-7fD" secondAttribute="height" multiplier="2:1" id="FVh-Q8-tUr"/>
@@ -84,7 +84,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-gL-NgD">
-                                                <rect key="frame" x="0.0" y="276.66666666666669" width="393" height="723.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="276.66666666666669" width="393" height="823.33333333333326"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-78-sMi">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -101,21 +101,21 @@
                                                         <cells/>
                                                     </collectionView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2h-z0-p3f">
-                                                        <rect key="frame" x="0.0" y="49" width="393" height="1"/>
+                                                        <rect key="frame" x="0.0" y="50" width="393" height="1"/>
                                                         <color key="backgroundColor" name="SecondaryBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="x2w-cL-v6c"/>
                                                         </constraints>
                                                     </view>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIk-b1-A2T">
-                                                        <rect key="frame" x="0.0" y="50" width="393" height="673.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="51" width="393" height="772.33333333333337"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </scrollView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="eGq-78-sMi" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="88Y-PG-PmK"/>
-                                                    <constraint firstItem="j2h-z0-p3f" firstAttribute="bottom" secondItem="eGq-78-sMi" secondAttribute="bottom" id="YOf-F8-soZ"/>
+                                                    <constraint firstItem="j2h-z0-p3f" firstAttribute="top" secondItem="eGq-78-sMi" secondAttribute="bottom" id="YOf-F8-soZ"/>
                                                     <constraint firstItem="AIk-b1-A2T" firstAttribute="top" secondItem="j2h-z0-p3f" secondAttribute="bottom" id="eAX-Ov-W74"/>
                                                     <constraint firstAttribute="bottom" secondItem="AIk-b1-A2T" secondAttribute="bottom" id="jul-xd-Pm6"/>
                                                     <constraint firstAttribute="trailing" secondItem="AIk-b1-A2T" secondAttribute="trailing" id="l7k-fI-CVC"/>
@@ -123,6 +123,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="eGq-78-sMi" secondAttribute="trailing" id="peL-f8-LBt"/>
                                                     <constraint firstItem="j2h-z0-p3f" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="rAz-9g-nDt"/>
                                                     <constraint firstItem="AIk-b1-A2T" firstAttribute="leading" secondItem="W3j-gL-NgD" secondAttribute="leading" id="rlq-WY-9Ls"/>
+                                                    <constraint firstItem="AIk-b1-A2T" firstAttribute="centerX" secondItem="W3j-gL-NgD" secondAttribute="centerX" id="w7W-Nj-6Eo"/>
                                                     <constraint firstItem="eGq-78-sMi" firstAttribute="top" secondItem="W3j-gL-NgD" secondAttribute="top" id="wj9-tM-LY3"/>
                                                 </constraints>
                                             </view>
@@ -134,12 +135,12 @@
                                             <constraint firstAttribute="trailing" secondItem="W3j-gL-NgD" secondAttribute="trailing" id="Elk-QP-Tbc"/>
                                             <constraint firstAttribute="trailing" secondItem="9g2-OM-J4d" secondAttribute="trailing" id="EyA-eT-BFF"/>
                                             <constraint firstItem="W3j-gL-NgD" firstAttribute="top" secondItem="9g2-OM-J4d" secondAttribute="bottom" constant="10" id="Oqh-EK-2X2"/>
+                                            <constraint firstAttribute="height" constant="1100" id="Tcz-3H-CoV"/>
                                             <constraint firstAttribute="trailing" secondItem="yUa-lQ-7fD" secondAttribute="trailing" id="UxN-s9-fwy"/>
                                             <constraint firstItem="9g2-OM-J4d" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="Vcf-rl-WEK"/>
                                             <constraint firstItem="yUa-lQ-7fD" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="cu1-dc-oXc"/>
                                             <constraint firstItem="yUa-lQ-7fD" firstAttribute="top" secondItem="ye6-fn-uOa" secondAttribute="top" id="knj-Id-Mod"/>
                                             <constraint firstAttribute="bottom" secondItem="W3j-gL-NgD" secondAttribute="bottom" id="mxj-Yt-nbz"/>
-                                            <constraint firstAttribute="height" constant="1000" id="vdl-cv-ioh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -207,7 +208,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rectangle 206" width="330" height="156"/>
         <image name="backlogo" width="24" height="24"/>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

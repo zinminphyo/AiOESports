@@ -12,6 +12,8 @@ class CasterOverviewPresenter: CasterOverviewPresenting {
     
     var viewDelegate: CasterOverviewViewDelegate?
     
+    var router: CasterOverviewRouting?
+    
     private var details: PlayerDetails? = nil
     
     init(casterDetails: PlayerDetails) {
@@ -23,5 +25,20 @@ class CasterOverviewPresenter: CasterOverviewPresenting {
         self.viewDelegate?.renderUI(details: details)
     }
     
-    
+    func didTapSocial(social: SocialModel) {
+        switch social.platform {
+        case "facebook":
+            router?.routeToFacebookProfile(url: social.link)
+        case "facebook_page":
+            router?.routeToFacebookPage(url: social.link)
+        case "youtube":
+            router?.routeToYouTube(url: social.link)
+        case "instagram":
+            router?.routeToInstagram(url: social.link)
+        case "twitch":
+            router?.routeToTwitch(url: social.link)
+        default:
+            break
+        }
+    }
 }
