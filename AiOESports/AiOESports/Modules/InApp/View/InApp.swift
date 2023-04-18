@@ -23,7 +23,7 @@ class InApp: UITabBarController {
     
     private func configureHierarchy() {
         
-        if let homeVC = HomeModule.createModule(),
+        if let homeVC = HomeContainerModule.createModule(),
            let rankVC = RankModule.createModule(),
            let matchVC = MatchModule.createModule(),
            let tourVC = TourModule.createModule(),

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Container-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HomeContainer" id="Y6W-OH-hqX" customClass="HomeContainer" customModule="AiOESports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qT-LY-0BW" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnV-U3-UAo">
+                                        <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="HTo-N2-XuH"/>
+                                            <constraint firstAttribute="height" constant="30" id="Tkz-I8-m0g"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="menulogo"/>
+                                        <connections>
+                                            <action selector="didTapMenuItem:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Aqb-oY-blk"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AiO ESPORTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZf-GH-ApQ">
+                                        <rect key="frame" x="54.000000000000007" y="14.666666666666671" width="106.66666666666669" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="PrimaryText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSN-TZ-89A">
+                                        <rect key="frame" x="355" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Yog-oH-4K4"/>
+                                            <constraint firstAttribute="width" constant="30" id="lEF-Oc-vbQ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="notilogo"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ThemeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9pd-mU-xcD"/>
+                                    <constraint firstItem="WZf-GH-ApQ" firstAttribute="centerY" secondItem="9qT-LY-0BW" secondAttribute="centerY" id="Vkh-Ui-npe"/>
+                                    <constraint firstAttribute="trailing" secondItem="rSN-TZ-89A" secondAttribute="trailing" constant="8" id="ash-y5-U0Y"/>
+                                    <constraint firstItem="WZf-GH-ApQ" firstAttribute="leading" secondItem="nnV-U3-UAo" secondAttribute="trailing" constant="16" id="cAc-SZ-v4S"/>
+                                    <constraint firstItem="nnV-U3-UAo" firstAttribute="centerY" secondItem="9qT-LY-0BW" secondAttribute="centerY" id="g7I-3b-rgW"/>
+                                    <constraint firstItem="nnV-U3-UAo" firstAttribute="leading" secondItem="9qT-LY-0BW" secondAttribute="leading" constant="8" id="oxb-xC-z9x"/>
+                                    <constraint firstItem="rSN-TZ-89A" firstAttribute="centerY" secondItem="9qT-LY-0BW" secondAttribute="centerY" id="wAl-5o-0aF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91x-vi-io2">
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9qT-LY-0BW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2SM-Rv-GgK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="91x-vi-io2" secondAttribute="bottom" id="Gqr-qJ-KMl"/>
+                            <constraint firstItem="91x-vi-io2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JIB-d5-Nee"/>
+                            <constraint firstAttribute="trailing" secondItem="9qT-LY-0BW" secondAttribute="trailing" id="buG-1J-MXj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="91x-vi-io2" secondAttribute="trailing" id="d5b-OU-lp4"/>
+                            <constraint firstItem="9qT-LY-0BW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iyI-Es-Qpm"/>
+                            <constraint firstItem="91x-vi-io2" firstAttribute="top" secondItem="9qT-LY-0BW" secondAttribute="bottom" id="kB2-yl-ZyM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentContainerView" destination="91x-vi-io2" id="eat-Xl-dka"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menulogo" width="24" height="24"/>
+        <image name="notilogo" width="24" height="24"/>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

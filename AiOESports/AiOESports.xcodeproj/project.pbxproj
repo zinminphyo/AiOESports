@@ -181,6 +181,12 @@
 		84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47629E2CE27006B06DD /* DetailsViewDelegate.swift */; };
 		84EF0A8229EE5BA60042B6BF /* CasterOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */; };
 		84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */; };
+		84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF0A8729EEF1160042B6BF /* Menu.storyboard */; };
+		84EF0A8A29EEF12F0042B6BF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8929EEF12F0042B6BF /* Menu.swift */; };
+		84EF0A8C29EEF13F0042B6BF /* MenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8B29EEF13F0042B6BF /* MenuModule.swift */; };
+		84EF0A9029EEF2160042B6BF /* HomeContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF0A8F29EEF2160042B6BF /* HomeContainer.storyboard */; };
+		84EF0A9229EEF2270042B6BF /* HomeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A9129EEF2270042B6BF /* HomeContainer.swift */; };
+		84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A9329EEF2690042B6BF /* HomeContainerModule.swift */; };
 		84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF129DE81D800734CAE /* Pagination.swift */; };
 		84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */; };
 		84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAF729DEAE3300734CAE /* Search.storyboard */; };
@@ -413,6 +419,12 @@
 		84D9C47629E2CE27006B06DD /* DetailsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewDelegate.swift; sourceTree = "<group>"; };
 		84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouting.swift; sourceTree = "<group>"; };
 		84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouter.swift; sourceTree = "<group>"; };
+		84EF0A8729EEF1160042B6BF /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		84EF0A8929EEF12F0042B6BF /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		84EF0A8B29EEF13F0042B6BF /* MenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModule.swift; sourceTree = "<group>"; };
+		84EF0A8F29EEF2160042B6BF /* HomeContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainer.storyboard; sourceTree = "<group>"; };
+		84EF0A9129EEF2270042B6BF /* HomeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainer.swift; sourceTree = "<group>"; };
+		84EF0A9329EEF2690042B6BF /* HomeContainerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerModule.swift; sourceTree = "<group>"; };
 		84F5FAF129DE81D800734CAE /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		84F5FAF729DEAE3300734CAE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -1286,6 +1298,42 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		84EF0A8529EEF09B0042B6BF /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				84EF0A8629EEF09F0042B6BF /* View */,
+				84EF0A8B29EEF13F0042B6BF /* MenuModule.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		84EF0A8629EEF09F0042B6BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84EF0A8729EEF1160042B6BF /* Menu.storyboard */,
+				84EF0A8929EEF12F0042B6BF /* Menu.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84EF0A8D29EEF2060042B6BF /* HomeContainer */ = {
+			isa = PBXGroup;
+			children = (
+				84EF0A8E29EEF20C0042B6BF /* View */,
+				84EF0A9329EEF2690042B6BF /* HomeContainerModule.swift */,
+			);
+			path = HomeContainer;
+			sourceTree = "<group>";
+		};
+		84EF0A8E29EEF20C0042B6BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84EF0A8F29EEF2160042B6BF /* HomeContainer.storyboard */,
+				84EF0A9129EEF2270042B6BF /* HomeContainer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84F5FAF529DEAE2600734CAE /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -1469,6 +1517,8 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84EF0A8D29EEF2060042B6BF /* HomeContainer */,
+				84EF0A8529EEF09B0042B6BF /* Menu */,
 				84A050D829E92A54004D582B /* Career */,
 				849BCE0529E51D930033C63A /* Overview */,
 				84B7458329E494580086C708 /* Sponsor */,
@@ -1635,6 +1685,7 @@
 				842FC9B429E849D800C5F354 /* OverviewTableViewCell.xib in Resources */,
 				84725ACC29E16AE4003658CD /* Achivement.storyboard in Resources */,
 				84A050E929E95184004D582B /* EmptyView.xib in Resources */,
+				84EF0A9029EEF2160042B6BF /* HomeContainer.storyboard in Resources */,
 				84A050DB29E92A6A004D582B /* Career.storyboard in Resources */,
 				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
@@ -1658,6 +1709,7 @@
 				84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */,
 				84597C7629EA4A38007C511B /* GameImageCollectionViewCell.xib in Resources */,
 				842FC9B829E84CA300C5F354 /* PlayerOverview.storyboard in Resources */,
+				84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */,
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
 				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
 				84725ABF29E12B18003658CD /* Squad.storyboard in Resources */,
@@ -1829,6 +1881,7 @@
 				842FC9AB29E83F9300C5F354 /* SignatureModel.swift in Sources */,
 				84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */,
 				84B7455A29E460EF0086C708 /* FormerPlayerModel.swift in Sources */,
+				84EF0A8C29EEF13F0042B6BF /* MenuModule.swift in Sources */,
 				849BCE0B29E51F150033C63A /* TeamOverview.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84B7458829E494960086C708 /* Sponsor.swift in Sources */,
@@ -1853,6 +1906,7 @@
 				84F5FB0B29DEC48200734CAE /* SearchPresenting.swift in Sources */,
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
 				84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */,
+				84EF0A9229EEF2270042B6BF /* HomeContainer.swift in Sources */,
 				84A050F829E96582004D582B /* CasterOverviewViewDelegate.swift in Sources */,
 				842FC9C129E84DE200C5F354 /* PlayerOverviewViewDelegate.swift in Sources */,
 				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,
@@ -1948,8 +2002,10 @@
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
+				84EF0A8A29EEF12F0042B6BF /* Menu.swift in Sources */,
 				84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */,
 				84B7455629E45FB90086C708 /* CoachModel.swift in Sources */,
+				84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
 				84725AC129E12BE1003658CD /* Squad.swift in Sources */,
