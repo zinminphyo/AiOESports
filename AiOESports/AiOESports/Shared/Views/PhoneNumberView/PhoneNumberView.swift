@@ -52,6 +52,7 @@ class PhoneNumberView: UIView, NibLoadable {
         phoneNumberTxtField.backgroundColor = Colors.Theme.inputColor
         phoneNumberTxtField.textColor = Colors.Text.primaryText
         phoneNumberTxtField.borderStyle = .none
+        phoneNumberTxtField.keyboardType = .numberPad
         phoneNumberView.layer.cornerRadius = 10
     }
     
