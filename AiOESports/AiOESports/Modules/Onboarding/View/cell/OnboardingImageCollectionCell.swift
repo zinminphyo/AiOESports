@@ -43,7 +43,7 @@ class OnboardingImageCollectionCell: UICollectionViewCell {
     
     
     @discardableResult
-    func set(image: UIImage) -> Self {
+    func set(image: UIImage?) -> Self {
         self.imageView.image = image
         return self
     }

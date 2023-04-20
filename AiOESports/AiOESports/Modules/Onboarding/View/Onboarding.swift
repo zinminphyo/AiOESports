@@ -78,7 +78,7 @@ extension Onboarding {
     
     private func configureTitleLabel() {
         titleLabel.text = "Track your favourite game in one place"
-        titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        titleLabel.font = Fonts.titleFont
         titleLabel.numberOfLines = 2
         titleLabel.textAlignment = .center
         titleLabel.textColor = Colors.Text.primaryText
@@ -86,7 +86,7 @@ extension Onboarding {
     
     private func configureSubtitleLabel() {
         subtitleLabel.text = "We will show you all the necessary information of your favorite E-Sport game."
-        subtitleLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        subtitleLabel.font = Fonts.subtitleFont
         subtitleLabel.numberOfLines = 2
         subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = Colors.Text.primaryText
@@ -127,13 +127,13 @@ extension Onboarding: UICollectionViewDataSource, UICollectionViewDelegate, UISc
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return Images.Onboarding.allCases.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingImageCollectionCell.reuseIdentifier, for: indexPath) as? OnboardingImageCollectionCell else {
             return UICollectionViewCell()
         }
-        cell.set(image: UIImage(named: "onboard1") ?? .actions)
+        cell.set(image: Images.Onboarding.allCases[indexPath.row].image)
         return cell
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -147,8 +147,11 @@ extension Onboarding: UICollectionViewDataSource, UICollectionViewDelegate, UISc
 // MARK: - Onboarding View Protocol.
 extension Onboarding: OnboardingViewProtocol {
     func didReachedLastPage(isReached: Bool) {
-        nextBtn.backgroundColor = isReached ? Colors.Button.primaryColor : Colors.Button.secondaryColor
-        nextBtn.layer.borderWidth = isReached ? 0.0 : 0.3
+        UIView.animate(withDuration: 0.2, delay: 0.0) { [weak self] in
+            guard let self = self else { return }
+            self.nextBtn.backgroundColor = isReached ? Colors.Button.primaryColor : Colors.Button.secondaryColor
+            self.nextBtn.layer.borderWidth = isReached ? 0.0 : 0.3
+        }
     }
 }
 

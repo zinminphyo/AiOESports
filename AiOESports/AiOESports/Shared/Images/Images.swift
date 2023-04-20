@@ -167,4 +167,23 @@ class Images {
         static let profile = UIImage(named: "profile", in: .main, compatibleWith: nil)
         static let cover = UIImage(named: "cover", in: .main, compatibleWith: nil)
     }
+    
+    enum Onboarding: CaseIterable {
+        case onboard1
+        case onboard2
+        case onboard3
+        
+        
+        var image: UIImage? {
+            switch self {
+            case .onboard1:
+                return UIImage(named: "onboard_1", in: .main, compatibleWith: nil)
+            case .onboard2:
+                return UIImage(named: "onboard_2", in: .main, compatibleWith: nil)
+            case .onboard3:
+                return UIImage(named: "onboard_3", in: .main, compatibleWith: nil)
+            }
+        }
+        
+    }
 }
