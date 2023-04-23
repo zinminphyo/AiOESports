@@ -116,7 +116,8 @@ class LoginOrRegister: UIViewController {
     }
 
     @objc func didTapRegisterBtn() {
-        
+        guard let vc = RegisterModule.createModule() else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func didTapContinueAsGuestBtn() {

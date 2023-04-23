@@ -45,6 +45,12 @@
 		8454D35129F4F71300B97EE3 /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */; };
 		8454D35329F4F76B00B97EE3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */; };
 		8454D35529F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35429F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift */; };
+		8454D35929F583D300B97EE3 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454D35829F583D300B97EE3 /* Register.storyboard */; };
+		8454D35B29F583FF00B97EE3 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35A29F583FF00B97EE3 /* Register.swift */; };
+		8454D35D29F5848400B97EE3 /* RegisterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35C29F5848400B97EE3 /* RegisterModule.swift */; };
+		8454D36029F5941100B97EE3 /* RegisterPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35F29F5941100B97EE3 /* RegisterPresenting.swift */; };
+		8454D36229F5942800B97EE3 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D36129F5942800B97EE3 /* RegisterPresenter.swift */; };
+		8454D36429F5943900B97EE3 /* RegisterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D36329F5943900B97EE3 /* RegisterViewDelegate.swift */; };
 		84597C6F29EA47B2007C511B /* GameImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597C6D29EA47B2007C511B /* GameImagesTableViewCell.swift */; };
 		84597C7029EA47B2007C511B /* GameImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84597C6E29EA47B2007C511B /* GameImagesTableViewCell.xib */; };
 		84597C7529EA4A38007C511B /* GameImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597C7329EA4A38007C511B /* GameImageCollectionViewCell.swift */; };
@@ -290,6 +296,12 @@
 		8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 		8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		8454D35429F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewDelegate.swift; sourceTree = "<group>"; };
+		8454D35829F583D300B97EE3 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		8454D35A29F583FF00B97EE3 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		8454D35C29F5848400B97EE3 /* RegisterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModule.swift; sourceTree = "<group>"; };
+		8454D35F29F5941100B97EE3 /* RegisterPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenting.swift; sourceTree = "<group>"; };
+		8454D36129F5942800B97EE3 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		8454D36329F5943900B97EE3 /* RegisterViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewDelegate.swift; sourceTree = "<group>"; };
 		84597C6D29EA47B2007C511B /* GameImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameImagesTableViewCell.swift; sourceTree = "<group>"; };
 		84597C6E29EA47B2007C511B /* GameImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameImagesTableViewCell.xib; sourceTree = "<group>"; };
 		84597C7329EA4A38007C511B /* GameImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -649,6 +661,35 @@
 			children = (
 				8454D34E29F4F6E500B97EE3 /* LoginPresenting.swift */,
 				8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8454D35629F583C400B97EE3 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8454D35E29F5940200B97EE3 /* Presenter */,
+				8454D35729F583CA00B97EE3 /* View */,
+				8454D35C29F5848400B97EE3 /* RegisterModule.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8454D35729F583CA00B97EE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454D35829F583D300B97EE3 /* Register.storyboard */,
+				8454D35A29F583FF00B97EE3 /* Register.swift */,
+				8454D36329F5943900B97EE3 /* RegisterViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8454D35E29F5940200B97EE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8454D35F29F5941100B97EE3 /* RegisterPresenting.swift */,
+				8454D36129F5942800B97EE3 /* RegisterPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1561,6 +1602,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8454D35629F583C400B97EE3 /* Register */,
 				841C58E229F194B300FBCD4F /* LoginOrRegister */,
 				84EF0A8D29EEF2060042B6BF /* HomeContainer */,
 				84EF0A8529EEF09B0042B6BF /* Menu */,
@@ -1770,6 +1812,7 @@
 				849BCE0929E51DB80033C63A /* TeamOverview.storyboard in Resources */,
 				84F6C5E229CA151100D21EE2 /* Onboarding.storyboard in Resources */,
 				849BCE1729E523860033C63A /* SocialCollectionViewCell.xib in Resources */,
+				8454D35929F583D300B97EE3 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1944,6 +1987,7 @@
 				84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */,
 				849BCE0D29E520960033C63A /* TeamOverviewModule.swift in Sources */,
 				84A050DF29E92BC6004D582B /* CareerModule.swift in Sources */,
+				8454D36229F5942800B97EE3 /* RegisterPresenter.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				8437FE7129ED1882008F7179 /* BannerModel.swift in Sources */,
 				842FC9AF29E8433600C5F354 /* PlayerDetails.swift in Sources */,
@@ -1966,6 +2010,7 @@
 				849BCE1629E523860033C63A /* SocialCollectionViewCell.swift in Sources */,
 				84A050F629E96568004D582B /* CasterOverviewPresenting.swift in Sources */,
 				8437FE7829ED1C3E008F7179 /* HomePresenting.swift in Sources */,
+				8454D35B29F583FF00B97EE3 /* Register.swift in Sources */,
 				8454D35529F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift in Sources */,
 				849321E729EC48F900A05EB8 /* TeamOverviewRouting.swift in Sources */,
 				84B7457A29E489090086C708 /* FormerPlayerTableViewCell.swift in Sources */,
@@ -1982,6 +2027,7 @@
 				8454D34F29F4F6E500B97EE3 /* LoginPresenting.swift in Sources */,
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
+				8454D36029F5941100B97EE3 /* RegisterPresenting.swift in Sources */,
 				84B7455829E460080086C708 /* RosterModel.swift in Sources */,
 				84F5FAFA29DEAFCB00734CAE /* Search.swift in Sources */,
 				842FC9BA29E84D0600C5F354 /* PlayerOverview.swift in Sources */,
@@ -2006,6 +2052,7 @@
 				84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */,
 				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
 				842FC9A929E83A7200C5F354 /* PlayerDetailsModel.swift in Sources */,
+				8454D35D29F5848400B97EE3 /* RegisterModule.swift in Sources */,
 				84A050F329E9642E004D582B /* CasterOverviewModule.swift in Sources */,
 				841C58E929F19AB800FBCD4F /* LoginOrRegisterModule.swift in Sources */,
 				84B7459629E49A320086C708 /* SponsorPresenter.swift in Sources */,
@@ -2019,6 +2066,7 @@
 				84B7458A29E494AD0086C708 /* SponsorModule.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,
 				84CF0A0429D9FA4800F87400 /* Match.swift in Sources */,
+				8454D36429F5943900B97EE3 /* RegisterViewDelegate.swift in Sources */,
 				842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */,
 				842AE8CD29DB4B580036FF05 /* RankingCollectionViewCell.swift in Sources */,
 				84597C6F29EA47B2007C511B /* GameImagesTableViewCell.swift in Sources */,
