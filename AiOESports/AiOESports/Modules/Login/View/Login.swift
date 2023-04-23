@@ -25,6 +25,9 @@ class Login: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var donotHaveAccountTitleLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var phoneNumberView: PhoneNumberView!
+    
+    var presenter: LoginPresenting?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class Login: UIViewController {
         // Do any additional setup after loading the view.
         
         pinView.delegate = self
+        pinView.state = .confirm
         
         configureHierarchy()
     }
@@ -44,6 +48,7 @@ class Login: UIViewController {
         configurePhoneNumberLabel()
         configurePasswordLabel()
         configureLoginButton()
+        configurePhoneNumberView()
         configureDonotHaveAccountLabel()
         configureRegisterButton()
         configurePhoneNumberErrorContainerView()
@@ -81,6 +86,7 @@ class Login: UIViewController {
         incorrectPhoneNumberLabel.text = "Your phone number is wrong. Please try again."
         incorrectPhoneNumberLabel.font = Fonts.subtitleFont
         incorrectPhoneNumberLabel.numberOfLines = 0
+        incorrectPhoneNumberLabel.isHidden = true
     }
     
     private func configurePasswordErrorContainerView() {
@@ -90,12 +96,17 @@ class Login: UIViewController {
         incorrectPinLabel.text = "Your password is wrong. Please try again."
         incorrectPinLabel.font = Fonts.subtitleFont
         incorrectPinLabel.numberOfLines = 0
+        incorrectPinLabel.isHidden = true
     }
     
     private func configurePasswordLabel() {
         passwordLabel.text = "Password"
         passwordLabel.font = Fonts.subtitleFont
         passwordLabel.textColor = Colors.Text.primaryText
+    }
+    
+    private func configurePhoneNumberView() {
+        phoneNumberView.delegate = self
     }
     
     private func configureLoginButton() {
@@ -112,6 +123,8 @@ class Login: UIViewController {
             loginButton.titleLabel?.font = Fonts.titleFont
             loginButton.titleLabel?.textColor = Colors.Text.primaryText
         }
+        loginButton.backgroundColor = Colors.Button.primaryColor?.withAlphaComponent(0.4)
+        loginButton.layer.cornerRadius = 10
     }
     
     private func configureDonotHaveAccountLabel() {
@@ -133,9 +146,9 @@ class Login: UIViewController {
             registerButton.titleLabel?.font = Fonts.titleFont
             registerButton.titleLabel?.textColor = Colors.Text.primaryText
         }
-        registerButton.backgroundColor = Colors.Button.primaryColor
+        registerButton.backgroundColor = Colors.Theme.inputColor
         registerButton.layer.cornerRadius = 10
-        registerButton.layer.borderColor = UIColor.lightGray.cgColor
+        registerButton.layer.borderColor = Colors.Text.secondaryText?.cgColor
         registerButton.layer.borderWidth = 0.4
     }
     
@@ -150,8 +163,27 @@ class Login: UIViewController {
         forgotPasswordLabel.textColor = Colors.Text.primaryText
         
         rememberInfoFlagImageView.image = Images.rememberFalse
+        
+        rememberInfoFlagImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapRemeberInfoView))
+        rememberInfoFlagImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func didTapRemeberInfoView() {
+        presenter?.didTapRemeberInfoView()
     }
 
+}
+
+extension Login: LoginViewDelegate {
+    func updateRememberInfoFlag(flag: Bool) {
+        rememberInfoFlagImageView.image = flag ? Images.rememberTrue : Images.rememberFalse
+    }
+    
+    func updateLoginButtton(isCompleted: Bool) {
+        loginButton.isUserInteractionEnabled = isCompleted
+        loginButton.backgroundColor = isCompleted ? Colors.Button.primaryColor : Colors.Button.primaryColor?.withAlphaComponent(0.4)
+    }
 }
 
 
@@ -159,7 +191,14 @@ extension Login: PinViewDelegate {
     func didFinishedConfirmCode(isMatched: Bool) {
         print("IsMatched Flag => \(isMatched)")
     }
-    func didFinishedEnterCode() {
-        print("Enter Code.")
+    func didFinishedEnterCode(password: String) {
+        presenter?.didChangePassword(password: password)
+    }
+}
+
+
+extension Login: PhoneNumberViewDelegate {
+    func didChangePhoneNumber(phoneNum: String) {
+        presenter?.didChangePhoneNumber(phoneNum: phoneNum)
     }
 }

@@ -117,12 +117,14 @@ class PinView: UIView, NibLoadable {
     @objc func didChangedDigit(txtField: UITextField) {
         guard txtField.text?.isEmpty == false else { return }
         guard let index = contentViews.firstIndex(of: txtField) else { return }
-        passcodeStateHandle()
+        
         guard index < contentViews.count - 1 else {
             txtField.resignFirstResponder()
             return
         }
         contentViews[index + 1].becomeFirstResponder()
+        
+        passcodeStateHandle()
     }
     
     private func passcodeStateHandle() {
@@ -168,6 +170,10 @@ class PinView: UIView, NibLoadable {
         } else {
             self.delegate?.didFinishedConfirmCode(isMatched: false)
         }
+        if confirmPIN.count == 6 {
+            self.delegate?.didFinishedEnterCode(password: confirmPIN)
+        }
+        
     }
 
 }

@@ -241,6 +241,7 @@
                         <outlet property="loginButton" destination="9uM-83-k58" id="xpB-B0-0W3"/>
                         <outlet property="passwordLabel" destination="rnV-ty-Eyb" id="EXa-jQ-40w"/>
                         <outlet property="phoneNumberLabel" destination="LJv-tD-N5T" id="RKV-WJ-M6O"/>
+                        <outlet property="phoneNumberView" destination="XKv-Wd-0TF" id="aPQ-aT-0fs"/>
                         <outlet property="pinView" destination="ZJJ-MN-KBm" id="avJ-Tg-t54"/>
                         <outlet property="registerButton" destination="NDj-Zs-LGz" id="a1D-PQ-l0q"/>
                         <outlet property="rememberInfoFlagImageView" destination="eIA-qz-QMa" id="WpT-lr-uQc"/>

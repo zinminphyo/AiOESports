@@ -14,6 +14,9 @@ enum LoginModule {
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: Login.self)) as? Login else {
             return nil
         }
+        let presenter = LoginPresenter()
+        presenter.viewDelegate = vc
+        vc.presenter = presenter
         return vc
     }
 }

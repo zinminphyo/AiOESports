@@ -41,6 +41,10 @@
 		8437FE7F29ED1DA3008F7179 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE7E29ED1DA3008F7179 /* HomePresenter.swift */; };
 		8437FE8129ED1E1E008F7179 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE8029ED1E1E008F7179 /* HomeInteractor.swift */; };
 		8437FE8329ED2138008F7179 /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE8229ED2138008F7179 /* ErrorPresentable.swift */; };
+		8454D34F29F4F6E500B97EE3 /* LoginPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D34E29F4F6E500B97EE3 /* LoginPresenting.swift */; };
+		8454D35129F4F71300B97EE3 /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */; };
+		8454D35329F4F76B00B97EE3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */; };
+		8454D35529F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35429F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift */; };
 		84597C6F29EA47B2007C511B /* GameImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597C6D29EA47B2007C511B /* GameImagesTableViewCell.swift */; };
 		84597C7029EA47B2007C511B /* GameImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84597C6E29EA47B2007C511B /* GameImagesTableViewCell.xib */; };
 		84597C7529EA4A38007C511B /* GameImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597C7329EA4A38007C511B /* GameImageCollectionViewCell.swift */; };
@@ -282,6 +286,10 @@
 		8437FE7E29ED1DA3008F7179 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8437FE8029ED1E1E008F7179 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		8437FE8229ED2138008F7179 /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
+		8454D34E29F4F6E500B97EE3 /* LoginPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenting.swift; sourceTree = "<group>"; };
+		8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
+		8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8454D35429F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewDelegate.swift; sourceTree = "<group>"; };
 		84597C6D29EA47B2007C511B /* GameImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameImagesTableViewCell.swift; sourceTree = "<group>"; };
 		84597C6E29EA47B2007C511B /* GameImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameImagesTableViewCell.xib; sourceTree = "<group>"; };
 		84597C7329EA4A38007C511B /* GameImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -636,6 +644,15 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		8454D34D29F4F6CF00B97EE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8454D34E29F4F6E500B97EE3 /* LoginPresenting.swift */,
+				8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		84597C6C29EA477B007C511B /* GameImageTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +908,7 @@
 		849B9C3A29D18A9D00F1C2D2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8454D34D29F4F6CF00B97EE3 /* Presenter */,
 				849B9C3B29D18AA100F1C2D2 /* View */,
 				849B9C3E29D18AB700F1C2D2 /* LoginModule.swift */,
 			);
@@ -902,6 +920,7 @@
 			children = (
 				849B9C3C29D18AAB00F1C2D2 /* Login.storyboard */,
 				849B9C4029D18B1D00F1C2D2 /* Login.swift */,
+				8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1184,6 +1203,7 @@
 			children = (
 				84CF09E229D990F500F87400 /* PhoneNumberView.xib */,
 				84CF09E429D9934800F87400 /* PhoneNumberView.swift */,
+				8454D35429F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift */,
 			);
 			path = PhoneNumberView;
 			sourceTree = "<group>";
@@ -1884,6 +1904,7 @@
 				849BCE1929E527990033C63A /* TeamOverviewPresenter.swift in Sources */,
 				8437FE6C29ECD658008F7179 /* PlayerOverviewRouting.swift in Sources */,
 				84725ACE29E16B0F003658CD /* Achivement.swift in Sources */,
+				8454D35129F4F71300B97EE3 /* LoginViewDelegate.swift in Sources */,
 				84F5FAFC29DEB13A00734CAE /* SearchModule.swift in Sources */,
 				84F5FB1329DEC66700734CAE /* SearchPresenter.swift in Sources */,
 				8437FE7A29ED1C4E008F7179 /* HomeViewDelegate.swift in Sources */,
@@ -1945,6 +1966,7 @@
 				849BCE1629E523860033C63A /* SocialCollectionViewCell.swift in Sources */,
 				84A050F629E96568004D582B /* CasterOverviewPresenting.swift in Sources */,
 				8437FE7829ED1C3E008F7179 /* HomePresenting.swift in Sources */,
+				8454D35529F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift in Sources */,
 				849321E729EC48F900A05EB8 /* TeamOverviewRouting.swift in Sources */,
 				84B7457A29E489090086C708 /* FormerPlayerTableViewCell.swift in Sources */,
 				84D9C47029E2C56F006B06DD /* TeamDetails.swift in Sources */,
@@ -1957,6 +1979,7 @@
 				84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */,
 				8437FE6E29ECD682008F7179 /* PlayerOverviewRouter.swift in Sources */,
 				84B7455E29E4643A0086C708 /* AchivementModel.swift in Sources */,
+				8454D34F29F4F6E500B97EE3 /* LoginPresenting.swift in Sources */,
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				84B7455829E460080086C708 /* RosterModel.swift in Sources */,
@@ -2031,6 +2054,7 @@
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
 				84EF0A8A29EEF12F0042B6BF /* Menu.swift in Sources */,
+				8454D35329F4F76B00B97EE3 /* LoginPresenter.swift in Sources */,
 				84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */,
 				84B7455629E45FB90086C708 /* CoachModel.swift in Sources */,
 				84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */,

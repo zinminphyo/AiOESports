@@ -14,6 +14,7 @@ class Images {
     static let logo = UIImage(named: "logo", in: .main, compatibleWith: nil)
     static let countryImage = UIImage(named: "countrycode", in: .main, compatibleWith: nil)
     static let rememberFalse = UIImage(named: "rememberFalse", in: .main, compatibleWith: nil)
+    static let rememberTrue = UIImage(named: "rememberTrue", in: .main, compatibleWith: nil)
     static let menulogo = UIImage(named: "menulogo", in: .main, compatibleWith: nil)
     static let notilogo = UIImage(named: "notilogo", in: .main, compatibleWith: nil)
     static let backlogo = UIImage(named: "backlogo", in: .main, compatibleWith: nil)

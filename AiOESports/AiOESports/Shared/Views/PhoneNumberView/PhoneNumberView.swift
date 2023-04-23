@@ -15,6 +15,8 @@ class PhoneNumberView: UIView, NibLoadable {
     @IBOutlet weak var phoneNumberTxtField: UITextField!
     @IBOutlet weak var countryCodeImageView: UIImageView!
     @IBOutlet weak var countryCodeLabel: UILabel!
+    
+    var delegate: PhoneNumberViewDelegate? = nil
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,7 +55,19 @@ class PhoneNumberView: UIView, NibLoadable {
         phoneNumberTxtField.textColor = Colors.Text.primaryText
         phoneNumberTxtField.borderStyle = .none
         phoneNumberTxtField.keyboardType = .numberPad
+        phoneNumberTxtField.placeholder = "9 xxx xxx xxx"
+        let placeHolder = "9 xxx xxx xxx"
+        let attributedPlaceholder = NSMutableAttributedString(string: placeHolder)
+        attributedPlaceholder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: NSRange(location: 0, length: placeHolder.count))
+        phoneNumberTxtField.attributedPlaceholder = attributedPlaceholder
+        phoneNumberTxtField.addTarget(self, action: #selector(didChangePhoneNumber), for: .editingChanged)
         phoneNumberView.layer.cornerRadius = 10
     }
     
+    @objc func didChangePhoneNumber() {
+        self.delegate?.didChangePhoneNumber(phoneNum: phoneNumberTxtField.text ?? "")
+    }
+    
 }
+
+
