@@ -150,6 +150,7 @@ class Login: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.layer.borderColor = Colors.Text.secondaryText?.cgColor
         registerButton.layer.borderWidth = 0.4
+        registerButton.addTarget(self, action: #selector(didTapRegisterBtn), for: .touchUpInside)
     }
     
     private func configureSaveInfoView() {
@@ -171,6 +172,10 @@ class Login: UIViewController {
     
     @objc func didTapRemeberInfoView() {
         presenter?.didTapRemeberInfoView()
+    }
+    
+    @objc func didTapRegisterBtn() {
+        presenter?.tappedRegisterBtn()
     }
 
 }

@@ -10,6 +10,8 @@
 		58204C26DBF6D55964E5CE6E /* Pods_AiOESports_AiOESportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */; };
 		6E5CBA7023461F336228CAA1 /* Pods_AiOESportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */; };
 		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
+		840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75929F66C9E007F4159 /* LoginRouting.swift */; };
+		840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75B29F66CE9007F4159 /* LoginRouter.swift */; };
 		841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C58E429F1950C00FBCD4F /* LoginOrRegister.storyboard */; };
 		841C58E729F1952400FBCD4F /* LoginOrRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C58E629F1952400FBCD4F /* LoginOrRegister.swift */; };
 		841C58E929F19AB800FBCD4F /* LoginOrRegisterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C58E829F19AB800FBCD4F /* LoginOrRegisterModule.swift */; };
@@ -261,6 +263,8 @@
 		52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESports_AiOESportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
+		840CC75929F66C9E007F4159 /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
+		840CC75B29F66CE9007F4159 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		841C58E429F1950C00FBCD4F /* LoginOrRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginOrRegister.storyboard; sourceTree = "<group>"; };
 		841C58E629F1952400FBCD4F /* LoginOrRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegister.swift; sourceTree = "<group>"; };
 		841C58E829F19AB800FBCD4F /* LoginOrRegisterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterModule.swift; sourceTree = "<group>"; };
@@ -540,6 +544,15 @@
 				9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		840CC75829F66C5D007F4159 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				840CC75929F66C9E007F4159 /* LoginRouting.swift */,
+				840CC75B29F66CE9007F4159 /* LoginRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		841C58E229F194B300FBCD4F /* LoginOrRegister */ = {
@@ -949,6 +962,7 @@
 		849B9C3A29D18A9D00F1C2D2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				840CC75829F66C5D007F4159 /* Router */,
 				8454D34D29F4F6CF00B97EE3 /* Presenter */,
 				849B9C3B29D18AA100F1C2D2 /* View */,
 				849B9C3E29D18AB700F1C2D2 /* LoginModule.swift */,
@@ -1959,6 +1973,7 @@
 				84B7458029E490DC0086C708 /* FormerPlayersViewDelegate.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				842FC9AD29E840F700C5F354 /* CareerModel.swift in Sources */,
+				840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */,
 				84B7455C29E4629C0086C708 /* SponsorModel.swift in Sources */,
 				84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */,
 				84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */,
@@ -2002,6 +2017,7 @@
 				842FC9C129E84DE200C5F354 /* PlayerOverviewViewDelegate.swift in Sources */,
 				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,
 				84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */,
+				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,

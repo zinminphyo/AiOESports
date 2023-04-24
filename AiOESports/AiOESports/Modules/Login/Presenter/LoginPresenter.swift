@@ -12,6 +12,8 @@ class LoginPresenter: LoginPresenting {
     
     var viewDelegate: LoginViewDelegate?
     
+    var router: LoginRouting?
+    
     private var isRemebered: Bool = false {
         didSet {
             checkRequiredInfoIsCompleted()
@@ -40,6 +42,10 @@ class LoginPresenter: LoginPresenting {
     
     func didChangePassword(password: String) {
         self.password = password
+    }
+    
+    func tappedRegisterBtn() {
+        self.router?.routeToRegisterModule()
     }
     
     private func checkRequiredInfoIsCompleted() {
