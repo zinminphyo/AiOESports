@@ -187,4 +187,15 @@ class Images {
         }
         
     }
+    
+    
+    enum AccountSetup {
+        case silver
+        var image: UIImage? {
+            switch self {
+            case .silver:
+                return UIImage(named: "Silver", in: .main, compatibleWith: nil)
+            }
+        }
+    }
 }

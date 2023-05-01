@@ -23,8 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        guard let onboarding = OnboardingModule.createModule() else { return }
 //        guard let login = LoginModule.createModule() else { return }
 //        guard let InApp = InAppModule.createModule() else { return }
-        guard let loginOrRegister = LoginOrRegisterModule.createModule() else { return }
-        let nav = UINavigationController(rootViewController: loginOrRegister)
+//        guard let loginOrRegister = LoginOrRegisterModule.createModule() else { return }
+        guard let accountSetup = AccountSetupModule.createModule() else { return }
+        let nav = UINavigationController(rootViewController: accountSetup)
         nav.setNavigationBarHidden(true, animated: true)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

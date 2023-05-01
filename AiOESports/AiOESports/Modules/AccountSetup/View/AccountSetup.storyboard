@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Account Setup-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AccountSetup" id="Y6W-OH-hqX" customClass="AccountSetup" customModule="AiOESports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GH-0d-thI">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxY-lx-8qT">
+                                        <rect key="frame" x="16" y="13" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ZTj-aD-FBZ"/>
+                                            <constraint firstAttribute="width" constant="24" id="xfK-la-IH6"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="backlogo"/>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BCd-qw-ytY">
+                                        <rect key="frame" x="55" y="23" width="322" height="4"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPM-fv-Hme">
+                                                <rect key="frame" x="0.0" y="0.0" width="159" height="4"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="gXQ-8p-jd2"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-fl-Qeo">
+                                                <rect key="frame" x="163" y="0.0" width="159" height="4"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="2FN-ua-x5T"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uxY-lx-8qT" firstAttribute="leading" secondItem="5GH-0d-thI" secondAttribute="leading" constant="16" id="FYc-VP-8Df"/>
+                                    <constraint firstAttribute="height" constant="50" id="bud-Vg-GOf"/>
+                                    <constraint firstItem="BCd-qw-ytY" firstAttribute="centerY" secondItem="5GH-0d-thI" secondAttribute="centerY" id="dqt-um-YGb"/>
+                                    <constraint firstAttribute="trailing" secondItem="BCd-qw-ytY" secondAttribute="trailing" constant="16" id="iRt-Zt-UJy"/>
+                                    <constraint firstItem="uxY-lx-8qT" firstAttribute="centerY" secondItem="5GH-0d-thI" secondAttribute="centerY" id="j3w-B9-gYI"/>
+                                    <constraint firstItem="BCd-qw-ytY" firstAttribute="leading" secondItem="uxY-lx-8qT" secondAttribute="trailing" constant="15" id="wpt-rJ-9j9"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5u-ga-wua">
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="ThemeColor"/>
+                        <constraints>
+                            <constraint firstItem="5GH-0d-thI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="6n5-Ij-Ych"/>
+                            <constraint firstItem="f5u-ga-wua" firstAttribute="top" secondItem="5GH-0d-thI" secondAttribute="bottom" id="8wf-14-aY0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="f5u-ga-wua" secondAttribute="trailing" id="OXQ-A2-HiH"/>
+                            <constraint firstItem="f5u-ga-wua" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hVP-RU-4qS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="f5u-ga-wua" secondAttribute="bottom" id="jo3-Y7-fVV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5GH-0d-thI" secondAttribute="trailing" id="q0g-Qi-Vxa"/>
+                            <constraint firstItem="5GH-0d-thI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vKr-v7-ATO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="uxY-lx-8qT" id="t7Q-aY-daZ"/>
+                        <outlet property="contentScrollView" destination="f5u-ga-wua" id="5av-N3-MvY"/>
+                        <outlet property="firstStepView" destination="fPM-fv-Hme" id="or6-lX-rZH"/>
+                        <outlet property="secondStepView" destination="QiD-fl-Qeo" id="4LQ-v3-fNG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backlogo" width="24" height="24"/>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
