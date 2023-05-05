@@ -58,7 +58,7 @@ class AccountSetup: UIViewController {
         contentScrollView.addSubview(v2)
         
         contentScrollView.isPagingEnabled = true
-        contentScrollView.isScrollEnabled = false
+        contentScrollView.isScrollEnabled = true
         contentScrollView.showsVerticalScrollIndicator = false
         contentScrollView.showsHorizontalScrollIndicator = false
         contentScrollView.contentSize = CGSize(width: contentScrollView.frame.width * 2, height: contentScrollView.frame.height)

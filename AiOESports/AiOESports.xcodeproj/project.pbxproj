@@ -52,6 +52,8 @@
 		845346E229FF85E80077F8A0 /* ProfileInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845346E129FF85E80077F8A0 /* ProfileInfo.storyboard */; };
 		845346E429FF85F70077F8A0 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346E329FF85F70077F8A0 /* ProfileInfo.swift */; };
 		845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346E529FF86080077F8A0 /* ProfileInfoModule.swift */; };
+		845346E929FFBAB30077F8A0 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845346E829FFBAB30077F8A0 /* DatePicker.xib */; };
+		845346EB29FFBB680077F8A0 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346EA29FFBB680077F8A0 /* DatePicker.swift */; };
 		8454D34F29F4F6E500B97EE3 /* LoginPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D34E29F4F6E500B97EE3 /* LoginPresenting.swift */; };
 		8454D35129F4F71300B97EE3 /* LoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */; };
 		8454D35329F4F76B00B97EE3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */; };
@@ -203,6 +205,9 @@
 		84D9C47329E2CA80006B06DD /* DetailsPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47229E2CA80006B06DD /* DetailsPresenting.swift */; };
 		84D9C47529E2CAAE006B06DD /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47429E2CAAE006B06DD /* DetailsPresenter.swift */; };
 		84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47629E2CE27006B06DD /* DetailsViewDelegate.swift */; };
+		84DE12332A0565990024D48E /* SingleSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE12312A0565980024D48E /* SingleSelectionCollectionViewCell.swift */; };
+		84DE12342A0565990024D48E /* SingleSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DE12322A0565990024D48E /* SingleSelectionCollectionViewCell.xib */; };
+		84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */; };
 		84EF0A8229EE5BA60042B6BF /* CasterOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */; };
 		84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */; };
 		84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF0A8729EEF1160042B6BF /* Menu.storyboard */; };
@@ -314,6 +319,8 @@
 		845346E129FF85E80077F8A0 /* ProfileInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileInfo.storyboard; sourceTree = "<group>"; };
 		845346E329FF85F70077F8A0 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		845346E529FF86080077F8A0 /* ProfileInfoModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoModule.swift; sourceTree = "<group>"; };
+		845346E829FFBAB30077F8A0 /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
+		845346EA29FFBB680077F8A0 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		8454D34E29F4F6E500B97EE3 /* LoginPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenting.swift; sourceTree = "<group>"; };
 		8454D35029F4F71300B97EE3 /* LoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewDelegate.swift; sourceTree = "<group>"; };
 		8454D35229F4F76B00B97EE3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -465,6 +472,9 @@
 		84D9C47229E2CA80006B06DD /* DetailsPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenting.swift; sourceTree = "<group>"; };
 		84D9C47429E2CAAE006B06DD /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		84D9C47629E2CE27006B06DD /* DetailsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewDelegate.swift; sourceTree = "<group>"; };
+		84DE12312A0565980024D48E /* SingleSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		84DE12322A0565990024D48E /* SingleSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
 		84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouting.swift; sourceTree = "<group>"; };
 		84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouter.swift; sourceTree = "<group>"; };
 		84EF0A8729EEF1160042B6BF /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -735,10 +745,21 @@
 		845346E029FF85DD0077F8A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84DE122C2A0565410024D48E /* cell */,
 				845346E129FF85E80077F8A0 /* ProfileInfo.storyboard */,
 				845346E329FF85F70077F8A0 /* ProfileInfo.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		845346E729FFBAA40077F8A0 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				845346E829FFBAB30077F8A0 /* DatePicker.xib */,
+				845346EA29FFBB680077F8A0 /* DatePicker.swift */,
+				84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		8454D34D29F4F6CF00B97EE3 /* Presenter */ = {
@@ -1012,6 +1033,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				845346E729FFBAA40077F8A0 /* DatePicker */,
 				84A050E729E95174004D582B /* EmptyView */,
 				84CF09E129D990E100F87400 /* PhoneNumberView */,
 				849B9C4229D1955200F1C2D2 /* PinTextField */,
@@ -1460,6 +1482,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		84DE122C2A0565410024D48E /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84DE12312A0565980024D48E /* SingleSelectionCollectionViewCell.swift */,
+				84DE12322A0565990024D48E /* SingleSelectionCollectionViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		84EF0A8029EE5B9D0042B6BF /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1869,6 +1900,7 @@
 				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
 				845346DA29FF810B0077F8A0 /* UploadProfile.storyboard in Resources */,
 				841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */,
+				845346E929FFBAB30077F8A0 /* DatePicker.xib in Resources */,
 				8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
@@ -1892,6 +1924,7 @@
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
 				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
 				845346E229FF85E80077F8A0 /* ProfileInfo.storyboard in Resources */,
+				84DE12342A0565990024D48E /* SingleSelectionCollectionViewCell.xib in Resources */,
 				84725ABF29E12B18003658CD /* Squad.storyboard in Resources */,
 				84725AB729E1211F003658CD /* Details.storyboard in Resources */,
 				84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */,
@@ -2121,6 +2154,7 @@
 				84B7455E29E4643A0086C708 /* AchivementModel.swift in Sources */,
 				8454D34F29F4F6E500B97EE3 /* LoginPresenting.swift in Sources */,
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
+				845346EB29FFBB680077F8A0 /* DatePicker.swift in Sources */,
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				8454D36029F5941100B97EE3 /* RegisterPresenting.swift in Sources */,
 				84B7455829E460080086C708 /* RosterModel.swift in Sources */,
@@ -2189,6 +2223,7 @@
 				84597C7F29EA53FB007C511B /* CreatorOverviewPresenter.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				849321E929EC492E00A05EB8 /* TeamOverviewRouter.swift in Sources */,
+				84DE12332A0565990024D48E /* SingleSelectionCollectionViewCell.swift in Sources */,
 				84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
 				84A050EB29E951CA004D582B /* EmptyView.swift in Sources */,
@@ -2204,6 +2239,7 @@
 				84F602F029DC809A00250C25 /* FilterSettingTableViewCell.swift in Sources */,
 				84B7455629E45FB90086C708 /* CoachModel.swift in Sources */,
 				84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */,
+				84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */,
 				845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
