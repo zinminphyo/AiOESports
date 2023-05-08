@@ -205,9 +205,12 @@
 		84D9C47329E2CA80006B06DD /* DetailsPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47229E2CA80006B06DD /* DetailsPresenting.swift */; };
 		84D9C47529E2CAAE006B06DD /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47429E2CAAE006B06DD /* DetailsPresenter.swift */; };
 		84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C47629E2CE27006B06DD /* DetailsViewDelegate.swift */; };
+		84DC1A0F2A0949CF0049BDD2 /* AiOPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC1A0E2A0949CF0049BDD2 /* AiOPickerDelegate.swift */; };
 		84DE12332A0565990024D48E /* SingleSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE12312A0565980024D48E /* SingleSelectionCollectionViewCell.swift */; };
 		84DE12342A0565990024D48E /* SingleSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DE12322A0565990024D48E /* SingleSelectionCollectionViewCell.xib */; };
 		84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */; };
+		84DE12392A0572350024D48E /* AiOPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DE12382A0572350024D48E /* AiOPicker.xib */; };
+		84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE123A2A0572630024D48E /* AiOPicker.swift */; };
 		84EF0A8229EE5BA60042B6BF /* CasterOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */; };
 		84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */; };
 		84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF0A8729EEF1160042B6BF /* Menu.storyboard */; };
@@ -472,9 +475,12 @@
 		84D9C47229E2CA80006B06DD /* DetailsPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenting.swift; sourceTree = "<group>"; };
 		84D9C47429E2CAAE006B06DD /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		84D9C47629E2CE27006B06DD /* DetailsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewDelegate.swift; sourceTree = "<group>"; };
+		84DC1A0E2A0949CF0049BDD2 /* AiOPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOPickerDelegate.swift; sourceTree = "<group>"; };
 		84DE12312A0565980024D48E /* SingleSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		84DE12322A0565990024D48E /* SingleSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
+		84DE12382A0572350024D48E /* AiOPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOPicker.xib; sourceTree = "<group>"; };
+		84DE123A2A0572630024D48E /* AiOPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOPicker.swift; sourceTree = "<group>"; };
 		84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouting.swift; sourceTree = "<group>"; };
 		84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouter.swift; sourceTree = "<group>"; };
 		84EF0A8729EEF1160042B6BF /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -1033,6 +1039,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84DE12372A0572230024D48E /* AiOPicker */,
 				845346E729FFBAA40077F8A0 /* DatePicker */,
 				84A050E729E95174004D582B /* EmptyView */,
 				84CF09E129D990E100F87400 /* PhoneNumberView */,
@@ -1491,6 +1498,16 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		84DE12372A0572230024D48E /* AiOPicker */ = {
+			isa = PBXGroup;
+			children = (
+				84DE12382A0572350024D48E /* AiOPicker.xib */,
+				84DE123A2A0572630024D48E /* AiOPicker.swift */,
+				84DC1A0E2A0949CF0049BDD2 /* AiOPickerDelegate.swift */,
+			);
+			path = AiOPicker;
+			sourceTree = "<group>";
+		};
 		84EF0A8029EE5B9D0042B6BF /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1934,6 +1951,7 @@
 				84F602F129DC809A00250C25 /* FilterSettingTableViewCell.xib in Resources */,
 				84F6C5B529CA12E800D21EE2 /* Main.storyboard in Resources */,
 				84A050D729E925E7004D582B /* OverviewImageCollectionViewCell.xib in Resources */,
+				84DE12392A0572350024D48E /* AiOPicker.xib in Resources */,
 				849BCE0929E51DB80033C63A /* TeamOverview.storyboard in Resources */,
 				84F6C5E229CA151100D21EE2 /* Onboarding.storyboard in Resources */,
 				849BCE1729E523860033C63A /* SocialCollectionViewCell.xib in Resources */,
@@ -2184,6 +2202,7 @@
 				842FC9A929E83A7200C5F354 /* PlayerDetailsModel.swift in Sources */,
 				8454D35D29F5848400B97EE3 /* RegisterModule.swift in Sources */,
 				84A050F329E9642E004D582B /* CasterOverviewModule.swift in Sources */,
+				84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */,
 				841C58E929F19AB800FBCD4F /* LoginOrRegisterModule.swift in Sources */,
 				84B7459629E49A320086C708 /* SponsorPresenter.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,
@@ -2232,6 +2251,7 @@
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
+				84DC1A0F2A0949CF0049BDD2 /* AiOPickerDelegate.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
 				84EF0A8A29EEF12F0042B6BF /* Menu.swift in Sources */,

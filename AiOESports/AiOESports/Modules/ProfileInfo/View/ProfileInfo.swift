@@ -40,6 +40,10 @@ class ProfileInfo: UIViewController {
         dateOfBirthTxtField.focusGroupPriority = .ignored
     }
     
+    @IBAction func didTapCityButton() {
+        cityTxtField.becomeFirstResponder()
+    }
+    
     private func configureHierarchy() {
         configureTitleLabel()
         configureGenderTitleLabel()
@@ -103,7 +107,16 @@ class ProfileInfo: UIViewController {
     }
     
     private func configureCityTextField() {
-        
+        let picker = AiOPicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 250))
+        picker.delegate = self
+        cityTxtField.inputView = picker
+        cityTxtField.tintColor = UIColor.clear
+        let placeHolder = "Choose State"
+        let attributedPlaceHolder = NSMutableAttributedString(string: placeHolder)
+        let range = NSRange(location: 0, length: placeHolder.count)
+        attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: range)
+        cityTxtField.attributedPlaceholder = attributedPlaceHolder
+        cityTxtField.textColor = Colors.Text.primaryText
     }
     
     private func configureStateTitleLabel() {
@@ -143,5 +156,14 @@ extension ProfileInfo: DatePickerDelegate {
     func didTapSet(date: Date) {
         dateOfBirthTxtField.resignFirstResponder()
         dateOfBirthTxtField.text = dateFormatter.string(from: date)
+    }
+}
+
+
+
+extension ProfileInfo: AiOPickerDelegate {
+    func didSelectItem(title: String) {
+        cityTxtField.text = title
+        cityTxtField.resignFirstResponder()
     }
 }
