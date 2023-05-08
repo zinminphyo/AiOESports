@@ -17,6 +17,14 @@ class ProfileInfo: UIViewController {
         }
     }
     
+    struct State: AiOPickerDataPresenting {
+        let name: String
+        
+        func getTitle() -> String {
+            return name
+        }
+    }
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var genderTitleLabel: UILabel!
@@ -37,6 +45,12 @@ class ProfileInfo: UIViewController {
         return formatter
     }()
     
+    private var cityPicker: AiOPicker = {
+        var picker = AiOPicker(frame: .zero)
+        return picker
+    }()
+        
+    
     private let cityLists: [City] = [
         City(name: "Yangon"),
         City(name: "Mandalay"),
@@ -44,6 +58,14 @@ class ProfileInfo: UIViewController {
         City(name: "NayPyiTaw"),
         City(name: "Kachin"),
         City(name: "Kayah")
+    ]
+    
+    private let stateLists: [State] = [
+        State(name: "Kachin"),
+        State(name: "Kayah"),
+        State(name: "Kayin"),
+        State(name: "Chin"),
+        State(name: "Yangon")
     ]
    
     override func viewDidLoad() {
@@ -59,6 +81,10 @@ class ProfileInfo: UIViewController {
     
     @IBAction func didTapCityButton() {
         cityTxtField.becomeFirstResponder()
+    }
+    
+    @IBAction func didTapStateButton() {
+        stateTxtField.becomeFirstResponder()
     }
     
     private func configureHierarchy() {
@@ -124,12 +150,12 @@ class ProfileInfo: UIViewController {
     }
     
     private func configureCityTextField() {
-        let picker = AiOPicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 250))
-        picker.delegate = self
-        picker.dataSource = self
-        cityTxtField.inputView = picker
+        cityPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
+        cityPicker.delegate = self
+        cityPicker.dataSource = self
+        cityTxtField.inputView = cityPicker
         cityTxtField.tintColor = UIColor.clear
-        let placeHolder = "Choose State"
+        let placeHolder = "Choose City"
         let attributedPlaceHolder = NSMutableAttributedString(string: placeHolder)
         let range = NSRange(location: 0, length: placeHolder.count)
         attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: range)
@@ -144,7 +170,17 @@ class ProfileInfo: UIViewController {
     }
     
     private func configureStateTextField() {
-        
+        let picker = AiOPicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 250))
+        picker.delegate = self
+        picker.dataSource = self
+        stateTxtField.inputView = picker
+        stateTxtField.tintColor = UIColor.clear
+        let placeHolder = "Choose State"
+        let attributedPlaceHolder = NSMutableAttributedString(string: placeHolder)
+        let range = NSRange(location: 0, length: placeHolder.count)
+        attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: range)
+        stateTxtField.attributedPlaceholder = attributedPlaceHolder
+        stateTxtField.textColor = Colors.Text.primaryText
     }
     
     
@@ -180,16 +216,28 @@ extension ProfileInfo: DatePickerDelegate {
 
 
 extension ProfileInfo: AiOPickerDelegate, AiOPickerDataSource {
-    func didSelectItem(title: String) {
-        cityTxtField.text = title
-        cityTxtField.resignFirstResponder()
+    func didSelectItem(title: String, picker: AiOPicker) {
+        if picker == cityPicker {
+            cityTxtField.text = title
+            cityTxtField.resignFirstResponder()
+        } else {
+            stateTxtField.text = title
+            stateTxtField.resignFirstResponder()
+        }
+        
     }
     
-    func numberOfItems() -> Int {
-        return cityLists.count
+    func numberOfItems(picker: AiOPicker) -> Int {
+        if picker == cityPicker {
+            return cityLists.count
+        }
+        return stateLists.count
     }
     
-    func dataForIndex(at index: Int) -> AiOPickerDataPresenting {
-        return cityLists[index]
+    func dataForIndex(at index: Int, picker: AiOPicker) -> AiOPickerDataPresenting {
+        if picker == cityPicker {
+            return cityLists[index]
+        }
+        return stateLists[index]
     }
 }

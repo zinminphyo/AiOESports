@@ -77,8 +77,8 @@ class AiOPicker: UIView, NibLoadable {
     
     
     @objc func didTapActionBtn() {
-        guard let item = dataSource?.dataForIndex(at: selectedIndex).getTitle() else { return }
-        self.delegate?.didSelectItem(title: item)
+        guard let item = dataSource?.dataForIndex(at: selectedIndex, picker: self).getTitle() else { return }
+        self.delegate?.didSelectItem(title: item, picker: self)
     }
 }
 
@@ -89,7 +89,7 @@ extension AiOPicker: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataSource?.numberOfItems() ?? 0
+        return dataSource?.numberOfItems(picker: self) ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -97,7 +97,7 @@ extension AiOPicker: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataSource?.dataForIndex(at: row).getTitle()
+        return dataSource?.dataForIndex(at: row, picker: self).getTitle()
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

@@ -9,8 +9,8 @@ import Foundation
 
 
 protocol AiOPickerDataSource {
-    func numberOfItems() -> Int
-    func dataForIndex(at index: Int) -> AiOPickerDataPresenting
+    func numberOfItems(picker: AiOPicker) -> Int
+    func dataForIndex(at index: Int, picker: AiOPicker) -> AiOPickerDataPresenting
 }
 
 

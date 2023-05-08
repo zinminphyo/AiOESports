@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol AiOPickerDelegate {
-    func didSelectItem(title: String)
+    func didSelectItem(title: String, picker: AiOPicker)
 }

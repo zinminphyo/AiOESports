@@ -40,5 +40,6 @@ class SingleSelectionCollectionViewCell: UICollectionViewCell {
         titleLabel.font = Fonts.ForCell.titleFont
         titleLabel.textColor = Colors.Text.primaryText
     }
+    
 
 }
