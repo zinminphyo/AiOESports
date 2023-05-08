@@ -41,5 +41,16 @@ class SingleSelectionCollectionViewCell: UICollectionViewCell {
         titleLabel.textColor = Colors.Text.primaryText
     }
     
+    @discardableResult
+    func set(title: String) -> Self {
+        titleLabel.text = title
+        return self
+    }
+    
+    @discardableResult
+    func set(isSelected: Bool) -> Self {
+        selectionImageView.image = isSelected ? Images.FilterSettings.selectedIcon : Images.FilterSettings.unselectedIcon
+        return self
+    }
 
 }

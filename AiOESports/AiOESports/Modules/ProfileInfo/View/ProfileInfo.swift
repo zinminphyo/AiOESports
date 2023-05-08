@@ -67,6 +67,12 @@ class ProfileInfo: UIViewController {
         State(name: "Chin"),
         State(name: "Yangon")
     ]
+    
+    private let genderLists: [String] = [
+        "Male",
+        "Intersex",
+        "Female"
+    ]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +120,7 @@ class ProfileInfo: UIViewController {
     private func configureGenderCollectionView() {
         genderCollectionView.register(UINib(nibName: String(describing: SingleSelectionCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: SingleSelectionCollectionViewCell.reuseIdentifier)
         genderCollectionView.dataSource = self
+        genderCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.estimatedItemSize = CGSize(width: 300, height: genderCollectionView.frame.height)
         flowLayout.scrollDirection = .horizontal
@@ -122,6 +129,7 @@ class ProfileInfo: UIViewController {
         genderCollectionView.collectionViewLayout = flowLayout
         genderCollectionView.showsVerticalScrollIndicator = false
         genderCollectionView.showsHorizontalScrollIndicator = false
+        genderCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
     private func configureDOBTitleLabel() {
@@ -192,13 +200,25 @@ class ProfileInfo: UIViewController {
 }
 
 
-extension ProfileInfo: UICollectionViewDataSource {
+extension ProfileInfo: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return genderLists.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleSelectionCollectionViewCell.reuseIdentifier, for: indexPath) as? SingleSelectionCollectionViewCell else { return UICollectionViewCell() }
+        cell.set(isSelected: collectionView.indexPathsForSelectedItems?.first == indexPath)
+            .set(title: genderLists[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SingleSelectionCollectionViewCell else { return }
+        cell.set(isSelected: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SingleSelectionCollectionViewCell else { return }
+        cell.set(isSelected: false)
     }
 }
 
