@@ -21,6 +21,9 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-HJ-2ua">
                     <rect key="frame" x="226.66666666666666" y="13.999999999999998" width="41.999999999999972" height="20.333333333333329"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20.329999999999998" id="xq7-ie-hm5"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

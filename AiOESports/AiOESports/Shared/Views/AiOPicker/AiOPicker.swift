@@ -14,16 +14,10 @@ class AiOPicker: UIView, NibLoadable {
     @IBOutlet weak var actionButton: UIButton!
     
     var delegate: AiOPickerDelegate? = nil
+    var dataSource: AiOPickerDataSource? = nil
     
     private var selectedIndex: Int = 0
     
-    private let cityLists: [String] = [
-        "Yangon",
-        "Mandalay",
-        "Bago",
-        "Naypyitaw",
-        "Kachin"
-    ]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,7 +77,8 @@ class AiOPicker: UIView, NibLoadable {
     
     
     @objc func didTapActionBtn() {
-        self.delegate?.didSelectItem(title: cityLists[selectedIndex])
+        guard let item = dataSource?.dataForIndex(at: selectedIndex).getTitle() else { return }
+        self.delegate?.didSelectItem(title: item)
     }
 }
 
@@ -94,7 +89,7 @@ extension AiOPicker: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return cityLists.count
+        return dataSource?.numberOfItems() ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -102,7 +97,7 @@ extension AiOPicker: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return cityLists[row]
+        return dataSource?.dataForIndex(at: row).getTitle()
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

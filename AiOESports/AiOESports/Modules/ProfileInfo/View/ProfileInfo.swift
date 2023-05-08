@@ -9,6 +9,14 @@ import UIKit
 
 class ProfileInfo: UIViewController {
     
+    struct City: AiOPickerDataPresenting {
+        let name: String
+        
+        func getTitle() -> String {
+            return name
+        }
+    }
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var genderTitleLabel: UILabel!
@@ -28,6 +36,15 @@ class ProfileInfo: UIViewController {
         formatter.dateFormat = "MMM dd YYYY"
         return formatter
     }()
+    
+    private let cityLists: [City] = [
+        City(name: "Yangon"),
+        City(name: "Mandalay"),
+        City(name: "Bago"),
+        City(name: "NayPyiTaw"),
+        City(name: "Kachin"),
+        City(name: "Kayah")
+    ]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +126,7 @@ class ProfileInfo: UIViewController {
     private func configureCityTextField() {
         let picker = AiOPicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 250))
         picker.delegate = self
+        picker.dataSource = self
         cityTxtField.inputView = picker
         cityTxtField.tintColor = UIColor.clear
         let placeHolder = "Choose State"
@@ -161,9 +179,17 @@ extension ProfileInfo: DatePickerDelegate {
 
 
 
-extension ProfileInfo: AiOPickerDelegate {
+extension ProfileInfo: AiOPickerDelegate, AiOPickerDataSource {
     func didSelectItem(title: String) {
         cityTxtField.text = title
         cityTxtField.resignFirstResponder()
+    }
+    
+    func numberOfItems() -> Int {
+        return cityLists.count
+    }
+    
+    func dataForIndex(at index: Int) -> AiOPickerDataPresenting {
+        return cityLists[index]
     }
 }
