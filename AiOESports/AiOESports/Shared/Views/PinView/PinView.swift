@@ -120,6 +120,7 @@ class PinView: UIView, NibLoadable {
         
         guard index < contentViews.count - 1 else {
             txtField.resignFirstResponder()
+            passcodeStateHandle()
             return
         }
         contentViews[index + 1].becomeFirstResponder()
@@ -135,7 +136,8 @@ class PinView: UIView, NibLoadable {
         case .confirm:
             checkConfirmPIN()
         case .enter:
-            print("Check with enter passcode.")
+            saveInitialPIN()
+            self.delegate?.didFinishedEnterCode(password: passcode)
         }
     }
     
@@ -145,6 +147,8 @@ class PinView: UIView, NibLoadable {
             passcode += $0.text ?? ""
         }
     }
+    
+    
     
     private func resetTxtFields() {
         switch digitStyle {

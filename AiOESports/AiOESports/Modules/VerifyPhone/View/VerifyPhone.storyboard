@@ -70,7 +70,7 @@
                                 <color key="textColor" name="PrimaryText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ei-LM-eHr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ei-LM-eHr">
                                 <rect key="frame" x="17" y="325" width="359" height="47"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
@@ -108,6 +108,12 @@
                             <constraint firstItem="Jci-V2-LHg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vOv-f0-CPz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="Asc-0K-Vvs" id="Ke0-jt-cfr"/>
+                        <outlet property="pinView" destination="Hai-0p-d6C" id="ylq-Vf-TU2"/>
+                        <outlet property="remainingTimeLabel" destination="v3z-iT-2Hx" id="GMF-05-q5y"/>
+                        <outlet property="verifyBtn" destination="3Ei-LM-eHr" id="mcJ-Qa-xzT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
