@@ -122,4 +122,8 @@ extension Register: PinViewDelegate {
     func didFinishedEnterCode(password: String) {
         
     }
+    
+    func didTapDeleteButton() {
+        
+    }
 }

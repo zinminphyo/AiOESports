@@ -159,6 +159,7 @@ extension Onboarding: OnboardingViewProtocol {
 // MARK: - Actions.
 extension Onboarding {
     @objc func didTapNextBtn(_ sender: UIButton) {
-        print("Tapped Next Btn.")
+        guard let vc = LoginOrRegisterModule.createModule() else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -42,7 +42,7 @@ class VerifyPhone: UIViewController {
     
     private func configurePinView() {
         pinView.digitStyle = .sixDigits
-        pinView.state = .enter
+        pinView.state = .intial
         pinView.delegate = self
     }
     
@@ -88,12 +88,15 @@ class VerifyPhone: UIViewController {
 // MARK: - PinView Delegate.
 extension VerifyPhone: PinViewDelegate {
     func didFinishedEnterCode(password: String) {
-        enterPINPublisher.send(password.count == 6)
+        enterPINPublisher.send(true)
+        print("Password is \(password)")
     }
     
     func didFinishedConfirmCode(isMatched: Bool) {
         print("Is Matched is \(isMatched)")
     }
     
-    
+    func didTapDeleteButton() {
+        enterPINPublisher.send(false)
+    }
 }

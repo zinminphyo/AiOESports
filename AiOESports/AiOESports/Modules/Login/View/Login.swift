@@ -199,6 +199,10 @@ extension Login: PinViewDelegate {
     func didFinishedEnterCode(password: String) {
         presenter?.didChangePassword(password: password)
     }
+    
+    func didTapDeleteButton() {
+        
+    }
 }
 
 

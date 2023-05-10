@@ -20,15 +20,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.self.window = window
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-//        guard let onboarding = OnboardingModule.createModule() else { return }
+        guard let onboarding = OnboardingModule.createModule() else { return }
+        let nav = UINavigationController(rootViewController: onboarding)
+        nav.setNavigationBarHidden(true, animated: true)
 //        guard let login = LoginModule.createModule() else { return }
 //        guard let InApp = InAppModule.createModule() else { return }
 //        guard let loginOrRegister = LoginOrRegisterModule.createModule() else { return }
-//        guard let accountSetup = AccountSetupModule.createModule() else { return }
-//        let nav = UINavigationController(rootViewController: accountSetup)
-//        nav.setNavigationBarHidden(true, animated: true)
+        /*
+        guard let accountSetup = AccountSetupModule.createModule() else { return }
+        let nav = UINavigationController(rootViewController: accountSetup)
+        nav.setNavigationBarHidden(true, animated: true)
         guard let vc = VerifyPhoneModule.createModule() else { return }
-        window?.rootViewController = vc
+         */
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 

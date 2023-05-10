@@ -6,12 +6,22 @@
 //
 
 import UIKit
+import Combine
 
 class PinView: UIView, NibLoadable {
     
     enum PinViewDigitStyle {
         case fourDigits
         case sixDigits
+        
+        var passcodeCount: Int {
+            switch self {
+            case .fourDigits:
+                return 4
+            case .sixDigits:
+                return 6
+            }
+        }
     }
     
     enum PinViewConfirmState {
@@ -31,7 +41,16 @@ class PinView: UIView, NibLoadable {
     var state: PinViewConfirmState = .intial
     var delegate: PinViewDelegate? = nil
     
+    // Combine
+    private var cancellable = Set<AnyCancellable>()
+    private var isCompletedPublisher: CurrentValueSubject<Bool, Never> = .init(false)
+    
     private(set) var passcode: String = ""
+    private(set) var enterPasscode: String = "" {
+        didSet {
+            isCompletedPublisher.send(enterPasscode.count == digitStyle.passcodeCount)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +69,7 @@ class PinView: UIView, NibLoadable {
         configureContainerView()
         configureStackView()
         configurePinViews()
+        configureEnterPasscodePublisher()
     }
     
     private func configureContainerView() {
@@ -59,6 +79,16 @@ class PinView: UIView, NibLoadable {
     private func configureStackView() {
         stackView.distribution = .fillEqually
         stackView.spacing = 10
+    }
+    
+    private func configureEnterPasscodePublisher() {
+        isCompletedPublisher
+            .sink { flag in
+                if flag {
+                    self.delegate?.didFinishedEnterCode(password: self.enterPasscode)
+                }
+            }
+            .store(in: &cancellable)
     }
     
     private func configurePinViews() {
@@ -124,8 +154,6 @@ class PinView: UIView, NibLoadable {
             return
         }
         contentViews[index + 1].becomeFirstResponder()
-        
-        passcodeStateHandle()
     }
     
     private func passcodeStateHandle() {
@@ -136,11 +164,11 @@ class PinView: UIView, NibLoadable {
         case .confirm:
             checkConfirmPIN()
         case .enter:
-            saveInitialPIN()
-            self.delegate?.didFinishedEnterCode(password: passcode)
+            saveEnterPIN()
         }
     }
     
+   
     private func saveInitialPIN() {
         passcode = ""
         contentViews.forEach{
@@ -148,15 +176,15 @@ class PinView: UIView, NibLoadable {
         }
     }
     
-    
+    private func saveEnterPIN() {
+        enterPasscode = ""
+        contentViews.forEach {
+            enterPasscode += $0.text ?? ""
+        }
+    }
     
     private func resetTxtFields() {
-        switch digitStyle {
-        case .fourDigits:
-            guard passcode.count == 4 else { return }
-        case .sixDigits:
-            guard passcode.count == 6 else { return }
-        }
+        guard passcode.count == digitStyle.passcodeCount else { return }
         contentViews.forEach{
             $0.text = ""
         }
@@ -174,10 +202,6 @@ class PinView: UIView, NibLoadable {
         } else {
             self.delegate?.didFinishedConfirmCode(isMatched: false)
         }
-        if confirmPIN.count == 6 {
-            self.delegate?.didFinishedEnterCode(password: confirmPIN)
-        }
-        
     }
 
 }
@@ -186,6 +210,7 @@ class PinView: UIView, NibLoadable {
 extension PinView: PinTextFieldDelegate {
     func didTapDeleteBackward(txtField: UITextField) {
         guard let index = contentViews.firstIndex(of: txtField) else { return }
+        self.delegate?.didTapDeleteButton()
         guard index > 0 else {
             txtField.resignFirstResponder()
             return
