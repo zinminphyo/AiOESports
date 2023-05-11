@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Combine
 
 class LoginPresenter: LoginPresenting {
     
@@ -30,6 +30,7 @@ class LoginPresenter: LoginPresenting {
             checkRequiredInfoIsCompleted()
         }
     }
+
     
     func didTapRemeberInfoView() {
         isRemebered = !isRemebered
@@ -48,8 +49,14 @@ class LoginPresenter: LoginPresenting {
         self.router?.routeToRegisterModule()
     }
     
+    func didTapDeletePassword() {
+        if password.isEmpty == false {
+            self.password.removeLast()
+        }
+    }
+    
     private func checkRequiredInfoIsCompleted() {
-        let isCompleted = phoneNumber.isEmpty == false && password.isEmpty == false && isRemebered
+        let isCompleted = phoneNumber.isEmpty == false && password.count == PinView.PinViewDigitStyle.sixDigits.passcodeCount && isRemebered
         self.viewDelegate?.updateLoginButtton(isCompleted: isCompleted)
     }
     

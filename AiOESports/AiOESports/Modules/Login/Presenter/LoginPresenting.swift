@@ -14,5 +14,6 @@ protocol LoginPresenting {
     func didTapRemeberInfoView()
     func didChangePhoneNumber(phoneNum: String)
     func didChangePassword(password: String)
+    func didTapDeletePassword()
     func tappedRegisterBtn()
 }

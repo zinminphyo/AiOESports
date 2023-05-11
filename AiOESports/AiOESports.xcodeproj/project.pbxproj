@@ -651,6 +651,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84223E6E2A0C139200A81C20 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				84223E6F2A0C139800A81C20 /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		84223E6F2A0C139800A81C20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		842AE8C429DB16360036FF05 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1763,6 +1778,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84223E6E2A0C139200A81C20 /* Welcome */,
 				84108C302A0A9EC700488D0D /* VerifyPhone */,
 				845346DF29FF85D70077F8A0 /* ProfileInfo */,
 				845346D729FF80F00077F8A0 /* UploadProfile */,

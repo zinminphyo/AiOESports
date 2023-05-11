@@ -35,7 +35,7 @@ class Login: UIViewController {
         // Do any additional setup after loading the view.
         
         pinView.delegate = self
-        pinView.state = .confirm
+        pinView.state = .enter
         
         configureHierarchy()
     }
@@ -186,6 +186,7 @@ extension Login: LoginViewDelegate {
     }
     
     func updateLoginButtton(isCompleted: Bool) {
+        print("IsCompleted is \(isCompleted)")
         loginButton.isUserInteractionEnabled = isCompleted
         loginButton.backgroundColor = isCompleted ? Colors.Button.primaryColor : Colors.Button.primaryColor?.withAlphaComponent(0.4)
     }
@@ -201,7 +202,7 @@ extension Login: PinViewDelegate {
     }
     
     func didTapDeleteButton() {
-        
+        presenter?.didTapDeletePassword()
     }
 }
 
