@@ -198,4 +198,9 @@ class Images {
             }
         }
     }
+    
+    
+    enum Welcome {
+        static let registrationSuccess = UIImage(named: "RegisterSuccess", in: .main, compatibleWith: nil)
+    }
 }

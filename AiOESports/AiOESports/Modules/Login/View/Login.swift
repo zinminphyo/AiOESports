@@ -195,7 +195,7 @@ extension Login: LoginViewDelegate {
 
 extension Login: PinViewDelegate {
     func didFinishedConfirmCode(isMatched: Bool) {
-        print("IsMatched Flag => \(isMatched)")
+        
     }
     func didFinishedEnterCode(password: String) {
         presenter?.didChangePassword(password: password)

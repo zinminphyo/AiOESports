@@ -21,6 +21,7 @@ class Colors {
     enum Button {
         static let secondaryColor = UIColor(named: "SecondaryColor", in: .main, compatibleWith: nil)
         static let primaryColor = UIColor(named: "PrimaryColor", in: .main, compatibleWith: nil)
+        static let strokeColor = UIColor(named: "StrokeColor", in: .main, compatibleWith: nil)
     }
     
     

@@ -20,8 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.self.window = window
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        guard let onboarding = OnboardingModule.createModule() else { return }
-        let nav = UINavigationController(rootViewController: onboarding)
+//        guard let onboarding = OnboardingModule.createModule() else { return }
+//        guard let register = RegisterModule.createModule() else { return }
+        guard let welcome = WelcomeModule.createModule() else { return }
+        let nav = UINavigationController(rootViewController: welcome)
         nav.setNavigationBarHidden(true, animated: true)
 //        guard let login = LoginModule.createModule() else { return }
 //        guard let InApp = InAppModule.createModule() else { return }
