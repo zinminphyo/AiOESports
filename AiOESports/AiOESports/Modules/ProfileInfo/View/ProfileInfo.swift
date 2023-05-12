@@ -139,7 +139,7 @@ class ProfileInfo: UIViewController {
     }
     
     private func configureDateOfBirthTextField() {
-        let datePicker = DatePicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 250))
+        let datePicker = DatePicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 300))
         datePicker.delegate = self
         dateOfBirthTxtField.inputView = datePicker
         dateOfBirthTxtField.tintColor = UIColor.clear
@@ -158,7 +158,7 @@ class ProfileInfo: UIViewController {
     }
     
     private func configureCityTextField() {
-        cityPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
+        cityPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
         cityPicker.delegate = self
         cityPicker.dataSource = self
         cityTxtField.inputView = cityPicker
@@ -178,7 +178,7 @@ class ProfileInfo: UIViewController {
     }
     
     private func configureStateTextField() {
-        let picker = AiOPicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 250))
+        let picker = AiOPicker(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 300))
         picker.delegate = self
         picker.dataSource = self
         stateTxtField.inputView = picker

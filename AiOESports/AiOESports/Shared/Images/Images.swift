@@ -186,6 +186,28 @@ class Images {
             }
         }
         
+        var title: String {
+            switch self {
+            case .onboard1:
+                return "Track your favourite game in one place"
+            case .onboard2:
+                return "Never miss an important match"
+            case .onboard3:
+                return "Discover your favourite items at AiO"
+            }
+        }
+        
+        var subtitle: String {
+            switch self {
+            case .onboard1:
+                return "We will show you all the necessary information of your favorite E-Sport game."
+            case .onboard2:
+                return "Follow your favorite match or tournament and view live scores."
+            case .onboard3:
+                return "Jersey and official accessories from your favorite teams and players."
+            }
+        }
+        
     }
     
     

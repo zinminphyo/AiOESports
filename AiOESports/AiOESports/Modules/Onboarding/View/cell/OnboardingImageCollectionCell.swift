@@ -32,6 +32,7 @@ class OnboardingImageCollectionCell: UICollectionViewCell {
     private func configureHierarchy() {
         self.addSubview(imageView)
         self.backgroundColor = UIColor.clear
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0),

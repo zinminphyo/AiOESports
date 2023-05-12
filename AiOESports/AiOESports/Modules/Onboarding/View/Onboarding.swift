@@ -139,6 +139,7 @@ extension Onboarding: UICollectionViewDataSource, UICollectionViewDelegate, UISc
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = scrollView.contentOffset.x / scrollView.frame.width
         pageControl.currentPage = Int(index)
+        updateOnboardingInfoText(index: Int(index))
         viewModel?.set(currentPage: Int(index + 1))
     }
 }
@@ -161,5 +162,20 @@ extension Onboarding {
     @objc func didTapNextBtn(_ sender: UIButton) {
         guard let vc = LoginOrRegisterModule.createModule() else { return }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+
+extension Onboarding {
+    private func updateOnboardingInfoText(index: Int) {
+        UIView.transition(with: titleLabel, duration: 0.2, options: .transitionCrossDissolve) {
+            self.titleLabel.text = Images.Onboarding.allCases[index].title
+        }
+        
+        UIView.transition(with: subtitleLabel, duration: 0.2, options: .transitionCrossDissolve) {
+            self.subtitleLabel.text = Images.Onboarding.allCases[index].subtitle
+        }
+        
     }
 }
