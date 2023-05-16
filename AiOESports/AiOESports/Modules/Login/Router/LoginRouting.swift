@@ -11,4 +11,5 @@ import UIKit
 protocol LoginRouting {
     var viewController: Login? { get set }
     func routeToRegisterModule()
+    func routeToInAppModule()
 }

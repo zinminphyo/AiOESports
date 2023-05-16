@@ -25,6 +25,9 @@ enum ApiRouter: URLConvertible {
     case casterDetails(Int)
     case creatorDetails(Int)
     
+    // Login
+    case login(_ phoneNum: String, _ password: String)
+    
     func asURL() throws -> URL {
         return URL(string: url)!
     }
@@ -65,6 +68,8 @@ enum ApiRouter: URLConvertible {
             return "caster/\(id)"
         case let .creatorDetails(id):
             return "creator/\(id)"
+        case .login:
+            return "login"
         }
     }
     
@@ -74,16 +79,16 @@ enum ApiRouter: URLConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .home :
+        case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .home:
             return URLEncoding.default
-        case .teamSearch, .playerSearch, .casterSearch, .creatorSearch:
+        case .teamSearch, .playerSearch, .casterSearch, .creatorSearch, .login:
             return JSONEncoding.prettyPrinted
         }
     }
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch, .home:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch, .home, .login:
             return nil
         }
     }
@@ -134,6 +139,12 @@ enum ApiRouter: URLConvertible {
             return nil
         case .playerDetails, .casterDetails, .creatorDetails, .home:
             return nil
+            
+        case let .login(phNum, pass):
+            return [
+                "phone-number" : phNum,
+                "password" : pass
+            ]
         }
     }
     
@@ -153,6 +164,8 @@ enum ApiRouter: URLConvertible {
             return .get
         case .playerDetails, .casterDetails, .creatorDetails, .home:
             return .get
+        case .login:
+            return .post
         }
     }
     

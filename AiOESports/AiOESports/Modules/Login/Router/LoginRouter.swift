@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class LoginRouter: LoginRouting {
     
@@ -17,5 +17,9 @@ class LoginRouter: LoginRouting {
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func routeToInAppModule() {
+        guard let vc = InAppModule.createModule(), let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+        scene.window?.rootViewController = vc
+    }
     
 }

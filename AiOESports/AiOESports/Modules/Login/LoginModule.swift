@@ -16,6 +16,9 @@ enum LoginModule {
         }
         let presenter = LoginPresenter()
         presenter.viewDelegate = vc
+        let interactor = LoginInteractor()
+        interactor.presenter = presenter
+        presenter.interactor = interactor
         let router = LoginRouter()
         router.viewController = vc
         presenter.router = router

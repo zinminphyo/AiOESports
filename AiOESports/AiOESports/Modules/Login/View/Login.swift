@@ -123,6 +123,7 @@ class Login: UIViewController {
             loginButton.titleLabel?.font = Fonts.titleFont
             loginButton.titleLabel?.textColor = Colors.Text.primaryText
         }
+        loginButton.addTarget(self, action: #selector(didTapLoginBtn), for: .touchUpInside)
         loginButton.backgroundColor = Colors.Button.primaryColor?.withAlphaComponent(0.4)
         loginButton.layer.cornerRadius = 10
     }
@@ -176,6 +177,10 @@ class Login: UIViewController {
     
     @objc func didTapRegisterBtn() {
         presenter?.tappedRegisterBtn()
+    }
+    
+    @objc func didTapLoginBtn() {
+        presenter?.tappedLoginBtn()
     }
 
 }

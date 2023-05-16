@@ -14,6 +14,8 @@ class LoginPresenter: LoginPresenting {
     
     var router: LoginRouting?
     
+    var interactor: LoginInteracting?
+    
     private var isRemebered: Bool = false {
         didSet {
             checkRequiredInfoIsCompleted()
@@ -30,7 +32,7 @@ class LoginPresenter: LoginPresenting {
             checkRequiredInfoIsCompleted()
         }
     }
-
+    
     
     func didTapRemeberInfoView() {
         isRemebered = !isRemebered
@@ -49,9 +51,23 @@ class LoginPresenter: LoginPresenting {
         self.router?.routeToRegisterModule()
     }
     
+    
+    func tappedLoginBtn() {
+        self.interactor?.login(phoneNum: phoneNumber, password: password)
+    }
+    
     func didTapDeletePassword() {
         if password.isEmpty == false {
             self.password.removeLast()
+        }
+    }
+    
+    func didFinishedLogin(user: UserModel?, error: String?) {
+        if let user = user {
+            print("User is \(user)")
+            self.router?.routeToInAppModule()
+        } else if let error = error {
+            print("Error is \(error)")
         }
     }
     
@@ -59,5 +75,7 @@ class LoginPresenter: LoginPresenting {
         let isCompleted = phoneNumber.isEmpty == false && password.count == PinView.PinViewDigitStyle.sixDigits.passcodeCount && isRemebered
         self.viewDelegate?.updateLoginButtton(isCompleted: isCompleted)
     }
+    
+    
     
 }

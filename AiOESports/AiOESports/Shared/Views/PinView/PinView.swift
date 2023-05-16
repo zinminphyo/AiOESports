@@ -125,7 +125,7 @@ class PinView: UIView, NibLoadable {
         let txtField = PinTextField()
         txtField.isSecureTextEntry = true
         txtField.deleteDelegate = self
-        txtField.keyboardType = .numberPad
+//        txtField.keyboardType = .numberPad
         txtField.textAlignment = .center
         txtField.tintColor = Colors.Text.primaryText
         txtField.textColor = Colors.Text.primaryText
