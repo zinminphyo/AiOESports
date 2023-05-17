@@ -56,6 +56,10 @@ class LoginPresenter: LoginPresenting {
         self.interactor?.login(phoneNum: phoneNumber, password: password)
     }
     
+    func tappedForgetLabel() {
+        self.router?.routeToForgetPasswordModule()
+    }
+    
     func didTapDeletePassword() {
         if password.isEmpty == false {
             self.password.removeLast()

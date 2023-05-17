@@ -22,4 +22,9 @@ class LoginRouter: LoginRouting {
         scene.window?.rootViewController = vc
     }
     
+    
+    func routeToForgetPasswordModule() {
+        guard let vc = ForgotPasswordModule.createModule() else { return }
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

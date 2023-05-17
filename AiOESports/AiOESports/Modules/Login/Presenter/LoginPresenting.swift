@@ -18,5 +18,6 @@ protocol LoginPresenting {
     func didTapDeletePassword()
     func tappedRegisterBtn()
     func tappedLoginBtn()
+    func tappedForgetLabel()
     func didFinishedLogin(user: UserModel?, error: String?)
 }

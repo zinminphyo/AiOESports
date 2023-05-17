@@ -163,6 +163,9 @@ class Login: UIViewController {
         forgotPasswordLabel.text = "Forgot password?"
         forgotPasswordLabel.font = Fonts.subtitleFont
         forgotPasswordLabel.textColor = Colors.Text.primaryText
+        forgotPasswordLabel.isUserInteractionEnabled = true
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(didTapForgetLabel))
+        forgotPasswordLabel.addGestureRecognizer(tapGesture1)
         
         rememberInfoFlagImageView.image = Images.rememberFalse
         
@@ -181,6 +184,10 @@ class Login: UIViewController {
     
     @objc func didTapLoginBtn() {
         presenter?.tappedLoginBtn()
+    }
+    
+    @objc func didTapForgetLabel() {
+        presenter?.tappedForgetLabel()
     }
 
 }

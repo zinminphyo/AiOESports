@@ -111,6 +111,9 @@
 		849AEB972A13DDA30024AAAA /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEB962A13DDA30024AAAA /* LoginResponseModel.swift */; };
 		849AEB992A13DDE10024AAAA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEB982A13DDE10024AAAA /* UserModel.swift */; };
 		849AEB9B2A13E2D80024AAAA /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEB9A2A13E2D80024AAAA /* BaseResponseModel.swift */; };
+		849AEB9F2A153F260024AAAA /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AEB9E2A153F260024AAAA /* ForgotPassword.storyboard */; };
+		849AEBA12A153F580024AAAA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEBA02A153F580024AAAA /* ForgotPassword.swift */; };
+		849AEBA32A153F680024AAAA /* ForgotPasswordModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEBA22A153F680024AAAA /* ForgotPasswordModule.swift */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -393,6 +396,9 @@
 		849AEB962A13DDA30024AAAA /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		849AEB982A13DDE10024AAAA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		849AEB9A2A13E2D80024AAAA /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		849AEB9E2A153F260024AAAA /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		849AEBA02A153F580024AAAA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		849AEBA22A153F680024AAAA /* ForgotPasswordModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModule.swift; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -1071,6 +1077,24 @@
 				849AEB982A13DDE10024AAAA /* UserModel.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		849AEB9C2A153EF30024AAAA /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				849AEB9D2A153EF90024AAAA /* View */,
+				849AEBA22A153F680024AAAA /* ForgotPasswordModule.swift */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		849AEB9D2A153EF90024AAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				849AEB9E2A153F260024AAAA /* ForgotPassword.storyboard */,
+				849AEBA02A153F580024AAAA /* ForgotPassword.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
@@ -1818,6 +1842,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				849AEB9C2A153EF30024AAAA /* ForgetPassword */,
 				84223E6E2A0C139200A81C20 /* Welcome */,
 				84108C302A0A9EC700488D0D /* VerifyPhone */,
 				845346DF29FF85D70077F8A0 /* ProfileInfo */,
@@ -2002,6 +2027,7 @@
 				84BE00142A0D488F00228691 /* Welcome.storyboard in Resources */,
 				845346DA29FF810B0077F8A0 /* UploadProfile.storyboard in Resources */,
 				841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */,
+				849AEB9F2A153F260024AAAA /* ForgotPassword.storyboard in Resources */,
 				845346E929FFBAB30077F8A0 /* DatePicker.xib in Resources */,
 				8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
@@ -2258,6 +2284,7 @@
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */,
 				8437FE6E29ECD682008F7179 /* PlayerOverviewRouter.swift in Sources */,
+				849AEBA12A153F580024AAAA /* ForgotPassword.swift in Sources */,
 				84B7455E29E4643A0086C708 /* AchivementModel.swift in Sources */,
 				8454D34F29F4F6E500B97EE3 /* LoginPresenting.swift in Sources */,
 				842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */,
@@ -2327,6 +2354,7 @@
 				84B7459429E499B30086C708 /* SponsorViewDelegate.swift in Sources */,
 				842FC9BC29E84D2400C5F354 /* PlayerOverviewModule.swift in Sources */,
 				8437FE7329ED1985008F7179 /* AdvertisementModel.swift in Sources */,
+				849AEBA32A153F680024AAAA /* ForgotPasswordModule.swift in Sources */,
 				84A050DD29E92A9E004D582B /* Career.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
