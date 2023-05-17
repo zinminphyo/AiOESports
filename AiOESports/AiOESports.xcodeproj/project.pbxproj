@@ -114,6 +114,8 @@
 		849AEB9F2A153F260024AAAA /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849AEB9E2A153F260024AAAA /* ForgotPassword.storyboard */; };
 		849AEBA12A153F580024AAAA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEBA02A153F580024AAAA /* ForgotPassword.swift */; };
 		849AEBA32A153F680024AAAA /* ForgotPasswordModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEBA22A153F680024AAAA /* ForgotPasswordModule.swift */; };
+		849AEBA72A1543440024AAAA /* PhNumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEBA52A1543440024AAAA /* PhNumTableCell.swift */; };
+		849AEBA82A1543440024AAAA /* PhNumTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849AEBA62A1543440024AAAA /* PhNumTableCell.xib */; };
 		849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */; };
 		849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B9C2529CEEB3400F1C2D2 /* Colors.swift */; };
 		849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */; };
@@ -399,6 +401,8 @@
 		849AEB9E2A153F260024AAAA /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		849AEBA02A153F580024AAAA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		849AEBA22A153F680024AAAA /* ForgotPasswordModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModule.swift; sourceTree = "<group>"; };
+		849AEBA52A1543440024AAAA /* PhNumTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhNumTableCell.swift; sourceTree = "<group>"; };
+		849AEBA62A1543440024AAAA /* PhNumTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhNumTableCell.xib; sourceTree = "<group>"; };
 		849B9C2329CEEB1400F1C2D2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		849B9C2529CEEB3400F1C2D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		849B9C2829CEEDCB00F1C2D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -1091,10 +1095,20 @@
 		849AEB9D2A153EF90024AAAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				849AEBA42A1542F70024AAAA /* cell */,
 				849AEB9E2A153F260024AAAA /* ForgotPassword.storyboard */,
 				849AEBA02A153F580024AAAA /* ForgotPassword.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		849AEBA42A1542F70024AAAA /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				849AEBA52A1543440024AAAA /* PhNumTableCell.swift */,
+				849AEBA62A1543440024AAAA /* PhNumTableCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
@@ -2048,6 +2062,7 @@
 				84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */,
 				84597C7629EA4A38007C511B /* GameImageCollectionViewCell.xib in Resources */,
 				842FC9B829E84CA300C5F354 /* PlayerOverview.storyboard in Resources */,
+				849AEBA82A1543440024AAAA /* PhNumTableCell.xib in Resources */,
 				84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */,
 				840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */,
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
@@ -2257,6 +2272,7 @@
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
 				84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */,
 				84EF0A9229EEF2270042B6BF /* HomeContainer.swift in Sources */,
+				849AEBA72A1543440024AAAA /* PhNumTableCell.swift in Sources */,
 				84A050F829E96582004D582B /* CasterOverviewViewDelegate.swift in Sources */,
 				842FC9C129E84DE200C5F354 /* PlayerOverviewViewDelegate.swift in Sources */,
 				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,

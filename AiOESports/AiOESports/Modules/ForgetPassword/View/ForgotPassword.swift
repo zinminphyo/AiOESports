@@ -20,10 +20,17 @@ class ForgotPassword: UIViewController {
     
     private func configureHierarchy() {
         configureTitleLabel()
+        configureTableView()
     }
     
     private func configureTitleLabel() {
         headerTitleLabel.font = Fonts.subtitleFont
+    }
+    
+    private func configureTableView() {
+        tableView.register(UINib(nibName: String(describing: PhNumTableCell.self), bundle: nil), forCellReuseIdentifier: PhNumTableCell.reuseIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
@@ -32,4 +39,21 @@ class ForgotPassword: UIViewController {
     
     
 
+}
+
+extension ForgotPassword: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PhNumTableCell.reuseIdentifier, for: indexPath) as? PhNumTableCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
 }
