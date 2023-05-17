@@ -12,4 +12,5 @@ protocol LoginViewDelegate {
     var presenter: LoginPresenting? { get set }
     func updateRememberInfoFlag(flag: Bool)
     func updateLoginButtton(isCompleted: Bool)
+    func updateLoginViewState(isCorrect: Bool)
 }

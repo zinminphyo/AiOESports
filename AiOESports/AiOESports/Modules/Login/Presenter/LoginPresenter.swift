@@ -66,8 +66,10 @@ class LoginPresenter: LoginPresenting {
         if let user = user {
             print("User is \(user)")
             self.router?.routeToInAppModule()
+            self.viewDelegate?.updateLoginViewState(isCorrect: true)
         } else if let error = error {
             print("Error is \(error)")
+            self.viewDelegate?.updateLoginViewState(isCorrect: false)
         }
     }
     

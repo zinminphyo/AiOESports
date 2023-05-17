@@ -195,6 +195,11 @@ extension Login: LoginViewDelegate {
         loginButton.isUserInteractionEnabled = isCompleted
         loginButton.backgroundColor = isCompleted ? Colors.Button.primaryColor : Colors.Button.primaryColor?.withAlphaComponent(0.4)
     }
+    
+    func updateLoginViewState(isCorrect: Bool) {
+        incorrectPinLabel.isHidden = isCorrect
+        incorrectPhoneNumberLabel.isHidden = isCorrect
+    }
 }
 
 
