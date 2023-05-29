@@ -19,6 +19,8 @@ class RegisterPresenter: RegisterPresenting {
     
     var passwordEqualityFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
     
+    private var cancellable = Set<AnyCancellable>()
+    
     func set(enterPassword: String) {
         self.enterPassword = enterPassword
         checkPasswordIsEqual()
@@ -35,6 +37,16 @@ class RegisterPresenter: RegisterPresenting {
     
     private func checkPasswordIsEqual() {
         passwordEqualityFlag.send(self.enterPassword == self.reEnterPassword)
+    }
+    
+    func viewDidLoad() {
+        passwordEqualityFlag
+            .sink { [weak self] flag in
+                guard let self = self else { return }
+                guard flag == false else { return }
+                self.viewDelegate?.render(state: .passwordNotMatch)
+            }
+            .store(in: &cancellable)
     }
     
     func register(userName: String) {

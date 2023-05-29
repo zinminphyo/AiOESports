@@ -233,6 +233,8 @@
 		84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE123A2A0572630024D48E /* AiOPicker.swift */; };
 		84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */; };
 		84EB49392A24FD16002BFD5F /* AiOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB49382A24FD16002BFD5F /* AiOLoadingView.swift */; };
+		84EB493B2A250179002BFD5F /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB493A2A250179002BFD5F /* RegistrationError.swift */; };
+		84EB493D2A25022F002BFD5F /* RegistrationView+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB493C2A25022F002BFD5F /* RegistrationView+State.swift */; };
 		84EF0A8229EE5BA60042B6BF /* CasterOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */; };
 		84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */; };
 		84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF0A8729EEF1160042B6BF /* Menu.storyboard */; };
@@ -525,6 +527,8 @@
 		84DE123A2A0572630024D48E /* AiOPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOPicker.swift; sourceTree = "<group>"; };
 		84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOLoadingView.xib; sourceTree = "<group>"; };
 		84EB49382A24FD16002BFD5F /* AiOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOLoadingView.swift; sourceTree = "<group>"; };
+		84EB493A2A250179002BFD5F /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
+		84EB493C2A25022F002BFD5F /* RegistrationView+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegistrationView+State.swift"; sourceTree = "<group>"; };
 		84EF0A8129EE5BA60042B6BF /* CasterOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouting.swift; sourceTree = "<group>"; };
 		84EF0A8329EE5BEE0042B6BF /* CasterOverviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterOverviewRouter.swift; sourceTree = "<group>"; };
 		84EF0A8729EEF1160042B6BF /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -875,6 +879,7 @@
 				8454D35829F583D300B97EE3 /* Register.storyboard */,
 				8454D35A29F583FF00B97EE3 /* Register.swift */,
 				8454D36329F5943900B97EE3 /* RegisterViewDelegate.swift */,
+				84EB493C2A25022F002BFD5F /* RegistrationView+State.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1127,6 +1132,7 @@
 			isa = PBXGroup;
 			children = (
 				849AEBAA2A1613B70024AAAA /* RegisterResponseModel.swift */,
+				84EB493A2A250179002BFD5F /* RegistrationError.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2372,6 +2378,7 @@
 				84DC1A112A0950A70049BDD2 /* AiOPickerDataSource.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
 				84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */,
+				84EB493D2A25022F002BFD5F /* RegistrationView+State.swift in Sources */,
 				84B7459229E499930086C708 /* SponsorPresenting.swift in Sources */,
 				84725AC729E12C95003658CD /* SquadTableViewCell.swift in Sources */,
 				84F602FD29DC861B00250C25 /* RankViewDelegate.swift in Sources */,
@@ -2417,6 +2424,7 @@
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				84108C372A0AA1CF00488D0D /* VerifyPhone.swift in Sources */,
+				84EB493B2A250179002BFD5F /* RegistrationError.swift in Sources */,
 				84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */,
 				849AEBAE2A16143F0024AAAA /* RegisterInteracting.swift in Sources */,
 				84A0510229E99774004D582B /* CreatorOverview.swift in Sources */,

@@ -38,6 +38,7 @@ class Register: UIViewController {
     }
     
     private func configurePresenter() {
+        /*
         presenter?.passwordEqualityFlag
             .sink(receiveValue: { [weak self] flag in
                 guard let self = self else { return }
@@ -45,6 +46,9 @@ class Register: UIViewController {
                 self.registerBtn.isUserInteractionEnabled = flag
             })
             .store(in: &cancellable)
+         */
+        
+        presenter?.viewDidLoad()
     }
     
     private func configureUserNameTxtField() {
@@ -163,5 +167,18 @@ extension Register: PinViewDelegate {
 
 // MARK: - Register View Delegate
 extension Register: RegisterViewDelegate {
+    func render(state: RegistrationViewRenderState) {
+        switch state {
+        case .success:
+            print("Success")
+        case .fieldRequiredFailure:
+            print("Field Required")
+        case .apiFailure(let error):
+            print("Api Error is \(error)")
+        case .passwordNotMatch:
+            print("Password didn't match.")
+        }
+    }
+    
     
 }
