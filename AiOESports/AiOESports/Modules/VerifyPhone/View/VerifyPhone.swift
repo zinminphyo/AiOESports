@@ -87,16 +87,16 @@ class VerifyPhone: UIViewController {
 
 // MARK: - PinView Delegate.
 extension VerifyPhone: PinViewDelegate {
-    func didFinishedEnterCode(password: String) {
+    func didFinishedEnterCode(pinView: PinView, password: String) {
         enterPINPublisher.send(true)
         print("Password is \(password)")
     }
     
-    func didFinishedConfirmCode(isMatched: Bool) {
+    func didFinishedConfirmCode(pinView: PinView, isMatched: Bool) {
         print("Is Matched is \(isMatched)")
     }
     
-    func didTapDeleteButton() {
+    func didTapDeleteButton(pinView: PinView) {
         enterPINPublisher.send(false)
     }
 }

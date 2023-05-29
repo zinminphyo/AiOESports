@@ -198,7 +198,6 @@ extension Login: LoginViewDelegate {
     }
     
     func updateLoginButtton(isCompleted: Bool) {
-        print("IsCompleted is \(isCompleted)")
         loginButton.isUserInteractionEnabled = isCompleted
         loginButton.backgroundColor = isCompleted ? Colors.Button.primaryColor : Colors.Button.primaryColor?.withAlphaComponent(0.4)
     }
@@ -207,18 +206,19 @@ extension Login: LoginViewDelegate {
         incorrectPinLabel.isHidden = isCorrect
         incorrectPhoneNumberLabel.isHidden = isCorrect
     }
+    
 }
 
 
 extension Login: PinViewDelegate {
-    func didFinishedConfirmCode(isMatched: Bool) {
+    func didFinishedConfirmCode(pinView: PinView, isMatched: Bool) {
         
     }
-    func didFinishedEnterCode(password: String) {
+    func didFinishedEnterCode(pinView: PinView, password: String) {
         presenter?.didChangePassword(password: password)
     }
     
-    func didTapDeleteButton() {
+    func didTapDeleteButton(pinView: PinView) {
         presenter?.didTapDeletePassword()
     }
 }

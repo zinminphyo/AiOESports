@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class Register: UIViewController {
     
@@ -15,6 +16,9 @@ class Register: UIViewController {
     @IBOutlet weak var reEnterPinView: PinView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
+    
+    var presenter: RegisterPresenter?
+    private var cancellable = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +28,23 @@ class Register: UIViewController {
     }
     
     private func configureHierarchy() {
+        configurePresenter()
         configureUserNameTxtField()
         configurePhoneNumberView()
         configureEnterPinView()
         configureReEnterPinView()
         configureLoginBtn()
         configureRegisterBtn()
+    }
+    
+    private func configurePresenter() {
+        presenter?.passwordEqualityFlag
+            .sink(receiveValue: { [weak self] flag in
+                guard let self = self else { return }
+                self.registerBtn.backgroundColor = flag ? Colors.Button.primaryColor : Colors.Button.secondaryColor
+                self.registerBtn.isUserInteractionEnabled = flag
+            })
+            .store(in: &cancellable)
     }
     
     private func configureUserNameTxtField() {
@@ -44,11 +59,13 @@ class Register: UIViewController {
     }
     
     private func configureEnterPinView() {
-        
+        enterPinView.state = .enter
+        enterPinView.delegate = self
     }
     
     private func configureReEnterPinView() {
-        
+        reEnterPinView.state = .enter
+        reEnterPinView.delegate = self
     }
     
     private func configureRegisterBtn() {
@@ -96,6 +113,11 @@ class Register: UIViewController {
     }
     
     @objc func didTapRegisterBtn() {
+        if let userName = usernameTxtField.text {
+            self.presenter?.register(userName: userName)
+        } else  {
+            // To reder error
+        }
         
         
     }
@@ -108,22 +130,38 @@ class Register: UIViewController {
 }
 
 
+
+// MARK: - Phone Number View Delegate
 extension Register: PhoneNumberViewDelegate {
     func didChangePhoneNumber(phoneNum: String) {
+        presenter?.set(phNum: phoneNum)
+    }
+}
+
+
+
+
+// MARK: - PinViewDelegate
+extension Register: PinViewDelegate {
+    func didFinishedConfirmCode(pinView: PinView, isMatched: Bool) {
+        
+    }
+    
+    func didFinishedEnterCode(pinView: PinView, password: String) {
+        if pinView == enterPinView {
+            presenter?.set(enterPassword: password)
+        } else {
+            presenter?.set(reEnterPassword: password)
+        }
+    }
+    
+    func didTapDeleteButton(pinView: PinView) {
         
     }
 }
 
-extension Register: PinViewDelegate {
-    func didFinishedConfirmCode(isMatched: Bool) {
-        
-    }
+
+// MARK: - Register View Delegate
+extension Register: RegisterViewDelegate {
     
-    func didFinishedEnterCode(password: String) {
-        
-    }
-    
-    func didTapDeleteButton() {
-        
-    }
 }

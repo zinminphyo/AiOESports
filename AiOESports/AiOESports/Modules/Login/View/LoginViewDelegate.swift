@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol LoginViewDelegate {
+protocol LoginViewDelegate: LoadingPresentable {
     var presenter: LoginPresenting? { get set }
     func updateRememberInfoFlag(flag: Bool)
     func updateLoginButtton(isCompleted: Bool)

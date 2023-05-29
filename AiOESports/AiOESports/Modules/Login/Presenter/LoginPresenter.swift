@@ -53,6 +53,7 @@ class LoginPresenter: LoginPresenting {
     
     
     func tappedLoginBtn() {
+        self.viewDelegate?.showLoading()
         self.interactor?.login(phoneNum: phoneNumber, password: password)
     }
     
@@ -69,10 +70,12 @@ class LoginPresenter: LoginPresenting {
     func didFinishedLogin(user: UserModel?, error: String?) {
         if let user = user {
             print("User is \(user)")
+            self.viewDelegate?.hideLoading()
             self.router?.routeToInAppModule()
             self.viewDelegate?.updateLoginViewState(isCorrect: true)
         } else if let error = error {
             print("Error is \(error)")
+            self.viewDelegate?.hideLoading()
             self.viewDelegate?.updateLoginViewState(isCorrect: false)
         }
     }

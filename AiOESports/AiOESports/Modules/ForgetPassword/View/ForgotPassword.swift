@@ -53,7 +53,8 @@ extension ForgotPassword: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let vc = VerifyPhoneModule.createModule() else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -9,7 +9,7 @@ import Foundation
 
 
 struct BaseResponseModel<T: Decodable>: Decodable {
-    let result: T
+    let result: T?
     let statusCode: Int
     let message: String
     
@@ -21,7 +21,7 @@ struct BaseResponseModel<T: Decodable>: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        result = try container.decode(T.self, forKey: .result)
+        result = try container.decodeIfPresent(T.self, forKey: .result)
         statusCode = try container.decode(Int.self, forKey: .statusCode)
         message = try container.decode(String.self, forKey: .message)
     }

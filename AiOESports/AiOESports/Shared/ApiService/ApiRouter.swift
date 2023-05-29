@@ -28,6 +28,9 @@ enum ApiRouter: URLConvertible {
     // Login
     case login(_ phoneNum: String, _ password: String)
     
+    // Register
+    case registerStep1(userName: String, phNum: String, password: String)
+    
     func asURL() throws -> URL {
         return URL(string: url)!
     }
@@ -70,6 +73,8 @@ enum ApiRouter: URLConvertible {
             return "creator/\(id)"
         case .login:
             return "login"
+        case .registerStep1:
+            return "register"
         }
     }
     
@@ -81,14 +86,14 @@ enum ApiRouter: URLConvertible {
         switch self {
         case .fetchTeamLists, .fetchPlayerLists, .fetchCasterLists, .fetchCreatorLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .home:
             return URLEncoding.default
-        case .teamSearch, .playerSearch, .casterSearch, .creatorSearch, .login:
+        case .teamSearch, .playerSearch, .casterSearch, .creatorSearch, .login, .registerStep1:
             return JSONEncoding.prettyPrinted
         }
     }
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch, .home, .login:
+        case .fetchTeamLists, .teamSearch, .fetchPlayerLists, .fetchCreatorLists, .fetchCasterLists, .teamDetails, .playerDetails, .casterDetails, .creatorDetails, .playerSearch, .casterSearch, .creatorSearch, .home, .login, .registerStep1:
             return nil
         }
     }
@@ -145,6 +150,13 @@ enum ApiRouter: URLConvertible {
                 "phone-number" : phNum,
                 "password" : pass
             ]
+            
+        case let .registerStep1(userName, phNum, password):
+            return [
+                "username" : userName,
+                "phone-number" : phNum,
+                "password" : password
+            ]
         }
     }
     
@@ -165,6 +177,8 @@ enum ApiRouter: URLConvertible {
         case .playerDetails, .casterDetails, .creatorDetails, .home:
             return .get
         case .login:
+            return .post
+        case .registerStep1:
             return .post
         }
     }

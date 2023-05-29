@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol RegisterViewDelegate {
-    
+    var presenter: RegisterPresenter? { get set }
 }

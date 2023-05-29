@@ -10,4 +10,7 @@ import Foundation
 
 protocol RegisterPresenting {
     var viewDelegate: RegisterViewDelegate? { get set }
+    var interactor: RegisterInteracting? { get set }
+    func register(userName: String)
+    func didFinishedStep1Registration(responseModel: RegisterResponseModel?, error: String?)
 }

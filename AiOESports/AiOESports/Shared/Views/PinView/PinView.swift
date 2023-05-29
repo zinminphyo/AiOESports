@@ -85,7 +85,7 @@ class PinView: UIView, NibLoadable {
         isCompletedPublisher
             .sink { flag in
                 if flag {
-                    self.delegate?.didFinishedEnterCode(password: self.enterPasscode)
+                    self.delegate?.didFinishedEnterCode(pinView: self, password: self.enterPasscode)
                 }
             }
             .store(in: &cancellable)
@@ -198,9 +198,9 @@ class PinView: UIView, NibLoadable {
             confirmPIN += $0.text ?? ""
         }
         if confirmPIN == passcode {
-            self.delegate?.didFinishedConfirmCode(isMatched: true)
+            self.delegate?.didFinishedConfirmCode(pinView: self, isMatched: true)
         } else {
-            self.delegate?.didFinishedConfirmCode(isMatched: false)
+            self.delegate?.didFinishedConfirmCode(pinView: self, isMatched: false)
         }
     }
 
@@ -210,7 +210,7 @@ class PinView: UIView, NibLoadable {
 extension PinView: PinTextFieldDelegate {
     func didTapDeleteBackward(txtField: UITextField) {
         guard let index = contentViews.firstIndex(of: txtField) else { return }
-        self.delegate?.didTapDeleteButton()
+        self.delegate?.didTapDeleteButton(pinView: self)
         guard index > 0 else {
             txtField.resignFirstResponder()
             return

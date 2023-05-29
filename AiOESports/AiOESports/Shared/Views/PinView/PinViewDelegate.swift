@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol PinViewDelegate {
-    func didFinishedEnterCode(password: String)
-    func didFinishedConfirmCode(isMatched: Bool)
-    func didTapDeleteButton()
+    func didFinishedEnterCode(pinView: PinView, password: String)
+    func didFinishedConfirmCode(pinView: PinView, isMatched: Bool)
+    func didTapDeleteButton(pinView: PinView)
 }

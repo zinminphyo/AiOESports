@@ -18,7 +18,7 @@ class LoginInteractor: LoginInteracting {
         NetworkService.shared.request(router: router) { (result: Result<BaseResponseModel<LoginResponseModel>, NetworkError>) in
             switch result {
             case .success(let success):
-                self.presenter?.didFinishedLogin(user: success.result.user, error: nil)
+                self.presenter?.didFinishedLogin(user: success.result?.user, error: nil)
             case .failure(let failure):
                 self.presenter?.didFinishedLogin(user: nil, error: failure.localizedDescription)
             }
