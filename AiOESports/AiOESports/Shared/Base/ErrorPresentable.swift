@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SVProgressHUD
+//import SVProgressHUD
 
 protocol ErrorPresentable {
     func showError(error: String)
@@ -16,9 +16,9 @@ protocol ErrorPresentable {
 
 extension ErrorPresentable where Self: UIViewController {
     func showError(error: String) {
-        SVProgressHUD.show(withStatus: error)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            SVProgressHUD.dismiss()
-        }
+//        SVProgressHUD.show(withStatus: error)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            SVProgressHUD.dismiss()
+//        }
     }
 }

@@ -54,6 +54,7 @@ class PhoneNumberView: UIView, NibLoadable {
         phoneNumberTxtField.backgroundColor = Colors.Theme.inputColor
         phoneNumberTxtField.textColor = Colors.Text.primaryText
         phoneNumberTxtField.borderStyle = .none
+        phoneNumberTxtField.delegate = self
         phoneNumberTxtField.keyboardType = .numberPad
         phoneNumberTxtField.placeholder = "9 xxx xxx xxx"
         let placeHolder = "9 xxx xxx xxx"
@@ -65,9 +66,15 @@ class PhoneNumberView: UIView, NibLoadable {
     }
     
     @objc func didChangePhoneNumber() {
-        self.delegate?.didChangePhoneNumber(phoneNum: phoneNumberTxtField.text ?? "")
+        self.delegate?.didChangePhoneNumber(phoneNum: self.phoneNumberTxtField.text ?? "")
     }
     
+}
+
+extension PhoneNumberView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("End Editing.")
+    }
 }
 
 

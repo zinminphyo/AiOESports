@@ -13,14 +13,21 @@ class RegisterPresenter: RegisterPresenting {
     var viewDelegate: RegisterViewDelegate?
     var interactor: RegisterInteracting?
     
+    // MARK: -  User Properties
     private var enterPassword: String = ""
     private var reEnterPassword: String = ""
     private var phoneNumber: String = ""
+    private var userName: String = ""
     
-    var passwordEqualityFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(false)
+    
+    // MARK: - Combine Flag
+    var passwordEqualityFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(true)
+    var fieldAllCompletedFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(true)
     
     private var cancellable = Set<AnyCancellable>()
     
+    
+    // MARK: - Setters
     func set(enterPassword: String) {
         self.enterPassword = enterPassword
         checkPasswordIsEqual()
@@ -35,22 +42,39 @@ class RegisterPresenter: RegisterPresenting {
         self.phoneNumber = phNum
     }
     
+    func set(username: String) {
+        self.userName = username
+    }
+    
+    // MARK: - Helper Functions
     private func checkPasswordIsEqual() {
         passwordEqualityFlag.send(self.enterPassword == self.reEnterPassword)
     }
     
+    private func checkAllFieldCompleted() {
+        fieldAllCompletedFlag.value = userName.isEmpty == false && passwordEqualityFlag.value == true && phoneNumber.isEmpty == false
+    }
+    
+    
+    // MARK: - Protocol Conformance
     func viewDidLoad() {
         passwordEqualityFlag
             .sink { [weak self] flag in
                 guard let self = self else { return }
-                guard flag == false else { return }
-                self.viewDelegate?.render(state: .passwordNotMatch)
+                flag ? self.checkAllFieldCompleted() : self.viewDelegate?.render(state: .passwordNotMatch)
+            }
+            .store(in: &cancellable)
+        
+        fieldAllCompletedFlag
+            .sink { [weak self] flag in
+                guard let self = self  else { return }
+                flag ? self.interactor?.registerStep1(userName: self.userName, phNum: self.phoneNumber, password: self.enterPassword) : self.viewDelegate?.render(state: .fieldRequiredFailure)
             }
             .store(in: &cancellable)
     }
     
-    func register(userName: String) {
-        interactor?.registerStep1(userName: userName, phNum: phoneNumber, password: enterPassword)
+    func register() {
+        checkAllFieldCompleted()
     }
     
     func didFinishedStep1Registration(responseModel: RegisterResponseModel?, error: String?) {

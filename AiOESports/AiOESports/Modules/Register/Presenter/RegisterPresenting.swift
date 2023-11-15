@@ -12,6 +12,6 @@ protocol RegisterPresenting {
     var viewDelegate: RegisterViewDelegate? { get set }
     var interactor: RegisterInteracting? { get set }
     func viewDidLoad()
-    func register(userName: String)
+    func register()
     func didFinishedStep1Registration(responseModel: RegisterResponseModel?, error: String?)
 }

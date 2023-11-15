@@ -17,6 +17,11 @@ class Register: UIViewController {
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
+    @IBOutlet weak var userNameErrorLabel: UILabel!
+    @IBOutlet weak var phoneNumberErrorLabel: UILabel!
+    @IBOutlet weak var enterPasswordErrorLabel: UILabel!
+    @IBOutlet weak var reEnterPasswordErrorLabel: UILabel!
+    
     var presenter: RegisterPresenter?
     private var cancellable = Set<AnyCancellable>()
 
@@ -38,16 +43,7 @@ class Register: UIViewController {
     }
     
     private func configurePresenter() {
-        /*
-        presenter?.passwordEqualityFlag
-            .sink(receiveValue: { [weak self] flag in
-                guard let self = self else { return }
-                self.registerBtn.backgroundColor = flag ? Colors.Button.primaryColor : Colors.Button.secondaryColor
-                self.registerBtn.isUserInteractionEnabled = flag
-            })
-            .store(in: &cancellable)
-         */
-        
+       
         presenter?.viewDidLoad()
     }
     
@@ -56,6 +52,7 @@ class Register: UIViewController {
         let attributedPlaceholder = NSMutableAttributedString(string: placeholder)
         attributedPlaceholder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: NSRange(location: 0, length: placeholder.count))
         usernameTxtField.attributedPlaceholder = attributedPlaceholder
+        usernameTxtField.addTarget(self, action: #selector(didChangeUserName), for: .editingChanged)
     }
     
     private func configurePhoneNumberView() {
@@ -117,18 +114,16 @@ class Register: UIViewController {
     }
     
     @objc func didTapRegisterBtn() {
-        if let userName = usernameTxtField.text {
-            self.presenter?.register(userName: userName)
-        } else  {
-            // To reder error
-        }
-        
-        
+        self.presenter?.register()
     }
     
     @objc func didTapLoginBtn() {
         guard let vc = LoginModule.createModule() else { return }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func didChangeUserName() {
+        presenter?.set(username: usernameTxtField.text ?? "")
     }
 
 }
@@ -141,6 +136,8 @@ extension Register: PhoneNumberViewDelegate {
         presenter?.set(phNum: phoneNum)
     }
 }
+
+
 
 
 
@@ -167,7 +164,27 @@ extension Register: PinViewDelegate {
 
 // MARK: - Register View Delegate
 extension Register: RegisterViewDelegate {
+    
     func render(state: RegistrationViewRenderState) {
+        
+        print("State is \(state)")
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0) { [weak self] in
+            guard let self = self else { return }
+            self.userNameErrorLabel.isHidden = !(state == .fieldRequiredFailure)
+            self.phoneNumberErrorLabel.isHidden = !(state == .fieldRequiredFailure)
+            self.enterPasswordErrorLabel.isHidden = state == .success || state == .apiFailure(error: "")
+            self.reEnterPasswordErrorLabel.isHidden = state == .success || state == .apiFailure(error: "")
+        }
+        
+        
+        
+        userNameErrorLabel.text = state.errorString
+        phoneNumberErrorLabel.text = state.errorString
+        enterPasswordErrorLabel.text = state.errorString
+        reEnterPasswordErrorLabel.text = state.errorString
+        
+        /*
         switch state {
         case .success:
             print("Success")
@@ -178,6 +195,7 @@ extension Register: RegisterViewDelegate {
         case .passwordNotMatch:
             print("Password didn't match.")
         }
+         */
     }
     
     

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+//import SVProgressHUD
 import Kingfisher
 
 class Rank: UIViewController {
@@ -163,11 +163,11 @@ extension Rank: RankViewDelegate {
     }
     
     func showLoading() {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
     }
     
     func hideLoading() {
-        SVProgressHUD.dismiss()
+//        SVProgressHUD.dismiss()
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SVProgressHUD
+//import SVProgressHUD
 
 protocol LoadingPresentable {
     func showLoading()
@@ -17,9 +17,9 @@ protocol LoadingPresentable {
 extension LoadingPresentable where Self: UIViewController {
     
     func showLoading() {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
     }
     func hideLoading() {
-        SVProgressHUD.dismiss()
+//        SVProgressHUD.dismiss()
     }
 }
