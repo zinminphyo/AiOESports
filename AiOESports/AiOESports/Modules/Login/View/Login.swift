@@ -26,7 +26,7 @@ class Login: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
     @IBOutlet weak var passcodeView: PasscodeView!
-    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingView: LoadingView!
     
     var presenter: LoginPresenting?
 
@@ -208,11 +208,11 @@ extension Login: LoginViewDelegate {
     }
     
     func showLoading() {
-        loadingView.isHidden = false
+        loadingView.showLoading()
     }
     
     func hideLoaing() {
-        loadingView.isHidden = true
+        loadingView.hideLoading()
     }
     
 }

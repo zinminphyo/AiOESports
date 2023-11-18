@@ -167,6 +167,7 @@
 		84A0510229E99774004D582B /* CreatorOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0510129E99774004D582B /* CreatorOverview.swift */; };
 		84A0510429E998B8004D582B /* CreatorOverviewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0510329E998B8004D582B /* CreatorOverviewModule.swift */; };
 		84A480682B08FEB200268A77 /* SinglePasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A480672B08FEB200268A77 /* SinglePasscodeView.swift */; };
+		84A4806B2B0925C500268A77 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4806A2B0925C500268A77 /* LoadingView.swift */; };
 		84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455329E45F5E0086C708 /* SquadModel.swift */; };
 		84B7455629E45FB90086C708 /* CoachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455529E45FB90086C708 /* CoachModel.swift */; };
 		84B7455829E460080086C708 /* RosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455729E460080086C708 /* RosterModel.swift */; };
@@ -463,6 +464,7 @@
 		84A0510129E99774004D582B /* CreatorOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorOverview.swift; sourceTree = "<group>"; };
 		84A0510329E998B8004D582B /* CreatorOverviewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorOverviewModule.swift; sourceTree = "<group>"; };
 		84A480672B08FEB200268A77 /* SinglePasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePasscodeView.swift; sourceTree = "<group>"; };
+		84A4806A2B0925C500268A77 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		84B7455329E45F5E0086C708 /* SquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
 		84B7455529E45FB90086C708 /* CoachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachModel.swift; sourceTree = "<group>"; };
 		84B7455729E460080086C708 /* RosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterModel.swift; sourceTree = "<group>"; };
@@ -1204,6 +1206,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84A480692B0925B500268A77 /* LoadingView */,
 				845275CE2B08E72A00EEAF84 /* PasscodeView */,
 				84EB49352A24FBA8002BFD5F /* AiOLoadingView */,
 				84DE12372A0572230024D48E /* AiOPicker */,
@@ -1426,6 +1429,14 @@
 				84597C7C29EA5337007C511B /* CreatorOverviewViewDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84A480692B0925B500268A77 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				84A4806A2B0925C500268A77 /* LoadingView.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		84B7456329E46EB10086C708 /* ViewModel */ = {
@@ -2391,6 +2402,7 @@
 				84EB49392A24FD16002BFD5F /* AiOLoadingView.swift in Sources */,
 				84DC1A112A0950A70049BDD2 /* AiOPickerDataSource.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
+				84A4806B2B0925C500268A77 /* LoadingView.swift in Sources */,
 				84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */,
 				84EB493D2A25022F002BFD5F /* RegistrationView+State.swift in Sources */,
 				84B7459229E499930086C708 /* SponsorPresenting.swift in Sources */,
