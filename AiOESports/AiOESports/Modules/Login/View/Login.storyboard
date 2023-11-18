@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -97,11 +98,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJJ-MN-KBm" customClass="PinView" customModule="AiOESports" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RT-AB-C9a" customClass="PasscodeView" customModule="AiOESports" customModuleProvider="target">
                                         <rect key="frame" x="24" y="32.333333333333314" width="345" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="OVE-PV-IP3"/>
+                                            <constraint firstAttribute="height" constant="50" id="l4n-uT-d6P"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7xm-U4-Skc">
@@ -137,18 +138,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ZJJ-MN-KBm" firstAttribute="leading" secondItem="Sff-Gn-yMa" secondAttribute="leading" constant="24" id="8UX-BK-4rF"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZJJ-MN-KBm" secondAttribute="trailing" constant="24" id="FMG-Og-YtW"/>
                                     <constraint firstAttribute="bottom" secondItem="7xm-U4-Skc" secondAttribute="bottom" id="Q0D-VW-oe0"/>
+                                    <constraint firstAttribute="trailing" secondItem="9RT-AB-C9a" secondAttribute="trailing" constant="24" id="QxA-W0-HE1"/>
+                                    <constraint firstItem="9RT-AB-C9a" firstAttribute="top" secondItem="rnV-ty-Eyb" secondAttribute="bottom" constant="12" id="Ugl-bb-Zgp"/>
                                     <constraint firstItem="rnV-ty-Eyb" firstAttribute="leading" secondItem="Sff-Gn-yMa" secondAttribute="leading" constant="24" id="Wro-9F-wbF"/>
-                                    <constraint firstItem="7xm-U4-Skc" firstAttribute="top" secondItem="ZJJ-MN-KBm" secondAttribute="bottom" id="Xu7-oh-cFu"/>
-                                    <constraint firstItem="ZJJ-MN-KBm" firstAttribute="top" secondItem="rnV-ty-Eyb" secondAttribute="bottom" constant="12" id="c4f-Q3-U8b"/>
-                                    <constraint firstItem="7xm-U4-Skc" firstAttribute="leading" secondItem="ZJJ-MN-KBm" secondAttribute="leading" id="dzs-M1-Cjt"/>
-                                    <constraint firstItem="7xm-U4-Skc" firstAttribute="trailing" secondItem="ZJJ-MN-KBm" secondAttribute="trailing" id="snJ-O2-8Cu"/>
+                                    <constraint firstItem="9RT-AB-C9a" firstAttribute="leading" secondItem="Sff-Gn-yMa" secondAttribute="leading" constant="24" id="chf-55-Uy2"/>
+                                    <constraint firstItem="7xm-U4-Skc" firstAttribute="top" secondItem="9RT-AB-C9a" secondAttribute="bottom" id="glA-iN-4fH"/>
                                     <constraint firstItem="rnV-ty-Eyb" firstAttribute="top" secondItem="Sff-Gn-yMa" secondAttribute="top" id="vYQ-gb-QkQ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5H-BH-b9I" userLabel="SaveInfoView">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5H-BH-b9I" userLabel="SaveInfoView">
                                 <rect key="frame" x="24" y="453.33333333333331" width="345" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIA-qz-QMa">
@@ -182,7 +181,7 @@
                                     <constraint firstItem="ThD-H6-g4a" firstAttribute="centerY" secondItem="lFh-Wk-Rp6" secondAttribute="centerY" id="ze3-Xg-xvE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uM-83-k58">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uM-83-k58">
                                 <rect key="frame" x="24" y="515.33333333333337" width="345" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3d2-lX-L0k"/>
@@ -190,13 +189,13 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYc-ZC-JEn">
-                                <rect key="frame" x="176" y="589.33333333333337" width="41.333333333333343" height="20.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYc-ZC-JEn">
+                                <rect key="frame" x="176" y="589.33333333333326" width="41.333333333333343" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDj-Zs-LGz">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDj-Zs-LGz">
                                 <rect key="frame" x="24" y="621.66666666666663" width="345" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0uX-HY-7uC"/>
@@ -239,10 +238,10 @@
                         <outlet property="incorrectPhoneNumberLabel" destination="2Ie-tR-es7" id="9M3-Cr-fNR"/>
                         <outlet property="incorrectPinLabel" destination="JmI-CM-hsg" id="3hM-az-aRo"/>
                         <outlet property="loginButton" destination="9uM-83-k58" id="xpB-B0-0W3"/>
+                        <outlet property="passcodeView" destination="9RT-AB-C9a" id="PQ7-cY-R79"/>
                         <outlet property="passwordLabel" destination="rnV-ty-Eyb" id="EXa-jQ-40w"/>
                         <outlet property="phoneNumberLabel" destination="LJv-tD-N5T" id="RKV-WJ-M6O"/>
                         <outlet property="phoneNumberView" destination="XKv-Wd-0TF" id="aPQ-aT-0fs"/>
-                        <outlet property="pinView" destination="ZJJ-MN-KBm" id="avJ-Tg-t54"/>
                         <outlet property="registerButton" destination="NDj-Zs-LGz" id="a1D-PQ-l0q"/>
                         <outlet property="rememberInfoFlagImageView" destination="eIA-qz-QMa" id="WpT-lr-uQc"/>
                         <outlet property="rememberInfoLabel" destination="lFh-Wk-Rp6" id="ojr-ZG-V2X"/>

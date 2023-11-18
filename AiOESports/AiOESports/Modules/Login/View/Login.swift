@@ -9,7 +9,6 @@ import UIKit
 
 class Login: UIViewController {
     
-    @IBOutlet weak var pinView: PinView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -26,6 +25,7 @@ class Login: UIViewController {
     @IBOutlet weak var donotHaveAccountTitleLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
+    @IBOutlet weak var passcodeView: PasscodeView!
     
     var presenter: LoginPresenting?
 
@@ -34,8 +34,7 @@ class Login: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        pinView.delegate = self
-        pinView.state = .enter
+        passcodeView.delegate = self
         
         configureHierarchy()
     }
@@ -210,22 +209,16 @@ extension Login: LoginViewDelegate {
 }
 
 
-extension Login: PinViewDelegate {
-    func didFinishedConfirmCode(pinView: PinView, isMatched: Bool) {
-        
-    }
-    func didFinishedEnterCode(pinView: PinView, password: String) {
-        presenter?.didChangePassword(password: password)
-    }
-    
-    func didTapDeleteButton(pinView: PinView) {
-        presenter?.didTapDeletePassword()
+extension Login: PhoneNumberViewDelegate {
+    func didChangePhoneNumber(phoneNum: String) {
+        presenter?.didChangePhoneNumber(phoneNum: phoneNum)
     }
 }
 
 
-extension Login: PhoneNumberViewDelegate {
-    func didChangePhoneNumber(phoneNum: String) {
-        presenter?.didChangePhoneNumber(phoneNum: phoneNum)
+
+extension Login: PasscodeViewDelegate {
+    func didFinishedEnterPasscode(in view: PasscodeView, _ passcode: String) {
+        presenter?.didChangePassword(password: passcode)
     }
 }

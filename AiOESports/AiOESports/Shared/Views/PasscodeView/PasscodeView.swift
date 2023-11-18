@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PasscodeViewDelegate: AnyObject {
+    func didFinishedEnterPasscode(in view: PasscodeView ,_ passcode: String)
+}
+
 class PasscodeView: UIView, UITextInputTraits {
     
     private var views: [SinglePasscodeView] = []
@@ -17,6 +21,7 @@ class PasscodeView: UIView, UITextInputTraits {
     }
     
     var keyboardType: UIKeyboardType = .numberPad
+    var delegate: PasscodeViewDelegate? = nil
     
     var passcode: String = "" {
         didSet {
@@ -97,6 +102,7 @@ extension PasscodeView: UIKeyInput {
         passcode.append(text)
         if passcode.count == maxCount {
             resignFirstResponder()
+            delegate?.didFinishedEnterPasscode(in: self, passcode)
         }
     }
     
