@@ -26,6 +26,7 @@ class Login: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
     @IBOutlet weak var passcodeView: PasscodeView!
+    @IBOutlet weak var loadingView: UIView!
     
     var presenter: LoginPresenting?
 
@@ -204,6 +205,14 @@ extension Login: LoginViewDelegate {
     func updateLoginViewState(isCorrect: Bool) {
         incorrectPinLabel.isHidden = isCorrect
         incorrectPhoneNumberLabel.isHidden = isCorrect
+    }
+    
+    func showLoading() {
+        loadingView.isHidden = false
+    }
+    
+    func hideLoaing() {
+        loadingView.isHidden = true
     }
     
 }
