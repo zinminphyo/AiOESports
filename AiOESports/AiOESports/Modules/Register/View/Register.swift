@@ -55,6 +55,24 @@ class Register: UIViewController {
        
         presenter?.viewDidLoad()
         
+        presenter?.$dataIsCompleted
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.registerBtn.isUserInteractionEnabled = $0
+                self.registerBtn.backgroundColor = $0 ? Colors.Button.primaryColor : UIColor.tertiarySystemFill
+                self.registerBtn.tintColor = $0 ? UIColor.white : UIColor.gray
+            })
+            .store(in: &cancellable)
+        
+        presenter?.passwordIsEqual
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.enterPasswordErrorLabel.isHidden = $0
+                self.reEnterPasswordErrorLabel.isHidden = $0
+            }).store(in: &cancellable)
+        
     }
     
     private func configureUserNameTxtField() {
@@ -164,8 +182,6 @@ extension Register: RegisterViewDelegate {
         
         */
         
-        enterPasswordErrorLabel.isHidden = !(state == .passwordNotMatch)
-        reEnterPasswordErrorLabel.isHidden = !(state == .passwordNotMatch)
         
         
         userNameErrorLabel.text = state.errorString

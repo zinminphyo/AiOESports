@@ -20,13 +20,11 @@ class RegisterPresenter: RegisterPresenting {
     private var userName: String = ""
     
     
-    var passwordIsEqualSubject = PassthroughSubject<Bool, Never>()
+    var passwordIsEqual = PassthroughSubject<Bool, Never>()
     
-    // MARK: - Combine Flag
-    var passwordEqualityFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(true)
-    var fieldAllCompletedFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(true)
+    @Published
+    var dataIsCompleted: Bool = false
     
-    private var cancellable = Set<AnyCancellable>()
     
     
     // MARK: - Setters
@@ -42,48 +40,30 @@ class RegisterPresenter: RegisterPresenting {
     
     func set(phNum: String) {
         self.phoneNumber = phNum
+        checkAllFieldCompleted()
     }
     
     func set(username: String) {
         self.userName = username
+        checkAllFieldCompleted()
     }
     
     // MARK: - Helper Functions
     private func checkPasswordIsEqual() {
-//        passwordEqualityFlag.send(self.enterPassword == self.reEnterPassword)
-        passwordIsEqualSubject.send(enterPassword == reEnterPassword)
+        passwordIsEqual.send(enterPassword == reEnterPassword)
     }
     
     private func checkAllFieldCompleted() {
-        fieldAllCompletedFlag.value = userName.isEmpty == false && passwordEqualityFlag.value == true && phoneNumber.isEmpty == false
+        let isCompleted = !userName.isEmpty && !enterPassword.isEmpty && !reEnterPassword.isEmpty && !phoneNumber.isEmpty
+        dataIsCompleted = isCompleted
     }
     
     
     // MARK: - Protocol Conformance
-    func viewDidLoad() {
-        passwordEqualityFlag
-            .sink { [weak self] flag in
-                guard let self = self else { return }
-                flag ? self.checkAllFieldCompleted() : self.viewDelegate?.render(state: .passwordNotMatch)
-            }
-            .store(in: &cancellable)
-        
-        passwordIsEqualSubject
-            .sink { [weak self] in
-                guard let self = self else { return }
-                $0 ? self.viewDelegate?.render(state: .success) : self.viewDelegate?.render(state: .passwordNotMatch)
-            }.store(in: &cancellable)
-        
-        fieldAllCompletedFlag
-            .sink { [weak self] flag in
-                guard let self = self  else { return }
-                flag ? self.interactor?.registerStep1(userName: self.userName, phNum: self.phoneNumber, password: self.enterPassword) : self.viewDelegate?.render(state: .fieldRequiredFailure)
-            }
-            .store(in: &cancellable)
-    }
+    func viewDidLoad() {}
     
     func register() {
-        checkAllFieldCompleted()
+        interactor?.registerStep1(userName: userName, phNum: phoneNumber, password: enterPassword)
     }
     
     func didFinishedStep1Registration(responseModel: RegisterResponseModel?, error: String?) {
