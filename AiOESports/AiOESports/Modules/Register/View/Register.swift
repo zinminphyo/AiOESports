@@ -14,6 +14,8 @@ class Register: UIViewController {
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
     @IBOutlet weak var enterPinView: PinView!
     @IBOutlet weak var reEnterPinView: PinView!
+    @IBOutlet weak var enterPasscodeView: PasscodeView!
+    @IBOutlet weak var reEnterPasscodeView: PasscodeView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -62,11 +64,13 @@ class Register: UIViewController {
     private func configureEnterPinView() {
         enterPinView.state = .enter
         enterPinView.delegate = self
+        enterPasscodeView.delegate = self
     }
     
     private func configureReEnterPinView() {
         reEnterPinView.state = .enter
         reEnterPinView.delegate = self
+        reEnterPasscodeView.delegate = self
     }
     
     private func configureRegisterBtn() {
@@ -166,7 +170,7 @@ extension Register: PinViewDelegate {
 extension Register: RegisterViewDelegate {
     
     func render(state: RegistrationViewRenderState) {
-        
+        /*
         print("State is \(state)")
         
         UIView.animate(withDuration: 0.2, delay: 0.0) { [weak self] in
@@ -177,7 +181,7 @@ extension Register: RegisterViewDelegate {
             self.reEnterPasswordErrorLabel.isHidden = state == .success || state == .apiFailure(error: "")
         }
         
-        
+        */
         
         userNameErrorLabel.text = state.errorString
         phoneNumberErrorLabel.text = state.errorString
@@ -199,4 +203,18 @@ extension Register: RegisterViewDelegate {
     }
     
     
+}
+
+
+extension Register: PasscodeViewDelegate {
+    func didFinishedEnterPasscode(in view: PasscodeView, _ passcode: String) {
+        switch view {
+        case enterPasscodeView:
+            presenter?.set(enterPassword: passcode)
+        case reEnterPasscodeView:
+            presenter?.set(reEnterPassword: passcode)
+        default:
+            break
+        }
+    }
 }
