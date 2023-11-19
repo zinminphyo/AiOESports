@@ -234,6 +234,8 @@
 		84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */; };
 		84DE12392A0572350024D48E /* AiOPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DE12382A0572350024D48E /* AiOPicker.xib */; };
 		84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE123A2A0572630024D48E /* AiOPicker.swift */; };
+		84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DF526E2B0A66E700CCB036 /* DetailController.xib */; };
+		84DF52712B0A6D4900CCB036 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF52702B0A6D4900CCB036 /* DetailController.swift */; };
 		84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */; };
 		84EB49392A24FD16002BFD5F /* AiOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB49382A24FD16002BFD5F /* AiOLoadingView.swift */; };
 		84EB493B2A250179002BFD5F /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB493A2A250179002BFD5F /* RegistrationError.swift */; };
@@ -531,6 +533,8 @@
 		84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
 		84DE12382A0572350024D48E /* AiOPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOPicker.xib; sourceTree = "<group>"; };
 		84DE123A2A0572630024D48E /* AiOPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOPicker.swift; sourceTree = "<group>"; };
+		84DF526E2B0A66E700CCB036 /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
+		84DF52702B0A6D4900CCB036 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOLoadingView.xib; sourceTree = "<group>"; };
 		84EB49382A24FD16002BFD5F /* AiOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOLoadingView.swift; sourceTree = "<group>"; };
 		84EB493A2A250179002BFD5F /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
@@ -1689,6 +1693,23 @@
 			path = AiOPicker;
 			sourceTree = "<group>";
 		};
+		84DF526A2B0A65EB00CCB036 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				84DF526D2B0A66D800CCB036 /* controller */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		84DF526D2B0A66D800CCB036 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84DF526E2B0A66E700CCB036 /* DetailController.xib */,
+				84DF52702B0A6D4900CCB036 /* DetailController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		84EB49352A24FBA8002BFD5F /* AiOLoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1926,6 +1947,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84DF526A2B0A65EB00CCB036 /* Detail */,
 				849AEB9C2A153EF30024AAAA /* ForgetPassword */,
 				84223E6E2A0C139200A81C20 /* Welcome */,
 				84108C302A0A9EC700488D0D /* VerifyPhone */,
@@ -2123,6 +2145,7 @@
 				84A050EF29E96249004D582B /* CasterOverview.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
 				84A0510029E99678004D582B /* CreatorOverview.storyboard in Resources */,
+				84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */,
 				84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */,
 				849BCE1E29E5522D0033C63A /* DetailsContentCollectionViewCell.xib in Resources */,
 				84B7458629E494690086C708 /* Sponsor.storyboard in Resources */,
@@ -2285,6 +2308,7 @@
 				842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */,
 				84BE00182A0D48DB00228691 /* WelcomeModule.swift in Sources */,
 				8437FE7D29ED1D19008F7179 /* HomeInteracting.swift in Sources */,
+				84DF52712B0A6D4900CCB036 /* DetailController.swift in Sources */,
 				84B7456E29E4857E0086C708 /* AchivementPresenter.swift in Sources */,
 				849BCE1929E527990033C63A /* TeamOverviewPresenter.swift in Sources */,
 				8437FE6C29ECD658008F7179 /* PlayerOverviewRouting.swift in Sources */,

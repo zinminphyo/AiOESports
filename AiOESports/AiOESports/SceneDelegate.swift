@@ -21,11 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
 //        guard let onboarding = OnboardingModule.createModule() else { return }
-        guard let register = RegisterModule.createModule() else { return }
+//        guard let register = RegisterModule.createModule() else { return }
 //        guard let accountSetup = AccountSetupModule.createModule() else { return }
 //        guard let welcome = WelcomeModule.createModule() else { return }
-//        guard let InApp = InAppModule.createModule() else { return }
-        let nav = UINavigationController(rootViewController: register)
+        guard let InApp = InAppModule.createModule() else { return }
+        let nav = UINavigationController(rootViewController: InApp)
         nav.setNavigationBarHidden(true, animated: true)
 //        guard let login = LoginModule.createModule() else { return }
 //        guard let InApp = InAppModule.createModule() else { return }
