@@ -20,6 +20,8 @@ class RegisterPresenter: RegisterPresenting {
     private var userName: String = ""
     
     
+    var passwordIsEqualSubject = PassthroughSubject<Bool, Never>()
+    
     // MARK: - Combine Flag
     var passwordEqualityFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(true)
     var fieldAllCompletedFlag: CurrentValueSubject<Bool, Never> = CurrentValueSubject(true)
@@ -48,7 +50,8 @@ class RegisterPresenter: RegisterPresenting {
     
     // MARK: - Helper Functions
     private func checkPasswordIsEqual() {
-        passwordEqualityFlag.send(self.enterPassword == self.reEnterPassword)
+//        passwordEqualityFlag.send(self.enterPassword == self.reEnterPassword)
+        passwordIsEqualSubject.send(enterPassword == reEnterPassword)
     }
     
     private func checkAllFieldCompleted() {
@@ -64,6 +67,12 @@ class RegisterPresenter: RegisterPresenting {
                 flag ? self.checkAllFieldCompleted() : self.viewDelegate?.render(state: .passwordNotMatch)
             }
             .store(in: &cancellable)
+        
+        passwordIsEqualSubject
+            .sink { [weak self] in
+                guard let self = self else { return }
+                $0 ? self.viewDelegate?.render(state: .success) : self.viewDelegate?.render(state: .passwordNotMatch)
+            }.store(in: &cancellable)
         
         fieldAllCompletedFlag
             .sink { [weak self] flag in

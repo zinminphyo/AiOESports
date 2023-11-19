@@ -284,13 +284,11 @@
                     <connections>
                         <outlet property="enterPasscodeView" destination="v7q-J3-GZY" id="Lnu-Js-sS8"/>
                         <outlet property="enterPasswordErrorLabel" destination="dxP-bH-eKf" id="LCV-B8-7OJ"/>
-                        <outlet property="enterPinView" destination="jsH-5v-Ueh" id="mMg-zM-8Jh"/>
                         <outlet property="loginBtn" destination="1nx-BN-tDH" id="7TT-yG-59w"/>
                         <outlet property="phoneNumberErrorLabel" destination="abM-wJ-ghg" id="f8G-Zn-klg"/>
                         <outlet property="phoneNumberView" destination="Uvk-PZ-wgg" id="5hh-mH-2Ag"/>
                         <outlet property="reEnterPasscodeView" destination="omh-mA-oCJ" id="n21-m1-Mf9"/>
                         <outlet property="reEnterPasswordErrorLabel" destination="8hS-Dm-LVA" id="3Ab-1V-Lfa"/>
-                        <outlet property="reEnterPinView" destination="xZs-gS-x4y" id="JIn-ie-GdY"/>
                         <outlet property="registerBtn" destination="qgc-hw-IJH" id="O85-KJ-6K2"/>
                         <outlet property="userNameErrorLabel" destination="xrn-lj-HL8" id="ODg-e3-fqC"/>
                         <outlet property="usernameTxtField" destination="kvL-cx-Ufn" id="Fd8-By-lya"/>

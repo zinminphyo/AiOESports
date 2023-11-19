@@ -12,8 +12,6 @@ class Register: UIViewController {
     
     @IBOutlet weak var usernameTxtField: UITextField!
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
-    @IBOutlet weak var enterPinView: PinView!
-    @IBOutlet weak var reEnterPinView: PinView!
     @IBOutlet weak var enterPasscodeView: PasscodeView!
     @IBOutlet weak var reEnterPasscodeView: PasscodeView!
     @IBOutlet weak var registerBtn: UIButton!
@@ -35,18 +33,28 @@ class Register: UIViewController {
     }
     
     private func configureHierarchy() {
+        configureKeyboardDismiss()
         configurePresenter()
         configureUserNameTxtField()
         configurePhoneNumberView()
-        configureEnterPinView()
-        configureReEnterPinView()
+        configurePasscodeView()
         configureLoginBtn()
         configureRegisterBtn()
+    }
+    
+    private func configureKeyboardDismiss() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapKeyboardToDismiss(_:)))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func didTapKeyboardToDismiss(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     private func configurePresenter() {
        
         presenter?.viewDidLoad()
+        
     }
     
     private func configureUserNameTxtField() {
@@ -55,23 +63,18 @@ class Register: UIViewController {
         attributedPlaceholder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: NSRange(location: 0, length: placeholder.count))
         usernameTxtField.attributedPlaceholder = attributedPlaceholder
         usernameTxtField.addTarget(self, action: #selector(didChangeUserName), for: .editingChanged)
+        usernameTxtField.textColor = UIColor.white
     }
     
     private func configurePhoneNumberView() {
         phoneNumberView.delegate = self
     }
     
-    private func configureEnterPinView() {
-        enterPinView.state = .enter
-        enterPinView.delegate = self
+    private func configurePasscodeView() {
         enterPasscodeView.delegate = self
-    }
-    
-    private func configureReEnterPinView() {
-        reEnterPinView.state = .enter
-        reEnterPinView.delegate = self
         reEnterPasscodeView.delegate = self
     }
+    
     
     private func configureRegisterBtn() {
         if #available(iOS 15.0, *) {
@@ -144,28 +147,6 @@ extension Register: PhoneNumberViewDelegate {
 
 
 
-
-
-// MARK: - PinViewDelegate
-extension Register: PinViewDelegate {
-    func didFinishedConfirmCode(pinView: PinView, isMatched: Bool) {
-        
-    }
-    
-    func didFinishedEnterCode(pinView: PinView, password: String) {
-        if pinView == enterPinView {
-            presenter?.set(enterPassword: password)
-        } else {
-            presenter?.set(reEnterPassword: password)
-        }
-    }
-    
-    func didTapDeleteButton(pinView: PinView) {
-        
-    }
-}
-
-
 // MARK: - Register View Delegate
 extension Register: RegisterViewDelegate {
     
@@ -182,6 +163,10 @@ extension Register: RegisterViewDelegate {
         }
         
         */
+        
+        enterPasswordErrorLabel.isHidden = !(state == .passwordNotMatch)
+        reEnterPasswordErrorLabel.isHidden = !(state == .passwordNotMatch)
+        
         
         userNameErrorLabel.text = state.errorString
         phoneNumberErrorLabel.text = state.errorString
