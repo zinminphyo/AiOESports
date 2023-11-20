@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol DetailsViewDelegate {
-    var presenter: DetailsPresenting? { get set }
+    var presenter: DetailsPresenter? { get set }
     func renderDetails(details: TeamDetails)
     func renderPlayerDetails(details: PlayerDetails)
     func renderCasterDetails(details: PlayerDetails)

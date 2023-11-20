@@ -336,14 +336,24 @@
                                     <constraint firstItem="q4n-lz-QeP" firstAttribute="centerY" secondItem="gfg-Ep-qRq" secondAttribute="centerY" id="zaz-Ce-Ypu"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5b4-Tp-B5S" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
+                                <rect key="frame" x="156.66666666666666" y="386" width="80" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="PQc-V0-RkX"/>
+                                    <constraint firstAttribute="width" constant="80" id="UVt-me-HAY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ywY-sY-uXS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0zs-K8-yuh"/>
+                            <constraint firstItem="5b4-Tp-B5S" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5Yk-oG-EfB"/>
                             <constraint firstItem="ywY-sY-uXS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Hzf-8W-cNO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ywY-sY-uXS" secondAttribute="bottom" id="M5S-Vv-DVd"/>
                             <constraint firstItem="gfg-Ep-qRq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="W0t-bq-G1c"/>
+                            <constraint firstItem="5b4-Tp-B5S" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="aaB-k8-QIU"/>
                             <constraint firstItem="ye6-fn-uOa" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="dvV-nl-qAi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gfg-Ep-qRq" secondAttribute="trailing" id="evJ-Ge-PWN"/>
                             <constraint firstItem="gfg-Ep-qRq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fdB-BC-4ji"/>
@@ -357,6 +367,7 @@
                         <outlet property="contentScrollView" destination="AIk-b1-A2T" id="bOu-Xc-PSr"/>
                         <outlet property="coverImageView" destination="yUa-lQ-7fD" id="rpy-AZ-dNs"/>
                         <outlet property="detailsInfoContainerView" destination="W3j-gL-NgD" id="bHh-fR-Jbt"/>
+                        <outlet property="loadingView" destination="5b4-Tp-B5S" id="XGq-2M-QVK"/>
                         <outlet property="locationCOntainerView" destination="nQA-5V-uyM" id="4s2-nZ-2rT"/>
                         <outlet property="locationImageView" destination="ycm-BR-ucZ" id="sGB-Hz-8fu"/>
                         <outlet property="teamImageView" destination="KjU-7w-Qab" id="dIM-A8-ha6"/>

@@ -31,6 +31,8 @@ class LoadingView: UIView {
     }
     
     private func configureLoadingView() {
+        layer.cornerRadius = 10
+        layer.cornerCurve = .continuous
         addSubview(indicatorView)
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Combine
 
 class Details: UIViewController {
     
@@ -21,12 +22,15 @@ class Details: UIViewController {
     @IBOutlet weak var teamInfoContainerView: UIView!
     @IBOutlet weak var locationCOntainerView: UIView!
     @IBOutlet weak var detailsInfoContainerView: UIView!
+    @IBOutlet weak var loadingView: LoadingView!
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    var presenter: DetailsPresenting?
+    var presenter: DetailsPresenter?
+    
+    var subscription = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +39,12 @@ class Details: UIViewController {
         
         configureHierarchy()
         
-        presenter?.fetchDetails()
+       
     }
     
 
     private func configureHierarchy() {
+        configurePresenter()
         configureContainerView()
         configureContainerScrollView()
         configureCoverImageView()
@@ -52,6 +57,17 @@ class Details: UIViewController {
         configureDetailsInfoContainerView()
         configureCollectionView()
         configureContentScrollView()
+    }
+    
+    private func configurePresenter() {
+        presenter?.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
+            }).store(in: &subscription)
+        
+        presenter?.fetchDetails()
     }
     
     private func configureContainerView() {
@@ -250,6 +266,7 @@ extension Details: UIScrollViewDelegate {
 
 // MARK: - View Delegate Protocol Conformance.
 extension Details: DetailsViewDelegate {
+    
     func renderDetails(details: TeamDetails) {
         removeALLContentSubViews()
         configureCollectionView()

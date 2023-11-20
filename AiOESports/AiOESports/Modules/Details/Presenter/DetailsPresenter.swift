@@ -15,6 +15,9 @@ class DetailsPresenter: DetailsPresenting {
         self.id = id
     }
     
+    @Published
+    var isLoading: Bool = false
+    
     var viewDelegate: DetailsViewDelegate?
     
     private var category: RankCategory = .team
@@ -26,6 +29,7 @@ class DetailsPresenter: DetailsPresenting {
     private var creatorDetails: PlayerDetails? = nil
     
     func fetchDetails() {
+        isLoading = true
         switch category {
         case .team:
             let router = ApiRouter.teamDetails(id)
@@ -37,6 +41,7 @@ class DetailsPresenter: DetailsPresenting {
                 case .failure(let failure):
                     print("Failure is \(failure)")
                 }
+                self.isLoading = false
             }
         case .player:
             let router = ApiRouter.playerDetails(id)
@@ -48,6 +53,7 @@ class DetailsPresenter: DetailsPresenting {
                 case .failure(let failure):
                     print("Player detials error is \(failure.localizedDescription)")
                 }
+                self.isLoading = false
             }
         case .caster:
             let router = ApiRouter.casterDetails(id)
@@ -59,6 +65,7 @@ class DetailsPresenter: DetailsPresenting {
                 case .failure(let failure):
                     print("Failure is \(failure)")
                 }
+                self.isLoading = false
             }
         case .creator:
             let router = ApiRouter.creatorDetails(id)
@@ -70,6 +77,7 @@ class DetailsPresenter: DetailsPresenting {
                 case .failure(let failure):
                     print("Failure is \(failure)")
                 }
+                self.isLoading = false
             }
         }
         
