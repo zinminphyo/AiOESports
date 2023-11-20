@@ -226,3 +226,30 @@ class Images {
         static let registrationSuccess = UIImage(named: "RegisterSuccess", in: .main, compatibleWith: nil)
     }
 }
+
+
+extension Images {
+    static func gameLogo(gameType: String) -> UIImage? {
+        
+        guard let gameType = GameType(gameType) else {
+            return nil
+        }
+        
+        switch gameType {
+        case .mlbb:
+            return UIImage(named: "MLBB_Image")
+        case .dota:
+            return UIImage(named: "Dota_Image")
+        }
+        
+    }
+    
+    enum GameType: String {
+        case mlbb
+        case dota
+        
+        init?(_ rawValue: String) {
+            self = GameType(rawValue: rawValue) ?? .mlbb
+        }
+    }
+}

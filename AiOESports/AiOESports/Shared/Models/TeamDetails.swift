@@ -103,6 +103,7 @@ import Foundation
 
 struct TeamDetails: Decodable {
     
+    let followRating: TotalFollowRating
     let detail: TeamDetailsModel
     let social: [SocialModel]
     let squad: SquadModel
@@ -111,6 +112,7 @@ struct TeamDetails: Decodable {
     let formerPlayers: [FormerPlayerModel]
     
     enum CodingKeys: String, CodingKey {
+        case followRating = "TotalFollowRating"
         case squad = "player"
         case achivements = "achieve"
         case sponsors = "sponsor"
@@ -126,6 +128,7 @@ struct TeamDetails: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let resultContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let dataContainer = try resultContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+        followRating = try dataContainer.decode(TotalFollowRating.self, forKey: .followRating)
         squad = try dataContainer.decodeIfPresent(SquadModel.self, forKey: .squad) ?? SquadModel(headCoach: nil, assistantCoach: nil, technicalDirector: nil, analyst: nil, roster: [])
         achivemets = try dataContainer.decodeIfPresent([AchivementModel].self, forKey: .achivements) ?? []
         sponsors = try dataContainer.decodeIfPresent([SponsorModel].self, forKey: .sponsors) ?? []
@@ -134,5 +137,12 @@ struct TeamDetails: Decodable {
         let statsContainer = try dataContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .stats)
         detail = try statsContainer.decode(TeamDetailsModel.self, forKey: .detail)
         social = try statsContainer.decodeIfPresent([SocialModel].self, forKey: .social) ?? []
+    }
+    
+    struct TotalFollowRating: Decodable {
+        let teamRank: Int
+        let totalFollowers: Int
+        let totalRating: Int
+        let totalRatingStars: String
     }
 }

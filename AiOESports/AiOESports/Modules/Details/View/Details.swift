@@ -17,12 +17,16 @@ class Details: UIViewController {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
-    @IBOutlet weak var locationImageView: UIImageView!
-    @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var teamInfoContainerView: UIView!
     @IBOutlet weak var locationCOntainerView: UIView!
     @IBOutlet weak var detailsInfoContainerView: UIView!
     @IBOutlet weak var loadingView: LoadingView!
+    @IBOutlet weak var gameImageView: UIImageView!
+    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var totalRatingLabel: UILabel!
+    @IBOutlet weak var totalFollowerCountLabel: UILabel!
+    @IBOutlet weak var totalVotedCountLabel: UILabel!
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -99,8 +103,6 @@ class Details: UIViewController {
     }
     
     private func configureCityLabel() {
-        cityNameLabel.textColor = Colors.Text.primaryText
-        cityNameLabel.font = Fonts.subtitleFont
     }
     
     private func configureLocationContainerView() {
@@ -274,8 +276,12 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
         teamNameLabel.text = details.detail.fullName
-        locationImageView.kf.setImage(with: URL(string: details.detail.locationImageFullPath))
-        cityNameLabel.text = details.detail.city
+        gameNameLabel.text = details.detail.game.uppercased()
+        gameImageView.image = Images.gameLogo(gameType: details.detail.game)
+        rankLabel.text = String(details.followRating.teamRank)
+        totalRatingLabel.text = details.followRating.totalRatingStars
+        totalFollowerCountLabel.text = "\(details.followRating.totalFollowers) people following"
+        totalVotedCountLabel.text = "\(details.followRating.totalRating) people voted"
     }
     
     func renderPlayerDetails(details: PlayerDetails) {
@@ -285,8 +291,6 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
-        locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
-        cityNameLabel.text = details.details.city
     }
     
     func renderCasterDetails(details: PlayerDetails) {
@@ -296,8 +300,6 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
-        locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
-        cityNameLabel.text = details.details.city
     }
     
     func renderCreatorDetails(details: PlayerDetails) {
@@ -307,8 +309,6 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
-        locationImageView.kf.setImage(with: URL(string: details.details.locationImageFullPath))
-        cityNameLabel.text = details.details.city
     }
 }
 
