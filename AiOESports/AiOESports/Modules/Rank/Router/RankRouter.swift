@@ -26,10 +26,10 @@ class RankRouter: RankRouting {
     
     
     func routeToDetails(category: RankCategory, id: Int) {
-//        guard let vc = DetailsModuel.createModule(category: category, id: id) else { return }
-//        viewController?.navigationController?.pushViewController(vc, animated: true)
-        let vc = DetailController()
-        vc.hidesBottomBarWhenPushed = true
+        guard let vc = DetailsModuel.createModule(category: category, id: id) else { return }
         viewController?.navigationController?.pushViewController(vc, animated: true)
+//        let vc = DetailController()
+//        vc.hidesBottomBarWhenPushed = true
+//        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
