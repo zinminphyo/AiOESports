@@ -200,6 +200,8 @@
 		84BE00142A0D488F00228691 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE00132A0D488F00228691 /* Welcome.storyboard */; };
 		84BE00162A0D48C600228691 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE00152A0D48C600228691 /* Welcome.swift */; };
 		84BE00182A0D48DB00228691 /* WelcomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE00172A0D48DB00228691 /* WelcomeModule.swift */; };
+		84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C578952B0B677100BD4FC9 /* DetailsContentView.xib */; };
+		84C578982B0B67D000BD4FC9 /* DetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C578972B0B67D000BD4FC9 /* DetailsContentView.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -499,6 +501,8 @@
 		84BE00132A0D488F00228691 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		84BE00152A0D48C600228691 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		84BE00172A0D48DB00228691 /* WelcomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModule.swift; sourceTree = "<group>"; };
+		84C578952B0B677100BD4FC9 /* DetailsContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsContentView.xib; sourceTree = "<group>"; };
+		84C578972B0B67D000BD4FC9 /* DetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContentView.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -1538,6 +1542,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		84C578942B0B672900BD4FC9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84C578952B0B677100BD4FC9 /* DetailsContentView.xib */,
+				84C578972B0B67D000BD4FC9 /* DetailsContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1696,6 +1709,7 @@
 		84DF526A2B0A65EB00CCB036 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				84C578942B0B672900BD4FC9 /* view */,
 				84DF526D2B0A66D800CCB036 /* controller */,
 			);
 			path = Detail;
@@ -2118,6 +2132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
+				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
 				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
@@ -2489,6 +2504,7 @@
 				84A050EB29E951CA004D582B /* EmptyView.swift in Sources */,
 				84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */,
 				84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */,
+				84C578982B0B67D000BD4FC9 /* DetailsContentView.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,

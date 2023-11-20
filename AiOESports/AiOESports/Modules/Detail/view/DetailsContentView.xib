@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsContentView" customModule="AiOESports" customModuleProvider="target">
+            <connections>
+                <outlet property="contentScrollView" destination="JZG-9P-Sar" id="MHG-le-1sP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="362"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JZG-9P-Sar">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="362"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="k2e-an-xcX"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Vr7-XJ-Th8"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="JZG-9P-Sar" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Wh-pw-6K0"/>
+                <constraint firstAttribute="trailing" secondItem="JZG-9P-Sar" secondAttribute="trailing" id="LFa-bS-jTS"/>
+                <constraint firstAttribute="bottom" secondItem="JZG-9P-Sar" secondAttribute="bottom" id="Qgb-0G-6hP"/>
+                <constraint firstItem="JZG-9P-Sar" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qfT-p5-QOD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="130.53435114503816" y="161.26760563380282"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
