@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileInfoView" customModule="AiOESports" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="wbY-0h-FUi" id="ZGc-Au-AGw"/>
+                <outlet property="valueLabel" destination="x8x-o9-D18" id="VFe-dD-cts"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wh0-7b-yri">
+                    <rect key="frame" x="18" y="15" width="357" height="41"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-0h-FUi">
+                            <rect key="frame" x="0.0" y="0.0" width="357" height="18.666666666666668"/>
+                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
+                            <color key="textColor" red="0.71372549019607845" green="0.7686274509803922" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane Cooper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8x-o9-D18">
+                            <rect key="frame" x="0.0" y="22.666666666666664" width="357" height="18.333333333333336"/>
+                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lN9-CK-76j">
+                    <rect key="frame" x="18" y="69" width="357" height="1"/>
+                    <color key="backgroundColor" red="0.14117647058823529" green="0.1803921568627451" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="vbJ-8f-1Mx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="InputBackground"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wh0-7b-yri" secondAttribute="trailing" constant="18" id="1Yz-dB-fa7"/>
+                <constraint firstItem="Wh0-7b-yri" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="5Qo-vo-Yi8"/>
+                <constraint firstAttribute="bottom" secondItem="lN9-CK-76j" secondAttribute="bottom" id="5Yt-nb-xjd"/>
+                <constraint firstItem="Wh0-7b-yri" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="ABO-jW-Uow"/>
+                <constraint firstAttribute="trailing" secondItem="lN9-CK-76j" secondAttribute="trailing" constant="18" id="KCr-De-j73"/>
+                <constraint firstItem="lN9-CK-76j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="YvO-IG-3Ih"/>
+                <constraint firstItem="lN9-CK-76j" firstAttribute="top" secondItem="Wh0-7b-yri" secondAttribute="bottom" constant="13" id="gUp-ch-ULd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="267.93893129770993" y="41.549295774647888"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="InputBackground">
+            <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

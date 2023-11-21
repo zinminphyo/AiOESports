@@ -39,7 +39,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapProfileInfo(_ sender: UIButton) {
-        
+        let vc = ProfileBasicController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
