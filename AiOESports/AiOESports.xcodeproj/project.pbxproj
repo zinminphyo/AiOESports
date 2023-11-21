@@ -105,6 +105,8 @@
 		8479C5BD29EBF7BE008C97B9 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */; };
 		8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */; };
 		8479C5BF29EBF7BE008C97B9 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */; };
+		849183E32B0D222100980944 /* ProfileLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849183E22B0D222100980944 /* ProfileLevelView.xib */; };
+		849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849183E42B0D224D00980944 /* ProfileLevelView.swift */; };
 		849321E729EC48F900A05EB8 /* TeamOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849321E629EC48F900A05EB8 /* TeamOverviewRouting.swift */; };
 		849321E929EC492E00A05EB8 /* TeamOverviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849321E829EC492E00A05EB8 /* TeamOverviewRouter.swift */; };
 		849AEB922A13DC490024AAAA /* LoginInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AEB912A13DC490024AAAA /* LoginInteracting.swift */; };
@@ -236,6 +238,9 @@
 		84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */; };
 		84DE12392A0572350024D48E /* AiOPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DE12382A0572350024D48E /* AiOPicker.xib */; };
 		84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE123A2A0572630024D48E /* AiOPicker.swift */; };
+		84DE4FC52B0D10370017AC84 /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DE4FC42B0D10370017AC84 /* ProfileController.xib */; };
+		84DE4FC72B0D107C0017AC84 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE4FC62B0D107C0017AC84 /* ProfileController.swift */; };
+		84DE4FCA2B0D10B00017AC84 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */; };
 		84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DF526E2B0A66E700CCB036 /* DetailController.xib */; };
 		84DF52712B0A6D4900CCB036 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF52702B0A6D4900CCB036 /* DetailController.swift */; };
 		84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */; };
@@ -406,6 +411,8 @@
 		8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		849183E22B0D222100980944 /* ProfileLevelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLevelView.xib; sourceTree = "<group>"; };
+		849183E42B0D224D00980944 /* ProfileLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLevelView.swift; sourceTree = "<group>"; };
 		849321E629EC48F900A05EB8 /* TeamOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamOverviewRouting.swift; sourceTree = "<group>"; };
 		849321E829EC492E00A05EB8 /* TeamOverviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamOverviewRouter.swift; sourceTree = "<group>"; };
 		849AEB912A13DC490024AAAA /* LoginInteracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteracting.swift; sourceTree = "<group>"; };
@@ -537,6 +544,9 @@
 		84DE12352A056E4E0024D48E /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
 		84DE12382A0572350024D48E /* AiOPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOPicker.xib; sourceTree = "<group>"; };
 		84DE123A2A0572630024D48E /* AiOPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOPicker.swift; sourceTree = "<group>"; };
+		84DE4FC42B0D10370017AC84 /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
+		84DE4FC62B0D107C0017AC84 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		84DF526E2B0A66E700CCB036 /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 		84DF52702B0A6D4900CCB036 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOLoadingView.xib; sourceTree = "<group>"; };
@@ -1096,6 +1106,23 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		849183E02B0D220C00980944 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				849183E12B0D221300980944 /* ProfileLevel */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		849183E12B0D221300980944 /* ProfileLevel */ = {
+			isa = PBXGroup;
+			children = (
+				849183E22B0D222100980944 /* ProfileLevelView.xib */,
+				849183E42B0D224D00980944 /* ProfileLevelView.swift */,
+			);
+			path = ProfileLevel;
+			sourceTree = "<group>";
+		};
 		849321E529EC48EC00A05EB8 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1214,6 +1241,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84DE4FC22B0D10130017AC84 /* Profile */,
 				84A480692B0925B500268A77 /* LoadingView */,
 				845275CE2B08E72A00EEAF84 /* PasscodeView */,
 				84EB49352A24FBA8002BFD5F /* AiOLoadingView */,
@@ -1706,6 +1734,33 @@
 			path = AiOPicker;
 			sourceTree = "<group>";
 		};
+		84DE4FC22B0D10130017AC84 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				849183E02B0D220C00980944 /* view */,
+				84DE4FC82B0D10A50017AC84 /* viewModel */,
+				84DE4FC32B0D101C0017AC84 /* controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84DE4FC32B0D101C0017AC84 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84DE4FC42B0D10370017AC84 /* ProfileController.xib */,
+				84DE4FC62B0D107C0017AC84 /* ProfileController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84DE4FC82B0D10A50017AC84 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		84DF526A2B0A65EB00CCB036 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -2152,6 +2207,7 @@
 				845346E929FFBAB30077F8A0 /* DatePicker.xib in Resources */,
 				8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
+				84DE4FC52B0D10370017AC84 /* ProfileController.xib in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
 				8479C5BD29EBF7BE008C97B9 /* DMSans-Regular.ttf in Resources */,
@@ -2185,6 +2241,7 @@
 				84725AD529E16BA5003658CD /* AchivementTableViewCell.xib in Resources */,
 				84725AC829E12C95003658CD /* SquadTableViewCell.xib in Resources */,
 				84F602F129DC809A00250C25 /* FilterSettingTableViewCell.xib in Resources */,
+				849183E32B0D222100980944 /* ProfileLevelView.xib in Resources */,
 				84F6C5B529CA12E800D21EE2 /* Main.storyboard in Resources */,
 				84A050D729E925E7004D582B /* OverviewImageCollectionViewCell.xib in Resources */,
 				84DE12392A0572350024D48E /* AiOPicker.xib in Resources */,
@@ -2349,6 +2406,7 @@
 				84F5FB1129DEC5DC00734CAE /* SearchInteractor.swift in Sources */,
 				84F602F529DC84E000250C25 /* RankPresenting.swift in Sources */,
 				84B7456C29E4851D0086C708 /* AchivementViewDelegate.swift in Sources */,
+				84DE4FCA2B0D10B00017AC84 /* ProfileViewModel.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				8437FE7529ED1A74008F7179 /* HomeModel.swift in Sources */,
 				842FC9AB29E83F9300C5F354 /* SignatureModel.swift in Sources */,
@@ -2391,6 +2449,7 @@
 				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
+				849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
 				84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */,
 				849AEB922A13DC490024AAAA /* LoginInteracting.swift in Sources */,
@@ -2404,6 +2463,7 @@
 				84B7457A29E489090086C708 /* FormerPlayerTableViewCell.swift in Sources */,
 				84D9C47029E2C56F006B06DD /* TeamDetails.swift in Sources */,
 				842FC9C329E84E3700C5F354 /* PlayerOverviewPresenter.swift in Sources */,
+				84DE4FC72B0D107C0017AC84 /* ProfileController.swift in Sources */,
 				84597C7829EA5113007C511B /* SubGameModel.swift in Sources */,
 				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
 				84A050E229E92C16004D582B /* CareerPresenting.swift in Sources */,

@@ -89,6 +89,11 @@ extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, 
         let index: Int = Int(scrollView.contentOffset.x / scrollView.frame.width)
         self.pageControl.currentPage = index
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ProfileController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 
