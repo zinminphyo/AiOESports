@@ -247,6 +247,8 @@
 		84DE4FCA2B0D10B00017AC84 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */; };
 		84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DF526E2B0A66E700CCB036 /* DetailController.xib */; };
 		84DF52712B0A6D4900CCB036 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF52702B0A6D4900CCB036 /* DetailController.swift */; };
+		84E753FE2B0D38C7007D11B0 /* ProfileEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E753FD2B0D38C7007D11B0 /* ProfileEditController.xib */; };
+		84E754002B0D38E1007D11B0 /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E753FF2B0D38E1007D11B0 /* ProfileEditController.swift */; };
 		84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */; };
 		84EB49392A24FD16002BFD5F /* AiOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB49382A24FD16002BFD5F /* AiOLoadingView.swift */; };
 		84EB493B2A250179002BFD5F /* RegistrationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB493A2A250179002BFD5F /* RegistrationError.swift */; };
@@ -557,6 +559,8 @@
 		84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		84DF526E2B0A66E700CCB036 /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 		84DF52702B0A6D4900CCB036 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		84E753FD2B0D38C7007D11B0 /* ProfileEditController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditController.xib; sourceTree = "<group>"; };
+		84E753FF2B0D38E1007D11B0 /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
 		84EB49362A24FBBD002BFD5F /* AiOLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOLoadingView.xib; sourceTree = "<group>"; };
 		84EB49382A24FD16002BFD5F /* AiOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOLoadingView.swift; sourceTree = "<group>"; };
 		84EB493A2A250179002BFD5F /* RegistrationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationError.swift; sourceTree = "<group>"; };
@@ -1249,6 +1253,7 @@
 		849B9C3129D1850600F1C2D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84E753FB2B0D38A9007D11B0 /* ProfileEdit */,
 				84A2BAEE2B0D30F50021F2FD /* ProfileBasic */,
 				84DE4FC22B0D10130017AC84 /* Profile */,
 				84A480692B0925B500268A77 /* LoadingView */,
@@ -1815,6 +1820,23 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		84E753FB2B0D38A9007D11B0 /* ProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				84E753FC2B0D38BA007D11B0 /* controller */,
+			);
+			path = ProfileEdit;
+			sourceTree = "<group>";
+		};
+		84E753FC2B0D38BA007D11B0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84E753FD2B0D38C7007D11B0 /* ProfileEditController.xib */,
+				84E753FF2B0D38E1007D11B0 /* ProfileEditController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		84EB49352A24FBA8002BFD5F /* AiOLoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2261,6 +2283,7 @@
 				84CF0A0A29D9FAAE00F87400 /* Tour.storyboard in Resources */,
 				84CF0A0229D9FA2200F87400 /* Match.storyboard in Resources */,
 				84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */,
+				84E753FE2B0D38C7007D11B0 /* ProfileEditController.xib in Resources */,
 				84597C7629EA4A38007C511B /* GameImageCollectionViewCell.xib in Resources */,
 				842FC9B829E84CA300C5F354 /* PlayerOverview.storyboard in Resources */,
 				849AEBA82A1543440024AAAA /* PhNumTableCell.xib in Resources */,
@@ -2519,6 +2542,7 @@
 				8454D36029F5941100B97EE3 /* RegisterPresenting.swift in Sources */,
 				84B7455829E460080086C708 /* RosterModel.swift in Sources */,
 				84F5FAFA29DEAFCB00734CAE /* Search.swift in Sources */,
+				84E754002B0D38E1007D11B0 /* ProfileEditController.swift in Sources */,
 				842FC9BA29E84D0600C5F354 /* PlayerOverview.swift in Sources */,
 				84725AAF29E07E69003658CD /* FilterSettingPresenter.swift in Sources */,
 				845346DE29FF83D00077F8A0 /* UploadProfileModule.swift in Sources */,

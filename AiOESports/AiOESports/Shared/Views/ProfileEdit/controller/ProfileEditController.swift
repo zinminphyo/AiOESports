@@ -1,5 +1,5 @@
 //
-//  ProfileBasicController.swift
+//  ProfileEditController.swift
 //  AiOESports
 //
 //  Created by Zin Min Phyo on 22/11/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileBasicController: UIViewController {
+class ProfileEditController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,20 +16,15 @@ class ProfileBasicController: UIViewController {
     }
     
 
-    
-
-}
-
-
-extension ProfileBasicController {
     @IBAction
     private func didTapBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+   
     
     @IBAction
-    private func didTapEdit(_ sender: UIButton) {
-        let vc = ProfileEditController()
-        navigationController?.pushViewController(vc, animated: true)
+    private func didTapSave(_ sender: UIButton) {
+        
     }
+
 }
