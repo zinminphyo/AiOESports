@@ -265,6 +265,8 @@
 		84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF0A9329EEF2690042B6BF /* HomeContainerModule.swift */; };
 		84F17ACB2B0DE47400B97B08 /* InputDropdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F17ACA2B0DE47400B97B08 /* InputDropdownView.xib */; };
 		84F17ACD2B0DE69000B97B08 /* InputDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F17ACC2B0DE69000B97B08 /* InputDropdownView.swift */; };
+		84F17AD02B0E260400B97B08 /* AiOPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F17ACF2B0E260400B97B08 /* AiOPickerView.xib */; };
+		84F17AD22B0E26BF00B97B08 /* AiOPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F17AD12B0E26BE00B97B08 /* AiOPickerView.swift */; };
 		84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF129DE81D800734CAE /* Pagination.swift */; };
 		84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */; };
 		84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAF729DEAE3300734CAE /* Search.storyboard */; };
@@ -581,6 +583,8 @@
 		84EF0A9329EEF2690042B6BF /* HomeContainerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerModule.swift; sourceTree = "<group>"; };
 		84F17ACA2B0DE47400B97B08 /* InputDropdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputDropdownView.xib; sourceTree = "<group>"; };
 		84F17ACC2B0DE69000B97B08 /* InputDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDropdownView.swift; sourceTree = "<group>"; };
+		84F17ACF2B0E260400B97B08 /* AiOPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AiOPickerView.xib; sourceTree = "<group>"; };
+		84F17AD12B0E26BE00B97B08 /* AiOPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiOPickerView.swift; sourceTree = "<group>"; };
 		84F5FAF129DE81D800734CAE /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		84F5FAF729DEAE3300734CAE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -1849,6 +1853,7 @@
 		84E754012B0D3C18007D11B0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				84F17ACE2B0E25E300B97B08 /* PickerView */,
 				84F17AC92B0DE44400B97B08 /* InputDropDownView */,
 				84E754022B0D3C1B007D11B0 /* InputTextFieldView */,
 			);
@@ -1925,6 +1930,15 @@
 				84F17ACC2B0DE69000B97B08 /* InputDropdownView.swift */,
 			);
 			path = InputDropDownView;
+			sourceTree = "<group>";
+		};
+		84F17ACE2B0E25E300B97B08 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				84F17ACF2B0E260400B97B08 /* AiOPickerView.xib */,
+				84F17AD12B0E26BE00B97B08 /* AiOPickerView.swift */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 		84F5FAF529DEAE2600734CAE /* Search */ = {
@@ -2292,6 +2306,7 @@
 				84A050DB29E92A6A004D582B /* Career.storyboard in Resources */,
 				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
+				84F17AD02B0E260400B97B08 /* AiOPickerView.xib in Resources */,
 				84A050C829E90654004D582B /* OverviewCellWithMultipleImages.xib in Resources */,
 				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
 				84BE00142A0D488F00228691 /* Welcome.storyboard in Resources */,
@@ -2689,6 +2704,7 @@
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
 				84725AC129E12BE1003658CD /* Squad.swift in Sources */,
 				84F5FB0D29DEC49D00734CAE /* SearchViewDelegate.swift in Sources */,
+				84F17AD22B0E26BF00B97B08 /* AiOPickerView.swift in Sources */,
 				8437FE7F29ED1DA3008F7179 /* HomePresenter.swift in Sources */,
 				84B7458229E491730086C708 /* FormerPlayersPresenter.swift in Sources */,
 				84725AC329E12BF8003658CD /* SquadModule.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 class ProfileEditController: UIViewController {
     
     @IBOutlet private(set) var birthdayDropdown: InputDropdownView!
+    @IBOutlet private(set) var stateDropdown: InputDropdownView!
+    @IBOutlet private(set) var cityDropdown: InputDropdownView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class ProfileEditController: UIViewController {
     private func configureHierarchy() {
         configureEndEditing()
         configureBirthdayDropdown()
+        configureStateDropdown()
+        configureCityDropdown()
     }
     
     private func configureEndEditing() {
@@ -38,6 +42,22 @@ class ProfileEditController: UIViewController {
         datePicker.maximumDate = Date()
         datePicker.preferredDatePickerStyle = .wheels
         birthdayDropdown.customInputView = datePicker
+    }
+    
+    private func configureStateDropdown() {
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 200)
+        let picker = AiOPickerView(frame: rect)
+        picker.items = [
+            "Yangon",
+            "Mandalay",
+            "Chin",
+            "NayPyiTaw"
+        ]
+        stateDropdown.customInputView = picker
+    }
+    
+    private func configureCityDropdown() {
+        
     }
     
 

@@ -21,6 +21,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileEditController" customModule="AiOESports" customModuleProvider="target">
             <connections>
                 <outlet property="birthdayDropdown" destination="YX7-Mt-W5A" id="lTM-rn-eHS"/>
+                <outlet property="cityDropdown" destination="AX1-I9-Vab" id="v5D-la-4tB"/>
+                <outlet property="stateDropdown" destination="HYB-5u-VTI" id="dsQ-O4-D4W"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UEB-gc-mS5"/>
             </connections>
         </placeholder>
