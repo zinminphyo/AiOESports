@@ -45,7 +45,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapGameSorting(_ sender: UIButton) {
-        
+        let vc = GameSortingController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
