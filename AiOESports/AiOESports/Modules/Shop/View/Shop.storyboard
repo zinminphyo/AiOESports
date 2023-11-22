@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Shop-->
         <scene sceneID="s0d-6b-0kx">
@@ -15,8 +21,40 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJL-fy-q32">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySH-cf-HvH">
+                                        <rect key="frame" x="18.000000000000004" y="11.999999999999998" width="54.333333333333343" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Vf-j0-qC0"/>
+                                    <constraint firstItem="ySH-cf-HvH" firstAttribute="leading" secondItem="SJL-fy-q32" secondAttribute="leading" constant="18" id="Elx-b9-fbG"/>
+                                    <constraint firstItem="ySH-cf-HvH" firstAttribute="centerY" secondItem="SJL-fy-q32" secondAttribute="centerY" id="jT3-g0-DpG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7G-Dt-6oO" customClass="ComingSoonView" customModule="AiOESports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ThemeColor"/>
+                        <constraints>
+                            <constraint firstItem="SJL-fy-q32" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5og-9q-tOt"/>
+                            <constraint firstItem="S7G-Dt-6oO" firstAttribute="top" secondItem="SJL-fy-q32" secondAttribute="bottom" id="FhI-As-xPd"/>
+                            <constraint firstItem="SJL-fy-q32" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="HCh-OB-DZX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="S7G-Dt-6oO" secondAttribute="trailing" id="JXi-76-bP4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="S7G-Dt-6oO" secondAttribute="bottom" id="dDf-HX-8um"/>
+                            <constraint firstItem="S7G-Dt-6oO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="e5V-La-oPN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SJL-fy-q32" secondAttribute="trailing" id="eEs-9B-lWf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
