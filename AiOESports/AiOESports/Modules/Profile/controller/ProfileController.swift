@@ -61,7 +61,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapPasscode(_ sender: UIButton) {
-        
+        let vc = PasscodeController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
