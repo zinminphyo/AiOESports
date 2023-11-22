@@ -67,7 +67,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapPrivacyPolicy(_ sender: UIButton) {
-        
+        let vc = PrivacyPolicyController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction

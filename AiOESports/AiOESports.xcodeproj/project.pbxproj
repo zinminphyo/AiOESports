@@ -273,6 +273,8 @@
 		84F17ADE2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F17ADC2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib */; };
 		84F17AE22B0E397300B97B08 /* PasscodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F17AE12B0E397300B97B08 /* PasscodeController.xib */; };
 		84F17AE42B0E3B2B00B97B08 /* PasscodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F17AE32B0E3B2B00B97B08 /* PasscodeController.swift */; };
+		84F17AE82B0E3D6900B97B08 /* PrivacyPolicyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F17AE72B0E3D6900B97B08 /* PrivacyPolicyController.xib */; };
+		84F17AEA2B0E3DED00B97B08 /* PrivacyPolicyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F17AE92B0E3DED00B97B08 /* PrivacyPolicyController.swift */; };
 		84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF129DE81D800734CAE /* Pagination.swift */; };
 		84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */; };
 		84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAF729DEAE3300734CAE /* Search.storyboard */; };
@@ -597,6 +599,8 @@
 		84F17ADC2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameSortingCategoryCell.xib; sourceTree = "<group>"; };
 		84F17AE12B0E397300B97B08 /* PasscodeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasscodeController.xib; sourceTree = "<group>"; };
 		84F17AE32B0E3B2B00B97B08 /* PasscodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeController.swift; sourceTree = "<group>"; };
+		84F17AE72B0E3D6900B97B08 /* PrivacyPolicyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyController.xib; sourceTree = "<group>"; };
+		84F17AE92B0E3DED00B97B08 /* PrivacyPolicyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyController.swift; sourceTree = "<group>"; };
 		84F5FAF129DE81D800734CAE /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		84F5FAF729DEAE3300734CAE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -2002,6 +2006,23 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		84F17AE52B0E3D5500B97B08 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				84F17AE62B0E3D5C00B97B08 /* controller */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		84F17AE62B0E3D5C00B97B08 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84F17AE72B0E3D6900B97B08 /* PrivacyPolicyController.xib */,
+				84F17AE92B0E3DED00B97B08 /* PrivacyPolicyController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		84F5FAF529DEAE2600734CAE /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -2185,6 +2206,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84F17AE52B0E3D5500B97B08 /* PrivacyPolicy */,
 				84F17AD32B0E2E5500B97B08 /* GameSorting */,
 				84E753FB2B0D38A9007D11B0 /* ProfileEdit */,
 				84A2BAEE2B0D30F50021F2FD /* ProfileBasic */,
@@ -2363,6 +2385,7 @@
 				84F17ADE2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib in Resources */,
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
+				84F17AE82B0E3D6900B97B08 /* PrivacyPolicyController.xib in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
 				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
@@ -2656,6 +2679,7 @@
 				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */,
+				84F17AEA2B0E3DED00B97B08 /* PrivacyPolicyController.swift in Sources */,
 				8437FE6E29ECD682008F7179 /* PlayerOverviewRouter.swift in Sources */,
 				849AEBA12A153F580024AAAA /* ForgotPassword.swift in Sources */,
 				84B7455E29E4643A0086C708 /* AchivementModel.swift in Sources */,
