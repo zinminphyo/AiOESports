@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
+            <connections>
+                <outlet property="inputTextField" destination="SUh-mV-QNR" id="qhu-Kd-zap"/>
+                <outlet property="titleLabel" destination="Ss4-hI-O1K" id="vWh-vu-yJh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="79"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="QP6-OA-2KG">
+                    <rect key="frame" x="18" y="0.0" width="357" height="79"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss4-hI-O1K">
+                            <rect key="frame" x="0.0" y="0.0" width="357" height="17"/>
+                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
+                            <color key="textColor" name="SecondaryText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-hf-JXp">
+                            <rect key="frame" x="0.0" y="26" width="357" height="53"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-mV-QNR">
+                                    <rect key="frame" x="15" y="0.0" width="342" height="53"/>
+                                    <color key="backgroundColor" name="InputColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" name="InputColor"/>
+                            <constraints>
+                                <constraint firstItem="SUh-mV-QNR" firstAttribute="top" secondItem="Hgj-hf-JXp" secondAttribute="top" id="D8g-d6-Lv1"/>
+                                <constraint firstItem="SUh-mV-QNR" firstAttribute="leading" secondItem="Hgj-hf-JXp" secondAttribute="leading" constant="15" id="G5P-bp-nmv"/>
+                                <constraint firstAttribute="bottom" secondItem="SUh-mV-QNR" secondAttribute="bottom" id="a4h-fg-lrt"/>
+                                <constraint firstAttribute="trailing" secondItem="SUh-mV-QNR" secondAttribute="trailing" id="pBW-EB-dl1"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" name="InputBackground"/>
+            <constraints>
+                <constraint firstItem="QP6-OA-2KG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TiB-2X-ige"/>
+                <constraint firstAttribute="trailing" secondItem="QP6-OA-2KG" secondAttribute="trailing" constant="18" id="bzA-J3-9hd"/>
+                <constraint firstItem="QP6-OA-2KG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="kGm-mG-FFZ"/>
+                <constraint firstAttribute="bottom" secondItem="QP6-OA-2KG" secondAttribute="bottom" id="riu-9u-2nN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="40.458015267175568" y="241.90140845070422"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="InputBackground">
+            <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InputColor">
+            <color red="0.12549019607843137" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryText">
+            <color red="0.71372549019607845" green="0.7686274509803922" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

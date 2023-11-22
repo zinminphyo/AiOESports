@@ -97,7 +97,7 @@
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="value" value="Jane Cooper"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="value" value="Zin Min Phyo"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-tM-XHp" customClass="ProfileInfoView" customModule="AiOESports" customModuleProvider="target">

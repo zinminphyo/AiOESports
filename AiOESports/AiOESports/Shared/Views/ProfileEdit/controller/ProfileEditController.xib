@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileEditController" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="birthdayDropdown" destination="YX7-Mt-W5A" id="lTM-rn-eHS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UEB-gc-mS5"/>
             </connections>
         </placeholder>
@@ -73,11 +74,11 @@
                         <constraint firstItem="QKu-sm-AkX" firstAttribute="centerY" secondItem="Jvb-gG-omq" secondAttribute="centerY" id="w1V-pc-1Rq"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0V-0k-A4A">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0V-0k-A4A">
                     <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9q-fo-Skf">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="800"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="917"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-j7-ifx" customClass="ProfileLevelView" customModule="AiOESports" customModuleProvider="target">
                                     <rect key="frame" x="121.66666666666669" y="23" width="150" height="150"/>
@@ -163,14 +164,93 @@
                                         <constraint firstAttribute="height" constant="35" id="5sy-GG-e1k"/>
                                     </constraints>
                                 </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IbG-ly-1GF">
+                                    <rect key="frame" x="0.0" y="237" width="393" height="680"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wW-mP-TYA" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="0wu-0O-7Vq"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="value" value="Zin Min Phyo"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKR-Md-l4i" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="100" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="CJL-58-YNo"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Phone Number"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="value" value="09757245240"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX7-Mt-W5A" customClass="InputDropdownView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="200" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="Eab-kA-gHJ"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-5u-VTI" customClass="InputDropdownView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="300" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="0tJ-oQ-tBd"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="State"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="dropdownInfo" value="Choose State"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AX1-I9-Vab" customClass="InputDropdownView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="400" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="C6M-MY-fgj"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="City"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="dropdownInfo" value="Choose City"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcf-7V-ee1" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="500" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="miD-NL-Hl2"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Facebook Account ID"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSM-sK-45C" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="600" width="393" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="gNu-nZ-k7z"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Instagram Username"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="IbG-ly-1GF" secondAttribute="bottom" id="75P-Hs-ami"/>
                                 <constraint firstItem="b4u-Iy-P8S" firstAttribute="centerX" secondItem="e9q-fo-Skf" secondAttribute="centerX" id="RHL-BE-C4q"/>
                                 <constraint firstItem="3Pg-j7-ifx" firstAttribute="top" secondItem="e9q-fo-Skf" secondAttribute="top" constant="23" id="dO1-2D-I8U"/>
-                                <constraint firstAttribute="height" constant="800" id="h2f-hS-krl"/>
+                                <constraint firstAttribute="trailing" secondItem="IbG-ly-1GF" secondAttribute="trailing" id="eWk-7U-WmG"/>
+                                <constraint firstItem="IbG-ly-1GF" firstAttribute="leading" secondItem="e9q-fo-Skf" secondAttribute="leading" id="f49-EB-wS5"/>
                                 <constraint firstItem="b4u-Iy-P8S" firstAttribute="top" secondItem="3Pg-j7-ifx" secondAttribute="bottom" constant="9" id="mUM-wN-Qw7"/>
                                 <constraint firstItem="3Pg-j7-ifx" firstAttribute="centerX" secondItem="e9q-fo-Skf" secondAttribute="centerX" id="pAY-ea-quW"/>
+                                <constraint firstItem="IbG-ly-1GF" firstAttribute="top" secondItem="b4u-Iy-P8S" secondAttribute="bottom" constant="20" id="u6T-GM-rXi"/>
                             </constraints>
                         </view>
                     </subviews>
