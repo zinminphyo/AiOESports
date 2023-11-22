@@ -51,7 +51,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapFollowAndVote(_ sender: UIButton) {
-        
+        let vc = FollowAndVoteController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
