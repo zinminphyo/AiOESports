@@ -24,15 +24,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func handleRouting() {
+        let vc: UIViewController
         if UserDataModel.shared.getToken() != nil {
-            guard let vc = InAppModule.createModule() else { return }
-            let nav = UINavigationController(rootViewController: vc)
-            nav.navigationBar.isHidden = true
-            window?.rootViewController = nav
+            guard let InAppVC = InAppModule.createModule() else { return }
+            vc = InAppVC
         } else {
-            guard let vc = LoginModule.createModule() else { return }
-            window?.rootViewController = UINavigationController(rootViewController: vc)
+            guard let loginVC = LoginModule.createModule() else { return }
+            vc = loginVC
         }
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.isHidden = true
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 
