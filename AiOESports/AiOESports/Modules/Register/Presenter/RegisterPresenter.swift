@@ -30,11 +30,13 @@ class RegisterPresenter: RegisterPresenting {
     // MARK: - Setters
     func set(enterPassword: String) {
         self.enterPassword = enterPassword
+        checkAllFieldCompleted()
         checkPasswordIsEqual()
     }
     
     func set(reEnterPassword: String) {
         self.reEnterPassword = reEnterPassword
+        checkAllFieldCompleted()
         checkPasswordIsEqual()
     }
     
