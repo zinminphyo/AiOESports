@@ -69,7 +69,6 @@ class LoginPresenter: LoginPresenting {
     
     func didFinishedLogin(user: UserModel?, error: String?) {
         if let user = user {
-            print("User is \(user)")
             self.viewDelegate?.hideLoaing()
             self.router?.routeToInAppModule()
             self.viewDelegate?.updateLoginViewState(isCorrect: true)

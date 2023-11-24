@@ -17,26 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        (UIApplication.shared.delegate as? AppDelegate)?.self.window = window
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-//        guard let onboarding = OnboardingModule.createModule() else { return }
-//        guard let register = RegisterModule.createModule() else { return }
-//        guard let accountSetup = AccountSetupModule.createModule() else { return }
-//        guard let welcome = WelcomeModule.createModule() else { return }
-        guard let InApp = InAppModule.createModule() else { return }
-        let nav = UINavigationController(rootViewController: InApp)
-        nav.setNavigationBarHidden(true, animated: true)
-//        guard let login = LoginModule.createModule() else { return }
-//        guard let InApp = InAppModule.createModule() else { return }
-//        guard let loginOrRegister = LoginOrRegisterModule.createModule() else { return }
-        /*
-        guard let accountSetup = AccountSetupModule.createModule() else { return }
-        let nav = UINavigationController(rootViewController: accountSetup)
-        nav.setNavigationBarHidden(true, animated: true)
-        guard let vc = VerifyPhoneModule.createModule() else { return }
-         */
-        window?.rootViewController = nav
+        handleRouting()
+        
+    }
+    
+    private func handleRouting() {
+        if UserDataModel.shared.getToken() != nil {
+            guard let vc = InAppModule.createModule() else { return }
+            let nav = UINavigationController(rootViewController: vc)
+            nav.navigationBar.isHidden = true
+            window?.rootViewController = nav
+        } else {
+            guard let vc = LoginModule.createModule() else { return }
+            window?.rootViewController = UINavigationController(rootViewController: vc)
+        }
         window?.makeKeyAndVisible()
     }
 
