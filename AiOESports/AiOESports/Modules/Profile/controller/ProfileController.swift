@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import Combine
+import Kingfisher
 
 class ProfileController: UIViewController {
     
+    @IBOutlet private(set) var loadingView: LoadingView!
+    @IBOutlet private(set) var nameLabel: UILabel!
+    @IBOutlet private(set) var idLabel: UILabel!
+    
     private let viewModel: ProfileViewModel
+    private(set) var subscription = Set<AnyCancellable>()
 
     init() {
         viewModel = ProfileViewModel()
@@ -23,7 +30,35 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureHierarchy()
+    }
+    
+    private func configureHierarchy() {
+        configureViewModel()
+    }
+    
+    private func configureViewModel() {
         
+        viewModel.$isFetching
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self]  in
+                guard let self = self else { return }
+                $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
+            }.store(in: &subscription)
+        
+        viewModel.profileFetchingCompleted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else {return}
+                self.UIBinding()
+            }.store(in: &subscription)
+        
+        viewModel.fetchUserProfile()
+    }
+    
+    private func UIBinding() {
+        nameLabel.text = viewModel.profileModel.username
+        idLabel.text = "id-\(viewModel.profileModel.id)"
     }
 
 }
@@ -31,6 +66,12 @@ class ProfileController: UIViewController {
 
 // MARK: - Actions
 extension ProfileController {
+    
+    @IBAction
+    private func didTapUpgradePremium(_ sender: UIButton) {
+        print("Did tap upgrade premium.")
+    }
+    
     @IBAction
     private func didTapDismissBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

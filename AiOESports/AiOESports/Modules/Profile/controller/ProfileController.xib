@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,6 +20,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileController" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="idLabel" destination="iUu-Dl-VCb" id="A8K-T9-AhT"/>
+                <outlet property="loadingView" destination="g9h-g1-5Zj" id="r6e-az-KCf"/>
+                <outlet property="nameLabel" destination="Z9J-Ng-h2F" id="ZcF-ay-Mhi"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ntA-6m-uMC"/>
             </connections>
         </placeholder>
@@ -89,6 +93,13 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYP-zX-8Nh">
                                                             <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="33"/>
                                                             <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2W-VQ-JaE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="33"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <connections>
+                                                                        <action selector="didTapUpgradePremium:" destination="-1" eventType="touchUpInside" id="1Fq-Gm-l54"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade Premium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dC-WT-O6q">
                                                                     <rect key="frame" x="10" y="9.3333333333333428" width="95.666666666666671" height="14.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="11"/>
@@ -98,10 +109,14 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.63137254901960782" green="0.30588235294117649" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
+                                                                <constraint firstItem="n2W-VQ-JaE" firstAttribute="top" secondItem="lYP-zX-8Nh" secondAttribute="top" id="7Jh-K8-wlk"/>
                                                                 <constraint firstItem="8dC-WT-O6q" firstAttribute="centerY" secondItem="lYP-zX-8Nh" secondAttribute="centerY" id="SEJ-ii-Oqi"/>
                                                                 <constraint firstAttribute="trailing" secondItem="8dC-WT-O6q" secondAttribute="trailing" constant="10" id="UL9-OB-mGG"/>
+                                                                <constraint firstAttribute="bottom" secondItem="n2W-VQ-JaE" secondAttribute="bottom" id="VmO-3n-85q"/>
                                                                 <constraint firstItem="8dC-WT-O6q" firstAttribute="leading" secondItem="lYP-zX-8Nh" secondAttribute="leading" constant="10" id="aMC-DO-7fx"/>
                                                                 <constraint firstAttribute="height" constant="33" id="edB-re-HGT"/>
+                                                                <constraint firstItem="n2W-VQ-JaE" firstAttribute="leading" secondItem="lYP-zX-8Nh" secondAttribute="leading" id="pKK-Yl-edD"/>
+                                                                <constraint firstAttribute="trailing" secondItem="n2W-VQ-JaE" secondAttribute="trailing" id="pSW-M8-vMz"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -788,11 +803,27 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="rkO-Y3-Ttm"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="Ana-Iw-AtO"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9h-g1-5Zj" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
+                    <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Y6Q-HD-tCI"/>
+                        <constraint firstAttribute="height" constant="100" id="lqf-v2-WH4"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="InputBackground"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rYy-O4-9b8" secondAttribute="bottom" id="DeR-P1-rjx"/>
+                <constraint firstItem="g9h-g1-5Zj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FEb-9N-Al1"/>
+                <constraint firstItem="g9h-g1-5Zj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SNp-HJ-n8u"/>
                 <constraint firstItem="cnA-TR-S5P" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="VsQ-3x-90U"/>
                 <constraint firstItem="rYy-O4-9b8" firstAttribute="top" secondItem="cnA-TR-S5P" secondAttribute="bottom" id="Zdc-J5-Xax"/>
                 <constraint firstItem="cnA-TR-S5P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="g1E-U5-z4H"/>
@@ -818,5 +849,8 @@
         <namedColor name="InputBackground">
             <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
