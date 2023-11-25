@@ -201,6 +201,14 @@ extension Register: RegisterViewDelegate {
             print("Password didn't match.")
         }
          */
+        
+        switch state {
+        case .success:
+            let vc = RegisterStep2Controller(phoneNumber: "09757245240")
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
     
     

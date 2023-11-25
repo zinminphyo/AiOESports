@@ -65,7 +65,10 @@ class RegisterPresenter: RegisterPresenting {
     func viewDidLoad() {}
     
     func register() {
+        /*
         interactor?.registerStep1(userName: userName, phNum: phoneNumber, password: enterPassword)
+         */
+        viewDelegate?.render(state: .success)
     }
     
     func didFinishedStep1Registration(responseModel: RegisterResponseModel?, error: String?) {

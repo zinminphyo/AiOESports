@@ -15,6 +15,11 @@ class LoadingView: UIView {
         view.hidesWhenStopped = true
         return view
     }()
+    
+    @IBInspectable var isLoading: Bool {
+        set { newValue ? showLoading() : hideLoading() }
+        get { isHidden }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

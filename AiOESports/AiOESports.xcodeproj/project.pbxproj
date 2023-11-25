@@ -282,6 +282,9 @@
 		84F17AF52B0E415100B97B08 /* FollowAndVoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F17AF32B0E415100B97B08 /* FollowAndVoteCell.swift */; };
 		84F17AF62B0E415100B97B08 /* FollowAndVoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F17AF42B0E415100B97B08 /* FollowAndVoteCell.xib */; };
 		84F58F3E2B11187300F2FFAA /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F3D2B11187300F2FFAA /* UserDataModel.swift */; };
+		84F58F432B11C3F100F2FFAA /* RegisterStep2Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F58F422B11C3F100F2FFAA /* RegisterStep2Controller.xib */; };
+		84F58F452B11C75C00F2FFAA /* RegisterStep2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F442B11C75C00F2FFAA /* RegisterStep2Controller.swift */; };
+		84F58F482B11C7F800F2FFAA /* RegisterStep2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F472B11C7F800F2FFAA /* RegisterStep2ViewModel.swift */; };
 		84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF129DE81D800734CAE /* Pagination.swift */; };
 		84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */; };
 		84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAF729DEAE3300734CAE /* Search.storyboard */; };
@@ -615,6 +618,9 @@
 		84F17AF32B0E415100B97B08 /* FollowAndVoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowAndVoteCell.swift; sourceTree = "<group>"; };
 		84F17AF42B0E415100B97B08 /* FollowAndVoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowAndVoteCell.xib; sourceTree = "<group>"; };
 		84F58F3D2B11187300F2FFAA /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		84F58F422B11C3F100F2FFAA /* RegisterStep2Controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterStep2Controller.xib; sourceTree = "<group>"; };
+		84F58F442B11C75C00F2FFAA /* RegisterStep2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2Controller.swift; sourceTree = "<group>"; };
+		84F58F472B11C7F800F2FFAA /* RegisterStep2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2ViewModel.swift; sourceTree = "<group>"; };
 		84F5FAF129DE81D800734CAE /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		84F5FAF729DEAE3300734CAE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -960,10 +966,8 @@
 		8454D35629F583C400B97EE3 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				849AEBAC2A16142F0024AAAA /* Interactor */,
-				849AEBA92A160CCF0024AAAA /* Entity */,
-				8454D35E29F5940200B97EE3 /* Presenter */,
-				8454D35729F583CA00B97EE3 /* View */,
+				84F58F402B11C3E000F2FFAA /* Step2 */,
+				84F58F3F2B11C3D400F2FFAA /* Step1 */,
 				8454D35C29F5848400B97EE3 /* RegisterModule.swift */,
 			);
 			path = Register;
@@ -2091,6 +2095,43 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		84F58F3F2B11C3D400F2FFAA /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				849AEBAC2A16142F0024AAAA /* Interactor */,
+				849AEBA92A160CCF0024AAAA /* Entity */,
+				8454D35E29F5940200B97EE3 /* Presenter */,
+				8454D35729F583CA00B97EE3 /* View */,
+			);
+			path = Step1;
+			sourceTree = "<group>";
+		};
+		84F58F402B11C3E000F2FFAA /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				84F58F462B11C7EA00F2FFAA /* viewModel */,
+				84F58F412B11C3E500F2FFAA /* view */,
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		84F58F412B11C3E500F2FFAA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84F58F422B11C3F100F2FFAA /* RegisterStep2Controller.xib */,
+				84F58F442B11C75C00F2FFAA /* RegisterStep2Controller.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84F58F462B11C7EA00F2FFAA /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F58F472B11C7F800F2FFAA /* RegisterStep2ViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		84F5FAF529DEAE2600734CAE /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -2471,6 +2512,7 @@
 				84A050C829E90654004D582B /* OverviewCellWithMultipleImages.xib in Resources */,
 				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
 				84BE00142A0D488F00228691 /* Welcome.storyboard in Resources */,
+				84F58F432B11C3F100F2FFAA /* RegisterStep2Controller.xib in Resources */,
 				845346DA29FF810B0077F8A0 /* UploadProfile.storyboard in Resources */,
 				841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */,
 				8436FA172B0E6461007EB571 /* ComingSoonView.xib in Resources */,
@@ -2747,6 +2789,7 @@
 				84D9C47029E2C56F006B06DD /* TeamDetails.swift in Sources */,
 				842FC9C329E84E3700C5F354 /* PlayerOverviewPresenter.swift in Sources */,
 				84DE4FC72B0D107C0017AC84 /* ProfileController.swift in Sources */,
+				84F58F482B11C7F800F2FFAA /* RegisterStep2ViewModel.swift in Sources */,
 				84597C7829EA5113007C511B /* SubGameModel.swift in Sources */,
 				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
 				84A050E229E92C16004D582B /* CareerPresenting.swift in Sources */,
@@ -2789,6 +2832,7 @@
 				84EB49392A24FD16002BFD5F /* AiOLoadingView.swift in Sources */,
 				84DC1A112A0950A70049BDD2 /* AiOPickerDataSource.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
+				84F58F452B11C75C00F2FFAA /* RegisterStep2Controller.swift in Sources */,
 				84A4806B2B0925C500268A77 /* LoadingView.swift in Sources */,
 				84F5FB0529DEBCD200734CAE /* PlayerSearchResultModel.swift in Sources */,
 				84EB493D2A25022F002BFD5F /* RegistrationView+State.swift in Sources */,
