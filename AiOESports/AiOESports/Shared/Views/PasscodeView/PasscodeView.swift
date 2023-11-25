@@ -44,6 +44,7 @@ class PasscodeView: UIView, UITextInputTraits {
         backgroundColor = UIColor.clear
         configureStackView()
         configureSubViews()
+        handlePasscodeInput()
     }
     
     
@@ -83,10 +84,14 @@ class PasscodeView: UIView, UITextInputTraits {
         
         for index in (0..<maxCount) {
             views[index].set(text: "")
+            views[index].isActive = false
         }
         for (index, inputCode) in passcode.enumerated() {
             views[index].set(text: String(inputCode))
+            
         }
+        guard passcode.count < maxCount else { return }
+        views[passcode.count].isActive = true
         
     }
     
