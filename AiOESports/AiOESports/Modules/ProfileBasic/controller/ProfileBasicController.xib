@@ -20,6 +20,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileBasicController" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="cityStateInfoView" destination="zDJ-1x-iLT" id="Ez2-yw-vpL"/>
+                <outlet property="dobInfoView" destination="QLz-EK-8Lc" id="20Y-R1-0j1"/>
+                <outlet property="genderInfoView" destination="2MY-4v-eYp" id="Oey-Z7-9Eb"/>
+                <outlet property="phoneNumberInfoView" destination="3Ha-tM-XHp" id="YrR-7J-cTB"/>
+                <outlet property="profileLevelView" destination="vaE-el-86l" id="ajj-sW-Fhz"/>
+                <outlet property="usernameInfoView" destination="mJH-hX-8jF" id="tzK-Hj-1pN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="y9c-yF-dHC"/>
             </connections>
         </placeholder>
@@ -80,11 +86,14 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-el-86l" customClass="ProfileLevelView" customModule="AiOESports" customModuleProvider="target">
                                     <rect key="frame" x="121.66666666666669" y="23" width="150" height="150"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="Xhr-87-X3w"/>
                                         <constraint firstAttribute="width" constant="150" id="tpV-A3-fvC"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-2A-O3V">
                                     <rect key="frame" x="0.0" y="194" width="393" height="370"/>

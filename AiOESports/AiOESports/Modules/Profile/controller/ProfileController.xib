@@ -23,6 +23,7 @@
                 <outlet property="idLabel" destination="iUu-Dl-VCb" id="A8K-T9-AhT"/>
                 <outlet property="loadingView" destination="g9h-g1-5Zj" id="r6e-az-KCf"/>
                 <outlet property="nameLabel" destination="Z9J-Ng-h2F" id="ZcF-ay-Mhi"/>
+                <outlet property="profileLevelView" destination="VC3-81-QnK" id="Bsu-4k-8ME"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ntA-6m-uMC"/>
             </connections>
         </placeholder>

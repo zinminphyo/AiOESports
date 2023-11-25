@@ -14,6 +14,7 @@ class ProfileController: UIViewController {
     @IBOutlet private(set) var loadingView: LoadingView!
     @IBOutlet private(set) var nameLabel: UILabel!
     @IBOutlet private(set) var idLabel: UILabel!
+    @IBOutlet private(set) var profileLevelView: ProfileLevelView!
     
     private let viewModel: ProfileViewModel
     private(set) var subscription = Set<AnyCancellable>()
@@ -43,6 +44,7 @@ class ProfileController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self]  in
                 guard let self = self else { return }
+                profileLevelView.isLoading = $0
                 $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
             }.store(in: &subscription)
         
@@ -59,6 +61,7 @@ class ProfileController: UIViewController {
     private func UIBinding() {
         nameLabel.text = viewModel.profileModel.username
         idLabel.text = "id-\(viewModel.profileModel.id)"
+        profileLevelView.set(imageURL: viewModel.profileModel.profile_image)
     }
 
 }
@@ -80,7 +83,9 @@ extension ProfileController {
     
     @IBAction
     private func didTapProfileInfo(_ sender: UIButton) {
-        let vc = ProfileBasicController()
+        let profileModel = viewModel.profileModel
+        let info = ProfileInfoViewModel.ProfileInfo(profileURL: profileModel.profile_image, username: profileModel.username, phoneNumber: profileModel.phone_no, gender: profileModel.gender, dateOfBirth: profileModel.dob, city: profileModel.city)
+        let vc = ProfileBasicController(info: info)
         navigationController?.pushViewController(vc, animated: true)
     }
     
