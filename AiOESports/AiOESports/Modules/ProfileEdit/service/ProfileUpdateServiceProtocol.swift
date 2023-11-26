@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol ProfileUpdateServiceProtocol {
-    func update(updateInfo: [String:Any]) async throws -> BaseResponseModel<LoginResponseModel>
+    func update(updateInfo: [String:Any]) async throws -> BaseResponseModel<UpdateResponseModel>
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct ProfileUpdateService: ProfileUpdateServiceProtocol {
     
@@ -14,22 +15,23 @@ struct ProfileUpdateService: ProfileUpdateServiceProtocol {
         return URL(string: "\(NetworkBaseURLs.shared.baseURL)/api/user/update")!
     }
     
-    func update(updateInfo: [String : Any]) async throws -> BaseResponseModel<LoginResponseModel> {
+    func update(updateInfo: [String : Any]) async throws -> BaseResponseModel<UpdateResponseModel> {
         let token = UserDataModel.shared.getToken() ?? ""
         let header = HTTPHeaders([
             HTTPHeader(name: "Authorization", value: "Bearer \(token)")
         ])
         let url = url.appendingPathComponent("1026")
-        print("Full url is \(url.absoluteString)")
         let request = AF.upload(multipartFormData: { formData in
             for (key, value) in updateInfo {
                 if let value = value as? String {
                     formData.append(value.data(using: .utf8)!, withName: key)
                 }
+                if let image = value as? UIImage {
+                    guard let data = image.jpegData(compressionQuality: 0.8) else { return }
+                    formData.append(data, withName: key, fileName: "profile.jpeg", mimeType: "image/*")
+                }
             }
-        }, to: url, headers: header).responseJSON(completionHandler: { response in
-            print("Response is \(response)")
-        }).serializingData()
+        }, to: url, headers: header).serializingData()
         
         let response = await request.response
         
@@ -37,7 +39,7 @@ struct ProfileUpdateService: ProfileUpdateServiceProtocol {
         
         let decoder = JSONDecoder()
         
-        return try decoder.decode(BaseResponseModel<LoginResponseModel>.self, from: data)
+        return try decoder.decode(BaseResponseModel<UpdateResponseModel>.self, from: data)
     }
     
 }

@@ -10,6 +10,7 @@ import Combine
 
 class ProfileEditController: UIViewController {
     
+    @IBOutlet private(set) var profileFrameView: ProfileLevelView!
     @IBOutlet private(set) var nameInputView: InputTextFieldView!
     @IBOutlet private(set) var phoneNumberInputView: InputTextFieldView!
     @IBOutlet private(set) var genderSelectionView: GenderView!
@@ -32,10 +33,10 @@ class ProfileEditController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("Doesn't support for this NSCoder.")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         configureHierarchy()
     }
@@ -65,6 +66,7 @@ class ProfileEditController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }.store(in: &subscription)
         
+        profileFrameView.set(imageURL: viewModel.editInfo.profileURL)
         nameInputView.value = viewModel.editInfo.username
         phoneNumberInputView.value = viewModel.editInfo.phoneNumber
         genderSelectionView.gender = viewModel.editInfo.gender
@@ -106,22 +108,63 @@ class ProfileEditController: UIViewController {
         
     }
     
-
+    
     @IBAction
     private func didTapBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-   
+    
     
     @IBAction
     private func didTapSave(_ sender: UIButton) {
         viewModel.updateProfile()
     }
-
+    
+    @IBAction
+    private func didTapChangeProfile(_ sender: UIButton) {
+        presentImagePicker()
+    }
+    
+    private func presentImagePicker() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = false
+        present(picker, animated: true)
+    }
+    
     
     @IBAction
     private func didChangeTextForFacebookLink() {
         guard let fbLink = facebookLinkInputView.value else { return }
         viewModel.set(facebookLink: fbLink)
+    }
+    
+    @IBAction
+    private func didChangeInstagramLinkInput() {
+        guard let instagramLink = instagramLinkInputView.value else { return }
+        viewModel.set(instagramLink: instagramLink)
+    }
+    
+    @IBAction
+    private func didChangeUserNameInput() {
+        guard let username = nameInputView.value else { return }
+        viewModel.set(username: username)
+    }
+    
+    @IBAction
+    private func didChangePhoneNumberInput() {
+        guard let phone = phoneNumberInputView.value else { return }
+        viewModel.set(phoneNumber: phone)
+    }
+
+}
+
+
+extension ProfileEditController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
+        viewModel.set(image: image)
+        picker.dismiss(animated: true)
     }
 }

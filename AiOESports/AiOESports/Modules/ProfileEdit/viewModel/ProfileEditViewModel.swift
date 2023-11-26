@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 
 class ProfileEditViewModel {
@@ -49,6 +50,20 @@ extension ProfileEditViewModel {
     func set(instagramLink: String) {
         updateInfo["instagram_link"] = instagramLink
     }
+    
+    func set(username: String) {
+        updateInfo["username"] = username
+    }
+    
+    func set(phoneNumber: String) {
+        
+    }
+    
+    func set(image: UIImage) {
+        updateInfo["profile_image"] = image
+    }
+    
+    
 }
 
 

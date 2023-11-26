@@ -28,6 +28,7 @@
                 <outlet property="loadingView" destination="p8B-Gl-YWq" id="HFS-Ro-EqL"/>
                 <outlet property="nameInputView" destination="2wW-mP-TYA" id="hdP-30-5S6"/>
                 <outlet property="phoneNumberInputView" destination="ZKR-Md-l4i" id="llx-ak-GVT"/>
+                <outlet property="profileFrameView" destination="3Pg-j7-ifx" id="BxI-b9-cSV"/>
                 <outlet property="stateDropdown" destination="HYB-5u-VTI" id="dsQ-O4-D4W"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UEB-gc-mS5"/>
             </connections>
@@ -95,6 +96,9 @@
                                         <constraint firstAttribute="height" constant="150" id="01w-eq-mCH"/>
                                         <constraint firstAttribute="width" constant="150" id="VTL-Bi-Kx7"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b4u-Iy-P8S">
                                     <rect key="frame" x="72.333333333333329" y="182" width="248.66666666666669" height="35"/>
@@ -111,11 +115,22 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8x-Df-3OD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240.66666666666666" height="35"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <connections>
+                                                                <action selector="didTapChangeProfile:" destination="-1" eventType="touchUpInside" id="ZBq-9t-5fI"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" name="InputColor"/>
                                                     <constraints>
                                                         <constraint firstItem="F8M-CK-Puz" firstAttribute="leading" secondItem="j8M-Db-yzk" secondAttribute="leading" constant="10" id="2Si-Sx-HF7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="m8x-Df-3OD" secondAttribute="bottom" id="38l-4X-lg6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="m8x-Df-3OD" secondAttribute="trailing" id="54h-Mg-jBx"/>
+                                                        <constraint firstItem="m8x-Df-3OD" firstAttribute="leading" secondItem="j8M-Db-yzk" secondAttribute="leading" id="Duz-hc-CXC"/>
                                                         <constraint firstAttribute="trailing" secondItem="F8M-CK-Puz" secondAttribute="trailing" constant="10" id="VT4-mu-o5j"/>
+                                                        <constraint firstItem="m8x-Df-3OD" firstAttribute="top" secondItem="j8M-Db-yzk" secondAttribute="top" id="nNC-Si-9Ff"/>
                                                         <constraint firstItem="F8M-CK-Puz" firstAttribute="centerY" secondItem="j8M-Db-yzk" secondAttribute="centerY" id="yiB-f2-kDd"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -185,6 +200,9 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="value" value="Zin Min Phyo"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didChangeUserNameInput" destination="-1" eventType="valueChanged" id="AmR-J2-z9H"/>
+                                            </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKR-Md-l4i" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="100" width="393" height="80"/>
@@ -196,6 +214,9 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Phone Number"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="value" value="09757245240"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didChangePhoneNumberInput" destination="-1" eventType="valueChanged" id="3qk-eH-vfS"/>
+                                            </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvc-wd-S71" customClass="GenderView" customModule="AiOESports" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="200" width="393" height="60"/>
@@ -261,6 +282,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Instagram Username"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didChangeInstagramLinkInput" destination="-1" eventType="valueChanged" id="KJd-IE-xLq"/>
+                                            </connections>
                                         </view>
                                     </subviews>
                                 </stackView>
