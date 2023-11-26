@@ -16,6 +16,8 @@ class ProfileEditController: UIViewController {
     @IBOutlet private(set) var birthdayDropdown: InputDropdownView!
     @IBOutlet private(set) var stateDropdown: InputDropdownView!
     @IBOutlet private(set) var cityDropdown: InputDropdownView!
+    @IBOutlet private(set) var facebookLinkInputView: InputTextFieldView!
+    @IBOutlet private(set) var instagramLinkInputView: InputTextFieldView!
     @IBOutlet private(set) var loadingView: LoadingView!
     
     private let viewModel: ProfileEditViewModel!
@@ -45,6 +47,8 @@ class ProfileEditController: UIViewController {
         configureCityDropdown()
         configureViewModel()
     }
+    
+    
     
     private func configureViewModel() {
         viewModel.$isUpdating
@@ -114,4 +118,10 @@ class ProfileEditController: UIViewController {
         viewModel.updateProfile()
     }
 
+    
+    @IBAction
+    private func didChangeTextForFacebookLink() {
+        guard let fbLink = facebookLinkInputView.value else { return }
+        viewModel.set(facebookLink: fbLink)
+    }
 }

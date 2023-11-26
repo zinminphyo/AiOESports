@@ -13,6 +13,10 @@ class ProfileEditViewModel {
     
     var editInfo: ProfileEdit
     
+    var updateInfo = [String:Any]()
+    
+    private let updateService = ProfileUpdateService()
+    
     @Published
     var isUpdating: Bool = false
     var profileEditCompleted = PassthroughSubject<Void, Never>()
@@ -23,13 +27,28 @@ class ProfileEditViewModel {
     
     func updateProfile() {
         isUpdating = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let self = self else { return }
-            self.isUpdating = false
-            profileEditCompleted.send()
+        Task {
+            do {
+                let response = try await updateService.update(updateInfo: updateInfo)
+                print("Update response is \(response)")
+                profileEditCompleted.send()
+            } catch {
+                print("Error in update profile service is \(error.localizedDescription)")
+            }
+            isUpdating = false
         }
     }
     
+}
+
+extension ProfileEditViewModel {
+    func set(facebookLink: String) {
+        updateInfo["facebook_link"] = facebookLink
+    }
+    
+    func set(instagramLink: String) {
+        updateInfo["instagram_link"] = instagramLink
+    }
 }
 
 

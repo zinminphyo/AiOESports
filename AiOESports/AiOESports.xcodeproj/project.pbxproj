@@ -295,6 +295,8 @@
 		84F58F5E2B135D8200F2FFAA /* GenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F58F5D2B135D8200F2FFAA /* GenderView.xib */; };
 		84F58F602B135F5800F2FFAA /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F5F2B135F5800F2FFAA /* GenderView.swift */; };
 		84F58F632B136C3500F2FFAA /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F622B136C3500F2FFAA /* ProfileEditViewModel.swift */; };
+		84F58F662B13872300F2FFAA /* ProfileUpdateServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F652B13872300F2FFAA /* ProfileUpdateServiceProtocol.swift */; };
+		84F58F682B138A4C00F2FFAA /* ProfileUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F58F672B138A4C00F2FFAA /* ProfileUpdateService.swift */; };
 		84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF129DE81D800734CAE /* Pagination.swift */; };
 		84F5FAF429DE85D000734CAE /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */; };
 		84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F5FAF729DEAE3300734CAE /* Search.storyboard */; };
@@ -641,6 +643,8 @@
 		84F58F5D2B135D8200F2FFAA /* GenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderView.xib; sourceTree = "<group>"; };
 		84F58F5F2B135F5800F2FFAA /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		84F58F622B136C3500F2FFAA /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
+		84F58F652B13872300F2FFAA /* ProfileUpdateServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateServiceProtocol.swift; sourceTree = "<group>"; };
+		84F58F672B138A4C00F2FFAA /* ProfileUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateService.swift; sourceTree = "<group>"; };
 		84F5FAF129DE81D800734CAE /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		84F5FAF729DEAE3300734CAE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -1900,6 +1904,7 @@
 		84E753FB2B0D38A9007D11B0 /* ProfileEdit */ = {
 			isa = PBXGroup;
 			children = (
+				84F58F642B13871400F2FFAA /* service */,
 				84F58F612B136C2700F2FFAA /* viewModel */,
 				84E754012B0D3C18007D11B0 /* view */,
 				84E753FC2B0D38BA007D11B0 /* controller */,
@@ -2216,6 +2221,15 @@
 				84F58F622B136C3500F2FFAA /* ProfileEditViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84F58F642B13871400F2FFAA /* service */ = {
+			isa = PBXGroup;
+			children = (
+				84F58F652B13872300F2FFAA /* ProfileUpdateServiceProtocol.swift */,
+				84F58F672B138A4C00F2FFAA /* ProfileUpdateService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		84F5FAF529DEAE2600734CAE /* Search */ = {
@@ -2913,6 +2927,7 @@
 				841C58E729F1952400FBCD4F /* LoginOrRegister.swift in Sources */,
 				84A0510429E998B8004D582B /* CreatorOverviewModule.swift in Sources */,
 				8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */,
+				84F58F682B138A4C00F2FFAA /* ProfileUpdateService.swift in Sources */,
 				84725AAD29E07DB8003658CD /* FilterSettingPresenting.swift in Sources */,
 				84F17AD82B0E2F2900B97B08 /* GameSortingController.swift in Sources */,
 				84597C7B29EA531B007C511B /* CreatorOverviewPresenting.swift in Sources */,
@@ -2978,6 +2993,7 @@
 				84108C372A0AA1CF00488D0D /* VerifyPhone.swift in Sources */,
 				84EB493B2A250179002BFD5F /* RegistrationError.swift in Sources */,
 				84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */,
+				84F58F662B13872300F2FFAA /* ProfileUpdateServiceProtocol.swift in Sources */,
 				849AEBAE2A16143F0024AAAA /* RegisterInteracting.swift in Sources */,
 				84A0510229E99774004D582B /* CreatorOverview.swift in Sources */,
 				84597C7F29EA53FB007C511B /* CreatorOverviewPresenter.swift in Sources */,

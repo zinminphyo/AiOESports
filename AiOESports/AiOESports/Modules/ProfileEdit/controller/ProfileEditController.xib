@@ -22,7 +22,9 @@
             <connections>
                 <outlet property="birthdayDropdown" destination="YX7-Mt-W5A" id="lTM-rn-eHS"/>
                 <outlet property="cityDropdown" destination="AX1-I9-Vab" id="v5D-la-4tB"/>
+                <outlet property="facebookLinkInputView" destination="Mcf-7V-ee1" id="k4S-Xf-ihL"/>
                 <outlet property="genderSelectionView" destination="dvc-wd-S71" id="jzh-ft-8K9"/>
+                <outlet property="instagramLinkInputView" destination="gSM-sK-45C" id="fYO-Vb-J3q"/>
                 <outlet property="loadingView" destination="p8B-Gl-YWq" id="HFS-Ro-EqL"/>
                 <outlet property="nameInputView" destination="2wW-mP-TYA" id="hdP-30-5S6"/>
                 <outlet property="phoneNumberInputView" destination="ZKR-Md-l4i" id="llx-ak-GVT"/>
@@ -246,6 +248,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="Facebook Account ID"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didChangeTextForFacebookLink" destination="-1" eventType="valueChanged" id="mFX-1y-b3V"/>
+                                            </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSM-sK-45C" customClass="InputTextFieldView" customModule="AiOESports" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="680" width="393" height="80"/>

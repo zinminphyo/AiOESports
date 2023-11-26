@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InputTextFieldView: UIView, NibLoadable {
+class InputTextFieldView: UIControl, NibLoadable {
     
     @IBOutlet private(set) var titleLabel: UILabel!
     @IBOutlet private(set) var inputTextField: UITextField!
@@ -42,11 +42,26 @@ class InputTextFieldView: UIView, NibLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadedByNib()
+        configureHierarchy()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadedByNib()
+        configureHierarchy()
+    }
+    
+    private func configureHierarchy() {
+        configureTextField()
+    }
+    
+    private func configureTextField() {
+        inputTextField.addTarget(self, action: #selector(didChangeInputText), for: .editingChanged)
+    }
+    
+    @objc func didChangeInputText() {
+        _value = inputTextField.text 
+        sendActions(for: .valueChanged)
     }
     
 }
