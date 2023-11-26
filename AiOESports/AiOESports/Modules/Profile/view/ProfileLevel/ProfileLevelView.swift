@@ -35,5 +35,9 @@ class ProfileLevelView: UIView, NibLoadable {
     func set(imageURL: String) {
         profileImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(imageURL)"))
     }
+    
+    func set(image: UIImage?) {
+        profileImageView.image = image
+    }
 
 }

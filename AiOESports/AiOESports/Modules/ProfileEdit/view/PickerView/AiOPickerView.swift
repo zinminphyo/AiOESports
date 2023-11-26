@@ -7,12 +7,19 @@
 
 import UIKit
 
+
+protocol AiOPickerViewDelegate {
+    func didSelectItem(in view: AiOPickerView, for value: String)
+}
+
 class AiOPickerView: UIView, NibLoadable {
     
     var items: [String] = []
     
     @IBOutlet private(set) var titleLabel: UILabel!
     @IBOutlet private(set) var pickerView: UIPickerView!
+    
+    var delegate: AiOPickerViewDelegate? = nil
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,6 +67,6 @@ extension AiOPickerView: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Selected row is \(row)")
+        delegate?.didSelectItem(in: self, for: items[row])
     }
 }

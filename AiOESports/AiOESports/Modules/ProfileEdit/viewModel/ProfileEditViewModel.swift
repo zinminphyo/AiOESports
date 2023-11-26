@@ -64,6 +64,22 @@ extension ProfileEditViewModel {
     }
     
     
+    func set(dob: String) {
+        updateInfo["date-of-birth"] = dob
+    }
+    
+    func set(state: String) {
+        updateInfo["state"] = state
+    }
+    
+    func set(city: String) {
+        updateInfo["city"] = city
+    }
+    
+    func set(gender: String) {
+        updateInfo["gender"] = gender
+    }
+    
 }
 
 

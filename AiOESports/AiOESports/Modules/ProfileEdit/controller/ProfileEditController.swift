@@ -21,9 +21,28 @@ class ProfileEditController: UIViewController {
     @IBOutlet private(set) var instagramLinkInputView: InputTextFieldView!
     @IBOutlet private(set) var loadingView: LoadingView!
     
+    private let statePicker = AiOPickerView()
+    private let cityPicker = AiOPickerView()
+    
     private let viewModel: ProfileEditViewModel!
     
     private var subscription = Set<AnyCancellable>()
+    
+    lazy var viewRenderDateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+    
+    lazy var apiRequestDateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "MMM dd yyyy"
+        return formatter
+    }()
     
     init(info: ProfileInfoViewModel.ProfileInfo) {
         viewModel = ProfileEditViewModel(info: info)
@@ -89,23 +108,39 @@ class ProfileEditController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(self, action: #selector(didChangeBOD(_:)), for: .valueChanged)
         birthdayDropdown.customInputView = datePicker
+    }
+    
+    @objc func didChangeBOD(_ datePicker: UIDatePicker) {
+        birthdayDropdown.dropdownInfo = viewRenderDateFormatter.string(from: datePicker.date)
+        viewModel.set(dob: apiRequestDateFormatter.string(from: datePicker.date))
     }
     
     private func configureStateDropdown() {
         let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 200)
-        let picker = AiOPickerView(frame: rect)
-        picker.items = [
+        statePicker.frame = rect
+        statePicker.items = [
             "Yangon",
             "Mandalay",
             "Chin",
             "NayPyiTaw"
         ]
-        stateDropdown.customInputView = picker
+        statePicker.delegate = self
+        stateDropdown.customInputView = statePicker
     }
     
     private func configureCityDropdown() {
-        
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 200)
+        cityPicker.frame = rect
+        cityPicker.items = [
+            "Sanchaung",
+            "Kamayut",
+            "Alone",
+            "KyiMyinDine"
+        ]
+        cityPicker.delegate = self
+        cityDropdown.customInputView = cityPicker
     }
     
     
@@ -164,7 +199,28 @@ class ProfileEditController: UIViewController {
 extension ProfileEditController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
+        profileFrameView.set(image: image)
         viewModel.set(image: image)
         picker.dismiss(animated: true)
     }
 }
+
+
+
+extension ProfileEditController: AiOPickerViewDelegate {
+    func didSelectItem(in view: AiOPickerView, for value: String) {
+        switch view {
+        case statePicker:
+            stateDropdown.dropdownInfo = value
+            viewModel.set(state: value)
+        case cityPicker:
+            cityDropdown.dropdownInfo = value
+            viewModel.set(city: value)
+        default:
+            break
+        }
+    }
+}
+
+
+
