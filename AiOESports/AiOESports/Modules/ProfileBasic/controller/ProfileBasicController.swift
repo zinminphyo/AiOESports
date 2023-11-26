@@ -54,7 +54,7 @@ extension ProfileBasicController {
     
     @IBAction
     private func didTapEdit(_ sender: UIButton) {
-        let vc = ProfileEditController()
+        let vc = ProfileEditController(info: viewModel.profileInfo)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

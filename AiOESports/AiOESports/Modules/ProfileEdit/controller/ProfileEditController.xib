@@ -22,6 +22,10 @@
             <connections>
                 <outlet property="birthdayDropdown" destination="YX7-Mt-W5A" id="lTM-rn-eHS"/>
                 <outlet property="cityDropdown" destination="AX1-I9-Vab" id="v5D-la-4tB"/>
+                <outlet property="genderSelectionView" destination="dvc-wd-S71" id="jzh-ft-8K9"/>
+                <outlet property="loadingView" destination="p8B-Gl-YWq" id="HFS-Ro-EqL"/>
+                <outlet property="nameInputView" destination="2wW-mP-TYA" id="hdP-30-5S6"/>
+                <outlet property="phoneNumberInputView" destination="ZKR-Md-l4i" id="llx-ak-GVT"/>
                 <outlet property="stateDropdown" destination="HYB-5u-VTI" id="dsQ-O4-D4W"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UEB-gc-mS5"/>
             </connections>
@@ -207,6 +211,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="Eab-kA-gHJ"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Date of Birth"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-5u-VTI" customClass="InputDropdownView" customModule="AiOESports" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="380" width="393" height="80"/>
@@ -275,6 +282,19 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="b9G-zf-IqM"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="ilJ-6J-Brc"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-Gl-YWq" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
+                    <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="CIl-YX-WTx"/>
+                        <constraint firstAttribute="height" constant="100" id="N8r-JL-fks"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="ThemeColor"/>
@@ -285,8 +305,10 @@
                 <constraint firstItem="A0V-0k-A4A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CFt-vD-Rl6"/>
                 <constraint firstItem="A0V-0k-A4A" firstAttribute="top" secondItem="Jvb-gG-omq" secondAttribute="bottom" id="JzG-BQ-h8J"/>
                 <constraint firstItem="Jvb-gG-omq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Tuh-uq-uyM"/>
+                <constraint firstItem="p8B-Gl-YWq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VLk-tX-A5R"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jvb-gG-omq" secondAttribute="trailing" id="WEb-aA-DhX"/>
                 <constraint firstItem="Jvb-gG-omq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Yk4-50-tqo"/>
+                <constraint firstItem="p8B-Gl-YWq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vDf-VR-OpB"/>
             </constraints>
             <point key="canvasLocation" x="-40" y="-12"/>
         </view>
