@@ -36,10 +36,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="2D6-ad-bnG">
-                                <rect key="frame" x="225" y="10" width="132" height="30"/>
+                                <rect key="frame" x="327" y="10" width="30" height="30"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9m-LR-Ghh">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9m-LR-Ghh">
+                                        <rect key="frame" x="-30" y="0.0" width="30" height="30"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkN-dN-jMO">
                                                 <rect key="frame" x="2" y="2" width="26" height="26"/>
@@ -69,8 +69,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qs-Ue-JHC">
-                                        <rect key="frame" x="34" y="0.0" width="30" height="30"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qs-Ue-JHC">
+                                        <rect key="frame" x="-30" y="0.0" width="30" height="30"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEb-qc-aCK">
                                                 <rect key="frame" x="2" y="2" width="26" height="26"/>
@@ -100,8 +100,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5G-nK-Mte">
-                                        <rect key="frame" x="68" y="0.0" width="30" height="30"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5G-nK-Mte">
+                                        <rect key="frame" x="-30" y="0.0" width="30" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-Ra-VJl">
                                                 <rect key="frame" x="2" y="2" width="26" height="26"/>
@@ -125,7 +125,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="E1a-h6-4FG">
-                                        <rect key="frame" x="102" y="2" width="30" height="26.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="2" width="30" height="26.333333333333332"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="abA-eQ-edl"/>
@@ -167,6 +167,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="firstTeamImageView" destination="rD4-Sz-HSz" id="Wnx-b2-1Hw"/>
+                <outlet property="firstTeamRenderer" destination="X9m-LR-Ghh" id="YdF-M2-2x1"/>
+                <outlet property="remainingTeamCountLabel" destination="Hvz-Ra-VJl" id="ulk-Wj-mYP"/>
+                <outlet property="remainingTeamCountRenderer" destination="c5G-nK-Mte" id="FQ1-WT-OHS"/>
+                <outlet property="secondTeamImageView" destination="huo-rv-gpx" id="E1S-VW-iDT"/>
+                <outlet property="secondTeamRenderer" destination="4Qs-Ue-JHC" id="b09-6w-6yV"/>
+                <outlet property="titleLabel" destination="96i-U7-TcA" id="GaD-Sr-FmF"/>
+            </connections>
             <point key="canvasLocation" x="2.2900763358778624" y="31.690140845070424"/>
         </tableViewCell>
     </objects>
