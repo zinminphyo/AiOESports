@@ -10,10 +10,12 @@ import Combine
 
 class ChangePasswordController: UIViewController {
     
+    @IBOutlet private(set) var currentPasswordView: OTPView!
     @IBOutlet private(set) var newPasswordView: OTPView!
     @IBOutlet private(set) var reEnterPasswordView: OTPView!
     @IBOutlet private(set) var newPasswardErrorLabel: UILabel!
     @IBOutlet private(set) var reEnterPasswordErrorLabel: UILabel!
+    @IBOutlet private(set) var currentPasswordErrorLabel: UILabel!
     @IBOutlet private(set) var loadingView: LoadingView!
     @IBOutlet private(set) var changeBtn: UIButton!
     
@@ -58,6 +60,19 @@ class ChangePasswordController: UIViewController {
                 $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
             }.store(in: &subscription)
         
+        viewModel.passwordUpdateStatus
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                switch $0 {
+                case .success:
+                    self.navigationController?.popViewController(animated: true)
+                case .fail(let error):
+                    self.currentPasswordErrorLabel.text = error
+                    self.currentPasswordErrorLabel.isHidden = false
+                }
+            }.store(in: &subscription)
+        
         viewModel.$isDataCompleted
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
@@ -76,18 +91,21 @@ class ChangePasswordController: UIViewController {
     
     @IBAction
     private func didTapChange(_ sender: UIButton) {
-        
+        viewModel.changePassword()
+    }
+    
+    @IBAction
+    private func didChangeCurrentPasscode() {
+        viewModel.set(currentPassword: currentPasswordView.text)
     }
     
     @IBAction
     private func didChangeNewPasscode() {
-        print("New Password is \(newPasswordView.text)")
         viewModel.set(newPassword: newPasswordView.text)
     }
 
     @IBAction
     private func didChangeReEnterNewPasscode() {
-        print("ReEnter New Password is \(reEnterPasswordView.text)")
         viewModel.set(reEnterNewPassword: reEnterPasswordView.text)
     }
 }

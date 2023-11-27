@@ -227,6 +227,7 @@ extension OTPView: UITextFieldDelegate {
         self.text = hiddenTextField.text ?? ""
         guard self.text.count == labelCount else { return }
         hiddenTextField.resignFirstResponder()
+        guard text.count == labelCount || text.count == 0 else { return }
         sendActions(for: .valueChanged)
     }
     func textField(

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Combine
 
 class ChangePasswordViewModel {
     
@@ -21,6 +21,13 @@ class ChangePasswordViewModel {
     @Published
     var isDataCompleted: Bool = false
     
+    var passwordUpdateStatus = PassthroughSubject<PasswordUpdateStatus, Never>()
+    enum PasswordUpdateStatus {
+        case success
+        case fail(error: String)
+    }
+    
+    
     private var currentPassword: String = ""
     private var newPassword: String = ""
     private var reEnterNewPassword: String = ""
@@ -30,7 +37,8 @@ class ChangePasswordViewModel {
         Task {
             do {
                 let response = try await service.changePassword(currentPassword: currentPassword, newPassword: newPassword)
-                print("Response is \(response)")
+                response ? passwordUpdateStatus.send(.success) : passwordUpdateStatus.send(.fail(error: "Your password is wrong."))
+                
             } catch {
                 print("Error is \(error.localizedDescription)")
             }
@@ -40,12 +48,27 @@ class ChangePasswordViewModel {
     
     func set(newPassword: String) {
         self.newPassword = newPassword
-        isNewPasswordMatched = self.newPassword == self.reEnterNewPassword
+        checkBothPaswordIsSame()
+        checkDataIsCompleted()
     }
     
     func set(reEnterNewPassword: String) {
         self.reEnterNewPassword = reEnterNewPassword
-        isNewPasswordMatched = self.newPassword == self.reEnterNewPassword
+        checkBothPaswordIsSame()
+        checkDataIsCompleted()
+    }
+    
+    func set(currentPassword: String) {
+        self.currentPassword = currentPassword
+        checkDataIsCompleted()
+    }
+    
+    private func checkDataIsCompleted() {
+        isDataCompleted = !currentPassword.isEmpty && isNewPasswordMatched
+    }
+    
+    private func checkBothPaswordIsSame() {
+        isNewPasswordMatched = newPassword == reEnterNewPassword
     }
 
 }
