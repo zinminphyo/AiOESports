@@ -19,6 +19,12 @@
 		841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C58E429F1950C00FBCD4F /* LoginOrRegister.storyboard */; };
 		841C58E729F1952400FBCD4F /* LoginOrRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C58E629F1952400FBCD4F /* LoginOrRegister.swift */; };
 		841C58E929F19AB800FBCD4F /* LoginOrRegisterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C58E829F19AB800FBCD4F /* LoginOrRegisterModule.swift */; };
+		84255D8D2B1478F600CA4082 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255D8C2B1478F600CA4082 /* OTPView.swift */; };
+		84255D8F2B14794600CA4082 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84255D8E2B14794600CA4082 /* ChangePasswordController.xib */; };
+		84255D912B147C2B00CA4082 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255D902B147C2B00CA4082 /* ChangePasswordController.swift */; };
+		84255D942B147C6400CA4082 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255D932B147C6400CA4082 /* ChangePasswordViewModel.swift */; };
+		84255D972B147D1300CA4082 /* ChangePasswordServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255D962B147D1300CA4082 /* ChangePasswordServiceProtocol.swift */; };
+		84255D992B14805D00CA4082 /* ChangePasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255D982B14805D00CA4082 /* ChangePasswordService.swift */; };
 		842AE8C629DB164D0036FF05 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */; };
 		842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */; };
 		842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */; };
@@ -373,6 +379,12 @@
 		841C58E429F1950C00FBCD4F /* LoginOrRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginOrRegister.storyboard; sourceTree = "<group>"; };
 		841C58E629F1952400FBCD4F /* LoginOrRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegister.swift; sourceTree = "<group>"; };
 		841C58E829F19AB800FBCD4F /* LoginOrRegisterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterModule.swift; sourceTree = "<group>"; };
+		84255D8C2B1478F600CA4082 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		84255D8E2B14794600CA4082 /* ChangePasswordController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
+		84255D902B147C2B00CA4082 /* ChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
+		84255D932B147C6400CA4082 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		84255D962B147D1300CA4082 /* ChangePasswordServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordServiceProtocol.swift; sourceTree = "<group>"; };
+		84255D982B14805D00CA4082 /* ChangePasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordService.swift; sourceTree = "<group>"; };
 		842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -827,6 +839,51 @@
 				84BE00152A0D48C600228691 /* Welcome.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84255D892B1478E100CA4082 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				84255D952B147D0000CA4082 /* service */,
+				84255D922B147C5800CA4082 /* viewModel */,
+				84255D8B2B1478EF00CA4082 /* view */,
+				84255D8A2B1478EB00CA4082 /* controller */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		84255D8A2B1478EB00CA4082 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84255D8E2B14794600CA4082 /* ChangePasswordController.xib */,
+				84255D902B147C2B00CA4082 /* ChangePasswordController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84255D8B2B1478EF00CA4082 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84255D8C2B1478F600CA4082 /* OTPView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84255D922B147C5800CA4082 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84255D932B147C6400CA4082 /* ChangePasswordViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84255D952B147D0000CA4082 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				84255D962B147D1300CA4082 /* ChangePasswordServiceProtocol.swift */,
+				84255D982B14805D00CA4082 /* ChangePasswordService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		842AE8C429DB16360036FF05 /* cell */ = {
@@ -2465,6 +2522,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84255D892B1478E100CA4082 /* ChangePassword */,
 				84F17AEB2B0E3FE200B97B08 /* FollowAndVote */,
 				84F17AE52B0E3D5500B97B08 /* PrivacyPolicy */,
 				84F17AD32B0E2E5500B97B08 /* GameSorting */,
@@ -2642,6 +2700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84255D8F2B14794600CA4082 /* ChangePasswordController.xib in Resources */,
 				84F17ADE2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib in Resources */,
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
@@ -2889,6 +2948,7 @@
 				842FC9AB29E83F9300C5F354 /* SignatureModel.swift in Sources */,
 				84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */,
 				84B7455A29E460EF0086C708 /* FormerPlayerModel.swift in Sources */,
+				84255D8D2B1478F600CA4082 /* OTPView.swift in Sources */,
 				84EF0A8C29EEF13F0042B6BF /* MenuModule.swift in Sources */,
 				849BCE0B29E51F150033C63A /* TeamOverview.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
@@ -2954,6 +3014,7 @@
 				84F17AEA2B0E3DED00B97B08 /* PrivacyPolicyController.swift in Sources */,
 				84F58F562B11FA7400F2FFAA /* UserProfileResponseModel.swift in Sources */,
 				84F58F6B2B139E7F00F2FFAA /* UpdateResponseModel.swift in Sources */,
+				84255D942B147C6400CA4082 /* ChangePasswordViewModel.swift in Sources */,
 				8437FE6E29ECD682008F7179 /* PlayerOverviewRouter.swift in Sources */,
 				849AEBA12A153F580024AAAA /* ForgotPassword.swift in Sources */,
 				84B7455E29E4643A0086C708 /* AchivementModel.swift in Sources */,
@@ -3004,6 +3065,7 @@
 				8454D35D29F5848400B97EE3 /* RegisterModule.swift in Sources */,
 				84A050F329E9642E004D582B /* CasterOverviewModule.swift in Sources */,
 				84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */,
+				84255D912B147C2B00CA4082 /* ChangePasswordController.swift in Sources */,
 				841C58E929F19AB800FBCD4F /* LoginOrRegisterModule.swift in Sources */,
 				84B7459629E49A320086C708 /* SponsorPresenter.swift in Sources */,
 				849B9C4129D18B1D00F1C2D2 /* Login.swift in Sources */,
@@ -3084,6 +3146,7 @@
 				84BE00162A0D48C600228691 /* Welcome.swift in Sources */,
 				849AEB972A13DDA30024AAAA /* LoginResponseModel.swift in Sources */,
 				849B9C4429D1956B00F1C2D2 /* PinTextField.swift in Sources */,
+				84255D972B147D1300CA4082 /* ChangePasswordServiceProtocol.swift in Sources */,
 				84F17AF02B0E407F00B97B08 /* FollowAndVoteController.swift in Sources */,
 				84725AC129E12BE1003658CD /* Squad.swift in Sources */,
 				84F5FB0D29DEC49D00734CAE /* SearchViewDelegate.swift in Sources */,
@@ -3092,6 +3155,7 @@
 				84B7458229E491730086C708 /* FormerPlayersPresenter.swift in Sources */,
 				84725AC329E12BF8003658CD /* SquadModule.swift in Sources */,
 				84B7457629E487CF0086C708 /* FormerPlayersModule.swift in Sources */,
+				84255D992B14805D00CA4082 /* ChangePasswordService.swift in Sources */,
 				8459D58729DDF66B00DDF266 /* Enums.swift in Sources */,
 				849BCE1029E521210033C63A /* TeamOverviewPresenting.swift in Sources */,
 				84F6C5B029CA12E800D21EE2 /* SceneDelegate.swift in Sources */,

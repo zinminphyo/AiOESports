@@ -24,7 +24,8 @@ class PasscodeController: UIViewController {
 
     @IBAction
     private func didTapChangePassword(_ sender: UIButton) {
-        
+        let vc = ChangePasswordController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
