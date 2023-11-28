@@ -8,6 +8,17 @@
 import UIKit
 
 class PasscodeController: UIViewController {
+    
+    private let userProfileModel: UserProfileResponseModel
+    
+    init(profile: UserProfileResponseModel) {
+        userProfileModel = profile
+        super.init(nibName: "PasscodeController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Doesn't support NSCoder.")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +35,14 @@ class PasscodeController: UIViewController {
 
     @IBAction
     private func didTapChangePassword(_ sender: UIButton) {
-        let vc = ChangePasswordController()
+        let vc = ChangePasswordController(userId: String(userProfileModel.id))
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
     private func didTapForgotPassword(_ sender: UIButton) {
-        
+        let vc = ForgotPasswordController(profileModel: userProfileModel)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

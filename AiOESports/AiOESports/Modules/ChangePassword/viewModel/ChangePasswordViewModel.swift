@@ -10,7 +10,11 @@ import Combine
 
 class ChangePasswordViewModel {
     
-    private let service = ChangePasswordService()
+    private let userId: String
+    
+    init(userId: String) {
+        self.userId = userId
+    }
     
     @Published
     var isUpdating: Bool = false
@@ -33,6 +37,7 @@ class ChangePasswordViewModel {
     private var reEnterNewPassword: String = ""
     
     func changePassword() {
+        let service = ChangePasswordService(userId: userId)
         isUpdating = true
         Task {
             do {

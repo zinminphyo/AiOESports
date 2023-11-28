@@ -9,14 +9,16 @@ import Foundation
 import Alamofire
 
 
-class ChangePasswordService: ChangePasswordServiceProtocol {
+struct ChangePasswordService: ChangePasswordServiceProtocol {
+    
+    let userId: String
     
     var url: URL {
         URL(string: "\(NetworkBaseURLs.shared.baseURL)/api/user/update/password/")!
     }
     
     func changePassword(currentPassword: String, newPassword: String) async throws -> Bool {
-        let url = url.appendingPathComponent("1026")
+        let url = url.appendingPathComponent(userId)
         guard let token = UserDataModel.shared.getToken() else {
             return false
         }

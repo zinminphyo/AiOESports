@@ -22,8 +22,8 @@ class ChangePasswordController: UIViewController {
     private let viewModel: ChangePasswordViewModel!
     private(set) var subscription = Set<AnyCancellable>()
     
-    init() {
-        viewModel = ChangePasswordViewModel()
+    init(userId: String) {
+        viewModel = ChangePasswordViewModel(userId: userId)
         super.init(nibName: "ChangePasswordController", bundle: nil)
     }
     
@@ -66,7 +66,7 @@ class ChangePasswordController: UIViewController {
                 guard let self = self else { return }
                 switch $0 {
                 case .success:
-                    self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
                 case .fail(let error):
                     self.currentPasswordErrorLabel.text = error
                     self.currentPasswordErrorLabel.isHidden = false

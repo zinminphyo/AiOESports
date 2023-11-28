@@ -216,6 +216,16 @@
 		84BE00182A0D48DB00228691 /* WelcomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE00172A0D48DB00228691 /* WelcomeModule.swift */; };
 		84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C578952B0B677100BD4FC9 /* DetailsContentView.xib */; };
 		84C578982B0B67D000BD4FC9 /* DetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C578972B0B67D000BD4FC9 /* DetailsContentView.swift */; };
+		84CC35232B14E6A1002B1D35 /* ForgotPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CC35222B14E6A1002B1D35 /* ForgotPasswordController.xib */; };
+		84CC35252B14E8BC002B1D35 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35242B14E8BC002B1D35 /* ForgotPasswordController.swift */; };
+		84CC35292B14EAD9002B1D35 /* VerifyPhoneNumberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CC35282B14EAD9002B1D35 /* VerifyPhoneNumberController.xib */; };
+		84CC352B2B14EC92002B1D35 /* VerifyPhoneNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC352A2B14EC92002B1D35 /* VerifyPhoneNumberController.swift */; };
+		84CC352E2B14ED45002B1D35 /* VerifyPhoneNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC352D2B14ED45002B1D35 /* VerifyPhoneNumberViewModel.swift */; };
+		84CC35312B14F870002B1D35 /* VerifyPhoneNumberServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35302B14F870002B1D35 /* VerifyPhoneNumberServiceProtocol.swift */; };
+		84CC35332B14F979002B1D35 /* VerifyPhoneNumberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35322B14F979002B1D35 /* VerifyPhoneNumberService.swift */; };
+		84CC35372B14FF35002B1D35 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35362B14FF35002B1D35 /* ForgotPasswordViewModel.swift */; };
+		84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35392B15C672002B1D35 /* GetPinCodeServiceProtocol.swift */; };
+		84CC353C2B15C6AD002B1D35 /* GetPinCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -576,6 +586,16 @@
 		84BE00172A0D48DB00228691 /* WelcomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModule.swift; sourceTree = "<group>"; };
 		84C578952B0B677100BD4FC9 /* DetailsContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsContentView.xib; sourceTree = "<group>"; };
 		84C578972B0B67D000BD4FC9 /* DetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContentView.swift; sourceTree = "<group>"; };
+		84CC35222B14E6A1002B1D35 /* ForgotPasswordController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordController.xib; sourceTree = "<group>"; };
+		84CC35242B14E8BC002B1D35 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		84CC35282B14EAD9002B1D35 /* VerifyPhoneNumberController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPhoneNumberController.xib; sourceTree = "<group>"; };
+		84CC352A2B14EC92002B1D35 /* VerifyPhoneNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberController.swift; sourceTree = "<group>"; };
+		84CC352D2B14ED45002B1D35 /* VerifyPhoneNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberViewModel.swift; sourceTree = "<group>"; };
+		84CC35302B14F870002B1D35 /* VerifyPhoneNumberServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberServiceProtocol.swift; sourceTree = "<group>"; };
+		84CC35322B14F979002B1D35 /* VerifyPhoneNumberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberService.swift; sourceTree = "<group>"; };
+		84CC35362B14FF35002B1D35 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		84CC35392B15C672002B1D35 /* GetPinCodeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPinCodeServiceProtocol.swift; sourceTree = "<group>"; };
+		84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPinCodeService.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -1768,6 +1788,78 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		84CC35202B14E68D002B1D35 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				84CC35382B15C664002B1D35 /* service */,
+				84CC35352B14FF24002B1D35 /* viewModel */,
+				84CC35212B14E696002B1D35 /* controller */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		84CC35212B14E696002B1D35 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84CC35222B14E6A1002B1D35 /* ForgotPasswordController.xib */,
+				84CC35242B14E8BC002B1D35 /* ForgotPasswordController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84CC35262B14EAC3002B1D35 /* VerifyPhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				84CC352F2B14F860002B1D35 /* service */,
+				84CC352C2B14ED37002B1D35 /* viewModel */,
+				84CC35272B14EACC002B1D35 /* controller */,
+			);
+			path = VerifyPhoneNumber;
+			sourceTree = "<group>";
+		};
+		84CC35272B14EACC002B1D35 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84CC35282B14EAD9002B1D35 /* VerifyPhoneNumberController.xib */,
+				84CC352A2B14EC92002B1D35 /* VerifyPhoneNumberController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84CC352C2B14ED37002B1D35 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CC352D2B14ED45002B1D35 /* VerifyPhoneNumberViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84CC352F2B14F860002B1D35 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				84CC35302B14F870002B1D35 /* VerifyPhoneNumberServiceProtocol.swift */,
+				84CC35322B14F979002B1D35 /* VerifyPhoneNumberService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		84CC35352B14FF24002B1D35 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CC35362B14FF35002B1D35 /* ForgotPasswordViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84CC35382B15C664002B1D35 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				84CC35392B15C672002B1D35 /* GetPinCodeServiceProtocol.swift */,
+				84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2522,6 +2614,8 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84CC35262B14EAC3002B1D35 /* VerifyPhoneNumber */,
+				84CC35202B14E68D002B1D35 /* ForgotPassword */,
 				84255D892B1478E100CA4082 /* ChangePassword */,
 				84F17AEB2B0E3FE200B97B08 /* FollowAndVote */,
 				84F17AE52B0E3D5500B97B08 /* PrivacyPolicy */,
@@ -2714,6 +2808,7 @@
 				84F17AD62B0E2E6700B97B08 /* GameSortingController.xib in Resources */,
 				84EF0A9029EEF2160042B6BF /* HomeContainer.storyboard in Resources */,
 				84A050DB29E92A6A004D582B /* Career.storyboard in Resources */,
+				84CC35292B14EAD9002B1D35 /* VerifyPhoneNumberController.xib in Resources */,
 				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F17AE22B0E397300B97B08 /* PasscodeController.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
@@ -2721,6 +2816,7 @@
 				84A050C829E90654004D582B /* OverviewCellWithMultipleImages.xib in Resources */,
 				84B7457229E487AC0086C708 /* FormerPlayers.storyboard in Resources */,
 				84BE00142A0D488F00228691 /* Welcome.storyboard in Resources */,
+				84CC35232B14E6A1002B1D35 /* ForgotPasswordController.xib in Resources */,
 				84F58F432B11C3F100F2FFAA /* RegisterStep2Controller.xib in Resources */,
 				845346DA29FF810B0077F8A0 /* UploadProfile.storyboard in Resources */,
 				841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */,
@@ -2948,6 +3044,7 @@
 				842FC9AB29E83F9300C5F354 /* SignatureModel.swift in Sources */,
 				84D9C47729E2CE27006B06DD /* DetailsViewDelegate.swift in Sources */,
 				84B7455A29E460EF0086C708 /* FormerPlayerModel.swift in Sources */,
+				84CC35372B14FF35002B1D35 /* ForgotPasswordViewModel.swift in Sources */,
 				84255D8D2B1478F600CA4082 /* OTPView.swift in Sources */,
 				84EF0A8C29EEF13F0042B6BF /* MenuModule.swift in Sources */,
 				849BCE0B29E51F150033C63A /* TeamOverview.swift in Sources */,
@@ -2981,10 +3078,12 @@
 				84EF0A9229EEF2270042B6BF /* HomeContainer.swift in Sources */,
 				849AEBA72A1543440024AAAA /* PhNumTableCell.swift in Sources */,
 				84A050F829E96582004D582B /* CasterOverviewViewDelegate.swift in Sources */,
+				84CC352B2B14EC92002B1D35 /* VerifyPhoneNumberController.swift in Sources */,
 				84E754062B0D3CDF007D11B0 /* InputTextFieldView.swift in Sources */,
 				842FC9C129E84DE200C5F354 /* PlayerOverviewViewDelegate.swift in Sources */,
 				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,
 				84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */,
+				84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */,
 				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
@@ -3003,6 +3102,7 @@
 				84B7457A29E489090086C708 /* FormerPlayerTableViewCell.swift in Sources */,
 				84D9C47029E2C56F006B06DD /* TeamDetails.swift in Sources */,
 				842FC9C329E84E3700C5F354 /* PlayerOverviewPresenter.swift in Sources */,
+				84CC35252B14E8BC002B1D35 /* ForgotPasswordController.swift in Sources */,
 				84DE4FC72B0D107C0017AC84 /* ProfileController.swift in Sources */,
 				84F58F482B11C7F800F2FFAA /* RegisterStep2ViewModel.swift in Sources */,
 				84597C7829EA5113007C511B /* SubGameModel.swift in Sources */,
@@ -3034,6 +3134,7 @@
 				845346DE29FF83D00077F8A0 /* UploadProfileModule.swift in Sources */,
 				842FC9B329E849D800C5F354 /* OverviewTableViewCell.swift in Sources */,
 				849AEB9B2A13E2D80024AAAA /* BaseResponseModel.swift in Sources */,
+				84CC35332B14F979002B1D35 /* VerifyPhoneNumberService.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
 				84725AB329E088B5003658CD /* FilterSettingDelegate.swift in Sources */,
 				84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */,
@@ -3050,6 +3151,7 @@
 				84EF0A8229EE5BA60042B6BF /* CasterOverviewRouting.swift in Sources */,
 				84A050FC29E972F4004D582B /* PlayerAchivement.swift in Sources */,
 				84EB49392A24FD16002BFD5F /* AiOLoadingView.swift in Sources */,
+				84CC352E2B14ED45002B1D35 /* VerifyPhoneNumberViewModel.swift in Sources */,
 				84F58F4E2B11EFE000F2FFAA /* RegistrationVerifyResponse.swift in Sources */,
 				84DC1A112A0950A70049BDD2 /* AiOPickerDataSource.swift in Sources */,
 				84CF09F029D9E8A400F87400 /* InApp.swift in Sources */,
@@ -3126,7 +3228,9 @@
 				84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */,
 				84C578982B0B67D000BD4FC9 /* DetailsContentView.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
+				84CC35312B14F870002B1D35 /* VerifyPhoneNumberServiceProtocol.swift in Sources */,
 				84F58F582B11FBB700F2FFAA /* UserProfileFetchingService.swift in Sources */,
+				84CC353C2B15C6AD002B1D35 /* GetPinCodeService.swift in Sources */,
 				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
 				849AEBB02A1614830024AAAA /* RegisterInteractor.swift in Sources */,
