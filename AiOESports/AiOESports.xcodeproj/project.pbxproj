@@ -10,6 +10,9 @@
 		58204C26DBF6D55964E5CE6E /* Pods_AiOESports_AiOESportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */; };
 		6E5CBA7023461F336228CAA1 /* Pods_AiOESportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */; };
 		80D2B9ACA75695065B6A3A76 /* Pods_AiOESports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C181347CBB2A5F2B650F3 /* Pods_AiOESports.framework */; };
+		840833DB2B164360004F2A71 /* UpgradePremiumController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840833DA2B164360004F2A71 /* UpgradePremiumController.xib */; };
+		840833DD2B1643FB004F2A71 /* UpgradePremiumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840833DC2B1643FB004F2A71 /* UpgradePremiumController.swift */; };
+		840833E02B164685004F2A71 /* DimmingBackgroundPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840833DF2B164685004F2A71 /* DimmingBackgroundPresentationController.swift */; };
 		840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75929F66C9E007F4159 /* LoginRouting.swift */; };
 		840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75B29F66CE9007F4159 /* LoginRouter.swift */; };
 		840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840CC75F29F7D5A5007F4159 /* AccountSetup.storyboard */; };
@@ -55,6 +58,9 @@
 		8437FE7F29ED1DA3008F7179 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE7E29ED1DA3008F7179 /* HomePresenter.swift */; };
 		8437FE8129ED1E1E008F7179 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE8029ED1E1E008F7179 /* HomeInteractor.swift */; };
 		8437FE8329ED2138008F7179 /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE8229ED2138008F7179 /* ErrorPresentable.swift */; };
+		843AB2F62B1650DB005B3DF4 /* UpgradePreminumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AB2F52B1650DB005B3DF4 /* UpgradePreminumViewModel.swift */; };
+		843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AB2F82B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift */; };
+		843AB2FB2B165292005B3DF4 /* UpgradePremiumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AB2FA2B165292005B3DF4 /* UpgradePremiumService.swift */; };
 		845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845275CF2B08E74000EEAF84 /* PasscodeView.swift */; };
 		845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D329FEBDB30077F8A0 /* AccountSetup.swift */; };
 		845346D629FF80230077F8A0 /* AccountSetupModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D529FF80230077F8A0 /* AccountSetupModule.swift */; };
@@ -382,6 +388,9 @@
 		52DA465FE799102727AED817 /* Pods_AiOESports_AiOESportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESports_AiOESportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585AFC3DD7B072B78AEA5F10 /* Pods-AiOESportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8188D3AE419488E24BC82362 /* Pods-AiOESports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports.release.xcconfig"; path = "Target Support Files/Pods-AiOESports/Pods-AiOESports.release.xcconfig"; sourceTree = "<group>"; };
+		840833DA2B164360004F2A71 /* UpgradePremiumController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpgradePremiumController.xib; sourceTree = "<group>"; };
+		840833DC2B1643FB004F2A71 /* UpgradePremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumController.swift; sourceTree = "<group>"; };
+		840833DF2B164685004F2A71 /* DimmingBackgroundPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingBackgroundPresentationController.swift; sourceTree = "<group>"; };
 		840CC75929F66C9E007F4159 /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
 		840CC75B29F66CE9007F4159 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		840CC75F29F7D5A5007F4159 /* AccountSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountSetup.storyboard; sourceTree = "<group>"; };
@@ -427,6 +436,9 @@
 		8437FE7E29ED1DA3008F7179 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8437FE8029ED1E1E008F7179 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		8437FE8229ED2138008F7179 /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
+		843AB2F52B1650DB005B3DF4 /* UpgradePreminumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePreminumViewModel.swift; sourceTree = "<group>"; };
+		843AB2F82B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumServiceProtocol.swift; sourceTree = "<group>"; };
+		843AB2FA2B165292005B3DF4 /* UpgradePremiumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumService.swift; sourceTree = "<group>"; };
 		845275CF2B08E74000EEAF84 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		845346D329FEBDB30077F8A0 /* AccountSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		845346D529FF80230077F8A0 /* AccountSetupModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupModule.swift; sourceTree = "<group>"; };
@@ -784,6 +796,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		840833D82B16433F004F2A71 /* UpgradePreminum */ = {
+			isa = PBXGroup;
+			children = (
+				843AB2F72B16523A005B3DF4 /* service */,
+				843AB2F42B1650CE005B3DF4 /* viewModel */,
+				840833D92B164351004F2A71 /* controller */,
+			);
+			path = UpgradePreminum;
+			sourceTree = "<group>";
+		};
+		840833D92B164351004F2A71 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				840833DA2B164360004F2A71 /* UpgradePremiumController.xib */,
+				840833DC2B1643FB004F2A71 /* UpgradePremiumController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		840833DE2B164656004F2A71 /* DimmingBackground */ = {
+			isa = PBXGroup;
+			children = (
+				840833DF2B164685004F2A71 /* DimmingBackgroundPresentationController.swift */,
+			);
+			path = DimmingBackground;
+			sourceTree = "<group>";
+		};
 		840CC75829F66C5D007F4159 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,6 +1052,23 @@
 				8437FE8029ED1E1E008F7179 /* HomeInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		843AB2F42B1650CE005B3DF4 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				843AB2F52B1650DB005B3DF4 /* UpgradePreminumViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		843AB2F72B16523A005B3DF4 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				843AB2F82B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift */,
+				843AB2FA2B165292005B3DF4 /* UpgradePremiumService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		845275CE2B08E72A00EEAF84 /* PasscodeView */ = {
@@ -2635,6 +2691,8 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				840833DE2B164656004F2A71 /* DimmingBackground */,
+				840833D82B16433F004F2A71 /* UpgradePreminum */,
 				84CC353D2B162EF7002B1D35 /* AppInfo */,
 				84CC35262B14EAC3002B1D35 /* VerifyPhoneNumber */,
 				84CC35202B14E68D002B1D35 /* ForgotPassword */,
@@ -2850,6 +2908,7 @@
 				8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
 				84DE4FC52B0D10370017AC84 /* ProfileController.xib in Resources */,
+				840833DB2B164360004F2A71 /* UpgradePremiumController.xib in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F58F5E2B135D8200F2FFAA /* GenderView.xib in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
@@ -3091,6 +3150,7 @@
 				8454D36229F5942800B97EE3 /* RegisterPresenter.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				8437FE7129ED1882008F7179 /* BannerModel.swift in Sources */,
+				840833DD2B1643FB004F2A71 /* UpgradePremiumController.swift in Sources */,
 				842FC9AF29E8433600C5F354 /* PlayerDetails.swift in Sources */,
 				8437FE8329ED2138008F7179 /* ErrorPresentable.swift in Sources */,
 				842FC9BF29E84DB100C5F354 /* PlayerOverviewPresenting.swift in Sources */,
@@ -3113,11 +3173,13 @@
 				849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
 				84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */,
+				840833E02B164685004F2A71 /* DimmingBackgroundPresentationController.swift in Sources */,
 				84F58F632B136C3500F2FFAA /* ProfileEditViewModel.swift in Sources */,
 				849AEB922A13DC490024AAAA /* LoginInteracting.swift in Sources */,
 				84A050FA29E96605004D582B /* CasterOverviewPresenter.swift in Sources */,
 				849BCE1629E523860033C63A /* SocialCollectionViewCell.swift in Sources */,
 				84A050F629E96568004D582B /* CasterOverviewPresenting.swift in Sources */,
+				843AB2F62B1650DB005B3DF4 /* UpgradePreminumViewModel.swift in Sources */,
 				8437FE7829ED1C3E008F7179 /* HomePresenting.swift in Sources */,
 				8454D35B29F583FF00B97EE3 /* Register.swift in Sources */,
 				8454D35529F4FA6F00B97EE3 /* PhoneNumberViewDelegate.swift in Sources */,
@@ -3243,6 +3305,7 @@
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				849321E929EC492E00A05EB8 /* TeamOverviewRouter.swift in Sources */,
 				84F58F762B14422400F2FFAA /* FollowAndVoteTalent.swift in Sources */,
+				843AB2FB2B165292005B3DF4 /* UpgradePremiumService.swift in Sources */,
 				84DE12332A0565990024D48E /* SingleSelectionCollectionViewCell.swift in Sources */,
 				84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
@@ -3270,6 +3333,7 @@
 				84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */,
 				84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */,
 				845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */,
+				843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				84BE00162A0D48C600228691 /* Welcome.swift in Sources */,
 				849AEB972A13DDA30024AAAA /* LoginResponseModel.swift in Sources */,

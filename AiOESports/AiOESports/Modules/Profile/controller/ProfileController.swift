@@ -72,7 +72,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapUpgradePremium(_ sender: UIButton) {
-        print("Did tap upgrade premium.")
+        let vc = UpgradePremiumController(shieldCount: viewModel.profileModel.shield)
+        present(vc, animated: true)
     }
     
     @IBAction
