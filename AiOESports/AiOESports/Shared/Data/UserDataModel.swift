@@ -14,7 +14,7 @@ class UserDataModel {
     
     static let shared = UserDataModel()
     
-    func saveToken(token: String) {
+    func saveToken(token: String?) {
         UserDefaults.standard.setValue(token, forKey: "token")
     }
     

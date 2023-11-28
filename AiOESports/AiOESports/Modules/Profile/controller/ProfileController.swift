@@ -125,7 +125,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapLogout(_ sender: UIButton) {
-        
+        UserDataModel.shared.saveToken(token: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
  
