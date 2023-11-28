@@ -15,8 +15,9 @@ class Rank: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var gameCategoryCollectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private(set) var loadingView: LoadingView!
     
-    var presenter: RankPresenting?
+    var presenter: RankPresenter?
     
     private var teamLists: [TeamObject] = []
     private var playerLists: [PlayerObject] = []
@@ -163,11 +164,11 @@ extension Rank: RankViewDelegate {
     }
     
     func showLoading() {
-//        SVProgressHUD.show()
+        loadingView.showLoading()
     }
     
     func hideLoading() {
-//        SVProgressHUD.dismiss()
+        loadingView.hideLoading()
     }
 }
 

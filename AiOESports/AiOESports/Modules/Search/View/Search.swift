@@ -12,8 +12,11 @@ class Search: UIViewController {
     @IBOutlet weak var searchInputTxtField: UITextField!
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet private(set) var loadingView: LoadingView!
+    @IBOutlet private(set) var searchLabel: UILabel!
+    @IBOutlet private(set) var searchBtn: UIButton!
     
-    var presenter: SearchPresenting?
+    var presenter: SearchPresenter?
     private var teamLists: [TeamSearchResultModel] = []
     private var playerLists: [PlayerSearchResultModel] = []
 
@@ -36,45 +39,35 @@ class Search: UIViewController {
     }
     
     private func configureSearchInputTextField() {
-        let placeHolder = "Enter PLAYER Name"
-        let attributedPlaceHolder = NSMutableAttributedString(string: placeHolder)
-        attributedPlaceHolder.addAttribute(.foregroundColor, value: Colors.Text.primaryText!, range: NSRange(location: 0, length: placeHolder.count))
-        searchInputTxtField.attributedPlaceholder = attributedPlaceHolder
-        
-        let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
-        searchButton.addTarget(self, action: #selector(didTapSearchBtn), for: .touchUpInside)
-        searchButton.backgroundColor = UIColor.clear
-        searchButton.setImage(Images.RankModuleImages.searchlogo, for: .normal)
-        searchButton.tintColor = UIColor.white
-        searchInputTxtField.textColor = Colors.Text.primaryText
-        searchInputTxtField.rightView = searchButton
-        searchInputTxtField.rightViewMode = .always
-        searchInputTxtField.addTarget(self, action: #selector(didChangeKeyword), for: .editingChanged)
+       
     }
     
     private func configureTableView() {
         resultTableView.register(UINib(nibName: String(describing: SearchTableViewCell.self), bundle: nil), forCellReuseIdentifier: SearchTableViewCell.reuseIdentifier)
         resultTableView.dataSource = self
+        resultTableView.delegate = self
         resultTableView.estimatedRowHeight = UITableView.automaticDimension
         resultTableView.backgroundColor = UIColor.clear
         resultTableView.keyboardDismissMode = .onDrag
     }
-    
-    @objc func didTapSearchBtn() {
-        print("Search Button Clicked.")
-    }
+   
     
     @objc func didTapBackBtn() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func didChangeKeyword() {
+    
+    @IBAction
+    private func didChangeKeyword() {
+        let isEmpty = searchInputTxtField.text?.isEmpty ?? true
+        print("Is Empty is \(isEmpty)")
+        searchLabel.isHidden = !isEmpty
+        searchBtn.isHidden = isEmpty
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(fetchSearchingApi), object: nil)
         perform(#selector(fetchSearchingApi), with: nil, afterDelay: 1)
     }
 
     @objc func fetchSearchingApi() {
-//        presenter?.searchTeamLists(keyword: searchInputTxtField.text ?? "")
         presenter?.searchLists(keyword: searchInputTxtField.text ?? "")
     }
     
@@ -92,6 +85,14 @@ extension Search: SearchViewDelegate {
     func renderPlayerLists(playerLists: [PlayerSearchResultModel]) {
         self.playerLists = playerLists
         self.resultTableView.reloadData()
+    }
+    
+    func showLoading() {
+        loadingView.showLoading()
+    }
+    
+    func hideLoading() {
+        loadingView.hideLoading()
     }
 }
 
@@ -125,5 +126,23 @@ extension Search: UITableViewDataSource {
             break
         }
         return cell
+    }
+}
+
+
+extension Search: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let category = presenter?.selectedCategory else {
+            return
+        }
+        let id: Int
+        switch category {
+        case .team:
+            id = teamLists[indexPath.row].id
+        default:
+            id = playerLists[indexPath.row].id
+        }
+        guard let vc = DetailsModuel.createModule(category: category, id: id) else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

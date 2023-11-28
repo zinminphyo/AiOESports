@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,21 +30,61 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="backlogo"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter TEAM Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khx-DQ-si4">
-                                        <rect key="frame" x="46" y="0.0" width="337" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCL-8J-V2x">
+                                        <rect key="frame" x="46" y="5" width="329" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khx-DQ-si4">
+                                                <rect key="frame" x="8" y="0.0" width="313" height="40"/>
+                                                <color key="backgroundColor" name="InputColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="didChangeKeyword" destination="Y6W-OH-hqX" eventType="editingChanged" id="fdr-QG-2FW"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RA-Pu-Cxf">
+                                                <rect key="frame" x="8" y="9.6666666666666714" width="140.33333333333334" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE4-zq-QAf">
+                                                <rect key="frame" x="301" y="10" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="VVz-W4-xTZ"/>
+                                                    <constraint firstAttribute="width" constant="20" id="rnV-0F-GAl"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="searchlogo"/>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" name="InputColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <constraints>
+                                            <constraint firstItem="CE4-zq-QAf" firstAttribute="centerY" secondItem="WCL-8J-V2x" secondAttribute="centerY" id="3JB-Og-eKI"/>
+                                            <constraint firstItem="7RA-Pu-Cxf" firstAttribute="leading" secondItem="WCL-8J-V2x" secondAttribute="leading" constant="8" id="5Ig-KG-1aG"/>
+                                            <constraint firstItem="khx-DQ-si4" firstAttribute="top" secondItem="WCL-8J-V2x" secondAttribute="top" id="7MN-uM-C04"/>
+                                            <constraint firstAttribute="height" constant="40" id="DKy-zn-Ezb"/>
+                                            <constraint firstAttribute="trailing" secondItem="CE4-zq-QAf" secondAttribute="trailing" constant="8" id="lnm-x3-Qp5"/>
+                                            <constraint firstItem="khx-DQ-si4" firstAttribute="leading" secondItem="WCL-8J-V2x" secondAttribute="leading" constant="8" id="mYt-Vr-A4c"/>
+                                            <constraint firstAttribute="trailing" secondItem="khx-DQ-si4" secondAttribute="trailing" constant="8" id="qLE-uU-v24"/>
+                                            <constraint firstItem="7RA-Pu-Cxf" firstAttribute="centerY" secondItem="WCL-8J-V2x" secondAttribute="centerY" id="x4Z-SQ-6Sv"/>
+                                            <constraint firstAttribute="bottom" secondItem="khx-DQ-si4" secondAttribute="bottom" id="xpD-ir-sQC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
+                                    <constraint firstItem="WCL-8J-V2x" firstAttribute="centerY" secondItem="yhC-Tc-uSy" secondAttribute="centerY" id="1Bl-Pp-Vc7"/>
                                     <constraint firstAttribute="height" constant="50" id="6E4-8M-B8c"/>
-                                    <constraint firstItem="khx-DQ-si4" firstAttribute="top" secondItem="yhC-Tc-uSy" secondAttribute="top" id="FLx-35-WKJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="khx-DQ-si4" secondAttribute="trailing" constant="10" id="Fsj-36-wnb"/>
-                                    <constraint firstAttribute="bottom" secondItem="khx-DQ-si4" secondAttribute="bottom" id="ScX-1d-FgP"/>
-                                    <constraint firstItem="khx-DQ-si4" firstAttribute="leading" secondItem="Dv8-bv-Zwb" secondAttribute="trailing" constant="8" id="bJF-SU-b5N"/>
                                     <constraint firstItem="Dv8-bv-Zwb" firstAttribute="centerY" secondItem="yhC-Tc-uSy" secondAttribute="centerY" id="dPr-MB-hfY"/>
+                                    <constraint firstAttribute="trailing" secondItem="WCL-8J-V2x" secondAttribute="trailing" constant="18" id="igb-0v-eme"/>
+                                    <constraint firstItem="WCL-8J-V2x" firstAttribute="leading" secondItem="Dv8-bv-Zwb" secondAttribute="trailing" constant="8" id="jSJ-1L-Ptc"/>
                                     <constraint firstItem="Dv8-bv-Zwb" firstAttribute="leading" secondItem="yhC-Tc-uSy" secondAttribute="leading" constant="8" id="lTa-ih-goJ"/>
                                 </constraints>
                             </view>
@@ -51,12 +92,28 @@
                                 <rect key="frame" x="0.0" y="117" width="393" height="735"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5za-gQ-1nH" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
+                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8Ki-RY-LPm"/>
+                                    <constraint firstAttribute="width" constant="100" id="Eoc-vR-MH6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ThemeColor"/>
                         <constraints>
+                            <constraint firstItem="5za-gQ-1nH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1RD-Z3-I9u"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bwc-AF-M8M" secondAttribute="trailing" id="9DQ-iW-9Vf"/>
                             <constraint firstItem="yhC-Tc-uSy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Sk2-B9-LeY"/>
+                            <constraint firstItem="5za-gQ-1nH" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vjx-T1-TZt"/>
                             <constraint firstItem="yhC-Tc-uSy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YQX-79-HaM"/>
                             <constraint firstAttribute="bottom" secondItem="bwc-AF-M8M" secondAttribute="bottom" id="dOm-Sa-waJ"/>
                             <constraint firstItem="bwc-AF-M8M" firstAttribute="top" secondItem="yhC-Tc-uSy" secondAttribute="bottom" constant="8" id="l9h-Ld-1az"/>
@@ -66,17 +123,21 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="Dv8-bv-Zwb" id="LQc-wL-ee8"/>
+                        <outlet property="loadingView" destination="5za-gQ-1nH" id="PcK-T1-DcU"/>
                         <outlet property="resultTableView" destination="bwc-AF-M8M" id="j3K-IT-AAX"/>
+                        <outlet property="searchBtn" destination="CE4-zq-QAf" id="aNs-BX-z6j"/>
                         <outlet property="searchInputTxtField" destination="khx-DQ-si4" id="X93-1A-QFl"/>
+                        <outlet property="searchLabel" destination="7RA-Pu-Cxf" id="fgG-oY-b46"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="-27"/>
+            <point key="canvasLocation" x="61.832061068702288" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
-        <image name="backlogo" width="9" height="15"/>
+        <image name="backlogo" width="24" height="24"/>
+        <image name="searchlogo" width="18" height="18"/>
         <namedColor name="InputColor">
             <color red="0.12549019607843137" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

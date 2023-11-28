@@ -14,7 +14,7 @@ class SearchPresenter: SearchPresenting {
     
     var interactor: SearchInteracting?
     
-    private var selectedCategory: RankCategory = .team
+    private(set) var selectedCategory: RankCategory = .team
     
     init(category: RankCategory) {
         self.selectedCategory = category

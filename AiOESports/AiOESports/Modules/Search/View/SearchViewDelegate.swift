@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol SearchViewDelegate: LoadingPresentable {
-    var presenter: SearchPresenting? { get set } 
+    var presenter: SearchPresenter? { get set } 
     func renderTeamLists(teamLists: [TeamSearchResultModel])
     func renderPlayerLists(playerLists: [PlayerSearchResultModel])
     func renderError(error: String)

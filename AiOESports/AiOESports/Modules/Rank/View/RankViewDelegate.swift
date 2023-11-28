@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol RankViewDelegate {
-    var presenter: RankPresenting? { get set }
+    var presenter: RankPresenter? { get set }
     func renderTeamLists(teamLists: [TeamObject])
     func renderPlayerLists(playerLists: [PlayerObject])
     func renderRankLists(lists: [RankPresentable])

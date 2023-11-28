@@ -6,13 +6,16 @@
 //
 
 import Foundation
-
+import Combine
 
 class RankPresenter: RankPresenting {
     
     var router: RankRouting?
     
     var viewDelegate: RankViewDelegate?
+    
+    @Published
+    var isFetching: Bool = false
     
     private var teamLists: [TeamObject] = []
     private var rankLists: [RankPresentable] = []
