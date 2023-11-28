@@ -19,7 +19,9 @@ class LoginRouter: LoginRouting {
     
     func routeToInAppModule() {
         guard let vc = InAppModule.createModule(), let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
-        scene.window?.rootViewController = vc
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.isHidden = true
+        scene.window?.rootViewController = nav
     }
     
     

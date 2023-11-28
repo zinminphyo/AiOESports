@@ -74,6 +74,11 @@ class Home: UIViewController {
     
     @IBAction
     private func didTapMenu(_ sender: UIButton) {
+        guard UserDataModel.shared.getToken() != nil else {
+            let vc = AppInfoController()
+            navigationController?.pushViewController(vc, animated: true)
+            return
+        }
         let vc = ProfileController()
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -226,6 +226,8 @@
 		84CC35372B14FF35002B1D35 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35362B14FF35002B1D35 /* ForgotPasswordViewModel.swift */; };
 		84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35392B15C672002B1D35 /* GetPinCodeServiceProtocol.swift */; };
 		84CC353C2B15C6AD002B1D35 /* GetPinCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */; };
+		84CC35402B162F21002B1D35 /* AppInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CC353F2B162F21002B1D35 /* AppInfoController.xib */; };
+		84CC35422B162F37002B1D35 /* AppInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35412B162F37002B1D35 /* AppInfoController.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -596,6 +598,8 @@
 		84CC35362B14FF35002B1D35 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		84CC35392B15C672002B1D35 /* GetPinCodeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPinCodeServiceProtocol.swift; sourceTree = "<group>"; };
 		84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPinCodeService.swift; sourceTree = "<group>"; };
+		84CC353F2B162F21002B1D35 /* AppInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoController.xib; sourceTree = "<group>"; };
+		84CC35412B162F37002B1D35 /* AppInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoController.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -1860,6 +1864,23 @@
 			path = service;
 			sourceTree = "<group>";
 		};
+		84CC353D2B162EF7002B1D35 /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				84CC353E2B162F12002B1D35 /* controller */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		84CC353E2B162F12002B1D35 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84CC353F2B162F21002B1D35 /* AppInfoController.xib */,
+				84CC35412B162F37002B1D35 /* AppInfoController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2614,6 +2635,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84CC353D2B162EF7002B1D35 /* AppInfo */,
 				84CC35262B14EAC3002B1D35 /* VerifyPhoneNumber */,
 				84CC35202B14E68D002B1D35 /* ForgotPassword */,
 				84255D892B1478E100CA4082 /* ChangePassword */,
@@ -2795,6 +2817,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84255D8F2B14794600CA4082 /* ChangePasswordController.xib in Resources */,
+				84CC35402B162F21002B1D35 /* AppInfoController.xib in Resources */,
 				84F17ADE2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib in Resources */,
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
@@ -3133,6 +3156,7 @@
 				84725AAF29E07E69003658CD /* FilterSettingPresenter.swift in Sources */,
 				845346DE29FF83D00077F8A0 /* UploadProfileModule.swift in Sources */,
 				842FC9B329E849D800C5F354 /* OverviewTableViewCell.swift in Sources */,
+				84CC35422B162F37002B1D35 /* AppInfoController.swift in Sources */,
 				849AEB9B2A13E2D80024AAAA /* BaseResponseModel.swift in Sources */,
 				84CC35332B14F979002B1D35 /* VerifyPhoneNumberService.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
