@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol HomeViewDelegate: ErrorPresentable {
-    var presenter: HomePresenting? { get set }
+    var presenter: HomePresenter? { get set }
     func renderUI(bannerLists: [BannerModel], adLists: [AdvertisementModel])
     func renderError(string: String)
 }

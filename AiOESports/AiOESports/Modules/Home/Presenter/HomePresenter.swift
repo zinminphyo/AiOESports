@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 
 class HomePresenter: HomePresenting {
@@ -14,7 +15,11 @@ class HomePresenter: HomePresenting {
     
     var interactor: HomeInteracting?
     
+    @Published
+    var isFetching: Bool = false
+    
     func viewDidLoad() {
+        isFetching = true
         interactor?.fetchHomeData()
     }
     
@@ -24,6 +29,7 @@ class HomePresenter: HomePresenting {
         } else {
             self.viewDelegate?.renderUI(bannerLists: bannerLists ?? [], adLists: adLists ?? [])
         }
+        isFetching = false
     }
     
     

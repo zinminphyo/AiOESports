@@ -6,16 +6,18 @@
 //
 
 import UIKit
+import Combine
 
 class Home: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var advertisementCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var advertisementTitleLabel: UILabel!
+    @IBOutlet private(set) var loadingView: LoadingView!
     
-    var presenter: HomePresenting?
+    var presenter: HomePresenter?
+    private(set) var subscription = Set<AnyCancellable>()
     
     private var bannerLists: [BannerModel] = []
     private var adLists: [AdvertisementModel] = []
@@ -28,6 +30,13 @@ class Home: UIViewController {
         configureHierarchy()
         
         presenter?.viewDidLoad()
+        presenter?.$isFetching
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
+            }).store(in: &subscription)
+        
     }
     
     private func configureHierarchy() {
@@ -41,8 +50,8 @@ class Home: UIViewController {
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.itemSize = CGSize(width: collectionView.frame.width - 10, height: collectionView.frame.height)
+        flowLayout.minimumLineSpacing = 8
+        flowLayout.itemSize = CGSize(width: collectionView.frame.width - 8, height: collectionView.frame.height)
         collectionView.collectionViewLayout = flowLayout
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInsetAdjustmentBehavior = .never
@@ -60,6 +69,13 @@ class Home: UIViewController {
         advertisementCollectionView.collectionViewLayout = flowLayout
         advertisementCollectionView.showsHorizontalScrollIndicator = false
         advertisementCollectionView.showsVerticalScrollIndicator = false
+    }
+    
+    
+    @IBAction
+    private func didTapMenu(_ sender: UIButton) {
+        let vc = ProfileController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
@@ -87,7 +103,14 @@ extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, 
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index: Int = Int(scrollView.contentOffset.x / scrollView.frame.width)
-        self.pageControl.currentPage = index
+        print("Content offset x is \(scrollView.contentOffset.x)")
+        print("Width is \(scrollView.frame.width)")
+        print("Index is \(index)")
+//        self.pageControl.currentPage = index
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.row
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
