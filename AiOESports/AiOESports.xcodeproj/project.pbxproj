@@ -66,6 +66,8 @@
 		843CF3A52B170BFB00C98BFF /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */; };
 		843CF3A92B17297100C98BFF /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF3A82B17297100C98BFF /* RatingView.xib */; };
 		843CF3AB2B172B4E00C98BFF /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3AA2B172B4E00C98BFF /* RatingView.swift */; };
+		843CF3AE2B177A9A00C98BFF /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF3AD2B177A9A00C98BFF /* CommentView.xib */; };
+		843CF3B02B177B8100C98BFF /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3AF2B177B8100C98BFF /* CommentView.swift */; };
 		845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845275CF2B08E74000EEAF84 /* PasscodeView.swift */; };
 		845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D329FEBDB30077F8A0 /* AccountSetup.swift */; };
 		845346D629FF80230077F8A0 /* AccountSetupModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D529FF80230077F8A0 /* AccountSetupModule.swift */; };
@@ -449,6 +451,8 @@
 		843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		843CF3A82B17297100C98BFF /* RatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
 		843CF3AA2B172B4E00C98BFF /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		843CF3AD2B177A9A00C98BFF /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
+		843CF3AF2B177B8100C98BFF /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		845275CF2B08E74000EEAF84 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		845346D329FEBDB30077F8A0 /* AccountSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		845346D529FF80230077F8A0 /* AccountSetupModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupModule.swift; sourceTree = "<group>"; };
@@ -1111,6 +1115,7 @@
 		843CF3A62B17296000C98BFF /* view */ = {
 			isa = PBXGroup;
 			children = (
+				843CF3AC2B177A8500C98BFF /* CommentView */,
 				843CF3A72B17296500C98BFF /* RatingView */,
 			);
 			path = view;
@@ -1123,6 +1128,15 @@
 				843CF3AA2B172B4E00C98BFF /* RatingView.swift */,
 			);
 			path = RatingView;
+			sourceTree = "<group>";
+		};
+		843CF3AC2B177A8500C98BFF /* CommentView */ = {
+			isa = PBXGroup;
+			children = (
+				843CF3AD2B177A9A00C98BFF /* CommentView.xib */,
+				843CF3AF2B177B8100C98BFF /* CommentView.swift */,
+			);
+			path = CommentView;
 			sourceTree = "<group>";
 		};
 		845275CE2B08E72A00EEAF84 /* PasscodeView */ = {
@@ -2997,6 +3011,7 @@
 				845346E229FF85E80077F8A0 /* ProfileInfo.storyboard in Resources */,
 				84DE12342A0565990024D48E /* SingleSelectionCollectionViewCell.xib in Resources */,
 				84E754042B0D3C36007D11B0 /* InputTextFieldView.xib in Resources */,
+				843CF3AE2B177A9A00C98BFF /* CommentView.xib in Resources */,
 				84F17AF62B0E415100B97B08 /* FollowAndVoteCell.xib in Resources */,
 				84725ABF29E12B18003658CD /* Squad.storyboard in Resources */,
 				84725AB729E1211F003658CD /* Details.storyboard in Resources */,
@@ -3363,6 +3378,7 @@
 				84A0510229E99774004D582B /* CreatorOverview.swift in Sources */,
 				84597C7F29EA53FB007C511B /* CreatorOverviewPresenter.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
+				843CF3B02B177B8100C98BFF /* CommentView.swift in Sources */,
 				849321E929EC492E00A05EB8 /* TeamOverviewRouter.swift in Sources */,
 				84F58F762B14422400F2FFAA /* FollowAndVoteTalent.swift in Sources */,
 				843AB2FB2B165292005B3DF4 /* UpgradePremiumService.swift in Sources */,

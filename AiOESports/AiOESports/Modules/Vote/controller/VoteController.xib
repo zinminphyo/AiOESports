@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,6 +23,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoteController" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="actionButtonBottomConstraint" destination="kKb-Ig-gM4" id="RRS-9F-DE0"/>
+                <outlet property="contentScrollView" destination="R9x-sa-5Oz" id="X9U-Kf-6z7"/>
                 <outlet property="continueBtn" destination="yOs-Ar-0fM" id="Nnb-lQ-auP"/>
                 <outlet property="editBtn" destination="MRI-FG-dMT" id="nGk-7Q-CEa"/>
                 <outlet property="view" destination="iN0-l3-epB" id="yJB-Ra-nRU"/>
@@ -250,9 +253,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x27-4k-5rq">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x27-4k-5rq" customClass="CommentView" customModule="AiOESports" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
-                                                            <color key="backgroundColor" name="InputColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" name="InputColor"/>
@@ -392,5 +395,8 @@
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

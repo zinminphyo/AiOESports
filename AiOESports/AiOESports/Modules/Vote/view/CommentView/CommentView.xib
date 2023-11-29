@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentView" customModule="AiOESports" customModuleProvider="target">
+            <connections>
+                <outlet property="inputTextView" destination="ovk-FC-rYF" id="RBV-H6-A8O"/>
+                <outlet property="placeholderTextLabel" destination="23J-2d-uei" id="6dN-0p-en1"/>
+                <outlet property="remainingCountLabel" destination="0iD-3h-sN0" id="g9h-Ob-RwE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="156"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ovk-FC-rYF">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="156"/>
+                    <color key="backgroundColor" name="InputBackground"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something about this team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23J-2d-uei">
+                    <rect key="frame" x="4" y="7.9999999999999982" width="201.33333333333334" height="18.333333333333329"/>
+                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iD-3h-sN0">
+                    <rect key="frame" x="361.33333333333331" y="132.33333333333334" width="23.666666666666686" height="15.666666666666657"/>
+                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="12"/>
+                    <color key="textColor" name="SecondaryText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ovk-FC-rYF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="I8y-Mz-R27"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ovk-FC-rYF" secondAttribute="trailing" id="Le5-RZ-mg4"/>
+                <constraint firstItem="23J-2d-uei" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Tak-TZ-GFM"/>
+                <constraint firstItem="23J-2d-uei" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Xef-3H-uP9"/>
+                <constraint firstItem="ovk-FC-rYF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aKr-iF-3MN"/>
+                <constraint firstAttribute="trailing" secondItem="0iD-3h-sN0" secondAttribute="trailing" constant="8" id="gxM-HM-5M5"/>
+                <constraint firstAttribute="bottom" secondItem="0iD-3h-sN0" secondAttribute="bottom" constant="8" id="zMQ-JQ-a32"/>
+                <constraint firstAttribute="bottom" secondItem="ovk-FC-rYF" secondAttribute="bottom" id="zNv-GH-KHi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-60.305343511450381" y="176.7605633802817"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="InputBackground">
+            <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryText">
+            <color red="0.71372549019607845" green="0.7686274509803922" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
