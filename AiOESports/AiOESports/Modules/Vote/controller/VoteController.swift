@@ -16,6 +16,7 @@ class VoteController: UIViewController {
     @IBOutlet private(set) var actionButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet private(set) var commentView: CommentView!
     @IBOutlet private(set) var commnetPreview: CommentPreview!
+    @IBOutlet private(set) var thankYouView: ThankYouView!
     
     private let viewModel: VoteViewModel!
     
@@ -50,6 +51,7 @@ class VoteController: UIViewController {
                 guard let self = self else { return }
                 self.commentView.isHidden = $0 != .input
                 self.commnetPreview.isHidden = $0 != .preview
+                self.thankYouView.isHidden = $0 != .submit
             }.store(in: &subscription)
         
         viewModel.$commentStatus
@@ -99,7 +101,7 @@ class VoteController: UIViewController {
     @IBAction
     private func didTapContinue(_ sender: UIButton) {
         commnetPreview.set(comment: commentView.comment)
-        viewModel.commentStatus = .preview
+        viewModel.commentStatus = viewModel.commentStatus == .preview ? .submit : .preview
     }
 
     @IBAction

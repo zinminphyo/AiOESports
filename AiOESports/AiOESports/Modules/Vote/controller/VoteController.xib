@@ -29,6 +29,7 @@
                 <outlet property="contentScrollView" destination="R9x-sa-5Oz" id="X9U-Kf-6z7"/>
                 <outlet property="continueBtn" destination="yOs-Ar-0fM" id="Nnb-lQ-auP"/>
                 <outlet property="editBtn" destination="MRI-FG-dMT" id="nGk-7Q-CEa"/>
+                <outlet property="thankYouView" destination="8p1-0C-yAU" id="Ygn-2C-Hwk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="yJB-Ra-nRU"/>
             </connections>
         </placeholder>
@@ -247,9 +248,9 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-PW-vHQ">
                                                     <rect key="frame" x="0.0" y="91" width="337" height="150"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8p1-0C-yAU">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8p1-0C-yAU" customClass="ThankYouView" customModule="AiOESports" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
-                                                            <color key="backgroundColor" name="InputColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-KF-ebV" customClass="CommentPreview" customModule="AiOESports" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
