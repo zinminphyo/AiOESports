@@ -24,6 +24,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoteController" customModule="AiOESports" customModuleProvider="target">
             <connections>
                 <outlet property="actionButtonBottomConstraint" destination="kKb-Ig-gM4" id="RRS-9F-DE0"/>
+                <outlet property="commentView" destination="x27-4k-5rq" id="B14-4N-ONO"/>
+                <outlet property="commnetPreview" destination="9h5-KF-ebV" id="gth-Jk-qAI"/>
                 <outlet property="contentScrollView" destination="R9x-sa-5Oz" id="X9U-Kf-6z7"/>
                 <outlet property="continueBtn" destination="yOs-Ar-0fM" id="Nnb-lQ-auP"/>
                 <outlet property="editBtn" destination="MRI-FG-dMT" id="nGk-7Q-CEa"/>
@@ -249,7 +251,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-KF-ebV">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-KF-ebV" customClass="CommentPreview" customModule="AiOESports" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                         </view>
@@ -283,8 +285,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-JJ-40U">
                                                     <rect key="frame" x="0.0" y="256" width="337" height="50"/>
                                                     <subviews>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-FG-dMT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-FG-dMT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="164" height="50"/>
                                                             <color key="backgroundColor" name="SecondaryBackground"/>
                                                             <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -301,7 +303,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-Ar-0fM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="337" height="50"/>
+                                                            <rect key="frame" x="173" y="0.0" width="164" height="50"/>
                                                             <color key="backgroundColor" name="PrimaryColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="deG-fS-Lqi"/>

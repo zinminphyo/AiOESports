@@ -13,8 +13,14 @@ class CommentView: UIControl, NibLoadable {
     @IBOutlet private(set) var remainingCountLabel: UILabel!
     @IBOutlet private(set) var placeholderTextLabel: UILabel!
     
-    private let userInputMaximumCount: Int = 200
+    @IBInspectable var userInputMaximumCount: Int = 200
     private var userInputTextCount: Int = 0
+    
+    
+    /// To get current text from outside of the box.
+    var comment: String {
+        inputTextView.text
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +51,6 @@ extension CommentView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let oldText = textView.text ?? ""
         let updatedText = NSString(string: oldText).replacingCharacters(in: range, with: text)
-        print("Updated text is \(updatedText)")
         placeholderTextLabel.isHidden = !updatedText.isEmpty
         userInputTextCount = updatedText.count
         let remainingCount = userInputMaximumCount - userInputTextCount

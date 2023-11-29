@@ -13,6 +13,15 @@ class VoteViewModel {
     
     private let userId: String
     
+    
+    @Published
+    var commentStatus: CommentStatus = .input
+    enum CommentStatus {
+        case input
+        case preview
+        case submit
+    }
+    
     init(userid: Int) {
         userId = String(userid)
     }

@@ -14,6 +14,8 @@ class VoteController: UIViewController {
     @IBOutlet private(set) var continueBtn: UIButton!
     @IBOutlet private(set) var contentScrollView: UIScrollView!
     @IBOutlet private(set) var actionButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private(set) var commentView: CommentView!
+    @IBOutlet private(set) var commnetPreview: CommentPreview!
     
     private let viewModel: VoteViewModel!
     
@@ -37,12 +39,27 @@ class VoteController: UIViewController {
     }
     
     private func configureHierarchy() {
+        configureViewModel()
         configureKeyboardNotification()
-        configureScrollView()
     }
-    
-    private func configureScrollView() {
-//        contentScrollView.keyboardDismissMode = .onDragWithAccessory
+
+    private func configureViewModel() {
+        viewModel.$commentStatus
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.commentView.isHidden = $0 != .input
+                self.commnetPreview.isHidden = $0 != .preview
+            }.store(in: &subscription)
+        
+        viewModel.$commentStatus
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] status in
+                guard let self = self else {return }
+                UIView.animate(withDuration: 0.3) {
+                    self.editBtn.isHidden = status != .preview
+                }
+            }.store(in: &subscription)
     }
     
     private func configureKeyboardNotification() {
@@ -52,10 +69,11 @@ class VoteController: UIViewController {
             .sink { [weak self] keyboardHeight in
                 guard let self = self else { return }
                 guard let height = keyboardHeight else { return }
+                let y = self.contentScrollView.contentSize.height - height - 50
+                self.contentScrollView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
+                self.actionButtonBottomConstraint.constant = height
                 UIView.animate(withDuration: 0.5) {
-                    let y = self.contentScrollView.contentSize.height - height
-                    self.contentScrollView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
-                    self.actionButtonBottomConstraint.constant = height
+                    self.view.layoutIfNeeded()
                 }
             }.store(in: &subscription)
         
@@ -63,9 +81,10 @@ class VoteController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self = self else { return }
+                self.contentScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                self.actionButtonBottomConstraint.constant = 24
                 UIView.animate(withDuration: 0.5) {
-                    self.contentScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-                    self.actionButtonBottomConstraint.constant = 24
+                    self.view.layoutIfNeeded()
                 }
             }.store(in: &subscription)
     }
@@ -79,17 +98,12 @@ class VoteController: UIViewController {
    
     @IBAction
     private func didTapContinue(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5) { [weak self] in
-            guard let self = self else { return }
-            self.editBtn.isHidden = false
-        }
+        commnetPreview.set(comment: commentView.comment)
+        viewModel.commentStatus = .preview
     }
 
     @IBAction
     private func didTapEdit(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5) { [weak self] in
-            guard let self = self else { return }
-            self.editBtn.isHidden = true
-        }
+        viewModel.commentStatus = .input
     }
 }

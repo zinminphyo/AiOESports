@@ -68,6 +68,8 @@
 		843CF3AB2B172B4E00C98BFF /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3AA2B172B4E00C98BFF /* RatingView.swift */; };
 		843CF3AE2B177A9A00C98BFF /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF3AD2B177A9A00C98BFF /* CommentView.xib */; };
 		843CF3B02B177B8100C98BFF /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3AF2B177B8100C98BFF /* CommentView.swift */; };
+		843CF3B52B1787FE00C98BFF /* CommentPreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF3B42B1787FE00C98BFF /* CommentPreview.xib */; };
+		843CF3B72B17892800C98BFF /* CommentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3B62B17892800C98BFF /* CommentPreview.swift */; };
 		845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845275CF2B08E74000EEAF84 /* PasscodeView.swift */; };
 		845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D329FEBDB30077F8A0 /* AccountSetup.swift */; };
 		845346D629FF80230077F8A0 /* AccountSetupModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D529FF80230077F8A0 /* AccountSetupModule.swift */; };
@@ -453,6 +455,8 @@
 		843CF3AA2B172B4E00C98BFF /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		843CF3AD2B177A9A00C98BFF /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
 		843CF3AF2B177B8100C98BFF /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		843CF3B42B1787FE00C98BFF /* CommentPreview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentPreview.xib; sourceTree = "<group>"; };
+		843CF3B62B17892800C98BFF /* CommentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPreview.swift; sourceTree = "<group>"; };
 		845275CF2B08E74000EEAF84 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		845346D329FEBDB30077F8A0 /* AccountSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		845346D529FF80230077F8A0 /* AccountSetupModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupModule.swift; sourceTree = "<group>"; };
@@ -1115,6 +1119,7 @@
 		843CF3A62B17296000C98BFF /* view */ = {
 			isa = PBXGroup;
 			children = (
+				843CF3B12B1787DF00C98BFF /* CommentPreview */,
 				843CF3AC2B177A8500C98BFF /* CommentView */,
 				843CF3A72B17296500C98BFF /* RatingView */,
 			);
@@ -1137,6 +1142,15 @@
 				843CF3AF2B177B8100C98BFF /* CommentView.swift */,
 			);
 			path = CommentView;
+			sourceTree = "<group>";
+		};
+		843CF3B12B1787DF00C98BFF /* CommentPreview */ = {
+			isa = PBXGroup;
+			children = (
+				843CF3B42B1787FE00C98BFF /* CommentPreview.xib */,
+				843CF3B62B17892800C98BFF /* CommentPreview.swift */,
+			);
+			path = CommentPreview;
 			sourceTree = "<group>";
 		};
 		845275CE2B08E72A00EEAF84 /* PasscodeView */ = {
@@ -2998,6 +3012,7 @@
 				84F17AEE2B0E3FF800B97B08 /* FollowAndVoteController.xib in Resources */,
 				84CF0A0A29D9FAAE00F87400 /* Tour.storyboard in Resources */,
 				84CF0A0229D9FA2200F87400 /* Match.storyboard in Resources */,
+				843CF3B52B1787FE00C98BFF /* CommentPreview.xib in Resources */,
 				84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */,
 				84E753FE2B0D38C7007D11B0 /* ProfileEditController.xib in Resources */,
 				84597C7629EA4A38007C511B /* GameImageCollectionViewCell.xib in Resources */,
@@ -3224,6 +3239,7 @@
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
 				843CF3A52B170BFB00C98BFF /* VoteViewModel.swift in Sources */,
 				8437FE7129ED1882008F7179 /* BannerModel.swift in Sources */,
+				843CF3B72B17892800C98BFF /* CommentPreview.swift in Sources */,
 				840833DD2B1643FB004F2A71 /* UpgradePremiumController.swift in Sources */,
 				842FC9AF29E8433600C5F354 /* PlayerDetails.swift in Sources */,
 				8437FE8329ED2138008F7179 /* ErrorPresentable.swift in Sources */,
