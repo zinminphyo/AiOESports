@@ -165,6 +165,9 @@
                                                                                                 <integer key="value" value="20"/>
                                                                                             </userDefinedRuntimeAttribute>
                                                                                         </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="didTapFollow:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mgM-f3-9tY"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,483 people following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMp-JY-1v3">
                                                                                         <rect key="frame" x="0.0" y="47" width="172.66666666666666" height="15.666666666666664"/>
@@ -202,6 +205,9 @@
                                                                                                 <integer key="value" value="20"/>
                                                                                             </userDefinedRuntimeAttribute>
                                                                                         </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="didTapVote:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3de-pH-ZwH"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,483 people voted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ped-Sf-bfH">
                                                                                         <rect key="frame" x="0.0" y="47" width="172.33333333333334" height="15.666666666666664"/>

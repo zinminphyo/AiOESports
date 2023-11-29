@@ -21,7 +21,7 @@ class DetailsPresenter: DetailsPresenting {
     var viewDelegate: DetailsViewDelegate?
     
     private var category: RankCategory = .team
-    private var id: Int = 0
+    private(set) var id: Int = 0
     
     private var teamDetails: TeamDetails? = nil
     private var playerDetails: PlayerDetails? = nil

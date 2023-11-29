@@ -215,6 +215,18 @@ class Details: UIViewController {
         let y: CGFloat = 0
         contentScrollView.setContentOffset(CGPoint(x: x, y: y), animated: true)
     }
+    
+    @IBAction
+    private func didTapVote(_ sender: UIButton) {
+        guard let userId = presenter?.id else { return }
+        let vc = VoteController(userId: userId)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction
+    private func didTapFollow(_ sender: UIButton) {
+        
+    }
 
 }
 

@@ -61,6 +61,9 @@
 		843AB2F62B1650DB005B3DF4 /* UpgradePreminumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AB2F52B1650DB005B3DF4 /* UpgradePreminumViewModel.swift */; };
 		843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AB2F82B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift */; };
 		843AB2FB2B165292005B3DF4 /* UpgradePremiumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843AB2FA2B165292005B3DF4 /* UpgradePremiumService.swift */; };
+		843CF3A02B1701B800C98BFF /* VoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF39F2B1701B800C98BFF /* VoteController.xib */; };
+		843CF3A22B1701D900C98BFF /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3A12B1701D900C98BFF /* VoteController.swift */; };
+		843CF3A52B170BFB00C98BFF /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */; };
 		845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845275CF2B08E74000EEAF84 /* PasscodeView.swift */; };
 		845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D329FEBDB30077F8A0 /* AccountSetup.swift */; };
 		845346D629FF80230077F8A0 /* AccountSetupModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D529FF80230077F8A0 /* AccountSetupModule.swift */; };
@@ -439,6 +442,9 @@
 		843AB2F52B1650DB005B3DF4 /* UpgradePreminumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePreminumViewModel.swift; sourceTree = "<group>"; };
 		843AB2F82B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumServiceProtocol.swift; sourceTree = "<group>"; };
 		843AB2FA2B165292005B3DF4 /* UpgradePremiumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumService.swift; sourceTree = "<group>"; };
+		843CF39F2B1701B800C98BFF /* VoteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoteController.xib; sourceTree = "<group>"; };
+		843CF3A12B1701D900C98BFF /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		845275CF2B08E74000EEAF84 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		845346D329FEBDB30077F8A0 /* AccountSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		845346D529FF80230077F8A0 /* AccountSetupModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupModule.swift; sourceTree = "<group>"; };
@@ -1069,6 +1075,32 @@
 				843AB2FA2B165292005B3DF4 /* UpgradePremiumService.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		843CF39D2B17019A00C98BFF /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				843CF3A32B170BF000C98BFF /* viewModel */,
+				843CF39E2B17019E00C98BFF /* controller */,
+			);
+			path = Vote;
+			sourceTree = "<group>";
+		};
+		843CF39E2B17019E00C98BFF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				843CF39F2B1701B800C98BFF /* VoteController.xib */,
+				843CF3A12B1701D900C98BFF /* VoteController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		843CF3A32B170BF000C98BFF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		845275CE2B08E72A00EEAF84 /* PasscodeView */ = {
@@ -2691,6 +2723,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				843CF39D2B17019A00C98BFF /* Vote */,
 				840833DE2B164656004F2A71 /* DimmingBackground */,
 				840833D82B16433F004F2A71 /* UpgradePreminum */,
 				84CC353D2B162EF7002B1D35 /* AppInfo */,
@@ -2907,6 +2940,7 @@
 				845346E929FFBAB30077F8A0 /* DatePicker.xib in Resources */,
 				8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */,
 				84B7457B29E489090086C708 /* FormerPlayerTableViewCell.xib in Resources */,
+				843CF3A02B1701B800C98BFF /* VoteController.xib in Resources */,
 				84DE4FC52B0D10370017AC84 /* ProfileController.xib in Resources */,
 				840833DB2B164360004F2A71 /* UpgradePremiumController.xib in Resources */,
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
@@ -3149,6 +3183,7 @@
 				849AEB942A13DC7D0024AAAA /* LoginInteractor.swift in Sources */,
 				8454D36229F5942800B97EE3 /* RegisterPresenter.swift in Sources */,
 				849B9C3929D187B200F1C2D2 /* PinView.swift in Sources */,
+				843CF3A52B170BFB00C98BFF /* VoteViewModel.swift in Sources */,
 				8437FE7129ED1882008F7179 /* BannerModel.swift in Sources */,
 				840833DD2B1643FB004F2A71 /* UpgradePremiumController.swift in Sources */,
 				842FC9AF29E8433600C5F354 /* PlayerDetails.swift in Sources */,
@@ -3171,6 +3206,7 @@
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
 				849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */,
+				843CF3A22B1701D900C98BFF /* VoteController.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
 				84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */,
 				840833E02B164685004F2A71 /* DimmingBackgroundPresentationController.swift in Sources */,
