@@ -64,6 +64,8 @@
 		843CF3A02B1701B800C98BFF /* VoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF39F2B1701B800C98BFF /* VoteController.xib */; };
 		843CF3A22B1701D900C98BFF /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3A12B1701D900C98BFF /* VoteController.swift */; };
 		843CF3A52B170BFB00C98BFF /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */; };
+		843CF3A92B17297100C98BFF /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF3A82B17297100C98BFF /* RatingView.xib */; };
+		843CF3AB2B172B4E00C98BFF /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3AA2B172B4E00C98BFF /* RatingView.swift */; };
 		845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845275CF2B08E74000EEAF84 /* PasscodeView.swift */; };
 		845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D329FEBDB30077F8A0 /* AccountSetup.swift */; };
 		845346D629FF80230077F8A0 /* AccountSetupModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D529FF80230077F8A0 /* AccountSetupModule.swift */; };
@@ -445,6 +447,8 @@
 		843CF39F2B1701B800C98BFF /* VoteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoteController.xib; sourceTree = "<group>"; };
 		843CF3A12B1701D900C98BFF /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
 		843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
+		843CF3A82B17297100C98BFF /* RatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
+		843CF3AA2B172B4E00C98BFF /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		845275CF2B08E74000EEAF84 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		845346D329FEBDB30077F8A0 /* AccountSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		845346D529FF80230077F8A0 /* AccountSetupModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupModule.swift; sourceTree = "<group>"; };
@@ -1080,6 +1084,7 @@
 		843CF39D2B17019A00C98BFF /* Vote */ = {
 			isa = PBXGroup;
 			children = (
+				843CF3A62B17296000C98BFF /* view */,
 				843CF3A32B170BF000C98BFF /* viewModel */,
 				843CF39E2B17019E00C98BFF /* controller */,
 			);
@@ -1101,6 +1106,23 @@
 				843CF3A42B170BFB00C98BFF /* VoteViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		843CF3A62B17296000C98BFF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				843CF3A72B17296500C98BFF /* RatingView */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		843CF3A72B17296500C98BFF /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				843CF3A82B17297100C98BFF /* RatingView.xib */,
+				843CF3AA2B172B4E00C98BFF /* RatingView.swift */,
+			);
+			path = RatingView;
 			sourceTree = "<group>";
 		};
 		845275CE2B08E72A00EEAF84 /* PasscodeView */ = {
@@ -2923,6 +2945,7 @@
 				84EF0A9029EEF2160042B6BF /* HomeContainer.storyboard in Resources */,
 				84A050DB29E92A6A004D582B /* Career.storyboard in Resources */,
 				84CC35292B14EAD9002B1D35 /* VerifyPhoneNumberController.xib in Resources */,
+				843CF3A92B17297100C98BFF /* RatingView.xib in Resources */,
 				84B7458F29E495960086C708 /* SponsorCollectionViewCell.xib in Resources */,
 				84F17AE22B0E397300B97B08 /* PasscodeController.xib in Resources */,
 				84F5FAF829DEAE3300734CAE /* Search.storyboard in Resources */,
@@ -3129,6 +3152,7 @@
 				849BCE1929E527990033C63A /* TeamOverviewPresenter.swift in Sources */,
 				8437FE6C29ECD658008F7179 /* PlayerOverviewRouting.swift in Sources */,
 				84F58F3E2B11187300F2FFAA /* UserDataModel.swift in Sources */,
+				843CF3AB2B172B4E00C98BFF /* RatingView.swift in Sources */,
 				84725ACE29E16B0F003658CD /* Achivement.swift in Sources */,
 				8454D35129F4F71300B97EE3 /* LoginViewDelegate.swift in Sources */,
 				84F5FAFC29DEB13A00734CAE /* SearchModule.swift in Sources */,

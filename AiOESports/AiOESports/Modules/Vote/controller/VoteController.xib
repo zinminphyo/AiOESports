@@ -68,7 +68,7 @@
                     <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDd-mp-gT6">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="619"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="609"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bp1-2F-c0a">
                                     <rect key="frame" x="18" y="18" width="357" height="203"/>
@@ -220,27 +220,27 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TS-YE-Yof">
-                                    <rect key="frame" x="18" y="231" width="357" height="364"/>
+                                    <rect key="frame" x="18" y="231" width="357" height="354"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sgn-mo-alC">
-                                            <rect key="frame" x="10" y="24" width="337" height="316"/>
+                                            <rect key="frame" x="10" y="24" width="337" height="306"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bf-SE-vEw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bf-SE-vEw" customClass="RatingView" customModule="AiOESports" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="337" height="60"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="ote-DF-FDH"/>
+                                                        <constraint firstAttribute="height" constant="60" id="ote-DF-FDH"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPQ-6p-dwS">
-                                                    <rect key="frame" x="0.0" y="85" width="337" height="1"/>
+                                                    <rect key="frame" x="0.0" y="75" width="337" height="1"/>
                                                     <color key="backgroundColor" red="0.18431372549019609" green="0.2196078431372549" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="XAI-Kj-XRo"/>
                                                     </constraints>
                                                 </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSA-PW-vHQ">
-                                                    <rect key="frame" x="0.0" y="101" width="337" height="150"/>
+                                                    <rect key="frame" x="0.0" y="91" width="337" height="150"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8p1-0C-yAU">
                                                             <rect key="frame" x="0.0" y="0.0" width="337" height="150"/>
@@ -278,10 +278,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-JJ-40U">
-                                                    <rect key="frame" x="0.0" y="266" width="337" height="50"/>
+                                                    <rect key="frame" x="0.0" y="256" width="337" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-FG-dMT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="164" height="50"/>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-FG-dMT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
                                                             <color key="backgroundColor" name="SecondaryBackground"/>
                                                             <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -298,7 +298,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-Ar-0fM">
-                                                            <rect key="frame" x="173" y="0.0" width="164" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="337" height="50"/>
                                                             <color key="backgroundColor" name="PrimaryColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="deG-fS-Lqi"/>
