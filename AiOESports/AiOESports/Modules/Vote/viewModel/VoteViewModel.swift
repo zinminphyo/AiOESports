@@ -14,6 +14,24 @@ class VoteViewModel {
     private let userId: String
     
     
+    let voteInfo: VoteInfo
+    
+    struct VoteInfo {
+        let imageURL: String
+        let name: String
+        let game: String
+        let rank: String
+        let location: String
+        let totalRatingStar: String
+        let coverImageURL: String
+        let id: String
+        let type: VotingType
+        enum VotingType {
+            case team
+            case talent
+        }
+    }
+    
     @Published
     var commentStatus: CommentStatus = .input
     enum CommentStatus {
@@ -22,8 +40,9 @@ class VoteViewModel {
         case submit
     }
     
-    init(userid: Int) {
+    init(userid: Int, voteInfo: VoteInfo) {
         userId = String(userid)
+        self.voteInfo = voteInfo
     }
     
 }

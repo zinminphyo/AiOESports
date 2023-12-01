@@ -20,13 +20,13 @@ class DetailsPresenter: DetailsPresenting {
     
     var viewDelegate: DetailsViewDelegate?
     
-    private var category: RankCategory = .team
+    private(set) var category: RankCategory = .team
     private(set) var id: Int = 0
     
-    private var teamDetails: TeamDetails? = nil
-    private var playerDetails: PlayerDetails? = nil
-    private var casterDetails: PlayerDetails? = nil
-    private var creatorDetails: PlayerDetails? = nil
+    private(set) var teamDetails: TeamDetails? = nil
+    private(set) var playerDetails: PlayerDetails? = nil
+    private(set) var casterDetails: PlayerDetails? = nil
+    private(set) var creatorDetails: PlayerDetails? = nil
     
     func fetchDetails() {
         isLoading = true

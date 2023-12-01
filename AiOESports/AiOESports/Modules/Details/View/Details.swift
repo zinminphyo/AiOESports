@@ -219,7 +219,28 @@ class Details: UIViewController {
     @IBAction
     private func didTapVote(_ sender: UIButton) {
         guard let userId = presenter?.id else { return }
-        let vc = VoteController(userId: userId)
+        let voteInfo: VoteViewModel.VoteInfo
+        switch presenter?.category {
+        case .team:
+            guard let details = presenter?.teamDetails else { return }
+            voteInfo = .init(imageURL: details.detail.teamImageFullPath, name: details.detail.name, game: details.detail.game, rank: String(details.followRating.teamRank), location: details.detail.city, totalRatingStar: details.followRating.totalRatingStars, coverImageURL: details.detail.coverImageFullPath, id: String(details.detail.id), type: .team)
+            
+        case .player:
+            guard let details = presenter?.playerDetails else { return }
+            voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+            
+        case .caster:
+            guard let details = presenter?.casterDetails else { return }
+            voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+            
+        case .creator:
+            guard let details = presenter?.creatorDetails else { return }
+            voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+            
+        default:
+            voteInfo = .init(imageURL: "", name: "", game: "", rank: "", location: "", totalRatingStar: "", coverImageURL: "", id: "", type: .talent)
+        }
+        let vc = VoteController(userId: userId, voteInfo: voteInfo)
         navigationController?.pushViewController(vc, animated: true)
     }
     

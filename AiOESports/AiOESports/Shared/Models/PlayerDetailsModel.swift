@@ -19,6 +19,7 @@ struct PlayerDetailsModel: Decodable {
     let location: String
     let city: String
     let bio: String
+    let game: String
     let role: String
     let playerImage: String
     let coverImage: String
@@ -42,7 +43,7 @@ struct PlayerDetailsModel: Decodable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id, talent, name, status, birthday, location, city, bio, role
+        case id, talent, name, status, birthday, location, city, bio, role, game
         case teamId = "team_id"
         case fullName = "full_name"
         case playerImge = "player_image"
@@ -63,6 +64,7 @@ struct PlayerDetailsModel: Decodable {
         city = try container.decodeIfPresent(String.self, forKey: .city) ?? ""
         bio = try container.decodeIfPresent(String.self, forKey: .bio) ?? ""
         role = try container.decodeIfPresent(String.self, forKey: .role) ?? ""
+        game = try container.decodeIfPresent(String.self, forKey: .game) ?? ""
         fullName = try container.decodeIfPresent(String.self, forKey: .fullName) ?? ""
         playerImage = try container.decodeIfPresent(String.self, forKey: .playerImge) ?? ""
         coverImage = try container.decodeIfPresent(String.self, forKey: .coverImage) ?? ""

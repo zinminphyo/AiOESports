@@ -7,9 +7,18 @@
 
 import UIKit
 import Combine
+import Kingfisher
 
 class VoteController: UIViewController {
     
+    
+    @IBOutlet private(set) var coverImageView: UIImageView!
+    @IBOutlet private(set) var teamImageView: UIImageView!
+    @IBOutlet private(set) var teamNameLabel: UILabel!
+    @IBOutlet private(set) var gameImageView: UIImageView!
+    @IBOutlet private(set) var locationLabel: UILabel!
+    @IBOutlet private(set) var rankLabel: UILabel!
+    @IBOutlet private(set) var totalRatingStarLabel: UILabel!
     @IBOutlet private(set) var editBtn: UIButton!
     @IBOutlet private(set) var continueBtn: UIButton!
     @IBOutlet private(set) var contentScrollView: UIScrollView!
@@ -22,8 +31,8 @@ class VoteController: UIViewController {
     
     private(set) var subscription = Set<AnyCancellable>()
     
-    init(userId: Int) {
-        viewModel = VoteViewModel(userid: userId)
+    init(userId: Int, voteInfo: VoteViewModel.VoteInfo) {
+        viewModel = VoteViewModel(userid: userId, voteInfo: voteInfo)
         super.init(nibName: "VoteController", bundle: nil)
     }
     
@@ -41,7 +50,18 @@ class VoteController: UIViewController {
     
     private func configureHierarchy() {
         configureViewModel()
+        bindUI()
         configureKeyboardNotification()
+    }
+    
+    private func bindUI() {
+        coverImageView.kf.setImage(with: URL(string: viewModel.voteInfo.coverImageURL))
+        teamImageView.kf.setImage(with: URL(string: viewModel.voteInfo.imageURL))
+        teamNameLabel.text = viewModel.voteInfo.name
+        gameImageView.image = Images.gameLogo(gameType: viewModel.voteInfo.game)
+        locationLabel.text = viewModel.voteInfo.location
+        rankLabel.text = viewModel.voteInfo.rank
+        totalRatingStarLabel.text = viewModel.voteInfo.totalRatingStar
     }
 
     private func configureViewModel() {
@@ -62,6 +82,8 @@ class VoteController: UIViewController {
                     self.editBtn.isHidden = status != .preview
                 }
             }.store(in: &subscription)
+        
+        
     }
     
     private func configureKeyboardNotification() {
