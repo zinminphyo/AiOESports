@@ -16,9 +16,10 @@ class RatingView: UIControl, NibLoadable {
     @IBOutlet private(set) var fourStarImageView: UIImageView!
     @IBOutlet private(set) var fiveStarImageView: UIImageView!
     
-    var count: Int = 0 {
+    @IBInspectable var count: Int = 0 {
         didSet {
             updateStars()
+            updateStarCountLabel()
         }
     }
 
@@ -44,6 +45,11 @@ class RatingView: UIControl, NibLoadable {
         ]
         starImages.forEach{ $0.image = UIImage(named: "star-unfill") }
         selectedStarCount.forEach{ starImages[$0].image = UIImage(named: "star-fill") }
+    }
+    
+    private func updateStarCountLabel() {
+        let starString = count <= 1 ? "star" : "stars"
+        starCountLabel.text = "\(count) \(starString)"
     }
 
     

@@ -45,6 +45,11 @@
 		842FC9BF29E84DB100C5F354 /* PlayerOverviewPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9BE29E84DB100C5F354 /* PlayerOverviewPresenting.swift */; };
 		842FC9C129E84DE200C5F354 /* PlayerOverviewViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9C029E84DE200C5F354 /* PlayerOverviewViewDelegate.swift */; };
 		842FC9C329E84E3700C5F354 /* PlayerOverviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9C229E84E3700C5F354 /* PlayerOverviewPresenter.swift */; };
+		84334E792B1AC435004DD32D /* UserInfoFetchingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E782B1AC435004DD32D /* UserInfoFetchingServiceProtocol.swift */; };
+		84334E7C2B1AC478004DD32D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E7B2B1AC478004DD32D /* UserInfo.swift */; };
+		84334E7E2B1AC5AB004DD32D /* UserInfoFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E7D2B1AC5AB004DD32D /* UserInfoFetchingService.swift */; };
+		84334E812B1AC701004DD32D /* VotingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E802B1AC701004DD32D /* VotingServiceProtocol.swift */; };
+		84334E832B1AC84C004DD32D /* VotingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E822B1AC84C004DD32D /* VotingService.swift */; };
 		8436FA172B0E6461007EB571 /* ComingSoonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436FA162B0E6461007EB571 /* ComingSoonView.xib */; };
 		8436FA192B0E661B007EB571 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436FA182B0E661B007EB571 /* ComingSoonView.swift */; };
 		8437FE6C29ECD658008F7179 /* PlayerOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE6B29ECD658008F7179 /* PlayerOverviewRouting.swift */; };
@@ -434,6 +439,11 @@
 		842FC9BE29E84DB100C5F354 /* PlayerOverviewPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOverviewPresenting.swift; sourceTree = "<group>"; };
 		842FC9C029E84DE200C5F354 /* PlayerOverviewViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOverviewViewDelegate.swift; sourceTree = "<group>"; };
 		842FC9C229E84E3700C5F354 /* PlayerOverviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOverviewPresenter.swift; sourceTree = "<group>"; };
+		84334E782B1AC435004DD32D /* UserInfoFetchingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFetchingServiceProtocol.swift; sourceTree = "<group>"; };
+		84334E7B2B1AC478004DD32D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		84334E7D2B1AC5AB004DD32D /* UserInfoFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFetchingService.swift; sourceTree = "<group>"; };
+		84334E802B1AC701004DD32D /* VotingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingServiceProtocol.swift; sourceTree = "<group>"; };
+		84334E822B1AC84C004DD32D /* VotingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingService.swift; sourceTree = "<group>"; };
 		8436FA162B0E6461007EB571 /* ComingSoonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingSoonView.xib; sourceTree = "<group>"; };
 		8436FA182B0E661B007EB571 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		8437FE6B29ECD658008F7179 /* PlayerOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOverviewRouting.swift; sourceTree = "<group>"; };
@@ -1040,6 +1050,41 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		84334E762B1AC412004DD32D /* services */ = {
+			isa = PBXGroup;
+			children = (
+				84334E7F2B1AC6F1004DD32D /* VotingService */,
+				84334E772B1AC419004DD32D /* UserInfoFetchingService */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		84334E772B1AC419004DD32D /* UserInfoFetchingService */ = {
+			isa = PBXGroup;
+			children = (
+				84334E782B1AC435004DD32D /* UserInfoFetchingServiceProtocol.swift */,
+				84334E7D2B1AC5AB004DD32D /* UserInfoFetchingService.swift */,
+			);
+			path = UserInfoFetchingService;
+			sourceTree = "<group>";
+		};
+		84334E7A2B1AC471004DD32D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				84334E7B2B1AC478004DD32D /* UserInfo.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		84334E7F2B1AC6F1004DD32D /* VotingService */ = {
+			isa = PBXGroup;
+			children = (
+				84334E802B1AC701004DD32D /* VotingServiceProtocol.swift */,
+				84334E822B1AC84C004DD32D /* VotingService.swift */,
+			);
+			path = VotingService;
+			sourceTree = "<group>";
+		};
 		8436FA152B0E6452007EB571 /* ComingSoonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1096,6 +1141,8 @@
 		843CF39D2B17019A00C98BFF /* Vote */ = {
 			isa = PBXGroup;
 			children = (
+				84334E7A2B1AC471004DD32D /* models */,
+				84334E762B1AC412004DD32D /* services */,
 				843CF3A62B17296000C98BFF /* view */,
 				843CF3A32B170BF000C98BFF /* viewModel */,
 				843CF39E2B17019E00C98BFF /* controller */,
@@ -3298,6 +3345,7 @@
 				84F58F482B11C7F800F2FFAA /* RegisterStep2ViewModel.swift in Sources */,
 				84597C7829EA5113007C511B /* SubGameModel.swift in Sources */,
 				8459D57D29DDBDD900DDF266 /* ApiRouter.swift in Sources */,
+				84334E7E2B1AC5AB004DD32D /* UserInfoFetchingService.swift in Sources */,
 				84A050E229E92C16004D582B /* CareerPresenting.swift in Sources */,
 				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
@@ -3394,6 +3442,7 @@
 				849BCE1229E5213E0033C63A /* TeamOverviewViewDelegate.swift in Sources */,
 				845346E429FF85F70077F8A0 /* ProfileInfo.swift in Sources */,
 				84B7459429E499B30086C708 /* SponsorViewDelegate.swift in Sources */,
+				84334E7C2B1AC478004DD32D /* UserInfo.swift in Sources */,
 				842FC9BC29E84D2400C5F354 /* PlayerOverviewModule.swift in Sources */,
 				845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */,
 				8437FE7329ED1985008F7179 /* AdvertisementModel.swift in Sources */,
@@ -3420,7 +3469,9 @@
 				84A050EB29E951CA004D582B /* EmptyView.swift in Sources */,
 				84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */,
 				84F58F532B11F9E800F2FFAA /* UserProfileFetchingServiceProrocol.swift in Sources */,
+				84334E792B1AC435004DD32D /* UserInfoFetchingServiceProtocol.swift in Sources */,
 				84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */,
+				84334E832B1AC84C004DD32D /* VotingService.swift in Sources */,
 				84C578982B0B67D000BD4FC9 /* DetailsContentView.swift in Sources */,
 				84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */,
 				84CC35312B14F870002B1D35 /* VerifyPhoneNumberServiceProtocol.swift in Sources */,
@@ -3442,6 +3493,7 @@
 				84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */,
 				845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */,
 				843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */,
+				84334E812B1AC701004DD32D /* VotingServiceProtocol.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				84BE00162A0D48C600228691 /* Welcome.swift in Sources */,
 				849AEB972A13DDA30024AAAA /* LoginResponseModel.swift in Sources */,

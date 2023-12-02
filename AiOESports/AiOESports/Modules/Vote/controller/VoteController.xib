@@ -83,7 +83,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDd-mp-gT6">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="609"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bp1-2F-c0a">
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bp1-2F-c0a">
                                     <rect key="frame" x="18" y="18" width="357" height="203"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="l8z-Kc-1y8">
@@ -267,6 +267,11 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="ote-DF-FDH"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="count">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPQ-6p-dwS">
                                                     <rect key="frame" x="0.0" y="75" width="337" height="1"/>

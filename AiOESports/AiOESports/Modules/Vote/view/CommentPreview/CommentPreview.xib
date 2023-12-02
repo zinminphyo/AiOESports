@@ -64,12 +64,16 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8o-eA-cRS">
-                            <rect key="frame" x="0.0" y="38" width="361" height="58"/>
+                            <rect key="frame" x="0.0" y="38" width="361" height="50"/>
                             <string key="text">Just a legendary team on Moba game histories. Just a legendary team on Moba game histories. Just a legendary team on Moba game histories.</string>
                             <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UV-ZV-XV7">
+                            <rect key="frame" x="0.0" y="96" width="361" height="0.0"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>

@@ -49,9 +49,19 @@ class VoteController: UIViewController {
     }
     
     private func configureHierarchy() {
+        configureKeyboardDismiss()
         configureViewModel()
         bindUI()
         configureKeyboardNotification()
+    }
+    
+    private func configureKeyboardDismiss() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapViewToDismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func didTapViewToDismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func bindUI() {
@@ -79,11 +89,41 @@ class VoteController: UIViewController {
             .sink { [weak self] status in
                 guard let self = self else {return }
                 UIView.animate(withDuration: 0.3) {
-                    self.editBtn.isHidden = status != .preview
+                    self.continueBtn.isHidden = status == .submit
+                    self.editBtn.isHidden = status == .input
                 }
             }.store(in: &subscription)
         
+        viewModel.$commentStatus
+            .receive(on: DispatchQueue.main)
+            .map{ $0 == .preview ? "Edit" : "Exit" }
+            .sink { [weak self] title in
+                guard let self = self else { return }
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
+                    self.editBtn.setTitle(title, for: .normal)
+                }, completion: nil)
+            }.store(in: &subscription)
         
+        viewModel.$commentStatus
+            .receive(on: DispatchQueue.main)
+            .map{ $0 == .input ? "Continue" : "Submit" }
+            .sink { [weak self] title in
+                guard let self = self else { return }
+                UIView.animate(withDuration: 0.3) {
+                    self.continueBtn.setTitle(title, for: .normal)
+                }
+            }.store(in: &subscription)
+        
+        viewModel.$userInfo
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                guard let userInfo = $0 else { return }
+                self.commnetPreview.set(url: userInfo.profile_image)
+                    .set(name: userInfo.username)
+            }.store(in: &subscription)
+        
+        viewModel.fetchUserData()
     }
     
     private func configureKeyboardNotification() {

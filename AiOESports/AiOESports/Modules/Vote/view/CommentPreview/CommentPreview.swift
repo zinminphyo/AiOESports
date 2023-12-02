@@ -26,7 +26,7 @@ class CommentPreview: UIView, NibLoadable {
     
     @discardableResult
     func set(url: String) -> Self {
-        profileImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)\(url)"))
+        profileImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(url)"))
         return self
     }
     
