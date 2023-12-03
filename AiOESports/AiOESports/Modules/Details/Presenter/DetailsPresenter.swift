@@ -24,6 +24,12 @@ class DetailsPresenter: DetailsPresenting {
     @Published
     var creatorDetail: CasterDetails? = nil
     
+    @Published
+    var isFollowedEnabled: Bool = false
+    
+    @Published
+    var isVotingEnabled: Bool = false
+    
     init(category: RankCategory, id: Int) {
         self.category = category
         self.id = id
@@ -65,6 +71,9 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchTeamDetails(id: String(id))
                 teamDetail = response
                 teamDetails = response
+                guard let followVoteStatus = response.userFollowVoteStats else { return }
+                isFollowedEnabled = !followVoteStatus.following
+                isVotingEnabled = !followVoteStatus.voting
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }
@@ -79,6 +88,9 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchPlayerDetails(id: String(id))
                 playerDetail = response
                 playerDetails = response
+                guard let followVoteStatus = response.userFollowVoteStats else { return }
+                isFollowedEnabled = !followVoteStatus.following
+                isVotingEnabled = !followVoteStatus.voting
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }
@@ -93,6 +105,9 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchCasterDetails(id: String(id))
                 casterDetail = response
                 casterDetails = response
+                guard let followVoteStatus = response.userFollowVoteStats else { return }
+                isFollowedEnabled = !followVoteStatus.following
+                isVotingEnabled = !followVoteStatus.voting
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }
@@ -107,6 +122,9 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchCreatorDetails(id: String(id))
                 creatorDetail = response
                 creatorDetails = response
+                guard let followVoteStatus = response.userFollowVoteStats else { return }
+                isFollowedEnabled = !followVoteStatus.following
+                isVotingEnabled = !followVoteStatus.voting
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }

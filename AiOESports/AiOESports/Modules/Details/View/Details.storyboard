@@ -372,6 +372,7 @@
                         <outlet property="contentScrollView" destination="AIk-b1-A2T" id="bOu-Xc-PSr"/>
                         <outlet property="coverImageView" destination="yUa-lQ-7fD" id="rpy-AZ-dNs"/>
                         <outlet property="detailsInfoContainerView" destination="W3j-gL-NgD" id="bHh-fR-Jbt"/>
+                        <outlet property="followButton" destination="8pz-Rt-jdh" id="tQc-Jj-vLN"/>
                         <outlet property="gameImageView" destination="ycm-BR-ucZ" id="ccQ-br-Hvn"/>
                         <outlet property="gameNameLabel" destination="Yvb-WB-WNl" id="gwC-dZ-BYB"/>
                         <outlet property="loadingView" destination="5b4-Tp-B5S" id="XGq-2M-QVK"/>
@@ -383,6 +384,7 @@
                         <outlet property="totalFollowerCountLabel" destination="uMp-JY-1v3" id="9ub-iA-otp"/>
                         <outlet property="totalRatingLabel" destination="kqF-t9-XiC" id="agg-pc-FoR"/>
                         <outlet property="totalVotedCountLabel" destination="Ped-Sf-bfH" id="USi-Yj-IIz"/>
+                        <outlet property="voteButton" destination="3Tb-6q-gPb" id="RRq-BH-g5u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

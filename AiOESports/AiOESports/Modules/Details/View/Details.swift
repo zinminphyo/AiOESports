@@ -27,6 +27,8 @@ class Details: UIViewController {
     @IBOutlet weak var totalRatingLabel: UILabel!
     @IBOutlet weak var totalFollowerCountLabel: UILabel!
     @IBOutlet weak var totalVotedCountLabel: UILabel!
+    @IBOutlet private(set) var followButton: UIButton!
+    @IBOutlet private(set) var voteButton: UIButton!
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -89,6 +91,22 @@ class Details: UIViewController {
                     return
                 }
                 self.renderPlayerDetails(details: detail)
+            }).store(in: &subscription)
+        
+        presenter?.$isFollowedEnabled
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.followButton.setTitle($0 ? "Follow" : "Following", for: .normal)
+                self.followButton.isUserInteractionEnabled = $0
+            }).store(in: &subscription)
+        
+        presenter?.$isVotingEnabled
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.voteButton.setTitle($0 ? "Vote" : "Voted", for: .normal)
+                self.voteButton.isUserInteractionEnabled = $0
             }).store(in: &subscription)
         
         presenter?.$casterDetail
