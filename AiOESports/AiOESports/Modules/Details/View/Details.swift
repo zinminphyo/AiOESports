@@ -93,15 +93,14 @@ class Details: UIViewController {
                 self.renderPlayerDetails(details: detail)
             }).store(in: &subscription)
         
-        presenter?.$isFollowedEnabled
+        presenter?.$isFollowing
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }
                 self.followButton.setTitle($0 ? "Follow" : "Following", for: .normal)
-                self.followButton.isUserInteractionEnabled = $0
             }).store(in: &subscription)
         
-        presenter?.$isVotingEnabled
+        presenter?.$isVoting
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }
@@ -305,7 +304,7 @@ class Details: UIViewController {
     
     @IBAction
     private func didTapFollow(_ sender: UIButton) {
-        
+        presenter?.follow()
     }
 
 }

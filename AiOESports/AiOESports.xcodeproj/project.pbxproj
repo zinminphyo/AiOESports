@@ -55,6 +55,8 @@
 		84334E8C2B1C8C3D004DD32D /* GetDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E8B2B1C8C3D004DD32D /* GetDetailsService.swift */; };
 		84334E8E2B1C9504004DD32D /* TotalFollowRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E8D2B1C9504004DD32D /* TotalFollowRating.swift */; };
 		84334E902B1CA2D6004DD32D /* CasterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E8F2B1CA2D6004DD32D /* CasterDetails.swift */; };
+		84334E932B1CC24D004DD32D /* FollowServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E922B1CC24D004DD32D /* FollowServiceProtocol.swift */; };
+		84334E952B1CC665004DD32D /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84334E942B1CC665004DD32D /* FollowService.swift */; };
 		8436FA172B0E6461007EB571 /* ComingSoonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436FA162B0E6461007EB571 /* ComingSoonView.xib */; };
 		8436FA192B0E661B007EB571 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436FA182B0E661B007EB571 /* ComingSoonView.swift */; };
 		8437FE6C29ECD658008F7179 /* PlayerOverviewRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437FE6B29ECD658008F7179 /* PlayerOverviewRouting.swift */; };
@@ -454,6 +456,8 @@
 		84334E8B2B1C8C3D004DD32D /* GetDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailsService.swift; sourceTree = "<group>"; };
 		84334E8D2B1C9504004DD32D /* TotalFollowRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalFollowRating.swift; sourceTree = "<group>"; };
 		84334E8F2B1CA2D6004DD32D /* CasterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterDetails.swift; sourceTree = "<group>"; };
+		84334E922B1CC24D004DD32D /* FollowServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowServiceProtocol.swift; sourceTree = "<group>"; };
+		84334E942B1CC665004DD32D /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		8436FA162B0E6461007EB571 /* ComingSoonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingSoonView.xib; sourceTree = "<group>"; };
 		8436FA182B0E661B007EB571 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		8437FE6B29ECD658008F7179 /* PlayerOverviewRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOverviewRouting.swift; sourceTree = "<group>"; };
@@ -1098,6 +1102,7 @@
 		84334E842B1C89DF004DD32D /* service */ = {
 			isa = PBXGroup;
 			children = (
+				84334E912B1CC23B004DD32D /* FollowService */,
 				84334E852B1C89E7004DD32D /* GetDetailsService */,
 			);
 			path = service;
@@ -1120,6 +1125,15 @@
 				84334E8F2B1CA2D6004DD32D /* CasterDetails.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		84334E912B1CC23B004DD32D /* FollowService */ = {
+			isa = PBXGroup;
+			children = (
+				84334E922B1CC24D004DD32D /* FollowServiceProtocol.swift */,
+				84334E942B1CC665004DD32D /* FollowService.swift */,
+			);
+			path = FollowService;
 			sourceTree = "<group>";
 		};
 		8436FA152B0E6452007EB571 /* ComingSoonView */ = {
@@ -3293,6 +3307,7 @@
 				8437FE7A29ED1C4E008F7179 /* HomeViewDelegate.swift in Sources */,
 				84F602F729DC851400250C25 /* RankPresenter.swift in Sources */,
 				84334E872B1C8A00004DD32D /* GetDetailsServiceProtocol.swift in Sources */,
+				84334E952B1CC665004DD32D /* FollowService.swift in Sources */,
 				84B7456529E46EC00086C708 /* SquadViewModel.swift in Sources */,
 				84B7456029E467940086C708 /* TeamDetailsModel.swift in Sources */,
 				84725ABB29E12767003658CD /* DetailsModule.swift in Sources */,
@@ -3524,6 +3539,7 @@
 				84F5FB0F29DEC56F00734CAE /* SearchInteracting.swift in Sources */,
 				84CF09FE29D9F7C500F87400 /* RankModule.swift in Sources */,
 				849AEBB02A1614830024AAAA /* RegisterInteractor.swift in Sources */,
+				84334E932B1CC24D004DD32D /* FollowServiceProtocol.swift in Sources */,
 				84DC1A0F2A0949CF0049BDD2 /* AiOPickerDelegate.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
