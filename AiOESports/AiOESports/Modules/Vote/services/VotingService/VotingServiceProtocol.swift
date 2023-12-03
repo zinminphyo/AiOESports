@@ -9,6 +9,6 @@ import Foundation
 
 
 protocol VotingServiceProtocol {
-    func voteTeam(id: String) async throws -> BaseResponseModel<Empty>
-    func voteTalent(id: String) async throws -> BaseResponseModel<Empty>
+    func voteTeam(id: String, star: Int, comment: String) async throws -> BaseResponseModel<Empty>
+    func voteTalent(id: String, star: Int, comment: String) async throws -> BaseResponseModel<Empty>
 }

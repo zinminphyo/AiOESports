@@ -59,5 +59,9 @@ extension CommentView: UITextViewDelegate {
         return userInputTextCount <= userInputMaximumCount
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        print("Text is \(textView.text)")
+        sendActions(for: .valueChanged)
+    }
     
 }

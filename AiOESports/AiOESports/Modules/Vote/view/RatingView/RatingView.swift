@@ -36,6 +36,7 @@ class RatingView: UIControl, NibLoadable {
     @IBAction
     private func didTapRating(_ sender: UIButton) {
         count = sender.tag
+        sendActions(for: .valueChanged)
     }
     
     private func updateStars() {

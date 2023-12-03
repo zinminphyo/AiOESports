@@ -18,7 +18,7 @@ struct VotingService: VotingServiceProtocol {
         URL(string: "\(NetworkBaseURLs.shared.baseURL)/api/vote/talent")!
     }
     
-    func voteTeam(id: String) async throws -> BaseResponseModel<Empty> {
+    func voteTeam(id: String, star: Int, comment: String) async throws -> BaseResponseModel<Empty> {
         let url = teamVoteURL.appendingPathComponent(id)
         guard let token = UserDataModel.shared.getToken() else {
             throw AuthrizationError.cannotRetrieveToken
@@ -26,14 +26,18 @@ struct VotingService: VotingServiceProtocol {
         let header: HTTPHeaders = HTTPHeaders([
             HTTPHeader(name: "Authorization", value: "Bearer \(token)")
         ])
-        let request = AF.request(url, method: .post, headers: header).serializingData()
+        let params: Parameters = [
+            "star" : star,
+            "comment" : comment
+        ]
+        let request = AF.request(url, method: .post, parameters: params, headers: header).serializingData()
         let response = await request.response
         let data = try response.result.get()
         let decoder = JSONDecoder()
         return try decoder.decode(BaseResponseModel<Empty>.self, from: data)
     }
     
-    func voteTalent(id: String) async throws -> BaseResponseModel<Empty> {
+    func voteTalent(id: String, star: Int, comment: String) async throws -> BaseResponseModel<Empty> {
         let url = talentVoteURL.appendingPathComponent(id)
         guard let token = UserDataModel.shared.getToken() else {
             throw AuthrizationError.cannotRetrieveToken
@@ -41,7 +45,11 @@ struct VotingService: VotingServiceProtocol {
         let header: HTTPHeaders = HTTPHeaders([
             HTTPHeader(name: "Authorization", value: "Bearer \(token)")
         ])
-        let request = AF.request(url, method: .post, headers: header).serializingData()
+        let params: Parameters = [
+            "star" : star,
+            "comment" : comment
+        ]
+        let request = AF.request(url, method: .post, parameters: params, headers: header).serializingData()
         let response = await request.response
         let data = try response.result.get()
         return try JSONDecoder().decode(BaseResponseModel<Empty>.self, from: data)

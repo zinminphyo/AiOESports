@@ -31,6 +31,7 @@
                 <outlet property="coverImageView" destination="l8z-Kc-1y8" id="bZY-zb-mPs"/>
                 <outlet property="editBtn" destination="MRI-FG-dMT" id="nGk-7Q-CEa"/>
                 <outlet property="gameImageView" destination="rCf-kD-ray" id="Asc-2l-TYz"/>
+                <outlet property="loadingView" destination="x50-c8-RhP" id="66H-yD-Njs"/>
                 <outlet property="locationLabel" destination="b6o-2H-35X" id="mY3-D4-jVL"/>
                 <outlet property="rankLabel" destination="Bct-Qc-LPs" id="08O-Eh-NKm"/>
                 <outlet property="teamImageView" destination="Ay4-kN-dhY" id="GpG-OH-BBs"/>
@@ -272,6 +273,9 @@
                                                             <integer key="value" value="0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didChangeRating:" destination="-1" eventType="valueChanged" id="1Fr-ch-Oae"/>
+                                                    </connections>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPQ-6p-dwS">
                                                     <rect key="frame" x="0.0" y="75" width="337" height="1"/>
@@ -318,48 +322,77 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-JJ-40U">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfN-uo-Z2a">
                                                     <rect key="frame" x="0.0" y="256" width="337" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-FG-dMT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="164" height="50"/>
-                                                            <color key="backgroundColor" name="SecondaryBackground"/>
-                                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Edit">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="didTapEdit:" destination="-1" eventType="touchUpInside" id="Osz-hG-tnf"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-Ar-0fM">
-                                                            <rect key="frame" x="173" y="0.0" width="164" height="50"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-JJ-40U">
+                                                            <rect key="frame" x="0.0" y="0.0" width="337" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-FG-dMT">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="50"/>
+                                                                    <color key="backgroundColor" name="SecondaryBackground"/>
+                                                                    <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="Edit">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="didTapEdit:" destination="-1" eventType="touchUpInside" id="Osz-hG-tnf"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-Ar-0fM">
+                                                                    <rect key="frame" x="173" y="0.0" width="164" height="50"/>
+                                                                    <color key="backgroundColor" name="PrimaryColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="deG-fS-Lqi"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="Continue">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="didTapContinue:" destination="-1" eventType="touchUpInside" id="bAR-bG-o0s"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x50-c8-RhP" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="337" height="50"/>
                                                             <color key="backgroundColor" name="PrimaryColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="deG-fS-Lqi"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="Continue">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="didTapContinue:" destination="-1" eventType="touchUpInside" id="bAR-bG-o0s"/>
-                                                            </connections>
-                                                        </button>
+                                                        </view>
                                                     </subviews>
-                                                </stackView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="x50-c8-RhP" firstAttribute="top" secondItem="yfN-uo-Z2a" secondAttribute="top" id="Ap1-4t-CR6"/>
+                                                        <constraint firstItem="x50-c8-RhP" firstAttribute="leading" secondItem="yfN-uo-Z2a" secondAttribute="leading" id="BGI-G9-B0W"/>
+                                                        <constraint firstAttribute="bottom" secondItem="x50-c8-RhP" secondAttribute="bottom" id="DwN-0Y-E0H"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Pcm-JJ-40U" secondAttribute="trailing" id="USQ-1r-Nmf"/>
+                                                        <constraint firstItem="Pcm-JJ-40U" firstAttribute="leading" secondItem="yfN-uo-Z2a" secondAttribute="leading" id="idy-mC-Tg7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="x50-c8-RhP" secondAttribute="trailing" id="j4e-0k-3ty"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Pcm-JJ-40U" secondAttribute="bottom" id="sec-g3-s30"/>
+                                                        <constraint firstItem="Pcm-JJ-40U" firstAttribute="top" secondItem="yfN-uo-Z2a" secondAttribute="top" id="tGC-Pv-9tF"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                         </stackView>
                                     </subviews>

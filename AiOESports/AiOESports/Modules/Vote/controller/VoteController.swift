@@ -26,6 +26,7 @@ class VoteController: UIViewController {
     @IBOutlet private(set) var commentView: CommentView!
     @IBOutlet private(set) var commnetPreview: CommentPreview!
     @IBOutlet private(set) var thankYouView: ThankYouView!
+    @IBOutlet private(set) var loadingView: LoadingView!
     
     private let viewModel: VoteViewModel!
     
@@ -49,10 +50,21 @@ class VoteController: UIViewController {
     }
     
     private func configureHierarchy() {
+        configureCommentView()
         configureKeyboardDismiss()
         configureViewModel()
         bindUI()
         configureKeyboardNotification()
+    }
+    
+    
+    private func configureCommentView() {
+        commentView.addTarget(self, action: #selector(didChangeComment(_:)), for: .valueChanged)
+    }
+    
+    @objc func didChangeComment(_ sender: CommentView) {
+        viewModel.userRatingInfo.comment = sender.comment
+        commnetPreview.set(comment: sender.comment)
     }
     
     private func configureKeyboardDismiss() {
@@ -123,6 +135,25 @@ class VoteController: UIViewController {
                     .set(name: userInfo.username)
             }.store(in: &subscription)
         
+        viewModel.votingResult
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                switch $0 {
+                case .success:
+                    viewModel.commentStatus = .submit
+                case .failed(let error):
+                    print("Voting result error is \(error)")
+                }
+            }.store(in: &subscription)
+        
+        viewModel.$isSubmitting
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
+            }.store(in: &subscription)
+        
         viewModel.fetchUserData()
     }
     
@@ -162,12 +193,38 @@ class VoteController: UIViewController {
    
     @IBAction
     private func didTapContinue(_ sender: UIButton) {
+        /*
         commnetPreview.set(comment: commentView.comment)
         viewModel.commentStatus = viewModel.commentStatus == .preview ? .submit : .preview
+         */
+        let status = viewModel.commentStatus
+        switch status {
+        case .input:
+            viewModel.commentStatus = .preview
+        case .preview:
+            viewModel.vote()
+        default:
+            break
+        }
     }
 
     @IBAction
     private func didTapEdit(_ sender: UIButton) {
-        viewModel.commentStatus = .input
+        let status = viewModel.commentStatus
+        
+        switch status {
+        case .preview:
+            viewModel.commentStatus = .input
+        case .submit:
+            navigationController?.popViewController(animated: true)
+        default:
+            break
+        }
+    }
+    
+    
+    @IBAction
+    private func didChangeRating(_ sender: RatingView) {
+        viewModel.userRatingInfo.star = sender.count
     }
 }

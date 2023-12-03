@@ -34,6 +34,17 @@ class VoteViewModel {
         }
     }
     
+    
+    var userRatingInfo: RateInfo = RateInfo()
+    struct RateInfo {
+        var star: Int = 0
+        var comment: String = ""
+    }
+    
+    
+    @Published
+    var isSubmitting: Bool = false
+    
     @Published
     var userInfo: UserInfo? = nil
     
@@ -78,25 +89,29 @@ class VoteViewModel {
     }
     
     func voteTalent() {
+        isSubmitting = true
         Task {
             do {
-                let response = try await votingService.voteTalent(id: voteInfo.id)
+                let response = try await votingService.voteTalent(id: voteInfo.id, star: userRatingInfo.star, comment: userRatingInfo.comment)
                 if response.statusCode == 200 { votingResult.send(.success) } else { votingResult.send(.failed(error: response.message)) }
             } catch {
                 print("Error is \(error.localizedDescription)")
             }
+            isSubmitting = false
         }
     }
     
     func voteTeam() {
+        isSubmitting = true
         Task {
             do {
-                let response = try await votingService.voteTalent(id: voteInfo.id)
+                let response = try await votingService.voteTeam(id: voteInfo.id, star: userRatingInfo.star, comment: userRatingInfo.comment)
                 if response.statusCode == 200 { votingResult.send(.success) }
                 else { votingResult.send(.failed(error: response.message)) }
             } catch {
                 print("Error is \(error.localizedDescription)")
             }
+            isSubmitting = false
         }
     }
     
