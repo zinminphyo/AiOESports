@@ -1,15 +1,14 @@
 //
-//  PlayerDetails.swift
+//  CasterDetails.swift
 //  AiOESports
 //
-//  Created by Zin Min Phyo on 13/04/2023.
+//  Created by Zin Min Phyo on 03/12/2023.
 //
 
 import Foundation
 
 
-struct PlayerDetails: Decodable {
-    
+struct CasterDetails: Decodable {
     struct PlayerTotalFollingRating: Decodable {
         let talentRank: Int
         let totalFollowers: Int
@@ -46,11 +45,12 @@ struct PlayerDetails: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let result = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let data = try result.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
-        userFollowVoteStats = try data.decodeIfPresent(UserFollowVoteStats.self, forKey: .userFollowVoteStats)
-        totalFollowRating = try data.decode(PlayerTotalFollingRating.self, forKey: .totalFollowRating)
+        
         career = try data.decodeIfPresent([CareerModel].self, forKey: .career) ?? []
         playerAchivement = try data.decode(PlayerAchivement.self, forKey: .playerAchivement)
         let status = try data.nestedContainer(keyedBy: CodingKeys.self, forKey: .stats)
+        userFollowVoteStats = try status.decodeIfPresent(UserFollowVoteStats.self, forKey: .userFollowVoteStats)
+        totalFollowRating = try status.decode(PlayerTotalFollingRating.self, forKey: .totalFollowRating)
         details = try status.decode(PlayerDetailsModel.self, forKey: .details)
         signature = try status.decodeIfPresent([SignatureModel].self, forKey: .signature) ?? []
         social = try status.decodeIfPresent([SocialModel].self, forKey: .social) ?? []

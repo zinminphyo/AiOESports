@@ -71,6 +71,47 @@ class Details: UIViewController {
                 $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
             }).store(in: &subscription)
         
+        presenter?.$teamDetail
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self,
+                      let detail = $0 else {
+                    return
+                }
+                self.renderDetails(details: detail)
+            }).store(in: &subscription)
+        
+        presenter?.$playerDetail
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self,
+                let detail = $0 else {
+                    return
+                }
+                self.renderPlayerDetails(details: detail)
+            }).store(in: &subscription)
+        
+        presenter?.$casterDetail
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self,
+                      let details = $0 else {
+                    return
+                }
+                self.renderCasterDetails(details: details)
+            }).store(in: &subscription)
+        
+        presenter?.$creatorDetail
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self,
+                      let details = $0 else {
+                    return
+                }
+                self.renderCreatorDetails(details: details)
+            }).store(in: &subscription)
+            
+        
         presenter?.fetchDetails()
     }
     
@@ -223,7 +264,7 @@ class Details: UIViewController {
         switch presenter?.category {
         case .team:
             guard let details = presenter?.teamDetails else { return }
-            voteInfo = .init(imageURL: details.detail.teamImageFullPath, name: details.detail.name, game: details.detail.game, rank: String(details.followRating.teamRank), location: details.detail.city, totalRatingStar: details.followRating.totalRatingStars, coverImageURL: details.detail.coverImageFullPath, id: String(details.detail.id), type: .team)
+            voteInfo = .init(imageURL: details.detail.teamImageFullPath, name: details.detail.name, game: details.detail.game, rank: String(details.followRating.teamRank), location: details.detail.city, totalRatingStar: details.followRating.totalRatingStars , coverImageURL: details.detail.coverImageFullPath, id: String(details.detail.id), type: .team)
             
         case .player:
             guard let details = presenter?.playerDetails else { return }
@@ -326,7 +367,7 @@ extension Details: DetailsViewDelegate {
         teamNameLabel.text = details.details.name
     }
     
-    func renderCasterDetails(details: PlayerDetails) {
+    func renderCasterDetails(details: CasterDetails) {
         removeALLContentSubViews()
         configureCollectionView()
         updateContainerViewForCaster()
@@ -335,7 +376,7 @@ extension Details: DetailsViewDelegate {
         teamNameLabel.text = details.details.name
     }
     
-    func renderCreatorDetails(details: PlayerDetails) {
+    func renderCreatorDetails(details: CasterDetails) {
         removeALLContentSubViews()
         configureCollectionView()
         updateContainerViewForCreator()

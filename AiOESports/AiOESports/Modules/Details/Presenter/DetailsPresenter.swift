@@ -10,9 +10,24 @@ import UIKit
 
 class DetailsPresenter: DetailsPresenting {
     
+    private let detailsFetchingService: GetDetailsService!
+    
+    @Published
+    var teamDetail: TeamDetails? = nil
+    
+    @Published
+    var playerDetail: PlayerDetails? = nil
+    
+    @Published
+    var casterDetail: CasterDetails? = nil
+    
+    @Published
+    var creatorDetail: CasterDetails? = nil
+    
     init(category: RankCategory, id: Int) {
         self.category = category
         self.id = id
+        detailsFetchingService = GetDetailsService()
     }
     
     @Published
@@ -25,64 +40,79 @@ class DetailsPresenter: DetailsPresenting {
     
     private(set) var teamDetails: TeamDetails? = nil
     private(set) var playerDetails: PlayerDetails? = nil
-    private(set) var casterDetails: PlayerDetails? = nil
-    private(set) var creatorDetails: PlayerDetails? = nil
+    private(set) var casterDetails: CasterDetails? = nil
+    private(set) var creatorDetails: CasterDetails? = nil
     
     func fetchDetails() {
         isLoading = true
         switch category {
         case .team:
-            let router = ApiRouter.teamDetails(id)
-            NetworkService.shared.request(router: router) { (result: Result<TeamDetails, NetworkError>) in
-                switch result {
-                case .success(let success):
-                    self.teamDetails = success
-                    self.viewDelegate?.renderDetails(details: success)
-                case .failure(let failure):
-                    print("Failure is \(failure)")
-                }
-                self.isLoading = false
-            }
+            fetchTeamDetails()
         case .player:
-            let router = ApiRouter.playerDetails(id)
-            NetworkService.shared.request(router: router) { (result: Result<PlayerDetails, NetworkError>) in
-                switch result {
-                case .success(let success):
-                    self.playerDetails = success
-                    self.viewDelegate?.renderPlayerDetails(details: success)
-                case .failure(let failure):
-                    print("Player detials error is \(failure.localizedDescription)")
-                }
-                self.isLoading = false
-            }
+            fetchPlayerDetails()
         case .caster:
-            let router = ApiRouter.casterDetails(id)
-            NetworkService.shared.request(router: router) { (result: Result<PlayerDetails,NetworkError>) in
-                switch result {
-                case .success(let success):
-                    self.casterDetails = success
-                    self.viewDelegate?.renderCasterDetails(details: success)
-                case .failure(let failure):
-                    print("Failure is \(failure)")
-                }
-                self.isLoading = false
-            }
+            fetchCasterDetails()
         case .creator:
-            let router = ApiRouter.creatorDetails(id)
-            NetworkService.shared.request(router: router) { (result: Result<PlayerDetails, NetworkError>) in
-                switch result {
-                case .success(let success):
-                    self.creatorDetails = success
-                    self.viewDelegate?.renderCreatorDetails(details: success)
-                case .failure(let failure):
-                    print("Failure is \(failure)")
-                }
-                self.isLoading = false
-            }
+            fetchCreatorDetails()
         }
         
     }
     
+    private func fetchTeamDetails() {
+        isLoading = true
+        Task {
+            do {
+                let response = try await detailsFetchingService.fetchTeamDetails(id: String(id))
+                teamDetail = response
+                teamDetails = response
+            } catch {
+                print("Details fetching service error is \(error.localizedDescription)")
+            }
+            isLoading = false
+        }
+    }
+    
+    private func fetchPlayerDetails() {
+        isLoading = true
+        Task {
+            do {
+                let response = try await detailsFetchingService.fetchPlayerDetails(id: String(id))
+                playerDetail = response
+                playerDetails = response
+            } catch {
+                print("Details fetching service error is \(error.localizedDescription)")
+            }
+            isLoading = false
+        }
+    }
+    
+    private func fetchCasterDetails() {
+        isLoading = true
+        Task {
+            do {
+                let response = try await detailsFetchingService.fetchCasterDetails(id: String(id))
+                casterDetail = response
+                casterDetails = response
+            } catch {
+                print("Details fetching service error is \(error.localizedDescription)")
+            }
+            isLoading = false
+        }
+    }
+    
+    private func fetchCreatorDetails() {
+        isLoading = true
+        Task {
+            do {
+                let response = try await detailsFetchingService.fetchCreatorDetails(id: String(id))
+                creatorDetail = response
+                creatorDetails = response
+            } catch {
+                print("Details fetching service error is \(error.localizedDescription)")
+            }
+            isLoading = false
+        }
+    }
     
     func getNumberOfContentCount() -> Int {
         switch category {

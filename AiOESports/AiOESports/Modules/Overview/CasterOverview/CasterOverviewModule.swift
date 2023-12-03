@@ -10,7 +10,7 @@ import UIKit
 
 
 enum CasterOverviewModule {
-    static func createModule(details: PlayerDetails) -> CasterOverview? {
+    static func createModule(details: CasterDetails) -> CasterOverview? {
         let st = UIStoryboard(name: "CasterOverview", bundle: .main)
         guard let vc = st.instantiateViewController(withIdentifier: String(describing: CasterOverview.self)) as? CasterOverview else { return nil }
         let presenter = CasterOverviewPresenter(casterDetails: details)

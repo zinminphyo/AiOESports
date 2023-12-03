@@ -14,9 +14,9 @@ class CasterOverviewPresenter: CasterOverviewPresenting {
     
     var router: CasterOverviewRouting?
     
-    private var details: PlayerDetails? = nil
+    private var details: CasterDetails? = nil
     
-    init(casterDetails: PlayerDetails) {
+    init(casterDetails: CasterDetails) {
         self.details = casterDetails
     }
     

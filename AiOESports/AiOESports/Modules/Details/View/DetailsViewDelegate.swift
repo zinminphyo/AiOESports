@@ -12,6 +12,6 @@ protocol DetailsViewDelegate {
     var presenter: DetailsPresenter? { get set }
     func renderDetails(details: TeamDetails)
     func renderPlayerDetails(details: PlayerDetails)
-    func renderCasterDetails(details: PlayerDetails)
-    func renderCreatorDetails(details: PlayerDetails)
+    func renderCasterDetails(details: CasterDetails)
+    func renderCreatorDetails(details: CasterDetails)
 }

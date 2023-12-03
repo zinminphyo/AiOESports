@@ -10,11 +10,11 @@ import Foundation
 
 class CreatorOverviewPresenter: CreatorOverviewPresenting {
     
-    init(details: PlayerDetails) {
+    init(details: CasterDetails) {
         self.details = details
     }
     
-    private var details: PlayerDetails? = nil
+    private var details: CasterDetails? = nil
     
     var viewDelegate: CreatorOverviewViewDelegate?
     

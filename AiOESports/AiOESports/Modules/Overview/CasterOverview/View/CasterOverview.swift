@@ -14,7 +14,7 @@ class CasterOverview: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var socialLists: [SocialModel] = []
-    private var details: PlayerDetails! = nil
+    private var details: CasterDetails! = nil
 
     var presenter: CasterOverviewPresenting?
     
@@ -116,7 +116,7 @@ extension CasterOverview: UITableViewDataSource, UITableViewDelegate {
 
 
 extension CasterOverview: CasterOverviewViewDelegate {
-    func renderUI(details: PlayerDetails) {
+    func renderUI(details: CasterDetails) {
         self.socialLists = details.social
         self.collectionView.reloadData()
         self.details = details

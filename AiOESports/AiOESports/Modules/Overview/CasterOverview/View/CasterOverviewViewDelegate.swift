@@ -10,5 +10,5 @@ import Foundation
 
 protocol CasterOverviewViewDelegate {
     var presenter: CasterOverviewPresenting? { get set }
-    func renderUI(details: PlayerDetails)
+    func renderUI(details: CasterDetails)
 }

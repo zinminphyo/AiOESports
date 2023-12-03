@@ -17,7 +17,7 @@ class CreatorOverview: UIViewController {
     @IBOutlet weak var bioValueLabel: UILabel!
     
     private var socialLists: [SocialModel] = []
-    private var details: PlayerDetails! = nil
+    private var details: CasterDetails! = nil
     
     var presenter: CreatorOverviewPresenting?
 
@@ -133,7 +133,7 @@ extension CreatorOverview: UITableViewDataSource, UITableViewDelegate {
 
 
 extension CreatorOverview: CreatorOverviewViewDelegate {
-    func renderUI(details: PlayerDetails) {
+    func renderUI(details: CasterDetails) {
         self.details = details
         self.socialLists = details.social
         self.collectionView.reloadData()

@@ -103,6 +103,7 @@ import Foundation
 
 struct TeamDetails: Decodable {
     
+    let userFollowVoteStats: UserFollowVoteStats?
     let followRating: TotalFollowRating
     let detail: TeamDetailsModel
     let social: [SocialModel]
@@ -113,6 +114,7 @@ struct TeamDetails: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case followRating = "TotalFollowRating"
+        case userFollowVoteStats = "UserFollowVoteStats"
         case squad = "player"
         case achivements = "achieve"
         case sponsors = "sponsor"
@@ -128,6 +130,7 @@ struct TeamDetails: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let resultContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let dataContainer = try resultContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+        userFollowVoteStats = try dataContainer.decodeIfPresent(UserFollowVoteStats.self, forKey: .userFollowVoteStats)
         followRating = try dataContainer.decode(TotalFollowRating.self, forKey: .followRating)
         squad = try dataContainer.decodeIfPresent(SquadModel.self, forKey: .squad) ?? SquadModel(headCoach: nil, assistantCoach: nil, technicalDirector: nil, analyst: nil, roster: [])
         achivemets = try dataContainer.decodeIfPresent([AchivementModel].self, forKey: .achivements) ?? []
@@ -139,10 +142,5 @@ struct TeamDetails: Decodable {
         social = try statsContainer.decodeIfPresent([SocialModel].self, forKey: .social) ?? []
     }
     
-    struct TotalFollowRating: Decodable {
-        let teamRank: Int
-        let totalFollowers: Int
-        let totalRating: Int
-        let totalRatingStars: String
-    }
+    
 }
