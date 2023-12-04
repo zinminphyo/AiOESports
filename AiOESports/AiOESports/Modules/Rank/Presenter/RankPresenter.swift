@@ -17,6 +17,33 @@ class RankPresenter: RankPresenting {
     @Published
     var isFetching: Bool = false
     
+    @Published
+    var teamRankLists: [TeamObject] = []
+    
+    // MARK: For Player
+    @Published
+    var playerRankLists: [PlayerObject] = []
+    @Published
+    var playerLoadingLists: [String] = []
+    
+    // MARK: For Caster
+    @Published
+    var casterLists: [CasterObject] = []
+    @Published
+    var casterLoadingLists: [String] = []
+    
+    // MARK: For Creator
+    @Published
+    var creatorLists: [CreatorObject] = []
+    @Published
+    var creatorLoadingLists: [String] = []
+    
+    @Published
+    var loadingLists: [String] = []
+    
+    @Published
+    var rankCategory: RankCategory = .team
+    
     private var teamLists: [TeamObject] = []
     private var rankLists: [RankPresentable] = []
     
@@ -39,8 +66,10 @@ class RankPresenter: RankPresenting {
                     self.rankLists.append(contentsOf: success.data)
                 }
                 self.viewDelegate?.renderRankLists(lists: self.rankLists)
+                self.teamRankLists = success.data
                 self.currentPage = success.pagination.currentPage + 1
                 success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.loadingLists = success.pagination.hasMore ? ["loading"] : []
                 self.viewDelegate?.hideLoading()
             case .failure(let failure):
                 self.viewDelegate?.renderError(error: failure.localizedDescription)
@@ -64,8 +93,10 @@ class RankPresenter: RankPresenting {
                     self.rankLists.append(contentsOf: success.data)
                 }
                 self.currentPage = success.pagination.currentPage + 1
-                self.viewDelegate?.renderRankLists(lists: self.rankLists)
-                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+//                self.viewDelegate?.renderRankLists(lists: self.rankLists)
+                self.playerRankLists = success.data
+//                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.playerLoadingLists = success.pagination.hasMore ? ["loading"] : []
                 self.viewDelegate?.hideLoading()
             case .failure(let failure):
                 self.viewDelegate?.renderError(error: failure.localizedDescription)
@@ -89,8 +120,10 @@ class RankPresenter: RankPresenting {
                     self.rankLists.append(contentsOf: success.data)
                 }
                 self.currentPage = success.pagination.currentPage + 1
-                self.viewDelegate?.renderRankLists(lists: self.rankLists)
-                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+//                self.viewDelegate?.renderRankLists(lists: self.rankLists)
+                self.casterLists = success.data
+//                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.casterLoadingLists = success.pagination.hasMore ? ["loading"] : []
                 self.viewDelegate?.hideLoading()
             case .failure(let failure):
                 self.viewDelegate?.renderError(error: failure.localizedDescription)
@@ -113,8 +146,10 @@ class RankPresenter: RankPresenting {
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
-                self.viewDelegate?.renderRankLists(lists: self.rankLists)
-                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.creatorLists = success.data
+//                self.viewDelegate?.renderRankLists(lists: self.rankLists)
+//                success.pagination.hasMore ? self.viewDelegate?.renderLoadingLists(loadingLists: ["loading"]) : self.viewDelegate?.renderLoadingLists(loadingLists: [])
+                self.creatorLoadingLists = success.pagination.hasMore ? ["loading"] : []
                 self.viewDelegate?.hideLoading()
             case .failure(let failure):
                 self.viewDelegate?.renderError(error: failure.localizedDescription)
@@ -124,7 +159,7 @@ class RankPresenter: RankPresenting {
     }
     
     func continuePagination() {
-        switch selectedCategory {
+        switch rankCategory {
         case .team:
             fetchTeamLists(gameType: .All, status: .all)
         case .player:
@@ -149,20 +184,7 @@ class RankPresenter: RankPresenting {
     }
     
     func changedRankCategory(category: RankCategory) {
-        guard category != self.selectedCategory else { return }
-        self.resetPagination()
-        self.resetData()
-        self.selectedCategory = category
-        switch category {
-        case .team:
-            self.fetchTeamLists(gameType: selectedGameType, status: .all)
-        case .player:
-            self.fetchPlayerLists(gameType: selectedGameType, status: .active)
-        case .caster:
-            self.fetchCasterLists(gameType: selectedGameType, status: .active)
-        case .creator:
-            self.fetchCreatorLists(gameType: selectedGameType, status: .active)
-        }
+        rankCategory = category
     }
     
     func changedGameType(game: GameType) {

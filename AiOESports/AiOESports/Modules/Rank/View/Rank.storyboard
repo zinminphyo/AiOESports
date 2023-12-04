@@ -114,17 +114,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iud-Nv-2i6">
                                 <rect key="frame" x="8" y="207" width="377" height="611"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-kh-Awu">
-                                        <rect key="frame" x="0.0" y="8" width="377" height="603"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crw-Bk-T5l" customClass="RankListsView" customModule="AiOESports" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <action selector="didTriggerPaginationInTeam:" destination="Y6W-OH-hqX" eventType="valueChanged" id="mUY-pf-A4C"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bx8-1Y-ehy" customClass="RankListsView" customModule="AiOESports" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <action selector="didTriggerPaginationInPlayer:" destination="Y6W-OH-hqX" eventType="valueChanged" id="AWy-jg-Mqd"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uP8-fe-opO" customClass="RankListsView" customModule="AiOESports" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <action selector="didTriggerPaginationInCaster:" destination="Y6W-OH-hqX" eventType="valueChanged" id="IAx-Z6-ToL"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaT-rR-TsT" customClass="RankListsView" customModule="AiOESports" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <action selector="didTriggerPaginationInCreator:" destination="Y6W-OH-hqX" eventType="valueChanged" id="1tF-5a-poS"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="yEh-kh-Awu" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" constant="8" id="5vz-QB-5Dd"/>
-                                    <constraint firstAttribute="trailing" secondItem="yEh-kh-Awu" secondAttribute="trailing" id="et1-e7-jB3"/>
-                                    <constraint firstItem="yEh-kh-Awu" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="ozz-jd-LYe"/>
-                                    <constraint firstAttribute="bottom" secondItem="yEh-kh-Awu" secondAttribute="bottom" id="pYT-Ho-5tl"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bx8-1Y-ehy" secondAttribute="bottom" id="0Gr-9B-v8o"/>
+                                    <constraint firstAttribute="trailing" secondItem="uP8-fe-opO" secondAttribute="trailing" id="3nx-ek-WA7"/>
+                                    <constraint firstItem="crw-Bk-T5l" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="4WE-8L-xSn"/>
+                                    <constraint firstAttribute="trailing" secondItem="crw-Bk-T5l" secondAttribute="trailing" id="8kl-hw-z5d"/>
+                                    <constraint firstItem="Bx8-1Y-ehy" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="B8s-oC-u2A"/>
+                                    <constraint firstAttribute="trailing" secondItem="xaT-rR-TsT" secondAttribute="trailing" id="J5P-TU-uri"/>
+                                    <constraint firstItem="uP8-fe-opO" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="Lgi-uX-OzO"/>
+                                    <constraint firstItem="crw-Bk-T5l" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" id="Tzf-iM-DTI"/>
+                                    <constraint firstItem="Bx8-1Y-ehy" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" id="Wlx-1a-s9g"/>
+                                    <constraint firstItem="xaT-rR-TsT" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" id="Yua-dS-Im1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bx8-1Y-ehy" secondAttribute="trailing" id="d4S-1n-pCa"/>
+                                    <constraint firstAttribute="bottom" secondItem="uP8-fe-opO" secondAttribute="bottom" id="ejl-fW-oGK"/>
+                                    <constraint firstAttribute="bottom" secondItem="xaT-rR-TsT" secondAttribute="bottom" id="jM5-Ll-jKU"/>
+                                    <constraint firstItem="uP8-fe-opO" firstAttribute="top" secondItem="iud-Nv-2i6" secondAttribute="top" id="jVg-ei-1gn"/>
+                                    <constraint firstItem="xaT-rR-TsT" firstAttribute="leading" secondItem="iud-Nv-2i6" secondAttribute="leading" id="oKA-fg-sHD"/>
+                                    <constraint firstAttribute="bottom" secondItem="crw-Bk-T5l" secondAttribute="bottom" id="qfx-BF-w2K"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qne-xS-yOS" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
@@ -163,10 +199,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="casterRankView" destination="uP8-fe-opO" id="SsQ-99-Rrd"/>
                         <outlet property="categoryCollectionView" destination="2ZP-gv-dj0" id="1Dj-Ad-Eby"/>
+                        <outlet property="creatorRankView" destination="xaT-rR-TsT" id="Pfj-ga-DIU"/>
                         <outlet property="gameCategoryCollectionView" destination="avK-Iu-4g4" id="ah1-Ug-t6u"/>
                         <outlet property="loadingView" destination="Qne-xS-yOS" id="LGn-5f-Xs9"/>
-                        <outlet property="tableView" destination="yEh-kh-Awu" id="oeX-Nj-0Cl"/>
+                        <outlet property="playerRankView" destination="Bx8-1Y-ehy" id="8Se-YC-mpc"/>
+                        <outlet property="teamRankView" destination="crw-Bk-T5l" id="684-DZ-icO"/>
                         <outlet property="titleLabel" destination="8rn-rv-CYT" id="hPH-bq-GEj"/>
                     </connections>
                 </viewController>

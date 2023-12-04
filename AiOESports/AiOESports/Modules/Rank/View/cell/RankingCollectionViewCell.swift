@@ -155,4 +155,11 @@ class RankingTableViewCell: UITableViewCell {
         return self
     }
     
+    func render(rank: RankListsView.RankModel) {
+        teamImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(rank.imageURL)"))
+        teamNameLabel.text = rank.name
+        gameCategoryImageView.image = Images.GameImages.getImage(gameName: rank.game)
+        locationLabel.text = rank.location
+    }
+    
 }

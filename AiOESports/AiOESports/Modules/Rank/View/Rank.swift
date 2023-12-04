@@ -8,21 +8,23 @@
 import UIKit
 //import SVProgressHUD
 import Kingfisher
+import Combine
 
 class Rank: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var gameCategoryCollectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet private(set) var loadingView: LoadingView!
+    @IBOutlet private(set) var teamRankView: RankListsView!
+    @IBOutlet private(set) var playerRankView: RankListsView!
+    @IBOutlet private(set) var casterRankView: RankListsView!
+    @IBOutlet private(set) var creatorRankView: RankListsView!
     
     var presenter: RankPresenter?
     
-    private var teamLists: [TeamObject] = []
-    private var playerLists: [PlayerObject] = []
-    private var loadingLists: [String] = []
-    private var filterLists: [RankPresentable] = []
+    private(set) var subscription = Set<AnyCancellable>()
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +32,89 @@ class Rank: UIViewController {
         // Do any additional setup after loading the view.
         configureHierarchy()
         
+        
+        
+        presenter?.$teamRankLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                let lists = $0.compactMap{ RankListsView.RankModel(team: $0) }
+                self.teamRankView.lists = lists
+            }).store(in: &subscription)
+        
+        presenter?.$loadingLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.teamRankView.hasMore = $0.count > 0
+            }).store(in: &subscription)
+        
+        presenter?.$playerRankLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                let lists = $0.compactMap{ RankListsView.RankModel(player: $0) }
+                self.playerRankView.lists = lists
+            }).store(in: &subscription)
+        
+        presenter?.$playerLoadingLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.playerRankView.hasMore = $0.count > 0
+            }).store(in: &subscription)
+        
+        presenter?.$casterLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                let lists = $0.compactMap{ RankListsView.RankModel(caster: $0) }
+                self.casterRankView.lists = lists
+            }).store(in: &subscription)
+        
+        presenter?.$casterLoadingLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.casterRankView.hasMore = $0.count > 0
+            }).store(in: &subscription)
+        
+        presenter?.$creatorLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                let lists = $0.compactMap{ RankListsView.RankModel(creator: $0) }
+                self.creatorRankView.lists = lists
+            }).store(in: &subscription)
+        
+        presenter?.$creatorLoadingLists
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.creatorRankView.hasMore = $0.count > 1
+            }).store(in: &subscription)
+        
+        presenter?.$rankCategory
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.teamRankView.isHidden = $0 != .team
+                self.playerRankView.isHidden = $0 != .player
+                self.casterRankView.isHidden = $0 != .caster
+                self.creatorRankView.isHidden = $0 != .creator
+            }).store(in: &subscription)
+        
         presenter?.fetchTeamLists(gameType: .All, status: .all)
+        
+        presenter?.fetchPlayerLists(gameType: .All, status: .active)
+        presenter?.fetchCasterLists(gameType: .All, status: .all)
+        presenter?.fetchCreatorLists(gameType: .All, status: .all)
     }
     
     private func configureHierarchy() {
         configureHeaderView()
         configureCategoryCollectionView()
         configureGameCategoryCollectionView()
-        configureTableView()
     }
     
     private func configureHeaderView() {
@@ -76,15 +153,7 @@ class Rank: UIViewController {
         gameCategoryCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
-    private func configureTableView() {
-        tableView.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.reuseIdentifier)
-        tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.showsVerticalScrollIndicator = false
-        tableView.showsHorizontalScrollIndicator = false
-        tableView.separatorStyle = .none
-    }
+    
     
     @IBAction func didTapSearchBtn(_ sender: UIButton) {
         presenter?.tappedSearchBtn()
@@ -94,74 +163,42 @@ class Rank: UIViewController {
         presenter?.tappedFilerSettingBtn()
     }
     
+    @IBAction
+    private func didTriggerPaginationInTeam(_ sender: RankListsView) {
+        presenter?.continuePagination()
+    }
     
+    
+    @IBAction
+    private func didTriggerPaginationInPlayer(_ sender: RankListsView) {
+        presenter?.continuePagination()
+    }
+    
+    @IBAction
+    private func didTriggerPaginationInCaster(_ sender: RankListsView) {
+        presenter?.continuePagination()
+    }
+    
+    @IBAction
+    private func didTriggerPaginationInCreator(_ sender: RankListsView) {
+        presenter?.continuePagination()
+    }
 }
 
 // MARK: - View Delegate
 extension Rank: RankViewDelegate {
     
-    func renderTeamLists(teamLists: [TeamObject]) {
-        self.teamLists = teamLists
-        self.tableView.reloadSections([0], with: .fade)
-    }
+    func renderTeamLists(teamLists: [TeamObject]) {}
     
-    func renderPlayerLists(playerLists: [PlayerObject]) {
-        self.filterLists = playerLists
-        self.tableView.reloadSections([0], with: .fade)
-    }
+    func renderPlayerLists(playerLists: [PlayerObject]) {}
     
-    func renderLoadingLists(loadingLists: [String]) {
-        /*
-        var toDeleteIndexPaths: [IndexPath] = []
-        self.loadingLists.indices.forEach{
-            toDeleteIndexPaths.append(IndexPath(row: $0, section: 1))
-        }
-        self.loadingLists.removeAll()
-        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .automatic)
-        
-        var toInsertIndexPaths: [IndexPath] = []
-        loadingLists.indices.forEach{
-            toInsertIndexPaths.append(IndexPath(row: $0, section: 1))
-        }
-        
-        self.loadingLists = loadingLists
-        self.tableView.beginUpdates()
-        self.tableView.insertRows(at: toInsertIndexPaths, with: .automatic)
-        self.tableView.endUpdates()
-         */
-        self.loadingLists = loadingLists
-        self.tableView.reloadData()
-    }
+    func renderLoadingLists(loadingLists: [String]) {}
     
-    func renderRankLists(lists: [RankPresentable]) {
-        /*
-        var toDeleteIndexPaths: [IndexPath] = []
-        filterLists.indices.forEach {
-            toDeleteIndexPaths.append(IndexPath(row: $0, section: 0))
-        }
-        filterLists.removeAll()
-        self.tableView.deleteRows(at: toDeleteIndexPaths, with: .automatic)
-        
-        var toInsertIndexPaths: [IndexPath] = []
-        lists.indices.forEach{
-            toInsertIndexPaths.append(IndexPath(row: $0, section: 0))
-        }
-        self.filterLists = lists
-        self.tableView.beginUpdates()
-        self.tableView.insertRows(at: toInsertIndexPaths, with: .automatic)
-        self.tableView.endUpdates()
-         */
-        self.filterLists = lists
-        self.tableView.reloadSections([0], with: .none)
-    }
+    func renderRankLists(lists: [RankPresentable]) {}
     
-    func renderCoverImage(url: String) {
-        tableView.tableHeaderView = createTableHeaderView(url: url)
-    }
+    func renderCoverImage(url: String) {}
     
-    func renderError(error: String) {
-        
-    }
+    func renderError(error: String) {}
     
     func showLoading() {
         loadingView.showLoading()
@@ -219,44 +256,6 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-extension Rank: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return filterLists.count
-        } else {
-            return loadingLists.count
-        }
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as? RankingTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.set(presentable: filterLists[indexPath.row])
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as? LoadingTableViewCell else { return UITableViewCell() }
-            cell.startAnimation()
-            return cell
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 70 : 50
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.tappedRankItem(id: self.filterLists[indexPath.row].getId())
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let _ = cell as? LoadingTableViewCell, indexPath.section == 1 else { return }
-        presenter?.continuePagination()
-    }
-    
-}
 
 
 extension Rank: FilterSettingDelegate {
@@ -266,20 +265,3 @@ extension Rank: FilterSettingDelegate {
 }
 
 
-extension Rank {
-    private func createTableHeaderView(url: String) -> UIView {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.width * 0.5))
-        view.backgroundColor = UIColor.clear
-        let imgView = UIImageView(frame: .zero)
-        imgView.kf.setImage(with: URL(string: url), placeholder: Images.Placeholder.cover)
-        view.addSubview(imgView)
-        imgView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            imgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            imgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            imgView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-        ])
-        return view
-    }
-}
