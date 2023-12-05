@@ -34,6 +34,11 @@ class RankingTableViewCell: UITableViewCell {
         return lbl
     }()
     
+    private var rankLabel: UILabel = {
+        let lbl = UILabel(frame: .zero)
+        return lbl
+    }()
+    
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
@@ -59,6 +64,7 @@ class RankingTableViewCell: UITableViewCell {
         configureTeamLabel()
         configureGameCategoryImageView()
         configureLocationLabel()
+        configureRankLabel()
     }
     
     private func configureContentView() {
@@ -75,6 +81,18 @@ class RankingTableViewCell: UITableViewCell {
             containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 4),
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4)
+        ])
+    }
+    
+    private func configureRankLabel() {
+        containerView.addSubview(rankLabel)
+        rankLabel.font = Fonts.subtitleFont
+        rankLabel.text = "1"
+        rankLabel.textColor = UIColor.white
+        rankLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            rankLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 4),
+            rankLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 8)
         ])
     }
     

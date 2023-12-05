@@ -123,7 +123,8 @@ class RankListsView: UIControl, NibLoadable {
     }
     
     private func configureTableView() {
-        listsTblView.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.reuseIdentifier)
+//        listsTblView.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.reuseIdentifier)
+        listsTblView.register(UINib(nibName: String(describing: RankCell.self), bundle: nil), forCellReuseIdentifier: RankCell.reuseIdentifier)
         listsTblView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
         listsTblView.dataSource = self
         listsTblView.delegate = self
@@ -156,7 +157,7 @@ extension RankListsView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.reuseIdentifier, for: indexPath) as! RankingTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: RankCell.reuseIdentifier, for: indexPath) as! RankCell
             cell.render(rank: _lists[indexPath.row])
             return cell
         } else {
