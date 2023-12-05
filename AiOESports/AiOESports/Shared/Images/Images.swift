@@ -95,6 +95,7 @@ class Images {
         static let APEX_IMAGE = UIImage(named: "APEX_Image", in: .main, compatibleWith: nil)
         static let CallOfDuty_IMAGE = UIImage(named: "CallOfDuty_Image", in: .main, compatibleWith: nil)
         static let AutoChess_IMAGE = UIImage(named: "AutoChess_Image", in: .main, compatibleWith: nil)
+        static let Hok_IMAGE = UIImage(named: "HOK_Image", in: .main, compatibleWith: nil)
         
         static func getImage(gameName: String) -> UIImage? {
             switch gameName {
@@ -122,6 +123,8 @@ class Images {
                 return CallOfDuty_IMAGE
             case "autoChess":
                 return AutoChess_IMAGE
+            case "hok":
+                return Hok_IMAGE
             default:
                 return nil
             }

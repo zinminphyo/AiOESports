@@ -15,6 +15,21 @@ struct PlayerDetails: Decodable {
         let totalFollowers: Int
         let totalRating: Int
         let totalRatingStars: String
+        
+        enum CodingKeys: String, CodingKey {
+            case talentRank
+            case totalFollowers
+            case totalRating
+            case totalRatingStars
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            talentRank = try container.decode(Int.self, forKey: .talentRank)
+            totalFollowers = try container.decode(Int?.self, forKey: .totalFollowers) ?? 0
+            totalRating = try container.decode(Int?.self, forKey: .totalRating) ?? 0
+            totalRatingStars = try container.decode(String?.self, forKey: .totalRatingStars) ?? ""
+        }
     }
     
     let userFollowVoteStats: UserFollowVoteStats?

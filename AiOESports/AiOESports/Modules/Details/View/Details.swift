@@ -276,35 +276,45 @@ class Details: UIViewController {
     
     @IBAction
     private func didTapVote(_ sender: UIButton) {
-        guard let userId = presenter?.id else { return }
-        let voteInfo: VoteViewModel.VoteInfo
-        switch presenter?.category {
-        case .team:
-            guard let details = presenter?.teamDetails else { return }
-            voteInfo = .init(imageURL: details.detail.teamImageFullPath, name: details.detail.name, game: details.detail.game, rank: String(details.followRating.teamRank), location: details.detail.city, totalRatingStar: details.followRating.totalRatingStars , coverImageURL: details.detail.coverImageFullPath, id: String(details.detail.id), type: .team)
+        
+        if UserDataModel.shared.getToken() == nil {
+            guard let vc = LoginModule.createModule() else { return }
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
             
-        case .player:
-            guard let details = presenter?.playerDetails else { return }
-            voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
-            
-        case .caster:
-            guard let details = presenter?.casterDetails else { return }
-            voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
-            
-        case .creator:
-            guard let details = presenter?.creatorDetails else { return }
-            voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
-            
-        default:
-            voteInfo = .init(imageURL: "", name: "", game: "", rank: "", location: "", totalRatingStar: "", coverImageURL: "", id: "", type: .talent)
+            guard let userId = presenter?.id else { return }
+            let voteInfo: VoteViewModel.VoteInfo
+            switch presenter?.category {
+            case .team:
+                guard let details = presenter?.teamDetails else { return }
+                voteInfo = .init(imageURL: details.detail.teamImageFullPath, name: details.detail.name, game: details.detail.game, rank: String(details.followRating.teamRank), location: details.detail.city, totalRatingStar: details.followRating.totalRatingStars , coverImageURL: details.detail.coverImageFullPath, id: String(details.detail.id), type: .team)
+                
+            case .player:
+                guard let details = presenter?.playerDetails else { return }
+                voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                
+            case .caster:
+                guard let details = presenter?.casterDetails else { return }
+                voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                
+            case .creator:
+                guard let details = presenter?.creatorDetails else { return }
+                voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                
+            default:
+                voteInfo = .init(imageURL: "", name: "", game: "", rank: "", location: "", totalRatingStar: "", coverImageURL: "", id: "", type: .talent)
+            }
+            let vc = VoteController(userId: userId, voteInfo: voteInfo)
+            navigationController?.pushViewController(vc, animated: true)
         }
-        let vc = VoteController(userId: userId, voteInfo: voteInfo)
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
     private func didTapFollow(_ sender: UIButton) {
-        presenter?.follow()
+        if UserDataModel.shared.getToken() == nil {
+            guard let vc = LoginModule.createModule() else { return }
+            navigationController?.pushViewController(vc, animated: true)
+        } else { presenter?.follow() }
     }
 
 }
@@ -368,7 +378,7 @@ extension Details: DetailsViewDelegate {
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
         teamNameLabel.text = details.detail.fullName
         gameNameLabel.text = details.detail.game.uppercased()
-        gameImageView.image = Images.gameLogo(gameType: details.detail.game)
+        gameImageView.image = Images.GameImages.getImage(gameName: details.detail.game)
         rankLabel.text = String(details.followRating.teamRank)
         totalRatingLabel.text = details.followRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.followRating.totalFollowers) people following"
@@ -383,7 +393,8 @@ extension Details: DetailsViewDelegate {
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
         rankLabel.text = String(details.totalFollowRating.talentRank)
-        gameImageView.image = Images.gameLogo(gameType: details.details.game)
+        gameImageView.image = Images.GameImages.getImage(gameName: details.details.game)
+        gameNameLabel.text = details.details.game.uppercased()
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
         totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
@@ -395,7 +406,8 @@ extension Details: DetailsViewDelegate {
         updateContainerViewForCaster()
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
-        gameImageView.image = Images.gameLogo(gameType: details.details.game)
+        gameImageView.image = Images.GameImages.getImage(gameName: details.details.game)
+        gameNameLabel.text = details.details.game.uppercased()
         teamNameLabel.text = details.details.name
         rankLabel.text = String(details.totalFollowRating.talentRank)
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
@@ -410,7 +422,8 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
-        gameImageView.image = Images.gameLogo(gameType: details.details.game)
+        gameImageView.image = Images.GameImages.getImage(gameName: details.details.game)
+        gameNameLabel.text = details.details.game.uppercased()
         rankLabel.text = String(details.totalFollowRating.talentRank)
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
