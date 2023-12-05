@@ -23,6 +23,9 @@ struct TeamObject: Codable {
     let city: String
     let location: String
     let sortNo: String
+    let totalFollowers: Int
+    let totalRateUser: Int
+    let totalRateStar: Int
     
     enum CodingKeys: String, CodingKey {
         case id, game, city, location
@@ -30,6 +33,9 @@ struct TeamObject: Codable {
         case teamImage = "team_image"
         case coverImage = "cover_image"
         case sortNo = "sort_no"
+        case totalFollowers = "total_follower"
+        case totalRateUser = "total_rate_user"
+        case totalRateStar = "total_rate_star"
     }
 }
 

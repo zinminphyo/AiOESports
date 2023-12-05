@@ -382,6 +382,11 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
+        rankLabel.text = String(details.totalFollowRating.talentRank)
+        gameImageView.image = Images.gameLogo(gameType: details.details.game)
+        totalRatingLabel.text = details.totalFollowRating.totalRatingStars
+        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
+        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
     }
     
     func renderCasterDetails(details: CasterDetails) {
@@ -390,7 +395,12 @@ extension Details: DetailsViewDelegate {
         updateContainerViewForCaster()
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
+        gameImageView.image = Images.gameLogo(gameType: details.details.game)
         teamNameLabel.text = details.details.name
+        rankLabel.text = String(details.totalFollowRating.talentRank)
+        totalRatingLabel.text = details.totalFollowRating.totalRatingStars
+        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
+        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
     }
     
     func renderCreatorDetails(details: CasterDetails) {
@@ -400,6 +410,11 @@ extension Details: DetailsViewDelegate {
         coverImageView.kf.setImage(with: URL(string: details.details.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
+        gameImageView.image = Images.gameLogo(gameType: details.details.game)
+        rankLabel.text = String(details.totalFollowRating.talentRank)
+        totalRatingLabel.text = details.totalFollowRating.totalRatingStars
+        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
+        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
     }
 }
 

@@ -15,7 +15,7 @@ class RankListsView: UIControl, NibLoadable {
         let imageURL: String
         let game: String
         let location: String
-        let rank: String
+        var rank: String = "1"
         let rating: String
         init(team: TeamObject) {
             id = team.id
@@ -23,8 +23,7 @@ class RankListsView: UIControl, NibLoadable {
             imageURL = team.teamImage ?? ""
             game = team.game
             location = team.city
-            rank = "1"
-            rating = "252"
+            rating = String(team.totalRateStar)
         }
         
         init(player: PlayerObject) {
@@ -33,8 +32,7 @@ class RankListsView: UIControl, NibLoadable {
             imageURL = player.playerImage ?? ""
             game = player.game ?? ""
             location = player.city ?? ""
-            rank = "1"
-            rating = "252"
+            rating = String(player.totalRateStar)
         }
         
         init(caster: CasterObject) {
@@ -43,8 +41,7 @@ class RankListsView: UIControl, NibLoadable {
             imageURL = caster.playerImage ?? ""
             game = caster.game ?? ""
             location = caster.city ?? ""
-            rank = "1"
-            rating = "252"
+            rating = String(caster.total_rate_star)
         }
         
         init(creator: CreatorObject) {
@@ -53,8 +50,7 @@ class RankListsView: UIControl, NibLoadable {
             imageURL = creator.playerImage ?? ""
             game = creator.game ?? ""
             location = creator.city
-            rank = "1"
-            rating = "231"
+            rating = String(creator.total_rate_star)
         }
     }
 
@@ -158,6 +154,7 @@ extension RankListsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: RankCell.reuseIdentifier, for: indexPath) as! RankCell
+            _lists[indexPath.row].rank = String(indexPath.row + 1)
             cell.render(rank: _lists[indexPath.row])
             return cell
         } else {

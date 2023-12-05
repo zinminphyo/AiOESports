@@ -222,7 +222,7 @@ class Rank: UIViewController {
     @IBAction
     private func didTapToViewPlayerDetails(_ sender: RankListsView) {
         guard let id = sender.selectedId else { return }
-        guard let vc = DetailsModuel.createModule(category: .team, id: id) else { return }
+        guard let vc = DetailsModuel.createModule(category: .player, id: id) else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     

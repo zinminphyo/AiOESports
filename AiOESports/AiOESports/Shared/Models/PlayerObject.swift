@@ -16,7 +16,9 @@ struct PlayerObject: Decodable {
     let game, role, playerImage, coverImage: String?
     let sortNo, visable, createdAt, updatedAt: String?
     let teamName, teamImage: String?
-    
+    let totalFollower: Int
+    let totalRateUser: Int
+    let totalRateStar: Int
     
     var coverImageFullURL: String {
         return NetworkBaseURLs.shared.baseURL + "/" + (coverImage ?? "")
@@ -40,6 +42,9 @@ struct PlayerObject: Decodable {
         case updatedAt = "updated_at"
         case teamName = "team_name"
         case teamImage = "team_image"
+        case totalFollower  = "total_follower"
+        case totalRateUser = "total_rate_user"
+        case totalRateStar = "total_rate_star"
     }
 }
 

@@ -53,6 +53,9 @@ struct CreatorObject: Decodable {
         return NetworkBaseURLs.shared.baseURL + "/" + (coverImage ?? "")
     }
     let sortNum: String?
+    let total_follower: Int
+    let total_rate_user: Int
+    let total_rate_star: Int
     let visable: String?
     let createdAt: String
     let updatedAt: String
@@ -66,6 +69,9 @@ struct CreatorObject: Decodable {
         case sortNum = "sort_no"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case total_follower
+        case total_rate_user
+        case total_rate_star
     }
 }
 

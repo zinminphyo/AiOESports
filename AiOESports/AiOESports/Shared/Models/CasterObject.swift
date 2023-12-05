@@ -15,6 +15,9 @@ struct CasterObject: Decodable {
     let birthday, location, city, bio: String?
     let game, role, playerImage, coverImage: String?
     let sortNo, visable, createdAt, updatedAt: String?
+    let total_follower: Int
+    let total_rate_user: Int
+    let total_rate_star: Int
     
     var playerImageFullPath: String {
         return NetworkBaseURLs.shared.baseURL + "/" + (playerImage ?? "")
@@ -26,6 +29,9 @@ struct CasterObject: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case total_follower
+        case total_rate_user
+        case total_rate_star
         case teamID = "team_id"
         case talent, name, status
         case fullName = "full_name"
