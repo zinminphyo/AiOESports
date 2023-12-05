@@ -61,7 +61,7 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-g3-jcB">
                     <rect key="frame" x="0.0" y="109" width="393" height="709"/>
-                    <color key="backgroundColor" name="InputBackground"/>
+                    <color key="backgroundColor" name="ThemeColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPV-dO-0Lj" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
                     <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
@@ -79,7 +79,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="InputBackground"/>
+            <color key="backgroundColor" name="ThemeColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WEk-g3-jcB" secondAttribute="trailing" id="1wM-vi-ehV"/>
                 <constraint firstItem="WEk-g3-jcB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="23T-PG-XVD"/>
@@ -96,8 +96,8 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
-        <namedColor name="InputBackground">
-            <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

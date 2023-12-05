@@ -165,7 +165,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="InputBackground"/>
+            <color key="backgroundColor" name="ThemeColor"/>
             <constraints>
                 <constraint firstItem="cQa-qQ-kOa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6RL-Jc-adp"/>
                 <constraint firstItem="66v-bJ-Pr7" firstAttribute="top" secondItem="cQa-qQ-kOa" secondAttribute="bottom" id="A9U-by-MfI"/>
@@ -181,8 +181,8 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
-        <namedColor name="InputBackground">
-            <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

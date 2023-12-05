@@ -155,7 +155,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="InputBackground"/>
+                <color key="backgroundColor" name="ThemeColor"/>
                 <constraints>
                     <constraint firstItem="Id6-XZ-2Va" firstAttribute="top" secondItem="Jkd-qf-6pd" secondAttribute="bottom" constant="13" id="4Tc-Ah-0vP"/>
                     <constraint firstAttribute="bottom" secondItem="Id6-XZ-2Va" secondAttribute="bottom" id="Ddt-w0-ozv"/>
@@ -182,11 +182,11 @@
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="teamlogo" width="51" height="51"/>
-        <namedColor name="InputBackground">
-            <color red="0.086274509803921567" green="0.12941176470588237" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="InputColor">
             <color red="0.12549019607843137" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
