@@ -103,12 +103,14 @@ class Rank: UIViewController {
         
         presenter?.$rankCategory
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] in
+            .sink(receiveValue: { [weak self] category in
                 guard let self = self else { return }
-                self.teamRankView.isHidden = $0 != .team
-                self.playerRankView.isHidden = $0 != .player
-                self.casterRankView.isHidden = $0 != .caster
-                self.creatorRankView.isHidden = $0 != .creator
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: .transitionCrossDissolve, animations: {
+                    self.teamRankView.alpha = category != .team ? 0.0 : 1.0
+                    self.playerRankView.alpha = category != .player ? 0.0 : 1.0
+                    self.casterRankView.alpha = category != .caster ? 0.0 : 1.0
+                    self.creatorRankView.alpha = category != .creator ? 0.0 : 1.0
+                }, completion: nil)
             }).store(in: &subscription)
         
         presenter?.$playerCoverImage
