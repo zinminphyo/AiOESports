@@ -19,24 +19,32 @@ class RankPresenter: RankPresenting {
     
     @Published
     var teamRankLists: [TeamObject] = []
+    @Published
+    var teamCoverImage: String = ""
     
     // MARK: For Player
     @Published
     var playerRankLists: [PlayerObject] = []
     @Published
     var playerLoadingLists: [String] = []
+    @Published
+    var playerCoverImage: String = ""
     
     // MARK: For Caster
     @Published
     var casterLists: [CasterObject] = []
     @Published
     var casterLoadingLists: [String] = []
+    @Published
+    var casterCoverImage: String = ""
     
     // MARK: For Creator
     @Published
     var creatorLists: [CreatorObject] = []
     @Published
     var creatorLoadingLists: [String] = []
+    @Published
+    var creatorCoverImage: String = ""
     
     @Published
     var loadingLists: [String] = []
@@ -61,7 +69,8 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
-                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullPath ?? "")
+//                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullPath ?? "")
+                    self.teamCoverImage = success.data.first?.coverImage ?? ""
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
@@ -88,7 +97,8 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
-                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullURL ?? "")
+//                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullURL ?? "")
+                    self.playerCoverImage = success.data.first?.coverImage ?? ""
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
@@ -115,7 +125,8 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
-                    self.viewDelegate?.renderCoverImage(url: success.data.last?.coverImageFullPath ?? "")
+//                    self.viewDelegate?.renderCoverImage(url: success.data.last?.coverImageFullPath ?? "")
+                    self.casterCoverImage = success.data.first?.coverImage ?? ""
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }
@@ -142,7 +153,8 @@ class RankPresenter: RankPresenting {
             case .success(let success):
                 if success.pagination.currentPage == 1 {
                     self.rankLists = success.data
-                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullURL ?? "")
+//                    self.viewDelegate?.renderCoverImage(url: success.data.first?.coverImageFullURL ?? "")
+                    self.creatorCoverImage = success.data.first?.coverImage ?? ""
                 } else {
                     self.rankLists.append(contentsOf: success.data)
                 }

@@ -118,6 +118,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
+                                            <action selector="didTapToViewTeamDetails:" destination="Y6W-OH-hqX" eventType="editingChanged" id="scI-sb-fbl"/>
                                             <action selector="didTriggerPaginationInTeam:" destination="Y6W-OH-hqX" eventType="valueChanged" id="mUY-pf-A4C"/>
                                         </connections>
                                     </view>
@@ -125,6 +126,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
+                                            <action selector="didTapToViewPlayerDetails:" destination="Y6W-OH-hqX" eventType="editingChanged" id="LmV-hH-A9G"/>
                                             <action selector="didTriggerPaginationInPlayer:" destination="Y6W-OH-hqX" eventType="valueChanged" id="AWy-jg-Mqd"/>
                                         </connections>
                                     </view>
@@ -132,6 +134,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
+                                            <action selector="didTapToViewCasterDetails:" destination="Y6W-OH-hqX" eventType="editingChanged" id="9zN-6Z-6w4"/>
                                             <action selector="didTriggerPaginationInCaster:" destination="Y6W-OH-hqX" eventType="valueChanged" id="IAx-Z6-ToL"/>
                                         </connections>
                                     </view>
@@ -139,6 +142,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="611"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
+                                            <action selector="didTapToViewCreatorDetails:" destination="Y6W-OH-hqX" eventType="editingChanged" id="zmM-7G-JfM"/>
                                             <action selector="didTriggerPaginationInCreator:" destination="Y6W-OH-hqX" eventType="valueChanged" id="1tF-5a-poS"/>
                                         </connections>
                                     </view>

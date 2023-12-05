@@ -10,6 +10,7 @@ import UIKit
 class RankListsView: UIControl, NibLoadable {
     // MARK: Rank Model For UI Rendering
     struct RankModel {
+        let id: Int
         let name: String
         let imageURL: String
         let game: String
@@ -17,6 +18,7 @@ class RankListsView: UIControl, NibLoadable {
         let rank: String
         let rating: String
         init(team: TeamObject) {
+            id = team.id
             name = team.name
             imageURL = team.teamImage ?? ""
             game = team.game
@@ -26,6 +28,7 @@ class RankListsView: UIControl, NibLoadable {
         }
         
         init(player: PlayerObject) {
+            id = player.id
             name = player.name ?? ""
             imageURL = player.playerImage ?? ""
             game = player.game ?? ""
@@ -35,6 +38,7 @@ class RankListsView: UIControl, NibLoadable {
         }
         
         init(caster: CasterObject) {
+            id = caster.id
             name = caster.name ?? ""
             imageURL = caster.playerImage ?? ""
             game = caster.game ?? ""
@@ -44,6 +48,7 @@ class RankListsView: UIControl, NibLoadable {
         }
         
         init(creator: CreatorObject) {
+            id = creator.id
             name = creator.name
             imageURL = creator.playerImage ?? ""
             game = creator.game ?? ""
@@ -56,10 +61,33 @@ class RankListsView: UIControl, NibLoadable {
     @IBOutlet private(set) var listsTblView: UITableView!
     @IBOutlet private(set) var loadingView: LoadingView!
     
+    
+    lazy var tableHeaderView: UIImageView = {
+        let imgView = UIImageView(frame: .init(x: 0, y: 0, width: listsTblView.bounds.width, height: 180))
+        imgView.contentMode = .scaleAspectFill
+        return imgView
+    }()
+    
     private var _lists: [RankModel] = []
     var lists: [RankModel] = [] {
         didSet {
           updateLists()
+        }
+    }
+    
+    private var _index: Int? = nil
+    var selectedIndex: Int? {
+        get { _index }
+    }
+    
+    var selectedId: Int? {
+        guard let selectedIndex = selectedIndex else { return nil }
+        return _lists[selectedIndex].id
+    }
+    
+    var coverImage: String = "" {
+        didSet {
+            updateCoverImage()
         }
     }
     
@@ -91,6 +119,7 @@ class RankListsView: UIControl, NibLoadable {
         backgroundColor = .clear
         listsTblView.showsVerticalScrollIndicator = false
         listsTblView.backgroundColor = Colors.Theme.mainColor
+        listsTblView.tableHeaderView = tableHeaderView
     }
     
     private func configureTableView() {
@@ -106,6 +135,10 @@ class RankListsView: UIControl, NibLoadable {
         _lists.append(contentsOf: lists)
         listsTblView.insertRows(at: indexPaths, with: .fade)
         listsTblView.endUpdates()
+    }
+    
+    private func updateCoverImage() {
+        tableHeaderView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(coverImage)"))
     }
 }
 
@@ -137,7 +170,8 @@ extension RankListsView: UITableViewDataSource {
 
 extension RankListsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        _index = indexPath.row
+        sendActions(for: .editingChanged)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

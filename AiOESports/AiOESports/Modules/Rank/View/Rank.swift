@@ -42,6 +42,13 @@ class Rank: UIViewController {
                 self.teamRankView.lists = lists
             }).store(in: &subscription)
         
+        presenter?.$teamCoverImage
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.teamRankView.coverImage = $0
+            }).store(in: &subscription)
+        
         presenter?.$loadingLists
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
@@ -102,6 +109,27 @@ class Rank: UIViewController {
                 self.playerRankView.isHidden = $0 != .player
                 self.casterRankView.isHidden = $0 != .caster
                 self.creatorRankView.isHidden = $0 != .creator
+            }).store(in: &subscription)
+        
+        presenter?.$playerCoverImage
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.playerRankView.coverImage = $0
+            }).store(in: &subscription)
+        
+        presenter?.$casterCoverImage
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.casterRankView.coverImage = $0
+            }).store(in: &subscription)
+        
+        presenter?.$creatorCoverImage
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.creatorRankView.coverImage = $0
             }).store(in: &subscription)
         
         presenter?.fetchTeamLists(gameType: .All, status: .all)
@@ -182,6 +210,34 @@ class Rank: UIViewController {
     @IBAction
     private func didTriggerPaginationInCreator(_ sender: RankListsView) {
         presenter?.continuePagination()
+    }
+    
+    @IBAction
+    private func didTapToViewTeamDetails(_ sender: RankListsView) {
+        guard let id = sender.selectedId else { return }
+        guard let vc = DetailsModuel.createModule(category: .team, id: id) else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction
+    private func didTapToViewPlayerDetails(_ sender: RankListsView) {
+        guard let id = sender.selectedId else { return }
+        guard let vc = DetailsModuel.createModule(category: .team, id: id) else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction
+    private func didTapToViewCasterDetails(_ sender: RankListsView) {
+        guard let id = sender.selectedId else { return }
+        guard let vc = DetailsModuel.createModule(category: .caster, id: id) else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction
+    private func didTapToViewCreatorDetails(_ sender: RankListsView) {
+        guard let id = sender.selectedId else { return }
+        guard let vc = DetailsModuel.createModule(category: .creator, id: id) else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
