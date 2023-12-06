@@ -22,6 +22,8 @@ class Register: UIViewController {
     @IBOutlet weak var enterPasswordErrorLabel: UILabel!
     @IBOutlet weak var reEnterPasswordErrorLabel: UILabel!
     
+    @IBOutlet private(set) var loadinView: LoadingView!
+    
     var presenter: RegisterPresenter?
     private var cancellable = Set<AnyCancellable>()
 
@@ -55,6 +57,14 @@ class Register: UIViewController {
        
         presenter?.viewDidLoad()
         
+        presenter?.step1RegistrationCompleted
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                let vc = RegisterStep2Controller(phoneNumber: presenter?.phoneNumber ?? "")
+                navigationController?.pushViewController(vc, animated: true)
+            }).store(in: &cancellable)
+        
         presenter?.$dataIsCompleted
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
@@ -64,6 +74,13 @@ class Register: UIViewController {
                 self.registerBtn.tintColor = $0 ? UIColor.white : UIColor.gray
             })
             .store(in: &cancellable)
+        
+        presenter?.$isRegistering
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                $0 ? self.loadinView.showLoading() : self.loadinView.hideLoading()
+            }).store(in: &cancellable)
         
         presenter?.passwordIsEqual
             .receive(on: DispatchQueue.main)

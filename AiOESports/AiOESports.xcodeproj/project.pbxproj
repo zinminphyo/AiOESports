@@ -303,6 +303,10 @@
 		84DE4FCA2B0D10B00017AC84 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */; };
 		84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DF526E2B0A66E700CCB036 /* DetailController.xib */; };
 		84DF52712B0A6D4900CCB036 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF52702B0A6D4900CCB036 /* DetailController.swift */; };
+		84E486202B1FBF4000ADEAB2 /* Step1RegistrationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4861F2B1FBF4000ADEAB2 /* Step1RegistrationServiceProtocol.swift */; };
+		84E486232B201F4C00ADEAB2 /* Step1RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E486222B201F4C00ADEAB2 /* Step1RegistrationService.swift */; };
+		84E486252B20293200ADEAB2 /* RegistrationUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E486242B20293200ADEAB2 /* RegistrationUserModel.swift */; };
+		84E486272B2029F600ADEAB2 /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E486262B2029F600ADEAB2 /* RegistrationResponseModel.swift */; };
 		84E753FE2B0D38C7007D11B0 /* ProfileEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E753FD2B0D38C7007D11B0 /* ProfileEditController.xib */; };
 		84E754002B0D38E1007D11B0 /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E753FF2B0D38E1007D11B0 /* ProfileEditController.swift */; };
 		84E754042B0D3C36007D11B0 /* InputTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E754032B0D3C36007D11B0 /* InputTextFieldView.xib */; };
@@ -711,6 +715,10 @@
 		84DE4FC92B0D10B00017AC84 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		84DF526E2B0A66E700CCB036 /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 		84DF52702B0A6D4900CCB036 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		84E4861F2B1FBF4000ADEAB2 /* Step1RegistrationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1RegistrationServiceProtocol.swift; sourceTree = "<group>"; };
+		84E486222B201F4C00ADEAB2 /* Step1RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1RegistrationService.swift; sourceTree = "<group>"; };
+		84E486242B20293200ADEAB2 /* RegistrationUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserModel.swift; sourceTree = "<group>"; };
+		84E486262B2029F600ADEAB2 /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
 		84E753FD2B0D38C7007D11B0 /* ProfileEditController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditController.xib; sourceTree = "<group>"; };
 		84E753FF2B0D38E1007D11B0 /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
 		84E754032B0D3C36007D11B0 /* InputTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTextFieldView.xib; sourceTree = "<group>"; };
@@ -1462,6 +1470,8 @@
 				8437FE7029ED1882008F7179 /* BannerModel.swift */,
 				8437FE7229ED1985008F7179 /* AdvertisementModel.swift */,
 				8437FE7429ED1A74008F7179 /* HomeModel.swift */,
+				84E486242B20293200ADEAB2 /* RegistrationUserModel.swift */,
+				84E486262B2029F600ADEAB2 /* RegistrationResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2388,6 +2398,23 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		84E4861E2B1FBF0A00ADEAB2 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				84E486212B1FBF4300ADEAB2 /* Step1RegistrationService */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		84E486212B1FBF4300ADEAB2 /* Step1RegistrationService */ = {
+			isa = PBXGroup;
+			children = (
+				84E4861F2B1FBF4000ADEAB2 /* Step1RegistrationServiceProtocol.swift */,
+				84E486222B201F4C00ADEAB2 /* Step1RegistrationService.swift */,
+			);
+			path = Step1RegistrationService;
+			sourceTree = "<group>";
+		};
 		84E753FB2B0D38A9007D11B0 /* ProfileEdit */ = {
 			isa = PBXGroup;
 			children = (
@@ -2619,6 +2646,7 @@
 		84F58F3F2B11C3D400F2FFAA /* Step1 */ = {
 			isa = PBXGroup;
 			children = (
+				84E4861E2B1FBF0A00ADEAB2 /* services */,
 				849AEBAC2A16142F0024AAAA /* Interactor */,
 				849AEBA92A160CCF0024AAAA /* Entity */,
 				8454D35E29F5940200B97EE3 /* Presenter */,
@@ -3404,6 +3432,7 @@
 				84597C7D29EA5337007C511B /* CreatorOverviewViewDelegate.swift in Sources */,
 				84B7457429E487C30086C708 /* FormerPlayers.swift in Sources */,
 				84CF0A0629D9FA5D00F87400 /* MatchModule.swift in Sources */,
+				84E486252B20293200ADEAB2 /* RegistrationUserModel.swift in Sources */,
 				84D9C47529E2CAAE006B06DD /* DetailsPresenter.swift in Sources */,
 				84597C8229EAFAC0007C511B /* SizeInspector.swift in Sources */,
 				849AEBAB2A1613B70024AAAA /* RegisterResponseModel.swift in Sources */,
@@ -3433,6 +3462,7 @@
 				842FC9C129E84DE200C5F354 /* PlayerOverviewViewDelegate.swift in Sources */,
 				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,
 				84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */,
+				84E486272B2029F600ADEAB2 /* RegistrationResponseModel.swift in Sources */,
 				84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */,
 				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
@@ -3613,6 +3643,8 @@
 				84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */,
 				845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */,
 				843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */,
+				84E486232B201F4C00ADEAB2 /* Step1RegistrationService.swift in Sources */,
+				84E486202B1FBF4000ADEAB2 /* Step1RegistrationServiceProtocol.swift in Sources */,
 				84334E812B1AC701004DD32D /* VotingServiceProtocol.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
 				84BE00162A0D48C600228691 /* Welcome.swift in Sources */,
