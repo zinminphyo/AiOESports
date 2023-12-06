@@ -10,7 +10,7 @@ import Foundation
 
 struct LoginResponseModel: Decodable {
     let user: UserModel
-    let frame: String
+    let frame: String?
     let token: String?
     
     enum CodingKeys: String, CodingKey {
@@ -22,7 +22,7 @@ struct LoginResponseModel: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         user = try container.decode(UserModel.self, forKey: .user)
-        frame = try container.decode(String.self, forKey: .frame)
+        frame = try container.decodeIfPresent(String.self, forKey: .frame)
         token = try container.decodeIfPresent(String.self, forKey: .token)
     }
 }

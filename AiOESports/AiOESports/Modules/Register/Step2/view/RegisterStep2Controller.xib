@@ -20,7 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterStep2Controller" customModule="AiOESports" customModuleProvider="target">
             <connections>
-                <outlet property="loadingView" destination="tUd-6i-ZfF" id="vvh-dk-drW"/>
+                <outlet property="loadingView" destination="KSj-C4-uyi" id="FT9-hH-4uz"/>
                 <outlet property="phoneNumberLabel" destination="Wqn-Ci-qIq" id="rY0-JU-ArE"/>
                 <outlet property="pinCodeView" destination="0St-Dg-XjZ" id="MHq-Hl-UlB"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dgd-4b-2fJ"/>
@@ -98,13 +98,9 @@
                         <action selector="didTapVerify:" destination="-1" eventType="touchUpInside" id="cHc-1c-MED"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUd-6i-ZfF" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
-                    <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="IDa-9W-fPL"/>
-                        <constraint firstAttribute="width" constant="100" id="rNq-HW-Gqg"/>
-                    </constraints>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSj-C4-uyi" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
+                    <rect key="frame" x="18" y="333.66666666666669" width="357" height="48"/>
+                    <color key="backgroundColor" name="PrimaryColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="10"/>
@@ -123,13 +119,15 @@
                 <constraint firstItem="0St-Dg-XjZ" firstAttribute="top" secondItem="8pW-JP-Pw0" secondAttribute="bottom" constant="30" id="IOq-hk-jRJ"/>
                 <constraint firstItem="8pW-JP-Pw0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="17" id="KWF-74-X1l"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kin-qc-ZIA" secondAttribute="trailing" id="Phw-iQ-Sij"/>
-                <constraint firstItem="tUd-6i-ZfF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ezK-Bq-WY2"/>
+                <constraint firstItem="KSj-C4-uyi" firstAttribute="top" secondItem="oPb-ag-n9F" secondAttribute="top" id="RuT-OM-uA0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8pW-JP-Pw0" secondAttribute="trailing" constant="17" id="fjs-BM-h6v"/>
                 <constraint firstItem="8pW-JP-Pw0" firstAttribute="top" secondItem="Kin-qc-ZIA" secondAttribute="bottom" constant="16" id="miX-mC-H6N"/>
                 <constraint firstItem="oPb-ag-n9F" firstAttribute="top" secondItem="0St-Dg-XjZ" secondAttribute="bottom" constant="78" id="o0O-HO-tsI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0St-Dg-XjZ" secondAttribute="trailing" constant="18" id="pP9-4X-c1H"/>
                 <constraint firstItem="Kin-qc-ZIA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="t64-Dg-D3y"/>
-                <constraint firstItem="tUd-6i-ZfF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yDw-Fs-THX"/>
+                <constraint firstItem="KSj-C4-uyi" firstAttribute="trailing" secondItem="oPb-ag-n9F" secondAttribute="trailing" id="uZV-ud-MIF"/>
+                <constraint firstItem="KSj-C4-uyi" firstAttribute="leading" secondItem="oPb-ag-n9F" secondAttribute="leading" id="y8P-72-e0p"/>
+                <constraint firstItem="KSj-C4-uyi" firstAttribute="bottom" secondItem="oPb-ag-n9F" secondAttribute="bottom" id="zde-yi-EnQ"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>

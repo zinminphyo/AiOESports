@@ -12,12 +12,15 @@ class RegisterStep2ViewModel {
     
     let phoneNumber: String
     
+    private var pincode: String = ""
+    
     private(set) var registrationStatus = PassthroughSubject<RegistrationStatus, Never>()
     enum RegistrationStatus {
         case inProgress
         case completed
     }
     
+    private let service = Step2RegistrationService()
     
     init(phNum: String) {
         phoneNumber = phNum
@@ -25,10 +28,20 @@ class RegisterStep2ViewModel {
     
     func registerStep2() {
         registrationStatus.send(.inProgress)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let self = self else { return }
-            self.registrationStatus.send(.completed)
+        Task {
+            do {
+                let response = try await service.verify(pinCode: pincode, phoneNum: phoneNumber)
+                guard let result = response.result else { return }
+                UserDataModel.shared.saveToken(token: result.token)
+            } catch {
+                print("Error in step2 registration is \(error.localizedDescription)")
+            }
+            registrationStatus.send(.completed)
         }
+    }
+    
+    func set(pincode: String) {
+        self.pincode = pincode
     }
     
 }

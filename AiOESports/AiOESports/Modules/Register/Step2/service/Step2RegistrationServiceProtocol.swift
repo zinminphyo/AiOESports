@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol Step2RegistrationServiceProtocol {
-    func verify(pinCode: String, phoneNum: String) async throws -> RegistrationVerifyResponse
+    func verify(pinCode: String, phoneNum: String) async throws -> BaseResponseModel<FinalRegistrationResponse>
 }
 
 

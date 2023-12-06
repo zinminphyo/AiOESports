@@ -42,6 +42,7 @@ class RegisterStep2Controller: UIViewController {
     
     private func configurePhoneNumberLabel() {
         phoneNumberLabel.text = "Code is sent to \(viewModel.phoneNumber)"
+        pinCodeView.delegate = self
     }
     
     private func configureViewModel() {
@@ -71,5 +72,12 @@ class RegisterStep2Controller: UIViewController {
     @IBAction
     private func didTapVerify(_ sender: UIButton) {
         viewModel.registerStep2()
+    }
+}
+
+
+extension RegisterStep2Controller: PasscodeViewDelegate {
+    func didFinishedEnterPasscode(in view: PasscodeView, _ passcode: String) {
+        viewModel.set(pincode: passcode)
     }
 }
