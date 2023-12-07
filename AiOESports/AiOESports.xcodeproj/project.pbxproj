@@ -32,6 +32,11 @@
 		842AE8C929DB3FDD0036FF05 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */; };
 		842AE8CB29DB45320036FF05 /* GameCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */; };
 		842AE8CD29DB4B580036FF05 /* RankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AE8CC29DB4B580036FF05 /* RankingCollectionViewCell.swift */; };
+		842AF7B92B21E122006F2267 /* FollowAndVoteListsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842AF7B82B21E122006F2267 /* FollowAndVoteListsController.xib */; };
+		842AF7BB2B21E1BF006F2267 /* FollowAndVoteListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF7BA2B21E1BF006F2267 /* FollowAndVoteListsController.swift */; };
+		842AF7BE2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF7BD2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift */; };
+		842AF7C22B220F34006F2267 /* FollowAndVoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AF7C02B220F34006F2267 /* FollowAndVoteListCell.swift */; };
+		842AF7C32B220F34006F2267 /* FollowAndVoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842AF7C12B220F34006F2267 /* FollowAndVoteListCell.xib */; };
 		842DF92629D88A6200B24F1A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DF92529D88A6200B24F1A /* Fonts.swift */; };
 		842FC9A929E83A7200C5F354 /* PlayerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9A829E83A7200C5F354 /* PlayerDetailsModel.swift */; };
 		842FC9AB29E83F9300C5F354 /* SignatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9AA29E83F9300C5F354 /* SignatureModel.swift */; };
@@ -446,6 +451,11 @@
 		842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		842AE8CC29DB4B580036FF05 /* RankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCollectionViewCell.swift; sourceTree = "<group>"; };
+		842AF7B82B21E122006F2267 /* FollowAndVoteListsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowAndVoteListsController.xib; sourceTree = "<group>"; };
+		842AF7BA2B21E1BF006F2267 /* FollowAndVoteListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowAndVoteListsController.swift; sourceTree = "<group>"; };
+		842AF7BD2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowAndVoteListsViewModel.swift; sourceTree = "<group>"; };
+		842AF7C02B220F34006F2267 /* FollowAndVoteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowAndVoteListCell.swift; sourceTree = "<group>"; };
+		842AF7C12B220F34006F2267 /* FollowAndVoteListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowAndVoteListCell.xib; sourceTree = "<group>"; };
 		842DF92529D88A6200B24F1A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		842FC9A829E83A7200C5F354 /* PlayerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsModel.swift; sourceTree = "<group>"; };
 		842FC9AA29E83F9300C5F354 /* SignatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureModel.swift; sourceTree = "<group>"; };
@@ -1039,6 +1049,42 @@
 				84F5FAF329DE85D000734CAE /* LoadingTableViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		842AF7B62B21E0F8006F2267 /* FollowAndVoteLists */ = {
+			isa = PBXGroup;
+			children = (
+				842AF7BC2B21E27D006F2267 /* viewModel */,
+				842AF7B72B21E0FD006F2267 /* controller */,
+			);
+			path = FollowAndVoteLists;
+			sourceTree = "<group>";
+		};
+		842AF7B72B21E0FD006F2267 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				842AF7BF2B220F14006F2267 /* view */,
+				842AF7B82B21E122006F2267 /* FollowAndVoteListsController.xib */,
+				842AF7BA2B21E1BF006F2267 /* FollowAndVoteListsController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		842AF7BC2B21E27D006F2267 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				842AF7BD2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		842AF7BF2B220F14006F2267 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				842AF7C02B220F34006F2267 /* FollowAndVoteListCell.swift */,
+				842AF7C12B220F34006F2267 /* FollowAndVoteListCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		842DF92429D88A5900B24F1A /* Fonts */ = {
@@ -2973,6 +3019,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				842AF7B62B21E0F8006F2267 /* FollowAndVoteLists */,
 				843CF39D2B17019A00C98BFF /* Vote */,
 				840833DE2B164656004F2A71 /* DimmingBackground */,
 				840833D82B16433F004F2A71 /* UpgradePreminum */,
@@ -3205,6 +3252,7 @@
 				849B9C2429CEEB1400F1C2D2 /* Colors.xcassets in Resources */,
 				84F58F5E2B135D8200F2FFAA /* GenderView.xib in Resources */,
 				84F6C5BA29CA12E900D21EE2 /* LaunchScreen.storyboard in Resources */,
+				842AF7B92B21E122006F2267 /* FollowAndVoteListsController.xib in Resources */,
 				8479C5BD29EBF7BE008C97B9 /* DMSans-Regular.ttf in Resources */,
 				84108C352A0AA17500488D0D /* VerifyPhone.storyboard in Resources */,
 				8479C5BF29EBF7BE008C97B9 /* DMSans-Medium.ttf in Resources */,
@@ -3240,6 +3288,7 @@
 				84725AB729E1211F003658CD /* Details.storyboard in Resources */,
 				84A2BAF62B0D32DA0021F2FD /* ProfileInfoView.xib in Resources */,
 				84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */,
+				842AF7C32B220F34006F2267 /* FollowAndVoteListCell.xib in Resources */,
 				84597C7029EA47B2007C511B /* GameImagesTableViewCell.xib in Resources */,
 				84725AD529E16BA5003658CD /* AchivementTableViewCell.xib in Resources */,
 				84725AC829E12C95003658CD /* SquadTableViewCell.xib in Resources */,
@@ -3480,6 +3529,7 @@
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
 				849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */,
 				843CF3A22B1701D900C98BFF /* VoteController.swift in Sources */,
+				842AF7BE2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
 				84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */,
 				840833E02B164685004F2A71 /* DimmingBackgroundPresentationController.swift in Sources */,
@@ -3488,6 +3538,7 @@
 				84A050FA29E96605004D582B /* CasterOverviewPresenter.swift in Sources */,
 				849BCE1629E523860033C63A /* SocialCollectionViewCell.swift in Sources */,
 				84A050F629E96568004D582B /* CasterOverviewPresenting.swift in Sources */,
+				842AF7BB2B21E1BF006F2267 /* FollowAndVoteListsController.swift in Sources */,
 				843AB2F62B1650DB005B3DF4 /* UpgradePreminumViewModel.swift in Sources */,
 				8437FE7829ED1C3E008F7179 /* HomePresenting.swift in Sources */,
 				8454D35B29F583FF00B97EE3 /* Register.swift in Sources */,
@@ -3656,6 +3707,7 @@
 				845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */,
 				843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */,
 				84E486232B201F4C00ADEAB2 /* Step1RegistrationService.swift in Sources */,
+				842AF7C22B220F34006F2267 /* FollowAndVoteListCell.swift in Sources */,
 				84E486202B1FBF4000ADEAB2 /* Step1RegistrationServiceProtocol.swift in Sources */,
 				84334E812B1AC701004DD32D /* VotingServiceProtocol.swift in Sources */,
 				84CF0A0C29D9FAB900F87400 /* Tour.swift in Sources */,
