@@ -13,12 +13,16 @@ import Combine
 class ProfileInfoViewModel {
     
     struct ProfileInfo {
+        let id: Int
         let profileURL: String
         let username: String
         let phoneNumber: String
         let gender: String
         let dateOfBirth: String
         let city: String
+        let state: String
+        let facebook: String?
+        let instagram: String?
     }
     
     

@@ -88,10 +88,12 @@ class ProfileEditController: UIViewController {
         profileFrameView.set(imageURL: viewModel.editInfo.profileURL)
         nameInputView.value = viewModel.editInfo.username
         phoneNumberInputView.value = viewModel.editInfo.phoneNumber
-        genderSelectionView.gender = viewModel.editInfo.gender
+        genderSelectionView.gender = viewModel.editInfo.gender.lowercased()
         birthdayDropdown.dropdownInfo = viewModel.editInfo.dateOfBirth
         stateDropdown.dropdownInfo = viewModel.editInfo.state
         cityDropdown.dropdownInfo = viewModel.editInfo.city
+        facebookLinkInputView.value = viewModel.editInfo.facebook
+        instagramLinkInputView.value = viewModel.editInfo.instagram
     }
     
     private func configureEndEditing() {
@@ -118,7 +120,7 @@ class ProfileEditController: UIViewController {
     }
     
     private func configureStateDropdown() {
-        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 200)
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 250)
         statePicker.frame = rect
         statePicker.items = [
             "Yangon",
@@ -131,7 +133,7 @@ class ProfileEditController: UIViewController {
     }
     
     private func configureCityDropdown() {
-        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 200)
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 250)
         cityPicker.frame = rect
         cityPicker.items = [
             "Sanchaung",
@@ -153,6 +155,11 @@ class ProfileEditController: UIViewController {
     @IBAction
     private func didTapSave(_ sender: UIButton) {
         viewModel.updateProfile()
+    }
+    
+    @IBAction
+    private func didChangeGender(_ sender: GenderView) {
+        viewModel.set(gender: sender.gender)
     }
     
     @IBAction

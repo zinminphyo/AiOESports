@@ -11,6 +11,12 @@ import UIKit
 
 struct ProfileUpdateService: ProfileUpdateServiceProtocol {
     
+    let id: Int
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
     var url: URL {
         return URL(string: "\(NetworkBaseURLs.shared.baseURL)/api/user/update")!
     }
@@ -20,7 +26,7 @@ struct ProfileUpdateService: ProfileUpdateServiceProtocol {
         let header = HTTPHeaders([
             HTTPHeader(name: "Authorization", value: "Bearer \(token)")
         ])
-        let url = url.appendingPathComponent("1026")
+        let url = url.appendingPathComponent(String(id))
         let request = AF.upload(multipartFormData: { formData in
             for (key, value) in updateInfo {
                 if let value = value as? String {

@@ -85,7 +85,18 @@ extension ProfileController {
     @IBAction
     private func didTapProfileInfo(_ sender: UIButton) {
         let profileModel = viewModel.profileModel
-        let info = ProfileInfoViewModel.ProfileInfo(profileURL: profileModel.profile_image, username: profileModel.username, phoneNumber: profileModel.phone_no, gender: profileModel.gender, dateOfBirth: profileModel.dob, city: profileModel.city)
+        let info = ProfileInfoViewModel.ProfileInfo(
+            id: profileModel.id,
+            profileURL: profileModel.profile_image, 
+            username: profileModel.username,
+            phoneNumber: profileModel.phone_no,
+            gender: profileModel.gender,
+            dateOfBirth: profileModel.dob,
+            city: profileModel.city,
+            state: profileModel.state,
+            facebook: profileModel.facebook_link,
+            instagram: profileModel.instagram_link
+        )
         let vc = ProfileBasicController(info: info)
         navigationController?.pushViewController(vc, animated: true)
     }

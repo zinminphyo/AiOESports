@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GenderView: UIView, NibLoadable {
+class GenderView: UIControl, NibLoadable {
     
     @IBOutlet private(set) var maleSelectionImageView: UIImageView!
     @IBOutlet private(set) var intersexSelectionImageView: UIImageView!
@@ -57,16 +57,19 @@ class GenderView: UIView, NibLoadable {
     @IBAction
     private func didTapMale(_ sender: UIButton) {
         _gender = .male
+        sendActions(for: .valueChanged)
     }
     
     @IBAction
     private func didTapInterSex(_ sender: UIButton) {
         _gender = .intersex
+        sendActions(for: .valueChanged)
     }
     
     @IBAction
     private func didTapFemale(_ sender: UIButton) {
         _gender = .female
+        sendActions(for: .valueChanged)
     }
     
     private func handleSelection() {

@@ -227,6 +227,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="gender" value="female"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didChangeGender:" destination="-1" eventType="valueChanged" id="0fb-8Y-3Av"/>
+                                            </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX7-Mt-W5A" customClass="InputDropdownView" customModule="AiOESports" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="280" width="393" height="80"/>

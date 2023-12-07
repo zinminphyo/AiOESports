@@ -12,22 +12,26 @@ import UIKit
 
 class ProfileEditViewModel {
     
+    let id: Int
+    
     var editInfo: ProfileEdit
     
     var updateInfo = [String:Any]()
     
-    private let updateService = ProfileUpdateService()
+    
     
     @Published
     var isUpdating: Bool = false
     var profileEditCompleted = PassthroughSubject<Void, Never>()
     
     init(info: ProfileInfoViewModel.ProfileInfo) {
+        id = info.id
         editInfo = ProfileEdit(info: info)
     }
     
     func updateProfile() {
         isUpdating = true
+        let updateService = ProfileUpdateService(id: id)
         Task {
             do {
                 let response = try await updateService.update(updateInfo: updateInfo)
@@ -92,6 +96,8 @@ extension ProfileEditViewModel {
         var dateOfBirth: String = ""
         var city: String = ""
         var state: String = ""
+        var facebook: String? = nil
+        var instagram: String? = nil
         
         init(info: ProfileInfoViewModel.ProfileInfo) {
             profileURL = info.profileURL
@@ -100,7 +106,9 @@ extension ProfileEditViewModel {
             gender = info.gender
             dateOfBirth = info.dateOfBirth
             city = info.city
-            state = info.city
+            state = info.state
+            facebook = info.facebook
+            instagram = info.instagram
         }
     }
 }
