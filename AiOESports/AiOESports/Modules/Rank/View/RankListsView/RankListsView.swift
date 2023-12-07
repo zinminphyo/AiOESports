@@ -116,6 +116,7 @@ class RankListsView: UIControl, NibLoadable {
         listsTblView.showsVerticalScrollIndicator = false
         listsTblView.backgroundColor = Colors.Theme.mainColor
         listsTblView.tableHeaderView = tableHeaderView
+        listsTblView.separatorStyle = .none
     }
     
     private func configureTableView() {

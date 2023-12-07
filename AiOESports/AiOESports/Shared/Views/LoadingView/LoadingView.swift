@@ -20,6 +20,17 @@ class LoadingView: UIView {
         set { newValue ? showLoading() : hideLoading() }
         get { isHidden }
     }
+    
+    
+    @IBInspectable var bgColor: UIColor? {
+        set { backgroundColor = newValue }
+        get { backgroundColor }
+    }
+    
+    @IBInspectable var indicatorColor: UIColor {
+        set { indicatorView.color = newValue }
+        get { indicatorView.color }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +50,7 @@ class LoadingView: UIView {
         layer.cornerRadius = 10
         layer.cornerCurve = .continuous
         addSubview(indicatorView)
+        backgroundColor = bgColor
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),

@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="110" height="93"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Xzx-wh-cMR">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Xzx-wh-cMR">
                     <rect key="frame" x="9.6666666666666643" y="9.3333333333333357" width="90.666666666666686" height="74.333333333333314"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
@@ -29,7 +29,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bng-nV-rtj" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="110" height="93"/>
+                    <rect key="frame" x="9.6666666666666643" y="9.3333333333333357" width="90.666666666666686" height="74.333333333333314"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
@@ -40,17 +40,17 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="xAt-Ag-C3V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0ED-vR-dDt"/>
-                <constraint firstItem="Bng-nV-rtj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5zd-KM-k69"/>
                 <constraint firstAttribute="trailing" secondItem="xAt-Ag-C3V" secondAttribute="trailing" id="9JO-7w-2FH"/>
                 <constraint firstItem="Xzx-wh-cMR" firstAttribute="centerY" secondItem="xAt-Ag-C3V" secondAttribute="centerY" id="Nvi-u8-x0S"/>
                 <constraint firstAttribute="bottom" secondItem="xAt-Ag-C3V" secondAttribute="bottom" id="Sen-Is-aqG"/>
-                <constraint firstAttribute="trailing" secondItem="Bng-nV-rtj" secondAttribute="trailing" id="bSM-k7-B6O"/>
-                <constraint firstAttribute="bottom" secondItem="Bng-nV-rtj" secondAttribute="bottom" id="eWP-fW-WQR"/>
+                <constraint firstItem="Bng-nV-rtj" firstAttribute="trailing" secondItem="Xzx-wh-cMR" secondAttribute="trailing" id="VcM-FF-dnJ"/>
+                <constraint firstItem="Bng-nV-rtj" firstAttribute="bottom" secondItem="Xzx-wh-cMR" secondAttribute="bottom" id="Ws1-xQ-Mmg"/>
+                <constraint firstItem="Bng-nV-rtj" firstAttribute="leading" secondItem="Xzx-wh-cMR" secondAttribute="leading" id="b17-yo-ua6"/>
                 <constraint firstItem="Xzx-wh-cMR" firstAttribute="centerX" secondItem="xAt-Ag-C3V" secondAttribute="centerX" id="guP-To-cfo"/>
+                <constraint firstItem="Bng-nV-rtj" firstAttribute="top" secondItem="Xzx-wh-cMR" secondAttribute="top" id="hIL-Mr-YR1"/>
                 <constraint firstItem="Xzx-wh-cMR" firstAttribute="height" secondItem="xAt-Ag-C3V" secondAttribute="height" multiplier="0.8" id="ihH-Ts-O3l"/>
                 <constraint firstItem="xAt-Ag-C3V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nXf-yO-Zbm"/>
                 <constraint firstItem="Xzx-wh-cMR" firstAttribute="width" secondItem="xAt-Ag-C3V" secondAttribute="width" multiplier="0.818182" constant="0.80000000000000004" id="otJ-gf-QZj"/>
-                <constraint firstItem="Bng-nV-rtj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qb5-qS-QtD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="85.496183206106863" y="240.49295774647888"/>
