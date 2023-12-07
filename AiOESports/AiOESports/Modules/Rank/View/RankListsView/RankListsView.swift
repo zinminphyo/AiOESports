@@ -65,9 +65,16 @@ class RankListsView: UIControl, NibLoadable {
     }()
     
     private var _lists: [RankModel] = []
+    private var _filterLists: [RankModel] = []
     var lists: [RankModel] = [] {
         didSet {
           updateLists()
+        }
+    }
+    
+    var gameType: GameType = .All {
+        didSet {
+            updateOnGameType()
         }
     }
     
@@ -129,14 +136,24 @@ class RankListsView: UIControl, NibLoadable {
     
     private func updateLists() {
         listsTblView.beginUpdates()
-        let indexPaths: [IndexPath] = lists.indices.compactMap{ IndexPath(row: $0 + _lists.count, section: 0) }
+        let indexPaths: [IndexPath] = lists.indices.compactMap{ IndexPath(row: $0 + _filterLists.count, section: 0) }
         _lists.append(contentsOf: lists)
+        _filterLists.append(contentsOf: lists)
         listsTblView.insertRows(at: indexPaths, with: .fade)
         listsTblView.endUpdates()
     }
     
     private func updateCoverImage() {
         tableHeaderView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(coverImage)"))
+    }
+    
+    private func updateOnGameType() {
+        /*
+        if gameType == .All {
+            _filterLists = _lists
+        } else {_filterLists = _lists.filter{ $0.game.lowercased() == gameType.value }}
+        listsTblView.reloadSections([0], with: .fade)
+         */
     }
 }
 
@@ -149,14 +166,14 @@ extension RankListsView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let loadingCount = hasMore ? 1 : 0
-        return section == 0 ? _lists.count : loadingCount
+        return section == 0 ? _filterLists.count : loadingCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: RankCell.reuseIdentifier, for: indexPath) as! RankCell
-            _lists[indexPath.row].rank = String(indexPath.row + 1)
-            cell.render(rank: _lists[indexPath.row])
+            _filterLists[indexPath.row].rank = String(indexPath.row + 1)
+            cell.render(rank: _filterLists[indexPath.row])
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as! LoadingTableViewCell

@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="110" height="93"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Xzx-wh-cMR">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover" translatesAutoresizingMaskIntoConstraints="NO" id="Xzx-wh-cMR">
                     <rect key="frame" x="9.6666666666666643" y="9.3333333333333357" width="90.666666666666686" height="74.333333333333314"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
@@ -57,7 +57,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Photo" width="182.66667175292969" height="182.66667175292969"/>
         <image name="SilverFrame" width="204.66667175292969" height="190.33332824707031"/>
+        <image name="cover" width="360" height="180"/>
     </resources>
 </document>

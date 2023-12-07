@@ -42,7 +42,7 @@ class ProfileLevelView: UIView, NibLoadable {
     
     func set(imageURL: String) {
         loadingView.showLoading()
-        profileImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(imageURL)")) { [weak self] _ in
+        profileImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(imageURL)"), placeholder: Images.Placeholder.cover) { [weak self] _ in
             guard let self = self else { return }
             loadingView.hideLoading()
         }

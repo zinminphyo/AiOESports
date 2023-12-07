@@ -52,6 +52,9 @@ class RankPresenter: RankPresenting {
     @Published
     var rankCategory: RankCategory = .team
     
+    @Published
+    var gameType: GameType = .All
+    
     private var teamLists: [TeamObject] = []
     private var rankLists: [RankPresentable] = []
     
@@ -200,6 +203,7 @@ class RankPresenter: RankPresenting {
     }
     
     func changedGameType(game: GameType) {
+        /*
         guard game != selectedGameType else { return }
         self.resetPagination()
         self.resetData()
@@ -214,6 +218,8 @@ class RankPresenter: RankPresenting {
         case .creator:
             self.fetchCreatorLists(gameType: game, status: .active)
         }
+         */
+        gameType = game
     }
     
     func resetPagination() {

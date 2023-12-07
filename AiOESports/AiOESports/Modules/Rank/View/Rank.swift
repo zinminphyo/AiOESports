@@ -56,6 +56,13 @@ class Rank: UIViewController {
                 self.teamRankView.hasMore = $0.count > 0
             }).store(in: &subscription)
         
+        presenter?.$gameType
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.teamRankView.gameType = $0
+            }).store(in: &subscription)
+        
         presenter?.$playerRankLists
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
