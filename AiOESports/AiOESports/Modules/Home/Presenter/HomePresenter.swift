@@ -18,6 +18,9 @@ class HomePresenter: HomePresenting {
     @Published
     var isFetching: Bool = false
     
+    @Published
+    var shieldCount: Int = 0
+    
     func viewDidLoad() {
         isFetching = true
         interactor?.fetchHomeData()
@@ -30,6 +33,18 @@ class HomePresenter: HomePresenting {
             self.viewDelegate?.renderUI(bannerLists: bannerLists ?? [], adLists: adLists ?? [])
         }
         isFetching = false
+    }
+    
+    func fetchShieldCount() {
+        let service = UserProfileFetchingService()
+        Task {
+            do {
+                let response = try await service.fetchUserProfile()
+                shieldCount = response.result?.shield ?? 0
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
     }
     
     

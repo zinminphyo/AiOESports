@@ -15,6 +15,7 @@ class Home: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var advertisementTitleLabel: UILabel!
     @IBOutlet private(set) var loadingView: LoadingView!
+    @IBOutlet private(set) var shieldCountLabel: UILabel!
     
     var presenter: HomePresenter?
     private(set) var subscription = Set<AnyCancellable>()
@@ -29,13 +30,21 @@ class Home: UIViewController {
         
         configureHierarchy()
         
-        presenter?.viewDidLoad()
+        presenter?.$shieldCount
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.shieldCountLabel.text = String($0)
+            }).store(in: &subscription)
+        
         presenter?.$isFetching
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }
                 $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
             }).store(in: &subscription)
+        
+        presenter?.viewDidLoad()
         
     }
     
