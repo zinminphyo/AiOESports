@@ -32,4 +32,18 @@ class ProfileInfoViewModel {
         profileInfo = info
     }
     
+    var userInfoFetchingCompleted = PassthroughSubject<UserInfo, Never>()
+    
+    
+    func fetchProfile() {
+        let service = UserInfoFetchingService()
+        Task {
+            do {
+                let response = try await service.fetchUserInfo()
+                userInfoFetchingCompleted.send(response)
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
 }

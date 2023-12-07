@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ProfileBasicController: UIViewController {
     
@@ -17,6 +18,8 @@ class ProfileBasicController: UIViewController {
     @IBOutlet private(set) var cityStateInfoView: ProfileInfoView!
     
     let viewModel: ProfileInfoViewModel
+    
+    private(set) var subscription = Set<AnyCancellable>()
     
     init(info: ProfileInfoViewModel.ProfileInfo) {
         viewModel = ProfileInfoViewModel(info: info)
@@ -32,6 +35,13 @@ class ProfileBasicController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        viewModel.userInfoFetchingCompleted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.updateUserInfo($0)
+            }.store(in: &subscription)
+        
         profileLevelView.set(imageURL: viewModel.profileInfo.profileURL)
         usernameInfoView.value = viewModel.profileInfo.username
         phoneNumberInfoView.value = viewModel.profileInfo.phoneNumber
@@ -40,6 +50,21 @@ class ProfileBasicController: UIViewController {
         cityStateInfoView.value = viewModel.profileInfo.city
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.fetchProfile()
+    }
+    
+    private func updateUserInfo(_ userInfo: UserInfo) {
+        profileLevelView.set(imageURL: userInfo.profile_image)
+        usernameInfoView.value = userInfo.username
+        phoneNumberInfoView.value = userInfo.phone_no
+        genderInfoView.value = userInfo.gender
+        dobInfoView.value = userInfo.dob
+        cityStateInfoView.value = userInfo.city
+    }
     
     
 

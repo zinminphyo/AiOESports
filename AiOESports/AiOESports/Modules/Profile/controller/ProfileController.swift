@@ -34,6 +34,12 @@ class ProfileController: UIViewController {
         configureHierarchy()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.fetchUserProfile()
+    }
+    
     private func configureHierarchy() {
         configureViewModel()
     }
@@ -55,8 +61,10 @@ class ProfileController: UIViewController {
                 self.UIBinding()
             }.store(in: &subscription)
         
-        viewModel.fetchUserProfile()
+        
     }
+    
+    
     
     private func UIBinding() {
         nameLabel.text = viewModel.profileModel.username
