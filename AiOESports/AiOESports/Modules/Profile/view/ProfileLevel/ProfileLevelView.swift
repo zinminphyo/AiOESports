@@ -32,6 +32,14 @@ class ProfileLevelView: UIView, NibLoadable {
         loadedByNib()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        profileImageView.layer.cornerRadius = ( bounds.height * 0.8 ) / 2
+        print("HEIGHT ====> \(bounds.height)")
+        profileImageView.layer.cornerCurve = .continuous
+    }
+    
     func set(imageURL: String) {
         profileImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(imageURL)"))
     }

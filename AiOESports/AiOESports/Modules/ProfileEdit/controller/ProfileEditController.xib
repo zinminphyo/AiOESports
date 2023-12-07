@@ -91,7 +91,7 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-j7-ifx" customClass="ProfileLevelView" customModule="AiOESports" customModuleProvider="target">
                                     <rect key="frame" x="121.66666666666669" y="23" width="150" height="150"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="01w-eq-mCH"/>
                                         <constraint firstAttribute="width" constant="150" id="VTL-Bi-Kx7"/>
