@@ -406,6 +406,8 @@
 		84F6C5E429CA17B300D21EE2 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5E329CA17B300D21EE2 /* Onboarding.swift */; };
 		84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5E629CA183500D21EE2 /* OnboardingModule.swift */; };
 		84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5E929CA18F400D21EE2 /* OnboardingImageCollectionCell.swift */; };
+		84F731D12B23504700ED9106 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F731D02B23504700ED9106 /* UIView+Ext.swift */; };
+		84F731D32B2360D200ED9106 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F731D22B2360D200ED9106 /* UIButton+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -828,6 +830,8 @@
 		84F6C5E329CA17B300D21EE2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		84F6C5E629CA183500D21EE2 /* OnboardingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModule.swift; sourceTree = "<group>"; };
 		84F6C5E929CA18F400D21EE2 /* OnboardingImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageCollectionCell.swift; sourceTree = "<group>"; };
+		84F731D02B23504700ED9106 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		84F731D22B2360D200ED9106 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		882687CC2D25024B2EF13FEB /* Pods-AiOESports-AiOESportsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports-AiOESportsUITests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.release.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1747,6 +1751,7 @@
 		849B9C1F29CEEABE00F1C2D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				84F731CF2B23503C00ED9106 /* Extension */,
 				84F58F3C2B11185000F2FFAA /* Data */,
 				84597C8029EAFAB2007C511B /* Sizes */,
 				84F5FB1429DECCEA00734CAE /* Base */,
@@ -3085,6 +3090,15 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		84F731CF2B23503C00ED9106 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84F731D02B23504700ED9106 /* UIView+Ext.swift */,
+				84F731D22B2360D200ED9106 /* UIButton+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E7D31D3FDF2B0AC70D518417 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3594,6 +3608,7 @@
 				84A0510429E998B8004D582B /* CreatorOverviewModule.swift in Sources */,
 				8459D58429DDC9BB00DDF266 /* BaseNetworkResponse.swift in Sources */,
 				84F58F682B138A4C00F2FFAA /* ProfileUpdateService.swift in Sources */,
+				84F731D12B23504700ED9106 /* UIView+Ext.swift in Sources */,
 				84725AAD29E07DB8003658CD /* FilterSettingPresenting.swift in Sources */,
 				84F17AD82B0E2F2900B97B08 /* GameSortingController.swift in Sources */,
 				84597C7B29EA531B007C511B /* CreatorOverviewPresenting.swift in Sources */,
@@ -3677,6 +3692,7 @@
 				84DE12332A0565990024D48E /* SingleSelectionCollectionViewCell.swift in Sources */,
 				845EE9512B1F282D00F4C3CD /* RankCell.swift in Sources */,
 				84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */,
+				84F731D32B2360D200ED9106 /* UIButton+Ext.swift in Sources */,
 				84F5FB0029DEB46500734CAE /* SearchTableViewCell.swift in Sources */,
 				84A050EB29E951CA004D582B /* EmptyView.swift in Sources */,
 				84A050E429E92C2F004D582B /* CareerViewDelegate.swift in Sources */,

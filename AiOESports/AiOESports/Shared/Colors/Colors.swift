@@ -39,4 +39,9 @@ class Colors {
         static let tour = UIColor(named: "Tour", in: .main, compatibleWith: nil)!
     }
     
+    
+    enum Gradient {
+        static let startColor = UIColor(named: "Start", in: .main, compatibleWith: nil)!
+        static let endColor = UIColor(named: "End", in: .main, compatibleWith: nil)!
+    }
 }

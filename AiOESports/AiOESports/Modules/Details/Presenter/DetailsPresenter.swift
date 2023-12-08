@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class DetailsPresenter: DetailsPresenting {
     
@@ -30,6 +31,8 @@ class DetailsPresenter: DetailsPresenting {
     
     @Published
     var isVoting: Bool = false
+    
+    var forceFetchDetails = PassthroughSubject<Void, Never>()
     
     init(category: RankCategory, id: Int) {
         self.category = category
@@ -68,9 +71,9 @@ class DetailsPresenter: DetailsPresenting {
     func follow() {
         switch category {
         case .team:
-            isFollowing ? followTeam() : unfollowTeam()
+            isFollowing ? unfollowTeam() : followTeam()
         default:
-            isFollowing ? followTalent() : unfollowTalent()
+            isFollowing ? unfollowTalent() : followTalent()
         }
         
     }
@@ -82,7 +85,7 @@ class DetailsPresenter: DetailsPresenting {
             do {
                 let response = try await followService.followTeam()
                 guard response.statusCode == 200 else { return }
-                isFollowing.toggle()
+                fetchDetails()
             } catch {
                 print("Error in follow team is \(error.localizedDescription)")
             }
@@ -96,7 +99,7 @@ class DetailsPresenter: DetailsPresenting {
             do {
                 let response = try await followService.unFollowTeam()
                 guard response.statusCode == 200 else { return }
-                isFollowing.toggle()
+                fetchDetails()
             } catch {
                 print("Error in unfollow team is \(error.localizedDescription)")
             }
@@ -110,7 +113,7 @@ class DetailsPresenter: DetailsPresenting {
             do {
                 let response = try await followService.followTalent()
                 guard response.statusCode == 200 else { return }
-                isFollowing.toggle()
+                fetchDetails()
             } catch {
                 print("Error in follow talent is \(error.localizedDescription)")
             }
@@ -124,7 +127,7 @@ class DetailsPresenter: DetailsPresenting {
             do {
                 let response = try await followService.unfollowTalent()
                 guard response.statusCode == 200 else { return }
-                isFollowing.toggle()
+                fetchDetails()
             } catch {
                 print("Error in unfollow talent is \(error.localizedDescription)")
             }
@@ -141,8 +144,8 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchTeamDetails(id: String(id))
                 teamDetail = response
                 teamDetails = response
-                isFollowing = !(response.userFollowVoteStats?.following ?? false)
-                isVoting = !(response.userFollowVoteStats?.voting ?? false)
+                isFollowing = response.userFollowVoteStats?.following ?? false
+                isVoting = response.userFollowVoteStats?.voting ?? false
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }
@@ -157,8 +160,8 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchPlayerDetails(id: String(id))
                 playerDetail = response
                 playerDetails = response
-                isFollowing = !(response.userFollowVoteStats?.following ?? false)
-                isVoting = !(response.userFollowVoteStats?.voting ?? false)
+                isFollowing = response.userFollowVoteStats?.following ?? false
+                isVoting = response.userFollowVoteStats?.voting ?? false
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }
@@ -173,8 +176,8 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchCasterDetails(id: String(id))
                 casterDetail = response
                 casterDetails = response
-                isFollowing = !(response.userFollowVoteStats?.following ?? false)
-                isVoting = !(response.userFollowVoteStats?.voting ?? false)
+                isFollowing = response.userFollowVoteStats?.following ?? false
+                isVoting = response.userFollowVoteStats?.voting ?? false
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }
@@ -189,8 +192,8 @@ class DetailsPresenter: DetailsPresenting {
                 let response = try await detailsFetchingService.fetchCreatorDetails(id: String(id))
                 creatorDetail = response
                 creatorDetails = response
-                isFollowing = !(response.userFollowVoteStats?.following ?? false)
-                isVoting = !(response.userFollowVoteStats?.voting ?? false)
+                isFollowing = response.userFollowVoteStats?.following ?? false
+                isVoting = response.userFollowVoteStats?.voting ?? false
             } catch {
                 print("Details fetching service error is \(error.localizedDescription)")
             }

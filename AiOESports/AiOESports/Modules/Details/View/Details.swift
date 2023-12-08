@@ -48,6 +48,12 @@ class Details: UIViewController {
        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter?.fetchDetails()
+    }
+    
 
     private func configureHierarchy() {
         configurePresenter()
@@ -63,6 +69,7 @@ class Details: UIViewController {
         configureDetailsInfoContainerView()
         configureCollectionView()
         configureContentScrollView()
+//        voteButton.appliedGrandientColor()
     }
     
     private func configurePresenter() {
@@ -97,15 +104,18 @@ class Details: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }
-                self.followButton.setTitle($0 ? "Follow" : "Following", for: .normal)
+                let color = $0 ? Colors.Theme.mainColor : Colors.Theme.inputColor
+                self.followButton.backgroundColor = color
+                self.followButton.setTitle($0 ? "Following" : "Follow", for: .normal)
             }).store(in: &subscription)
         
         presenter?.$isVoting
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }
-                self.voteButton.setTitle($0 ? "Vote" : "Voted", for: .normal)
-                self.voteButton.isUserInteractionEnabled = $0
+                $0 ? self.voteButton.appliedVotedBackground() : self.voteButton.appliedNotVotedBackground()
+                self.voteButton.setTitle($0 ? "Voted" : "Vote", for: .normal)
+                self.voteButton.isUserInteractionEnabled = !$0
             }).store(in: &subscription)
         
         presenter?.$casterDetail
@@ -127,13 +137,14 @@ class Details: UIViewController {
                 }
                 self.renderCreatorDetails(details: details)
             }).store(in: &subscription)
-            
         
-        presenter?.fetchDetails()
+        
+//        presenter?.fetchDetails()
     }
     
     private func configureContainerView() {
         self.view.backgroundColor = Colors.Theme.mainColor
+        
     }
     
     private func configureContainerScrollView() {
