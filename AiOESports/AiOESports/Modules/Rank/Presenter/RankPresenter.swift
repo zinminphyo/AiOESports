@@ -66,7 +66,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchTeamLists(selectedGameType, status, currentPage)
+        let router = ApiRouter.fetchTeamLists(gameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<TeamObject>,NetworkError>) in
             switch result {
             case .success(let success):
@@ -94,7 +94,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchPlayerLists(selectedGameType, status, currentPage)
+        let router = ApiRouter.fetchPlayerLists(gameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<PlayerObject>,NetworkError>) in
             switch result {
             case .success(let success):
@@ -122,7 +122,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchCasterLists(selectedGameType, status, currentPage)
+        let router = ApiRouter.fetchCasterLists(gameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<CasterObject>,NetworkError>) in
             switch result {
             case .success(let success):
@@ -150,7 +150,7 @@ class RankPresenter: RankPresenting {
         if self.currentPage == 1 {
             viewDelegate?.showLoading()
         }
-        let router = ApiRouter.fetchCreatorLists(selectedGameType, status, currentPage)
+        let router = ApiRouter.fetchCreatorLists(gameType, status, currentPage)
         NetworkService.shared.request(router: router) { (result: Result<PaginationNetworkResponse<CreatorObject>, NetworkError>) in
             switch result {
             case .success(let success):
@@ -176,13 +176,13 @@ class RankPresenter: RankPresenting {
     func continuePagination() {
         switch rankCategory {
         case .team:
-            fetchTeamLists(gameType: .All, status: .all)
+            fetchTeamLists(gameType: gameType, status: .all)
         case .player:
-            fetchPlayerLists(gameType: .All, status: .active)
+            fetchPlayerLists(gameType: gameType, status: .active)
         case .caster:
-            fetchCasterLists(gameType: .All, status: .active)
+            fetchCasterLists(gameType: gameType, status: .active)
         case .creator:
-            fetchCreatorLists(gameType: .All, status: .active)
+            fetchCreatorLists(gameType: gameType, status: .active)
         }
     }
     
@@ -202,6 +202,19 @@ class RankPresenter: RankPresenting {
         rankCategory = category
     }
     
+    func fetchRankLists() {
+        switch rankCategory {
+        case .team:
+            fetchTeamLists(gameType: gameType, status: .all)
+        case .player:
+            fetchTeamLists(gameType: gameType, status: .active)
+        case .caster:
+            fetchCasterLists(gameType: gameType, status: .active)
+        case .creator:
+            fetchCreatorLists(gameType: gameType, status: .active)
+        }
+    }
+    
     func changedGameType(game: GameType) {
         /*
         guard game != selectedGameType else { return }
@@ -219,7 +232,10 @@ class RankPresenter: RankPresenting {
             self.fetchCreatorLists(gameType: game, status: .active)
         }
          */
+        guard game != gameType else { return }
         gameType = game
+        resetPagination()
+        fetchRankLists()
     }
     
     func resetPagination() {

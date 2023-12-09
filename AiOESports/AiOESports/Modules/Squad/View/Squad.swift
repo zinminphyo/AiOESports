@@ -242,4 +242,24 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
             return 0
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id: Int
+        switch indexPath.section {
+        case 0:
+            id = squadModel?.headCoach?.id ?? 0
+        case 1:
+            id = squadModel?.assistantCoach?.id ?? 0
+        case 2:
+            id = squadModel?.technicalDirector?.id ?? 0
+        case 3:
+            id = squadModel?.analyst?.id ?? 0
+        case 4:
+            id = squadModel?.roster[indexPath.row].id ?? 0
+        default:
+            id = 0
+        }
+        guard let vc = DetailsModuel.createModule(category: .player, id: id) else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

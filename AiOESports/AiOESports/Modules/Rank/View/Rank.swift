@@ -146,6 +146,7 @@ class Rank: UIViewController {
         presenter?.fetchPlayerLists(gameType: .All, status: .active)
         presenter?.fetchCasterLists(gameType: .All, status: .all)
         presenter?.fetchCreatorLists(gameType: .All, status: .all)
+         
     }
     
     private func configureHierarchy() {
