@@ -196,28 +196,66 @@ extension FollowAndVoteController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let type: FollowAndVoteListsViewModel.FollowAndVoteType = .init(rawValue: indexPath.row) else { return }
-        let models: [FollowAndVoteListsViewModel.FollowAndVoteModel]
-        switch indexPath.row {
-        case 0:
-            models = viewModel.followedTeamList.compactMap{ .init(id: String($0.id), name: $0.team_name, imageURL: $0.team_image) }
-        case 1:
-            models = viewModel.followedPlayerList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
-        case 2:
-            models = viewModel.followedCasterList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
-        case 3:
-            models = viewModel.followedCreatorList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
-        case 4:
-            models = viewModel.votedTeamList.compactMap{ .init(id: String($0.id), name: $0.team_name, imageURL: $0.team_image) }
-        case 5:
-            models = viewModel.votedPlayerList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
-        case 6:
-            models = viewModel.votedCasterList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
-        case 7:
-            models = viewModel.votedCreatorList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
-        default:
-            models = []
+        let type: FollowAndVoteListsViewModel.FollowAndVoteType
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                type = .followTeam
+            case 1:
+                type = .followPlayer
+            case 2:
+                type = .followCaster
+            case 3:
+                type = .followCreator
+            default:
+                type = .followCaster
+            }
+        } else {
+            switch indexPath.row {
+            case 0:
+                type = .voteTeam
+            case 1:
+                type = .votePlayer
+            case 2:
+                type = .voteCaster
+            case 3:
+                type = .voteCreator
+            default:
+                type = .followCaster
+            }
         }
+        let models: [FollowAndVoteListsViewModel.FollowAndVoteModel]
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                models = viewModel.followedTeamList.compactMap{ .init(id: String($0.id), name: $0.team_name, imageURL: $0.team_image) }
+            case 1:
+                models = viewModel.followedPlayerList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
+            case 2:
+                models = viewModel.followedCasterList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
+            case 3:
+                models = viewModel.followedCreatorList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
+            default:
+                models = []
+            }
+        } else {
+            
+            switch indexPath.row {
+            case 0:
+                models = viewModel.votedTeamList.compactMap{ .init(id: String($0.id), name: $0.team_name, imageURL: $0.team_image) }
+            case 1:
+                models = viewModel.votedPlayerList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
+            case 2:
+                models = viewModel.votedCasterList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
+            case 3:
+                models = viewModel.votedCreatorList.compactMap{ .init(id: String($0.id), name: $0.name, imageURL: $0.player_image) }
+            default:
+                models = []
+            }
+        
+        }
+            
+        
         let vc = FollowAndVoteListsController(lists: models, type: type)
         navigationController?.pushViewController(vc, animated: true)
         

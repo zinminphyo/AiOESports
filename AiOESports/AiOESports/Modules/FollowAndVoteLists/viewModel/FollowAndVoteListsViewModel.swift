@@ -16,8 +16,8 @@ class FollowAndVoteListsViewModel {
         let imageURL: String
     }
     
-    enum FollowAndVoteType: Int {
-        case followTeam = 0
+    enum FollowAndVoteType {
+        case followTeam 
         case followPlayer
         case followCaster
         case followCreator
