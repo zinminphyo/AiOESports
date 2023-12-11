@@ -4,13 +4,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Medium.ttf">
+            <string>DMSans-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RankListsView" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="IHs-5J-Ahw" id="rGZ-Gt-RFG"/>
                 <outlet property="listsTblView" destination="XL2-ky-2bf" id="cTo-CQ-xL2"/>
                 <outlet property="loadingView" destination="5kB-xk-pHC" id="Yc8-Gj-T7h"/>
             </connections>
@@ -24,6 +31,22 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="545"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHs-5J-Ahw">
+                    <rect key="frame" x="0.0" y="59" width="393" height="545"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elu-Ci-BBs">
+                            <rect key="frame" x="165.66666666666666" y="259.33333333333331" width="62" height="26.333333333333314"/>
+                            <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="ThemeColor"/>
+                    <constraints>
+                        <constraint firstItem="Elu-Ci-BBs" firstAttribute="centerY" secondItem="IHs-5J-Ahw" secondAttribute="centerY" id="XFJ-iV-UIB"/>
+                        <constraint firstItem="Elu-Ci-BBs" firstAttribute="centerX" secondItem="IHs-5J-Ahw" secondAttribute="centerX" id="xOP-5Q-tvY"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kB-xk-pHC" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
                     <rect key="frame" x="146.66666666666666" y="269" width="100" height="100"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,12 +71,19 @@
                 <constraint firstItem="XL2-ky-2bf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Clc-8i-2gb"/>
                 <constraint firstItem="5kB-xk-pHC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Kfy-no-mzZ"/>
                 <constraint firstItem="5kB-xk-pHC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qlj-43-Hua"/>
+                <constraint firstItem="IHs-5J-Ahw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="S57-Bv-XiX"/>
+                <constraint firstItem="IHs-5J-Ahw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Xae-6a-mHN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IHs-5J-Ahw" secondAttribute="trailing" id="mMT-Z8-l1S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IHs-5J-Ahw" secondAttribute="bottom" id="wbl-pE-BON"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-48.091603053435115" y="62.676056338028175"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

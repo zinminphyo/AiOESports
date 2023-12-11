@@ -61,6 +61,9 @@ class Rank: UIViewController {
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }
                 self.teamRankView.gameType = $0
+                self.playerRankView.gameType = $0
+                self.casterRankView.gameType = $0
+                self.creatorRankView.gameType = $0
             }).store(in: &subscription)
         
         presenter?.$playerRankLists

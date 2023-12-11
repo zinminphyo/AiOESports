@@ -48,6 +48,10 @@ class ProfileLevelView: UIView, NibLoadable {
         }
     }
     
+    func set(level: String) {
+        profileLeveleImageView.image = level.lowercased() == "free" ? UIImage(named: "NormalUser") : UIImage(named: "PreminumUser")
+    }
+    
     func set(image: UIImage?) {
         profileImageView.image = image
     }

@@ -70,6 +70,7 @@ class ProfileController: UIViewController {
         nameLabel.text = viewModel.profileModel.username
         idLabel.text = "id-\(viewModel.profileModel.id)"
         profileLevelView.set(imageURL: viewModel.profileModel.profile_image)
+        profileLevelView.set(level: "")
     }
 
 }

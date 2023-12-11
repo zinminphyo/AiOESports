@@ -56,7 +56,7 @@ class RankListsView: UIControl, NibLoadable {
 
     @IBOutlet private(set) var listsTblView: UITableView!
     @IBOutlet private(set) var loadingView: LoadingView!
-    
+    @IBOutlet private(set) var emptyView: UIView!
     
     lazy var tableHeaderView: UIImageView = {
         let imgView = UIImageView(frame: .init(x: 0, y: 0, width: listsTblView.bounds.width, height: 180))
@@ -126,7 +126,6 @@ class RankListsView: UIControl, NibLoadable {
     }
     
     private func configureTableView() {
-//        listsTblView.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.reuseIdentifier)
         listsTblView.register(UINib(nibName: String(describing: RankCell.self), bundle: nil), forCellReuseIdentifier: RankCell.reuseIdentifier)
         listsTblView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
         listsTblView.dataSource = self
@@ -139,10 +138,14 @@ class RankListsView: UIControl, NibLoadable {
         _lists.append(contentsOf: lists)
         listsTblView.insertRows(at: indexPaths, with: .fade)
         listsTblView.endUpdates()
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self = self else { return }
+            self.emptyView.alpha = _lists.isEmpty ? 1.0 : 0.0
+        }
     }
     
     private func updateCoverImage() {
-        tableHeaderView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(coverImage)"))
+        tableHeaderView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(coverImage)"), placeholder: Images.Placeholder.cover)
     }
     
     private func updateOnGameType() {
