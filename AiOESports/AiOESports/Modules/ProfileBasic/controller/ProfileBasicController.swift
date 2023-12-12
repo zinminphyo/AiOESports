@@ -16,6 +16,7 @@ class ProfileBasicController: UIViewController {
     @IBOutlet private(set) var genderInfoView: ProfileInfoView!
     @IBOutlet private(set) var dobInfoView: ProfileInfoView!
     @IBOutlet private(set) var cityStateInfoView: ProfileInfoView!
+    @IBOutlet private(set) var cityInfoView: ProfileInfoView!
     
     let viewModel: ProfileInfoViewModel
     
@@ -41,13 +42,14 @@ class ProfileBasicController: UIViewController {
                 guard let self = self else { return }
                 self.updateUserInfo($0)
             }.store(in: &subscription)
-        
+        /*
         profileLevelView.set(imageURL: viewModel.profileInfo.profileURL)
         usernameInfoView.value = viewModel.profileInfo.username
         phoneNumberInfoView.value = viewModel.profileInfo.phoneNumber
         genderInfoView.value = viewModel.profileInfo.gender
         dobInfoView.value = viewModel.profileInfo.dateOfBirth
         cityStateInfoView.value = viewModel.profileInfo.city
+         */
     }
     
     
@@ -59,11 +61,13 @@ class ProfileBasicController: UIViewController {
     
     private func updateUserInfo(_ userInfo: UserInfo) {
         profileLevelView.set(imageURL: userInfo.profile_image)
+        profileLevelView.set(level: userInfo.level)
         usernameInfoView.value = userInfo.username
         phoneNumberInfoView.value = userInfo.phone_no
         genderInfoView.value = userInfo.gender
         dobInfoView.value = userInfo.dob
-        cityStateInfoView.value = userInfo.city
+        cityStateInfoView.value = userInfo.state
+        cityInfoView.value = userInfo.city
     }
     
     

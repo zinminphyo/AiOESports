@@ -80,7 +80,7 @@ class Images {
        
     }
     
-    enum GameImages {
+    enum GameImages: CaseIterable {
         
         static let DOTA_IMAGE = UIImage(named: "Dota_Image", in: .main, compatibleWith: nil)
         static let MLBB_IMAGE = UIImage(named: "MLBB_Image", in: .main, compatibleWith: nil)
@@ -117,14 +117,16 @@ class Images {
                 return Freefire_IMAGE
             case "fifa":
                 return FIFA_IMAGE
-            case "apex":
+            case "apex", "apexlegend":
                 return APEX_IMAGE
             case "callOfDuty":
                 return CallOfDuty_IMAGE
-            case "autoChess":
+            case "autoChess", "autochess":
                 return AutoChess_IMAGE
             case "hok":
                 return Hok_IMAGE
+            case "fortnite":
+                return Fortnite_IMAGE
             default:
                 return nil
             }

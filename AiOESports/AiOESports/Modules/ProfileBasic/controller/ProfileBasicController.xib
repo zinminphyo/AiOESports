@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileBasicController" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="cityInfoView" destination="0yL-5f-las" id="3B3-C5-Tc2"/>
                 <outlet property="cityStateInfoView" destination="zDJ-1x-iLT" id="Ez2-yw-vpL"/>
                 <outlet property="dobInfoView" destination="QLz-EK-8Lc" id="20Y-R1-0j1"/>
                 <outlet property="genderInfoView" destination="2MY-4v-eYp" id="Oey-Z7-9Eb"/>
@@ -82,7 +83,7 @@
                     <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHE-5T-UJE">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="564"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="639"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-el-86l" customClass="ProfileLevelView" customModule="AiOESports" customModuleProvider="target">
                                     <rect key="frame" x="121.66666666666669" y="23" width="150" height="150"/>
@@ -96,7 +97,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-2A-O3V">
-                                    <rect key="frame" x="0.0" y="194" width="393" height="370"/>
+                                    <rect key="frame" x="0.0" y="194" width="393" height="445"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJH-hX-8jF" customClass="ProfileInfoView" customModule="AiOESports" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
@@ -136,8 +137,14 @@
                                             <rect key="frame" x="0.0" y="300" width="393" height="70"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="City/State"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="value" value="Yangon"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="State"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yL-5f-las" customClass="ProfileInfoView" customModule="AiOESports" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="375" width="393" height="70"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="City"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>

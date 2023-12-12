@@ -111,6 +111,23 @@ enum GameType: CaseIterable {
     
 }
 
+enum SortableGames: String, CaseIterable {
+    case mlbb
+    case dota
+    case aov
+    case pubg
+    case csgo
+    case valorant
+    case lolwr
+    case hok
+    case fifa
+    case fortnite
+    case apexlegend
+    case autochess
+    
+    var image: UIImage? { Images.GameImages.getImage(gameName: self.rawValue) }
+}
+
 enum TeamFilterStatus: CaseIterable {
     case active
     case inActive

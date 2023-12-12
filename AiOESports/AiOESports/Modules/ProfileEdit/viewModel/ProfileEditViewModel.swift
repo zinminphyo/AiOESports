@@ -96,6 +96,7 @@ extension ProfileEditViewModel {
         var dateOfBirth: String = ""
         var city: String = ""
         var state: String = ""
+        var level: String = ""
         var facebook: String? = nil
         var instagram: String? = nil
         
@@ -105,6 +106,7 @@ extension ProfileEditViewModel {
             phoneNumber = info.phoneNumber
             gender = info.gender
             dateOfBirth = info.dateOfBirth
+            level = info.level
             city = info.city
             state = info.state
             facebook = info.facebook

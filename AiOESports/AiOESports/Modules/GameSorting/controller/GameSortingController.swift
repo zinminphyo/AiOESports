@@ -10,6 +10,7 @@ import UIKit
 class GameSortingController: UIViewController {
     
     @IBOutlet private(set) var tableView: UITableView!
+    var games: [SortableGames] = SortableGames.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,19 +43,21 @@ class GameSortingController: UIViewController {
 
 extension GameSortingController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GameSortingCategoryCell.reuseIdentifier, for: indexPath) as! GameSortingCategoryCell
-        cell.isHighlighted = false
+        let game = games[indexPath.row]
+        cell.render(gameImage: game.image)
+            .render(gameName: game.rawValue)
         return cell
     }
 }
 
 extension GameSortingController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 75
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -77,3 +80,4 @@ extension GameSortingController: UITableViewDragDelegate {
     
     
 }
+

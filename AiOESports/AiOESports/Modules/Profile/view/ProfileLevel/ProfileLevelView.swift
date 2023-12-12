@@ -35,7 +35,7 @@ class ProfileLevelView: UIView, NibLoadable {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        profileImageView.layer.cornerRadius = ( bounds.height * 0.8 ) / 2
+        profileImageView.layer.cornerRadius = ( bounds.height * 0.77 ) / 2
         print("HEIGHT ====> \(bounds.height)")
         profileImageView.layer.cornerCurve = .continuous
     }
@@ -49,7 +49,7 @@ class ProfileLevelView: UIView, NibLoadable {
     }
     
     func set(level: String) {
-        profileLeveleImageView.image = level.lowercased() == "free" ? UIImage(named: "NormalUser") : UIImage(named: "PreminumUser")
+        profileLeveleImageView.image = level.lowercased() == "free" ? UIImage(named: "NormalUser") : UIImage(named: "PremiumUser")
     }
     
     func set(image: UIImage?) {

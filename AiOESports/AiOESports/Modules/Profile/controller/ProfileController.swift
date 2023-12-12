@@ -70,7 +70,7 @@ class ProfileController: UIViewController {
         nameLabel.text = viewModel.profileModel.username
         idLabel.text = "id-\(viewModel.profileModel.id)"
         profileLevelView.set(imageURL: viewModel.profileModel.profile_image)
-        profileLevelView.set(level: "")
+        profileLevelView.set(level: viewModel.profileModel.level)
     }
 
 }
@@ -101,6 +101,7 @@ extension ProfileController {
             phoneNumber: profileModel.phone_no,
             gender: profileModel.gender,
             dateOfBirth: profileModel.dob,
+            level: profileModel.level,
             city: profileModel.city,
             state: profileModel.state,
             facebook: profileModel.facebook_link,

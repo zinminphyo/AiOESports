@@ -19,6 +19,7 @@ class ProfileInfoViewModel {
         let phoneNumber: String
         let gender: String
         let dateOfBirth: String
+        let level: String
         let city: String
         let state: String
         let facebook: String?

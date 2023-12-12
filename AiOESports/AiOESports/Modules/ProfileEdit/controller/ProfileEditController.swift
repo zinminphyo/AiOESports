@@ -84,7 +84,7 @@ class ProfileEditController: UIViewController {
                 guard let self = self else { return }
                 self.navigationController?.popViewController(animated: true)
             }.store(in: &subscription)
-        
+        profileFrameView.set(level: viewModel.editInfo.level)
         profileFrameView.set(imageURL: viewModel.editInfo.profileURL)
         nameInputView.value = viewModel.editInfo.username
         phoneNumberInputView.value = viewModel.editInfo.phoneNumber
@@ -171,7 +171,7 @@ class ProfileEditController: UIViewController {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         present(picker, animated: true)
     }
     
@@ -205,7 +205,7 @@ class ProfileEditController: UIViewController {
 
 extension ProfileEditController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.originalImage] as? UIImage else { return }
+        guard let image = info[.editedImage] as? UIImage else { return }
         profileFrameView.set(image: image)
         viewModel.set(image: image)
         picker.dismiss(animated: true)
