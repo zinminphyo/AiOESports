@@ -10,7 +10,7 @@ import UIKit
 class GameSortingController: UIViewController {
     
     @IBOutlet private(set) var tableView: UITableView!
-    var games: [SortableGames] = SortableGames.allCases
+    var sortedGames: [GameSortedData.Sorting] = SortedGameDataLayer.shared.getData().sortedGames
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,7 @@ class GameSortingController: UIViewController {
     
     @IBAction
     private func didTapBack(_ sender: UIButton) {
+        SortedGameDataLayer.shared.save(data: GameSortedData(sortedGames: sortedGames))
         navigationController?.popViewController(animated: true)
     }
     
@@ -43,12 +44,12 @@ class GameSortingController: UIViewController {
 
 extension GameSortingController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return sortedGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GameSortingCategoryCell.reuseIdentifier, for: indexPath) as! GameSortingCategoryCell
-        let game = games[indexPath.row]
+        let game = sortedGames[indexPath.row].gameType
         cell.render(gameImage: game.image)
             .render(gameName: game.rawValue)
         return cell
@@ -65,7 +66,9 @@ extension GameSortingController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-               
+        
+        let game = sortedGames.remove(at: sourceIndexPath.row)
+        sortedGames.insert(game, at: destinationIndexPath.row)
     }
     
 }

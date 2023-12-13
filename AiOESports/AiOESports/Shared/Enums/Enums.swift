@@ -111,7 +111,7 @@ enum GameType: CaseIterable {
     
 }
 
-enum SortableGames: String, CaseIterable {
+enum SortableGames: String, CaseIterable, Codable {
     case mlbb
     case dota
     case aov

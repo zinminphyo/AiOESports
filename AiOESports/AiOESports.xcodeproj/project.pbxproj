@@ -154,6 +154,8 @@
 		84725AD929E1D8D9003658CD /* RankPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AD829E1D8D9003658CD /* RankPresentable.swift */; };
 		8478E8872B29C9C8003C0EE6 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478E8862B29C9C8003C0EE6 /* cities.json */; };
 		8478E8892B29CA26003C0EE6 /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8478E8882B29CA25003C0EE6 /* regions.json */; };
+		8478E88B2B2A07AA003C0EE6 /* GameSortedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478E88A2B2A07AA003C0EE6 /* GameSortedData.swift */; };
+		8478E88D2B2A088E003C0EE6 /* SortedGameDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478E88C2B2A088E003C0EE6 /* SortedGameDataLayer.swift */; };
 		8479C5BD29EBF7BE008C97B9 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */; };
 		8479C5BE29EBF7BE008C97B9 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */; };
 		8479C5BF29EBF7BE008C97B9 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */; };
@@ -576,6 +578,8 @@
 		84725AD829E1D8D9003658CD /* RankPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankPresentable.swift; sourceTree = "<group>"; };
 		8478E8862B29C9C8003C0EE6 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		8478E8882B29CA25003C0EE6 /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
+		8478E88A2B2A07AA003C0EE6 /* GameSortedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSortedData.swift; sourceTree = "<group>"; };
+		8478E88C2B2A088E003C0EE6 /* SortedGameDataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedGameDataLayer.swift; sourceTree = "<group>"; };
 		8479C5BA29EBF7BE008C97B9 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		8479C5BB29EBF7BE008C97B9 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		8479C5BC29EBF7BE008C97B9 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
@@ -2701,6 +2705,8 @@
 				84F58F3D2B11187300F2FFAA /* UserDataModel.swift */,
 				8478E8882B29CA25003C0EE6 /* regions.json */,
 				8478E8862B29C9C8003C0EE6 /* cities.json */,
+				8478E88A2B2A07AA003C0EE6 /* GameSortedData.swift */,
+				8478E88C2B2A088E003C0EE6 /* SortedGameDataLayer.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -3553,6 +3559,7 @@
 				843CF3A22B1701D900C98BFF /* VoteController.swift in Sources */,
 				842AF7BE2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift in Sources */,
 				8459D58229DDC99500DDF266 /* TeamObject.swift in Sources */,
+				8478E88D2B2A088E003C0EE6 /* SortedGameDataLayer.swift in Sources */,
 				84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */,
 				840833E02B164685004F2A71 /* DimmingBackgroundPresentationController.swift in Sources */,
 				84F58F632B136C3500F2FFAA /* ProfileEditViewModel.swift in Sources */,
@@ -3682,6 +3689,7 @@
 				849AEBA32A153F680024AAAA /* ForgotPasswordModule.swift in Sources */,
 				84A050DD29E92A9E004D582B /* Career.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
+				8478E88B2B2A07AA003C0EE6 /* GameSortedData.swift in Sources */,
 				84F58F502B11F01500F2FFAA /* Step2RegistrationService.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				84108C372A0AA1CF00488D0D /* VerifyPhone.swift in Sources */,
