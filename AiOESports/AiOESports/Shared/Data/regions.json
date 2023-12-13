@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "nameEN": "Ayarwaddy",
+    "nameMM": "ဧရာဝတီတိုင်းဒေသကြီး",
+    "code": "AYY"
+  },
+  {
+    "id": 2,
+    "nameEN": "Bago",
+    "nameMM": "ပဲခူးတိုင်း",
+    "code": "BGO"
+  },
+  {
+    "id": 3,
+    "nameEN": "Chin",
+    "nameMM": "ချင်းပြည်နယ်",
+    "code": "CHN"
+  },
+  {
+    "id": 4,
+    "nameEN": "Kachin",
+    "nameMM": "ကချင်ပြည်နယ်",
+    "code": "KCN"
+  },
+  {
+    "id": 5,
+    "nameEN": "Kayar",
+    "code": "KYR",
+    "nameMM": "ကယားပြည်နယ်"
+  },
+  {
+    "id": 6,
+    "nameEN": "Kayin",
+    "nameMM": "ကရင်ပြည်နယ်",
+    "code": "KYN"
+  },
+  {
+    "id": 7,
+    "nameEN": "Magway",
+    "nameMM": "မကွေးတိုင်း",
+    "code": "MGW"
+  },
+  {
+    "id": 8,
+    "nameEN": "Mandalay",
+    "nameMM": "မန္တလေးတိုင်း",
+    "code": "MDY"
+  },
+  {
+    "id": 9,
+    "nameEN": "Mon",
+    "nameMM": "မွန်ပြည်နယ်",
+    "code": "MON"
+  },
+  {
+    "id": 10,
+    "nameEN": "Naypyitaw",
+    "nameMM": "နေပြည်တော် နယ်မြေ",
+    "code": "NPT"
+  },
+  {
+    "id": 11,
+    "nameEN": "Rakhine",
+    "code": "RKE",
+    "nameMM": "ရခိုင်ပြည်နယ်"
+  },
+  {
+    "id": 12,
+    "nameEN": "Sagaing",
+    "code": "SGG",
+    "nameMM": "စစ်ကိုင်းတိုင်း"
+  },
+  {
+    "id": 13,
+    "nameEN": "Shan",
+    "code": "SHN",
+    "nameMM": "ရှမ်းပြည်နယ်"
+  },
+  {
+    "id": 14,
+    "nameEN": "Tanintharyi",
+    "code": "TNY",
+    "nameMM": "တနင်္သာရီတိုင်း"
+  },
+  {
+    "id": 15,
+    "nameEN": "Yangon",
+    "code": "YGN",
+    "nameMM": "ရန်ကုန်တိုင်းဒေသကြီး"
+  }
+]

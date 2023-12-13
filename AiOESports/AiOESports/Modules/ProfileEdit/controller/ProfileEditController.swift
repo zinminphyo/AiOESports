@@ -71,6 +71,22 @@ class ProfileEditController: UIViewController {
     
     
     private func configureViewModel() {
+        
+        viewModel.$regions
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.statePicker.items = $0.compactMap{ $0.nameEN }
+            }.store(in: &subscription)
+        
+        viewModel.$cities
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.cityPicker.items = $0.compactMap{ $0.nameEN }
+            }.store(in: &subscription)
+         
+        
         viewModel.$isUpdating
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
@@ -84,6 +100,28 @@ class ProfileEditController: UIViewController {
                 guard let self = self else { return }
                 self.navigationController?.popViewController(animated: true)
             }.store(in: &subscription)
+        
+        viewModel.userInfoFetchingCompleted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.updateUI(userInfo: $0)
+            }.store(in: &subscription)
+        
+        viewModel.$currentStateName
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.stateDropdown.dropdownInfo = $0
+            }.store(in: &subscription)
+        
+        viewModel.$currentCityName
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else {return }
+                self.cityDropdown.dropdownInfo = $0
+            }.store(in: &subscription)
+        /*
         profileFrameView.set(level: viewModel.editInfo.level)
         profileFrameView.set(imageURL: viewModel.editInfo.profileURL)
         nameInputView.value = viewModel.editInfo.username
@@ -94,6 +132,22 @@ class ProfileEditController: UIViewController {
         cityDropdown.dropdownInfo = viewModel.editInfo.city
         facebookLinkInputView.value = viewModel.editInfo.facebook
         instagramLinkInputView.value = viewModel.editInfo.instagram
+        */
+        viewModel.fetchProfile()
+        viewModel.fetchStateLists()
+    }
+    
+    private func updateUI(userInfo: UserInfo) {
+        profileFrameView.set(level: userInfo.level)
+        profileFrameView.set(imageURL: userInfo.profile_image)
+        nameInputView.value = userInfo.username
+        phoneNumberInputView.value = userInfo.phone_no
+        genderSelectionView.gender = userInfo.gender.lowercased()
+        birthdayDropdown.dropdownInfo = userInfo.dob
+        stateDropdown.dropdownInfo = userInfo.state
+        cityDropdown.dropdownInfo = userInfo.city
+        facebookLinkInputView.value = userInfo.facebook_link
+        instagramLinkInputView.value = userInfo.instagram_link
     }
     
     private func configureEndEditing() {
@@ -122,12 +176,6 @@ class ProfileEditController: UIViewController {
     private func configureStateDropdown() {
         let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 250)
         statePicker.frame = rect
-        statePicker.items = [
-            "Yangon",
-            "Mandalay",
-            "Chin",
-            "NayPyiTaw"
-        ]
         statePicker.delegate = self
         stateDropdown.customInputView = statePicker
     }
@@ -135,12 +183,6 @@ class ProfileEditController: UIViewController {
     private func configureCityDropdown() {
         let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 250)
         cityPicker.frame = rect
-        cityPicker.items = [
-            "Sanchaung",
-            "Kamayut",
-            "Alone",
-            "KyiMyinDine"
-        ]
         cityPicker.delegate = self
         cityDropdown.customInputView = cityPicker
     }
@@ -165,6 +207,16 @@ class ProfileEditController: UIViewController {
     @IBAction
     private func didTapChangeProfile(_ sender: UIButton) {
         presentImagePicker()
+    }
+    
+    @IBAction
+    private func didTapStateDropdown(_ sender: InputDropdownView) {
+        statePicker.items
+    }
+    
+    @IBAction
+    private func didTapCityDropdown(_ sender: InputDropdownView) {
+        
     }
     
     private func presentImagePicker() {
@@ -218,10 +270,8 @@ extension ProfileEditController: AiOPickerViewDelegate {
     func didSelectItem(in view: AiOPickerView, for value: String) {
         switch view {
         case statePicker:
-            stateDropdown.dropdownInfo = value
             viewModel.set(state: value)
-        case cityPicker:
-            cityDropdown.dropdownInfo = value
+        case cityPicker: 
             viewModel.set(city: value)
         default:
             break

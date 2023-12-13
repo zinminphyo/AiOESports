@@ -12,13 +12,42 @@ import UIKit
 
 class ProfileEditViewModel {
     
+    struct Region: Decodable {
+        let id: Int
+        let nameEN: String
+        let nameMM: String
+        let code: String
+    }
+    
+    struct City: Decodable {
+        let id: Int
+        let regionId: Int
+        let nameEN: String
+        let nameMM: String
+        let code: String
+        let created_at: String
+        let updated_at: String
+    }
+    
     let id: Int
     
     var editInfo: ProfileEdit
     
     var updateInfo = [String:Any]()
     
+    var userInfoFetchingCompleted = PassthroughSubject<UserInfo, Never>()
     
+    
+    @Published
+    var currentStateName: String = ""
+    
+    @Published
+    var currentCityName: String = ""
+    
+    @Published
+    private(set) var regions: [Region] = []
+    @Published
+    private(set) var cities: [City] = []
     
     @Published
     var isUpdating: Bool = false
@@ -27,6 +56,20 @@ class ProfileEditViewModel {
     init(info: ProfileInfoViewModel.ProfileInfo) {
         id = info.id
         editInfo = ProfileEdit(info: info)
+    }
+    
+    func fetchProfile() {
+        isUpdating = true
+        let service = UserInfoFetchingService()
+        Task {
+            do {
+                let response = try await service.fetchUserInfo()
+                userInfoFetchingCompleted.send(response)
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+            isUpdating = false
+        }
     }
     
     func updateProfile() {
@@ -42,6 +85,41 @@ class ProfileEditViewModel {
             }
             isUpdating = false
         }
+    }
+    
+    
+    
+    func fetchStateLists() {
+        guard let url = Bundle.main.url(forResource: "regions", withExtension: "json"),
+              let data = try? Data(contentsOf: url)
+        else { return }
+        let decoder = JSONDecoder()
+        guard let regs = try? decoder.decode([Region].self, from: data) else { return }
+        regions = regs
+        if !regions.isEmpty { setRegion(region: regions[0]) }
+    }
+    
+    private func fetchCityLists(regionId: Int) {
+        guard let url = Bundle.main.url(forResource: "cities", withExtension: "json"),
+              let data = try? Data(contentsOf: url) else {
+            return
+        }
+        let decoder = JSONDecoder()
+        guard let cities = try? decoder.decode([City].self, from: data) else {
+            return
+        }
+        self.cities = cities.filter{ $0.regionId == regionId }
+        if !self.cities.isEmpty { setCity(city: self.cities[0]) }
+    }
+    
+    
+    func setRegion(region: Region) {
+        currentStateName = region.nameEN
+        fetchCityLists(regionId: region.id)
+    }
+    
+    func setCity(city: City) {
+        currentCityName = city.nameEN
     }
     
 }
@@ -73,10 +151,14 @@ extension ProfileEditViewModel {
     }
     
     func set(state: String) {
+        guard let index = regions.firstIndex(where: { $0.nameEN == state }) else { return }
+        setRegion(region: regions[index])
         updateInfo["state"] = state
     }
     
     func set(city: String) {
+        guard let index = cities.firstIndex(where: { $0.nameEN == city } ) else { return }
+        setCity(city: cities[index])
         updateInfo["city"] = city
     }
     

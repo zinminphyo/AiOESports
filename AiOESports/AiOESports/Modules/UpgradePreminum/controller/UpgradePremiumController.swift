@@ -86,7 +86,7 @@ class UpgradePremiumController: UIViewController {
     }
     
     private func configureKeyboardNotification() {
-        
+        /*
         NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
             .receive(on: DispatchQueue.main)
             .map{ ($0.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.size.height }
@@ -109,7 +109,7 @@ class UpgradePremiumController: UIViewController {
                     self.view.layoutIfNeeded()
                 }
             }.store(in: &subscription)
-        
+        */
         
     }
     

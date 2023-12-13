@@ -14,7 +14,12 @@ protocol AiOPickerViewDelegate {
 
 class AiOPickerView: UIView, NibLoadable {
     
-    var items: [String] = []
+    var items: [String] = [] {
+        didSet {
+            pickerView.reloadAllComponents()
+            pickerView.selectRow(0, inComponent: 0, animated: false)
+        }
+    }
     
     @IBOutlet private(set) var titleLabel: UILabel!
     @IBOutlet private(set) var pickerView: UIPickerView!
