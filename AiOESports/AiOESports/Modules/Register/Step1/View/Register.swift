@@ -13,7 +13,9 @@ class Register: UIViewController {
     @IBOutlet weak var usernameTxtField: UITextField!
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
     @IBOutlet weak var enterPasscodeView: PasscodeView!
+    @IBOutlet private(set) var enterPinView: OTPView!
     @IBOutlet weak var reEnterPasscodeView: PasscodeView!
+    @IBOutlet private(set) var reEnterPinView: OTPView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -166,6 +168,16 @@ class Register: UIViewController {
     
     @objc func didChangeUserName() {
         presenter?.set(username: usernameTxtField.text ?? "")
+    }
+    
+    @IBAction
+    private func didFinishedEnterPasscode(_ sender: OTPView) {
+        presenter?.set(enterPassword: sender.text)
+    }
+    
+    @IBAction
+    private func didFinishedReEnterPasscode(_ sender: OTPView) {
+        presenter?.set(reEnterPassword: sender.text)
     }
 
 }

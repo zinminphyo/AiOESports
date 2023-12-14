@@ -121,9 +121,33 @@
                                                     <constraint firstAttribute="height" constant="50" id="Acf-bj-8RQ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-J3-GZY" customClass="PasscodeView" customModule="AiOESports" customModuleProvider="target">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7q-J3-GZY" customClass="PasscodeView" customModule="AiOESports" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="323.66666666666669" width="361" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emo-18-KOd" customClass="OTPView" customModule="AiOESports" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="323.66666666666669" width="361" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
+                                                        <color key="value" name="InputColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                        <color key="value" name="PrimaryColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="normalColor">
+                                                        <color key="value" name="InputColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="labelCount">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didFinishedEnterPasscode:" destination="Y6W-OH-hqX" eventType="valueChanged" id="fPM-Hf-fOQ"/>
+                                                </connections>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sYl-zm-n9N">
                                                 <rect key="frame" x="16" y="381.66666666666669" width="361" height="0.0"/>
@@ -156,7 +180,31 @@
                                                     <constraint firstAttribute="height" constant="50" id="71o-wS-zr5"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omh-mA-oCJ" customClass="PasscodeView" customModule="AiOESports" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PU0-N0-G44" customClass="OTPView" customModule="AiOESports" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="426.66666666666669" width="361" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
+                                                        <color key="value" name="InputColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                        <color key="value" name="PrimaryColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="normalColor">
+                                                        <color key="value" name="InputColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="labelCount">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didFinishedReEnterPasscode:" destination="Y6W-OH-hqX" eventType="valueChanged" id="0vb-fj-qw5"/>
+                                                </connections>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omh-mA-oCJ" customClass="PasscodeView" customModule="AiOESports" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="426.66666666666669" width="361" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
@@ -223,6 +271,7 @@
                                             <constraint firstItem="xZs-gS-x4y" firstAttribute="top" secondItem="XCl-2D-GPj" secondAttribute="bottom" constant="8" id="4Dg-ba-5BI"/>
                                             <constraint firstAttribute="trailing" secondItem="jsH-5v-Ueh" secondAttribute="trailing" constant="16" id="5BJ-dg-tPd"/>
                                             <constraint firstAttribute="trailing" secondItem="mVL-Iq-s4P" secondAttribute="trailing" constant="16" id="66G-hY-94O"/>
+                                            <constraint firstItem="PU0-N0-G44" firstAttribute="leading" secondItem="xZs-gS-x4y" secondAttribute="leading" id="7Ae-oz-sT7"/>
                                             <constraint firstItem="QTs-ti-BM2" firstAttribute="leading" secondItem="hjl-XA-9Bo" secondAttribute="leading" constant="16" id="7jP-At-aps"/>
                                             <constraint firstItem="ea3-af-u0X" firstAttribute="leading" secondItem="HFC-Ib-QDA" secondAttribute="leading" id="82c-hb-MzN"/>
                                             <constraint firstItem="QTs-ti-BM2" firstAttribute="top" secondItem="mVL-Iq-s4P" secondAttribute="bottom" constant="20" id="8Rx-7Q-94b"/>
@@ -234,11 +283,13 @@
                                             <constraint firstItem="omh-mA-oCJ" firstAttribute="top" secondItem="xZs-gS-x4y" secondAttribute="top" id="Ic9-Jd-o7C"/>
                                             <constraint firstItem="1nx-BN-tDH" firstAttribute="leading" secondItem="hjl-XA-9Bo" secondAttribute="leading" constant="16" id="JXK-W1-ZuB"/>
                                             <constraint firstItem="6sY-Rf-UrM" firstAttribute="top" secondItem="HFC-Ib-QDA" secondAttribute="bottom" constant="8" id="K7t-Ix-lCi"/>
+                                            <constraint firstItem="emo-18-KOd" firstAttribute="leading" secondItem="v7q-J3-GZY" secondAttribute="leading" id="LpH-3j-AKI"/>
                                             <constraint firstItem="qgc-hw-IJH" firstAttribute="leading" secondItem="hjl-XA-9Bo" secondAttribute="leading" constant="16" id="MDW-Ui-xD9"/>
                                             <constraint firstItem="Uvk-PZ-wgg" firstAttribute="top" secondItem="FvR-IQ-FpH" secondAttribute="bottom" constant="8" id="MRj-MW-XXO"/>
                                             <constraint firstItem="sYl-zm-n9N" firstAttribute="top" secondItem="jsH-5v-Ueh" secondAttribute="bottom" constant="8" id="OpF-5b-iq4"/>
                                             <constraint firstItem="Mxm-lI-eLd" firstAttribute="leading" secondItem="hjl-XA-9Bo" secondAttribute="leading" constant="16" id="POy-pQ-bLi"/>
                                             <constraint firstItem="qgc-hw-IJH" firstAttribute="top" secondItem="Mxm-lI-eLd" secondAttribute="bottom" constant="20" id="Pcu-RW-IJF"/>
+                                            <constraint firstItem="PU0-N0-G44" firstAttribute="trailing" secondItem="xZs-gS-x4y" secondAttribute="trailing" id="QZH-hf-sfJ"/>
                                             <constraint firstItem="v7q-J3-GZY" firstAttribute="bottom" secondItem="jsH-5v-Ueh" secondAttribute="bottom" id="ROz-yi-DZn"/>
                                             <constraint firstItem="omh-mA-oCJ" firstAttribute="trailing" secondItem="xZs-gS-x4y" secondAttribute="trailing" id="S6P-Vk-xMS"/>
                                             <constraint firstItem="Mxm-lI-eLd" firstAttribute="top" secondItem="xZs-gS-x4y" secondAttribute="bottom" constant="8" id="SeC-OA-qD3"/>
@@ -249,15 +300,20 @@
                                             <constraint firstItem="v7q-J3-GZY" firstAttribute="leading" secondItem="jsH-5v-Ueh" secondAttribute="leading" id="Xz5-iI-inh"/>
                                             <constraint firstItem="kvL-cx-Ufn" firstAttribute="top" secondItem="lzB-nt-2ak" secondAttribute="bottom" constant="8" id="YEU-m2-bP3"/>
                                             <constraint firstItem="3vc-oG-dkh" firstAttribute="trailing" secondItem="qgc-hw-IJH" secondAttribute="trailing" id="ZeH-N7-Pd4"/>
+                                            <constraint firstItem="PU0-N0-G44" firstAttribute="bottom" secondItem="xZs-gS-x4y" secondAttribute="bottom" id="ZlO-YB-WdX"/>
                                             <constraint firstItem="6sY-Rf-UrM" firstAttribute="leading" secondItem="HFC-Ib-QDA" secondAttribute="leading" id="aUh-3E-JIo"/>
                                             <constraint firstAttribute="trailing" secondItem="1nx-BN-tDH" secondAttribute="trailing" constant="16" id="aWh-Iq-6zm"/>
                                             <constraint firstItem="V0p-aX-9Cp" firstAttribute="top" secondItem="qgc-hw-IJH" secondAttribute="bottom" constant="40" id="b6H-rB-8ui"/>
                                             <constraint firstItem="lzB-nt-2ak" firstAttribute="leading" secondItem="HFC-Ib-QDA" secondAttribute="leading" id="bQj-xc-2U4"/>
                                             <constraint firstItem="omh-mA-oCJ" firstAttribute="leading" secondItem="xZs-gS-x4y" secondAttribute="leading" id="bvz-zA-aDT"/>
+                                            <constraint firstItem="emo-18-KOd" firstAttribute="bottom" secondItem="v7q-J3-GZY" secondAttribute="bottom" id="c7C-0r-yeB"/>
                                             <constraint firstItem="jsH-5v-Ueh" firstAttribute="leading" secondItem="hjl-XA-9Bo" secondAttribute="leading" constant="16" id="d50-xh-Pqz"/>
                                             <constraint firstItem="XCl-2D-GPj" firstAttribute="leading" secondItem="hjl-XA-9Bo" secondAttribute="leading" constant="16" id="dCk-Ra-F2Y"/>
+                                            <constraint firstItem="emo-18-KOd" firstAttribute="top" secondItem="v7q-J3-GZY" secondAttribute="top" id="f01-8g-dIn"/>
                                             <constraint firstItem="3vc-oG-dkh" firstAttribute="leading" secondItem="qgc-hw-IJH" secondAttribute="leading" id="fgu-dA-d2k"/>
+                                            <constraint firstItem="PU0-N0-G44" firstAttribute="top" secondItem="xZs-gS-x4y" secondAttribute="top" id="fkO-4M-tlT"/>
                                             <constraint firstItem="3vc-oG-dkh" firstAttribute="top" secondItem="qgc-hw-IJH" secondAttribute="top" id="ihG-az-j2C"/>
+                                            <constraint firstItem="emo-18-KOd" firstAttribute="trailing" secondItem="v7q-J3-GZY" secondAttribute="trailing" id="ihu-Tp-v0D"/>
                                             <constraint firstItem="v7q-J3-GZY" firstAttribute="trailing" secondItem="jsH-5v-Ueh" secondAttribute="trailing" id="lw6-0T-Fzn"/>
                                             <constraint firstItem="1nx-BN-tDH" firstAttribute="top" secondItem="V0p-aX-9Cp" secondAttribute="bottom" constant="15" id="mFD-ti-t1W"/>
                                             <constraint firstItem="lzB-nt-2ak" firstAttribute="top" secondItem="6sY-Rf-UrM" secondAttribute="bottom" constant="20" id="mlp-wn-zN2"/>
@@ -298,12 +354,14 @@
                     <connections>
                         <outlet property="enterPasscodeView" destination="v7q-J3-GZY" id="Lnu-Js-sS8"/>
                         <outlet property="enterPasswordErrorLabel" destination="dxP-bH-eKf" id="LCV-B8-7OJ"/>
+                        <outlet property="enterPinView" destination="emo-18-KOd" id="Zh7-YL-MWN"/>
                         <outlet property="loadinView" destination="3vc-oG-dkh" id="INN-yT-8Y5"/>
                         <outlet property="loginBtn" destination="1nx-BN-tDH" id="7TT-yG-59w"/>
                         <outlet property="phoneNumberErrorLabel" destination="abM-wJ-ghg" id="f8G-Zn-klg"/>
                         <outlet property="phoneNumberView" destination="Uvk-PZ-wgg" id="5hh-mH-2Ag"/>
                         <outlet property="reEnterPasscodeView" destination="omh-mA-oCJ" id="n21-m1-Mf9"/>
                         <outlet property="reEnterPasswordErrorLabel" destination="8hS-Dm-LVA" id="3Ab-1V-Lfa"/>
+                        <outlet property="reEnterPinView" destination="PU0-N0-G44" id="3Qy-Oj-aky"/>
                         <outlet property="registerBtn" destination="qgc-hw-IJH" id="O85-KJ-6K2"/>
                         <outlet property="userNameErrorLabel" destination="xrn-lj-HL8" id="ODg-e3-fqC"/>
                         <outlet property="usernameTxtField" destination="kvL-cx-Ufn" id="Fd8-By-lya"/>
