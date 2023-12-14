@@ -158,6 +158,7 @@ class VoteController: UIViewController {
     }
     
     private func configureKeyboardNotification() {
+        /*
         NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
             .receive(on: DispatchQueue.main)
             .map{ ($0.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.size.height }
@@ -182,6 +183,7 @@ class VoteController: UIViewController {
                     self.view.layoutIfNeeded()
                 }
             }.store(in: &subscription)
+         */
     }
     
     

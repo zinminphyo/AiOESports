@@ -80,7 +80,7 @@ class LoginPresenter: LoginPresenting {
     }
     
     private func checkRequiredInfoIsCompleted() {
-        let isCompleted = phoneNumber.isEmpty == false && password.count == PinView.PinViewDigitStyle.sixDigits.passcodeCount && isRemebered
+        let isCompleted = phoneNumber.isEmpty == false && password.count == PinView.PinViewDigitStyle.sixDigits.passcodeCount
         self.viewDelegate?.updateLoginButtton(isCompleted: isCompleted)
     }
     

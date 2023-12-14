@@ -26,13 +26,14 @@ class Login: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var phoneNumberView: PhoneNumberView!
     @IBOutlet weak var passcodeView: PasscodeView!
+    @IBOutlet private(set) var pinView: OTPView!
     @IBOutlet weak var loadingView: LoadingView!
     
     var presenter: LoginPresenting?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         passcodeView.delegate = self
@@ -40,7 +41,7 @@ class Login: UIViewController {
         configureHierarchy()
     }
     
-
+    
     private func configureHierarchy() {
         configureBackgroundColor()
         configureTitleLabel()
@@ -188,6 +189,11 @@ class Login: UIViewController {
     
     @objc func didTapForgetLabel() {
         presenter?.tappedForgetLabel()
+    }
+    
+    @IBAction
+    private func didFinishedPasscodeInput(_ sender: OTPView) {
+        presenter?.didChangePassword(password: sender.text)
     }
 
 }

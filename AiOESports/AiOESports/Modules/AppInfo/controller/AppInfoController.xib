@@ -124,7 +124,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="naw-T3-dJo">
-                    <rect key="frame" x="0.0" y="422.33333333333331" width="393" height="110.99999999999994"/>
+                    <rect key="frame" x="0.0" y="434.33333333333331" width="393" height="110.99999999999994"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdG-Zk-1MS">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
@@ -283,7 +283,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verison 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Eu-Kz-lQc">
-                    <rect key="frame" x="165" y="543.33333333333337" width="63.333333333333343" height="17"/>
+                    <rect key="frame" x="165" y="565.33333333333337" width="63.333333333333343" height="17"/>
                     <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
                     <color key="textColor" name="SecondaryText"/>
                     <nil key="highlightedColor"/>
@@ -296,8 +296,8 @@
                 <constraint firstItem="JTI-9Z-LxF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6VG-V4-xRV"/>
                 <constraint firstItem="naw-T3-dJo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8Ms-4d-oeV"/>
                 <constraint firstItem="JTI-9Z-LxF" firstAttribute="top" secondItem="Uaj-2M-Do0" secondAttribute="bottom" constant="20" id="DH4-2V-erX"/>
-                <constraint firstItem="4Eu-Kz-lQc" firstAttribute="top" secondItem="naw-T3-dJo" secondAttribute="bottom" constant="10" id="EkX-8O-5fQ"/>
-                <constraint firstItem="naw-T3-dJo" firstAttribute="top" secondItem="4oR-py-WCg" secondAttribute="bottom" constant="12" id="Gr8-zg-r2l"/>
+                <constraint firstItem="4Eu-Kz-lQc" firstAttribute="top" secondItem="naw-T3-dJo" secondAttribute="bottom" constant="20" id="EkX-8O-5fQ"/>
+                <constraint firstItem="naw-T3-dJo" firstAttribute="top" secondItem="4oR-py-WCg" secondAttribute="bottom" constant="24" id="Gr8-zg-r2l"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DoE-Au-HGs" secondAttribute="trailing" constant="18" id="HWm-Ak-Z9N"/>
                 <constraint firstItem="4Eu-Kz-lQc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HhO-lV-Bg2"/>
                 <constraint firstItem="4oR-py-WCg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="IWy-Df-NQR"/>
@@ -312,10 +312,10 @@
         </view>
     </objects>
     <resources>
-        <image name="RateThisApp" width="32" height="32"/>
+        <image name="RateThisApp" width="33" height="33"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="logo" width="62.666667938232422" height="87"/>
-        <image name="privacyPolicy" width="32" height="32"/>
+        <image name="privacyPolicy" width="33" height="33"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="InputColor">
             <color red="0.12549019607843137" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
