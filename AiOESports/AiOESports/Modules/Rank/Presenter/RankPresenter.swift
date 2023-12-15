@@ -55,6 +55,16 @@ class RankPresenter: RankPresenting {
     @Published
     var gameType: GameType = .All
     
+    @Published
+    var playerGameType: GameType = .All
+    
+    @Published
+    var casterGameType: GameType = .All
+    
+    @Published
+    var creatorGameType: GameType = .All
+    
+    
     private var teamLists: [TeamObject] = []
     private var rankLists: [RankPresentable] = []
     
@@ -232,8 +242,18 @@ class RankPresenter: RankPresenting {
             self.fetchCreatorLists(gameType: game, status: .active)
         }
          */
-        guard game != gameType else { return }
+//        guard game != gameType else { return }
         gameType = game
+//        switch rankCategory {
+//        case .team:
+//            gameType = game
+//        case .player:
+//            playerGameType = game
+//        case .caster:
+//            casterGameType = game
+//        case .creator:
+//            creatorGameType = game
+//        }
         resetPagination()
         fetchRankLists()
     }

@@ -15,7 +15,7 @@ class UpgradePremiumController: UIViewController {
     @IBOutlet private(set) var loadingView: LoadingView!
     @IBOutlet private(set) var continueBtn: UIButton!
     @IBOutlet private(set) var errorLabel: UILabel!
-    @IBOutlet private(set) var continueButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private(set) var payWithCoinContainerView: UIView!
     
     private let viewModel: UpgradePreminumViewModel!
     
@@ -66,8 +66,7 @@ class UpgradePremiumController: UIViewController {
             .sink { [weak self] in
                 guard let self = self else { return }
                 self.continueBtn.isUserInteractionEnabled = $0
-                self.continueBtn.backgroundColor = $0 ? Colors.Button.primaryColor : Colors.Button.secondaryColor
-                self.continueBtn.setTitleColor($0 ? UIColor.white : UIColor.gray, for: .normal)
+                self.payWithCoinContainerView.backgroundColor = $0 ? Colors.Button.primaryColor : Colors.Button.primaryColor?.withAlphaComponent(0.5)
             }.store(in: &subscription)
         
         viewModel.upgradeStatusCompletion

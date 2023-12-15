@@ -66,6 +66,27 @@ class Rank: UIViewController {
                 self.creatorRankView.gameType = $0
             }).store(in: &subscription)
         
+        presenter?.$playerGameType
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.playerRankView.gameType = $0
+            }).store(in: &subscription)
+        
+        presenter?.$casterGameType
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.casterRankView.gameType = $0
+            }).store(in: &subscription)
+        
+        presenter?.$creatorGameType
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.creatorRankView.gameType = $0
+            }).store(in: &subscription)
+        
         presenter?.$playerRankLists
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
