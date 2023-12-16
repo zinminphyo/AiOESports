@@ -72,6 +72,7 @@ class Home: UIViewController {
         advertisementTitleLabel.font = Fonts.titleFont
         advertisementCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
         advertisementCollectionView.dataSource = self
+        advertisementCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = CGSize(width: advertisementCollectionView.frame.width * 0.8, height: advertisementCollectionView.frame.height)
@@ -128,7 +129,19 @@ extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if collectionView == self.collectionView {
+            if UIApplication.shared.canOpenURL(URL(string: "fb://profile/\(bannerLists[indexPath.row].link)")!) {
+                UIApplication.shared.open(URL(string: "fb://profile/\(bannerLists[indexPath.row].link)")!)
+            } else {
+                UIApplication.shared.open(URL(string: "https://facebook.com/\(bannerLists[indexPath.row].link)")!)
+            }
+        } else {
+            if UIApplication.shared.canOpenURL(URL(string: "fb://profile/\(adLists[indexPath.row].link)")!) {
+                UIApplication.shared.open(URL(string: "fb://profile/\(adLists[indexPath.row].link)")!)
+            } else {
+                UIApplication.shared.open(URL(string: "https://facebook.com/\(adLists[indexPath.row].link)")!)
+            }
+        }
     }
 }
 
