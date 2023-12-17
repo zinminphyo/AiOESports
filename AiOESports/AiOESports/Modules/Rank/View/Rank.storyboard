@@ -181,6 +181,10 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isLoading" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yb-Vk-Ypm">
+                                <rect key="frame" x="0.0" y="149" width="393" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ThemeColor"/>
@@ -188,23 +192,28 @@
                             <constraint firstItem="caH-td-oZX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4nM-RJ-0JF"/>
                             <constraint firstItem="Qne-xS-yOS" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="8oO-t2-LaU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iud-Nv-2i6" secondAttribute="trailing" constant="8" id="Ccm-kU-D4a"/>
+                            <constraint firstItem="0yb-Vk-Ypm" firstAttribute="bottom" secondItem="iud-Nv-2i6" secondAttribute="bottom" id="HWF-BV-vN9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="opf-qe-sgg" secondAttribute="trailing" id="KEa-46-Tvt"/>
                             <constraint firstItem="caH-td-oZX" firstAttribute="top" secondItem="u2b-YK-7eV" secondAttribute="bottom" id="TG1-2O-lz7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="u2b-YK-7eV" secondAttribute="trailing" id="TxZ-YP-ehN"/>
                             <constraint firstItem="opf-qe-sgg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UjK-WY-Jrs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0yb-Vk-Ypm" secondAttribute="trailing" id="Zr3-yE-7pN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iud-Nv-2i6" secondAttribute="bottom" id="aYo-OL-iNT"/>
                             <constraint firstItem="Qne-xS-yOS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dpz-Mo-JFC"/>
                             <constraint firstItem="opf-qe-sgg" firstAttribute="top" secondItem="caH-td-oZX" secondAttribute="bottom" id="dxe-So-UEQ"/>
                             <constraint firstItem="iud-Nv-2i6" firstAttribute="top" secondItem="opf-qe-sgg" secondAttribute="bottom" constant="8" id="f5O-lc-NcA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="caH-td-oZX" secondAttribute="trailing" id="h8o-YL-xXC"/>
                             <constraint firstItem="u2b-YK-7eV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jJa-fA-WZB"/>
+                            <constraint firstItem="0yb-Vk-Ypm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kKX-ls-Eyt"/>
                             <constraint firstItem="iud-Nv-2i6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="lXC-Jl-cNW"/>
                             <constraint firstItem="u2b-YK-7eV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="nCM-0U-9HK"/>
+                            <constraint firstItem="0yb-Vk-Ypm" firstAttribute="top" secondItem="opf-qe-sgg" secondAttribute="top" id="tyD-Nf-YZf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="casterRankView" destination="uP8-fe-opO" id="SsQ-99-Rrd"/>
                         <outlet property="categoryCollectionView" destination="2ZP-gv-dj0" id="1Dj-Ad-Eby"/>
+                        <outlet property="contentContainerView" destination="0yb-Vk-Ypm" id="vqk-jW-6Jf"/>
                         <outlet property="creatorRankView" destination="xaT-rR-TsT" id="Pfj-ga-DIU"/>
                         <outlet property="gameCategoryCollectionView" destination="avK-Iu-4g4" id="ah1-Ug-t6u"/>
                         <outlet property="loadingView" destination="Qne-xS-yOS" id="LGn-5f-Xs9"/>

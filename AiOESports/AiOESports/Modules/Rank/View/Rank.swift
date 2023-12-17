@@ -20,6 +20,7 @@ class Rank: UIViewController {
     @IBOutlet private(set) var playerRankView: RankListsView!
     @IBOutlet private(set) var casterRankView: RankListsView!
     @IBOutlet private(set) var creatorRankView: RankListsView!
+    @IBOutlet private(set) var contentContainerView: UIView!
     
     var presenter: RankPresenter?
     
@@ -177,6 +178,17 @@ class Rank: UIViewController {
         configureHeaderView()
         configureCategoryCollectionView()
         configureGameCategoryCollectionView()
+        configureContentContainerView()
+    }
+    
+    
+    private func configureContentContainerView() {
+        let player = PlayerRankController()
+        player.view.frame = contentContainerView.bounds
+        addChild(player)
+        player.willMove(toParent: self)
+        contentContainerView.addSubview(player.view)
+        player.didMove(toParent: self)
     }
     
     private func configureHeaderView() {
