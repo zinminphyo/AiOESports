@@ -10,6 +10,7 @@ import UIKit
 class Achivement: UIViewController {
     
     @IBOutlet weak var achivementTableView: UITableView!
+    @IBOutlet private(set) var emptyView: UIView!
     
     var presenter: AchivementPresenting?
     
@@ -49,6 +50,7 @@ extension Achivement: AchivementViewDelegate {
     func updateUI(achivement: [AchivementModel]) {
         self.achivementLists = achivement
         self.achivementTableView.reloadData()
+        emptyView.isHidden = !achivement.isEmpty
     }
 }
 

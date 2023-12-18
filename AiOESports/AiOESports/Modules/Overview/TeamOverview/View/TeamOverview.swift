@@ -122,6 +122,7 @@ extension TeamOverview: UICollectionViewDataSource, UICollectionViewDelegate {
      
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SocialCollectionViewCell.reuseIdentifier, for: indexPath) as? SocialCollectionViewCell else { return UICollectionViewCell() }
+        cell.renderUI(social: socialLists[indexPath.row])
         return cell
     }
     

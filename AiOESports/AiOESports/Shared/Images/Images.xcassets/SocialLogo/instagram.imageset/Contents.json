@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Instagram icon.svg",
+      "filename" : "Instagram icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Instagram icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Instagram icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

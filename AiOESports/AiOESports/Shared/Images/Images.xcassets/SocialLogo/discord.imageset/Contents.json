@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Discord.svg",
+      "filename" : "Discord.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Discord@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Discord@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

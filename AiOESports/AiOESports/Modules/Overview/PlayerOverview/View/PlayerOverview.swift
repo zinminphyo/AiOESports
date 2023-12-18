@@ -42,7 +42,7 @@ class PlayerOverview: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.estimatedItemSize = SizeInspector.socialIconSize
+        flowLayout.itemSize = SizeInspector.socialIconSize
         flowLayout.scrollDirection = .horizontal
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false

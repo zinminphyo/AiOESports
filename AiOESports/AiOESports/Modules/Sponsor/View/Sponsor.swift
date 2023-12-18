@@ -10,6 +10,7 @@ import UIKit
 class Sponsor: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private(set) var emptyView: UIView!
     private var sponsorLists: [SponsorModel] = []
     
     var presenter: SponsorPresenting?
@@ -52,6 +53,7 @@ extension Sponsor: SponsorViewDelegate {
     func updateUI(sponsorLists: [SponsorModel]) {
         self.sponsorLists = sponsorLists
         self.collectionView.reloadData()
+        emptyView.isHidden = !sponsorLists.isEmpty
     }
 }
 

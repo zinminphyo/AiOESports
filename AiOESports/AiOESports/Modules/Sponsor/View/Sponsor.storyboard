@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -37,18 +39,40 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZD-pd-321">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoDataFound" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-dq-wxM">
+                                        <rect key="frame" x="146.66666666666666" y="324.66666666666669" width="100" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="H2V-4a-NnI"/>
+                                            <constraint firstAttribute="height" constant="110" id="rrP-8e-YAy"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="ThemeColor"/>
+                                <constraints>
+                                    <constraint firstItem="E7x-dq-wxM" firstAttribute="centerX" secondItem="lZD-pd-321" secondAttribute="centerX" id="YfK-nm-6qC"/>
+                                    <constraint firstItem="E7x-dq-wxM" firstAttribute="centerY" secondItem="lZD-pd-321" secondAttribute="centerY" id="gHf-37-hMW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EDh-rt-hzl" secondAttribute="trailing" constant="8" id="7yh-8F-WpA"/>
+                            <constraint firstItem="lZD-pd-321" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FB0-Go-gHs"/>
                             <constraint firstItem="EDh-rt-hzl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="LNe-tA-ugX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lZD-pd-321" secondAttribute="bottom" id="Lfj-Sk-U6T"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="EDh-rt-hzl" secondAttribute="bottom" constant="8" id="Zpx-jb-e4P"/>
                             <constraint firstItem="EDh-rt-hzl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="awP-zq-M9X"/>
+                            <constraint firstItem="lZD-pd-321" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gKh-Et-VQW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lZD-pd-321" secondAttribute="trailing" id="zhg-Ip-ktX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="EDh-rt-hzl" id="Yae-zK-fHH"/>
+                        <outlet property="emptyView" destination="lZD-pd-321" id="rEM-jn-cN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -57,6 +81,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NoDataFound" width="100" height="116.66666412353516"/>
+        <namedColor name="ThemeColor">
+            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

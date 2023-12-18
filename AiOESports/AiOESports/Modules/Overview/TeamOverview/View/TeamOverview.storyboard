@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8uH-lH-sSR">
-                                        <rect key="frame" x="10" y="0.0" width="359" height="50"/>
+                                        <rect key="frame" x="10" y="0.0" width="359" height="65"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="AAT-qd-8RC"/>
+                                            <constraint firstAttribute="height" constant="65" id="AAT-qd-8RC"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X8R-Xj-p4i">
                                             <size key="itemSize" width="128" height="128"/>
@@ -53,7 +53,7 @@
                                         </cells>
                                     </collectionView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yLB-8m-3cO">
-                                        <rect key="frame" x="10" y="66" width="100" height="125"/>
+                                        <rect key="frame" x="10" y="81" width="100" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-SQ-Etx">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
@@ -85,23 +85,23 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5Gj-jh-Lny">
-                                        <rect key="frame" x="130" y="66" width="239" height="125"/>
+                                        <rect key="frame" x="130" y="81" width="239" height="125"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-go-aPo">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="20"/>
-                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-jn-Y3w">
                                                 <rect key="frame" x="0.0" y="35" width="239" height="20"/>
-                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-xG-5CW">
                                                 <rect key="frame" x="0.0" y="70" width="239" height="20"/>
-                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -116,8 +116,8 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-LQ-AGK">
-                                                        <rect key="frame" x="28.000000000000004" y="0.0" width="33.333333333333343" height="20"/>
-                                                        <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="13"/>
+                                                        <rect key="frame" x="28" y="0.0" width="36" height="20"/>
+                                                        <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>

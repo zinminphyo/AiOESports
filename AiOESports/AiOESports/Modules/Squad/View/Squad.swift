@@ -10,6 +10,7 @@ import UIKit
 class Squad: UIViewController {
     
     @IBOutlet weak var squadTableView: UITableView!
+    @IBOutlet private(set) var emptyView: UIView!
     private var squadModel: SquadModel? = nil
     private var playerAchivementModel: PlayerAchivement? = nil
     var viewModel: SquadViewModel?
@@ -53,11 +54,13 @@ extension Squad: SquadViewDelegate {
     func renderView(squad: SquadModel) {
         self.squadModel = squad
         squadTableView.reloadData()
+        emptyView.alpha = squad.isEmpty ? 1.0 : 0.0
     }
     
     func renderView(achivement: PlayerAchivement) {
         self.playerAchivementModel = achivement
         squadTableView.reloadData()
+        emptyView.alpha = achivement.isEmpty ? 1.0 : 0.0
     }
     
 }

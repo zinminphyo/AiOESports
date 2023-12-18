@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,17 +21,39 @@
                                 <rect key="frame" x="8" y="59" width="377" height="751"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYy-EI-DHp">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoDataFound" translatesAutoresizingMaskIntoConstraints="NO" id="3Ev-IB-9ku">
+                                        <rect key="frame" x="146.66666666666666" y="324.66666666666669" width="100" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="QYd-wg-QPd"/>
+                                            <constraint firstAttribute="width" constant="100" id="wCh-U3-OVg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3Ev-IB-9ku" firstAttribute="centerY" secondItem="ZYy-EI-DHp" secondAttribute="centerY" id="gJt-5p-vwn"/>
+                                    <constraint firstItem="3Ev-IB-9ku" firstAttribute="centerX" secondItem="ZYy-EI-DHp" secondAttribute="centerX" id="s35-Xi-hU5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="EFo-9H-sea" secondAttribute="bottom" constant="8" id="IZ7-hi-v7c"/>
+                            <constraint firstItem="ZYy-EI-DHp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="MWw-DU-kqe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EFo-9H-sea" secondAttribute="trailing" constant="8" id="Q0o-l1-7nW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZYy-EI-DHp" secondAttribute="bottom" id="VKZ-ZH-LIM"/>
+                            <constraint firstItem="ZYy-EI-DHp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aF5-kk-Bml"/>
                             <constraint firstItem="EFo-9H-sea" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bXZ-KR-uuC"/>
                             <constraint firstItem="EFo-9H-sea" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="r2G-tS-fBk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZYy-EI-DHp" secondAttribute="trailing" id="zA7-s2-rfn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="ZYy-EI-DHp" id="YDb-Vh-3J6"/>
                         <outlet property="squadTableView" destination="EFo-9H-sea" id="OCV-ZP-9HQ"/>
                     </connections>
                 </viewController>
@@ -40,6 +63,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NoDataFound" width="100" height="116.66666412353516"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -16,6 +16,10 @@ struct SquadModel: Decodable {
     let analyst: CoachModel?
     let roster: [RosterModel]
     
+    var isEmpty: Bool {
+        return headCoach == nil && assistantCoach == nil && technicalDirector == nil && analyst == nil && roster.isEmpty
+    }
+    
     enum CodingKeys: String, CodingKey {
         case headCoach = "headcoach"
         case assistantCoach = "asistcoach"

@@ -10,6 +10,7 @@ import UIKit
 class FormerPlayers: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private(set) var emptyView: UIView!
     
     var presenter: FormerPlayersPresenting?
     private var playerLists: [FormerPlayerModel] = []
@@ -46,6 +47,7 @@ extension FormerPlayers: FormerPlayersViewDelegate {
     func updateUI(formerPlayers: [FormerPlayerModel]) {
         self.playerLists = formerPlayers
         self.tableView.reloadData()
+        self.emptyView.isHidden = !formerPlayers.isEmpty
     }
 }
 

@@ -67,7 +67,8 @@ class SquadTableViewCell: UITableViewCell {
     @discardableResult
     func set(achivement: AchivementModel) -> Self {
         nameLabel.text = achivement.name
-        locationLabel.text = achivement.place
+        locationLabel.text = achivement.renderablePlace
+        locationLabel.textColor = achivement.placeColor
         mainImageView.kf.setImage(with: URL(string: achivement.logoFullPath), placeholder: Images.Placeholder.profile)
         return self
     }

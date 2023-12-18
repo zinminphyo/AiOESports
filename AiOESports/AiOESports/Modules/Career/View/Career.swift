@@ -10,8 +10,10 @@ import UIKit
 class Career: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private(set) var emptyView: UIView!
     
     private var careerLists: [CareerModel] = []
+    
     
     var presenter: CareerPresenting?
 
@@ -50,6 +52,7 @@ extension Career: CareerViewDelegate {
     func renderCareerLists(lists: [CareerModel]) {
         self.careerLists = lists
         self.tableView.reloadData()
+        emptyView.alpha = lists.isEmpty ? 1.0 : 0.0
     }
 }
 

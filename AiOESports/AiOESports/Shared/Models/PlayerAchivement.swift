@@ -14,6 +14,10 @@ struct PlayerAchivement: Decodable {
     let asCoach: [AchivementModel]
     let asPlayer: [AchivementModel]
     
+    var isEmpty: Bool {
+        asCasters.isEmpty && asCoach.isEmpty && asPlayer.isEmpty
+    }
+    
     enum CodingKeys: String, CodingKey {
         case asCasters = "as caster"
         case asCoach = "as coach"

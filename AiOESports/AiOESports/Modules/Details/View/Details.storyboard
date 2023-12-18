@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ye6-fn-uOa">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="900"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yUa-lQ-7fD">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="196.66666666666666"/>
@@ -264,7 +264,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-gL-NgD">
-                                                <rect key="frame" x="0.0" y="396.66666666666669" width="393" height="703.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="396.66666666666674" width="393" height="503.33333333333326"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-78-sMi">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -288,7 +288,7 @@
                                                         </constraints>
                                                     </view>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIk-b1-A2T">
-                                                        <rect key="frame" x="0.0" y="50" width="393" height="653.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="49.999999999999972" width="393" height="453.33333333333326"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </scrollView>
                                                 </subviews>
@@ -315,7 +315,7 @@
                                             <constraint firstAttribute="trailing" secondItem="W3j-gL-NgD" secondAttribute="trailing" id="Elk-QP-Tbc"/>
                                             <constraint firstAttribute="trailing" secondItem="9g2-OM-J4d" secondAttribute="trailing" id="EyA-eT-BFF"/>
                                             <constraint firstItem="W3j-gL-NgD" firstAttribute="top" secondItem="9g2-OM-J4d" secondAttribute="bottom" constant="10" id="Oqh-EK-2X2"/>
-                                            <constraint firstAttribute="height" constant="1100" id="Tcz-3H-CoV"/>
+                                            <constraint firstAttribute="height" constant="900" id="Tcz-3H-CoV"/>
                                             <constraint firstAttribute="trailing" secondItem="yUa-lQ-7fD" secondAttribute="trailing" id="UxN-s9-fwy"/>
                                             <constraint firstItem="9g2-OM-J4d" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="Vcf-rl-WEK"/>
                                             <constraint firstItem="yUa-lQ-7fD" firstAttribute="leading" secondItem="ye6-fn-uOa" secondAttribute="leading" id="cu1-dc-oXc"/>

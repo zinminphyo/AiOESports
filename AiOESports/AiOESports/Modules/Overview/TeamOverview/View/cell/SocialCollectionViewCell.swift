@@ -35,7 +35,7 @@ class SocialCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = UIColor.clear
         containerView.layer.cornerRadius = 8
         containerView.clipsToBounds = true
-        containerView.backgroundColor = Colors.Button.secondaryColor
+//        containerView.backgroundColor = Colors.Text.primaryText
     }
     
     private func configureImageContainerView() {
@@ -44,8 +44,8 @@ class SocialCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureImageView() {
-        socialTypeImageView.contentMode = .scaleAspectFit
-        socialTypeImageView.image = Images.SocialLogo.facebook
+//        socialTypeImageView.contentMode = .scaleAspectFit
+//        socialTypeImageView.image = Images.SocialLogo.facebook
     }
     
     func renderUI(social: SocialModel) {
