@@ -55,8 +55,8 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     private func configureNameLabel() {
-        nameLabel.font = Fonts.subtitleFont
-        nameLabel.textColor = Colors.Text.primaryText
+//        nameLabel.font = Fonts.subtitleFont
+//        nameLabel.textColor = Colors.Text.secondaryText
     }
     
     @discardableResult
