@@ -19,7 +19,7 @@ class AchivementTableViewCell: UITableViewCell {
         return String(describing: Self.self)
     }
     
-    static let cellHeight: CGFloat = 50
+    static let cellHeight: CGFloat = 65
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,14 +40,14 @@ class AchivementTableViewCell: UITableViewCell {
     private func configureHierarchy() {
         self.backgroundColor = Colors.Theme.inputColor
         achivementImageView.contentMode = .scaleAspectFill
-        achivementNameLabel.font = Fonts.ForCell.titleFont
+        achivementNameLabel.font = UIFont(name: "DMSans-Medium", size: 16)
         achivementNameLabel.textColor = Colors.Text.primaryText
         achivementNameLabel.text = "Real Cup 2023 : Season 2"
-        achivementTireLabel.font = Fonts.ForCell.subtitleFont
-        achivementTireLabel.textColor = Colors.Text.primaryText
+        achivementTireLabel.font = UIFont(name: "DMSans-Regular", size: 12)
+        achivementTireLabel.textColor = Colors.Text.secondaryText
         achivementTireLabel.text = "B-Tier"
-        achivementPlaceLabel.font = Fonts.ForCell.subtitleFont
-        achivementPlaceLabel.textColor = Colors.Text.primaryText
+        achivementPlaceLabel.font = UIFont(name: "DMSans-Regular", size: 12)
+        achivementPlaceLabel.textColor = Colors.Text.secondaryText
         achivementPlaceLabel.text = "5th - 6th Place"
     }
     
@@ -55,7 +55,8 @@ class AchivementTableViewCell: UITableViewCell {
         achivementImageView.kf.setImage(with: URL(string: achivement.logoFullPath))
         achivementNameLabel.text = achivement.name
         achivementTireLabel.text = achivement.tier
-        achivementPlaceLabel.text = achivement.place == "1" ? "FIRST PLACE" : achivement.place
+        achivementPlaceLabel.text = achivement.renderablePlace
+        achivementPlaceLabel.textColor = achivement.placeColor
     }
     
 }

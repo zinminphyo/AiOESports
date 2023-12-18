@@ -24,7 +24,7 @@ class FormerPlayerTableViewCell: UITableViewCell {
         return String(describing: Self.self)
     }
     
-    static let cellHeight: CGFloat = 50.0
+    static let cellHeight: CGFloat = 65.0
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,33 +60,33 @@ class FormerPlayerTableViewCell: UITableViewCell {
     }
     
     private func configureNameLabel() {
-        playerNameLabel.font = Fonts.ForCell.titleFont
+//        playerNameLabel.font = Fonts.ForCell.titleFont
         playerNameLabel.textColor = Colors.Text.primaryText
     }
     
     private func configureCityImageLabel() {
         cityNameLabel.text = "Yangon"
-        cityNameLabel.font = Fonts.ForCell.subtitleFont
-        cityNameLabel.textColor = Colors.Text.primaryText
+//        cityNameLabel.font = Fonts.ForCell.subtitleFont
+        cityNameLabel.textColor = Colors.Text.secondaryText
     }
     
     private func configureFormContainerView() {
         fromLabel.textColor = Colors.Text.secondaryText
         fromLabel.text = "From - "
-        fromLabel.font = Fonts.ForCell.subtitleFont
+//        fromLabel.font = Fonts.ForCell.subtitleFont
         
         fromValueLabel.textColor = Colors.Text.primaryText
-        fromValueLabel.font = Fonts.ForCell.subtitleFont
+//        fromValueLabel.font = Fonts.ForCell.subtitleFont
         fromValueLabel.text = " Jun 2021"
     }
     
     private func configureToContainerView() {
         toLabel.textColor = Colors.Text.secondaryText
         toLabel.text = "From - "
-        toLabel.font = Fonts.ForCell.subtitleFont
+//        toLabel.font = Fonts.ForCell.subtitleFont
         
         toValueLabel.textColor = Colors.Text.primaryText
-        toValueLabel.font = Fonts.ForCell.subtitleFont
+//        toValueLabel.font = Fonts.ForCell.subtitleFont
         toValueLabel.text = " Jun 2021"
     }
     
@@ -95,7 +95,14 @@ class FormerPlayerTableViewCell: UITableViewCell {
         playerNameLabel.text = formerPlayer.name
         cityNameLabel.text = formerPlayer.city
         locationImageView.kf.setImage(with: URL(string: formerPlayer.locationImageFullPath))
-        currentTeamImageView.kf.setImage(with: URL(string: formerPlayer.teamImageFullPath))
+        currentTeamImageView.kf.setImage(with: URL(string: formerPlayer.teamImageFullPath)) { result in
+            switch result {
+            case .failure(_):
+                self.currentTeamImageView.isHidden = true
+            default:
+                break
+            }
+        }
         fromValueLabel.text = formerPlayer.fromTime
         toValueLabel.text = formerPlayer.toTime
     }
