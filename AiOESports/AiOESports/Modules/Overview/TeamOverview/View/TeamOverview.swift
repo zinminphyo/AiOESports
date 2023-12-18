@@ -64,38 +64,38 @@ class TeamOverview: UIViewController {
     private func configureTeamStatusView() {
         statusLabel.text = "Status"
         statusLabel.textColor = Colors.Text.secondaryText
-        statusLabel.font = Fonts.ForCell.subtitleFont
+//        statusLabel.font = Fonts.ForCell.subtitleFont
         
         statusValueLabel.textColor = Colors.Text.primaryText
-        statusValueLabel.font = Fonts.ForCell.subtitleFont
+//        statusValueLabel.font = Fonts.ForCell.subtitleFont
     }
     
     private func configureTeamFullNameView() {
         fullNameLabel.text = "Full Name"
-        fullNameLabel.font = Fonts.ForCell.subtitleFont
+//        fullNameLabel.font = Fonts.ForCell.subtitleFont
         fullNameLabel.textColor = Colors.Text.secondaryText
         
         fullNameValueLabel.textColor = Colors.Text.primaryText
-        fullNameValueLabel.font = Fonts.ForCell.subtitleFont
+//        fullNameValueLabel.font = Fonts.ForCell.subtitleFont
     }
     
     private func configureFoundedDateView() {
         foundedDateLabel.text = "Founded Date"
-        foundedDateLabel.font = Fonts.ForCell.subtitleFont
+//        foundedDateLabel.font = Fonts.ForCell.subtitleFont
         foundedDateLabel.textColor = Colors.Text.secondaryText
         
         foundedDateValueLabel.textColor = Colors.Text.primaryText
-        foundedDateValueLabel.font = Fonts.ForCell.subtitleFont
+//        foundedDateValueLabel.font = Fonts.ForCell.subtitleFont
     }
     
     private func configureLocationView() {
         locationLabel.text = "Location"
-        locationLabel.font = Fonts.ForCell.subtitleFont
+//        locationLabel.font = Fonts.ForCell.subtitleFont
         locationLabel.textColor = Colors.Text.secondaryText
         
         loationImageView.contentMode = .scaleAspectFit
         cityNameLabel.textColor = Colors.Text.primaryText
-        cityNameLabel.font = Fonts.ForCell.subtitleFont
+//        cityNameLabel.font = Fonts.ForCell.subtitleFont
     }
 
 }
@@ -106,10 +106,10 @@ extension TeamOverview: TeamOverviewViewDelegate {
         self.socialLists = social
         self.collectionView.reloadData()
         
-        statusValueLabel.text = details.status
-        fullNameValueLabel.text = details.fullName
+        statusValueLabel.text = details.status.capitalized
+        fullNameValueLabel.text = details.fullName.capitalized
         foundedDateValueLabel.text = details.foundedDate
-        cityNameLabel.text = details.city
+        cityNameLabel.text = details.city.capitalized
         loationImageView.kf.setImage(with: URL(string: details.locationImageFullPath))
     }
 }

@@ -44,12 +44,12 @@ class OverviewTableViewCell: UITableViewCell {
     }
     
     private func configureTitleLabel() {
-        overviewTitleLabel.font = Fonts.ForCell.subtitleFont
+//        overviewTitleLabel.font = Fonts.ForCell.subtitleFont
         overviewTitleLabel.textColor = Colors.Text.secondaryText
     }
     
     private func configureValueLabel() {
-        overviewValueLabel.font = Fonts.ForCell.titleFont
+//        overviewValueLabel.font = Fonts.ForCell.titleFont
         overviewValueLabel.textColor = Colors.Text.primaryText
     }
     

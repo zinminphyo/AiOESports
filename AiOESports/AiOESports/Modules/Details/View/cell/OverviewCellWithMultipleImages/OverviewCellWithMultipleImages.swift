@@ -41,7 +41,7 @@ class OverviewCellWithMultipleImages: UITableViewCell {
     }
     
     private func configureTitleLabel() {
-        titleLabel.font = Fonts.subtitleFont
+//        titleLabel.font = Fonts.subtitleFont
         titleLabel.textColor = Colors.Text.secondaryText
     }
     

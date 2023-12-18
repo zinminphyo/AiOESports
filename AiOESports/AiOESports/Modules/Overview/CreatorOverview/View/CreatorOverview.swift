@@ -112,7 +112,7 @@ extension CreatorOverview: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
         switch indexPath.row {
         case 0:
-            cell.render(title: "Staus", value: details.details.status, imageURL: nil)
+            cell.render(title: "Staus", value: details.details.status.capitalized, imageURL: nil)
         case 1:
             cell.render(title: "Real Name", value: details.details.fullName, imageURL: nil)
         case 2:
@@ -127,7 +127,7 @@ extension CreatorOverview: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 35
     }
 }
 

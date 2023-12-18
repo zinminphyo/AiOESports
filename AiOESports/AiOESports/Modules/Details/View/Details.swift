@@ -192,6 +192,8 @@ class Details: UIViewController {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.estimatedItemSize = CGSize(width: 200, height: colletionView.frame.height)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
         colletionView.showsVerticalScrollIndicator = false
         colletionView.showsHorizontalScrollIndicator = false
         colletionView.collectionViewLayout = flowLayout
@@ -387,13 +389,13 @@ extension Details: DetailsViewDelegate {
         updateContainerView(details: details)
         coverImageView.kf.setImage(with: URL(string: details.detail.coverImageFullPath), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: details.detail.teamImageFullPath))
-        teamNameLabel.text = details.detail.fullName
+        teamNameLabel.text = details.detail.name
         gameNameLabel.text = details.detail.game.uppercased()
         gameImageView.image = Images.GameImages.getImage(gameName: details.detail.game)
         rankLabel.text = String(details.followRating.teamRank)
         totalRatingLabel.text = details.followRating.totalRatingStars
-        totalFollowerCountLabel.text = "\(details.followRating.totalFollowers) people following"
-        totalVotedCountLabel.text = "\(details.followRating.totalRating) people voted"
+        totalFollowerCountLabel.text = "\(details.followRating.totalFollowers) \(details.followRating.totalRating > 1 ? "followers" : "follower")"
+        totalVotedCountLabel.text = "\(details.followRating.totalRating) \(details.followRating.totalRating > 1 ? "votes" : "vote")"
     }
     
     func renderPlayerDetails(details: PlayerDetails) {
@@ -407,8 +409,8 @@ extension Details: DetailsViewDelegate {
         gameImageView.image = Images.GameImages.getImage(gameName: details.details.game)
         gameNameLabel.text = details.details.game.uppercased()
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
-        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
-        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
+        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalRating > 1 ? "followers" : "follower")"
+        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
     }
     
     func renderCasterDetails(details: CasterDetails) {
@@ -422,8 +424,8 @@ extension Details: DetailsViewDelegate {
         teamNameLabel.text = details.details.name
         rankLabel.text = String(details.totalFollowRating.talentRank)
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
-        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
-        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
+        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalFollowers > 1 ? "followers" : "folower")"
+        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
     }
     
     func renderCreatorDetails(details: CasterDetails) {
@@ -437,8 +439,8 @@ extension Details: DetailsViewDelegate {
         gameNameLabel.text = details.details.game.uppercased()
         rankLabel.text = String(details.totalFollowRating.talentRank)
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
-        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) people following"
-        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) people voted"
+        totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalFollowers > 1 ? "followers" : "folower")"
+        totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
     }
 }
 

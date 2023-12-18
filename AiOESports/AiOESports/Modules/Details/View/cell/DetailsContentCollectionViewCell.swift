@@ -28,7 +28,7 @@ class DetailsContentCollectionViewCell: UICollectionViewCell {
     private func configureHierarchy() {
         containerView.backgroundColor = Colors.Theme.inputColor
         
-        titleLabel.font = Fonts.subtitleFont
+//        titleLabel.font = Fonts.subtitleFont
         titleLabel.textColor = Colors.Text.primaryText
         
         containerView.backgroundColor = Colors.Theme.inputColor
@@ -43,7 +43,8 @@ class DetailsContentCollectionViewCell: UICollectionViewCell {
 
     @discardableResult
     func set(isSelected: Bool) -> Self {
-        selectionContainerView.backgroundColor = isSelected ? Colors.Button.primaryColor : Colors.Theme.inputColor
+        titleLabel.textColor = isSelected ? Colors.Text.primaryText : Colors.Text.secondaryText
+        selectionContainerView.backgroundColor = isSelected ? Colors.Button.primaryColor : Colors.Theme.SecondaryBackground
         return self
     }
 }
