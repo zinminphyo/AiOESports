@@ -20,6 +20,7 @@ enum MatchModule {
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor : Colors.TabItem.match], for: .normal)
         vc.tabBarItem.image = Images.InAppImages.match_unselected
         vc.tabBarItem.selectedImage = Images.InAppImages.match_selected
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         return vc
     }
 }

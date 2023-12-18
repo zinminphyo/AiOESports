@@ -16,6 +16,7 @@ enum HomeModule {
             return nil
         }
         vc.tabBarItem.image = Images.InAppImages.home_unselected
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         vc.tabBarItem.title = "HOME"
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor : Colors.TabItem.home], for: .normal)
         vc.tabBarItem.selectedImage = Images.InAppImages.home_selected

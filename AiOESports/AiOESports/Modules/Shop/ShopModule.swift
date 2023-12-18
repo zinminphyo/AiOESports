@@ -19,6 +19,7 @@ enum ShopModule {
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor : Colors.TabItem.shop], for: .normal)
         vc.tabBarItem.image = Images.InAppImages.shop_unselected
         vc.tabBarItem.selectedImage = Images.InAppImages.shop_selected
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         return vc
     }
 }

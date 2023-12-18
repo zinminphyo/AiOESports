@@ -19,6 +19,7 @@ class InApp: UITabBarController {
 
         self.tabBar.backgroundColor = Colors.Theme.mainColor
         self.tabBar.unselectedItemTintColor = UIColor.gray
+//        self.tabBar.contentMode = .scaleAspectFit
     }
     
     private func configureHierarchy() {

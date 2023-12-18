@@ -19,6 +19,7 @@ enum TourModule {
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor:Colors.TabItem.tour], for: .normal)
         vc.tabBarItem.image = Images.InAppImages.tour_unselected
         vc.tabBarItem.selectedImage = Images.InAppImages.tour_selected
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         return vc
     }
 }
