@@ -16,6 +16,22 @@ class RankListsView: UIControl, NibLoadable {
         let game: String
         let location: String
         var rank: String = "1"
+        var rankColor: UIColor? {
+            switch rank {
+            case "1", "2", "3":
+                return Colors.Gradient.startColor
+            default:
+                return Colors.Text.primaryText
+            }
+        }
+        var font: UIFont? {
+            switch rank {
+            case "1", "2", "3":
+                return UIFont(name: "DMSans-Bold", size: 24)
+            default:
+                return UIFont(name: "DMSans-Medium", size: 16)
+            }
+        }
         let rating: String
         init(team: TeamObject) {
             id = team.id
@@ -121,12 +137,13 @@ class RankListsView: UIControl, NibLoadable {
         backgroundColor = .clear
         listsTblView.showsVerticalScrollIndicator = false
         listsTblView.backgroundColor = Colors.Theme.mainColor
-        listsTblView.tableHeaderView = tableHeaderView
+//        listsTblView.tableHeaderView = tableHeaderView
         listsTblView.separatorStyle = .none
     }
     
     private func configureTableView() {
         listsTblView.register(UINib(nibName: String(describing: RankCell.self), bundle: nil), forCellReuseIdentifier: RankCell.reuseIdentifier)
+        listsTblView.register(UINib(nibName: String(describing: RankCellWithCoverCell.self), bundle: nil), forCellReuseIdentifier: RankCellWithCoverCell.reuseIdentifier)
         listsTblView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
         listsTblView.dataSource = self
         listsTblView.delegate = self
@@ -169,10 +186,18 @@ extension RankListsView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RankCell.reuseIdentifier, for: indexPath) as! RankCell
-            _lists[indexPath.row].rank = String(indexPath.row + 1)
-            cell.render(rank: _lists[indexPath.row])
-            return cell
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: RankCellWithCoverCell.reuseIdentifier, for: indexPath) as! RankCellWithCoverCell
+                _lists[indexPath.row].rank = String(indexPath.row + 1)
+                cell.render(rank: _lists[indexPath.row])
+                    .render(coverImageURL: coverImage)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: RankCell.reuseIdentifier, for: indexPath) as! RankCell
+                _lists[indexPath.row].rank = String(indexPath.row + 1)
+                cell.render(rank: _lists[indexPath.row])
+                return cell
+            }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as! LoadingTableViewCell
             cell.startAnimation()
@@ -189,7 +214,7 @@ extension RankListsView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return indexPath.row == 0 ? 250 : 70
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

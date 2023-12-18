@@ -1,14 +1,16 @@
 //
-//  RankCell.swift
+//  RankCellWithCoverCell.swift
 //  AiOESports
 //
-//  Created by Zin Min Phyo on 05/12/2023.
+//  Created by Zin Min Phyo on 18/12/2023.
 //
 
 import UIKit
+import Kingfisher
 
-class RankCell: UITableViewCell {
+class RankCellWithCoverCell: UITableViewCell {
     
+    @IBOutlet private(set) var coverImageView: UIImageView!
     @IBOutlet private(set) var mainImageView: UIImageView!
     @IBOutlet private(set) var teamNameLabel: UILabel!
     @IBOutlet private(set) var gameImageView: UIImageView!
@@ -29,11 +31,11 @@ class RankCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        
-        selectionStyle = .none
     }
     
-    func render(rank: RankListsView.RankModel) {
+    
+    @discardableResult
+    func render(rank: RankListsView.RankModel) -> Self {
         mainImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(rank.imageURL)"))
         teamNameLabel.text = rank.name
         gameImageView.image = Images.GameImages.getImage(gameName: rank.game)
@@ -42,6 +44,13 @@ class RankCell: UITableViewCell {
         rankLabel.textColor = rank.rankColor
         rankLabel.font = rank.font
         ratingLabel.text = rank.rating
+        return self
+    }
+    
+    @discardableResult
+    func render(coverImageURL: String) -> Self {
+        coverImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(coverImageURL)"), placeholder: Images.Placeholder.cover)
+        return self
     }
     
 }

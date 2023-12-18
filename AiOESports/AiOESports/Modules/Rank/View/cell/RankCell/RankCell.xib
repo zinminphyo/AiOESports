@@ -84,13 +84,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMa-zx-XmH">
-                                <rect key="frame" x="306.33333333333331" y="10" width="5.6666666666666856" height="21"/>
+                                <rect key="frame" x="299.33333333333331" y="10" width="5.6666666666666856" height="21"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
                                 <color key="textColor" red="0.50980392159999999" green="0.21176470589999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ftv-b0-XfZ">
-                                <rect key="frame" x="264" y="47" width="48" height="15"/>
+                                <rect key="frame" x="257" y="47" width="48" height="15"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="W6k-VU-Xd3">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -116,7 +116,7 @@
                             <constraint firstItem="iek-wc-Fh8" firstAttribute="leading" secondItem="v8m-VT-4fv" secondAttribute="trailing" constant="15" id="GcZ-ln-gmt"/>
                             <constraint firstItem="ftv-b0-XfZ" firstAttribute="trailing" secondItem="zMa-zx-XmH" secondAttribute="trailing" id="KMU-xw-W6k"/>
                             <constraint firstItem="iek-wc-Fh8" firstAttribute="top" secondItem="8r2-Iw-Lqg" secondAttribute="top" constant="10" id="fAH-1H-e4Z"/>
-                            <constraint firstAttribute="trailing" secondItem="zMa-zx-XmH" secondAttribute="trailing" constant="8" id="nsa-6k-pXe"/>
+                            <constraint firstAttribute="trailing" secondItem="zMa-zx-XmH" secondAttribute="trailing" constant="15" id="nsa-6k-pXe"/>
                             <constraint firstItem="zMa-zx-XmH" firstAttribute="top" secondItem="iek-wc-Fh8" secondAttribute="top" id="nxe-L8-yAt"/>
                             <constraint firstItem="v8m-VT-4fv" firstAttribute="centerY" secondItem="8r2-Iw-Lqg" secondAttribute="centerY" id="xW4-0T-x93"/>
                         </constraints>

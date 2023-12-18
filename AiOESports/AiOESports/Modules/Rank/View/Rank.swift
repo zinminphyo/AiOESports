@@ -204,11 +204,11 @@ class Rank: UIViewController {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 5
         flowLayout.minimumLineSpacing = 0
-        flowLayout.estimatedItemSize = CGSize(width: 100, height: categoryCollectionView.frame.height)
         categoryCollectionView.showsVerticalScrollIndicator = false
         categoryCollectionView.showsHorizontalScrollIndicator = false
         categoryCollectionView.collectionViewLayout = flowLayout
         categoryCollectionView.allowsMultipleSelection = false
+        categoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: -8, right: 18)
         categoryCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
@@ -216,6 +216,7 @@ class Rank: UIViewController {
         gameCategoryCollectionView.register(GameCategoryCollectionViewCell.self, forCellWithReuseIdentifier: GameCategoryCollectionViewCell.reuseIdentifier)
         gameCategoryCollectionView.dataSource = self
         gameCategoryCollectionView.delegate = self
+        gameCategoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: gameCategoryCollectionView.frame.height, height: gameCategoryCollectionView.frame.height)
         flowLayout.scrollDirection = .horizontal
@@ -312,7 +313,7 @@ extension Rank: RankViewDelegate {
 }
 
 
-extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
+extension Rank: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionView == categoryCollectionView ? RankCategory.allCases.count : GameType.allCases.count
     }
@@ -355,6 +356,16 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         guard collectionView == categoryCollectionView, let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
         cell.set(isSelected: false)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == categoryCollectionView {
+            let width = ( collectionView.frame.width - 51 ) / 4
+            let height = collectionView.frame.height - 8
+            return CGSize(width: width, height: height)
+        } else {
+            return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        }
     }
 }
 

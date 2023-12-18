@@ -138,6 +138,8 @@
 		845EE9512B1F282D00F4C3CD /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EE94F2B1F282D00F4C3CD /* RankCell.swift */; };
 		845EE9522B1F282D00F4C3CD /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EE9502B1F282D00F4C3CD /* RankCell.xib */; };
 		8464B4E72B21BD06002B2EA5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8464B4E62B21BD06002B2EA5 /* IQKeyboardManagerSwift */; };
+		847046992B3008CF00EA807A /* RankCellWithCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */; };
+		8470469A2B3008CF00EA807A /* RankCellWithCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */; };
 		84725AAD29E07DB8003658CD /* FilterSettingPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */; };
 		84725AAF29E07E69003658CD /* FilterSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AAE29E07E69003658CD /* FilterSettingPresenter.swift */; };
 		84725AB129E07EAF003658CD /* FilterSettingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84725AB029E07EAF003658CD /* FilterSettingViewDelegate.swift */; };
@@ -567,6 +569,8 @@
 		845EE94C2B1E2BC000F4C3CD /* TeamRankListsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankListsService.swift; sourceTree = "<group>"; };
 		845EE94F2B1F282D00F4C3CD /* RankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCell.swift; sourceTree = "<group>"; };
 		845EE9502B1F282D00F4C3CD /* RankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCell.xib; sourceTree = "<group>"; };
+		847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCellWithCoverCell.swift; sourceTree = "<group>"; };
+		847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCellWithCoverCell.xib; sourceTree = "<group>"; };
 		84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingPresenting.swift; sourceTree = "<group>"; };
 		84725AAE29E07E69003658CD /* FilterSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingPresenter.swift; sourceTree = "<group>"; };
 		84725AB029E07EAF003658CD /* FilterSettingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingViewDelegate.swift; sourceTree = "<group>"; };
@@ -1064,6 +1068,7 @@
 		842AE8C729DB3FA30036FF05 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				847046942B3007AC00EA807A /* RankCellWithCover */,
 				845EE94E2B1F281500F4C3CD /* RankCell */,
 				842AE8C829DB3FDD0036FF05 /* CategoryCollectionViewCell.swift */,
 				842AE8CA29DB45320036FF05 /* GameCategoryCollectionViewCell.swift */,
@@ -1608,6 +1613,15 @@
 				845EE9502B1F282D00F4C3CD /* RankCell.xib */,
 			);
 			path = RankCell;
+			sourceTree = "<group>";
+		};
+		847046942B3007AC00EA807A /* RankCellWithCover */ = {
+			isa = PBXGroup;
+			children = (
+				847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */,
+				847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */,
+			);
+			path = RankCellWithCover;
 			sourceTree = "<group>";
 		};
 		84725AAB29E07D9B003658CD /* Presenter */ = {
@@ -3324,6 +3338,7 @@
 				8479C5BF29EBF7BE008C97B9 /* DMSans-Medium.ttf in Resources */,
 				84A050EF29E96249004D582B /* CasterOverview.storyboard in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
+				8470469A2B3008CF00EA807A /* RankCellWithCoverCell.xib in Resources */,
 				84A0510029E99678004D582B /* CreatorOverview.storyboard in Resources */,
 				84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */,
 				84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */,
@@ -3686,6 +3701,7 @@
 				842DF92629D88A6200B24F1A /* Fonts.swift in Sources */,
 				842FC9A929E83A7200C5F354 /* PlayerDetailsModel.swift in Sources */,
 				8454D35D29F5848400B97EE3 /* RegisterModule.swift in Sources */,
+				847046992B3008CF00EA807A /* RankCellWithCoverCell.swift in Sources */,
 				84A050F329E9642E004D582B /* CasterOverviewModule.swift in Sources */,
 				84DE123B2A0572630024D48E /* AiOPicker.swift in Sources */,
 				84255D912B147C2B00CA4082 /* ChangePasswordController.swift in Sources */,
