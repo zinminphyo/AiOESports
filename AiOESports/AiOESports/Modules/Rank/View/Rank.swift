@@ -183,12 +183,18 @@ class Rank: UIViewController {
     
     
     private func configureContentContainerView() {
-        let player = PlayerRankController()
-        player.view.frame = contentContainerView.bounds
-        addChild(player)
-        player.willMove(toParent: self)
-        contentContainerView.addSubview(player.view)
-        player.didMove(toParent: self)
+//        let player = PlayerRankController()
+//        player.view.frame = contentContainerView.bounds
+//        addChild(player)
+//        player.willMove(toParent: self)
+//        contentContainerView.addSubview(player.view)
+//        player.didMove(toParent: self)
+        
+        let team = TeamRankController()
+        team.view.frame = contentContainerView.bounds
+        team.willMove(toParent: self)
+        contentContainerView.addSubview(team.view)
+        team.didMove(toParent: self)
     }
     
     private func configureHeaderView() {
