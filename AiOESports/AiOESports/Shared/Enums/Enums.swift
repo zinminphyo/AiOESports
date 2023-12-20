@@ -245,9 +245,9 @@ enum TeamDetailsContent: CaseIterable {
         case .achivement:
             return "ACHIVEMENTS"
         case .roster:
-            return "ROSTER"
+            return "SQUAD"
         case .formerPlayer:
-            return "FORMER PLAYER"
+            return "FORMER PLAYERS"
         case .sponsor:
             return "SPONSOR"
         }

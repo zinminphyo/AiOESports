@@ -29,6 +29,7 @@ class Details: UIViewController {
     @IBOutlet weak var totalVotedCountLabel: UILabel!
     @IBOutlet private(set) var followButton: UIButton!
     @IBOutlet private(set) var voteButton: UIButton!
+    @IBOutlet private(set) var overlayView: UIView!
     
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -79,7 +80,7 @@ class Details: UIViewController {
                 guard let self = self else { return }
                 $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
             }).store(in: &subscription)
-        
+
         presenter?.$teamDetail
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
@@ -396,6 +397,7 @@ extension Details: DetailsViewDelegate {
         totalRatingLabel.text = details.followRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.followRating.totalFollowers) \(details.followRating.totalRating > 1 ? "followers" : "follower")"
         totalVotedCountLabel.text = "\(details.followRating.totalRating) \(details.followRating.totalRating > 1 ? "votes" : "vote")"
+        overlayView.isHidden = true
     }
     
     func renderPlayerDetails(details: PlayerDetails) {
@@ -411,6 +413,7 @@ extension Details: DetailsViewDelegate {
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalRating > 1 ? "followers" : "follower")"
         totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
+        overlayView.isHidden = true
     }
     
     func renderCasterDetails(details: CasterDetails) {
@@ -426,6 +429,7 @@ extension Details: DetailsViewDelegate {
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalFollowers > 1 ? "followers" : "folower")"
         totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
+        overlayView.isHidden = true
     }
     
     func renderCreatorDetails(details: CasterDetails) {
@@ -441,6 +445,7 @@ extension Details: DetailsViewDelegate {
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalFollowers > 1 ? "followers" : "folower")"
         totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
+        overlayView.isHidden = true
     }
 }
 

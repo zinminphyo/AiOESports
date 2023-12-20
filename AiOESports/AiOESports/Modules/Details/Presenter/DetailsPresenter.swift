@@ -34,6 +34,9 @@ class DetailsPresenter: DetailsPresenting {
     
     var forceFetchDetails = PassthroughSubject<Void, Never>()
     
+    @Published
+    var isFetching: Bool = false
+    
     init(category: RankCategory, id: Int) {
         self.category = category
         self.id = id
@@ -55,6 +58,7 @@ class DetailsPresenter: DetailsPresenting {
     private(set) var creatorDetails: CasterDetails? = nil
     
     func fetchDetails() {
+        isFetching = true; defer { isFetching = false }
         switch category {
         case .team:
             fetchTeamDetails()
