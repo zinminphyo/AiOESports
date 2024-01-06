@@ -163,7 +163,11 @@ class ProfileEditController: UIViewController {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
-        datePicker.preferredDatePickerStyle = .wheels
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         datePicker.addTarget(self, action: #selector(didChangeBOD(_:)), for: .valueChanged)
         birthdayDropdown.customInputView = datePicker
     }

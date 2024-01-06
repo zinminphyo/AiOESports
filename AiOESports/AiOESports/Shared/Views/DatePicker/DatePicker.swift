@@ -96,7 +96,11 @@ class DatePicker: UIView, NibLoadable {
     
     private func configureDatePicker() {
         datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .wheels
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         datePicker.setValue(Colors.Text.primaryText ?? UIColor.white, forKey: "textColor")
     }
     

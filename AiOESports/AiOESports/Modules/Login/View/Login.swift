@@ -111,7 +111,7 @@ class Login: UIViewController {
     }
     
     private func configureLoginButton() {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 15.0, *) {
             var configuration = UIButton.Configuration.plain()
             configuration.title = "Log in"
             var container = AttributeContainer()
@@ -136,7 +136,7 @@ class Login: UIViewController {
     }
     
     private func configureRegisterButton() {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 15.0, *) {
             var configuration = UIButton.Configuration.plain()
             var container = AttributeContainer()
             container.font = Fonts.titleFont

@@ -82,7 +82,11 @@ class ProfileInfo: UIViewController {
     
     @IBAction func didTapDOBButton(_ sender: UIButton) {
         dateOfBirthTxtField.becomeFirstResponder()
-        dateOfBirthTxtField.focusGroupPriority = .ignored
+        if #available(iOS 15.0, *) {
+            dateOfBirthTxtField.focusGroupPriority = .ignored
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @IBAction func didTapCityButton() {

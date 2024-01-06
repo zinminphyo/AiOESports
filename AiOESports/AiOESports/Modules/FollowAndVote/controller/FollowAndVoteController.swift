@@ -40,7 +40,11 @@ class FollowAndVoteController: UIViewController {
     private func configureTableView() {
         tableView.register(UINib(nibName: String(describing: FollowAndVoteCell.self), bundle: nil), forCellReuseIdentifier: FollowAndVoteCell.reuseIdentifier)
         tableView.separatorStyle = .none
-        tableView.sectionHeaderTopPadding = 0
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        } else {
+            // Fallback on earlier versions
+        }
         tableView.dataSource = self
         tableView.delegate = self
     }

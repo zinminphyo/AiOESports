@@ -93,7 +93,11 @@ extension Onboarding {
     }
     
     private func configurePageControl() {
-        pageControl.backgroundStyle = .minimal
+        if #available(iOS 14.0, *) {
+            pageControl.backgroundStyle = .minimal
+        } else {
+            // Fallback on earlier versions
+        }
         pageControl.numberOfPages = 3
         pageControl.tintColor = UIColor.gray
         pageControl.pageIndicatorTintColor = UIColor.gray

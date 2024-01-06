@@ -42,7 +42,11 @@ class Squad: UIViewController {
         squadTableView.separatorStyle = .none
         squadTableView.showsVerticalScrollIndicator = false
         squadTableView.showsHorizontalScrollIndicator = false
-        squadTableView.sectionHeaderTopPadding = 10.0
+        if #available(iOS 15.0, *) {
+            squadTableView.sectionHeaderTopPadding = 10.0
+        } else {
+            // Fallback on earlier versions
+        }
         squadTableView.isScrollEnabled = true
         
     }
