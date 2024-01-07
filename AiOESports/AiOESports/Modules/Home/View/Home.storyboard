@@ -133,9 +133,20 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-04-Tdb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="50"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="didTapShield:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="G1h-HJ-5fq"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Ofb-04-Tdb" firstAttribute="leading" secondItem="Qka-N2-VxS" secondAttribute="leading" id="ECj-pX-M1B"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ofb-04-Tdb" secondAttribute="trailing" id="JHi-Gh-y30"/>
+                                                    <constraint firstItem="Ofb-04-Tdb" firstAttribute="top" secondItem="Qka-N2-VxS" secondAttribute="top" id="Jdo-fg-ZiA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ofb-04-Tdb" secondAttribute="bottom" id="Jj0-Hf-EuR"/>
                                                     <constraint firstItem="Rey-WV-zsN" firstAttribute="centerX" secondItem="Qka-N2-VxS" secondAttribute="centerX" id="eFy-0d-ymJ"/>
                                                     <constraint firstItem="Rey-WV-zsN" firstAttribute="centerY" secondItem="Qka-N2-VxS" secondAttribute="centerY" id="fN3-qx-Fju"/>
                                                 </constraints>

@@ -93,6 +93,12 @@ class Home: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction
+    private func didTapShield(_ sender: UIButton) {
+        let vc = BuyShieldsController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 

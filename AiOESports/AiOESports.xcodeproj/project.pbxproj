@@ -281,6 +281,8 @@
 		84CC353C2B15C6AD002B1D35 /* GetPinCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */; };
 		84CC35402B162F21002B1D35 /* AppInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CC353F2B162F21002B1D35 /* AppInfoController.xib */; };
 		84CC35422B162F37002B1D35 /* AppInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC35412B162F37002B1D35 /* AppInfoController.swift */; };
+		84CD8B7B2B4A612C00F8F454 /* BuyShieldsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CD8B7A2B4A612C00F8F454 /* BuyShieldsController.xib */; };
+		84CD8B7D2B4A614200F8F454 /* BuyShieldsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD8B7C2B4A614200F8F454 /* BuyShieldsController.swift */; };
 		84CF09E329D990F500F87400 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E229D990F500F87400 /* PhoneNumberView.xib */; };
 		84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF09E429D9934800F87400 /* PhoneNumberView.swift */; };
 		84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF09E929D9E82100F87400 /* InApp.storyboard */; };
@@ -717,6 +719,8 @@
 		84CC353B2B15C6AD002B1D35 /* GetPinCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPinCodeService.swift; sourceTree = "<group>"; };
 		84CC353F2B162F21002B1D35 /* AppInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoController.xib; sourceTree = "<group>"; };
 		84CC35412B162F37002B1D35 /* AppInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoController.swift; sourceTree = "<group>"; };
+		84CD8B7A2B4A612C00F8F454 /* BuyShieldsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyShieldsController.xib; sourceTree = "<group>"; };
+		84CD8B7C2B4A614200F8F454 /* BuyShieldsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsController.swift; sourceTree = "<group>"; };
 		84CF09E229D990F500F87400 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		84CF09E429D9934800F87400 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		84CF09E929D9E82100F87400 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
@@ -2318,6 +2322,23 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		84CD8B782B4A611C00F8F454 /* BuyShields */ = {
+			isa = PBXGroup;
+			children = (
+				84CD8B792B4A611F00F8F454 /* controller */,
+			);
+			path = BuyShields;
+			sourceTree = "<group>";
+		};
+		84CD8B792B4A611F00F8F454 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84CD8B7A2B4A612C00F8F454 /* BuyShieldsController.xib */,
+				84CD8B7C2B4A614200F8F454 /* BuyShieldsController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		84CF09E129D990E100F87400 /* PhoneNumberView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3136,6 +3157,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84CD8B782B4A611C00F8F454 /* BuyShields */,
 				842AF7B62B21E0F8006F2267 /* FollowAndVoteLists */,
 				843CF39D2B17019A00C98BFF /* Vote */,
 				840833DE2B164656004F2A71 /* DimmingBackground */,
@@ -3342,6 +3364,7 @@
 				84F17ADE2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib in Resources */,
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
+				84CD8B7B2B4A612C00F8F454 /* BuyShieldsController.xib in Resources */,
 				84F17AE82B0E3D6900B97B08 /* PrivacyPolicyController.xib in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
 				843CF3BA2B17928800C98BFF /* ThankYouView.xib in Resources */,
@@ -3837,6 +3860,7 @@
 				849AEBB02A1614830024AAAA /* RegisterInteractor.swift in Sources */,
 				84334E932B1CC24D004DD32D /* FollowServiceProtocol.swift in Sources */,
 				84DC1A0F2A0949CF0049BDD2 /* AiOPickerDelegate.swift in Sources */,
+				84CD8B7D2B4A614200F8F454 /* BuyShieldsController.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,
 				84EF0A8A29EEF12F0042B6BF /* Menu.swift in Sources */,
