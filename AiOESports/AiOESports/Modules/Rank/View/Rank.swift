@@ -210,11 +210,12 @@ class Rank: UIViewController {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 5
         flowLayout.minimumLineSpacing = 0
+        flowLayout.scrollDirection = .horizontal
         categoryCollectionView.showsVerticalScrollIndicator = false
         categoryCollectionView.showsHorizontalScrollIndicator = false
         categoryCollectionView.collectionViewLayout = flowLayout
         categoryCollectionView.allowsMultipleSelection = false
-        categoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: -8, right: 18)
+        categoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         categoryCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
@@ -366,7 +367,7 @@ extension Rank: UICollectionViewDataSource, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == categoryCollectionView {
-            let width = ( collectionView.frame.width - 51 ) / 4
+            let width = ( collectionView.frame.width - 21 ) / 4
             let height = collectionView.frame.height - 8
             return CGSize(width: width, height: height)
         } else {
