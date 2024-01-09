@@ -6,12 +6,27 @@
 //
 
 import UIKit
+import Combine
+
 
 class BuyShieldsController: UIViewController {
     
     @IBOutlet private(set) var bankLists: UICollectionView!
     @IBOutlet private(set) var accountLists: UITableView!
     @IBOutlet private(set) var accountListsHeight: NSLayoutConstraint!
+    
+    
+    private let vm: BuyShieldsViewModel!
+    private var subscription = Set<AnyCancellable>()
+    
+    init() {
+        vm = BuyShieldsViewModel()
+        super.init(nibName: "BuyShieldsController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +38,8 @@ class BuyShieldsController: UIViewController {
     private func configureHierarchy() {
         configureBankLists()
         configureAccountLists()
+        configureViewModel()
+        configureViewModel()
     }
     
     private func configureBankLists() {
@@ -34,6 +51,7 @@ class BuyShieldsController: UIViewController {
         layout.minimumLineSpacing = 10
         bankLists.collectionViewLayout = layout
         bankLists.dataSource = self
+        bankLists.delegate = self
         bankLists.showsHorizontalScrollIndicator = false
         bankLists.contentInset = UIEdgeInsets(top: 4, left: 8, bottom: -4, right: 0)
     }
@@ -47,7 +65,16 @@ class BuyShieldsController: UIViewController {
         view.invalidateIntrinsicContentSize()
     }
     
-
+    private func configureViewModel() {
+        vm.$selectedIndex
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.bankLists.reloadData()
+            }.store(in: &subscription)
+    }
+    
+    
    @IBAction
     private func didTapBackBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -57,14 +84,19 @@ class BuyShieldsController: UIViewController {
 
 
 
-extension BuyShieldsController: UICollectionViewDataSource {
+extension BuyShieldsController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountCell.reuseIdentifier, for: indexPath) as! BankAccountCell
+        cell.render(isSelected: indexPath.row == vm.selectedIndex)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        vm.selectedIndex = indexPath.row
     }
 }
 
