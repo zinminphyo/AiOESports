@@ -16,6 +16,10 @@
 		840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75929F66C9E007F4159 /* LoginRouting.swift */; };
 		840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75B29F66CE9007F4159 /* LoginRouter.swift */; };
 		840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840CC75F29F7D5A5007F4159 /* AccountSetup.storyboard */; };
+		840CEE122B4D98A3000A6EBB /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */; };
+		840CEE132B4D98A3000A6EBB /* BankAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CEE112B4D98A3000A6EBB /* BankAccountCell.xib */; };
+		840CEE172B4D9CD9000A6EBB /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CEE152B4D9CD9000A6EBB /* AccountCell.swift */; };
+		840CEE182B4D9CD9000A6EBB /* AccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CEE162B4D9CD9000A6EBB /* AccountCell.xib */; };
 		84108C352A0AA17500488D0D /* VerifyPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84108C342A0AA17500488D0D /* VerifyPhone.storyboard */; };
 		84108C372A0AA1CF00488D0D /* VerifyPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108C362A0AA1CF00488D0D /* VerifyPhone.swift */; };
 		84108C392A0AA5BC00488D0D /* VerifyPhoneModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108C382A0AA5BC00488D0D /* VerifyPhoneModule.swift */; };
@@ -455,6 +459,10 @@
 		840CC75929F66C9E007F4159 /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
 		840CC75B29F66CE9007F4159 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		840CC75F29F7D5A5007F4159 /* AccountSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountSetup.storyboard; sourceTree = "<group>"; };
+		840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
+		840CEE112B4D98A3000A6EBB /* BankAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankAccountCell.xib; sourceTree = "<group>"; };
+		840CEE152B4D9CD9000A6EBB /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		840CEE162B4D9CD9000A6EBB /* AccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountCell.xib; sourceTree = "<group>"; };
 		84108C342A0AA17500488D0D /* VerifyPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VerifyPhone.storyboard; sourceTree = "<group>"; };
 		84108C362A0AA1CF00488D0D /* VerifyPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhone.swift; sourceTree = "<group>"; };
 		84108C382A0AA5BC00488D0D /* VerifyPhoneModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneModule.swift; sourceTree = "<group>"; };
@@ -970,6 +978,33 @@
 				845346D329FEBDB30077F8A0 /* AccountSetup.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		840CEE0E2B4D9882000A6EBB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				840CEE0F2B4D9886000A6EBB /* cell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		840CEE0F2B4D9886000A6EBB /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				840CEE142B4D9CBB000A6EBB /* AcccountCell */,
+				840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */,
+				840CEE112B4D98A3000A6EBB /* BankAccountCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		840CEE142B4D9CBB000A6EBB /* AcccountCell */ = {
+			isa = PBXGroup;
+			children = (
+				840CEE152B4D9CD9000A6EBB /* AccountCell.swift */,
+				840CEE162B4D9CD9000A6EBB /* AccountCell.xib */,
+			);
+			path = AcccountCell;
 			sourceTree = "<group>";
 		};
 		84108C302A0A9EC700488D0D /* VerifyPhone */ = {
@@ -2325,6 +2360,7 @@
 		84CD8B782B4A611C00F8F454 /* BuyShields */ = {
 			isa = PBXGroup;
 			children = (
+				840CEE0E2B4D9882000A6EBB /* view */,
 				84CD8B792B4A611F00F8F454 /* controller */,
 			);
 			path = BuyShields;
@@ -3367,6 +3403,7 @@
 				84CD8B7B2B4A612C00F8F454 /* BuyShieldsController.xib in Resources */,
 				84F17AE82B0E3D6900B97B08 /* PrivacyPolicyController.xib in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
+				840CEE132B4D98A3000A6EBB /* BankAccountCell.xib in Resources */,
 				843CF3BA2B17928800C98BFF /* ThankYouView.xib in Resources */,
 				84CF09EA29D9E82100F87400 /* InApp.storyboard in Resources */,
 				84F602E729DC7EB800250C25 /* FilterSetting.storyboard in Resources */,
@@ -3436,6 +3473,7 @@
 				845346E229FF85E80077F8A0 /* ProfileInfo.storyboard in Resources */,
 				84DE12342A0565990024D48E /* SingleSelectionCollectionViewCell.xib in Resources */,
 				84E754042B0D3C36007D11B0 /* InputTextFieldView.xib in Resources */,
+				840CEE182B4D9CD9000A6EBB /* AccountCell.xib in Resources */,
 				843CF3AE2B177A9A00C98BFF /* CommentView.xib in Resources */,
 				84F17AF62B0E415100B97B08 /* FollowAndVoteCell.xib in Resources */,
 				84725ABF29E12B18003658CD /* Squad.storyboard in Resources */,
@@ -3820,6 +3858,7 @@
 				842FC9BC29E84D2400C5F354 /* PlayerOverviewModule.swift in Sources */,
 				845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */,
 				8437FE7329ED1985008F7179 /* AdvertisementModel.swift in Sources */,
+				840CEE172B4D9CD9000A6EBB /* AccountCell.swift in Sources */,
 				849AEBA32A153F680024AAAA /* ForgotPasswordModule.swift in Sources */,
 				84A050DD29E92A9E004D582B /* Career.swift in Sources */,
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
@@ -3871,6 +3910,7 @@
 				84A2BAF82B0D32FB0021F2FD /* ProfileInfoView.swift in Sources */,
 				84EF0A9429EEF2690042B6BF /* HomeContainerModule.swift in Sources */,
 				84DE12362A056E4E0024D48E /* DatePickerDelegate.swift in Sources */,
+				840CEE122B4D98A3000A6EBB /* BankAccountCell.swift in Sources */,
 				845346E629FF86080077F8A0 /* ProfileInfoModule.swift in Sources */,
 				843AB2F92B16524F005B3DF4 /* UpgradePremiumServiceProtocol.swift in Sources */,
 				84E486232B201F4C00ADEAB2 /* Step1RegistrationService.swift in Sources */,
