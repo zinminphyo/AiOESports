@@ -10,6 +10,7 @@ import UIKit
 class PlayerOverview: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var socialViewWidth: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: PlayerOverviewPresenting?
@@ -64,8 +65,11 @@ class PlayerOverview: UIViewController {
 
 extension PlayerOverview: PlayerOverviewViewDelegate {
     func renderDetails(details: PlayerDetailsModel, social: [SocialModel]) {
-        self.socialLists = social
-        self.collectionView.reloadData()
+        socialLists = social
+        collectionView.reloadData()
+        collectionView.invalidateIntrinsicContentSize()
+        socialViewWidth.constant = collectionView.collectionViewLayout.collectionViewContentSize.width
+        
     }
 }
 

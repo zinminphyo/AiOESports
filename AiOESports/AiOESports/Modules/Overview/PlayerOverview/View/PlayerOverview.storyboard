@@ -22,10 +22,11 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2lG-UX-uZQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="65"/>
+                                        <rect key="frame" x="146.66666666666666" y="0.0" width="100" height="65"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="W1q-ES-B5X"/>
+                                            <constraint firstAttribute="width" constant="100" id="clj-Hb-EmD"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TaL-wz-Jhr">
                                             <size key="itemSize" width="128" height="128"/>
@@ -35,7 +36,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P19-aO-psG">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                                <rect key="frame" x="-14" y="0.0" width="127.99999999999997" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6OY-Hf-sQQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
@@ -53,9 +54,10 @@
                                 <constraints>
                                     <constraint firstItem="sdg-0x-tAZ" firstAttribute="top" secondItem="2lG-UX-uZQ" secondAttribute="bottom" constant="10" id="Bn0-Z1-TZA"/>
                                     <constraint firstAttribute="bottom" secondItem="sdg-0x-tAZ" secondAttribute="bottom" id="Ppw-nC-dnH"/>
-                                    <constraint firstItem="2lG-UX-uZQ" firstAttribute="leading" secondItem="JUq-mh-jgx" secondAttribute="leading" id="SUW-rP-yw8"/>
+                                    <constraint firstItem="2lG-UX-uZQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JUq-mh-jgx" secondAttribute="leading" id="SUW-rP-yw8"/>
                                     <constraint firstAttribute="trailing" secondItem="sdg-0x-tAZ" secondAttribute="trailing" id="XNI-Ej-hz8"/>
-                                    <constraint firstAttribute="trailing" secondItem="2lG-UX-uZQ" secondAttribute="trailing" id="fJk-3h-Pyv"/>
+                                    <constraint firstItem="2lG-UX-uZQ" firstAttribute="centerX" secondItem="JUq-mh-jgx" secondAttribute="centerX" id="aK1-dt-Pwq"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2lG-UX-uZQ" secondAttribute="trailing" id="fJk-3h-Pyv"/>
                                     <constraint firstItem="2lG-UX-uZQ" firstAttribute="top" secondItem="JUq-mh-jgx" secondAttribute="top" id="p6u-zz-0Tl"/>
                                     <constraint firstItem="sdg-0x-tAZ" firstAttribute="leading" secondItem="JUq-mh-jgx" secondAttribute="leading" id="uy3-jf-5dw"/>
                                 </constraints>
@@ -72,6 +74,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="2lG-UX-uZQ" id="LtG-Pd-h1J"/>
+                        <outlet property="socialViewWidth" destination="clj-Hb-EmD" id="NMM-3S-aBP"/>
                         <outlet property="tableView" destination="sdg-0x-tAZ" id="2OQ-x3-BoY"/>
                     </connections>
                 </viewController>

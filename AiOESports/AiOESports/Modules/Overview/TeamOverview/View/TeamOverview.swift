@@ -11,6 +11,7 @@ import Kingfisher
 class TeamOverview: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var socialViewWidth: NSLayoutConstraint!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusValueLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -103,8 +104,10 @@ class TeamOverview: UIViewController {
 
 extension TeamOverview: TeamOverviewViewDelegate {
     func updateUI(details: TeamDetailsModel, social: [SocialModel]) {
-        self.socialLists = social
-        self.collectionView.reloadData()
+        socialLists = social
+        collectionView.reloadData()
+        collectionView.invalidateIntrinsicContentSize()
+        socialViewWidth.constant = collectionView.collectionViewLayout.collectionViewContentSize.width
         
         statusValueLabel.text = details.status.capitalized
         fullNameValueLabel.text = details.fullName.capitalized
