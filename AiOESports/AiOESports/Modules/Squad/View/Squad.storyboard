@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-9H-sea">
-                                <rect key="frame" x="8" y="59" width="377" height="751"/>
+                                <rect key="frame" x="8" y="59" width="377" height="793"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYy-EI-DHp">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoDataFound" translatesAutoresizingMaskIntoConstraints="NO" id="3Ev-IB-9ku">
-                                        <rect key="frame" x="146.66666666666666" y="324.66666666666669" width="100" height="110"/>
+                                        <rect key="frame" x="146.66666666666666" y="341.66666666666669" width="100" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="QYd-wg-QPd"/>
                                             <constraint firstAttribute="width" constant="100" id="wCh-U3-OVg"/>
@@ -42,10 +42,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="EFo-9H-sea" secondAttribute="bottom" constant="8" id="IZ7-hi-v7c"/>
+                            <constraint firstAttribute="bottom" secondItem="EFo-9H-sea" secondAttribute="bottom" id="IZ7-hi-v7c"/>
                             <constraint firstItem="ZYy-EI-DHp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="MWw-DU-kqe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EFo-9H-sea" secondAttribute="trailing" constant="8" id="Q0o-l1-7nW"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZYy-EI-DHp" secondAttribute="bottom" id="VKZ-ZH-LIM"/>
+                            <constraint firstAttribute="bottom" secondItem="ZYy-EI-DHp" secondAttribute="bottom" id="VKZ-ZH-LIM"/>
                             <constraint firstItem="ZYy-EI-DHp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aF5-kk-Bml"/>
                             <constraint firstItem="EFo-9H-sea" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bXZ-KR-uuC"/>
                             <constraint firstItem="EFo-9H-sea" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="r2G-tS-fBk"/>

@@ -32,7 +32,7 @@ class Squad: UIViewController {
     }
     
     private func configureContainerView() {
-        self.view.backgroundColor = Colors.Theme.mainColor
+        self.view.backgroundColor = Colors.Theme.inputColor
     }
     
     private func configureTableView() {
@@ -176,7 +176,7 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         ])
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.layer.cornerRadius = 10
-        view.backgroundColor = Colors.Theme.inputColor
+        view.backgroundColor = Colors.Theme.SecondaryBackground
         return view
     }
     
@@ -184,7 +184,7 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: squadTableView.frame.width, height: 10))
         view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.layer.cornerRadius = 10
-        view.backgroundColor = Colors.Theme.inputColor
+        view.backgroundColor = Colors.Theme.SecondaryBackground
         return view
     }
     

@@ -33,7 +33,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" name="ThemeColor"/>
+                                <color key="backgroundColor" name="InputColor"/>
                                 <constraints>
                                     <constraint firstItem="Ozx-fE-Y8N" firstAttribute="centerX" secondItem="gNo-VH-w3j" secondAttribute="centerX" id="Y7d-3p-rQ5"/>
                                     <constraint firstItem="Ozx-fE-Y8N" firstAttribute="centerY" secondItem="gNo-VH-w3j" secondAttribute="centerY" id="fdr-bx-tzg"/>
@@ -65,8 +65,8 @@
     </scenes>
     <resources>
         <image name="NoDataFound" width="100" height="116.66666412353516"/>
-        <namedColor name="ThemeColor">
-            <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="InputColor">
+            <color red="0.12549019607843137" green="0.16078431372549021" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
