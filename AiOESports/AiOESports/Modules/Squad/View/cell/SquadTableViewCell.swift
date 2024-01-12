@@ -17,6 +17,7 @@ class SquadTableViewCell: UITableViewCell {
     static let cellHeight: CGFloat = 56
     
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet private(set) var laneIconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countryImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
@@ -44,7 +45,7 @@ class SquadTableViewCell: UITableViewCell {
         locationLabel.textColor = Colors.Text.primaryText
         nameLabel.text = "PVNDV"
         locationLabel.text = "Yangon"
-        countryImageView.image = Images.countryImage
+//        countryImageView.image = Images.countryImage
         mainImageView.image = Images.TeamImages.teamlogo
     }
     
@@ -53,6 +54,8 @@ class SquadTableViewCell: UITableViewCell {
         nameLabel.text = coach?.name ?? ""
         mainImageView.kf.setImage(with: URL(string: coach?.playerImageFullURL ?? ""), placeholder: Images.Placeholder.profile)
         locationLabel.text = coach?.city ?? ""
+        laneIconImageView.isHidden = true
+        countryImageView.kf.setImage(with: URL(string: coach?.countryImageFullURL ?? ""))
         return self
     }
     
@@ -61,6 +64,9 @@ class SquadTableViewCell: UITableViewCell {
         nameLabel.text = roster?.name ?? ""
         locationLabel.text = roster?.city ?? ""
         mainImageView.kf.setImage(with: URL(string: roster?.playerImageFullURL ?? ""), placeholder: Images.Placeholder.profile)
+        laneIconImageView.isHidden = roster?.lane == nil
+        laneIconImageView.kf.setImage(with: URL(string: roster?.laneImageFullURL ?? ""))
+        countryImageView.kf.setImage(with: URL(string: roster?.countryImageFullURL ?? ""))
         return self
     }
     
@@ -70,6 +76,7 @@ class SquadTableViewCell: UITableViewCell {
         locationLabel.text = achivement.renderablePlace
         locationLabel.textColor = achivement.placeColor
         mainImageView.kf.setImage(with: URL(string: achivement.logoFullPath), placeholder: Images.Placeholder.profile)
+        laneIconImageView.isHidden = true
         return self
     }
     
