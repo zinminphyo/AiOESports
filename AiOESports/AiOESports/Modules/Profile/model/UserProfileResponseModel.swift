@@ -58,7 +58,7 @@ struct UserProfileResponseModel: Decodable {
     let city: String
     let state: String
     let gender: String
-    let level: String
+    var level: String
     let facebook_link: String?
     let instagram_link: String?
     let otp: String

@@ -29,6 +29,7 @@ class Colors {
         static let primaryText = UIColor(named: "PrimaryText", in: .main, compatibleWith: nil)
         static let incorrectText = UIColor(named: "IncorrectText", in: .main, compatibleWith: nil)
         static let secondaryText = UIColor(named: "SecondaryText", in: .main, compatibleWith: nil)
+        static let goldText = UIColor(named: "Gold", in: .main, compatibleWith: nil)
     }
     
     enum TabItem {
