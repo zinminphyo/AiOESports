@@ -142,6 +142,7 @@
                 <outlet property="mainImageView" destination="v8m-VT-4fv" id="Fy0-HE-iMB"/>
                 <outlet property="rankLabel" destination="zMa-zx-XmH" id="9GQ-gd-KmI"/>
                 <outlet property="ratingLabel" destination="QiC-WL-CfU" id="5lp-yc-VZ3"/>
+                <outlet property="ratingView" destination="ftv-b0-XfZ" id="ZCp-ly-1ou"/>
                 <outlet property="teamNameLabel" destination="Xeo-5f-Jhz" id="Qmr-Xm-LYQ"/>
             </connections>
             <point key="canvasLocation" x="-38.167938931297705" y="-9.1549295774647899"/>
