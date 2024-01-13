@@ -16,6 +16,10 @@ class SearchPresenter: SearchPresenting {
     
     private(set) var selectedCategory: RankCategory = .team
     
+    var searchTitle: String {
+        "Enter \(selectedCategory.title.capitalized) name"
+    }
+    
     init(category: RankCategory) {
         self.selectedCategory = category
     }
