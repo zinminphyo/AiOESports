@@ -36,7 +36,19 @@ import Foundation
  */
 
 struct UserProfileResponseModel: Decodable {
+    
+    private var numberFormatter: NumberFormatter = {
+       let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumIntegerDigits = 9
+        formatter.groupingSeparator = "-"
+        return formatter
+    }()
+    
     let id: Int
+    var formattedId: String {
+        return numberFormatter.string(from: id as NSNumber) ?? ""
+    }
     let username: String
     let phone_no: String
     let dob: String

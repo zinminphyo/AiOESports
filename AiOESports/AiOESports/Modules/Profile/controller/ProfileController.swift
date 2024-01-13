@@ -68,7 +68,7 @@ class ProfileController: UIViewController {
     
     private func UIBinding() {
         nameLabel.text = viewModel.profileModel.username
-        idLabel.text = "id-\(viewModel.profileModel.id)"
+        idLabel.text = "id:\(viewModel.profileModel.formattedId)"
         profileLevelView.set(imageURL: viewModel.profileModel.profile_image)
         profileLevelView.set(level: viewModel.profileModel.level)
     }
