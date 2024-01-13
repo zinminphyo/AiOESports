@@ -11,6 +11,7 @@ import Combine
 
 class BuyShieldsController: UIViewController {
     
+    @IBOutlet private(set) var shieldAmountListsView: UICollectionView!
     @IBOutlet private(set) var bankLists: UICollectionView!
     @IBOutlet private(set) var accountLists: UITableView!
     @IBOutlet private(set) var accountListsHeight: NSLayoutConstraint!
@@ -36,10 +37,24 @@ class BuyShieldsController: UIViewController {
     }
     
     private func configureHierarchy() {
+        configureShieldAmountListsView()
         configureBankLists()
         configureAccountLists()
         configureViewModel()
         configureViewModel()
+    }
+    
+    private func configureShieldAmountListsView() {
+        shieldAmountListsView.register(UINib(nibName: String(describing: ShieldAmountCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 120, height: 170)
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 10
+        shieldAmountListsView.collectionViewLayout = layout
+        shieldAmountListsView.dataSource = self
+        shieldAmountListsView.showsHorizontalScrollIndicator = false
+        shieldAmountListsView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
     }
     
     private func configureBankLists() {
@@ -90,9 +105,15 @@ extension BuyShieldsController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountCell.reuseIdentifier, for: indexPath) as! BankAccountCell
-        cell.render(isSelected: indexPath.row == vm.selectedIndex)
-        return cell
+        
+        if collectionView == shieldAmountListsView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier, for: indexPath) as! ShieldAmountCollectionViewCell
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountCell.reuseIdentifier, for: indexPath) as! BankAccountCell
+            cell.render(isSelected: indexPath.row == vm.selectedIndex)
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

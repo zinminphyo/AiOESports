@@ -25,6 +25,7 @@
                 <outlet property="accountLists" destination="V1A-1K-PAl" id="fFd-nf-43J"/>
                 <outlet property="accountListsHeight" destination="d1H-t2-7K9" id="rII-gA-qNR"/>
                 <outlet property="bankLists" destination="UKL-E5-LqU" id="CKt-6x-7Zv"/>
+                <outlet property="shieldAmountListsView" destination="d9n-Rp-4kW" id="tFS-R8-Ctk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c5z-35-XoI"/>
             </connections>
         </placeholder>
@@ -98,10 +99,10 @@
                     <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-Dz-ee5">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="611.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="708.66666666666663"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Shields" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL2-sD-qsq">
-                                    <rect key="frame" x="16.000000000000007" y="15.000000000000002" width="100.66666666666669" height="23.666666666666671"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Shields" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL2-sD-qsq">
+                                    <rect key="frame" x="16.000000000000007" y="15.000000000000002" width="99.666666666666686" height="23.666666666666671"/>
                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
                                     <color key="textColor" name="PrimaryText"/>
                                     <nil key="highlightedColor"/>
@@ -112,53 +113,27 @@
                                     <color key="textColor" name="SecondaryText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97F-Co-lBS">
-                                    <rect key="frame" x="16" y="103.66666666666666" width="361" height="55"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 1877" translatesAutoresizingMaskIntoConstraints="NO" id="YlV-MH-vf1">
-                                            <rect key="frame" x="15" y="14" width="27" height="27"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="27" id="FDa-gT-Zo2"/>
-                                                <constraint firstAttribute="width" constant="27" id="FK4-mg-eZc"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Shield" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ge8-oD-6ZV">
-                                            <rect key="frame" x="52" y="17" width="57.333333333333343" height="21"/>
-                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
-                                            <color key="textColor" name="PrimaryText"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 MMK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDG-g5-6pa">
-                                            <rect key="frame" x="290.33333333333331" y="17.666666666666686" width="55.666666666666686" height="19.666666666666671"/>
-                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="15"/>
-                                            <color key="textColor" name="PrimaryText"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" name="InputColor"/>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d9n-Rp-4kW">
+                                    <rect key="frame" x="0.0" y="91.666666666666657" width="393" height="169.99999999999997"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="fDG-g5-6pa" secondAttribute="trailing" constant="15" id="1Rc-cB-h9p"/>
-                                        <constraint firstItem="YlV-MH-vf1" firstAttribute="leading" secondItem="97F-Co-lBS" secondAttribute="leading" constant="15" id="3rb-8l-AqI"/>
-                                        <constraint firstItem="YlV-MH-vf1" firstAttribute="top" secondItem="97F-Co-lBS" secondAttribute="top" constant="14" id="FjZ-Mb-Iuo"/>
-                                        <constraint firstItem="ge8-oD-6ZV" firstAttribute="leading" secondItem="YlV-MH-vf1" secondAttribute="trailing" constant="10" id="c0b-7g-1Us"/>
-                                        <constraint firstItem="fDG-g5-6pa" firstAttribute="centerY" secondItem="97F-Co-lBS" secondAttribute="centerY" id="dnq-oE-hAY"/>
-                                        <constraint firstItem="ge8-oD-6ZV" firstAttribute="centerY" secondItem="97F-Co-lBS" secondAttribute="centerY" id="fuy-pm-6PM"/>
-                                        <constraint firstAttribute="bottom" secondItem="YlV-MH-vf1" secondAttribute="bottom" constant="14" id="ngJ-WH-dZJ"/>
+                                        <constraint firstAttribute="height" constant="170" id="0zG-tH-ZZH"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HwV-4X-Lu7">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ez-o3-9Ta">
-                                    <rect key="frame" x="16" y="182.66666666666669" width="94.666666666666671" height="17"/>
+                                    <rect key="frame" x="16" y="279.66666666666669" width="94.666666666666671" height="17"/>
                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
                                     <color key="textColor" name="PrimaryText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-E5-LqU">
-                                    <rect key="frame" x="0.0" y="214.66666666666669" width="393" height="115"/>
+                                    <rect key="frame" x="0.0" y="311.66666666666669" width="393" height="115"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="115" id="8XB-gQ-lD1"/>
@@ -171,26 +146,26 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please transfer to the following accounts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPW-py-PCN">
-                                    <rect key="frame" x="16" y="347.66666666666669" width="361" height="17"/>
+                                    <rect key="frame" x="16" y="444.66666666666663" width="361" height="17"/>
                                     <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
                                     <color key="textColor" name="SecondaryText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V1A-1K-PAl">
-                                    <rect key="frame" x="0.0" y="378.66666666666669" width="393" height="50"/>
+                                    <rect key="frame" x="0.0" y="475.66666666666663" width="393" height="50"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="d1H-t2-7K9"/>
                                     </constraints>
                                 </tableView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotline Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWM-NS-8Ed">
-                                    <rect key="frame" x="15.999999999999993" y="458.66666666666663" width="106.33333333333331" height="17"/>
+                                    <rect key="frame" x="15.999999999999993" y="555.66666666666663" width="106.33333333333331" height="17"/>
                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
                                     <color key="textColor" name="PrimaryText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-s2-ftx">
-                                    <rect key="frame" x="18" y="487.66666666666663" width="357" height="100"/>
+                                    <rect key="frame" x="18" y="584.66666666666663" width="357" height="100"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Jn-X0-osM">
                                             <rect key="frame" x="0.0" y="0.0" width="357" height="100"/>
@@ -398,24 +373,24 @@
                                 <constraint firstItem="V1A-1K-PAl" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" id="0L3-U2-3uh"/>
                                 <constraint firstAttribute="trailing" secondItem="yHR-s2-ftx" secondAttribute="trailing" constant="18" id="2ba-1A-doJ"/>
                                 <constraint firstAttribute="trailing" secondItem="Ulm-TC-33a" secondAttribute="trailing" constant="16" id="5mf-Ez-rbI"/>
+                                <constraint firstAttribute="trailing" secondItem="d9n-Rp-4kW" secondAttribute="trailing" id="5yP-H9-y7A"/>
                                 <constraint firstItem="7Ez-o3-9Ta" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="16" id="Cmn-OY-9Tc"/>
                                 <constraint firstItem="Ulm-TC-33a" firstAttribute="top" secondItem="WL2-sD-qsq" secondAttribute="bottom" constant="11" id="FFz-Xr-Dzk"/>
-                                <constraint firstAttribute="trailing" secondItem="97F-Co-lBS" secondAttribute="trailing" constant="16" id="G5u-sL-HWa"/>
                                 <constraint firstItem="UKL-E5-LqU" firstAttribute="top" secondItem="7Ez-o3-9Ta" secondAttribute="bottom" constant="15" id="Lhq-SQ-9i8"/>
-                                <constraint firstItem="7Ez-o3-9Ta" firstAttribute="top" secondItem="97F-Co-lBS" secondAttribute="bottom" constant="24" id="OvG-VA-y6O"/>
                                 <constraint firstAttribute="trailing" secondItem="fPW-py-PCN" secondAttribute="trailing" constant="16" id="QIy-9U-Gap"/>
                                 <constraint firstItem="Ulm-TC-33a" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="16" id="T6n-1w-USF"/>
                                 <constraint firstItem="fPW-py-PCN" firstAttribute="top" secondItem="UKL-E5-LqU" secondAttribute="bottom" constant="18" id="Xid-66-lOf"/>
+                                <constraint firstItem="d9n-Rp-4kW" firstAttribute="top" secondItem="Ulm-TC-33a" secondAttribute="bottom" constant="8" id="XmR-jc-s2v"/>
+                                <constraint firstItem="d9n-Rp-4kW" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" id="amJ-gb-oiV"/>
                                 <constraint firstAttribute="bottom" secondItem="yHR-s2-ftx" secondAttribute="bottom" constant="24" id="bYR-NA-WJd"/>
                                 <constraint firstItem="yHR-s2-ftx" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="18" id="br9-zr-GfN"/>
-                                <constraint firstItem="97F-Co-lBS" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="16" id="fbA-YV-3aB"/>
-                                <constraint firstItem="97F-Co-lBS" firstAttribute="top" secondItem="Ulm-TC-33a" secondAttribute="bottom" constant="20" id="fgZ-Rr-30V"/>
                                 <constraint firstItem="V1A-1K-PAl" firstAttribute="top" secondItem="fPW-py-PCN" secondAttribute="bottom" constant="14" id="gdX-cQ-Agv"/>
                                 <constraint firstItem="pWM-NS-8Ed" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="16" id="j4H-Iv-0KF"/>
                                 <constraint firstAttribute="trailing" secondItem="V1A-1K-PAl" secondAttribute="trailing" id="jKc-GB-2B5"/>
                                 <constraint firstItem="fPW-py-PCN" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="16" id="k1B-ck-xc9"/>
                                 <constraint firstItem="WL2-sD-qsq" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" constant="16" id="kss-oB-Iuc"/>
                                 <constraint firstItem="WL2-sD-qsq" firstAttribute="top" secondItem="9RB-Dz-ee5" secondAttribute="top" constant="15" id="nGb-LN-NRs"/>
+                                <constraint firstItem="7Ez-o3-9Ta" firstAttribute="top" secondItem="d9n-Rp-4kW" secondAttribute="bottom" constant="18" id="o4b-hf-iuO"/>
                                 <constraint firstItem="UKL-E5-LqU" firstAttribute="leading" secondItem="9RB-Dz-ee5" secondAttribute="leading" id="oz7-OD-1Ga"/>
                                 <constraint firstItem="yHR-s2-ftx" firstAttribute="top" secondItem="pWM-NS-8Ed" secondAttribute="bottom" constant="12" id="qts-Mq-rtL"/>
                                 <constraint firstItem="pWM-NS-8Ed" firstAttribute="top" secondItem="V1A-1K-PAl" secondAttribute="bottom" constant="30" id="tIF-pF-trV"/>
@@ -450,7 +425,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Group 1877" width="27" height="27"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>

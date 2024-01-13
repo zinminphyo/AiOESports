@@ -142,6 +142,8 @@
 		845EE94D2B1E2BC000F4C3CD /* TeamRankListsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EE94C2B1E2BC000F4C3CD /* TeamRankListsService.swift */; };
 		845EE9512B1F282D00F4C3CD /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EE94F2B1F282D00F4C3CD /* RankCell.swift */; };
 		845EE9522B1F282D00F4C3CD /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EE9502B1F282D00F4C3CD /* RankCell.xib */; };
+		8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */; };
+		8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */; };
 		8464B4E72B21BD06002B2EA5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8464B4E62B21BD06002B2EA5 /* IQKeyboardManagerSwift */; };
 		847046992B3008CF00EA807A /* RankCellWithCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */; };
 		8470469A2B3008CF00EA807A /* RankCellWithCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */; };
@@ -586,6 +588,8 @@
 		845EE94C2B1E2BC000F4C3CD /* TeamRankListsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankListsService.swift; sourceTree = "<group>"; };
 		845EE94F2B1F282D00F4C3CD /* RankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCell.swift; sourceTree = "<group>"; };
 		845EE9502B1F282D00F4C3CD /* RankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCell.xib; sourceTree = "<group>"; };
+		8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAmountCollectionViewCell.swift; sourceTree = "<group>"; };
+		8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldAmountCollectionViewCell.xib; sourceTree = "<group>"; };
 		847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCellWithCoverCell.swift; sourceTree = "<group>"; };
 		847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCellWithCoverCell.xib; sourceTree = "<group>"; };
 		84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingPresenting.swift; sourceTree = "<group>"; };
@@ -993,6 +997,7 @@
 		840CEE0F2B4D9886000A6EBB /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				8464B37E2B52E1DF0097B77A /* ShieldAmountCell */,
 				840CEE142B4D9CBB000A6EBB /* AcccountCell */,
 				840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */,
 				840CEE112B4D98A3000A6EBB /* BankAccountCell.xib */,
@@ -1672,6 +1677,15 @@
 				845EE9502B1F282D00F4C3CD /* RankCell.xib */,
 			);
 			path = RankCell;
+			sourceTree = "<group>";
+		};
+		8464B37E2B52E1DF0097B77A /* ShieldAmountCell */ = {
+			isa = PBXGroup;
+			children = (
+				8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */,
+				8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */,
+			);
+			path = ShieldAmountCell;
 			sourceTree = "<group>";
 		};
 		847046942B3007AC00EA807A /* RankCellWithCover */ = {
@@ -3460,6 +3474,7 @@
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
 				8470469A2B3008CF00EA807A /* RankCellWithCoverCell.xib in Resources */,
 				84A0510029E99678004D582B /* CreatorOverview.storyboard in Resources */,
+				8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */,
 				84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */,
 				84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */,
 				849BCE1E29E5522D0033C63A /* DetailsContentCollectionViewCell.xib in Resources */,
@@ -3679,6 +3694,7 @@
 				84DE4FCA2B0D10B00017AC84 /* ProfileViewModel.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				84F17AE42B0E3B2B00B97B08 /* PasscodeController.swift in Sources */,
+				8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */,
 				84334E902B1CA2D6004DD32D /* CasterDetails.swift in Sources */,
 				8437FE7529ED1A74008F7179 /* HomeModel.swift in Sources */,
 				842FC9AB29E83F9300C5F354 /* SignatureModel.swift in Sources */,
