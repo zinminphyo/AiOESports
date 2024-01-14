@@ -15,7 +15,8 @@ class BuyShieldsController: UIViewController {
     @IBOutlet private(set) var bankLists: UICollectionView!
     @IBOutlet private(set) var accountLists: UITableView!
     @IBOutlet private(set) var accountListsHeight: NSLayoutConstraint!
-    
+    @IBOutlet private(set) var phoneNumber1Label: UILabel!
+    @IBOutlet private(set) var phoneNumber2Label: UILabel!
     
     private let vm: BuyShieldsViewModel!
     private var subscription = Set<AnyCancellable>()
@@ -87,12 +88,62 @@ class BuyShieldsController: UIViewController {
                 guard let self = self else { return }
                 self.bankLists.reloadData()
             }.store(in: &subscription)
+        
+        vm.fetchingListsCompleted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.updateUI()
+            }.store(in: &subscription)
+        
+        vm.fetchShieldLists()
+    }
+    
+    
+    private func updateUI() {
+        accountListsHeight.constant = CGFloat(max(100, 70 * vm.accountLists.count))
+        view.invalidateIntrinsicContentSize()
+        accountLists.reloadData()
+        bankLists.reloadData()
+        shieldAmountListsView.reloadData()
+        phoneNumber1Label.text = vm.phoneNumber1
+        phoneNumber2Label.text = vm.phoneNumber2
     }
     
     
    @IBAction
     private func didTapBackBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction
+    private func didTapPhNum1(_ sender: UIButton) {
+        guard let url = URL(string: "tel://\(vm.phoneNumber1)") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @IBAction
+    private func didTapPhNum2(_ sender: UIButton) {
+        guard let url = URL(string: "tel://\(vm.phoneNumber2)") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @IBAction
+    private func didTapTelegram(_ sender: UIButton) {
+        guard let url = URL(string: "tg://\(vm.telegram)") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @IBAction
+    private func didTapViber(_ sender: UIButton) {
+        guard let url = URL(string: "viber://add?number=\(vm.viber)") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @IBAction
+    private func didTapMessenger(_ sender: UIButton) {
+        guard let url = URL(string: vm.messenger) else { return }
+        UIApplication.shared.open(url)
     }
 
 }
@@ -101,13 +152,15 @@ class BuyShieldsController: UIViewController {
 
 extension BuyShieldsController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        return collectionView == bankLists ? vm.bankLists.count : vm.shieldHistories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == shieldAmountListsView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier, for: indexPath) as! ShieldAmountCollectionViewCell
+            cell.render(shield: vm.shieldHistories[indexPath.row])
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountCell.reuseIdentifier, for: indexPath) as! BankAccountCell
@@ -124,11 +177,12 @@ extension BuyShieldsController: UICollectionViewDataSource, UICollectionViewDele
 
 extension BuyShieldsController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return vm.accountLists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountCell.reuseIdentifier, for: indexPath) as! AccountCell
+        cell.render(vm.accountLists[indexPath.row])
         return cell
     }
     

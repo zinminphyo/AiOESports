@@ -144,6 +144,9 @@
 		845EE9522B1F282D00F4C3CD /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EE9502B1F282D00F4C3CD /* RankCell.xib */; };
 		8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */; };
 		8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */; };
+		8464B3852B52F3B90097B77A /* BuyShieldsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */; };
+		8464B3882B52F3E00097B77A /* BuyShieldsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3872B52F3E00097B77A /* BuyShieldsResponse.swift */; };
+		8464B38A2B52F7310097B77A /* BuyShieldsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3892B52F7310097B77A /* BuyShieldsService.swift */; };
 		8464B4E72B21BD06002B2EA5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8464B4E62B21BD06002B2EA5 /* IQKeyboardManagerSwift */; };
 		847046992B3008CF00EA807A /* RankCellWithCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */; };
 		8470469A2B3008CF00EA807A /* RankCellWithCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */; };
@@ -590,6 +593,9 @@
 		845EE9502B1F282D00F4C3CD /* RankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCell.xib; sourceTree = "<group>"; };
 		8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAmountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldAmountCollectionViewCell.xib; sourceTree = "<group>"; };
+		8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsServiceProtocol.swift; sourceTree = "<group>"; };
+		8464B3872B52F3E00097B77A /* BuyShieldsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsResponse.swift; sourceTree = "<group>"; };
+		8464B3892B52F7310097B77A /* BuyShieldsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsService.swift; sourceTree = "<group>"; };
 		847046972B3008CF00EA807A /* RankCellWithCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCellWithCoverCell.swift; sourceTree = "<group>"; };
 		847046982B3008CF00EA807A /* RankCellWithCoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCellWithCoverCell.xib; sourceTree = "<group>"; };
 		84725AAC29E07DB8003658CD /* FilterSettingPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingPresenting.swift; sourceTree = "<group>"; };
@@ -1688,6 +1694,23 @@
 			path = ShieldAmountCell;
 			sourceTree = "<group>";
 		};
+		8464B3832B52F30D0097B77A /* services */ = {
+			isa = PBXGroup;
+			children = (
+				8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */,
+				8464B3892B52F7310097B77A /* BuyShieldsService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		8464B3862B52F3CE0097B77A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8464B3872B52F3E00097B77A /* BuyShieldsResponse.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		847046942B3007AC00EA807A /* RankCellWithCover */ = {
 			isa = PBXGroup;
 			children = (
@@ -2384,6 +2407,8 @@
 		84CD8B782B4A611C00F8F454 /* BuyShields */ = {
 			isa = PBXGroup;
 			children = (
+				8464B3862B52F3CE0097B77A /* model */,
+				8464B3832B52F30D0097B77A /* services */,
 				840CEE192B4DAB47000A6EBB /* viewModel */,
 				840CEE0E2B4D9882000A6EBB /* view */,
 				84CD8B792B4A611F00F8F454 /* controller */,
@@ -3686,6 +3711,7 @@
 				84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */,
 				8436FA192B0E661B007EB571 /* ComingSoonView.swift in Sources */,
 				84F602EB29DC7EE600250C25 /* FilterSettingModule.swift in Sources */,
+				8464B3882B52F3E00097B77A /* BuyShieldsResponse.swift in Sources */,
 				84F58F712B143F4E00F2FFAA /* FollowAndVoteServiceProtocol.swift in Sources */,
 				84F6C5B229CA12E800D21EE2 /* ViewController.swift in Sources */,
 				84F5FB1129DEC5DC00734CAE /* SearchInteractor.swift in Sources */,
@@ -3873,6 +3899,7 @@
 				842FAACC2B2D7A32009231BC /* PlayersRankFetchingService.swift in Sources */,
 				8437FE8129ED1E1E008F7179 /* HomeInteractor.swift in Sources */,
 				84B7456229E46AA50086C708 /* SocialModel.swift in Sources */,
+				8464B3852B52F3B90097B77A /* BuyShieldsServiceProtocol.swift in Sources */,
 				84B7458E29E495960086C708 /* SponsorCollectionViewCell.swift in Sources */,
 				842FAACA2B2D7830009231BC /* PlayersRankFetchingServiceProtocol.swift in Sources */,
 				8459D57B29DDBD4C00DDF266 /* NetworkError.swift in Sources */,
@@ -3927,6 +3954,7 @@
 				849AEBB02A1614830024AAAA /* RegisterInteractor.swift in Sources */,
 				84334E932B1CC24D004DD32D /* FollowServiceProtocol.swift in Sources */,
 				84DC1A0F2A0949CF0049BDD2 /* AiOPickerDelegate.swift in Sources */,
+				8464B38A2B52F7310097B77A /* BuyShieldsService.swift in Sources */,
 				84CD8B7D2B4A614200F8F454 /* BuyShieldsController.swift in Sources */,
 				84F602FB29DC85A400250C25 /* RankRouter.swift in Sources */,
 				8459D57F29DDC0CF00DDF266 /* NetworkService.swift in Sources */,

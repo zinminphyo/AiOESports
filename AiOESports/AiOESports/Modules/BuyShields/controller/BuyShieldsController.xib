@@ -25,6 +25,8 @@
                 <outlet property="accountLists" destination="V1A-1K-PAl" id="fFd-nf-43J"/>
                 <outlet property="accountListsHeight" destination="d1H-t2-7K9" id="rII-gA-qNR"/>
                 <outlet property="bankLists" destination="UKL-E5-LqU" id="CKt-6x-7Zv"/>
+                <outlet property="phoneNumber1Label" destination="ogw-7E-eLL" id="ZE8-a7-BjR"/>
+                <outlet property="phoneNumber2Label" destination="B6B-bB-muH" id="sGN-i0-hb4"/>
                 <outlet property="shieldAmountListsView" destination="d9n-Rp-4kW" id="tFS-R8-Ctk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c5z-35-XoI"/>
             </connections>
@@ -195,11 +197,22 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW1-cN-pj0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="45"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <connections>
+                                                                        <action selector="didTapPhNum1:" destination="-1" eventType="touchUpInside" id="Hm3-6D-oat"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                             <constraints>
+                                                                <constraint firstItem="xW1-cN-pj0" firstAttribute="top" secondItem="zbF-P9-LAO" secondAttribute="top" id="Cs5-Ux-Dlc"/>
+                                                                <constraint firstAttribute="bottom" secondItem="xW1-cN-pj0" secondAttribute="bottom" id="JPY-mf-p0V"/>
                                                                 <constraint firstItem="XEs-yq-3RG" firstAttribute="centerX" secondItem="zbF-P9-LAO" secondAttribute="centerX" id="OO2-29-Xa6"/>
+                                                                <constraint firstAttribute="trailing" secondItem="xW1-cN-pj0" secondAttribute="trailing" id="PcZ-Zr-sgM"/>
                                                                 <constraint firstItem="XEs-yq-3RG" firstAttribute="centerY" secondItem="zbF-P9-LAO" secondAttribute="centerY" id="ZNT-mZ-IQt"/>
+                                                                <constraint firstItem="xW1-cN-pj0" firstAttribute="leading" secondItem="zbF-P9-LAO" secondAttribute="leading" id="vzJ-N1-eIB"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -229,10 +242,21 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM6-mT-UcG">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="45"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <connections>
+                                                                        <action selector="didTapPhNum2:" destination="-1" eventType="touchUpInside" id="191-G2-NfC"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="547-Oc-lGz" firstAttribute="centerY" secondItem="VXO-Hu-RS8" secondAttribute="centerY" id="I58-Ny-GLP"/>
+                                                                <constraint firstItem="LM6-mT-UcG" firstAttribute="top" secondItem="VXO-Hu-RS8" secondAttribute="top" id="b66-20-8Vu"/>
+                                                                <constraint firstItem="LM6-mT-UcG" firstAttribute="leading" secondItem="VXO-Hu-RS8" secondAttribute="leading" id="j4g-kc-VEa"/>
+                                                                <constraint firstAttribute="trailing" secondItem="LM6-mT-UcG" secondAttribute="trailing" id="oKj-32-Cck"/>
+                                                                <constraint firstAttribute="bottom" secondItem="LM6-mT-UcG" secondAttribute="bottom" id="pMR-0c-HPp"/>
                                                                 <constraint firstItem="547-Oc-lGz" firstAttribute="centerX" secondItem="VXO-Hu-RS8" secondAttribute="centerX" id="xbX-h9-7SM"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
@@ -253,29 +277,40 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="45"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="18P-tt-9C0">
-                                                                    <rect key="frame" x="14.666666666666664" y="12.666666666666742" width="83.333333333333343" height="20"/>
+                                                                    <rect key="frame" x="19.333333333333336" y="12.666666666666742" width="73.666666666666657" height="20"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pv7-vX-sPC">
-                                                                            <rect key="frame" x="0.0" y="0.66666666666666607" width="20" height="19"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Telegram" translatesAutoresizingMaskIntoConstraints="NO" id="Pv7-vX-sPC">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                             <color key="tintColor" name="PrimaryText"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="20" id="gzE-vP-bdU"/>
                                                                                 <constraint firstAttribute="height" constant="20" id="mcZ-hs-OLc"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YK9-mY-Wiw">
-                                                                            <rect key="frame" x="25.000000000000004" y="0.0" width="58.333333333333343" height="20"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telegram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YK9-mY-Wiw">
+                                                                            <rect key="frame" x="24.999999999999996" y="0.0" width="48.666666666666657" height="20"/>
                                                                             <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="11"/>
                                                                             <color key="textColor" name="PrimaryText"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxl-B7-w2U">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="45"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <connections>
+                                                                        <action selector="didTapTelegram:" destination="-1" eventType="touchUpInside" id="OCo-d3-dNd"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="18P-tt-9C0" firstAttribute="centerY" secondItem="0n8-5f-yW6" secondAttribute="centerY" id="1L7-cz-CUt"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Yxl-B7-w2U" secondAttribute="bottom" id="9xG-z0-xMy"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Yxl-B7-w2U" secondAttribute="trailing" id="M39-8g-G5B"/>
+                                                                <constraint firstItem="Yxl-B7-w2U" firstAttribute="leading" secondItem="0n8-5f-yW6" secondAttribute="leading" id="MaI-G9-G7k"/>
                                                                 <constraint firstItem="18P-tt-9C0" firstAttribute="centerX" secondItem="0n8-5f-yW6" secondAttribute="centerX" id="gtf-GK-mfV"/>
+                                                                <constraint firstItem="Yxl-B7-w2U" firstAttribute="top" secondItem="0n8-5f-yW6" secondAttribute="top" id="zpL-wO-kaX"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -287,29 +322,40 @@
                                                             <rect key="frame" x="122.33333333333334" y="0.0" width="112.33333333333334" height="45"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZGB-We-RF4">
-                                                                    <rect key="frame" x="14.666666666666657" y="12.666666666666742" width="83.333333333333329" height="20"/>
+                                                                    <rect key="frame" x="29.333333333333314" y="12.666666666666742" width="54" height="20"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8pz-MA-e1z">
-                                                                            <rect key="frame" x="0.0" y="0.66666666666666607" width="20" height="19"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Viber" translatesAutoresizingMaskIntoConstraints="NO" id="8pz-MA-e1z">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                             <color key="tintColor" name="PrimaryText"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="20" id="5Ka-mI-TBz"/>
                                                                                 <constraint firstAttribute="height" constant="20" id="Eby-p7-g8d"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-9j-9jZ">
-                                                                            <rect key="frame" x="25.000000000000004" y="0.0" width="58.333333333333343" height="20"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-9j-9jZ">
+                                                                            <rect key="frame" x="25" y="0.0" width="29" height="20"/>
                                                                             <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="11"/>
                                                                             <color key="textColor" name="PrimaryText"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chR-OI-gOH">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="45"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <connections>
+                                                                        <action selector="didTapViber:" destination="-1" eventType="touchUpInside" id="alF-rs-aKx"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                             <constraints>
+                                                                <constraint firstItem="chR-OI-gOH" firstAttribute="top" secondItem="xBK-rz-j8y" secondAttribute="top" id="2br-fo-Xq6"/>
                                                                 <constraint firstItem="ZGB-We-RF4" firstAttribute="centerX" secondItem="xBK-rz-j8y" secondAttribute="centerX" id="OXf-3t-veJ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="chR-OI-gOH" secondAttribute="trailing" id="R4d-A0-thZ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="chR-OI-gOH" secondAttribute="bottom" id="l43-4s-yK0"/>
                                                                 <constraint firstItem="ZGB-We-RF4" firstAttribute="centerY" secondItem="xBK-rz-j8y" secondAttribute="centerY" id="weN-yT-ncl"/>
+                                                                <constraint firstItem="chR-OI-gOH" firstAttribute="leading" secondItem="xBK-rz-j8y" secondAttribute="leading" id="x1y-ji-VLV"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -323,8 +369,8 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="my3-A8-5XV">
                                                                     <rect key="frame" x="14.666666666666629" y="12.666666666666742" width="83.333333333333329" height="20"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4bG-6e-2GW">
-                                                                            <rect key="frame" x="0.0" y="0.66666666666666607" width="20" height="19"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Messenger" translatesAutoresizingMaskIntoConstraints="NO" id="4bG-6e-2GW">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                             <color key="tintColor" name="PrimaryText"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="20" id="YRJ-1h-b3v"/>
@@ -339,11 +385,22 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-WP-Qfj">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="45"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <connections>
+                                                                        <action selector="didTapMessenger:" destination="-1" eventType="touchUpInside" id="5Gg-zY-mCC"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="InputColor"/>
                                                             <constraints>
+                                                                <constraint firstItem="Taq-WP-Qfj" firstAttribute="top" secondItem="kcf-VH-vAl" secondAttribute="top" id="0ra-2S-NkI"/>
                                                                 <constraint firstItem="my3-A8-5XV" firstAttribute="centerX" secondItem="kcf-VH-vAl" secondAttribute="centerX" id="2SW-gT-AH6"/>
+                                                                <constraint firstItem="Taq-WP-Qfj" firstAttribute="leading" secondItem="kcf-VH-vAl" secondAttribute="leading" id="BUe-wr-YQE"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Taq-WP-Qfj" secondAttribute="trailing" id="CtK-Q3-QyS"/>
                                                                 <constraint firstItem="my3-A8-5XV" firstAttribute="centerY" secondItem="kcf-VH-vAl" secondAttribute="centerY" id="OaO-f8-4t6"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Taq-WP-Qfj" secondAttribute="bottom" id="uZM-l2-K86"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -425,8 +482,10 @@
         </view>
     </objects>
     <resources>
+        <image name="Messenger" width="19.666666030883789" height="19.666666030883789"/>
+        <image name="Telegram" width="16.666666030883789" height="16"/>
+        <image name="Viber" width="16.666666030883789" height="16.333333969116211"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
-        <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="shield" width="19" height="19"/>
         <namedColor name="InputColor">

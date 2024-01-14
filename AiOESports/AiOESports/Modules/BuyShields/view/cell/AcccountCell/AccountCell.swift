@@ -9,6 +9,11 @@ import UIKit
 
 class AccountCell: UITableViewCell {
     
+    let pasteBoard = UIPasteboard.general
+    
+    @IBOutlet private(set) var paymentNameLabe: UILabel!
+    @IBOutlet private(set) var accountNumberLabel: UILabel!
+    
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
@@ -24,6 +29,16 @@ class AccountCell: UITableViewCell {
         // Configure the view for the selected state
         
         selectionStyle = .none
+    }
+    
+    @IBAction
+    private func didTapCopy(_ sender: UIButton) {
+        pasteBoard.string = accountNumberLabel.text
+    }
+    
+    func render(_ payment: BuyShieldsResponse.Payment) {
+        paymentNameLabe.text = payment.name
+        accountNumberLabel.text = payment.acc_number
     }
     
 }

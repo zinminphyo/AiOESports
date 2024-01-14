@@ -70,6 +70,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEG-YW-QLc">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="58"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="didTapCopy:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="acv-tj-gpk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,6 +103,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="accountNumberLabel" destination="c0U-Md-QPW" id="lpm-DH-tpS"/>
+                <outlet property="paymentNameLabe" destination="am2-ye-PsI" id="EgW-nu-HRs"/>
+            </connections>
             <point key="canvasLocation" x="19.847328244274809" y="-6.3380281690140849"/>
         </tableViewCell>
     </objects>
