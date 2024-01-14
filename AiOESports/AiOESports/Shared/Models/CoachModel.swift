@@ -25,6 +25,10 @@ struct CoachModel: Decodable {
         return NetworkBaseURLs.shared.baseURL + "/" + (coverImage ?? "")
     }
     
+    var countryImageFullURL: String {
+        return NetworkBaseURLs.shared.baseURL + "/" + (location ?? "")
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case teamID = "team_id"

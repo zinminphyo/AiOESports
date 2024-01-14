@@ -201,7 +201,7 @@ class RankPresenter: RankPresenting {
     }
     
     func tappedSearchBtn() {
-        router?.routeToSearch(category: selectedCategory)
+        router?.routeToSearch(category: rankCategory)
     }
     
     func tappedRankItem(id: Int) {

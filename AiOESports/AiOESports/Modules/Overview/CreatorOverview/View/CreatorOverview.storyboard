@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,10 +23,11 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aa4-ce-Goe">
-                                        <rect key="frame" x="0.0" y="8" width="393" height="50"/>
+                                        <rect key="frame" x="146.66666666666666" y="8" width="100" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="4Kw-o1-ytB"/>
+                                            <constraint firstAttribute="width" constant="100" id="wcu-mS-Mgc"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uvi-Qw-VkM">
                                             <size key="itemSize" width="128" height="128"/>
@@ -35,7 +37,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QBe-LO-NB3">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                                <rect key="frame" x="-14" y="0.0" width="127.99999999999997" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EjC-MC-ldS">
                                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
@@ -74,10 +76,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="oBy-E5-2Jh" firstAttribute="leading" secondItem="Taa-Fq-CEm" secondAttribute="leading" constant="10" id="9xf-CF-BTz"/>
+                                    <constraint firstItem="aa4-ce-Goe" firstAttribute="centerX" secondItem="Taa-Fq-CEm" secondAttribute="centerX" id="AD0-C3-YQG"/>
                                     <constraint firstAttribute="trailing" secondItem="0sA-DW-3dh" secondAttribute="trailing" id="Bpo-Hd-jyA"/>
                                     <constraint firstAttribute="trailing" secondItem="6JP-hu-ae8" secondAttribute="trailing" constant="10" id="IkX-zw-RKO"/>
                                     <constraint firstItem="qHp-iQ-AJE" firstAttribute="top" secondItem="6JP-hu-ae8" secondAttribute="bottom" constant="16" id="Kr6-uF-mEK"/>
-                                    <constraint firstAttribute="trailing" secondItem="aa4-ce-Goe" secondAttribute="trailing" id="M2t-vL-aES"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aa4-ce-Goe" secondAttribute="trailing" id="M2t-vL-aES"/>
                                     <constraint firstItem="aa4-ce-Goe" firstAttribute="top" secondItem="Taa-Fq-CEm" secondAttribute="top" constant="8" id="X2k-nl-OZO"/>
                                     <constraint firstItem="6JP-hu-ae8" firstAttribute="leading" secondItem="Taa-Fq-CEm" secondAttribute="leading" constant="10" id="hBn-92-r2l"/>
                                     <constraint firstItem="oBy-E5-2Jh" firstAttribute="top" secondItem="qHp-iQ-AJE" secondAttribute="bottom" constant="16" id="htt-4F-HPK"/>
@@ -85,7 +88,7 @@
                                     <constraint firstItem="qHp-iQ-AJE" firstAttribute="leading" secondItem="Taa-Fq-CEm" secondAttribute="leading" constant="10" id="qd1-e3-oOf"/>
                                     <constraint firstItem="6JP-hu-ae8" firstAttribute="top" secondItem="0sA-DW-3dh" secondAttribute="bottom" constant="8" id="qmq-bS-1qK"/>
                                     <constraint firstItem="0sA-DW-3dh" firstAttribute="top" secondItem="aa4-ce-Goe" secondAttribute="bottom" constant="8" id="qy8-14-evT"/>
-                                    <constraint firstItem="aa4-ce-Goe" firstAttribute="leading" secondItem="Taa-Fq-CEm" secondAttribute="leading" id="w7E-oJ-VYX"/>
+                                    <constraint firstItem="aa4-ce-Goe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Taa-Fq-CEm" secondAttribute="leading" id="w7E-oJ-VYX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -104,6 +107,7 @@
                         <outlet property="collectionView" destination="aa4-ce-Goe" id="I9I-VZ-yVI"/>
                         <outlet property="contentContainerView" destination="Taa-Fq-CEm" id="gT8-vx-w0Y"/>
                         <outlet property="seperatorView" destination="6JP-hu-ae8" id="pyC-8c-veM"/>
+                        <outlet property="socialViewWidthConstraint" destination="wcu-mS-Mgc" id="4Xc-3x-C7g"/>
                         <outlet property="tableView" destination="0sA-DW-3dh" id="bgF-gj-WiK"/>
                     </connections>
                 </viewController>

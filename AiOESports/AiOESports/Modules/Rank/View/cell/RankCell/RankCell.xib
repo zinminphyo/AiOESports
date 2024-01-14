@@ -84,7 +84,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMa-zx-XmH">
-                                <rect key="frame" x="299.33333333333331" y="10" width="5.6666666666666856" height="21"/>
+                                <rect key="frame" x="299.33333333333331" y="11" width="5.6666666666666856" height="21"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
                                 <color key="textColor" red="0.50980392159999999" green="0.21176470589999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                             <constraint firstItem="ftv-b0-XfZ" firstAttribute="trailing" secondItem="zMa-zx-XmH" secondAttribute="trailing" id="KMU-xw-W6k"/>
                             <constraint firstItem="iek-wc-Fh8" firstAttribute="top" secondItem="8r2-Iw-Lqg" secondAttribute="top" constant="10" id="fAH-1H-e4Z"/>
                             <constraint firstAttribute="trailing" secondItem="zMa-zx-XmH" secondAttribute="trailing" constant="15" id="nsa-6k-pXe"/>
-                            <constraint firstItem="zMa-zx-XmH" firstAttribute="top" secondItem="iek-wc-Fh8" secondAttribute="top" id="nxe-L8-yAt"/>
+                            <constraint firstItem="zMa-zx-XmH" firstAttribute="top" secondItem="iek-wc-Fh8" secondAttribute="top" constant="1" id="nxe-L8-yAt"/>
                             <constraint firstItem="v8m-VT-4fv" firstAttribute="centerY" secondItem="8r2-Iw-Lqg" secondAttribute="centerY" id="xW4-0T-x93"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -142,6 +142,7 @@
                 <outlet property="mainImageView" destination="v8m-VT-4fv" id="Fy0-HE-iMB"/>
                 <outlet property="rankLabel" destination="zMa-zx-XmH" id="9GQ-gd-KmI"/>
                 <outlet property="ratingLabel" destination="QiC-WL-CfU" id="5lp-yc-VZ3"/>
+                <outlet property="ratingView" destination="ftv-b0-XfZ" id="ZCp-ly-1ou"/>
                 <outlet property="teamNameLabel" destination="Xeo-5f-Jhz" id="Qmr-Xm-LYQ"/>
             </connections>
             <point key="canvasLocation" x="-38.167938931297705" y="-9.1549295774647899"/>

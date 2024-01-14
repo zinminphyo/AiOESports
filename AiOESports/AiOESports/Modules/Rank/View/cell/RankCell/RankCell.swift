@@ -15,6 +15,7 @@ class RankCell: UITableViewCell {
     @IBOutlet private(set) var cityNameLabel: UILabel!
     @IBOutlet private(set) var rankLabel: UILabel!
     @IBOutlet private(set) var ratingLabel: UILabel!
+    @IBOutlet private(set) var ratingView: UIStackView!
     
     static var reuseIdentifier: String {
         return String(describing: Self.self)
@@ -42,6 +43,7 @@ class RankCell: UITableViewCell {
         rankLabel.textColor = rank.rankColor
         rankLabel.font = rank.font
         ratingLabel.text = rank.rating
+        ratingView.isHidden = Int(rank.rating) == 0
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 class CreatorOverview: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private(set) var socialViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var contentContainerView: UIView!
     @IBOutlet weak var seperatorView: UIView!
@@ -135,9 +136,11 @@ extension CreatorOverview: UITableViewDataSource, UITableViewDelegate {
 extension CreatorOverview: CreatorOverviewViewDelegate {
     func renderUI(details: CasterDetails) {
         self.details = details
-        self.socialLists = details.social
-        self.collectionView.reloadData()
-        self.tableView.reloadData()
+        socialLists = details.social
+        collectionView.reloadData()
+        collectionView.invalidateIntrinsicContentSize()
+        socialViewWidthConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.width
+        tableView.reloadData()
         bioValueLabel.text = details.details.bio
     }
 }

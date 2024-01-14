@@ -151,7 +151,7 @@ class Details: UIViewController {
     private func configureContainerScrollView() {
         self.containerScrollView.showsVerticalScrollIndicator = false
         self.containerScrollView.showsHorizontalScrollIndicator = false
-        contentScrollView.backgroundColor = UIColor.clear
+        contentScrollView.backgroundColor = Colors.Theme.inputColor
     }
     
     private func configureCoverImageView() {
@@ -159,7 +159,7 @@ class Details: UIViewController {
     }
     
     private func configureTeamInfoContainerView() {
-        teamInfoContainerView.backgroundColor = Colors.Theme.mainColor
+//        teamInfoContainerView.backgroundColor = Colors.Theme.mainColor
     }
     
     private func configureTeamNameLabel() {
@@ -209,7 +209,7 @@ class Details: UIViewController {
         contentScrollView.showsVerticalScrollIndicator = false
         contentScrollView.isPagingEnabled = true
         contentScrollView.bounces = false
-        contentScrollView.backgroundColor = UIColor.clear
+//        contentScrollView.backgroundColor = UIColor.clear
         contentScrollView.delegate = self
     }
     

@@ -73,6 +73,7 @@ class RankListsView: UIControl, NibLoadable {
     @IBOutlet private(set) var listsTblView: UITableView!
     @IBOutlet private(set) var loadingView: LoadingView!
     @IBOutlet private(set) var emptyView: UIView!
+    @IBOutlet private(set) var noMoreDataLabel: UILabel!
     
     lazy var tableHeaderView: UIImageView = {
         let imgView = UIImageView(frame: .init(x: 0, y: 0, width: listsTblView.bounds.width, height: 180))
@@ -112,6 +113,7 @@ class RankListsView: UIControl, NibLoadable {
     var hasMore: Bool = false {
         didSet {
             listsTblView.reloadSections([1], with: .fade)
+            noMoreDataLabel.isHidden = hasMore
         }
     }
     

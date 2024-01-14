@@ -32,6 +32,7 @@ class Search: UIViewController {
         configureBackButton()
         configureSearchInputTextField()
         configureTableView()
+        searchLabel.text = presenter?.searchTitle
     }
     
     private func configureBackButton() {

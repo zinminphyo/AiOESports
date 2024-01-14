@@ -11,6 +11,7 @@ class CasterOverview: UIViewController {
     
     @IBOutlet weak var contentContainerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private(set) var socialViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     private var socialLists: [SocialModel] = []
@@ -117,9 +118,11 @@ extension CasterOverview: UITableViewDataSource, UITableViewDelegate {
 
 extension CasterOverview: CasterOverviewViewDelegate {
     func renderUI(details: CasterDetails) {
-        self.socialLists = details.social
-        self.collectionView.reloadData()
+        socialLists = details.social
+        collectionView.reloadData()
+        collectionView.invalidateIntrinsicContentSize()
+        socialViewWidthConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.width
         self.details = details
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 }

@@ -31,7 +31,8 @@ class ProfileViewModel {
         Task {
             do {
                 let response = try await service.fetchUserProfile()
-                guard let usermodel = response.result else { return }
+                guard var usermodel = response.result else { return }
+//                usermodel.level = "premium"
                 profileModel = usermodel
             } catch {
                 print("Error in profile fetching service is \(error.localizedDescription)")

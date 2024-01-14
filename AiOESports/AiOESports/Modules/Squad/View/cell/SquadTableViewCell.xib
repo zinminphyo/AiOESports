@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,14 +36,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLe-t1-N1C">
                                 <rect key="frame" x="0.0" y="20" width="256" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YEl-zf-3MF">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N6T-lh-z5V">
                                         <rect key="frame" x="0.0" y="2" width="24" height="16"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sz9-ID-THD">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Sz9-ID-THD" secondAttribute="height" multiplier="1.5:1" id="EBO-uC-Qp7"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YEl-zf-3MF">
+                                        <rect key="frame" x="32" y="2" width="24" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YEl-zf-3MF" secondAttribute="height" multiplier="1.5:1" id="qhh-kX-fIO"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVs-Pl-kmo">
-                                        <rect key="frame" x="32" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
+                                        <rect key="frame" x="64" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -50,10 +62,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="YEl-zf-3MF" firstAttribute="leading" secondItem="bLe-t1-N1C" secondAttribute="leading" id="KRJ-yT-6Ud"/>
                                     <constraint firstItem="YEl-zf-3MF" firstAttribute="top" secondItem="bLe-t1-N1C" secondAttribute="top" constant="2" id="Thp-fQ-pbL"/>
                                     <constraint firstItem="pVs-Pl-kmo" firstAttribute="centerY" secondItem="bLe-t1-N1C" secondAttribute="centerY" id="a7o-e0-dXq"/>
+                                    <constraint firstAttribute="bottom" secondItem="N6T-lh-z5V" secondAttribute="bottom" constant="2" id="bfx-9u-n2h"/>
+                                    <constraint firstItem="N6T-lh-z5V" firstAttribute="top" secondItem="bLe-t1-N1C" secondAttribute="top" constant="2" id="enc-xx-bhz"/>
                                     <constraint firstAttribute="bottom" secondItem="YEl-zf-3MF" secondAttribute="bottom" constant="2" id="hUY-G6-9tg"/>
+                                    <constraint firstItem="YEl-zf-3MF" firstAttribute="leading" secondItem="N6T-lh-z5V" secondAttribute="trailing" constant="8" id="oeg-jR-kaA"/>
+                                    <constraint firstItem="N6T-lh-z5V" firstAttribute="leading" secondItem="bLe-t1-N1C" secondAttribute="leading" id="xhS-pL-k7T"/>
                                     <constraint firstItem="pVs-Pl-kmo" firstAttribute="leading" secondItem="YEl-zf-3MF" secondAttribute="trailing" constant="8" id="xiB-gU-RTK"/>
                                 </constraints>
                             </view>
@@ -72,6 +87,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="countryImageView" destination="YEl-zf-3MF" id="cTb-d4-Iqa"/>
+                <outlet property="laneIconImageView" destination="Sz9-ID-THD" id="Okk-lc-lq7"/>
                 <outlet property="locationLabel" destination="pVs-Pl-kmo" id="nfo-zY-Avo"/>
                 <outlet property="mainImageView" destination="Km8-7F-1h1" id="Ldt-5v-uQD"/>
                 <outlet property="nameLabel" destination="zi2-6c-hzr" id="pn1-5y-sXZ"/>
