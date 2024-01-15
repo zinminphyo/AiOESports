@@ -90,7 +90,7 @@ class Home: UIViewController {
     }
     
     private func presentVersionUpdateAlert() {
-        let vc = VersionUpdateController()
+        let vc = UnderMaintenanceController()
         present(vc, animated: true)
     }
     
