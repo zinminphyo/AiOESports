@@ -68,7 +68,7 @@ class HomePresenter: HomePresenting {
                 guard isUnderMaintenance == false else { return }
                 isForceUpdate = response.isForceUpdate
                 isUpdateAvailable = Int(response.version) ?? 1 >= 1
-                
+                appStoreURL = response.url
             } catch {
                 print("Error is \(error.localizedDescription)")
                 fetchForceVersion()
