@@ -49,7 +49,7 @@ class BuyShieldsController: UIViewController {
         shieldAmountListsView.register(UINib(nibName: String(describing: ShieldAmountCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier)
         shieldAmountListsView.register(UINib(nibName: String(describing: MoreOfferCell.self), bundle: nil), forCellWithReuseIdentifier: MoreOfferCell.reuseIdentifier)
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 120, height: 170)
+        layout.itemSize = CGSize(width: 130, height: 200)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 10

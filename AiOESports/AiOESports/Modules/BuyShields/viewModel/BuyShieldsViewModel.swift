@@ -39,7 +39,7 @@ class BuyShieldsViewModel {
                 let dict = Dictionary(grouping: response.payment, by: { $0.platform })
                 bankLists = dict.compactMap{ $0.key }
                 accountLists = response.payment
-                shieldHistories = response.shield_amount.filter{ $0.extra != nil }
+                shieldHistories = response.shield_amount.filter{ $0.amount == "30" || $0.amount == "500" || $0.amount == "3000" || $0.amount == "10000" }
                 phoneNumber1 = response.hotline.first(where: { $0.platform == "phone_one" } )?.number ?? ""
                 phoneNumber2 = response.hotline.first(where: { $0.platform == "phone_two" })?.number ?? ""
                 telegram = response.hotline.first(where: { $0.platform == "telegram" } )?.number ?? ""
