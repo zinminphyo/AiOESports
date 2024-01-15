@@ -55,7 +55,7 @@ class BuyShieldsController: UIViewController {
         shieldAmountListsView.collectionViewLayout = layout
         shieldAmountListsView.dataSource = self
         shieldAmountListsView.showsHorizontalScrollIndicator = false
-        shieldAmountListsView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        shieldAmountListsView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
     }
     
     private func configureBankLists() {
@@ -77,6 +77,7 @@ class BuyShieldsController: UIViewController {
         accountLists.separatorStyle = .none
         accountLists.dataSource = self
         accountLists.delegate = self
+        accountLists.isScrollEnabled = false
         accountListsHeight.constant = 70 * 3
         view.invalidateIntrinsicContentSize()
     }
