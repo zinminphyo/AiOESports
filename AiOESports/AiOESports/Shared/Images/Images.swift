@@ -264,3 +264,10 @@ extension Images {
         return UIImage(named: value, in: .main, compatibleWith: nil)
     }
 }
+
+
+extension Images {
+    static func getPaymentImage(_ name: String) -> UIImage? {
+        return UIImage(named: name, in: .main, compatibleWith: nil)
+    }
+}

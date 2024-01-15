@@ -47,6 +47,7 @@ class BuyShieldsController: UIViewController {
     
     private func configureShieldAmountListsView() {
         shieldAmountListsView.register(UINib(nibName: String(describing: ShieldAmountCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier)
+        shieldAmountListsView.register(UINib(nibName: String(describing: MoreOfferCell.self), bundle: nil), forCellWithReuseIdentifier: MoreOfferCell.reuseIdentifier)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 120, height: 170)
         layout.minimumLineSpacing = 10
@@ -111,6 +112,10 @@ class BuyShieldsController: UIViewController {
         phoneNumber2Label.text = vm.phoneNumber2
     }
     
+    private func routeToMoreOffer() {
+        let vc = MoreOfferController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
    @IBAction
     private func didTapBackBtn(_ sender: UIButton) {
@@ -152,17 +157,34 @@ class BuyShieldsController: UIViewController {
 
 
 extension BuyShieldsController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return collectionView == shieldAmountListsView ? 2 : 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return collectionView == bankLists ? vm.bankLists.count : vm.shieldHistories.count
+        if collectionView == shieldAmountListsView {
+            return section == 0 ? vm.shieldHistories.count : 1
+        }
+        return vm.bankLists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         if collectionView == shieldAmountListsView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier, for: indexPath) as! ShieldAmountCollectionViewCell
-            cell.render(shield: vm.shieldHistories[indexPath.row])
-            return cell
+            if indexPath.section == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShieldAmountCollectionViewCell.reuseIdentifier, for: indexPath) as! ShieldAmountCollectionViewCell
+                cell.render(shield: vm.shieldHistories[indexPath.row])
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoreOfferCell.reuseIdentifier, for: indexPath) as! MoreOfferCell
+                cell.tappedMoreOffer = { [weak self] in
+                    guard let self = self else { return }
+                    self.routeToMoreOffer()
+                }
+                return cell
+            }
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountCell.reuseIdentifier, for: indexPath) as! BankAccountCell
             cell.render(isSelected: indexPath.row == vm.selectedIndex)

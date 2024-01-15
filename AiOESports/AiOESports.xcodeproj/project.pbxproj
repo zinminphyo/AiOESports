@@ -324,6 +324,10 @@
 		84CF0A1229D9FB1D00F87400 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF0A1129D9FB1D00F87400 /* Shop.storyboard */; };
 		84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1329D9FB2800F87400 /* Shop.swift */; };
 		84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1529D9FB3900F87400 /* ShopModule.swift */; };
+		84D772192B55814E00A1C124 /* MoreOfferController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D772182B55814E00A1C124 /* MoreOfferController.xib */; };
+		84D7721B2B55829E00A1C124 /* MoreOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721A2B55829E00A1C124 /* MoreOfferController.swift */; };
+		84D7721F2B55855600A1C124 /* MoreOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721D2B55855600A1C124 /* MoreOfferCell.swift */; };
+		84D772202B55855600A1C124 /* MoreOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7721E2B55855600A1C124 /* MoreOfferCell.xib */; };
 		84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46929E277C8006B06DD /* CreatorObject.swift */; };
 		84D9C46C29E27E08006B06DD /* NetworkBaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */; };
 		84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46D29E2822E006B06DD /* CasterObject.swift */; };
@@ -783,6 +787,10 @@
 		84CF0A1129D9FB1D00F87400 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		84CF0A1329D9FB2800F87400 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		84CF0A1529D9FB3900F87400 /* ShopModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModule.swift; sourceTree = "<group>"; };
+		84D772182B55814E00A1C124 /* MoreOfferController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferController.xib; sourceTree = "<group>"; };
+		84D7721A2B55829E00A1C124 /* MoreOfferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferController.swift; sourceTree = "<group>"; };
+		84D7721D2B55855600A1C124 /* MoreOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferCell.swift; sourceTree = "<group>"; };
+		84D7721E2B55855600A1C124 /* MoreOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferCell.xib; sourceTree = "<group>"; };
 		84D9C46929E277C8006B06DD /* CreatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorObject.swift; sourceTree = "<group>"; };
 		84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseURLs.swift; sourceTree = "<group>"; };
 		84D9C46D29E2822E006B06DD /* CasterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterObject.swift; sourceTree = "<group>"; };
@@ -1025,6 +1033,7 @@
 		840CEE0F2B4D9886000A6EBB /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				84D7721C2B55853700A1C124 /* MoreOfferCell */,
 				8464B37E2B52E1DF0097B77A /* ShieldAmountCell */,
 				840CEE142B4D9CBB000A6EBB /* AcccountCell */,
 				840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */,
@@ -2668,6 +2677,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84D772162B55808B00A1C124 /* MoreOffer */ = {
+			isa = PBXGroup;
+			children = (
+				84D772172B55813700A1C124 /* controller */,
+			);
+			path = MoreOffer;
+			sourceTree = "<group>";
+		};
+		84D772172B55813700A1C124 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84D772182B55814E00A1C124 /* MoreOfferController.xib */,
+				84D7721A2B55829E00A1C124 /* MoreOfferController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84D7721C2B55853700A1C124 /* MoreOfferCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D7721D2B55855600A1C124 /* MoreOfferCell.swift */,
+				84D7721E2B55855600A1C124 /* MoreOfferCell.xib */,
+			);
+			path = MoreOfferCell;
+			sourceTree = "<group>";
+		};
 		84D9C47129E2CA6A006B06DD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -3353,6 +3388,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84D772162B55808B00A1C124 /* MoreOffer */,
 				84615DE52B5559B300A84881 /* UnderMaintenance */,
 				84615DDF2B55525C00A84881 /* VersionUpdate */,
 				84615DC92B553AB900A84881 /* CommentLists */,
@@ -3590,6 +3626,7 @@
 				84CC35232B14E6A1002B1D35 /* ForgotPasswordController.xib in Resources */,
 				84F58F432B11C3F100F2FFAA /* RegisterStep2Controller.xib in Resources */,
 				845346DA29FF810B0077F8A0 /* UploadProfile.storyboard in Resources */,
+				84D772202B55855600A1C124 /* MoreOfferCell.xib in Resources */,
 				841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */,
 				8478E8892B29CA26003C0EE6 /* regions.json in Resources */,
 				84615DCC2B553AD200A84881 /* CommentListsController.xib in Resources */,
@@ -3654,6 +3691,7 @@
 				84725AD529E16BA5003658CD /* AchivementTableViewCell.xib in Resources */,
 				84725AC829E12C95003658CD /* SquadTableViewCell.xib in Resources */,
 				84F602F129DC809A00250C25 /* FilterSettingTableViewCell.xib in Resources */,
+				84D772192B55814E00A1C124 /* MoreOfferController.xib in Resources */,
 				849183E32B0D222100980944 /* ProfileLevelView.xib in Resources */,
 				84F6C5B529CA12E800D21EE2 /* Main.storyboard in Resources */,
 				84A050D729E925E7004D582B /* OverviewImageCollectionViewCell.xib in Resources */,
@@ -3883,6 +3921,7 @@
 				84615DD92B55450300A84881 /* CommentListsViewModel.swift in Sources */,
 				84F5FB0B29DEC48200734CAE /* SearchPresenting.swift in Sources */,
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
+				84D7721B2B55829E00A1C124 /* MoreOfferController.swift in Sources */,
 				84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */,
 				84EF0A9229EEF2270042B6BF /* HomeContainer.swift in Sources */,
 				849AEBA72A1543440024AAAA /* PhNumTableCell.swift in Sources */,
@@ -3953,6 +3992,7 @@
 				84725AAF29E07E69003658CD /* FilterSettingPresenter.swift in Sources */,
 				845346DE29FF83D00077F8A0 /* UploadProfileModule.swift in Sources */,
 				84DFA9862B31F0F700B560D8 /* GameTypeSelectionView.swift in Sources */,
+				84D7721F2B55855600A1C124 /* MoreOfferCell.swift in Sources */,
 				842FC9B329E849D800C5F354 /* OverviewTableViewCell.swift in Sources */,
 				84CC35422B162F37002B1D35 /* AppInfoController.swift in Sources */,
 				843CF3BC2B1793C700C98BFF /* ThankYouView.swift in Sources */,
