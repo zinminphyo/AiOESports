@@ -54,7 +54,7 @@
                         <rect key="frame" x="272" y="8" width="30" height="58"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.on.doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fMF-kS-D05">
-                                <rect key="frame" x="6" y="0.6666666666666643" width="18" height="20.666666666666668"/>
+                                <rect key="frame" x="6" y="2.6666666666666643" width="18" height="20.666666666666668"/>
                                 <color key="tintColor" name="SecondaryText"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="HZX-CB-mgW"/>
@@ -62,7 +62,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUZ-YK-jL0">
-                                <rect key="frame" x="0.0" y="41.666666666666664" width="30" height="14.333333333333336"/>
+                                <rect key="frame" x="0.0" y="39.666666666666664" width="30" height="14.333333333333336"/>
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="11"/>
                                 <color key="textColor" name="SecondaryText"/>
                                 <nil key="highlightedColor"/>
@@ -79,10 +79,10 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="nEG-YW-QLc" secondAttribute="bottom" id="C2I-iH-2fj"/>
                             <constraint firstItem="nEG-YW-QLc" firstAttribute="top" secondItem="yuw-kL-xhm" secondAttribute="top" id="G1i-cU-MsK"/>
-                            <constraint firstAttribute="bottom" secondItem="QUZ-YK-jL0" secondAttribute="bottom" constant="2" id="TxT-kk-StB"/>
+                            <constraint firstAttribute="bottom" secondItem="QUZ-YK-jL0" secondAttribute="bottom" constant="4" id="TxT-kk-StB"/>
                             <constraint firstItem="QUZ-YK-jL0" firstAttribute="leading" secondItem="yuw-kL-xhm" secondAttribute="leading" id="Vct-VY-UUN"/>
                             <constraint firstItem="fMF-kS-D05" firstAttribute="centerX" secondItem="yuw-kL-xhm" secondAttribute="centerX" id="W2E-i0-7Sj"/>
-                            <constraint firstItem="fMF-kS-D05" firstAttribute="top" secondItem="yuw-kL-xhm" secondAttribute="top" constant="2" id="ZBX-RO-1bR"/>
+                            <constraint firstItem="fMF-kS-D05" firstAttribute="top" secondItem="yuw-kL-xhm" secondAttribute="top" constant="4" id="ZBX-RO-1bR"/>
                             <constraint firstAttribute="trailing" secondItem="nEG-YW-QLc" secondAttribute="trailing" id="ccE-07-IJZ"/>
                             <constraint firstItem="nEG-YW-QLc" firstAttribute="leading" secondItem="yuw-kL-xhm" secondAttribute="leading" id="t5d-iF-nqu"/>
                             <constraint firstAttribute="trailing" secondItem="QUZ-YK-jL0" secondAttribute="trailing" id="yEn-KN-Zs4"/>
