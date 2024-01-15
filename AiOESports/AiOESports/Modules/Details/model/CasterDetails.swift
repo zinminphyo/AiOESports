@@ -25,6 +25,7 @@ struct CasterDetails: Decodable {
     let playerAchivement: PlayerAchivement
     let mainGame: String
     let subGames: [SubGameModel]
+    let ratingLists: RatingLists
     
     enum CodingKeys: String, CodingKey {
         case result
@@ -39,6 +40,7 @@ struct CasterDetails: Decodable {
         case mainGame = "main_game"
         case subGames = "sub_games"
         case playerAchivement = "achieve"
+        case ratingLists = "rating_list"
     }
     
     init(from decoder: Decoder) throws {
@@ -46,6 +48,7 @@ struct CasterDetails: Decodable {
         let result = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .result)
         let data = try result.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         
+        ratingLists = try data.decodeIfPresent(RatingLists.self, forKey: .ratingLists) ?? []
         career = try data.decodeIfPresent([CareerModel].self, forKey: .career) ?? []
         playerAchivement = try data.decode(PlayerAchivement.self, forKey: .playerAchivement)
         let status = try data.nestedContainer(keyedBy: CodingKeys.self, forKey: .stats)

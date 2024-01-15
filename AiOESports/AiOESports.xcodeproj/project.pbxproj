@@ -329,6 +329,7 @@
 		84D7721F2B55855600A1C124 /* MoreOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721D2B55855600A1C124 /* MoreOfferCell.swift */; };
 		84D772202B55855600A1C124 /* MoreOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7721E2B55855600A1C124 /* MoreOfferCell.xib */; };
 		84D772232B558A5000A1C124 /* MoreOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */; };
+		84D772262B55930200A1C124 /* RatingListsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772252B55930200A1C124 /* RatingListsResponse.swift */; };
 		84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46929E277C8006B06DD /* CreatorObject.swift */; };
 		84D9C46C29E27E08006B06DD /* NetworkBaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */; };
 		84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46D29E2822E006B06DD /* CasterObject.swift */; };
@@ -793,6 +794,7 @@
 		84D7721D2B55855600A1C124 /* MoreOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferCell.swift; sourceTree = "<group>"; };
 		84D7721E2B55855600A1C124 /* MoreOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferCell.xib; sourceTree = "<group>"; };
 		84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferViewModel.swift; sourceTree = "<group>"; };
+		84D772252B55930200A1C124 /* RatingListsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListsResponse.swift; sourceTree = "<group>"; };
 		84D9C46929E277C8006B06DD /* CreatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorObject.swift; sourceTree = "<group>"; };
 		84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseURLs.swift; sourceTree = "<group>"; };
 		84D9C46D29E2822E006B06DD /* CasterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterObject.swift; sourceTree = "<group>"; };
@@ -1721,6 +1723,7 @@
 		84615DC92B553AB900A84881 /* CommentLists */ = {
 			isa = PBXGroup;
 			children = (
+				84D772242B5592E500A1C124 /* RatingResponse */,
 				84615DD72B5544F100A84881 /* viewModel */,
 				84615DCF2B55427A00A84881 /* view */,
 				84615DCA2B553AC400A84881 /* controller */,
@@ -2712,6 +2715,14 @@
 				84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84D772242B5592E500A1C124 /* RatingResponse */ = {
+			isa = PBXGroup;
+			children = (
+				84D772252B55930200A1C124 /* RatingListsResponse.swift */,
+			);
+			path = RatingResponse;
 			sourceTree = "<group>";
 		};
 		84D9C47129E2CA6A006B06DD /* Presenter */ = {
@@ -3873,6 +3884,7 @@
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				842FC9AD29E840F700C5F354 /* CareerModel.swift in Sources */,
 				840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */,
+				84D772262B55930200A1C124 /* RatingListsResponse.swift in Sources */,
 				84DFA9892B31F98600B560D8 /* TeamRankViewModel.swift in Sources */,
 				84B7455C29E4629C0086C708 /* SponsorModel.swift in Sources */,
 				84B7456A29E484FC0086C708 /* AchivementPresenting.swift in Sources */,

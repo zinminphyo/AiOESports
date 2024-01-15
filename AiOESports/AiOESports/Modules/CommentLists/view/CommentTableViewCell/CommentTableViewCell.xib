@@ -254,10 +254,15 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="commentLabel" destination="jGT-0w-YV7" id="tfV-H7-fkS"/>
+                <outlet property="fiveStarImageView" destination="Z1R-sk-9Ow" id="5cf-a6-eIn"/>
+                <outlet property="fourStarImageView" destination="aAM-aV-h8y" id="nnT-YU-usD"/>
                 <outlet property="minAgoLabel" destination="sRc-rq-IO6" id="JbJ-Hz-EbQ"/>
+                <outlet property="oneStarImageView" destination="kQI-NQ-frT" id="34l-EB-e1E"/>
                 <outlet property="profileImageView" destination="zdH-fH-nCr" id="B3m-fI-qbZ"/>
                 <outlet property="profileNameLabel" destination="ZWJ-uh-QiI" id="SUV-uV-b41"/>
                 <outlet property="ratingView" destination="t9U-El-wNN" id="vGr-AI-5uv"/>
+                <outlet property="threeStarImageView" destination="e5S-w4-omr" id="HoM-WU-SEW"/>
+                <outlet property="twoStarImageView" destination="rKQ-VZ-SLk" id="Jhb-tj-Gqk"/>
             </connections>
             <point key="canvasLocation" x="-56.488549618320612" y="46.478873239436624"/>
         </tableViewCell>

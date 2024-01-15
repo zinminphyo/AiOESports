@@ -16,8 +16,10 @@ class CommentListsController: UIViewController {
     private let vm: CommentListsViewModel!
     private(set) var subscription = Set<AnyCancellable>()
     
-    init() {
-        vm = CommentListsViewModel()
+    private var lists: RatingLists = []
+    
+    init(id: String, category: RankCategory) {
+        vm = CommentListsViewModel(id: id, category: category)
         super.init(nibName: "CommentListsController", bundle: nil)
     }
     
@@ -52,6 +54,15 @@ class CommentListsController: UIViewController {
             .sink { [weak self] _ in
                 self?.starCountFilter.reloadData()
             }.store(in: &subscription)
+        
+        vm.$filterRatingLists
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.lists = $0
+                self?.commentListsView.reloadData()
+            }.store(in: &subscription)
+        
+        vm.fetchRatingLists()
     }
     
     private func configureFilterView() {
@@ -97,11 +108,12 @@ extension CommentListsController: UICollectionViewDataSource, UICollectionViewDe
 
 extension CommentListsController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return lists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier, for: indexPath) as! CommentTableViewCell
+        cell.render(lists[indexPath.row])
         return cell
     }
     

@@ -291,7 +291,11 @@ class Details: UIViewController {
     
     @IBAction
     private func didTapRating(_ sender: UIButton) {
-        let vc = CommentListsController()
+        guard let id = presenter?.id,
+              let category = presenter?.category else {
+            return
+        }
+        let vc = CommentListsController(id: String(id), category: category)
         navigationController?.pushViewController(vc, animated: true)
     }
     

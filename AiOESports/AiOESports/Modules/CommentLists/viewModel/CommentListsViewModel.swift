@@ -22,9 +22,105 @@ class CommentListsViewModel {
     
     private(set) var filterLists: [CommentFilter] = CommentFilter.allCases
     
-    @Published
-    var selectedIndex: Int = 0
+    private var allRatingLists: RatingLists = []
     
-    init() {}
+    @Published
+    var filterRatingLists: RatingLists = []
+    
+    @Published
+    var selectedIndex: Int = 0 {
+        didSet {
+            filter()
+        }
+    }
+    
+    private let service = GetDetailsService()
+    private let id: String
+    private let category: RankCategory
+    
+    init(id: String, category: RankCategory) {
+        self.id = id
+        self.category = category
+    }
+    
+    func fetchRatingLists() {
+        switch category {
+        case .team:
+            fetchTeamRatingLists()
+        case .player:
+            fetchPlayerRatingLists()
+        case .caster:
+            fetchCasterRatingLists()
+        case .creator:
+            fetchCreatorRatingLists()
+        }
+    }
+    
+    private func fetchTeamRatingLists() {
+        Task {
+            do {
+                let response = try await service.fetchTeamDetails(id: id)
+                allRatingLists = response.ratingLists
+                filter()
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func fetchPlayerRatingLists() {
+        Task {
+            do {
+                let response = try await service.fetchPlayerDetails(id: id)
+                allRatingLists = response.ratingLists
+                filter()
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func fetchCasterRatingLists() {
+        Task {
+            do {
+                let response = try await service.fetchCasterDetails(id: id)
+                allRatingLists = response.ratingLists
+                filter()
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func fetchCreatorRatingLists() {
+        Task {
+            do {
+                let response = try await service.fetchCreatorDetails(id: id)
+                allRatingLists = response.ratingLists
+                filter()
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func filter() {
+        switch selectedIndex {
+        case 0:
+            filterRatingLists = allRatingLists
+        case 1:
+            filterRatingLists = allRatingLists.filter{ $0.star == 5 }
+        case 2:
+            filterRatingLists = allRatingLists.filter{ $0.star == 4 }
+        case 3:
+            filterRatingLists = allRatingLists.filter{ $0.star == 3 }
+        case 4:
+            filterRatingLists = allRatingLists.filter{ $0.star == 2 }
+        case 5:
+            filterRatingLists = allRatingLists.filter{ $0.star == 1 }
+        default:
+            filterRatingLists = []
+        }
+    }
     
 }

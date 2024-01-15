@@ -111,6 +111,7 @@ struct TeamDetails: Decodable {
     let achivemets: [AchivementModel]
     let sponsors: [SponsorModel]
     let formerPlayers: [FormerPlayerModel]
+    let ratingLists: RatingLists
     
     enum CodingKeys: String, CodingKey {
         case followRating = "TotalFollowRating"
@@ -124,6 +125,7 @@ struct TeamDetails: Decodable {
         case stats
         case detail
         case social
+        case ratingLists = "rating_list"
     }
     
     init(from decoder: Decoder) throws {
@@ -140,6 +142,7 @@ struct TeamDetails: Decodable {
         let statsContainer = try dataContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .stats)
         detail = try statsContainer.decode(TeamDetailsModel.self, forKey: .detail)
         social = try statsContainer.decodeIfPresent([SocialModel].self, forKey: .social) ?? []
+        ratingLists = try dataContainer.decodeIfPresent(RatingLists.self, forKey: .ratingLists) ?? []
     }
     
     
