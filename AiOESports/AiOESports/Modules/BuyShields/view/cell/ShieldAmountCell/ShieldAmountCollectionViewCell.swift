@@ -33,6 +33,7 @@ class ShieldAmountCollectionViewCell: UICollectionViewCell {
         shieldAmountLabel.text = String(format: "%@ Shields", shield.amount)
         totalCostLabel.text = formatter.string(from: (Int(shield.total_price) ?? 0) as NSNumber)
         totalExtraLabel.text = String(format: "%@ Extra", shield.extra ?? "")
+        shieldAmountImageView.image = Images.getShieldImage(shield.amount)
     }
 
 }

@@ -61,7 +61,7 @@ class BuyShieldsController: UIViewController {
     private func configureBankLists() {
         bankLists.register(UINib(nibName: String(describing: BankAccountCell.self), bundle: nil), forCellWithReuseIdentifier: BankAccountCell.reuseIdentifier)
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 77, height: 107)
+        layout.itemSize = CGSize(width: 77, height: 77)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -69,7 +69,7 @@ class BuyShieldsController: UIViewController {
         bankLists.dataSource = self
         bankLists.delegate = self
         bankLists.showsHorizontalScrollIndicator = false
-        bankLists.contentInset = UIEdgeInsets(top: 4, left: 8, bottom: -4, right: 0)
+        bankLists.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
     }
     
     private func configureAccountLists() {

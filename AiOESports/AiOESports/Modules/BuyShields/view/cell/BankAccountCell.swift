@@ -9,9 +9,7 @@ import UIKit
 
 class BankAccountCell: UICollectionViewCell {
     
-    @IBOutlet private var selectionImageView: UIImageView!
-    
-    
+    @IBOutlet private(set) var selectionBackgroundView: UIView!
     
     static var reuseIdentifier: String {
         return String(describing: Self.self)
@@ -26,7 +24,7 @@ class BankAccountCell: UICollectionViewCell {
     func render(isSelected: Bool) {
         UIView.animate(withDuration: 0.2) { [weak self] in
             guard let self = self else { return }
-            self.selectionImageView.image = isSelected ? UIImage(named: "selected") : UIImage(named: "unselected")
+            self.selectionBackgroundView.backgroundColor = isSelected ? Colors.Theme.SecondaryBackground : Colors.Theme.mainColor
         }
     }
 

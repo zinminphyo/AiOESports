@@ -258,3 +258,9 @@ extension Images {
         }
     }
 }
+
+extension Images {
+    static func getShieldImage(_ value: String) -> UIImage? {
+        return UIImage(named: value, in: .main, compatibleWith: nil)
+    }
+}
