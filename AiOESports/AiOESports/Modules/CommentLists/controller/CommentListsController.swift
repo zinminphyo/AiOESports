@@ -35,7 +35,15 @@ class CommentListsController: UIViewController {
     
     private func configureHierarchy() {
         configureFilterView()
+        configureCommentListsView()
         configureViewModel()
+    }
+    
+    private func configureCommentListsView() {
+        commentListsView.register(UINib(nibName: String(describing: CommentTableViewCell.self), bundle: nil), forCellReuseIdentifier: CommentTableViewCell.reuseIdentifier)
+        commentListsView.separatorStyle = .none
+        commentListsView.dataSource = self
+        commentListsView.delegate = self
     }
     
     private func configureViewModel() {
@@ -82,5 +90,22 @@ extension CommentListsController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         vm.selectedIndex = indexPath.row
+    }
+}
+
+
+
+extension CommentListsController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier, for: indexPath) as! CommentTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

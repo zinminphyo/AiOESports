@@ -147,6 +147,8 @@
 		84615DD52B5542CE00A84881 /* StarCountFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DD32B5542CE00A84881 /* StarCountFilterCell.swift */; };
 		84615DD62B5542CE00A84881 /* StarCountFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DD42B5542CE00A84881 /* StarCountFilterCell.xib */; };
 		84615DD92B55450300A84881 /* CommentListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DD82B55450300A84881 /* CommentListsViewModel.swift */; };
+		84615DDD2B554A8F00A84881 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DDB2B554A8F00A84881 /* CommentTableViewCell.swift */; };
+		84615DDE2B554A8F00A84881 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DDC2B554A8F00A84881 /* CommentTableViewCell.xib */; };
 		8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */; };
 		8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */; };
 		8464B3852B52F3B90097B77A /* BuyShieldsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */; };
@@ -601,6 +603,8 @@
 		84615DD32B5542CE00A84881 /* StarCountFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCountFilterCell.swift; sourceTree = "<group>"; };
 		84615DD42B5542CE00A84881 /* StarCountFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarCountFilterCell.xib; sourceTree = "<group>"; };
 		84615DD82B55450300A84881 /* CommentListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListsViewModel.swift; sourceTree = "<group>"; };
+		84615DDB2B554A8F00A84881 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		84615DDC2B554A8F00A84881 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAmountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldAmountCollectionViewCell.xib; sourceTree = "<group>"; };
 		8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsServiceProtocol.swift; sourceTree = "<group>"; };
@@ -1717,6 +1721,7 @@
 		84615DCF2B55427A00A84881 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				84615DDA2B554A7200A84881 /* CommentTableViewCell */,
 				84615DD02B55427F00A84881 /* cell */,
 			);
 			path = view;
@@ -1737,6 +1742,15 @@
 				84615DD82B55450300A84881 /* CommentListsViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84615DDA2B554A7200A84881 /* CommentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84615DDB2B554A8F00A84881 /* CommentTableViewCell.swift */,
+				84615DDC2B554A8F00A84881 /* CommentTableViewCell.xib */,
+			);
+			path = CommentTableViewCell;
 			sourceTree = "<group>";
 		};
 		8464B37E2B52E1DF0097B77A /* ShieldAmountCell */ = {
@@ -3503,6 +3517,7 @@
 				84DFA9842B31F0BB00B560D8 /* GameTypeSelectionView.xib in Resources */,
 				84CC35402B162F21002B1D35 /* AppInfoController.xib in Resources */,
 				84F17ADE2B0E2FCD00B97B08 /* GameSortingCategoryCell.xib in Resources */,
+				84615DDE2B554A8F00A84881 /* CommentTableViewCell.xib in Resources */,
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
 				84CD8B7B2B4A612C00F8F454 /* BuyShieldsController.xib in Resources */,
@@ -3833,6 +3848,7 @@
 				84E486272B2029F600ADEAB2 /* RegistrationResponseModel.swift in Sources */,
 				84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */,
 				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
+				84615DDD2B554A8F00A84881 /* CommentTableViewCell.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
 				849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */,
