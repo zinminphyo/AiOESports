@@ -149,6 +149,8 @@
 		84615DD92B55450300A84881 /* CommentListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DD82B55450300A84881 /* CommentListsViewModel.swift */; };
 		84615DDD2B554A8F00A84881 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DDB2B554A8F00A84881 /* CommentTableViewCell.swift */; };
 		84615DDE2B554A8F00A84881 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DDC2B554A8F00A84881 /* CommentTableViewCell.xib */; };
+		84615DE22B5552E000A84881 /* VersionUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DE12B5552E000A84881 /* VersionUpdateController.xib */; };
+		84615DE42B55565A00A84881 /* VersionUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DE32B55565A00A84881 /* VersionUpdateController.swift */; };
 		8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */; };
 		8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */; };
 		8464B3852B52F3B90097B77A /* BuyShieldsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */; };
@@ -605,6 +607,8 @@
 		84615DD82B55450300A84881 /* CommentListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListsViewModel.swift; sourceTree = "<group>"; };
 		84615DDB2B554A8F00A84881 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		84615DDC2B554A8F00A84881 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		84615DE12B5552E000A84881 /* VersionUpdateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VersionUpdateController.xib; sourceTree = "<group>"; };
+		84615DE32B55565A00A84881 /* VersionUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionUpdateController.swift; sourceTree = "<group>"; };
 		8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAmountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldAmountCollectionViewCell.xib; sourceTree = "<group>"; };
 		8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsServiceProtocol.swift; sourceTree = "<group>"; };
@@ -1751,6 +1755,23 @@
 				84615DDC2B554A8F00A84881 /* CommentTableViewCell.xib */,
 			);
 			path = CommentTableViewCell;
+			sourceTree = "<group>";
+		};
+		84615DDF2B55525C00A84881 /* VersionUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				84615DE02B5552D200A84881 /* controller */,
+			);
+			path = VersionUpdate;
+			sourceTree = "<group>";
+		};
+		84615DE02B5552D200A84881 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84615DE12B5552E000A84881 /* VersionUpdateController.xib */,
+				84615DE32B55565A00A84881 /* VersionUpdateController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		8464B37E2B52E1DF0097B77A /* ShieldAmountCell */ = {
@@ -3311,6 +3332,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84615DDF2B55525C00A84881 /* VersionUpdate */,
 				84615DC92B553AB900A84881 /* CommentLists */,
 				84CD8B782B4A611C00F8F454 /* BuyShields */,
 				842AF7B62B21E0F8006F2267 /* FollowAndVoteLists */,
@@ -3520,6 +3542,7 @@
 				84615DDE2B554A8F00A84881 /* CommentTableViewCell.xib in Resources */,
 				849B9C3D29D18AAB00F1C2D2 /* Login.storyboard in Resources */,
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
+				84615DE22B5552E000A84881 /* VersionUpdateController.xib in Resources */,
 				84CD8B7B2B4A612C00F8F454 /* BuyShieldsController.xib in Resources */,
 				84F17AE82B0E3D6900B97B08 /* PrivacyPolicyController.xib in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
@@ -3961,6 +3984,7 @@
 				84334E8C2B1C8C3D004DD32D /* GetDetailsService.swift in Sources */,
 				845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */,
 				84A050E629E92C6D004D582B /* CareerPresenter.swift in Sources */,
+				84615DE42B55565A00A84881 /* VersionUpdateController.swift in Sources */,
 				849BCE1D29E5522D0033C63A /* DetailsContentCollectionViewCell.swift in Sources */,
 				84B7458A29E494AD0086C708 /* SponsorModule.swift in Sources */,
 				84F6C5E729CA183500D21EE2 /* OnboardingModule.swift in Sources */,

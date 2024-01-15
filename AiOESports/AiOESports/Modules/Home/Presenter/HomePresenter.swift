@@ -21,6 +21,9 @@ class HomePresenter: HomePresenting {
     @Published
     var shieldCount: Int = 0
     
+    @Published
+    var isUpdateAvailable: Bool = false
+    
     func viewDidLoad() {
         isFetching = true
         interactor?.fetchHomeData()
@@ -31,6 +34,7 @@ class HomePresenter: HomePresenting {
             self.viewDelegate?.renderError(string: error)
         } else {
             self.viewDelegate?.renderUI(bannerLists: bannerLists ?? [], adLists: adLists ?? [])
+            self.isUpdateAvailable = true
         }
         isFetching = false
     }

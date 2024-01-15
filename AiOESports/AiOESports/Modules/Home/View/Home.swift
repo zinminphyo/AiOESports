@@ -44,6 +44,14 @@ class Home: UIViewController {
                 $0 ? self.loadingView.showLoading() : self.loadingView.hideLoading()
             }).store(in: &subscription)
         
+        presenter?.$isUpdateAvailable
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self = self , $0 == true else { return }
+                self.presentVersionUpdateAlert()
+            }).store(in: &subscription)
+        
+        
         presenter?.viewDidLoad()
         
     }
@@ -79,6 +87,11 @@ class Home: UIViewController {
         advertisementCollectionView.collectionViewLayout = flowLayout
         advertisementCollectionView.showsHorizontalScrollIndicator = false
         advertisementCollectionView.showsVerticalScrollIndicator = false
+    }
+    
+    private func presentVersionUpdateAlert() {
+        let vc = VersionUpdateController()
+        present(vc, animated: true)
     }
     
     
