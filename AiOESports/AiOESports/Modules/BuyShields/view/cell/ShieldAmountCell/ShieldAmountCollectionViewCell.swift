@@ -13,6 +13,7 @@ class ShieldAmountCollectionViewCell: UICollectionViewCell {
     @IBOutlet private(set) var shieldAmountLabel: UILabel!
     @IBOutlet private(set) var totalCostLabel: UILabel!
     @IBOutlet private(set) var totalExtraLabel: UILabel!
+    @IBOutlet private(set) var extraView: UIView!
     
     lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -33,6 +34,7 @@ class ShieldAmountCollectionViewCell: UICollectionViewCell {
         shieldAmountLabel.text = String(format: "%@ Shields", shield.amount)
         totalCostLabel.text = formatter.string(from: (Int(shield.total_price) ?? 0) as NSNumber)
         totalExtraLabel.text = String(format: "%@ Extra", shield.extra ?? "")
+        extraView.isHidden = shield.extra == nil
         shieldAmountImageView.image = Images.getShieldImage(shield.amount)
     }
 

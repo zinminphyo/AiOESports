@@ -111,6 +111,7 @@
             </constraints>
             <size key="customSize" width="139" height="216"/>
             <connections>
+                <outlet property="extraView" destination="efa-In-CwY" id="EoZ-HD-dBS"/>
                 <outlet property="shieldAmountImageView" destination="j53-ZY-R6H" id="gT7-bI-W8n"/>
                 <outlet property="shieldAmountLabel" destination="7Zc-KD-AX9" id="LaN-0p-QHq"/>
                 <outlet property="totalCostLabel" destination="DZt-Yp-zYt" id="lLE-19-Ipz"/>

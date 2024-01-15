@@ -328,6 +328,7 @@
 		84D7721B2B55829E00A1C124 /* MoreOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721A2B55829E00A1C124 /* MoreOfferController.swift */; };
 		84D7721F2B55855600A1C124 /* MoreOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721D2B55855600A1C124 /* MoreOfferCell.swift */; };
 		84D772202B55855600A1C124 /* MoreOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7721E2B55855600A1C124 /* MoreOfferCell.xib */; };
+		84D772232B558A5000A1C124 /* MoreOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */; };
 		84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46929E277C8006B06DD /* CreatorObject.swift */; };
 		84D9C46C29E27E08006B06DD /* NetworkBaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */; };
 		84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46D29E2822E006B06DD /* CasterObject.swift */; };
@@ -791,6 +792,7 @@
 		84D7721A2B55829E00A1C124 /* MoreOfferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferController.swift; sourceTree = "<group>"; };
 		84D7721D2B55855600A1C124 /* MoreOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferCell.swift; sourceTree = "<group>"; };
 		84D7721E2B55855600A1C124 /* MoreOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferCell.xib; sourceTree = "<group>"; };
+		84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferViewModel.swift; sourceTree = "<group>"; };
 		84D9C46929E277C8006B06DD /* CreatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorObject.swift; sourceTree = "<group>"; };
 		84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseURLs.swift; sourceTree = "<group>"; };
 		84D9C46D29E2822E006B06DD /* CasterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterObject.swift; sourceTree = "<group>"; };
@@ -2680,6 +2682,7 @@
 		84D772162B55808B00A1C124 /* MoreOffer */ = {
 			isa = PBXGroup;
 			children = (
+				84D772212B558A4500A1C124 /* viewModel */,
 				84D772172B55813700A1C124 /* controller */,
 			);
 			path = MoreOffer;
@@ -2701,6 +2704,14 @@
 				84D7721E2B55855600A1C124 /* MoreOfferCell.xib */,
 			);
 			path = MoreOfferCell;
+			sourceTree = "<group>";
+		};
+		84D772212B558A4500A1C124 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		84D9C47129E2CA6A006B06DD /* Presenter */ = {
@@ -4077,6 +4088,7 @@
 				842FC9BC29E84D2400C5F354 /* PlayerOverviewModule.swift in Sources */,
 				845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */,
 				8437FE7329ED1985008F7179 /* AdvertisementModel.swift in Sources */,
+				84D772232B558A5000A1C124 /* MoreOfferViewModel.swift in Sources */,
 				840CEE172B4D9CD9000A6EBB /* AccountCell.swift in Sources */,
 				849AEBA32A153F680024AAAA /* ForgotPasswordModule.swift in Sources */,
 				84A050DD29E92A9E004D582B /* Career.swift in Sources */,
