@@ -51,6 +51,13 @@ class Home: UIViewController {
                 self.presentVersionUpdateAlert()
             }).store(in: &subscription)
         
+        presenter?.$isUnderMaintenance
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard $0 else { return } 
+                self?.presentUnderMaintenance()
+            }).store(in: &subscription)
+        
         
         presenter?.viewDidLoad()
         
@@ -89,9 +96,28 @@ class Home: UIViewController {
         advertisementCollectionView.showsVerticalScrollIndicator = false
     }
     
-    private func presentVersionUpdateAlert() {
+    private func presentUnderMaintenance() {
         let vc = UnderMaintenanceController()
         present(vc, animated: true)
+    }
+    
+    private func presentVersionUpdateAlert() {
+        guard let flag = presenter?.isForceUpdate else {
+            return
+        }
+        let vc = VersionUpdateController(isForceUpdate: flag)
+        vc.tappedVersionUpdate = { [weak self] in
+            self?.openAppStore()
+        }
+        present(vc, animated: true)
+    }
+    
+    private func openAppStore() {
+        guard let appStoreURL = presenter?.appStoreURL,
+              let url = URL(string: appStoreURL) else {
+            return
+        }
+        UIApplication.shared.open(url)
     }
     
     

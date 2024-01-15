@@ -15,6 +15,8 @@ class HomePresenter: HomePresenting {
     
     var interactor: HomeInteracting?
     
+    let service = ForceVersionService()
+    
     @Published
     var isFetching: Bool = false
     
@@ -24,9 +26,16 @@ class HomePresenter: HomePresenting {
     @Published
     var isUpdateAvailable: Bool = false
     
+    @Published
+    var isUnderMaintenance: Bool = false
+    
+    private(set) var appStoreURL: String = ""
+    private(set) var isForceUpdate: Bool = false
+    
     func viewDidLoad() {
         isFetching = true
         interactor?.fetchHomeData()
+        fetchForceVersion()
     }
     
     func didFinishedHomeDataFetching(bannerLists: [BannerModel]?, adLists: [AdvertisementModel]?, error: String?) {
@@ -34,7 +43,6 @@ class HomePresenter: HomePresenting {
             self.viewDelegate?.renderError(string: error)
         } else {
             self.viewDelegate?.renderUI(bannerLists: bannerLists ?? [], adLists: adLists ?? [])
-            self.isUpdateAvailable = true
         }
         isFetching = false
     }
@@ -47,6 +55,23 @@ class HomePresenter: HomePresenting {
                 shieldCount = response.result?.shield ?? 0
             } catch {
                 print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func fetchForceVersion() {
+        
+        Task {
+            do {
+                let response = try await service.fetchForceVersion()
+                isUnderMaintenance = response.under_maintenance
+                guard isUnderMaintenance == false else { return }
+                isForceUpdate = response.isForceUpdate
+                isUpdateAvailable = Int(response.version) ?? 1 >= 1
+                
+            } catch {
+                print("Error is \(error.localizedDescription)")
+                fetchForceVersion()
             }
         }
     }

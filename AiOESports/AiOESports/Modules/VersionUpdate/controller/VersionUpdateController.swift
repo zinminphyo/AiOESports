@@ -12,6 +12,9 @@ import UIKit
 
 class VersionUpdateController: UIViewController {
     
+    
+    @IBOutlet private(set) var dismissBtn: UIButton!
+    
     var tappedVersionUpdate: () -> () = {  }
     
     override var transitioningDelegate: UIViewControllerTransitioningDelegate? { get { self }  set { } }
@@ -19,11 +22,26 @@ class VersionUpdateController: UIViewController {
     override var modalPresentationStyle: UIModalPresentationStyle {
         get { .custom } set {}
     }
+    
+    private let isForceUpdate: Bool
+    
+
+    
+    init(isForceUpdate: Bool) {
+        self.isForceUpdate = isForceUpdate
+        super.init(nibName: "VersionUpdateController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        dismissBtn.isHidden = !isForceUpdate
+        
     }
     
 

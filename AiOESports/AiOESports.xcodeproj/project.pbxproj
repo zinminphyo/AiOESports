@@ -330,6 +330,9 @@
 		84D772202B55855600A1C124 /* MoreOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7721E2B55855600A1C124 /* MoreOfferCell.xib */; };
 		84D772232B558A5000A1C124 /* MoreOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */; };
 		84D772262B55930200A1C124 /* RatingListsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772252B55930200A1C124 /* RatingListsResponse.swift */; };
+		84D7722A2B559FE400A1C124 /* ForceVersionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772292B559FE400A1C124 /* ForceVersionServiceProtocol.swift */; };
+		84D7722D2B55A00300A1C124 /* ForceVersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7722C2B55A00300A1C124 /* ForceVersionResponse.swift */; };
+		84D772312B55A08900A1C124 /* ForceVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D772302B55A08900A1C124 /* ForceVersionService.swift */; };
 		84D9C46A29E277C8006B06DD /* CreatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46929E277C8006B06DD /* CreatorObject.swift */; };
 		84D9C46C29E27E08006B06DD /* NetworkBaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */; };
 		84D9C46E29E2822E006B06DD /* CasterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9C46D29E2822E006B06DD /* CasterObject.swift */; };
@@ -795,6 +798,9 @@
 		84D7721E2B55855600A1C124 /* MoreOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferCell.xib; sourceTree = "<group>"; };
 		84D772222B558A5000A1C124 /* MoreOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferViewModel.swift; sourceTree = "<group>"; };
 		84D772252B55930200A1C124 /* RatingListsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingListsResponse.swift; sourceTree = "<group>"; };
+		84D772292B559FE400A1C124 /* ForceVersionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceVersionServiceProtocol.swift; sourceTree = "<group>"; };
+		84D7722C2B55A00300A1C124 /* ForceVersionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceVersionResponse.swift; sourceTree = "<group>"; };
+		84D772302B55A08900A1C124 /* ForceVersionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceVersionService.swift; sourceTree = "<group>"; };
 		84D9C46929E277C8006B06DD /* CreatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorObject.swift; sourceTree = "<group>"; };
 		84D9C46B29E27E08006B06DD /* NetworkBaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseURLs.swift; sourceTree = "<group>"; };
 		84D9C46D29E2822E006B06DD /* CasterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasterObject.swift; sourceTree = "<group>"; };
@@ -2580,6 +2586,8 @@
 		84CF09EB29D9E87200F87400 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				84D7722B2B559FF500A1C124 /* model */,
+				84D772272B559FA100A1C124 /* service */,
 				8437FE7B29ED1D10008F7179 /* Interactor */,
 				8437FE7629ED1C36008F7179 /* Presenter */,
 				84CF09EC29D9E87600F87400 /* View */,
@@ -2723,6 +2731,31 @@
 				84D772252B55930200A1C124 /* RatingListsResponse.swift */,
 			);
 			path = RatingResponse;
+			sourceTree = "<group>";
+		};
+		84D772272B559FA100A1C124 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				84D772282B559FD200A1C124 /* ForceVersionService */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		84D772282B559FD200A1C124 /* ForceVersionService */ = {
+			isa = PBXGroup;
+			children = (
+				84D772292B559FE400A1C124 /* ForceVersionServiceProtocol.swift */,
+				84D772302B55A08900A1C124 /* ForceVersionService.swift */,
+			);
+			path = ForceVersionService;
+			sourceTree = "<group>";
+		};
+		84D7722B2B559FF500A1C124 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				84D7722C2B55A00300A1C124 /* ForceVersionResponse.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		84D9C47129E2CA6A006B06DD /* Presenter */ = {
@@ -4007,6 +4040,7 @@
 				84F6C5AE29CA12E800D21EE2 /* AppDelegate.swift in Sources */,
 				8454D36029F5941100B97EE3 /* RegisterPresenting.swift in Sources */,
 				84B7455829E460080086C708 /* RosterModel.swift in Sources */,
+				84D7722A2B559FE400A1C124 /* ForceVersionServiceProtocol.swift in Sources */,
 				84F5FAFA29DEAFCB00734CAE /* Search.swift in Sources */,
 				84F58F782B14428100F2FFAA /* FollowAndVoteService.swift in Sources */,
 				84F17ADD2B0E2FCD00B97B08 /* GameSortingCategoryCell.swift in Sources */,
@@ -4107,6 +4141,7 @@
 				84725AB929E1274B003658CD /* Details.swift in Sources */,
 				8478E88B2B2A07AA003C0EE6 /* GameSortedData.swift in Sources */,
 				84F58F502B11F01500F2FFAA /* Step2RegistrationService.swift in Sources */,
+				84D7722D2B55A00300A1C124 /* ForceVersionResponse.swift in Sources */,
 				84F602F929DC852F00250C25 /* RankRouting.swift in Sources */,
 				84108C372A0AA1CF00488D0D /* VerifyPhone.swift in Sources */,
 				84EB493B2A250179002BFD5F /* RegistrationError.swift in Sources */,
@@ -4169,6 +4204,7 @@
 				84F17AF02B0E407F00B97B08 /* FollowAndVoteController.swift in Sources */,
 				84725AC129E12BE1003658CD /* Squad.swift in Sources */,
 				84F5FB0D29DEC49D00734CAE /* SearchViewDelegate.swift in Sources */,
+				84D772312B55A08900A1C124 /* ForceVersionService.swift in Sources */,
 				84F17AD22B0E26BF00B97B08 /* AiOPickerView.swift in Sources */,
 				842FAAC72B2D77D7009231BC /* PlayerRankViewModel.swift in Sources */,
 				8437FE7F29ED1DA3008F7179 /* HomePresenter.swift in Sources */,
