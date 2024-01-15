@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StarCountFilterCell" customModule="AiOESports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="139" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="139" height="68"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-s3-u0J">
+                        <rect key="frame" x="0.0" y="0.0" width="139" height="68"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSU-MV-PhT">
+                                <rect key="frame" x="16" y="9" width="107" height="50"/>
+                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
+                                <color key="textColor" name="PrimaryText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.32941176470588235" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jSU-MV-PhT" secondAttribute="trailing" constant="16" id="CtC-BS-xsn"/>
+                            <constraint firstItem="jSU-MV-PhT" firstAttribute="top" secondItem="wxa-s3-u0J" secondAttribute="top" constant="9" id="QkQ-x0-peI"/>
+                            <constraint firstAttribute="bottom" secondItem="jSU-MV-PhT" secondAttribute="bottom" constant="9" id="hnq-6f-raI"/>
+                            <constraint firstItem="jSU-MV-PhT" firstAttribute="centerY" secondItem="wxa-s3-u0J" secondAttribute="centerY" id="iIo-JD-Iev"/>
+                            <constraint firstItem="jSU-MV-PhT" firstAttribute="leading" secondItem="wxa-s3-u0J" secondAttribute="leading" constant="16" id="uH1-Qe-jlT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wxa-s3-u0J" secondAttribute="trailing" id="LUT-vi-PmN"/>
+                <constraint firstItem="wxa-s3-u0J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="X1V-Gd-O1a"/>
+                <constraint firstAttribute="bottom" secondItem="wxa-s3-u0J" secondAttribute="bottom" id="Y6v-av-Ung"/>
+                <constraint firstItem="wxa-s3-u0J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eRq-VR-EZR"/>
+            </constraints>
+            <size key="customSize" width="139" height="68"/>
+            <connections>
+                <outlet property="containerView" destination="wxa-s3-u0J" id="0zz-z1-Mp3"/>
+                <outlet property="filterTitleLabel" destination="jSU-MV-PhT" id="KAz-02-zKt"/>
+            </connections>
+            <point key="canvasLocation" x="197.70992366412213" y="-4.9295774647887329"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

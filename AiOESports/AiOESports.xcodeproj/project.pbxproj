@@ -144,6 +144,9 @@
 		845EE9522B1F282D00F4C3CD /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EE9502B1F282D00F4C3CD /* RankCell.xib */; };
 		84615DCC2B553AD200A84881 /* CommentListsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DCB2B553AD200A84881 /* CommentListsController.xib */; };
 		84615DCE2B553C0500A84881 /* CommentListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DCD2B553C0500A84881 /* CommentListsController.swift */; };
+		84615DD52B5542CE00A84881 /* StarCountFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DD32B5542CE00A84881 /* StarCountFilterCell.swift */; };
+		84615DD62B5542CE00A84881 /* StarCountFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DD42B5542CE00A84881 /* StarCountFilterCell.xib */; };
+		84615DD92B55450300A84881 /* CommentListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DD82B55450300A84881 /* CommentListsViewModel.swift */; };
 		8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */; };
 		8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */; };
 		8464B3852B52F3B90097B77A /* BuyShieldsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */; };
@@ -595,6 +598,9 @@
 		845EE9502B1F282D00F4C3CD /* RankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCell.xib; sourceTree = "<group>"; };
 		84615DCB2B553AD200A84881 /* CommentListsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentListsController.xib; sourceTree = "<group>"; };
 		84615DCD2B553C0500A84881 /* CommentListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListsController.swift; sourceTree = "<group>"; };
+		84615DD32B5542CE00A84881 /* StarCountFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCountFilterCell.swift; sourceTree = "<group>"; };
+		84615DD42B5542CE00A84881 /* StarCountFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarCountFilterCell.xib; sourceTree = "<group>"; };
+		84615DD82B55450300A84881 /* CommentListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListsViewModel.swift; sourceTree = "<group>"; };
 		8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAmountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldAmountCollectionViewCell.xib; sourceTree = "<group>"; };
 		8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsServiceProtocol.swift; sourceTree = "<group>"; };
@@ -1692,6 +1698,8 @@
 		84615DC92B553AB900A84881 /* CommentLists */ = {
 			isa = PBXGroup;
 			children = (
+				84615DD72B5544F100A84881 /* viewModel */,
+				84615DCF2B55427A00A84881 /* view */,
 				84615DCA2B553AC400A84881 /* controller */,
 			);
 			path = CommentLists;
@@ -1704,6 +1712,31 @@
 				84615DCD2B553C0500A84881 /* CommentListsController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		84615DCF2B55427A00A84881 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84615DD02B55427F00A84881 /* cell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84615DD02B55427F00A84881 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84615DD32B5542CE00A84881 /* StarCountFilterCell.swift */,
+				84615DD42B5542CE00A84881 /* StarCountFilterCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84615DD72B5544F100A84881 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84615DD82B55450300A84881 /* CommentListsViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		8464B37E2B52E1DF0097B77A /* ShieldAmountCell */ = {
@@ -3539,6 +3572,7 @@
 				84597C7629EA4A38007C511B /* GameImageCollectionViewCell.xib in Resources */,
 				842FC9B829E84CA300C5F354 /* PlayerOverview.storyboard in Resources */,
 				849AEBA82A1543440024AAAA /* PhNumTableCell.xib in Resources */,
+				84615DD62B5542CE00A84881 /* StarCountFilterCell.xib in Resources */,
 				84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */,
 				84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */,
 				840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */,
@@ -3761,6 +3795,7 @@
 				84A050D629E925E7004D582B /* OverviewImageCollectionViewCell.swift in Sources */,
 				84597C7529EA4A38007C511B /* GameImageCollectionViewCell.swift in Sources */,
 				84597C7D29EA5337007C511B /* CreatorOverviewViewDelegate.swift in Sources */,
+				84615DD52B5542CE00A84881 /* StarCountFilterCell.swift in Sources */,
 				84B7457429E487C30086C708 /* FormerPlayers.swift in Sources */,
 				84CF0A0629D9FA5D00F87400 /* MatchModule.swift in Sources */,
 				84E486252B20293200ADEAB2 /* RegistrationUserModel.swift in Sources */,
@@ -3783,6 +3818,7 @@
 				842FC9BF29E84DB100C5F354 /* PlayerOverviewPresenting.swift in Sources */,
 				845EE9492B1E2AB800F4C3CD /* TeamRankListsServiceProtocol.swift in Sources */,
 				84F5FB0329DEB82C00734CAE /* TeamSearchResultModel.swift in Sources */,
+				84615DD92B55450300A84881 /* CommentListsViewModel.swift in Sources */,
 				84F5FB0B29DEC48200734CAE /* SearchPresenting.swift in Sources */,
 				84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */,
 				84EF0A8429EE5BEE0042B6BF /* CasterOverviewRouter.swift in Sources */,
