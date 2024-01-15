@@ -142,6 +142,8 @@
 		845EE94D2B1E2BC000F4C3CD /* TeamRankListsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EE94C2B1E2BC000F4C3CD /* TeamRankListsService.swift */; };
 		845EE9512B1F282D00F4C3CD /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EE94F2B1F282D00F4C3CD /* RankCell.swift */; };
 		845EE9522B1F282D00F4C3CD /* RankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845EE9502B1F282D00F4C3CD /* RankCell.xib */; };
+		84615DCC2B553AD200A84881 /* CommentListsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84615DCB2B553AD200A84881 /* CommentListsController.xib */; };
+		84615DCE2B553C0500A84881 /* CommentListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84615DCD2B553C0500A84881 /* CommentListsController.swift */; };
 		8464B3812B52E2010097B77A /* ShieldAmountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */; };
 		8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */; };
 		8464B3852B52F3B90097B77A /* BuyShieldsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */; };
@@ -591,6 +593,8 @@
 		845EE94C2B1E2BC000F4C3CD /* TeamRankListsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankListsService.swift; sourceTree = "<group>"; };
 		845EE94F2B1F282D00F4C3CD /* RankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCell.swift; sourceTree = "<group>"; };
 		845EE9502B1F282D00F4C3CD /* RankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCell.xib; sourceTree = "<group>"; };
+		84615DCB2B553AD200A84881 /* CommentListsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentListsController.xib; sourceTree = "<group>"; };
+		84615DCD2B553C0500A84881 /* CommentListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListsController.swift; sourceTree = "<group>"; };
 		8464B37F2B52E2010097B77A /* ShieldAmountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldAmountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8464B3802B52E2010097B77A /* ShieldAmountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldAmountCollectionViewCell.xib; sourceTree = "<group>"; };
 		8464B3842B52F3B90097B77A /* BuyShieldsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyShieldsServiceProtocol.swift; sourceTree = "<group>"; };
@@ -1683,6 +1687,23 @@
 				845EE9502B1F282D00F4C3CD /* RankCell.xib */,
 			);
 			path = RankCell;
+			sourceTree = "<group>";
+		};
+		84615DC92B553AB900A84881 /* CommentLists */ = {
+			isa = PBXGroup;
+			children = (
+				84615DCA2B553AC400A84881 /* controller */,
+			);
+			path = CommentLists;
+			sourceTree = "<group>";
+		};
+		84615DCA2B553AC400A84881 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84615DCB2B553AD200A84881 /* CommentListsController.xib */,
+				84615DCD2B553C0500A84881 /* CommentListsController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		8464B37E2B52E1DF0097B77A /* ShieldAmountCell */ = {
@@ -3243,6 +3264,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84615DC92B553AB900A84881 /* CommentLists */,
 				84CD8B782B4A611C00F8F454 /* BuyShields */,
 				842AF7B62B21E0F8006F2267 /* FollowAndVoteLists */,
 				843CF39D2B17019A00C98BFF /* Vote */,
@@ -3477,6 +3499,7 @@
 				845346DA29FF810B0077F8A0 /* UploadProfile.storyboard in Resources */,
 				841C58E529F1950C00FBCD4F /* LoginOrRegister.storyboard in Resources */,
 				8478E8892B29CA26003C0EE6 /* regions.json in Resources */,
+				84615DCC2B553AD200A84881 /* CommentListsController.xib in Resources */,
 				8436FA172B0E6461007EB571 /* ComingSoonView.xib in Resources */,
 				849AEB9F2A153F260024AAAA /* ForgotPassword.storyboard in Resources */,
 				84F17ACB2B0DE47400B97B08 /* InputDropdownView.xib in Resources */,
@@ -3753,6 +3776,7 @@
 				843CF3A52B170BFB00C98BFF /* VoteViewModel.swift in Sources */,
 				8437FE7129ED1882008F7179 /* BannerModel.swift in Sources */,
 				843CF3B72B17892800C98BFF /* CommentPreview.swift in Sources */,
+				84615DCE2B553C0500A84881 /* CommentListsController.swift in Sources */,
 				840833DD2B1643FB004F2A71 /* UpgradePremiumController.swift in Sources */,
 				842FC9AF29E8433600C5F354 /* PlayerDetails.swift in Sources */,
 				8437FE8329ED2138008F7179 /* ErrorPresentable.swift in Sources */,

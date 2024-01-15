@@ -288,6 +288,13 @@ class Details: UIViewController {
         contentScrollView.setContentOffset(CGPoint(x: x, y: y), animated: true)
     }
     
+    
+    @IBAction
+    private func didTapRating(_ sender: UIButton) {
+        let vc = CommentListsController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction
     private func didTapVote(_ sender: UIButton) {
         
