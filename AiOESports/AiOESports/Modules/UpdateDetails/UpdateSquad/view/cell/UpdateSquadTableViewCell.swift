@@ -50,6 +50,11 @@ class UpdateSquadTableViewCell: UITableViewCell {
             title = "Roster"
             playerLists = roaster.compactMap{ .init(imageURL: $0.playerImageFullURL, name: $0.name ?? "", country: $0.countryImageFullURL, city: $0.city ?? "", lane: $0.laneImageFullURL) }
         }
+        
+        init(title: String, achievements: [AchivementModel]) {
+            self.title = title
+            playerLists = achievements.compactMap{ .init(imageURL: $0.logoFullPath, name: $0.name, country: $0.logoFullPath, city: $0.renderablePlace, lane: nil) }
+        }
     }
 
     override func awakeFromNib() {

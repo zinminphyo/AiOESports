@@ -24,26 +24,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOI-qB-ZBF">
-                        <rect key="frame" x="8" y="8" width="304" height="134"/>
+                        <rect key="frame" x="8" y="16" width="304" height="126"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-MB-OGb">
-                                <rect key="frame" x="8" y="8" width="288" height="118"/>
+                                <rect key="frame" x="8" y="8" width="288" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROSTERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-mA-FRW">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="10.333333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="2.3333333333333335"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                         <color key="textColor" name="PrimaryText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dr2-cs-vtk">
-                                        <rect key="frame" x="0.0" y="15.333333333333332" width="288" height="92.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="7.3333333333333286" width="288" height="92.666666666666671"/>
                                         <color key="backgroundColor" name="SecondaryBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="92.670000000000002" id="Vhl-b6-EpW"/>
                                         </constraints>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhy-uX-3sb">
-                                        <rect key="frame" x="0.0" y="113" width="288" height="5"/>
+                                        <rect key="frame" x="0.0" y="105" width="288" height="5"/>
                                         <color key="backgroundColor" name="SecondaryBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="zN2-dm-T4b"/>
@@ -68,7 +68,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="zOI-qB-ZBF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="K7U-B1-okY"/>
+                    <constraint firstItem="zOI-qB-ZBF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="K7U-B1-okY"/>
                     <constraint firstItem="zOI-qB-ZBF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="QtD-Sf-2x2"/>
                     <constraint firstAttribute="trailing" secondItem="zOI-qB-ZBF" secondAttribute="trailing" constant="8" id="e2d-SF-6xa"/>
                     <constraint firstAttribute="bottom" secondItem="zOI-qB-ZBF" secondAttribute="bottom" id="v1u-RY-cKF"/>

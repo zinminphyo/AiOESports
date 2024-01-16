@@ -180,6 +180,22 @@ class DetailsPresenter: DetailsPresenting {
         return lists
     }
     
+    private func filterPlayerAchievments() -> [UpdateSquadTableViewCell.SquadModel] {
+        var lists: [UpdateSquadTableViewCell.SquadModel] = []
+        if let achivement = playerDetails?.playerAchivement {
+            if !achivement.asPlayer.isEmpty {
+                lists.append(.init(title: "As Player", achievements: achivement.asPlayer))
+            }
+            if !achivement.asCoach.isEmpty {
+                lists.append(.init(title: "As Coach", achievements: achivement.asCoach))
+            }
+            if !achivement.asCasters.isEmpty {
+                lists.append(.init(title: "As Caster", achievements: achivement.asCasters))
+            }
+        }
+        return lists
+    }
+    
     
     
     private func fetchPlayerDetails() {
@@ -302,6 +318,7 @@ class DetailsPresenter: DetailsPresenting {
             return vc
         case 1:
             guard let vc = SquadModule.createModule(playerAchivement: playerDetails.playerAchivement) else { return UIViewController() }
+//            let vc = UpdateSquadController(lists: filterPlayerAchievments())
             return vc
         case 2:
             guard let vc = CareerModule.createModule(careerLists: playerDetails.career) else { return UIViewController() }
