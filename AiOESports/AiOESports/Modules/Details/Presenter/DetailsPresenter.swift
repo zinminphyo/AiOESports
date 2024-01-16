@@ -157,6 +157,31 @@ class DetailsPresenter: DetailsPresenting {
         }
     }
     
+    private func filterSquadLists() -> [UpdateSquadTableViewCell.SquadModel] {
+        var lists: [UpdateSquadTableViewCell.SquadModel] = []
+        if let squad = teamDetails?.squad {
+            if let headCoach = squad.headCoach {
+                lists.append(.init(coach: headCoach))
+            }
+            if let assistantCoach = squad.assistantCoach {
+                lists.append(.init(coach: assistantCoach))
+            }
+            if let technicalDirector = squad.technicalDirector {
+                lists.append(.init(coach: technicalDirector))
+            }
+            if let analyst = squad.analyst {
+                lists.append(.init(coach: analyst))
+            }
+            if !squad.roster.isEmpty {
+                lists.append(.init(roaster: squad.roster))
+            }
+        
+        }
+        return lists
+    }
+    
+    
+    
     private func fetchPlayerDetails() {
         isLoading = true
         Task {
@@ -255,7 +280,8 @@ class DetailsPresenter: DetailsPresenting {
             guard let vc = AchivementModule.createModule(achivementLists: teamDetails.achivemets) else { return UIViewController() }
             return vc
         case 2:
-            guard let vc = SquadModule.createModule(squad: teamDetails.squad) else { return UIViewController() }
+//            guard let vc = SquadModule.createModule(squad: teamDetails.squad) else { return UIViewController() }
+            let vc = UpdateSquadController(lists: filterSquadLists())
             return vc
         case 3:
             guard let vc = FormerPlayersModule.createModule(formerPlayers: teamDetails.formerPlayers) else { return UIViewController() }

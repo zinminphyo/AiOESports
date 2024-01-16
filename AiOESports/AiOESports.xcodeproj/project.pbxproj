@@ -256,6 +256,13 @@
 		84A2BAF82B0D32FB0021F2FD /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2BAF72B0D32FB0021F2FD /* ProfileInfoView.swift */; };
 		84A480682B08FEB200268A77 /* SinglePasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A480672B08FEB200268A77 /* SinglePasscodeView.swift */; };
 		84A4806B2B0925C500268A77 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4806A2B0925C500268A77 /* LoadingView.swift */; };
+		84B46B472B56B79700550FCD /* UpdateSquadController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B46B462B56B79700550FCD /* UpdateSquadController.xib */; };
+		84B46B492B56B85600550FCD /* UpdateSquadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46B482B56B85500550FCD /* UpdateSquadController.swift */; };
+		84B46B4E2B56B91500550FCD /* UpdateSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46B4C2B56B91500550FCD /* UpdateSquadTableViewCell.swift */; };
+		84B46B4F2B56B91500550FCD /* UpdateSquadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B46B4D2B56B91500550FCD /* UpdateSquadTableViewCell.xib */; };
+		84B46B532B56BC8D00550FCD /* SquadItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46B512B56BC8D00550FCD /* SquadItemCell.swift */; };
+		84B46B542B56BC8D00550FCD /* SquadItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B46B522B56BC8D00550FCD /* SquadItemCell.xib */; };
+		84B46B572B56D9DA00550FCD /* UpdateSquadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46B562B56D9DA00550FCD /* UpdateSquadViewModel.swift */; };
 		84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455329E45F5E0086C708 /* SquadModel.swift */; };
 		84B7455629E45FB90086C708 /* CoachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455529E45FB90086C708 /* CoachModel.swift */; };
 		84B7455829E460080086C708 /* RosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455729E460080086C708 /* RosterModel.swift */; };
@@ -724,6 +731,13 @@
 		84A2BAF72B0D32FB0021F2FD /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		84A480672B08FEB200268A77 /* SinglePasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePasscodeView.swift; sourceTree = "<group>"; };
 		84A4806A2B0925C500268A77 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		84B46B462B56B79700550FCD /* UpdateSquadController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateSquadController.xib; sourceTree = "<group>"; };
+		84B46B482B56B85500550FCD /* UpdateSquadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSquadController.swift; sourceTree = "<group>"; };
+		84B46B4C2B56B91500550FCD /* UpdateSquadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSquadTableViewCell.swift; sourceTree = "<group>"; };
+		84B46B4D2B56B91500550FCD /* UpdateSquadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateSquadTableViewCell.xib; sourceTree = "<group>"; };
+		84B46B512B56BC8D00550FCD /* SquadItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadItemCell.swift; sourceTree = "<group>"; };
+		84B46B522B56BC8D00550FCD /* SquadItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadItemCell.xib; sourceTree = "<group>"; };
+		84B46B562B56D9DA00550FCD /* UpdateSquadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSquadViewModel.swift; sourceTree = "<group>"; };
 		84B7455329E45F5E0086C708 /* SquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
 		84B7455529E45FB90086C708 /* CoachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachModel.swift; sourceTree = "<group>"; };
 		84B7455729E460080086C708 /* RosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterModel.swift; sourceTree = "<group>"; };
@@ -2341,6 +2355,68 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		84B46B432B56B76800550FCD /* UpdateDetails */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B442B56B77800550FCD /* UpdateSquad */,
+			);
+			path = UpdateDetails;
+			sourceTree = "<group>";
+		};
+		84B46B442B56B77800550FCD /* UpdateSquad */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B552B56D9BA00550FCD /* viewModel */,
+				84B46B4A2B56B87D00550FCD /* view */,
+				84B46B452B56B78900550FCD /* controller */,
+			);
+			path = UpdateSquad;
+			sourceTree = "<group>";
+		};
+		84B46B452B56B78900550FCD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B462B56B79700550FCD /* UpdateSquadController.xib */,
+				84B46B482B56B85500550FCD /* UpdateSquadController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84B46B4A2B56B87D00550FCD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B4B2B56B88200550FCD /* cell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84B46B4B2B56B88200550FCD /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B502B56BC6900550FCD /* SquadItemCell */,
+				84B46B4C2B56B91500550FCD /* UpdateSquadTableViewCell.swift */,
+				84B46B4D2B56B91500550FCD /* UpdateSquadTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84B46B502B56BC6900550FCD /* SquadItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B512B56BC8D00550FCD /* SquadItemCell.swift */,
+				84B46B522B56BC8D00550FCD /* SquadItemCell.xib */,
+			);
+			path = SquadItemCell;
+			sourceTree = "<group>";
+		};
+		84B46B552B56D9BA00550FCD /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B46B562B56D9DA00550FCD /* UpdateSquadViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		84B7456329E46EB10086C708 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3443,6 +3519,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84B46B432B56B76800550FCD /* UpdateDetails */,
 				84D772162B55808B00A1C124 /* MoreOffer */,
 				84615DE52B5559B300A84881 /* UnderMaintenance */,
 				84615DDF2B55525C00A84881 /* VersionUpdate */,
@@ -3706,6 +3783,7 @@
 				84A050EF29E96249004D582B /* CasterOverview.storyboard in Resources */,
 				84DFA97F2B31EFF000B560D8 /* TeamRankController.xib in Resources */,
 				84F6C5B729CA12E900D21EE2 /* Assets.xcassets in Resources */,
+				84B46B4F2B56B91500550FCD /* UpdateSquadTableViewCell.xib in Resources */,
 				8470469A2B3008CF00EA807A /* RankCellWithCoverCell.xib in Resources */,
 				84A0510029E99678004D582B /* CreatorOverview.storyboard in Resources */,
 				8464B3822B52E2010097B77A /* ShieldAmountCollectionViewCell.xib in Resources */,
@@ -3726,7 +3804,9 @@
 				842FC9B829E84CA300C5F354 /* PlayerOverview.storyboard in Resources */,
 				849AEBA82A1543440024AAAA /* PhNumTableCell.xib in Resources */,
 				84615DD62B5542CE00A84881 /* StarCountFilterCell.xib in Resources */,
+				84B46B542B56BC8D00550FCD /* SquadItemCell.xib in Resources */,
 				84EF0A8829EEF1160042B6BF /* Menu.storyboard in Resources */,
+				84B46B472B56B79700550FCD /* UpdateSquadController.xib in Resources */,
 				84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */,
 				840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */,
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
@@ -3943,6 +4023,8 @@
 				84EF0A8C29EEF13F0042B6BF /* MenuModule.swift in Sources */,
 				849BCE0B29E51F150033C63A /* TeamOverview.swift in Sources */,
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
+				84B46B532B56BC8D00550FCD /* SquadItemCell.swift in Sources */,
+				84B46B4E2B56B91500550FCD /* UpdateSquadTableViewCell.swift in Sources */,
 				84B7458829E494960086C708 /* Sponsor.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
 				84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */,
@@ -3951,6 +4033,7 @@
 				84597C7529EA4A38007C511B /* GameImageCollectionViewCell.swift in Sources */,
 				84597C7D29EA5337007C511B /* CreatorOverviewViewDelegate.swift in Sources */,
 				84615DD52B5542CE00A84881 /* StarCountFilterCell.swift in Sources */,
+				84B46B572B56D9DA00550FCD /* UpdateSquadViewModel.swift in Sources */,
 				84B7457429E487C30086C708 /* FormerPlayers.swift in Sources */,
 				84CF0A0629D9FA5D00F87400 /* MatchModule.swift in Sources */,
 				84E486252B20293200ADEAB2 /* RegistrationUserModel.swift in Sources */,
@@ -4025,6 +4108,7 @@
 				84F602E929DC7ECF00250C25 /* FilterSetting.swift in Sources */,
 				84CF09FC29D9F7AF00F87400 /* Rank.swift in Sources */,
 				84F5FAF229DE81D800734CAE /* Pagination.swift in Sources */,
+				84B46B492B56B85600550FCD /* UpdateSquadController.swift in Sources */,
 				84F17AEA2B0E3DED00B97B08 /* PrivacyPolicyController.swift in Sources */,
 				84F58F562B11FA7400F2FFAA /* UserProfileResponseModel.swift in Sources */,
 				84F58F6B2B139E7F00F2FFAA /* UpdateResponseModel.swift in Sources */,
