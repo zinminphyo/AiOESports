@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileController" customModule="AiOESports" customModuleProvider="target">
             <connections>
+                <outlet property="badgeImageView" destination="fLk-u1-QKz" id="YFu-dz-yz1"/>
                 <outlet property="idLabel" destination="iUu-Dl-VCb" id="A8K-T9-AhT"/>
                 <outlet property="loadingView" destination="g9h-g1-5Zj" id="r6e-az-KCf"/>
                 <outlet property="nameLabel" destination="Z9J-Ng-h2F" id="ZcF-ay-Mhi"/>
@@ -76,14 +77,30 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="a4a-Xm-dn5">
                                             <rect key="frame" x="114" y="0.0" width="261" height="80"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jane Cooper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9J-Ng-h2F">
-                                                    <rect key="frame" x="0.0" y="0.0" width="261" height="24"/>
-                                                    <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id-123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUu-Dl-VCb">
-                                                    <rect key="frame" x="0.0" y="27" width="261" height="17"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Wv-SZ-jIO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="261" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jane Cooper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9J-Ng-h2F">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="18"/>
+                                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-u1-QKz">
+                                                            <rect key="frame" x="118.66666666666666" y="0.0" width="18" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="fLk-u1-QKz" secondAttribute="height" multiplier="1:1" id="Xbj-Vd-sg4"/>
+                                                                <constraint firstAttribute="height" constant="18" id="j7u-HK-BjT"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-yV-Q4q">
+                                                            <rect key="frame" x="144.66666666666669" y="0.0" width="116.33333333333331" height="18"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID : 123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUu-Dl-VCb">
+                                                    <rect key="frame" x="0.0" y="21" width="261" height="23"/>
                                                     <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -837,15 +854,15 @@
         </view>
     </objects>
     <resources>
-        <image name="Logout" width="32" height="32"/>
-        <image name="RateThisApp" width="32" height="32"/>
+        <image name="Logout" width="33" height="33"/>
+        <image name="RateThisApp" width="33" height="33"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="follow&amp;Vote" width="32" height="32"/>
+        <image name="follow&amp;Vote" width="33" height="33"/>
         <image name="gameSorting" width="32" height="32"/>
-        <image name="passcode" width="32" height="32"/>
-        <image name="privacyPolicy" width="32" height="32"/>
-        <image name="profileInfo" width="32" height="32"/>
-        <image name="shieldsHistory" width="32" height="32"/>
+        <image name="passcode" width="33" height="33"/>
+        <image name="privacyPolicy" width="33" height="33"/>
+        <image name="profileInfo" width="33" height="33"/>
+        <image name="shieldsHistory" width="33" height="33"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,6 +15,7 @@ class ProfileController: UIViewController {
     @IBOutlet private(set) var nameLabel: UILabel!
     @IBOutlet private(set) var idLabel: UILabel!
     @IBOutlet private(set) var profileLevelView: ProfileLevelView!
+    @IBOutlet private(set) var badgeImageView: UIImageView!
     
     private let viewModel: ProfileViewModel
     private(set) var subscription = Set<AnyCancellable>()
@@ -69,9 +70,10 @@ class ProfileController: UIViewController {
     private func UIBinding() {
         nameLabel.text = viewModel.profileModel.username
         nameLabel.textColor = viewModel.profileModel.level.lowercased() == "free" ? Colors.Text.primaryText : Colors.Text.goldText
-        idLabel.text = "id:\(viewModel.profileModel.formattedId)"
+        idLabel.text = "ID : \(viewModel.profileModel.formattedId)"
         profileLevelView.set(imageURL: viewModel.profileModel.profile_image)
         profileLevelView.set(level: viewModel.profileModel.level)
+        badgeImageView.image = Images.badgeImage(viewModel.profileModel.badge)
     }
 
 }

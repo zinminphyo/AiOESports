@@ -259,15 +259,24 @@ extension Images {
     }
 }
 
+
+// MARK: - Shield Images
 extension Images {
     static func getShieldImage(_ value: String) -> UIImage? {
         return UIImage(named: value, in: .main, compatibleWith: nil)
     }
 }
 
-
+// MARK: - Payment Images
 extension Images {
     static func getPaymentImage(_ name: String) -> UIImage? {
         return UIImage(named: name, in: .main, compatibleWith: nil)
+    }
+}
+
+// MARK: - Badge Images
+extension Images {
+    static func badgeImage(_ name: String) -> UIImage? {
+        return UIImage(named: name.lowercased(), in: .main, compatibleWith: nil)
     }
 }
