@@ -24,6 +24,7 @@
                 <outlet property="cityStateInfoView" destination="zDJ-1x-iLT" id="Ez2-yw-vpL"/>
                 <outlet property="dobInfoView" destination="QLz-EK-8Lc" id="20Y-R1-0j1"/>
                 <outlet property="genderInfoView" destination="2MY-4v-eYp" id="Oey-Z7-9Eb"/>
+                <outlet property="loadingView" destination="d7q-WP-V4N" id="2Ws-La-kkW"/>
                 <outlet property="phoneNumberInfoView" destination="3Ha-tM-XHp" id="YrR-7J-cTB"/>
                 <outlet property="profileLevelView" destination="vaE-el-86l" id="ajj-sW-Fhz"/>
                 <outlet property="usernameInfoView" destination="mJH-hX-8jF" id="tzK-Hj-1pN"/>
@@ -170,17 +171,35 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="cCY-tu-Had"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="7cO-tb-fMm"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7q-WP-V4N">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Yl4-nz-szX">
+                            <rect key="frame" x="186.66666666666666" y="386.66666666666669" width="20" height="20"/>
+                            <color key="color" name="PrimaryText"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" name="ThemeColor"/>
+                    <constraints>
+                        <constraint firstItem="Yl4-nz-szX" firstAttribute="centerY" secondItem="d7q-WP-V4N" secondAttribute="centerY" id="Ob9-Rn-cT8"/>
+                        <constraint firstItem="Yl4-nz-szX" firstAttribute="centerX" secondItem="d7q-WP-V4N" secondAttribute="centerX" id="lZt-2V-8Ms"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="ThemeColor"/>
             <constraints>
                 <constraint firstItem="cQa-qQ-kOa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6RL-Jc-adp"/>
                 <constraint firstItem="66v-bJ-Pr7" firstAttribute="top" secondItem="cQa-qQ-kOa" secondAttribute="bottom" id="A9U-by-MfI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d7q-WP-V4N" secondAttribute="trailing" id="I3l-SQ-XeX"/>
                 <constraint firstItem="66v-bJ-Pr7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LOy-d3-ilK"/>
                 <constraint firstItem="DHE-5T-UJE" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="QjE-TV-jcE"/>
+                <constraint firstItem="d7q-WP-V4N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Vrf-65-ABF"/>
                 <constraint firstItem="cQa-qQ-kOa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="X24-Te-XHG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cQa-qQ-kOa" secondAttribute="trailing" id="d6t-Wj-Sei"/>
+                <constraint firstItem="d7q-WP-V4N" firstAttribute="top" secondItem="cQa-qQ-kOa" secondAttribute="top" id="eUe-2z-ziI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="66v-bJ-Pr7" secondAttribute="trailing" id="i7b-1w-wMM"/>
+                <constraint firstAttribute="bottom" secondItem="d7q-WP-V4N" secondAttribute="bottom" id="sg1-a8-YQg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="66v-bJ-Pr7" secondAttribute="bottom" id="yg0-OH-AQu"/>
             </constraints>
             <point key="canvasLocation" x="-40" y="-12"/>
@@ -188,6 +207,9 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

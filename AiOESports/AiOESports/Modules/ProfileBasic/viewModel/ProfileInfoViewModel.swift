@@ -33,10 +33,14 @@ class ProfileInfoViewModel {
         profileInfo = info
     }
     
+    @Published
+    var isFetching: Bool = false
+    
     var userInfoFetchingCompleted = PassthroughSubject<UserInfo, Never>()
     
     
     func fetchProfile() {
+        isFetching = true
         let service = UserInfoFetchingService()
         Task {
             do {
@@ -45,6 +49,7 @@ class ProfileInfoViewModel {
             } catch {
                 print("Error is \(error.localizedDescription)")
             }
+            isFetching = false
         }
     }
 }

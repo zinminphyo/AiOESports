@@ -230,8 +230,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0uX-HY-7uC"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOL-38-Zua" customClass="LoadingView" customModule="AiOESports" customModuleProvider="target">
                                 <rect key="frame" x="156.66666666666666" y="386" width="80" height="80"/>

@@ -17,6 +17,7 @@ class ProfileBasicController: UIViewController {
     @IBOutlet private(set) var dobInfoView: ProfileInfoView!
     @IBOutlet private(set) var cityStateInfoView: ProfileInfoView!
     @IBOutlet private(set) var cityInfoView: ProfileInfoView!
+    @IBOutlet private(set) var loadingView: UIView!
     
     let viewModel: ProfileInfoViewModel
     
@@ -42,6 +43,13 @@ class ProfileBasicController: UIViewController {
                 guard let self = self else { return }
                 self.updateUserInfo($0)
             }.store(in: &subscription)
+        
+        viewModel.$isFetching
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.loadingView.isHidden = !$0
+            }.store(in: &subscription)
+        
         /*
         profileLevelView.set(imageURL: viewModel.profileInfo.profileURL)
         usernameInfoView.value = viewModel.profileInfo.username
@@ -52,11 +60,17 @@ class ProfileBasicController: UIViewController {
          */
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.fetchProfile()
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.fetchProfile()
+//        viewModel.fetchProfile()
     }
     
     private func updateUserInfo(_ userInfo: UserInfo) {

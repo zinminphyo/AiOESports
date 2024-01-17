@@ -49,4 +49,30 @@ struct UserInfo: Decodable {
     let badge: String
     let created_at: String
     let updated_at: String
+    
+    enum CodingKeys: CodingKey {
+        case id, username, phone_no, dob, profile_image, shield, diamond, city, state, gender, level, facebook_link, instagram_link, otp, verified, badge, created_at, updated_at
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        username = try container.decode(String.self, forKey: .username)
+        phone_no = try container.decode(String.self, forKey: .phone_no)
+        dob = try container.decode(String?.self, forKey: .dob) ?? ""
+        profile_image = try container.decode(String.self, forKey: .profile_image)
+        shield = try container.decode(Int.self, forKey: .shield)
+        diamond = try container.decode(Int.self, forKey: .diamond)
+        city = try container.decode(String?.self, forKey: .city) ?? ""
+        state = try container.decode(String?.self, forKey: .state) ?? ""
+        gender = try container.decode(String?.self, forKey: .gender) ?? ""
+        level = try container.decode(String?.self, forKey: .level) ?? ""
+        facebook_link = try container.decode(String?.self, forKey: .facebook_link) ?? ""
+        instagram_link = try container.decode(String?.self, forKey: .instagram_link) ?? ""
+        otp = try container.decode(String.self, forKey: .otp)
+        verified = try container.decode(Int.self, forKey: .verified)
+        badge = try container.decode(String.self, forKey: .badge)
+        created_at = try container.decode(String.self, forKey: .created_at)
+        updated_at = try container.decode(String.self, forKey: .updated_at)
+    }
 }
