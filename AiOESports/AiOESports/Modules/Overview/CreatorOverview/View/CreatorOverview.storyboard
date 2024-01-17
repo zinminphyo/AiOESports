@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Taa-Fq-CEm">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aa4-ce-Goe">
                                         <rect key="frame" x="146.66666666666666" y="8" width="100" height="50"/>
@@ -47,33 +47,33 @@
                                         </cells>
                                     </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0sA-DW-3dh">
-                                        <rect key="frame" x="0.0" y="66" width="393" height="300"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="66" width="393" height="230"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="y3Q-OJ-vi2"/>
+                                            <constraint firstAttribute="height" constant="230" id="y3Q-OJ-vi2"/>
                                         </constraints>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6JP-hu-ae8">
-                                        <rect key="frame" x="10" y="374" width="373" height="2"/>
+                                        <rect key="frame" x="10" y="304" width="373" height="2"/>
                                         <color key="backgroundColor" name="InputColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="6ls-fQ-KEb"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-iQ-AJE">
-                                        <rect key="frame" x="10" y="392" width="42" height="21"/>
+                                        <rect key="frame" x="10" y="322" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBy-E5-2Jh">
-                                        <rect key="frame" x="10" y="429" width="42" height="21"/>
+                                        <rect key="frame" x="10" y="359" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oBy-E5-2Jh" firstAttribute="leading" secondItem="Taa-Fq-CEm" secondAttribute="leading" constant="10" id="9xf-CF-BTz"/>
                                     <constraint firstItem="aa4-ce-Goe" firstAttribute="centerX" secondItem="Taa-Fq-CEm" secondAttribute="centerX" id="AD0-C3-YQG"/>
@@ -98,7 +98,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Taa-Fq-CEm" secondAttribute="trailing" id="0ai-2d-zc9"/>
                             <constraint firstItem="Taa-Fq-CEm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="W60-dZ-pSh"/>
                             <constraint firstItem="Taa-Fq-CEm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bSm-xC-awK"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Taa-Fq-CEm" secondAttribute="bottom" id="fj8-JE-IS8"/>
+                            <constraint firstAttribute="bottom" secondItem="Taa-Fq-CEm" secondAttribute="bottom" id="fj8-JE-IS8"/>
                         </constraints>
                     </view>
                     <connections>
