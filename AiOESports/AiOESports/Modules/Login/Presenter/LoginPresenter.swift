@@ -16,6 +16,9 @@ class LoginPresenter: LoginPresenting {
     
     var interactor: LoginInteracting?
     
+    
+    var phoneNumberHasPrefixZero: PassthroughSubject<Bool, Never> = .init()
+    
     private var isRemebered: Bool = false {
         didSet {
             checkRequiredInfoIsCompleted()
@@ -40,7 +43,12 @@ class LoginPresenter: LoginPresenting {
     }
     
     func didChangePhoneNumber(phoneNum: String) {
-        self.phoneNumber = phoneNum
+        phoneNumber = phoneNum
+        checkPhoneNumberHasPrefixZero()
+    }
+    
+    private func checkPhoneNumberHasPrefixZero() {
+        phoneNumberHasPrefixZero.send(phoneNumber.hasPrefix("0")) 
     }
     
     func didChangePassword(password: String) {

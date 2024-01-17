@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol LoginViewDelegate {
-    var presenter: LoginPresenting? { get set }
+    var presenter: LoginPresenter? { get set }
     func updateRememberInfoFlag(flag: Bool)
     func updateLoginButtton(isCompleted: Bool)
     func updateLoginViewState(isCorrect: Bool)

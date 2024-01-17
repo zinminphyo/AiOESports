@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+
 
 class Login: UIViewController {
     
@@ -29,7 +31,8 @@ class Login: UIViewController {
     @IBOutlet private(set) var pinView: OTPView!
     @IBOutlet weak var loadingView: LoadingView!
     
-    var presenter: LoginPresenting?
+    var presenter: LoginPresenter?
+    private(set) var subscription = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,13 @@ class Login: UIViewController {
         configurePhoneNumberErrorContainerView()
         configurePasswordErrorContainerView()
         configureSaveInfoView()
+        
+        presenter?.phoneNumberHasPrefixZero
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                self?.incorrectPhoneNumberLabel.text = "Your phone number must start with zero."
+                self?.incorrectPhoneNumberLabel.isHidden = $0
+            }).store(in: &subscription)
     }
     
     private func configureBackgroundColor() {
