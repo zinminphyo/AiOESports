@@ -54,7 +54,7 @@ class LoginPresenter: LoginPresenting {
     
     func tappedLoginBtn() {
         self.viewDelegate?.showLoading()
-        self.interactor?.login(phoneNum: "0\(phoneNumber)", password: password)
+        self.interactor?.login(phoneNum: phoneNumber, password: password)
     }
     
     func tappedForgetLabel() {

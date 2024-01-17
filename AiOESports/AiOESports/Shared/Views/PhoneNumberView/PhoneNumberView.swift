@@ -56,8 +56,8 @@ class PhoneNumberView: UIView, NibLoadable {
         phoneNumberTxtField.borderStyle = .none
         phoneNumberTxtField.delegate = self
         phoneNumberTxtField.keyboardType = .numberPad
-        phoneNumberTxtField.placeholder = "9 xxx xxx xxx"
-        let placeHolder = "9 xxx xxx xxx"
+        phoneNumberTxtField.placeholder = "09 xxx xxx xxx"
+        let placeHolder = "09 xxx xxx xxx"
         let attributedPlaceholder = NSMutableAttributedString(string: placeHolder)
         attributedPlaceholder.addAttribute(.foregroundColor, value: Colors.Text.secondaryText!, range: NSRange(location: 0, length: placeHolder.count))
         phoneNumberTxtField.attributedPlaceholder = attributedPlaceholder
