@@ -16,6 +16,7 @@ class ProfileController: UIViewController {
     @IBOutlet private(set) var idLabel: UILabel!
     @IBOutlet private(set) var profileLevelView: ProfileLevelView!
     @IBOutlet private(set) var badgeImageView: UIImageView!
+    @IBOutlet private(set) var upgradePremiumView: UIView!
     
     private let viewModel: ProfileViewModel
     private(set) var subscription = Set<AnyCancellable>()
@@ -74,6 +75,7 @@ class ProfileController: UIViewController {
         profileLevelView.set(imageURL: viewModel.profileModel.profile_image)
         profileLevelView.set(level: viewModel.profileModel.level)
         badgeImageView.image = Images.badgeImage(viewModel.profileModel.badge)
+        upgradePremiumView.isHidden = viewModel.profileModel.level.lowercased() == "premium"
     }
 
 }
