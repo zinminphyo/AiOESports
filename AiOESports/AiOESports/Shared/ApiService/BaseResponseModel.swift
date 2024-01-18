@@ -9,7 +9,7 @@ import Foundation
 
 
 struct BaseResponseModel<T: Decodable>: Decodable {
-    let result: T?
+    var result: T?
     let statusCode: Int
     let message: String
     

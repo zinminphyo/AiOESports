@@ -53,7 +53,7 @@ struct UserProfileResponseModel: Decodable {
     let phone_no: String
     let dob: String
     let profile_image: String
-    let shield: Int
+    var shield: Int
     let diamond: Int
     let city: String
     let state: String

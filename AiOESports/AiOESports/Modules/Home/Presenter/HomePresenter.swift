@@ -36,6 +36,7 @@ class HomePresenter: HomePresenting {
         isFetching = true
         interactor?.fetchHomeData()
         fetchForceVersion()
+        fetchShieldCount()
     }
     
     func didFinishedHomeDataFetching(bannerLists: [BannerModel]?, adLists: [AdvertisementModel]?, error: String?) {
