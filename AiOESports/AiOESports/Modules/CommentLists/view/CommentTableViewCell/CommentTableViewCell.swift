@@ -21,6 +21,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet private(set) var threeStarImageView: UIImageView!
     @IBOutlet private(set) var fourStarImageView: UIImageView!
     @IBOutlet private(set) var fiveStarImageView: UIImageView!
+    @IBOutlet private(set) var badgeImageView: UIImageView!
     
     /* 2023-10-14T07:40:09.000000Z */
     lazy var serverFormatter: DateFormatter = {
@@ -61,6 +62,7 @@ class CommentTableViewCell: UITableViewCell {
         profileNameLabel.text = rating.username
         minAgoLabel.text = localeFormatter.string(from: serverFormatter.date(from: rating.created_at) ?? Date())
         commentLabel.text = rating.comment
+        badgeImageView.image = Images.badgeImage(rating.badge)
         updateStars(count: rating.star)
     }
     
