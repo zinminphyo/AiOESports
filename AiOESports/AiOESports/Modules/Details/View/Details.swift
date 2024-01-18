@@ -405,6 +405,8 @@ extension Details: DetailsViewDelegate {
         gameNameLabel.text = details.detail.game.uppercased()
         gameImageView.image = Images.GameImages.getImage(gameName: details.detail.game)
         rankLabel.text = String(details.followRating.teamRank)
+        rankLabel.textColor = Colors.rankColor(rank: details.followRating.teamRank)
+        rankLabel.font = Fonts.rankFont(rank: details.followRating.teamRank)
         totalRatingLabel.text = details.followRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.followRating.totalFollowers) \(details.followRating.totalRating > 1 ? "followers" : "follower")"
         totalVotedCountLabel.text = "\(details.followRating.totalRating) \(details.followRating.totalRating > 1 ? "votes" : "vote")"
@@ -419,6 +421,8 @@ extension Details: DetailsViewDelegate {
         teamImageView.kf.setImage(with: URL(string: details.details.playerImageFullPath))
         teamNameLabel.text = details.details.name
         rankLabel.text = String(details.totalFollowRating.talentRank)
+        rankLabel.textColor = Colors.rankColor(rank: details.totalFollowRating.talentRank)
+        rankLabel.font = Fonts.rankFont(rank: details.totalFollowRating.talentRank)
         gameImageView.image = Images.GameImages.getImage(gameName: details.details.game)
         gameNameLabel.text = details.details.game.uppercased()
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
@@ -437,6 +441,8 @@ extension Details: DetailsViewDelegate {
         gameNameLabel.text = details.details.game.uppercased()
         teamNameLabel.text = details.details.name
         rankLabel.text = String(details.totalFollowRating.talentRank)
+        rankLabel.font = Fonts.rankFont(rank: details.totalFollowRating.talentRank)
+        rankLabel.textColor = Colors.rankColor(rank: details.totalFollowRating.talentRank)
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalFollowers > 1 ? "followers" : "folower")"
         totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"
@@ -453,6 +459,8 @@ extension Details: DetailsViewDelegate {
         gameImageView.image = Images.GameImages.getImage(gameName: details.details.game)
         gameNameLabel.text = details.details.game.uppercased()
         rankLabel.text = String(details.totalFollowRating.talentRank)
+        rankLabel.textColor = Colors.rankColor(rank: details.totalFollowRating.talentRank)
+        rankLabel.font = Fonts.rankFont(rank: details.totalFollowRating.talentRank)
         totalRatingLabel.text = details.totalFollowRating.totalRatingStars
         totalFollowerCountLabel.text = "\(details.totalFollowRating.totalFollowers) \(details.totalFollowRating.totalFollowers > 1 ? "followers" : "folower")"
         totalVotedCountLabel.text = "\(details.totalFollowRating.totalRating) \(details.totalFollowRating.totalRating > 1 ? "votes" : "vote")"

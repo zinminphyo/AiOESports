@@ -47,3 +47,15 @@ class Colors {
         static let endColor = UIColor(named: "End", in: .main, compatibleWith: nil)!
     }
 }
+
+
+extension Colors {
+    static func rankColor(rank: Int) -> UIColor? {
+        switch rank {
+        case 1,2,3:
+            return Gradient.startColor
+        default:
+            return Text.primaryText
+        }
+    }
+}
