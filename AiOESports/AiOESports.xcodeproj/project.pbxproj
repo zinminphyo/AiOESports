@@ -16,6 +16,10 @@
 		840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75929F66C9E007F4159 /* LoginRouting.swift */; };
 		840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CC75B29F66CE9007F4159 /* LoginRouter.swift */; };
 		840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840CC75F29F7D5A5007F4159 /* AccountSetup.storyboard */; };
+		840CE68F2B5ADAE40067B474 /* ShieldHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CE68E2B5ADAE40067B474 /* ShieldHistoryController.swift */; };
+		840CE6922B5ADBD50067B474 /* ShieldHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CE6912B5ADBD50067B474 /* ShieldHistoryViewModel.swift */; };
+		840CE6962B5ADBFD0067B474 /* ShieldHistoryServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CE6952B5ADBFD0067B474 /* ShieldHistoryServiceProtocol.swift */; };
+		840CE6982B5ADC1D0067B474 /* ShieldHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CE6972B5ADC1D0067B474 /* ShieldHistoryService.swift */; };
 		840CEE122B4D98A3000A6EBB /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */; };
 		840CEE132B4D98A3000A6EBB /* BankAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840CEE112B4D98A3000A6EBB /* BankAccountCell.xib */; };
 		840CEE172B4D9CD9000A6EBB /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840CEE152B4D9CD9000A6EBB /* AccountCell.swift */; };
@@ -331,6 +335,7 @@
 		84CF0A1229D9FB1D00F87400 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF0A1129D9FB1D00F87400 /* Shop.storyboard */; };
 		84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1329D9FB2800F87400 /* Shop.swift */; };
 		84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1529D9FB3900F87400 /* ShopModule.swift */; };
+		84D149D32B5AD63F009DCFFF /* ShieldHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D149D22B5AD63F009DCFFF /* ShieldHistoryController.xib */; };
 		84D772192B55814E00A1C124 /* MoreOfferController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D772182B55814E00A1C124 /* MoreOfferController.xib */; };
 		84D7721B2B55829E00A1C124 /* MoreOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721A2B55829E00A1C124 /* MoreOfferController.swift */; };
 		84D7721F2B55855600A1C124 /* MoreOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721D2B55855600A1C124 /* MoreOfferCell.swift */; };
@@ -492,6 +497,10 @@
 		840CC75929F66C9E007F4159 /* LoginRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouting.swift; sourceTree = "<group>"; };
 		840CC75B29F66CE9007F4159 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		840CC75F29F7D5A5007F4159 /* AccountSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountSetup.storyboard; sourceTree = "<group>"; };
+		840CE68E2B5ADAE40067B474 /* ShieldHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldHistoryController.swift; sourceTree = "<group>"; };
+		840CE6912B5ADBD50067B474 /* ShieldHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldHistoryViewModel.swift; sourceTree = "<group>"; };
+		840CE6952B5ADBFD0067B474 /* ShieldHistoryServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldHistoryServiceProtocol.swift; sourceTree = "<group>"; };
+		840CE6972B5ADC1D0067B474 /* ShieldHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldHistoryService.swift; sourceTree = "<group>"; };
 		840CEE102B4D98A3000A6EBB /* BankAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
 		840CEE112B4D98A3000A6EBB /* BankAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankAccountCell.xib; sourceTree = "<group>"; };
 		840CEE152B4D9CD9000A6EBB /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
@@ -806,6 +815,7 @@
 		84CF0A1129D9FB1D00F87400 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		84CF0A1329D9FB2800F87400 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		84CF0A1529D9FB3900F87400 /* ShopModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModule.swift; sourceTree = "<group>"; };
+		84D149D22B5AD63F009DCFFF /* ShieldHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldHistoryController.xib; sourceTree = "<group>"; };
 		84D772182B55814E00A1C124 /* MoreOfferController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferController.xib; sourceTree = "<group>"; };
 		84D7721A2B55829E00A1C124 /* MoreOfferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferController.swift; sourceTree = "<group>"; };
 		84D7721D2B55855600A1C124 /* MoreOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferCell.swift; sourceTree = "<group>"; };
@@ -1044,6 +1054,31 @@
 				845346D329FEBDB30077F8A0 /* AccountSetup.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		840CE6902B5ADBC70067B474 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				840CE6912B5ADBD50067B474 /* ShieldHistoryViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		840CE6932B5ADBE10067B474 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				840CE6942B5ADBE50067B474 /* GetShieldHistoryService */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		840CE6942B5ADBE50067B474 /* GetShieldHistoryService */ = {
+			isa = PBXGroup;
+			children = (
+				840CE6952B5ADBFD0067B474 /* ShieldHistoryServiceProtocol.swift */,
+				840CE6972B5ADC1D0067B474 /* ShieldHistoryService.swift */,
+			);
+			path = GetShieldHistoryService;
 			sourceTree = "<group>";
 		};
 		840CEE0E2B4D9882000A6EBB /* view */ = {
@@ -2766,6 +2801,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84D149D02B5AD625009DCFFF /* ShieldHistory */ = {
+			isa = PBXGroup;
+			children = (
+				840CE6932B5ADBE10067B474 /* services */,
+				840CE6902B5ADBC70067B474 /* viewModel */,
+				84D149D12B5AD62B009DCFFF /* controller */,
+			);
+			path = ShieldHistory;
+			sourceTree = "<group>";
+		};
+		84D149D12B5AD62B009DCFFF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84D149D22B5AD63F009DCFFF /* ShieldHistoryController.xib */,
+				840CE68E2B5ADAE40067B474 /* ShieldHistoryController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		84D772162B55808B00A1C124 /* MoreOffer */ = {
 			isa = PBXGroup;
 			children = (
@@ -3519,6 +3573,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84D149D02B5AD625009DCFFF /* ShieldHistory */,
 				84B46B432B56B76800550FCD /* UpdateDetails */,
 				84D772162B55808B00A1C124 /* MoreOffer */,
 				84615DE52B5559B300A84881 /* UnderMaintenance */,
@@ -3734,6 +3789,7 @@
 				84C578962B0B677100BD4FC9 /* DetailsContentView.xib in Resources */,
 				84615DE22B5552E000A84881 /* VersionUpdateController.xib in Resources */,
 				84CD8B7B2B4A612C00F8F454 /* BuyShieldsController.xib in Resources */,
+				84D149D32B5AD63F009DCFFF /* ShieldHistoryController.xib in Resources */,
 				84F17AE82B0E3D6900B97B08 /* PrivacyPolicyController.xib in Resources */,
 				84CF09EE29D9E87C00F87400 /* Home.storyboard in Resources */,
 				840CEE132B4D98A3000A6EBB /* BankAccountCell.xib in Resources */,
@@ -4025,6 +4081,7 @@
 				849B9C3029CEEF9800F1C2D2 /* OnboardingViewProtocol.swift in Sources */,
 				84B46B532B56BC8D00550FCD /* SquadItemCell.swift in Sources */,
 				84B46B4E2B56B91500550FCD /* UpdateSquadTableViewCell.swift in Sources */,
+				840CE6922B5ADBD50067B474 /* ShieldHistoryViewModel.swift in Sources */,
 				84B7458829E494960086C708 /* Sponsor.swift in Sources */,
 				84CF09F629D9E92800F87400 /* HomeModule.swift in Sources */,
 				84B7456729E46F0C0086C708 /* SquadViewDelegate.swift in Sources */,
@@ -4071,11 +4128,13 @@
 				84F5FB1629DECD0000734CAE /* LoadingPresentable.swift in Sources */,
 				84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */,
 				84E486272B2029F600ADEAB2 /* RegistrationResponseModel.swift in Sources */,
+				840CE68F2B5ADAE40067B474 /* ShieldHistoryController.swift in Sources */,
 				84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */,
 				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
 				84615DDD2B554A8F00A84881 /* CommentTableViewCell.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,
+				840CE6982B5ADC1D0067B474 /* ShieldHistoryService.swift in Sources */,
 				849183E52B0D224D00980944 /* ProfileLevelView.swift in Sources */,
 				843CF3A22B1701D900C98BFF /* VoteController.swift in Sources */,
 				842AF7BE2B21E2BA006F2267 /* FollowAndVoteListsViewModel.swift in Sources */,
@@ -4233,6 +4292,7 @@
 				84F58F662B13872300F2FFAA /* ProfileUpdateServiceProtocol.swift in Sources */,
 				849AEBAE2A16143F0024AAAA /* RegisterInteracting.swift in Sources */,
 				84A0510229E99774004D582B /* CreatorOverview.swift in Sources */,
+				840CE6962B5ADBFD0067B474 /* ShieldHistoryServiceProtocol.swift in Sources */,
 				84597C7F29EA53FB007C511B /* CreatorOverviewPresenter.swift in Sources */,
 				849B9C4629D1E6EB00F1C2D2 /* PinViewDelegate.swift in Sources */,
 				84334E8A2B1C8ACC004DD32D /* UserFollowVoteStats.swift in Sources */,
