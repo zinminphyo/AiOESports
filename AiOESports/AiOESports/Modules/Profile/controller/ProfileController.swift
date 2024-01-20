@@ -130,7 +130,8 @@ extension ProfileController {
     
     @IBAction
     private func didTapShieldsHistory(_ sender: UIButton) {
-        
+        let vc = ShieldHistoryController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction
