@@ -188,7 +188,7 @@ class RankPresenter: RankPresenting {
         case .team:
             fetchTeamLists(gameType: gameType, status: .all)
         case .player:
-            fetchPlayerLists(gameType: gameType, status: .active)
+            fetchPlayerLists(gameType: gameType, status: .all)
         case .caster:
             fetchCasterLists(gameType: gameType, status: .active)
         case .creator:
@@ -217,7 +217,7 @@ class RankPresenter: RankPresenting {
         case .team:
             fetchTeamLists(gameType: gameType, status: .all)
         case .player:
-            fetchPlayerLists(gameType: gameType, status: .active)
+            fetchPlayerLists(gameType: gameType, status: .all)
         case .caster:
             fetchCasterLists(gameType: gameType, status: .active)
         case .creator:

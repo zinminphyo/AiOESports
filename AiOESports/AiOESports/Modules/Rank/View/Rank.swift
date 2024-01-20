@@ -168,7 +168,7 @@ class Rank: UIViewController {
         
         presenter?.fetchTeamLists(gameType: .All, status: .all)
         
-        presenter?.fetchPlayerLists(gameType: .All, status: .active)
+        presenter?.fetchPlayerLists(gameType: .All, status: .all)
         presenter?.fetchCasterLists(gameType: .All, status: .all)
         presenter?.fetchCreatorLists(gameType: .All, status: .all)
          

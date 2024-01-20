@@ -161,6 +161,7 @@ enum PlayerFilterStatus: CaseIterable {
     case inactive
     case retired
     case free
+    case all
     
     var title: String {
         switch self {
@@ -172,6 +173,8 @@ enum PlayerFilterStatus: CaseIterable {
             return "Retried"
         case .free:
             return "Free Agent"
+        case .all:
+            return "All"
         }
     }
     
@@ -185,6 +188,8 @@ enum PlayerFilterStatus: CaseIterable {
             return "retired"
         case .free:
             return "Free"
+        case .all:
+            return "all"
         }
     }
 }
