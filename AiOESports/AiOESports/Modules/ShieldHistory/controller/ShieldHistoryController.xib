@@ -24,6 +24,7 @@
                 <outlet property="contentScrollView" destination="HpU-fb-hFl" id="bob-aE-QR6"/>
                 <outlet property="historyLists" destination="Mth-uW-RrR" id="hZY-Jf-Aqe"/>
                 <outlet property="historyListsHeight" destination="hPv-S8-rAh" id="0us-Et-Ryr"/>
+                <outlet property="loadingView" destination="bYI-ir-H2W" id="KcE-HY-t9d"/>
                 <outlet property="view" destination="iN0-l3-epB" id="NhW-xS-NbA"/>
             </connections>
         </placeholder>
@@ -71,11 +72,11 @@
                         <constraint firstAttribute="height" constant="1" id="VzL-dd-KIz"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-fb-hFl">
-                    <rect key="frame" x="0.0" y="210" width="393" height="450"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-fb-hFl">
+                    <rect key="frame" x="0.0" y="210" width="393" height="50"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKI-nD-B0w">
-                            <rect key="frame" x="0.0" y="0.0" width="653" height="450"/>
+                            <rect key="frame" x="0.0" y="0.0" width="653" height="50"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-OR-4Dc">
                                     <rect key="frame" x="0.0" y="0.0" width="653" height="50"/>
@@ -178,10 +179,10 @@
                                     </constraints>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mth-uW-RrR">
-                                    <rect key="frame" x="0.0" y="50" width="653" height="400"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <rect key="frame" x="0.0" y="50" width="653" height="0.0"/>
+                                    <color key="backgroundColor" name="ThemeColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="400" id="hPv-S8-rAh"/>
+                                        <constraint firstAttribute="height" id="hPv-S8-rAh"/>
                                     </constraints>
                                 </tableView>
                             </subviews>
@@ -212,16 +213,39 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="v5e-pk-vhh"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="eGC-1j-k05"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYI-ir-H2W">
+                    <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="S2b-oH-isx">
+                            <rect key="frame" x="40" y="40" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="S2b-oH-isx" firstAttribute="centerX" secondItem="bYI-ir-H2W" secondAttribute="centerX" id="4qN-Ii-Gb3"/>
+                        <constraint firstAttribute="height" constant="100" id="PgT-a7-LV8"/>
+                        <constraint firstItem="S2b-oH-isx" firstAttribute="centerY" secondItem="bYI-ir-H2W" secondAttribute="centerY" id="TxF-SD-Pa5"/>
+                        <constraint firstAttribute="width" constant="100" id="o3d-SY-HVw"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="ThemeColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xby-Bi-4WO" secondAttribute="trailing" id="CgG-LN-D3f"/>
+                <constraint firstItem="bYI-ir-H2W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KeI-Af-5lh"/>
                 <constraint firstItem="xby-Bi-4WO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="L9O-iu-BRA"/>
                 <constraint firstItem="5OE-t3-5JT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="O73-hK-9Lt"/>
                 <constraint firstItem="HpU-fb-hFl" firstAttribute="top" secondItem="5OE-t3-5JT" secondAttribute="bottom" constant="50" id="REE-EK-2bu"/>
                 <constraint firstItem="HpU-fb-hFl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TxD-0b-tcS"/>
                 <constraint firstItem="xby-Bi-4WO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="U8X-Ec-yLF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HpU-fb-hFl" secondAttribute="bottom" id="ZJZ-wE-ZF5"/>
+                <constraint firstItem="bYI-ir-H2W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="beM-4t-DUV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5OE-t3-5JT" secondAttribute="trailing" constant="18" id="oBh-zF-Jj2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HpU-fb-hFl" secondAttribute="trailing" id="sRW-6U-tck"/>
                 <constraint firstItem="5OE-t3-5JT" firstAttribute="top" secondItem="xby-Bi-4WO" secondAttribute="bottom" constant="50" id="suj-F0-Dm1"/>

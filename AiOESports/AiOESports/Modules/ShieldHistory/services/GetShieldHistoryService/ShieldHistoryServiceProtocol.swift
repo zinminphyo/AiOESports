@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ShieldHistoryServiceProtocol {
-    func fetchLists() async throws 
+    func fetchLists() async throws -> ShieldHistories
 }

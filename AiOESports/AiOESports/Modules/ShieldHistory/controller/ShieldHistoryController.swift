@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ShieldHistoryController: UIViewController {
     
@@ -13,6 +14,21 @@ class ShieldHistoryController: UIViewController {
     @IBOutlet private(set) var historyListsHeight: NSLayoutConstraint!
     @IBOutlet private(set) var contentScrollView: UIScrollView!
     @IBOutlet private(set) var contentContainerView: UIView!
+    @IBOutlet private(set) var loadingView: UIView!
+    
+    private var histories: ShieldHistories = []
+    
+    private let vm: ShieldHistoryViewModel!
+    private(set) var subscription = Set<AnyCancellable>()
+    
+    init() {
+        vm = ShieldHistoryViewModel()
+        super.init(nibName: "ShieldHistoryController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Doesn't support for this NSCoder.")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +41,9 @@ class ShieldHistoryController: UIViewController {
         configureScrollView()
         configureShieldLists()
         configureContentContainerView()
+        configureViewModel()
     }
+    
     
     private func configureScrollView() {
         contentScrollView.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0)
@@ -41,8 +59,27 @@ class ShieldHistoryController: UIViewController {
         historyLists.separatorStyle = .none
         historyLists.dataSource = self
         historyLists.delegate = self
-        historyListsHeight.constant = ShieldHistoryCell.height * CGFloat(5)
-        view.invalidateIntrinsicContentSize()
+        historyLists.isScrollEnabled = true
+    }
+    
+    private func configureViewModel() {
+        vm.fetchingCompleted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                guard let self  = self else { return }
+                self.histories = $0
+                self.historyLists.reloadData()
+                self.historyListsHeight.constant = ShieldHistoryCell.height * CGFloat($0.count)
+                self.view.invalidateIntrinsicContentSize()
+            }.store(in: &subscription)
+        
+        vm.$isFetching
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.loadingView.isHidden = !$0
+            }.store(in: &subscription)
+        
+        vm.fetchHistories()
     }
 
     @IBAction
@@ -55,11 +92,12 @@ class ShieldHistoryController: UIViewController {
 
 extension ShieldHistoryController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return histories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ShieldHistoryCell.reuseIdentifier, for: indexPath) as! ShieldHistoryCell
+        cell.render(histories[indexPath.row])
         return cell
     }
 }
