@@ -17,6 +17,7 @@ class BuyShieldsController: UIViewController {
     @IBOutlet private(set) var accountListsHeight: NSLayoutConstraint!
     @IBOutlet private(set) var phoneNumber1Label: UILabel!
     @IBOutlet private(set) var phoneNumber2Label: UILabel!
+    @IBOutlet private(set) var shieldCountlabel: UILabel!
     
     private let vm: BuyShieldsViewModel!
     private var subscription = Set<AnyCancellable>()
@@ -98,7 +99,9 @@ class BuyShieldsController: UIViewController {
                 self.updateUI()
             }.store(in: &subscription)
         
+        vm.fetchShieldCount()
         vm.fetchShieldLists()
+        
     }
     
     
@@ -110,6 +113,7 @@ class BuyShieldsController: UIViewController {
         shieldAmountListsView.reloadData()
         phoneNumber1Label.text = vm.phoneNumber1
         phoneNumber2Label.text = vm.phoneNumber2
+        shieldCountlabel.text = String(format: "My Shields : %@", String(vm.shieldCount))
     }
     
     private func routeToMoreOffer() {

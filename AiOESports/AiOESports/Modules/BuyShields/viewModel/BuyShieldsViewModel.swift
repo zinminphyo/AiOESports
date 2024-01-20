@@ -25,6 +25,7 @@ class BuyShieldsViewModel {
     private(set) var telegram: String = ""
     private(set) var viber: String = ""
     private(set) var messenger: String = ""
+    private(set) var shieldCount: Int = 0
     
     var fetchingListsCompleted: PassthroughSubject<Void, Never> = .init()
     
@@ -52,5 +53,15 @@ class BuyShieldsViewModel {
         }
     }
     
-    
+    func fetchShieldCount() {
+        let service = UserProfileFetchingService()
+        Task {
+            do {
+                let response = try await service.fetchUserProfile()
+                shieldCount = response.result?.shield ?? 0
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
 }

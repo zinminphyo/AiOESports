@@ -28,6 +28,7 @@
                 <outlet property="phoneNumber1Label" destination="ogw-7E-eLL" id="ZE8-a7-BjR"/>
                 <outlet property="phoneNumber2Label" destination="B6B-bB-muH" id="sGN-i0-hb4"/>
                 <outlet property="shieldAmountListsView" destination="d9n-Rp-4kW" id="tFS-R8-Ctk"/>
+                <outlet property="shieldCountlabel" destination="YKS-mP-GrM" id="JNr-ri-qJw"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c5z-35-XoI"/>
             </connections>
         </placeholder>
