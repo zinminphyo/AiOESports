@@ -16,6 +16,8 @@ class RankCell: UITableViewCell {
     @IBOutlet private(set) var rankLabel: UILabel!
     @IBOutlet private(set) var ratingLabel: UILabel!
     @IBOutlet private(set) var ratingView: UIStackView!
+    @IBOutlet private(set) var currentTeamImage: UIImageView!
+    @IBOutlet private(set) var teamImageContainerView: UIView!
     
     static var reuseIdentifier: String {
         return String(describing: Self.self)
@@ -44,6 +46,8 @@ class RankCell: UITableViewCell {
         rankLabel.font = rank.font
         ratingLabel.text = rank.rating
         ratingView.isHidden = Int(rank.rating) == 0
+        currentTeamImage.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(rank.currentTeam ?? "")"))
+        teamImageContainerView.isHidden = rank.currentTeam == nil
     }
     
 }

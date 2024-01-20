@@ -14,6 +14,7 @@ class RankListsView: UIControl, NibLoadable {
         let name: String
         let imageURL: String
         let game: String
+        let currentTeam: String?
         let location: String
         var rank: String = "1"
         var rankColor: UIColor? {
@@ -40,6 +41,7 @@ class RankListsView: UIControl, NibLoadable {
             game = team.game
             location = team.city
             rating = String(team.totalRateStar)
+            currentTeam = nil
         }
         
         init(player: PlayerObject) {
@@ -49,6 +51,7 @@ class RankListsView: UIControl, NibLoadable {
             game = player.game ?? ""
             location = player.city ?? ""
             rating = String(player.totalRateStar)
+            currentTeam = player.teamImage
         }
         
         init(caster: CasterObject) {
@@ -58,6 +61,7 @@ class RankListsView: UIControl, NibLoadable {
             game = caster.game ?? ""
             location = caster.city ?? ""
             rating = String(caster.total_rate_star)
+            currentTeam = nil
         }
         
         init(creator: CreatorObject) {
@@ -67,6 +71,7 @@ class RankListsView: UIControl, NibLoadable {
             game = creator.game ?? ""
             location = creator.city
             rating = String(creator.total_rate_star)
+            currentTeam = nil
         }
     }
 

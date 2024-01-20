@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -46,16 +47,16 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iek-wc-Fh8">
-                                <rect key="frame" x="70" y="10" width="185" height="52"/>
+                                <rect key="frame" x="70" y="10" width="309.33333333333331" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xeo-5f-Jhz">
-                                        <rect key="frame" x="0.0" y="0.0" width="185" height="23.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="309.33333333333331" height="23.666666666666668"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWM-aI-gU4">
-                                        <rect key="frame" x="0.0" y="28.666666666666664" width="185" height="23.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="28.666666666666664" width="309.33333333333331" height="23.333333333333336"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qdA-I7-C8T">
                                                 <rect key="frame" x="0.0" y="0.0" width="23.666666666666668" height="23.333333333333332"/>
@@ -63,8 +64,35 @@
                                                     <constraint firstAttribute="width" secondItem="qdA-I7-C8T" secondAttribute="height" multiplier="1:1" id="BKG-9B-Cqa"/>
                                                 </constraints>
                                             </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIS-kq-epP">
+                                                <rect key="frame" x="23.666666666666671" y="0.0" width="31.333333333333329" height="23.333333333333332"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VS-mt-iNG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="23.333333333333332"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DIW-Nj-Xef">
+                                                                <rect key="frame" x="7.9999999999999982" y="0.0" width="23.333333333333329" height="23.333333333333332"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="DIW-Nj-Xef" firstAttribute="top" secondItem="7VS-mt-iNG" secondAttribute="top" id="fs3-d6-e4S"/>
+                                                            <constraint firstAttribute="bottom" secondItem="DIW-Nj-Xef" secondAttribute="bottom" id="g2n-AV-DFp"/>
+                                                            <constraint firstAttribute="trailing" secondItem="DIW-Nj-Xef" secondAttribute="trailing" id="k6L-ZH-GSB"/>
+                                                            <constraint firstItem="DIW-Nj-Xef" firstAttribute="leading" secondItem="7VS-mt-iNG" secondAttribute="leading" constant="8" id="mly-Eq-9CM"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-IT-iGH">
+                                                        <rect key="frame" x="31.333333333333329" y="0.0" width="0.0" height="23.333333333333332"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" id="KDU-AD-T6i"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yp-tD-yzf">
-                                                <rect key="frame" x="29.666666666666671" y="0.0" width="155.33333333333331" height="23.333333333333332"/>
+                                                <rect key="frame" x="63" y="0.0" width="246.33333333333337" height="23.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -76,7 +104,11 @@
                                             <constraint firstAttribute="trailing" secondItem="6yp-tD-yzf" secondAttribute="trailing" id="3t9-QR-igt"/>
                                             <constraint firstItem="qdA-I7-C8T" firstAttribute="leading" secondItem="dWM-aI-gU4" secondAttribute="leading" id="91R-3o-h43"/>
                                             <constraint firstAttribute="bottom" secondItem="qdA-I7-C8T" secondAttribute="bottom" id="Cbx-xB-bU6"/>
-                                            <constraint firstItem="6yp-tD-yzf" firstAttribute="leading" secondItem="qdA-I7-C8T" secondAttribute="trailing" constant="6" id="QIN-yP-Dhu"/>
+                                            <constraint firstItem="DIW-Nj-Xef" firstAttribute="width" secondItem="qdA-I7-C8T" secondAttribute="width" id="I83-IW-Epg"/>
+                                            <constraint firstItem="tIS-kq-epP" firstAttribute="leading" secondItem="qdA-I7-C8T" secondAttribute="trailing" id="JuW-JU-hH8"/>
+                                            <constraint firstAttribute="bottom" secondItem="tIS-kq-epP" secondAttribute="bottom" id="NtB-At-ZBM"/>
+                                            <constraint firstItem="tIS-kq-epP" firstAttribute="trailing" secondItem="6yp-tD-yzf" secondAttribute="leading" constant="-8" id="QIN-yP-Dhu"/>
+                                            <constraint firstItem="tIS-kq-epP" firstAttribute="top" secondItem="dWM-aI-gU4" secondAttribute="top" id="ens-6C-ABj"/>
                                             <constraint firstAttribute="bottom" secondItem="6yp-tD-yzf" secondAttribute="bottom" id="irl-6T-ong"/>
                                             <constraint firstItem="qdA-I7-C8T" firstAttribute="top" secondItem="dWM-aI-gU4" secondAttribute="top" id="j90-jR-n7S"/>
                                         </constraints>
@@ -138,11 +170,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cityNameLabel" destination="6yp-tD-yzf" id="Y8x-Sc-Md3"/>
+                <outlet property="currentTeamImage" destination="DIW-Nj-Xef" id="F6W-od-7vC"/>
                 <outlet property="gameImageView" destination="qdA-I7-C8T" id="tV4-Et-aJZ"/>
                 <outlet property="mainImageView" destination="v8m-VT-4fv" id="Fy0-HE-iMB"/>
                 <outlet property="rankLabel" destination="zMa-zx-XmH" id="9GQ-gd-KmI"/>
                 <outlet property="ratingLabel" destination="QiC-WL-CfU" id="5lp-yc-VZ3"/>
                 <outlet property="ratingView" destination="ftv-b0-XfZ" id="ZCp-ly-1ou"/>
+                <outlet property="teamImageContainerView" destination="7VS-mt-iNG" id="LbP-EF-eJa"/>
                 <outlet property="teamNameLabel" destination="Xeo-5f-Jhz" id="Qmr-Xm-LYQ"/>
             </connections>
             <point key="canvasLocation" x="-38.167938931297705" y="-9.1549295774647899"/>
@@ -159,5 +193,8 @@
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -17,6 +17,8 @@ class RankCellWithCoverCell: UITableViewCell {
     @IBOutlet private(set) var cityNameLabel: UILabel!
     @IBOutlet private(set) var rankLabel: UILabel!
     @IBOutlet private(set) var ratingLabel: UILabel!
+    @IBOutlet private(set) var currentTeamImageView: UIImageView!
+    @IBOutlet private(set) var teamContainerView: UIView!
     
     static var reuseIdentifier: String {
         return String(describing: Self.self)
@@ -44,6 +46,8 @@ class RankCellWithCoverCell: UITableViewCell {
         rankLabel.textColor = rank.rankColor
         rankLabel.font = rank.font
         ratingLabel.text = rank.rating
+        currentTeamImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(rank.currentTeam ?? "")"), placeholder: Images.Placeholder.profile)
+        teamContainerView.isHidden = rank.currentTeam == nil
         return self
     }
     
