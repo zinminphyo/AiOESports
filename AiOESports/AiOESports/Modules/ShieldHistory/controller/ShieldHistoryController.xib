@@ -16,12 +16,16 @@
         <array key="DMSans-Medium.ttf">
             <string>DMSans-Medium</string>
         </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShieldHistoryController" customModule="AiOESports" customModuleProvider="target">
             <connections>
                 <outlet property="contentContainerView" destination="LKI-nD-B0w" id="BIQ-HV-dCS"/>
                 <outlet property="contentScrollView" destination="HpU-fb-hFl" id="bob-aE-QR6"/>
+                <outlet property="currentShieldAmountLabel" destination="dcf-T9-MzT" id="ldC-ez-2sJ"/>
                 <outlet property="historyLists" destination="Mth-uW-RrR" id="hZY-Jf-Aqe"/>
                 <outlet property="historyListsHeight" destination="hPv-S8-rAh" id="0us-Et-Ryr"/>
                 <outlet property="loadingView" destination="bYI-ir-H2W" id="KcE-HY-t9d"/>
@@ -65,15 +69,44 @@
                         <constraint firstItem="8aT-vN-ZMv" firstAttribute="leading" secondItem="xby-Bi-4WO" secondAttribute="leading" constant="16" id="ts1-7G-dqL"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="utP-Km-l2e">
+                    <rect key="frame" x="18" y="133" width="357" height="47"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Total Shields" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFB-C7-3Ic">
+                            <rect key="frame" x="0.0" y="0.0" width="357" height="17"/>
+                            <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
+                            <color key="textColor" name="SecondaryText"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W22-75-YUO">
+                            <rect key="frame" x="0.0" y="27" width="357" height="20"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="Kdl-O6-32d">
+                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="MOk-NC-HDx"/>
+                                        <constraint firstAttribute="height" constant="20" id="OcU-EU-0CF"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="258" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-T9-MzT">
+                                    <rect key="frame" x="30" y="0.0" width="327" height="20"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
+                                    <color key="textColor" name="Home"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OE-t3-5JT">
-                    <rect key="frame" x="18" y="159" width="357" height="1"/>
+                    <rect key="frame" x="18" y="204" width="357" height="1"/>
                     <color key="backgroundColor" name="SecondaryBackground"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="VzL-dd-KIz"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-fb-hFl">
-                    <rect key="frame" x="0.0" y="210" width="393" height="50"/>
+                    <rect key="frame" x="0.0" y="229" width="393" height="50"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKI-nD-B0w">
                             <rect key="frame" x="0.0" y="0.0" width="653" height="50"/>
@@ -238,23 +271,30 @@
             <color key="backgroundColor" name="ThemeColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xby-Bi-4WO" secondAttribute="trailing" id="CgG-LN-D3f"/>
+                <constraint firstItem="5OE-t3-5JT" firstAttribute="top" secondItem="utP-Km-l2e" secondAttribute="bottom" constant="24" id="ICF-92-r7O"/>
                 <constraint firstItem="bYI-ir-H2W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KeI-Af-5lh"/>
                 <constraint firstItem="xby-Bi-4WO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="L9O-iu-BRA"/>
                 <constraint firstItem="5OE-t3-5JT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="O73-hK-9Lt"/>
-                <constraint firstItem="HpU-fb-hFl" firstAttribute="top" secondItem="5OE-t3-5JT" secondAttribute="bottom" constant="50" id="REE-EK-2bu"/>
+                <constraint firstItem="HpU-fb-hFl" firstAttribute="top" secondItem="5OE-t3-5JT" secondAttribute="bottom" constant="24" id="REE-EK-2bu"/>
                 <constraint firstItem="HpU-fb-hFl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TxD-0b-tcS"/>
                 <constraint firstItem="xby-Bi-4WO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="U8X-Ec-yLF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="utP-Km-l2e" secondAttribute="trailing" constant="18" id="VOx-RN-HeO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HpU-fb-hFl" secondAttribute="bottom" id="ZJZ-wE-ZF5"/>
                 <constraint firstItem="bYI-ir-H2W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="beM-4t-DUV"/>
+                <constraint firstItem="utP-Km-l2e" firstAttribute="top" secondItem="xby-Bi-4WO" secondAttribute="bottom" constant="24" id="hqF-wb-4wL"/>
+                <constraint firstItem="utP-Km-l2e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="izR-qG-2jo"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5OE-t3-5JT" secondAttribute="trailing" constant="18" id="oBh-zF-Jj2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HpU-fb-hFl" secondAttribute="trailing" id="sRW-6U-tck"/>
-                <constraint firstItem="5OE-t3-5JT" firstAttribute="top" secondItem="xby-Bi-4WO" secondAttribute="bottom" constant="50" id="suj-F0-Dm1"/>
             </constraints>
             <point key="canvasLocation" x="6" y="21"/>
         </view>
     </objects>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="shield" width="19" height="19"/>
+        <namedColor name="Home">
+            <color red="0.86274509803921573" green="0.72156862745098038" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

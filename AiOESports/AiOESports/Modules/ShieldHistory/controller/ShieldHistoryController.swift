@@ -15,6 +15,7 @@ class ShieldHistoryController: UIViewController {
     @IBOutlet private(set) var contentScrollView: UIScrollView!
     @IBOutlet private(set) var contentContainerView: UIView!
     @IBOutlet private(set) var loadingView: UIView!
+    @IBOutlet private(set) var currentShieldAmountLabel: UILabel!
     
     private var histories: ShieldHistories = []
     
@@ -73,12 +74,19 @@ class ShieldHistoryController: UIViewController {
                 self.view.invalidateIntrinsicContentSize()
             }.store(in: &subscription)
         
+        vm.$shieldCount
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.currentShieldAmountLabel.text = String($0)
+            }.store(in: &subscription)
+        
         vm.$isFetching
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 self?.loadingView.isHidden = !$0
             }.store(in: &subscription)
         
+        vm.fetchShieldCount()
         vm.fetchHistories()
     }
 
