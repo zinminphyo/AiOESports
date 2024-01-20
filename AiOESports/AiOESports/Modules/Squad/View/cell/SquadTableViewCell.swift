@@ -21,6 +21,7 @@ class SquadTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countryImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet private(set) var locationContainerView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,10 +74,11 @@ class SquadTableViewCell: UITableViewCell {
     @discardableResult
     func set(achivement: AchivementModel) -> Self {
         nameLabel.text = achivement.name
-        locationLabel.text = achivement.renderablePlace
+        locationLabel.text = String(format: "%@ • %@", achivement.tier, achivement.renderablePlace)
         locationLabel.textColor = achivement.placeColor
         mainImageView.kf.setImage(with: URL(string: achivement.logoFullPath), placeholder: Images.Placeholder.profile)
         laneIconImageView.isHidden = true
+        locationContainerView.isHidden = true
         return self
     }
     
