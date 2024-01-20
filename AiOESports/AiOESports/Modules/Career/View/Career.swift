@@ -32,7 +32,7 @@ class Career: UIViewController {
     }
     
     private func configureContainerView() {
-        self.view.backgroundColor = Colors.Theme.mainColor
+        self.view.backgroundColor = Colors.Theme.inputColor
     }
     
     private func configureTableView() {

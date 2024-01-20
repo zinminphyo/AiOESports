@@ -40,7 +40,7 @@ class OverviewTableViewCell: UITableViewCell {
     }
     
     private func configureContainerView() {
-        self.backgroundColor = Colors.Theme.mainColor
+        self.backgroundColor = Colors.Theme.inputColor
     }
     
     private func configureTitleLabel() {

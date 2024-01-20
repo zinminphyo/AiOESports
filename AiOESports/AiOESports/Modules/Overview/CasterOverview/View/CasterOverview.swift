@@ -31,7 +31,7 @@ class CasterOverview: UIViewController {
     
 
     private func configureHierarchy() {
-        self.view.backgroundColor = Colors.Theme.mainColor
+        self.view.backgroundColor = Colors.Theme.inputColor
         configureContentContainerView()
         configureColletionView()
         configureTableView()

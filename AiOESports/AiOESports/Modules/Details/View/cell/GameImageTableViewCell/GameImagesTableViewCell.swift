@@ -45,7 +45,7 @@ class GameImagesTableViewCell: UITableViewCell {
     }
     
     private func configureContentContainerView() {
-        self.backgroundColor = Colors.Theme.mainColor
+        self.backgroundColor = Colors.Theme.inputColor
     }
     
     private func configureTitleLabel() {
