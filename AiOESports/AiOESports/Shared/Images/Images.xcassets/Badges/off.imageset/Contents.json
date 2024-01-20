@@ -1,17 +1,14 @@
 {
   "images" : [
     {
-      "filename" : "Silver Badge.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Silver Badge@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Silver Badge@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
