@@ -37,7 +37,7 @@ class RankCell: UITableViewCell {
     }
     
     func render(rank: RankListsView.RankModel) {
-        mainImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(rank.imageURL)"))
+        mainImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(rank.imageURL)"), placeholder: Images.Placeholder.profile)
         teamNameLabel.text = rank.name
         gameImageView.image = Images.GameImages.getImage(gameName: rank.game)
         cityNameLabel.text = rank.location
