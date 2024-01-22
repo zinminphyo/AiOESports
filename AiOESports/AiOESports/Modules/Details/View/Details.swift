@@ -316,15 +316,15 @@ class Details: UIViewController {
                 
             case .player:
                 guard let details = presenter?.playerDetails else { return }
-                voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                voteInfo = .init(imageURL: details.details.playerImageFullPath, name: details.details.name, game: details.details.game, rank: String(details.totalFollowRating.talentRank), location: details.details.city, totalRatingStar: String(details.totalFollowRating.totalRating), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
                 
             case .caster:
                 guard let details = presenter?.casterDetails else { return }
-                voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                voteInfo = .init(imageURL: details.details.playerImageFullPath, name: details.details.name, game: details.details.game, rank: String(details.totalFollowRating.talentRank), location: details.details.city, totalRatingStar: String(details.totalFollowRating.totalRating), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
                 
             case .creator:
                 guard let details = presenter?.creatorDetails else { return }
-                voteInfo = .init(imageURL: details.details.teamImageFullPath, name: details.details.name, game: details.details.game, rank: String("1"), location: details.details.city, totalRatingStar: String("5"), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                voteInfo = .init(imageURL: details.details.playerImageFullPath, name: details.details.name, game: details.details.game, rank: String(details.totalFollowRating.talentRank), location: details.details.city, totalRatingStar: String(details.totalFollowRating.totalRating), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
                 
             default:
                 voteInfo = .init(imageURL: "", name: "", game: "", rank: "", location: "", totalRatingStar: "", coverImageURL: "", id: "", type: .talent)

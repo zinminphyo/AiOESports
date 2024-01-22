@@ -44,16 +44,14 @@
                                 <constraint firstAttribute="bottom" secondItem="25B-yp-qyX" secondAttribute="bottom" id="NaJ-Nm-FYj"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your support!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55v-3S-tyz">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your Vote!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55v-3S-tyz">
                             <rect key="frame" x="0.0" y="50" width="361" height="22.333333333333329"/>
                             <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Z-kz-BSS">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You can also support your favorite Teams, Players, Casters &amp; Creators." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3Z-kz-BSS">
                             <rect key="frame" x="0.0" y="81.333333333333329" width="361" height="40.666666666666671"/>
-                            <string key="text">You can also donate your favorite
-team and player.</string>
                             <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
                             <color key="textColor" name="SecondaryText"/>
                             <nil key="highlightedColor"/>

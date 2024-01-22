@@ -77,7 +77,7 @@ class VoteController: UIViewController {
     }
     
     private func bindUI() {
-        coverImageView.kf.setImage(with: URL(string: viewModel.voteInfo.coverImageURL))
+        coverImageView.kf.setImage(with: URL(string: viewModel.voteInfo.coverImageURL), placeholder: Images.Placeholder.cover)
         teamImageView.kf.setImage(with: URL(string: viewModel.voteInfo.imageURL))
         teamNameLabel.text = viewModel.voteInfo.name
         gameImageView.image = Images.gameLogo(gameType: viewModel.voteInfo.game)
@@ -131,8 +131,9 @@ class VoteController: UIViewController {
             .sink { [weak self] in
                 guard let self = self else { return }
                 guard let userInfo = $0 else { return }
-                self.commnetPreview.set(url: userInfo.profile_image)
+                self.commnetPreview.set(url: userInfo.profile_image, level: userInfo.level)
                     .set(name: userInfo.username)
+                    .set(badge: userInfo.badge)
             }.store(in: &subscription)
         
         viewModel.votingResult
