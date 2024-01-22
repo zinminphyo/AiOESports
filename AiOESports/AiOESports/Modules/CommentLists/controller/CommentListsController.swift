@@ -62,6 +62,12 @@ class CommentListsController: UIViewController {
                 self?.commentListsView.reloadData()
             }.store(in: &subscription)
         
+        vm.$filterLists
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.starCountFilter.reloadData()
+            }.store(in: &subscription)
+        
         vm.fetchRatingLists()
     }
     

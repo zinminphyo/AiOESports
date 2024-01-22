@@ -20,7 +20,8 @@ class CommentListsViewModel {
         case oneStar = "1 Star"
     }
     
-    private(set) var filterLists: [CommentFilter] = CommentFilter.allCases
+    @Published
+    var filterLists: [CommentFilter] = []
     
     private var allRatingLists: RatingLists = []
     
@@ -61,6 +62,7 @@ class CommentListsViewModel {
             do {
                 let response = try await service.fetchTeamDetails(id: id)
                 allRatingLists = response.ratingLists
+                filterFilterLists()
                 filter()
             } catch {
                 print("Error is \(error.localizedDescription)")
@@ -73,6 +75,7 @@ class CommentListsViewModel {
             do {
                 let response = try await service.fetchPlayerDetails(id: id)
                 allRatingLists = response.ratingLists
+                filterFilterLists()
                 filter()
             } catch {
                 print("Error is \(error.localizedDescription)")
@@ -85,6 +88,7 @@ class CommentListsViewModel {
             do {
                 let response = try await service.fetchCasterDetails(id: id)
                 allRatingLists = response.ratingLists
+                filterFilterLists()
                 filter()
             } catch {
                 print("Error is \(error.localizedDescription)")
@@ -97,6 +101,7 @@ class CommentListsViewModel {
             do {
                 let response = try await service.fetchCreatorDetails(id: id)
                 allRatingLists = response.ratingLists
+                filterFilterLists()
                 filter()
             } catch {
                 print("Error is \(error.localizedDescription)")
@@ -104,23 +109,32 @@ class CommentListsViewModel {
         }
     }
     
+    private func filterFilterLists() {
+        filterLists.append(.all)
+        if allRatingLists.filter({ $0.star == 5 }).isEmpty == false { filterLists.append(.fiveStars) }
+        if allRatingLists.filter({ $0.star == 4 }).isEmpty == false { filterLists.append(.fourStars) }
+        if !allRatingLists.filter({ $0.star == 3 }).isEmpty { filterLists.append(.threeStars) }
+        if !allRatingLists.filter({ $0.star == 2 }).isEmpty { filterLists.append(.twoStars) }
+        if !allRatingLists.filter({ $0.star == 1 }).isEmpty { filterLists.append(.oneStar) }
+    }
+    
     private func filter() {
-        switch selectedIndex {
-        case 0:
+        let filterType = filterLists[selectedIndex]
+        switch filterType {
+        case .all:
             filterRatingLists = allRatingLists
-        case 1:
+        case .fiveStars:
             filterRatingLists = allRatingLists.filter{ $0.star == 5 }
-        case 2:
+        case .fourStars:
             filterRatingLists = allRatingLists.filter{ $0.star == 4 }
-        case 3:
+        case .threeStars:
             filterRatingLists = allRatingLists.filter{ $0.star == 3 }
-        case 4:
+        case .twoStars:
             filterRatingLists = allRatingLists.filter{ $0.star == 2 }
-        case 5:
+        case .oneStar:
             filterRatingLists = allRatingLists.filter{ $0.star == 1 }
-        default:
-            filterRatingLists = []
         }
+         
     }
     
 }

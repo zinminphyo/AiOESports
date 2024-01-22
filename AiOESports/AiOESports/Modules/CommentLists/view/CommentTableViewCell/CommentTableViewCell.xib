@@ -32,18 +32,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-qR-17W">
                                 <rect key="frame" x="16" y="16" width="272" height="80"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 412" translatesAutoresizingMaskIntoConstraints="NO" id="zdH-fH-nCr">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTI-Nd-RcF" customClass="ProfileLevelView" customModule="AiOESports" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="37" id="Jkg-ip-b6T"/>
-                                            <constraint firstAttribute="height" constant="37" id="tZz-6v-Okh"/>
+                                            <constraint firstAttribute="width" constant="37" id="5vS-D2-Ol3"/>
+                                            <constraint firstAttribute="height" constant="37" id="lrG-GA-VVb"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <real key="value" value="18.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="William Dafoe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWJ-uh-QiI">
                                         <rect key="frame" x="49.000000000000007" y="0.0" width="86.666666666666686" height="17"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
@@ -217,18 +213,18 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="jGT-0w-YV7" secondAttribute="trailing" id="6df-fr-jB1"/>
-                                    <constraint firstItem="t9U-El-wNN" firstAttribute="bottom" secondItem="zdH-fH-nCr" secondAttribute="bottom" id="Owc-dW-GpO"/>
-                                    <constraint firstItem="ZWJ-uh-QiI" firstAttribute="leading" secondItem="zdH-fH-nCr" secondAttribute="trailing" constant="12" id="SYK-G1-OiO"/>
+                                    <constraint firstItem="t9U-El-wNN" firstAttribute="bottom" secondItem="vTI-Nd-RcF" secondAttribute="bottom" id="7Fa-k6-7GD"/>
+                                    <constraint firstItem="vTI-Nd-RcF" firstAttribute="top" secondItem="m6T-qR-17W" secondAttribute="top" id="Jno-dB-G68"/>
                                     <constraint firstItem="qAq-G4-MRf" firstAttribute="leading" secondItem="ZWJ-uh-QiI" secondAttribute="trailing" constant="8" id="Xee-k4-LGY"/>
                                     <constraint firstItem="qAq-G4-MRf" firstAttribute="bottom" secondItem="ZWJ-uh-QiI" secondAttribute="bottom" id="ZOa-dz-Uuh"/>
-                                    <constraint firstItem="zdH-fH-nCr" firstAttribute="leading" secondItem="m6T-qR-17W" secondAttribute="leading" id="ZdA-Hh-Xwu"/>
                                     <constraint firstItem="qAq-G4-MRf" firstAttribute="width" secondItem="ZWJ-uh-QiI" secondAttribute="height" multiplier="1:1" id="alV-Wx-jch"/>
-                                    <constraint firstItem="zdH-fH-nCr" firstAttribute="top" secondItem="m6T-qR-17W" secondAttribute="top" id="bSl-eF-uXf"/>
                                     <constraint firstItem="t9U-El-wNN" firstAttribute="top" secondItem="ZWJ-uh-QiI" secondAttribute="bottom" constant="2" id="cID-YN-atQ"/>
                                     <constraint firstItem="qAq-G4-MRf" firstAttribute="top" secondItem="ZWJ-uh-QiI" secondAttribute="top" id="cMV-Ts-Mz1"/>
                                     <constraint firstItem="t9U-El-wNN" firstAttribute="leading" secondItem="ZWJ-uh-QiI" secondAttribute="leading" id="dy6-gs-jzy"/>
+                                    <constraint firstItem="ZWJ-uh-QiI" firstAttribute="leading" secondItem="vTI-Nd-RcF" secondAttribute="trailing" constant="12.000000000000007" id="fNG-VP-xcu"/>
+                                    <constraint firstItem="vTI-Nd-RcF" firstAttribute="leading" secondItem="m6T-qR-17W" secondAttribute="leading" id="mVe-6X-c11"/>
                                     <constraint firstItem="jGT-0w-YV7" firstAttribute="leading" secondItem="ZWJ-uh-QiI" secondAttribute="leading" id="nRl-dM-385"/>
-                                    <constraint firstItem="ZWJ-uh-QiI" firstAttribute="top" secondItem="zdH-fH-nCr" secondAttribute="top" id="paT-DP-ifH"/>
+                                    <constraint firstItem="ZWJ-uh-QiI" firstAttribute="top" secondItem="vTI-Nd-RcF" secondAttribute="top" id="py7-xD-l1c"/>
                                     <constraint firstItem="jGT-0w-YV7" firstAttribute="top" secondItem="t9U-El-wNN" secondAttribute="bottom" constant="4" id="uVw-7v-LaF"/>
                                     <constraint firstAttribute="trailing" secondItem="sRc-rq-IO6" secondAttribute="trailing" id="uax-3M-CRC"/>
                                     <constraint firstAttribute="bottom" secondItem="jGT-0w-YV7" secondAttribute="bottom" id="voh-RR-Naj"/>
@@ -266,8 +262,8 @@
                 <outlet property="fourStarImageView" destination="aAM-aV-h8y" id="nnT-YU-usD"/>
                 <outlet property="minAgoLabel" destination="sRc-rq-IO6" id="JbJ-Hz-EbQ"/>
                 <outlet property="oneStarImageView" destination="kQI-NQ-frT" id="34l-EB-e1E"/>
-                <outlet property="profileImageView" destination="zdH-fH-nCr" id="B3m-fI-qbZ"/>
                 <outlet property="profileNameLabel" destination="ZWJ-uh-QiI" id="SUV-uV-b41"/>
+                <outlet property="profileView" destination="vTI-Nd-RcF" id="P7L-80-xLg"/>
                 <outlet property="ratingView" destination="t9U-El-wNN" id="vGr-AI-5uv"/>
                 <outlet property="threeStarImageView" destination="e5S-w4-omr" id="HoM-WU-SEW"/>
                 <outlet property="twoStarImageView" destination="rKQ-VZ-SLk" id="Jhb-tj-Gqk"/>
@@ -276,7 +272,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Ellipse 412" width="37" height="37"/>
         <image name="star-fill" width="34.333332061767578" height="34"/>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

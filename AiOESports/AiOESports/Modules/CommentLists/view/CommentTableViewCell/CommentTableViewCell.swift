@@ -10,7 +10,7 @@ import Kingfisher
 
 class CommentTableViewCell: UITableViewCell {
     
-    @IBOutlet private(set) var profileImageView: UIImageView!
+    @IBOutlet private(set) var profileView: ProfileLevelView!
     @IBOutlet private(set) var profileNameLabel: UILabel!
     @IBOutlet private(set) var minAgoLabel: UILabel!
     @IBOutlet private(set) var ratingView: RatingView!
@@ -58,8 +58,10 @@ class CommentTableViewCell: UITableViewCell {
     }
     
     func render(_ rating: Rating) {
-        profileImageView.kf.setImage(with: URL(string: rating.profileImageFullPath), placeholder: Images.Placeholder.profile)
+        profileView.set(imageURL: rating.profile_image)
+        profileView.set(level: rating.level)
         profileNameLabel.text = rating.username
+        profileNameLabel.textColor = rating.level.lowercased() == "free" ? Colors.Text.primaryText : Colors.Text.goldText
         minAgoLabel.text = localeFormatter.string(from: serverFormatter.date(from: rating.created_at) ?? Date())
         commentLabel.text = rating.comment
         badgeImageView.image = Images.badgeImage(rating.badge)
