@@ -309,28 +309,45 @@ class Details: UIViewController {
             
             guard let userId = presenter?.id else { return }
             let voteInfo: VoteViewModel.VoteInfo
+            let isVotingLimit: Bool
             switch presenter?.category {
             case .team:
                 guard let details = presenter?.teamDetails else { return }
                 voteInfo = .init(imageURL: details.detail.teamImageFullPath, name: details.detail.name, game: details.detail.game, rank: String(details.followRating.teamRank), location: details.detail.city, totalRatingStar: details.followRating.totalRatingStars , coverImageURL: details.detail.coverImageFullPath, id: String(details.detail.id), type: .team)
+                isVotingLimit = details.userFollowVoteStats?.vote_limit ?? false
                 
             case .player:
                 guard let details = presenter?.playerDetails else { return }
                 voteInfo = .init(imageURL: details.details.playerImageFullPath, name: details.details.name, game: details.details.game, rank: String(details.totalFollowRating.talentRank), location: details.details.city, totalRatingStar: String(details.totalFollowRating.totalRating), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                isVotingLimit = details.userFollowVoteStats?.vote_limit ?? false
                 
             case .caster:
                 guard let details = presenter?.casterDetails else { return }
                 voteInfo = .init(imageURL: details.details.playerImageFullPath, name: details.details.name, game: details.details.game, rank: String(details.totalFollowRating.talentRank), location: details.details.city, totalRatingStar: String(details.totalFollowRating.totalRating), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                isVotingLimit = details.userFollowVoteStats?.vote_limit ?? false
                 
             case .creator:
                 guard let details = presenter?.creatorDetails else { return }
                 voteInfo = .init(imageURL: details.details.playerImageFullPath, name: details.details.name, game: details.details.game, rank: String(details.totalFollowRating.talentRank), location: details.details.city, totalRatingStar: String(details.totalFollowRating.totalRating), coverImageURL: details.details.coverImageFullPath, id: String(details.details.id), type: .talent)
+                isVotingLimit = details.userFollowVoteStats?.vote_limit ?? false
                 
             default:
                 voteInfo = .init(imageURL: "", name: "", game: "", rank: "", location: "", totalRatingStar: "", coverImageURL: "", id: "", type: .talent)
+                isVotingLimit = false
             }
-            let vc = VoteController(userId: userId, voteInfo: voteInfo)
-            navigationController?.pushViewController(vc, animated: true)
+            
+            if isVotingLimit {
+                let vc = VotingLimitController()
+                vc.tappedUpgradePremium = { [weak self] in
+                    let vc = UpgradePremiumController(shieldCount: 0)
+                    self?.present(vc, animated: true)
+                }
+                present(vc, animated: true)
+            } else {
+                let vc = VoteController(userId: userId, voteInfo: voteInfo)
+                navigationController?.pushViewController(vc, animated: true)
+            }
+            
         }
     }
     

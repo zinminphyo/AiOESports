@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VotingLimitController" customModule="AiOESports" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="hU7-vl-Tnq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBA-cl-Ma6">
+                    <rect key="frame" x="36" y="234.33333333333334" width="321" height="383.33333333333326"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K8u-vd-H6G">
+                            <rect key="frame" x="20" y="20" width="281" height="343.33333333333331"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-Hp-QPr">
+                                    <rect key="frame" x="0.0" y="0.0" width="281" height="100"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vote limit" translatesAutoresizingMaskIntoConstraints="NO" id="5g3-Gn-jaG">
+                                            <rect key="frame" x="90.666666666666657" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="jyw-VL-zQx"/>
+                                                <constraint firstAttribute="width" constant="100" id="yJb-2H-vbP"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="5g3-Gn-jaG" firstAttribute="centerX" secondItem="cPw-Hp-QPr" secondAttribute="centerX" id="IIL-5h-8M4"/>
+                                        <constraint firstItem="5g3-Gn-jaG" firstAttribute="top" secondItem="cPw-Hp-QPr" secondAttribute="top" id="OkD-yV-x9r"/>
+                                        <constraint firstAttribute="bottom" secondItem="5g3-Gn-jaG" secondAttribute="bottom" id="fc6-1I-MBR"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This account has reached the daily vote  limit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-dR-WUj">
+                                    <rect key="frame" x="0.0" y="114.99999999999996" width="281" height="44.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="17"/>
+                                    <color key="textColor" name="PrimaryText"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can vote once more tomorrow." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neF-mM-ghC">
+                                    <rect key="frame" x="0.0" y="174.33333333333334" width="281" height="18.333333333333343"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
+                                    <color key="textColor" name="SecondaryText"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rge-FF-vRQ">
+                                    <rect key="frame" x="0.0" y="207.66666666666666" width="281" height="45"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1Q-ho-nPq">
+                                            <rect key="frame" x="121.66666666666666" y="13.333333333333313" width="38" height="18.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
+                                            <color key="textColor" name="PrimaryText"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vl5-O8-BDP">
+                                            <rect key="frame" x="0.0" y="0.0" width="281" height="45"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="didTapGotItBtn:" destination="-1" eventType="touchUpInside" id="Ehf-Lh-5ww"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.20392156862745098" green="0.25490196078431371" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Vl5-O8-BDP" secondAttribute="trailing" id="17L-P7-kpP"/>
+                                        <constraint firstItem="F1Q-ho-nPq" firstAttribute="centerX" secondItem="rge-FF-vRQ" secondAttribute="centerX" id="At2-9Z-OkO"/>
+                                        <constraint firstItem="Vl5-O8-BDP" firstAttribute="top" secondItem="rge-FF-vRQ" secondAttribute="top" id="E4l-E0-pRf"/>
+                                        <constraint firstItem="F1Q-ho-nPq" firstAttribute="centerY" secondItem="rge-FF-vRQ" secondAttribute="centerY" id="bBZ-eM-bBg"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vl5-O8-BDP" secondAttribute="bottom" id="kqB-K6-kpv"/>
+                                        <constraint firstItem="Vl5-O8-BDP" firstAttribute="leading" secondItem="rge-FF-vRQ" secondAttribute="leading" id="vF2-Q8-hmR"/>
+                                        <constraint firstAttribute="height" constant="45" id="xgr-p0-3X1"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UD6-FL-oiW">
+                                    <rect key="frame" x="0.0" y="267.66666666666663" width="281" height="45"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade To Premium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIG-Ca-MZb">
+                                            <rect key="frame" x="70.333333333333329" y="13.333333333333369" width="140.33333333333337" height="18.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
+                                            <color key="textColor" name="PrimaryText"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zW-7X-2ib">
+                                            <rect key="frame" x="0.0" y="0.0" width="281" height="45"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="didTapUpgradeToPremium:" destination="-1" eventType="touchUpInside" id="ue4-7D-8eT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.3529411764705882" green="0.28235294117647058" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="MIG-Ca-MZb" firstAttribute="centerX" secondItem="UD6-FL-oiW" secondAttribute="centerX" id="1Ya-Gw-nBI"/>
+                                        <constraint firstItem="6zW-7X-2ib" firstAttribute="leading" secondItem="UD6-FL-oiW" secondAttribute="leading" id="5ej-nb-IPJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="6zW-7X-2ib" secondAttribute="trailing" id="6Gc-dg-zcr"/>
+                                        <constraint firstItem="6zW-7X-2ib" firstAttribute="top" secondItem="UD6-FL-oiW" secondAttribute="top" id="CLP-QL-f3O"/>
+                                        <constraint firstAttribute="bottom" secondItem="6zW-7X-2ib" secondAttribute="bottom" id="cby-jd-24Z"/>
+                                        <constraint firstAttribute="height" constant="45" id="lq5-pI-1vo"/>
+                                        <constraint firstItem="MIG-Ca-MZb" firstAttribute="centerY" secondItem="UD6-FL-oiW" secondAttribute="centerY" id="qEe-ZF-8qd"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get unlimited vote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-j6-BZd">
+                                    <rect key="frame" x="0.0" y="327.66666666666663" width="281" height="15.666666666666686"/>
+                                    <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="12"/>
+                                    <color key="textColor" name="StrokeColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="SecondaryColor"/>
+                    <constraints>
+                        <constraint firstItem="K8u-vd-H6G" firstAttribute="top" secondItem="vBA-cl-Ma6" secondAttribute="top" constant="20" id="Qs8-5D-jrh"/>
+                        <constraint firstItem="K8u-vd-H6G" firstAttribute="leading" secondItem="vBA-cl-Ma6" secondAttribute="leading" constant="20" id="THe-fU-c56"/>
+                        <constraint firstAttribute="trailing" secondItem="K8u-vd-H6G" secondAttribute="trailing" constant="20" id="bwy-h5-XQe"/>
+                        <constraint firstAttribute="bottom" secondItem="K8u-vd-H6G" secondAttribute="bottom" constant="20" id="mv9-ce-fSU"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vBA-cl-Ma6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="36" id="Bst-3N-PWI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vBA-cl-Ma6" secondAttribute="trailing" constant="36" id="Il5-26-ZqN"/>
+                <constraint firstItem="vBA-cl-Ma6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uMh-Ck-VSj"/>
+            </constraints>
+            <point key="canvasLocation" x="131" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Vote limit" width="97.666664123535156" height="80"/>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.094117647058823528" green="0.14117647058823529" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryText">
+            <color red="0.71372549019607845" green="0.7686274509803922" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="StrokeColor">
+            <color red="0.37647058823529411" green="0.43529411764705883" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

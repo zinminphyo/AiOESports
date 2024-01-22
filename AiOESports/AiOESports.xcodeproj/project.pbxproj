@@ -105,6 +105,8 @@
 		843CF3B72B17892800C98BFF /* CommentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3B62B17892800C98BFF /* CommentPreview.swift */; };
 		843CF3BA2B17928800C98BFF /* ThankYouView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843CF3B92B17928800C98BFF /* ThankYouView.xib */; };
 		843CF3BC2B1793C700C98BFF /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CF3BB2B1793C700C98BFF /* ThankYouView.swift */; };
+		844571B42B5EC16400C77FDF /* VotingLimitController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844571B32B5EC16400C77FDF /* VotingLimitController.xib */; };
+		844571B62B5EC4B900C77FDF /* VotingLimitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844571B52B5EC4B900C77FDF /* VotingLimitController.swift */; };
 		845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845275CF2B08E74000EEAF84 /* PasscodeView.swift */; };
 		845346D429FEBDB30077F8A0 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D329FEBDB30077F8A0 /* AccountSetup.swift */; };
 		845346D629FF80230077F8A0 /* AccountSetupModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845346D529FF80230077F8A0 /* AccountSetupModule.swift */; };
@@ -589,6 +591,8 @@
 		843CF3B62B17892800C98BFF /* CommentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPreview.swift; sourceTree = "<group>"; };
 		843CF3B92B17928800C98BFF /* ThankYouView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThankYouView.xib; sourceTree = "<group>"; };
 		843CF3BB2B1793C700C98BFF /* ThankYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
+		844571B32B5EC16400C77FDF /* VotingLimitController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingLimitController.xib; sourceTree = "<group>"; };
+		844571B52B5EC4B900C77FDF /* VotingLimitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingLimitController.swift; sourceTree = "<group>"; };
 		845275CF2B08E74000EEAF84 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		845346D329FEBDB30077F8A0 /* AccountSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		845346D529FF80230077F8A0 /* AccountSetupModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupModule.swift; sourceTree = "<group>"; };
@@ -1564,6 +1568,23 @@
 				843CF3BB2B1793C700C98BFF /* ThankYouView.swift */,
 			);
 			path = ThankYouView;
+			sourceTree = "<group>";
+		};
+		844571B12B5EC14D00C77FDF /* VotingLimit */ = {
+			isa = PBXGroup;
+			children = (
+				844571B22B5EC15500C77FDF /* controller */,
+			);
+			path = VotingLimit;
+			sourceTree = "<group>";
+		};
+		844571B22B5EC15500C77FDF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				844571B32B5EC16400C77FDF /* VotingLimitController.xib */,
+				844571B52B5EC4B900C77FDF /* VotingLimitController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		845275CE2B08E72A00EEAF84 /* PasscodeView */ = {
@@ -3606,6 +3627,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				844571B12B5EC14D00C77FDF /* VotingLimit */,
 				84D149D02B5AD625009DCFFF /* ShieldHistory */,
 				84B46B432B56B76800550FCD /* UpdateDetails */,
 				84D772162B55808B00A1C124 /* MoreOffer */,
@@ -3898,6 +3920,7 @@
 				84B46B472B56B79700550FCD /* UpdateSquadController.xib in Resources */,
 				84EB49372A24FBBD002BFD5F /* AiOLoadingView.xib in Resources */,
 				840CC76029F7D5A5007F4159 /* AccountSetup.storyboard in Resources */,
+				844571B42B5EC16400C77FDF /* VotingLimitController.xib in Resources */,
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
 				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
 				845346E229FF85E80077F8A0 /* ProfileInfo.storyboard in Resources */,
@@ -4230,6 +4253,7 @@
 				842FC9B329E849D800C5F354 /* OverviewTableViewCell.swift in Sources */,
 				84CC35422B162F37002B1D35 /* AppInfoController.swift in Sources */,
 				843CF3BC2B1793C700C98BFF /* ThankYouView.swift in Sources */,
+				844571B62B5EC4B900C77FDF /* VotingLimitController.swift in Sources */,
 				849AEB9B2A13E2D80024AAAA /* BaseResponseModel.swift in Sources */,
 				84CC35332B14F979002B1D35 /* VerifyPhoneNumberService.swift in Sources */,
 				84CF09F229D9E8B700F87400 /* InAppModule.swift in Sources */,
