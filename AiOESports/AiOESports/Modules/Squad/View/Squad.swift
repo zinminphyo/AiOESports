@@ -82,11 +82,11 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         
         if let achivementModel = playerAchivementModel {
             if section == 0 {
-                return achivementModel.asCoach.count
-            } else if section == 1 {
-                return achivementModel.asPlayer.count
-            } else {
                 return achivementModel.asCasters.count
+            } else if section == 1 {
+                return achivementModel.asCoach.count
+            } else {
+                return achivementModel.asPlayer.count
             }
         } 
         if section == 0 {
@@ -109,11 +109,11 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         if let achivementModel = playerAchivementModel {
             switch section {
             case 0:
-                cell.set(achivement: achivementModel.asCoach[indexPath.row])
-            case 1:
-                cell.set(achivement: achivementModel.asPlayer[indexPath.row])
-            case 2:
                 cell.set(achivement: achivementModel.asCasters[indexPath.row])
+            case 1:
+                cell.set(achivement: achivementModel.asCoach[indexPath.row])
+            case 2:
+                cell.set(achivement: achivementModel.asPlayer[indexPath.row])
             default:
                 break
             }
@@ -148,11 +148,11 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         
         if let _ = playerAchivementModel {
             if section == 0 {
-                label.text = "As Coach"
+                label.text = "As Talent".uppercased()
             } else if section == 1 {
-                label.text = "As Player"
+                label.text = "As Coach".uppercased()
             } else {
-                label.text = "As Caster"
+                label.text = "As Player".uppercased()
             }
         } else {
             if section == 0 {
@@ -193,11 +193,11 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         if let achivementModel = playerAchivementModel {
             switch section {
             case 0:
-                return achivementModel.asCoach.count == 0 ? 0 : 40
-            case 1:
-                return achivementModel.asPlayer.count == 0 ? 0 : 40
-            case 2:
                 return achivementModel.asCasters.count == 0 ? 0 : 40
+            case 1:
+                return achivementModel.asCoach.count == 0 ? 0 : 40
+            case 2:
+                return achivementModel.asPlayer.count == 0 ? 0 : 40
             default :
                 return 0
             }
@@ -224,11 +224,11 @@ extension Squad: UITableViewDataSource, UITableViewDelegate {
         if let achivementModel = playerAchivementModel {
             switch section {
             case 0:
-                return achivementModel.asCoach.count == 0 ? 0 : 15
-            case 1:
-                return achivementModel.asPlayer.count == 0 ? 0 : 15
-            case 2:
                 return achivementModel.asCasters.count == 0 ? 0 : 15
+            case 1:
+                return achivementModel.asCoach.count == 0 ? 0 : 15
+            case 2:
+                return achivementModel.asPlayer.count == 0 ? 0 : 15
             default:
                 return 0
             }
