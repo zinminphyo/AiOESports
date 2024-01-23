@@ -336,7 +336,7 @@ class Details: UIViewController {
                 isVotingLimit = false
             }
             
-            if isVotingLimit {
+            if !isVotingLimit {
                 let vc = VotingLimitController()
                 vc.tappedUpgradePremium = { [weak self] in
                     let vc = UpgradePremiumController(shieldCount: 0)
