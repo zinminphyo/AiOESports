@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "CSGO New Logo -  Inactive.png",
+      "filename" : "CSGO - Inactive.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "CSGO - Inactive@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "CSGO - Inactive@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

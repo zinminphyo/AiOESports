@@ -56,12 +56,17 @@ class Images {
         static let PUBGM = UIImage(named: "PUBGM", in: .main, compatibleWith: nil)
         static let VALORANT = UIImage(named: "VALORANT", in: .main, compatibleWith: nil)
         static let CSGO = UIImage(named: "CSGO", in: .main, compatibleWith: nil)
+        static let EFootball = UIImage(named: "EFootball", in: .main, compatibleWith: nil)
+        static let PC = UIImage(named: "PC", in: .main, compatibleWith: nil)
+        static let Mobile = UIImage(named: "Mobile", in: .main, compatibleWith: nil)
+        static let Console = UIImage(named: "Console", in: .main, compatibleWith: nil)
         static let APEX_LEGEND = UIImage(named: "APEX_LEGEND", in: .main, compatibleWith: nil)
         static let FORTNITE = UIImage(named: "FORTNITE", in: .main, compatibleWith: nil)
         static let COD = UIImage(named: "COD", in: .main, compatibleWith: nil)
         static let FIFA = UIImage(named: "FIFA", in: .main, compatibleWith: nil)
         static let FREEFIRE = UIImage(named: "FREEFIRE", in: .main, compatibleWith: nil)
         static let AUTO_CHESS = UIImage(named: "AUTOCHESS", in: .main, compatibleWith: nil)
+        static let HOK = UIImage(named: "HOK", in: .main, compatibleWith: nil)
         
         static let ALL_Selected = UIImage(named: "All_Selected", in: .main, compatibleWith: nil)
         static let AOV_Selected = UIImage(named: "AOV_Selected", in: .main, compatibleWith: nil)
@@ -71,13 +76,17 @@ class Images {
         static let PUBGM_Selected = UIImage(named: "PUBGM_Selected", in: .main, compatibleWith: nil)
         static let VALORANT_Selected = UIImage(named: "VALORANT_Selected", in: .main, compatibleWith: nil)
         static let CSGO_Selected = UIImage(named: "CSGO_Selected", in: .main, compatibleWith: nil)
+        static let EFootball_Selected = UIImage(named: "EFootball_Selected", in: .main, compatibleWith: nil)
+        static let PC_Selected = UIImage(named: "PC_Selected", in: .main, compatibleWith: nil)
+        static let Mobile_Selected = UIImage(named: "Mobile_Selected", in: .main, compatibleWith: nil)
+        static let Console_Selected = UIImage(named: "Console_Selected", in: .main, compatibleWith: nil)
         static let APEX_LEGEND_Selected = UIImage(named: "APEX_LEGEND_Selected", in: .main, compatibleWith: nil)
         static let FORTNITE_Selected = UIImage(named: "FORTNITE_Selected", in: .main, compatibleWith: nil)
         static let COD_Selected = UIImage(named: "COD_Selected", in: .main, compatibleWith: nil)
         static let FIFA_Selected = UIImage(named: "FIFA_Selected", in: .main, compatibleWith: nil)
         static let FREEFIRE_Selected = UIImage(named: "FREEFIRE_Selected", in: .main, compatibleWith: nil)
         static let AUTO_CHESS_Selected = UIImage(named: "AUTOCHESS_Selected", in: .main, compatibleWith: nil)
-       
+        static let HOK_Selected = UIImage(named: "HOK_Selected", in: .main, compatibleWith: nil)
     }
     
     enum GameImages: CaseIterable {
