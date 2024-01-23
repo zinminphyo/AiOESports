@@ -4,10 +4,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -77,16 +83,43 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-4D-9w3">
+                                        <rect key="frame" x="113.33333333333334" y="0.0" width="111" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnT-sd-UAC">
+                                                <rect key="frame" x="0.0" y="0.0" width="7.666666666666667" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z2d-Ok-ogY">
+                                                <rect key="frame" x="11.666666666666657" y="0.0" width="30" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Z2d-Ok-ogY" secondAttribute="height" multiplier="1.5:1" id="sP7-sS-sDf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STAR BOYZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE8-CU-hhf">
+                                                <rect key="frame" x="45.66666666666665" y="0.0" width="65.333333333333314" height="20"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
+                                                <color key="textColor" name="SecondaryText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="WDq-LB-V9C" firstAttribute="top" secondItem="bLe-t1-N1C" secondAttribute="top" constant="2" id="8Tj-bu-GYa"/>
                                     <constraint firstAttribute="bottom" secondItem="WDq-LB-V9C" secondAttribute="bottom" constant="2" id="F7C-Qm-S4v"/>
+                                    <constraint firstItem="jfR-4D-9w3" firstAttribute="top" secondItem="bLe-t1-N1C" secondAttribute="top" id="Ftt-3v-Aj3"/>
                                     <constraint firstItem="pVs-Pl-kmo" firstAttribute="centerY" secondItem="bLe-t1-N1C" secondAttribute="centerY" id="a7o-e0-dXq"/>
                                     <constraint firstAttribute="bottom" secondItem="N6T-lh-z5V" secondAttribute="bottom" constant="2" id="bfx-9u-n2h"/>
+                                    <constraint firstAttribute="bottom" secondItem="jfR-4D-9w3" secondAttribute="bottom" id="c9e-WK-pZ8"/>
                                     <constraint firstItem="N6T-lh-z5V" firstAttribute="top" secondItem="bLe-t1-N1C" secondAttribute="top" constant="2" id="enc-xx-bhz"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jfR-4D-9w3" secondAttribute="trailing" constant="8" id="gOw-Tb-8HL"/>
                                     <constraint firstItem="pVs-Pl-kmo" firstAttribute="leading" secondItem="WDq-LB-V9C" secondAttribute="trailing" id="jDk-XH-gAN"/>
                                     <constraint firstItem="WDq-LB-V9C" firstAttribute="leading" secondItem="N6T-lh-z5V" secondAttribute="trailing" id="kNl-UO-tMh"/>
+                                    <constraint firstItem="jfR-4D-9w3" firstAttribute="leading" secondItem="pVs-Pl-kmo" secondAttribute="trailing" constant="8" id="nig-K1-bWi"/>
                                     <constraint firstItem="N6T-lh-z5V" firstAttribute="leading" secondItem="bLe-t1-N1C" secondAttribute="leading" id="xhS-pL-k7T"/>
                                 </constraints>
                             </view>
@@ -110,11 +143,17 @@
                 <outlet property="locationLabel" destination="pVs-Pl-kmo" id="nfo-zY-Avo"/>
                 <outlet property="mainImageView" destination="Km8-7F-1h1" id="Ldt-5v-uQD"/>
                 <outlet property="nameLabel" destination="zi2-6c-hzr" id="pn1-5y-sXZ"/>
+                <outlet property="teamImageView" destination="Z2d-Ok-ogY" id="nnN-Ri-BnF"/>
+                <outlet property="teamInfoContainerView" destination="jfR-4D-9w3" id="hKR-Lp-g9i"/>
+                <outlet property="teamNameLabel" destination="iE8-CU-hhf" id="yTV-hk-8tg"/>
             </connections>
             <point key="canvasLocation" x="-32.061068702290072" y="-7.746478873239437"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="SecondaryText">
+            <color red="0.71372549019607845" green="0.7686274509803922" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

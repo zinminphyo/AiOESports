@@ -22,6 +22,10 @@ class SquadTableViewCell: UITableViewCell {
     @IBOutlet weak var countryImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet private(set) var locationContainerView: UIView!
+    @IBOutlet private(set) var teamInfoContainerView: UIStackView!
+    @IBOutlet private(set) var teamNameLabel: UILabel!
+    @IBOutlet private(set) var teamImageView: UIImageView!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,6 +83,9 @@ class SquadTableViewCell: UITableViewCell {
         mainImageView.kf.setImage(with: URL(string: achivement.logoFullPath), placeholder: Images.Placeholder.profile)
         laneIconImageView.isHidden = true
         locationContainerView.isHidden = true
+        teamImageView.kf.setImage(with: URL(string: "\(NetworkBaseURLs.shared.baseURL)/\(achivement.teamImage)"))
+        teamNameLabel.text = achivement.teamName
+        teamInfoContainerView.isHidden = achivement.teamId == 0
         return self
     }
     

@@ -13,6 +13,9 @@ struct AchivementModel: Decodable {
     let logo: String
     let tier: String
     let place: String
+    let teamName: String
+    let teamImage: String
+    let teamId: Int
     var renderablePlace: String {
         switch place {
         case "1":
@@ -44,6 +47,9 @@ struct AchivementModel: Decodable {
         case logo = "tour_logo"
         case tier, place
         case sortNum = "sort_no"
+        case teamName = "team_name"
+        case teamImage = "team_image"
+        case teamId = "id"
     }
     
     init(from decoder: Decoder) throws {
@@ -53,5 +59,8 @@ struct AchivementModel: Decodable {
         tier = try container.decodeIfPresent(String.self, forKey: .tier) ?? ""
         place = try container.decodeIfPresent(String.self, forKey: .place) ?? ""
         sortNum = try container.decode(Int.self, forKey: .sortNum)
+        teamName = try container.decodeIfPresent(String.self, forKey: .teamName) ?? ""
+        teamImage = try container.decodeIfPresent(String.self, forKey: .teamImage) ?? ""
+        teamId = try container.decodeIfPresent(Int.self, forKey: .teamId) ?? 0
     }
 }
