@@ -69,13 +69,15 @@ class Home: UIViewController {
     }
     
     private func configureCollectionView() {
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: String(describing: ADCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: ADCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 8
-        flowLayout.itemSize = CGSize(width: collectionView.frame.width - 8, height: collectionView.frame.height)
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.itemSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+//        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 18)
         collectionView.collectionViewLayout = flowLayout
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInsetAdjustmentBehavior = .never
@@ -84,8 +86,9 @@ class Home: UIViewController {
     }
     
     private func configureAdvertisementView() {
-        advertisementTitleLabel.font = Fonts.titleFont
+//        advertisementTitleLabel.font = Fonts.titleFont
         advertisementCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+        advertisementCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         advertisementCollectionView.dataSource = self
         advertisementCollectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
@@ -151,15 +154,20 @@ extension Home: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, 
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier, for: indexPath) as? ImageCollectionViewCell else {
-            return UICollectionViewCell()
-        }
+        
         if collectionView == advertisementCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier, for: indexPath) as? ImageCollectionViewCell else {
+                return UICollectionViewCell()
+            }
             cell.set(url: adLists[indexPath.row].urlFullPath)
+            return cell
         } else {
-            cell.set(url: bannerLists[indexPath.row].urlFullPath)
+//            cell.set(url: bannerLists[indexPath.row].urlFullPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ADCollectionViewCell.reuseIdentifier, for: indexPath) as! ADCollectionViewCell
+            cell.render(bannerLists[indexPath.row].urlFullPath)
+            return cell
         }
-        return cell
+       
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index: Int = Int(scrollView.contentOffset.x / scrollView.frame.width)

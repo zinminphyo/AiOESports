@@ -272,6 +272,8 @@
 		84B46B532B56BC8D00550FCD /* SquadItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46B512B56BC8D00550FCD /* SquadItemCell.swift */; };
 		84B46B542B56BC8D00550FCD /* SquadItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B46B522B56BC8D00550FCD /* SquadItemCell.xib */; };
 		84B46B572B56D9DA00550FCD /* UpdateSquadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46B562B56D9DA00550FCD /* UpdateSquadViewModel.swift */; };
+		84B73B4D2B6169E100A6040C /* ADCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B73B4B2B6169E100A6040C /* ADCollectionViewCell.swift */; };
+		84B73B4E2B6169E100A6040C /* ADCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B73B4C2B6169E100A6040C /* ADCollectionViewCell.xib */; };
 		84B7455429E45F5E0086C708 /* SquadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455329E45F5E0086C708 /* SquadModel.swift */; };
 		84B7455629E45FB90086C708 /* CoachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455529E45FB90086C708 /* CoachModel.swift */; };
 		84B7455829E460080086C708 /* RosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7455729E460080086C708 /* RosterModel.swift */; };
@@ -757,6 +759,8 @@
 		84B46B512B56BC8D00550FCD /* SquadItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadItemCell.swift; sourceTree = "<group>"; };
 		84B46B522B56BC8D00550FCD /* SquadItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadItemCell.xib; sourceTree = "<group>"; };
 		84B46B562B56D9DA00550FCD /* UpdateSquadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSquadViewModel.swift; sourceTree = "<group>"; };
+		84B73B4B2B6169E100A6040C /* ADCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADCollectionViewCell.swift; sourceTree = "<group>"; };
+		84B73B4C2B6169E100A6040C /* ADCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADCollectionViewCell.xib; sourceTree = "<group>"; };
 		84B7455329E45F5E0086C708 /* SquadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadModel.swift; sourceTree = "<group>"; };
 		84B7455529E45FB90086C708 /* CoachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachModel.swift; sourceTree = "<group>"; };
 		84B7455729E460080086C708 /* RosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterModel.swift; sourceTree = "<group>"; };
@@ -1230,6 +1234,7 @@
 		842AE8C429DB16360036FF05 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				84B73B4A2B61692A00A6040C /* AdImageCollectionViewCell */,
 				842AE8C529DB164D0036FF05 /* ImageCollectionViewCell.swift */,
 			);
 			path = cell;
@@ -2502,6 +2507,15 @@
 				84B46B562B56D9DA00550FCD /* UpdateSquadViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		84B73B4A2B61692A00A6040C /* AdImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84B73B4B2B6169E100A6040C /* ADCollectionViewCell.swift */,
+				84B73B4C2B6169E100A6040C /* ADCollectionViewCell.xib */,
+			);
+			path = AdImageCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		84B7456329E46EB10086C708 /* ViewModel */ = {
@@ -3928,6 +3942,7 @@
 				84E754042B0D3C36007D11B0 /* InputTextFieldView.xib in Resources */,
 				840CEE182B4D9CD9000A6EBB /* AccountCell.xib in Resources */,
 				843CF3AE2B177A9A00C98BFF /* CommentView.xib in Resources */,
+				84B73B4E2B6169E100A6040C /* ADCollectionViewCell.xib in Resources */,
 				84F17AF62B0E415100B97B08 /* FollowAndVoteCell.xib in Resources */,
 				84725ABF29E12B18003658CD /* Squad.storyboard in Resources */,
 				84725AB729E1211F003658CD /* Details.storyboard in Resources */,
@@ -4271,6 +4286,7 @@
 				84725AAD29E07DB8003658CD /* FilterSettingPresenting.swift in Sources */,
 				84F17AD82B0E2F2900B97B08 /* GameSortingController.swift in Sources */,
 				84597C7B29EA531B007C511B /* CreatorOverviewPresenting.swift in Sources */,
+				84B73B4D2B6169E100A6040C /* ADCollectionViewCell.swift in Sources */,
 				849B9C2629CEEB3400F1C2D2 /* Colors.swift in Sources */,
 				84EF0A8229EE5BA60042B6BF /* CasterOverviewRouting.swift in Sources */,
 				84A050FC29E972F4004D582B /* PlayerAchivement.swift in Sources */,

@@ -35,8 +35,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     private func configureCotainerView() {
         self.layer.cornerRadius = 10
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 0.5
+        self.layer.borderColor = Colors.Text.secondaryText?.cgColor
+        self.layer.borderWidth = 1
         self.clipsToBounds = true
     }
     
