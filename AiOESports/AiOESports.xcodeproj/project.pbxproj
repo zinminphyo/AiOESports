@@ -343,6 +343,10 @@
 		84CF0A1429D9FB2800F87400 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1329D9FB2800F87400 /* Shop.swift */; };
 		84CF0A1629D9FB3900F87400 /* ShopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF0A1529D9FB3900F87400 /* ShopModule.swift */; };
 		84D149D32B5AD63F009DCFFF /* ShieldHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D149D22B5AD63F009DCFFF /* ShieldHistoryController.xib */; };
+		84D250462B6ADF830046420F /* ForgetPasswordWithoutAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D250452B6ADF830046420F /* ForgetPasswordWithoutAuth.swift */; };
+		84D2504A2B6AE1DB0046420F /* FindYourAccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D250492B6AE1DB0046420F /* FindYourAccountController.xib */; };
+		84D2504C2B6AE3DD0046420F /* FindYourAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2504B2B6AE3DD0046420F /* FindYourAccountController.swift */; };
+		84D2504F2B6AE5320046420F /* FindYourAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2504E2B6AE5320046420F /* FindYourAccountViewModel.swift */; };
 		84D772192B55814E00A1C124 /* MoreOfferController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D772182B55814E00A1C124 /* MoreOfferController.xib */; };
 		84D7721B2B55829E00A1C124 /* MoreOfferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721A2B55829E00A1C124 /* MoreOfferController.swift */; };
 		84D7721F2B55855600A1C124 /* MoreOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7721D2B55855600A1C124 /* MoreOfferCell.swift */; };
@@ -830,6 +834,10 @@
 		84CF0A1329D9FB2800F87400 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		84CF0A1529D9FB3900F87400 /* ShopModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModule.swift; sourceTree = "<group>"; };
 		84D149D22B5AD63F009DCFFF /* ShieldHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShieldHistoryController.xib; sourceTree = "<group>"; };
+		84D250452B6ADF830046420F /* ForgetPasswordWithoutAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordWithoutAuth.swift; sourceTree = "<group>"; };
+		84D250492B6AE1DB0046420F /* FindYourAccountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindYourAccountController.xib; sourceTree = "<group>"; };
+		84D2504B2B6AE3DD0046420F /* FindYourAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourAccountController.swift; sourceTree = "<group>"; };
+		84D2504E2B6AE5320046420F /* FindYourAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourAccountViewModel.swift; sourceTree = "<group>"; };
 		84D772182B55814E00A1C124 /* MoreOfferController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreOfferController.xib; sourceTree = "<group>"; };
 		84D7721A2B55829E00A1C124 /* MoreOfferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferController.swift; sourceTree = "<group>"; };
 		84D7721D2B55855600A1C124 /* MoreOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOfferCell.swift; sourceTree = "<group>"; };
@@ -2888,6 +2896,41 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		84D250442B6ADF370046420F /* ForgetPasswordFlowWithoutAuth */ = {
+			isa = PBXGroup;
+			children = (
+				84D250472B6AE1C00046420F /* FindYourAccount */,
+				84D250452B6ADF830046420F /* ForgetPasswordWithoutAuth.swift */,
+			);
+			path = ForgetPasswordFlowWithoutAuth;
+			sourceTree = "<group>";
+		};
+		84D250472B6AE1C00046420F /* FindYourAccount */ = {
+			isa = PBXGroup;
+			children = (
+				84D2504D2B6AE5250046420F /* viewModel */,
+				84D250482B6AE1CC0046420F /* controller */,
+			);
+			path = FindYourAccount;
+			sourceTree = "<group>";
+		};
+		84D250482B6AE1CC0046420F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84D250492B6AE1DB0046420F /* FindYourAccountController.xib */,
+				84D2504B2B6AE3DD0046420F /* FindYourAccountController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		84D2504D2B6AE5250046420F /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84D2504E2B6AE5320046420F /* FindYourAccountViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		84D772162B55808B00A1C124 /* MoreOffer */ = {
 			isa = PBXGroup;
 			children = (
@@ -3641,6 +3684,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84D250442B6ADF370046420F /* ForgetPasswordFlowWithoutAuth */,
 				844571B12B5EC14D00C77FDF /* VotingLimit */,
 				84D149D02B5AD625009DCFFF /* ShieldHistory */,
 				84B46B432B56B76800550FCD /* UpdateDetails */,
@@ -3922,6 +3966,7 @@
 				84F17AEE2B0E3FF800B97B08 /* FollowAndVoteController.xib in Resources */,
 				84CF0A0A29D9FAAE00F87400 /* Tour.storyboard in Resources */,
 				84CF0A0229D9FA2200F87400 /* Match.storyboard in Resources */,
+				84D2504A2B6AE1DB0046420F /* FindYourAccountController.xib in Resources */,
 				843CF3B52B1787FE00C98BFF /* CommentPreview.xib in Resources */,
 				84CF09FA29D9F7A000F87400 /* Rank.storyboard in Resources */,
 				84E753FE2B0D38C7007D11B0 /* ProfileEditController.xib in Resources */,
@@ -4102,6 +4147,7 @@
 				84A2BAF32B0D312D0021F2FD /* ProfileBasicController.swift in Sources */,
 				84F58F6E2B143D4900F2FFAA /* FollowAndVoteViewModel.swift in Sources */,
 				849BCE1929E527990033C63A /* TeamOverviewPresenter.swift in Sources */,
+				84D2504F2B6AE5320046420F /* FindYourAccountViewModel.swift in Sources */,
 				8437FE6C29ECD658008F7179 /* PlayerOverviewRouting.swift in Sources */,
 				84F58F3E2B11187300F2FFAA /* UserDataModel.swift in Sources */,
 				843CF3AB2B172B4E00C98BFF /* RatingView.swift in Sources */,
@@ -4317,6 +4363,7 @@
 				849B9C3529D185D100F1C2D2 /* NibLoadable.swift in Sources */,
 				84CF09F429D9E91400F87400 /* Home.swift in Sources */,
 				849B9C2E29CEEF2100F1C2D2 /* OnboardingViewModel.swift in Sources */,
+				84D2504C2B6AE3DD0046420F /* FindYourAccountController.swift in Sources */,
 				84A480682B08FEB200268A77 /* SinglePasscodeView.swift in Sources */,
 				84F58F4B2B11EE2100F2FFAA /* Step2RegistrationServiceProtocol.swift in Sources */,
 				84334E8C2B1C8C3D004DD32D /* GetDetailsService.swift in Sources */,
@@ -4348,6 +4395,7 @@
 				849BCE1229E5213E0033C63A /* TeamOverviewViewDelegate.swift in Sources */,
 				845346E429FF85F70077F8A0 /* ProfileInfo.swift in Sources */,
 				84B7459429E499B30086C708 /* SponsorViewDelegate.swift in Sources */,
+				84D250462B6ADF830046420F /* ForgetPasswordWithoutAuth.swift in Sources */,
 				84334E7C2B1AC478004DD32D /* UserInfo.swift in Sources */,
 				842FC9BC29E84D2400C5F354 /* PlayerOverviewModule.swift in Sources */,
 				845275D02B08E74000EEAF84 /* PasscodeView.swift in Sources */,

@@ -26,7 +26,11 @@ class LoginRouter: LoginRouting {
     
     
     func routeToForgetPasswordModule() {
+        /*
         guard let vc = ForgotPasswordModule.createModule() else { return }
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+         */
+        let vc = ForgetPasswordWithoutAuth()
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
