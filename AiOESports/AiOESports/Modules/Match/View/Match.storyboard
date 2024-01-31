@@ -39,21 +39,34 @@
                                     <constraint firstAttribute="height" constant="50" id="ZxM-ZF-2aj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9M-0a-899" customClass="ComingSoonView" customModule="AiOESports" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaG-M0-Wi6">
                                 <rect key="frame" x="0.0" y="109" width="393" height="709"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoDataFound" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-Vb-dHs">
+                                        <rect key="frame" x="146.66666666666666" y="299.66666666666669" width="100" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="2Ls-QQ-KmS"/>
+                                            <constraint firstAttribute="width" constant="100" id="aC4-2I-kuU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="ThemeColor"/>
+                                <constraints>
+                                    <constraint firstItem="jUN-Vb-dHs" firstAttribute="centerY" secondItem="OaG-M0-Wi6" secondAttribute="centerY" id="rVO-WM-Gxh"/>
+                                    <constraint firstItem="jUN-Vb-dHs" firstAttribute="centerX" secondItem="OaG-M0-Wi6" secondAttribute="centerX" id="xga-86-TKX"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ThemeColor"/>
                         <constraints>
-                            <constraint firstItem="R9M-0a-899" firstAttribute="top" secondItem="haw-zz-kQP" secondAttribute="bottom" id="EFv-hq-vLY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="haw-zz-kQP" secondAttribute="trailing" id="K4W-FC-MvG"/>
-                            <constraint firstItem="R9M-0a-899" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="a0r-cN-BhO"/>
+                            <constraint firstItem="OaG-M0-Wi6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NnV-SK-f6l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OaG-M0-Wi6" secondAttribute="bottom" id="UMW-W3-H3o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OaG-M0-Wi6" secondAttribute="trailing" id="XhP-N8-SBL"/>
                             <constraint firstItem="haw-zz-kQP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aaI-M9-T0Z"/>
                             <constraint firstItem="haw-zz-kQP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="d1X-TX-ejh"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R9M-0a-899" secondAttribute="trailing" id="iUg-ZK-AtO"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="R9M-0a-899" secondAttribute="bottom" id="qhG-lr-Dh3"/>
+                            <constraint firstItem="OaG-M0-Wi6" firstAttribute="top" secondItem="haw-zz-kQP" secondAttribute="bottom" id="ufv-dp-4cX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -63,6 +76,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NoDataFound" width="100" height="116.66666412353516"/>
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

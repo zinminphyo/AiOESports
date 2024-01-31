@@ -39,30 +39,44 @@
                                     <constraint firstItem="ySH-cf-HvH" firstAttribute="centerY" secondItem="SJL-fy-q32" secondAttribute="centerY" id="jT3-g0-DpG"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7G-Dt-6oO" customClass="ComingSoonView" customModule="AiOESports" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="le4-be-ktT">
                                 <rect key="frame" x="0.0" y="109" width="393" height="709"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoDataFound" translatesAutoresizingMaskIntoConstraints="NO" id="0D0-Yl-vjk">
+                                        <rect key="frame" x="146.66666666666666" y="299.66666666666669" width="100" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="gYh-qQ-qXR"/>
+                                            <constraint firstAttribute="width" constant="100" id="hUK-K7-iHt"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="ThemeColor"/>
+                                <constraints>
+                                    <constraint firstItem="0D0-Yl-vjk" firstAttribute="centerX" secondItem="le4-be-ktT" secondAttribute="centerX" id="hhF-Vo-mqO"/>
+                                    <constraint firstItem="0D0-Yl-vjk" firstAttribute="centerY" secondItem="le4-be-ktT" secondAttribute="centerY" id="zT1-Ds-1e0"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="ThemeColor"/>
                         <constraints>
+                            <constraint firstItem="le4-be-ktT" firstAttribute="top" secondItem="SJL-fy-q32" secondAttribute="bottom" id="4Ej-49-9ty"/>
                             <constraint firstItem="SJL-fy-q32" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5og-9q-tOt"/>
-                            <constraint firstItem="S7G-Dt-6oO" firstAttribute="top" secondItem="SJL-fy-q32" secondAttribute="bottom" id="FhI-As-xPd"/>
                             <constraint firstItem="SJL-fy-q32" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="HCh-OB-DZX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="S7G-Dt-6oO" secondAttribute="trailing" id="JXi-76-bP4"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="S7G-Dt-6oO" secondAttribute="bottom" id="dDf-HX-8um"/>
-                            <constraint firstItem="S7G-Dt-6oO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="e5V-La-oPN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="le4-be-ktT" secondAttribute="bottom" id="OEu-pG-lS4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SJL-fy-q32" secondAttribute="trailing" id="eEs-9B-lWf"/>
+                            <constraint firstItem="le4-be-ktT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="m8S-1I-zPi"/>
+                            <constraint firstItem="le4-be-ktT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sQP-M7-0h5"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="NoDataFound" width="100" height="116.66666412353516"/>
         <namedColor name="ThemeColor">
             <color red="0.094117647058823528" green="0.12156862745098039" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
