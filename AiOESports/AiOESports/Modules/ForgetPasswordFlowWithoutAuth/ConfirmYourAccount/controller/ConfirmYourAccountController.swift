@@ -11,7 +11,7 @@ import Combine
 
 protocol ConfirmYourAccountControllerDelegate: AnyObject {
 //    func didTapNotNow(in controller: ConfirmYourAccountController)
-    func didFinishedStep1Reset(in controller: ConfirmYourAccountController)
+    func didFinishedStep1Reset(in controller: ConfirmYourAccountController, phoneNumber: String)
 }
 
 class ConfirmYourAccountController: UIViewController {
@@ -59,8 +59,11 @@ class ConfirmYourAccountController: UIViewController {
     }
   
     private func goToStep2() {
+        /*
         let vc = VerifyPhoneNumberController(phoneNumber: vm.confirmAccountInfo.phoneNumber, userId: "")
         navigationController?.pushViewController(vc, animated: true)
+         */
+        self.delegate?.didFinishedStep1Reset(in: self, phoneNumber: vm.confirmAccountInfo.phoneNumber)
     }
 
     @IBAction

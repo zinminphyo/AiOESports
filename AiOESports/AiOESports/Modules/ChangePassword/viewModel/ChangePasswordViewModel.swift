@@ -10,7 +10,7 @@ import Combine
 
 class ChangePasswordViewModel {
     
-    private let userId: String
+    let userId: String
     private let phoneNumber: String
     
     init(userId: String) {
@@ -96,7 +96,12 @@ class ChangePasswordViewModel {
     }
     
     private func checkDataIsCompleted() {
-        isDataCompleted = !currentPassword.isEmpty && isNewPasswordMatched
+        if userId.isEmpty {
+            isDataCompleted = isNewPasswordMatched
+        } else {
+            isDataCompleted = !currentPassword.isEmpty && isNewPasswordMatched
+        }
+        
     }
     
     private func checkBothPaswordIsSame() {

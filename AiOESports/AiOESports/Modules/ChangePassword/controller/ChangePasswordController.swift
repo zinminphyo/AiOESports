@@ -8,8 +8,13 @@
 import UIKit
 import Combine
 
+protocol ChangePasswordControllerDelegate: AnyObject {
+    func didFinishedChangePassword(in controller: ChangePasswordController)
+}
+
 class ChangePasswordController: UIViewController {
     
+    @IBOutlet private(set) var currentPasswordContainerView: UIView!
     @IBOutlet private(set) var currentPasswordView: OTPView!
     @IBOutlet private(set) var newPasswordView: OTPView!
     @IBOutlet private(set) var reEnterPasswordView: OTPView!
@@ -21,6 +26,8 @@ class ChangePasswordController: UIViewController {
     
     private let viewModel: ChangePasswordViewModel!
     private(set) var subscription = Set<AnyCancellable>()
+    
+    weak var delegate: ChangePasswordControllerDelegate?
     
     init(userId: String) {
         viewModel = ChangePasswordViewModel(userId: userId)
@@ -44,6 +51,8 @@ class ChangePasswordController: UIViewController {
     
     private func configureHierarchy() {
         configureViewModel()
+        
+        currentPasswordContainerView.isHidden = viewModel.userId.isEmpty
     }
     
     
@@ -71,7 +80,11 @@ class ChangePasswordController: UIViewController {
                 guard let self = self else { return }
                 switch $0 {
                 case .success:
-                    self.navigationController?.popToRootViewController(animated: true)
+                    if let delegate = self.delegate {
+                        self.delegate?.didFinishedChangePassword(in: self)
+                    } else {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                 case .fail(let error):
                     self.currentPasswordErrorLabel.text = error
                     self.currentPasswordErrorLabel.isHidden = false

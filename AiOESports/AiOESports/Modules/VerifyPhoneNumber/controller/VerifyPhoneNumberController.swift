@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol VerifyPhoneNumberControllerDelegate: AnyObject {
+    func didFinishedPhoneNumberConfirm(in controller: VerifyPhoneNumberController, for phoneNumber: String)
+}
+
 class VerifyPhoneNumberController: UIViewController {
     
     @IBOutlet private(set) var loadingView: LoadingView!
@@ -16,6 +20,8 @@ class VerifyPhoneNumberController: UIViewController {
     
     private let viewModel: VerifyPhoneNumberViewModel
     private(set) var subscription = Set<AnyCancellable>()
+    
+    weak var delegte: VerifyPhoneNumberControllerDelegate?
     
     init(phoneNumber: String, userId: String) {
         viewModel = VerifyPhoneNumberViewModel(phoneNum: phoneNumber, userID: userId)
@@ -49,8 +55,13 @@ class VerifyPhoneNumberController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 guard let self = self else { return }
-                let vc = viewModel.userId.isEmpty ? ChangePasswordController(phoneNumber: viewModel.phoneNumber) : ChangePasswordController(userId: viewModel.userId)
-                self.navigationController?.pushViewController(vc, animated: true)
+                if let delegate = self.delegte {
+                    self.delegte?.didFinishedPhoneNumberConfirm(in: self, for: viewModel.phoneNumber)
+                } else {
+                    let vc = ChangePasswordController(userId: viewModel.userId)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
             }.store(in: &subscription)
         
         viewModel.$verifyIsEnabled

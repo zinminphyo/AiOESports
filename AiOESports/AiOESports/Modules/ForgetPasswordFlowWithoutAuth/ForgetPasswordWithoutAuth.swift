@@ -43,7 +43,7 @@ extension ForgetPasswordWithoutAuth: FindYourAccountControllerDelegate {
         let vc = ConfirmYourAccountController(
             confirmInfo: .init(
                 name: profile.username,
-                profileURL: profile.profileImage_FullURL,
+                profileURL: profile.profile_image,
                 badge: profile.badge,
                 level: profile.level,
                 phoneNumber: phone
@@ -57,5 +57,24 @@ extension ForgetPasswordWithoutAuth: FindYourAccountControllerDelegate {
 
 
 extension ForgetPasswordWithoutAuth: ConfirmYourAccountControllerDelegate {
-    func didFinishedStep1Reset(in controller: ConfirmYourAccountController) {}
+    func didFinishedStep1Reset(in controller: ConfirmYourAccountController, phoneNumber: String) {
+        let vc = VerifyPhoneNumberController(phoneNumber: phoneNumber, userId: "")
+        vc.delegte = self
+        navigation?.pushViewController(vc, animated: true)
+    }
+}
+
+
+extension ForgetPasswordWithoutAuth: VerifyPhoneNumberControllerDelegate {
+    func didFinishedPhoneNumberConfirm(in controller: VerifyPhoneNumberController, for phoneNumber: String) {
+        let vc = ChangePasswordController(phoneNumber: phoneNumber)
+        vc.delegate = self
+        navigation.pushViewController(vc, animated: true)
+    }
+}
+
+extension ForgetPasswordWithoutAuth: ChangePasswordControllerDelegate {
+    func didFinishedChangePassword(in controller: ChangePasswordController) {
+        navigationController?.popViewController(animated: true)
+    }
 }
