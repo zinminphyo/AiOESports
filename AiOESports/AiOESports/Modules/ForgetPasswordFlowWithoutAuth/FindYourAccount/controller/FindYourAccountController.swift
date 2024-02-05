@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 protocol FindYourAccountControllerDelegate: AnyObject {
-    func didFinishedFindingAccount(in view: FindYourAccountController)
+    func didFinishedFindingAccount(in view: FindYourAccountController, for profile: FindYourAccountResponse, phone: String)
     func didCancelFindingAccount(in view: FindYourAccountController)
 }
 
@@ -59,9 +59,9 @@ class FindYourAccountController: UIViewController {
                 switch $0 {
                 case .inProgress:
                     self.loadingView.isHidden = false
-                case .success:
+                case .success(let account):
                     self.loadingView.isHidden = true
-                    self.delegate?.didFinishedFindingAccount(in: self)
+                    self.delegate?.didFinishedFindingAccount(in: self, for: account, phone: phoneNumberView.phoneNumberTxtField.text ?? "")
                 case .failed(let error):
                     self.loadingView.isHidden = true
                     print("Error is \(error)")
@@ -83,7 +83,7 @@ class FindYourAccountController: UIViewController {
     
     @IBAction
     private func didTapSearch(_ sender: UIButton) {
-        vm.search()
+        vm.search(phoneNumberView.phoneNumberTxtField.text ?? "")
     }
 
 }
@@ -91,6 +91,6 @@ class FindYourAccountController: UIViewController {
 
 extension FindYourAccountController: PhoneNumberViewDelegate {
     func didChangePhoneNumber(phoneNum: String) {
-        vm.phoneNumberIsCorrect = !phoneNum.isEmpty
+        vm.phoneNumberIsCorrect = phoneNum.count == 11
     }
 }

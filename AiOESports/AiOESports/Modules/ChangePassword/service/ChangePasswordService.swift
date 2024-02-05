@@ -48,6 +48,24 @@ struct ChangePasswordService: ChangePasswordServiceProtocol {
     }
     
     
+    func forgotpassword(
+        phoneNumber: String,
+        newPassword: String
+    ) async throws -> Bool {
+        let url = URL(string: "\(NetworkBaseURLs.shared.baseURL)/api/step3-reset")!
+        let params: Parameters = [
+            "phone-number" : phoneNumber,
+            "password" : newPassword,
+            "password_confirmation" : newPassword
+        ]
+        let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).serializingData()
+        let response = await request.response
+        let data = try response.result.get()
+        let decoder = JSONDecoder()
+        return try decoder.decode(BaseResponseModel<Empty>.self, from: data).statusCode == 200
+    
+    }
+    
 }
 
 struct Empty: Decodable {}

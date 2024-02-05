@@ -39,7 +39,23 @@ extension ForgetPasswordWithoutAuth: FindYourAccountControllerDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    func didFinishedFindingAccount(in view: FindYourAccountController) {
-        print("Moved to OTP Code View.")
+    func didFinishedFindingAccount(in view: FindYourAccountController, for profile: FindYourAccountResponse, phone: String) {
+        let vc = ConfirmYourAccountController(
+            confirmInfo: .init(
+                name: profile.username,
+                profileURL: profile.profileImage_FullURL,
+                badge: profile.badge,
+                level: profile.level,
+                phoneNumber: phone
+            )
+        )
+        vc.delegate = self
+        navigation.pushViewController(vc, animated: true)
     }
+}
+
+
+
+extension ForgetPasswordWithoutAuth: ConfirmYourAccountControllerDelegate {
+    func didFinishedStep1Reset(in controller: ConfirmYourAccountController) {}
 }

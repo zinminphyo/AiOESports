@@ -10,7 +10,7 @@ import Combine
 
 class VerifyPhoneNumberViewModel {
     
-    private let phoneNumber: String
+    let phoneNumber: String
     let userId: String
     private let service = VerifyPhoneNumberService()
     

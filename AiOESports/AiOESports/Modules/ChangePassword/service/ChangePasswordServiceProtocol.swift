@@ -13,4 +13,9 @@ protocol ChangePasswordServiceProtocol {
         currentPassword: String,
         newPassword: String
     ) async throws -> Bool
+    
+    func forgotpassword(
+        phoneNumber: String,
+        newPassword: String
+    ) async throws -> Bool
 }

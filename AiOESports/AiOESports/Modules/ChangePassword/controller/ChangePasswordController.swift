@@ -27,6 +27,11 @@ class ChangePasswordController: UIViewController {
         super.init(nibName: "ChangePasswordController", bundle: nil)
     }
     
+    init(phoneNumber: String) {
+        viewModel = ChangePasswordViewModel(phoneNumber: phoneNumber)
+        super.init(nibName: "ChangePasswordController", bundle: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("Doesn't support for this NSCoder.")
     }

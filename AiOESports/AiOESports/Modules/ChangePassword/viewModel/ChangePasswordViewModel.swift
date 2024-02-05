@@ -11,9 +11,16 @@ import Combine
 class ChangePasswordViewModel {
     
     private let userId: String
+    private let phoneNumber: String
     
     init(userId: String) {
         self.userId = userId
+        self.phoneNumber = ""
+    }
+    
+    init(phoneNumber: String) {
+        self.phoneNumber = phoneNumber
+        self.userId = ""
     }
     
     @Published
@@ -37,6 +44,11 @@ class ChangePasswordViewModel {
     private var reEnterNewPassword: String = ""
     
     func changePassword() {
+        userId.isEmpty ? changePasswordWithoutAuth() : changePasswodWithAuth()
+    }
+    
+    
+    private func changePasswodWithAuth() {
         let service = ChangePasswordService(userId: userId)
         isUpdating = true
         Task {
@@ -44,6 +56,21 @@ class ChangePasswordViewModel {
                 let response = try await service.changePassword(currentPassword: currentPassword, newPassword: newPassword)
                 response ? passwordUpdateStatus.send(.success) : passwordUpdateStatus.send(.fail(error: "Your password is wrong."))
                 
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+            isUpdating = false
+        }
+    }
+    
+    private func changePasswordWithoutAuth() {
+        let service = ChangePasswordService(userId: "")
+        isUpdating = true
+        Task {
+            
+            do {
+                let response = try await service.forgotpassword(phoneNumber: phoneNumber, newPassword: newPassword)
+                response ? passwordUpdateStatus.send(.success) : passwordUpdateStatus.send(.fail(error: "Your password is wrong."))
             } catch {
                 print("Error is \(error.localizedDescription)")
             }

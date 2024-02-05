@@ -49,7 +49,7 @@ class VerifyPhoneNumberController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 guard let self = self else { return }
-                let vc = ChangePasswordController(userId: viewModel.userId)
+                let vc = viewModel.userId.isEmpty ? ChangePasswordController(phoneNumber: viewModel.phoneNumber) : ChangePasswordController(userId: viewModel.userId)
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscription)
         
@@ -78,6 +78,7 @@ class VerifyPhoneNumberController: UIViewController {
         
         
     }
+
 
     @IBAction
     private func didTapBack(_ sender: UIButton) {

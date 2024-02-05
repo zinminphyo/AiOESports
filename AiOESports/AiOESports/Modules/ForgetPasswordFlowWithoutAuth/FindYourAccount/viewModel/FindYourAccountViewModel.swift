@@ -14,23 +14,32 @@ class FindYourAccountViewModel {
     @Published
     var phoneNumberIsCorrect: Bool = false
     
+    private let service: FindYourAccountServiceProtocol
+    
     
     typealias FindingStatus = Status
     var findingStatus: PassthroughSubject<FindingStatus, Never> = .init()
     enum Status {
         case inProgress
-        case success
+        case success(account: FindYourAccountResponse)
         case failed(error: String)
     }
     
-    func search() {
+    init() {
+        service = FindYourAccountService()
+    }
+    
+    func search(_ phoneNumber: String) {
         findingStatus.send(.inProgress)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            let flag = Bool.random()
-            if flag  {
-                self?.findingStatus.send(.success)
-            } else {
-                self?.findingStatus.send(.failed(error: "Can't find your account."))
+        Task {
+            do {
+                guard let response = try await service.search(phoneNumber) else {
+                    return
+                }
+                findingStatus.send(.success(account: response))
+            } catch {
+                print("Error is \(error.localizedDescription)")
+                findingStatus.send(.failed(error: error.localizedDescription))
             }
         }
     }
