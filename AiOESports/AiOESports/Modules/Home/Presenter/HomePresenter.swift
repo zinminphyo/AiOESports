@@ -55,7 +55,7 @@ class HomePresenter: HomePresenting {
                 let response = try await service.fetchUserProfile()
                 shieldCount = response.result?.shield ?? 0
             } catch {
-                print("Error is \(error.localizedDescription)")
+                shieldCount = 0
             }
         }
     }

@@ -63,6 +63,12 @@ class Home: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter?.fetchShieldCount()
+    }
+    
     private func configureHierarchy() {
         configureCollectionView()
         configureAdvertisementView()
@@ -137,6 +143,7 @@ class Home: UIViewController {
 
     @IBAction
     private func didTapShield(_ sender: UIButton) {
+        guard UserDataModel.shared.getToken() != nil else { return }
         let vc = BuyShieldsController()
         navigationController?.pushViewController(vc, animated: true)
     }
