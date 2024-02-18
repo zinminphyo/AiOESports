@@ -18,6 +18,8 @@ class BuyShieldsController: UIViewController {
     @IBOutlet private(set) var phoneNumber1Label: UILabel!
     @IBOutlet private(set) var phoneNumber2Label: UILabel!
     @IBOutlet private(set) var shieldCountlabel: UILabel!
+    @IBOutlet private(set) var banksContainerView: UIView!
+    @IBOutlet private(set) var accountsContainerView: UIView!
     
     private let vm: BuyShieldsViewModel!
     private var subscription = Set<AnyCancellable>()
@@ -106,6 +108,8 @@ class BuyShieldsController: UIViewController {
     
     
     private func updateUI() {
+        banksContainerView.isHidden = vm.bankLists.isEmpty
+        accountsContainerView.isHidden = vm.accountLists.isEmpty
         accountListsHeight.constant = CGFloat(max(100, 70 * vm.accountLists.count))
         view.invalidateIntrinsicContentSize()
         accountLists.reloadData()
