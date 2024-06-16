@@ -487,6 +487,10 @@
 		84F6C5EA29CA18F400D21EE2 /* OnboardingImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C5E929CA18F400D21EE2 /* OnboardingImageCollectionCell.swift */; };
 		84F731D12B23504700ED9106 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F731D02B23504700ED9106 /* UIView+Ext.swift */; };
 		84F731D32B2360D200ED9106 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F731D22B2360D200ED9106 /* UIButton+Ext.swift */; };
+		927FBCA62C1EE5ED00B90E17 /* RankingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927FBCA52C1EE5ED00B90E17 /* RankingController.xib */; };
+		927FBCAA2C1F369200B90E17 /* RankingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FBCA92C1F369200B90E17 /* RankingController.swift */; };
+		927FBCAE2C1F3BCF00B90E17 /* RankListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927FBCAD2C1F3BCF00B90E17 /* RankListHeaderView.xib */; };
+		927FBCB02C1F3D8F00B90E17 /* RankListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FBCAF2C1F3D8F00B90E17 /* RankListHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -991,6 +995,10 @@
 		84F731D02B23504700ED9106 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		84F731D22B2360D200ED9106 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		882687CC2D25024B2EF13FEB /* Pods-AiOESports-AiOESportsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports-AiOESportsUITests.debug.xcconfig"; path = "Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		927FBCA52C1EE5ED00B90E17 /* RankingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingController.xib; sourceTree = "<group>"; };
+		927FBCA92C1F369200B90E17 /* RankingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingController.swift; sourceTree = "<group>"; };
+		927FBCAD2C1F3BCF00B90E17 /* RankListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankListHeaderView.xib; sourceTree = "<group>"; };
+		927FBCAF2C1F3D8F00B90E17 /* RankListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankListHeaderView.swift; sourceTree = "<group>"; };
 		9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.release.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34498E5D3AEACAB60725DED /* Pods-AiOESports-AiOESportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports-AiOESportsUITests.release.xcconfig"; path = "Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -3772,6 +3780,7 @@
 		84F6C5DE29CA147600D21EE2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				927FBCA32C1EE5CF00B90E17 /* Ranking */,
 				84D250442B6ADF370046420F /* ForgetPasswordFlowWithoutAuth */,
 				844571B12B5EC14D00C77FDF /* VotingLimit */,
 				84D149D02B5AD625009DCFFF /* ShieldHistory */,
@@ -3854,6 +3863,41 @@
 				84F731D22B2360D200ED9106 /* UIButton+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		927FBCA32C1EE5CF00B90E17 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				927FBCAB2C1F38B800B90E17 /* view */,
+				927FBCA42C1EE5D500B90E17 /* controller */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		927FBCA42C1EE5D500B90E17 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				927FBCA52C1EE5ED00B90E17 /* RankingController.xib */,
+				927FBCA92C1F369200B90E17 /* RankingController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		927FBCAB2C1F38B800B90E17 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				927FBCAC2C1F38BC00B90E17 /* RankListHeaderView */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		927FBCAC2C1F38BC00B90E17 /* RankListHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				927FBCAD2C1F3BCF00B90E17 /* RankListHeaderView.xib */,
+				927FBCAF2C1F3D8F00B90E17 /* RankListHeaderView.swift */,
+			);
+			path = RankListHeaderView;
 			sourceTree = "<group>";
 		};
 		E7D31D3FDF2B0AC70D518417 /* Frameworks */ = {
@@ -4047,6 +4091,7 @@
 				84DF526F2B0A66E700CCB036 /* DetailController.xib in Resources */,
 				84F5FB0129DEB46500734CAE /* SearchTableViewCell.xib in Resources */,
 				849BCE1E29E5522D0033C63A /* DetailsContentCollectionViewCell.xib in Resources */,
+				927FBCA62C1EE5ED00B90E17 /* RankingController.xib in Resources */,
 				84B7458629E494690086C708 /* Sponsor.storyboard in Resources */,
 				84A2BAF12B0D310D0021F2FD /* ProfileBasicController.xib in Resources */,
 				8478E8872B29C9C8003C0EE6 /* cities.json in Resources */,
@@ -4071,6 +4116,7 @@
 				844571B42B5EC16400C77FDF /* VotingLimitController.xib in Resources */,
 				849B9C3729D1869000F1C2D2 /* PinView.xib in Resources */,
 				849B9C2929CEEDCB00F1C2D2 /* Images.xcassets in Resources */,
+				927FBCAE2C1F3BCF00B90E17 /* RankListHeaderView.xib in Resources */,
 				845346E229FF85E80077F8A0 /* ProfileInfo.storyboard in Resources */,
 				84DE12342A0565990024D48E /* SingleSelectionCollectionViewCell.xib in Resources */,
 				84E754042B0D3C36007D11B0 /* InputTextFieldView.xib in Resources */,
@@ -4260,6 +4306,7 @@
 				845EE94B2B1E2B7700F4C3CD /* RankListsServiceRequest.swift in Sources */,
 				84CF09E529D9934800F87400 /* PhoneNumberView.swift in Sources */,
 				842FC9AD29E840F700C5F354 /* CareerModel.swift in Sources */,
+				927FBCB02C1F3D8F00B90E17 /* RankListHeaderView.swift in Sources */,
 				840CC75C29F66CE9007F4159 /* LoginRouter.swift in Sources */,
 				84D772262B55930200A1C124 /* RatingListsResponse.swift in Sources */,
 				84DFA9892B31F98600B560D8 /* TeamRankViewModel.swift in Sources */,
@@ -4274,6 +4321,7 @@
 				84F602F529DC84E000250C25 /* RankPresenting.swift in Sources */,
 				84B7456C29E4851D0086C708 /* AchivementViewDelegate.swift in Sources */,
 				84DE4FCA2B0D10B00017AC84 /* ProfileViewModel.swift in Sources */,
+				927FBCAA2C1F369200B90E17 /* RankingController.swift in Sources */,
 				849B9C3F29D18AB700F1C2D2 /* LoginModule.swift in Sources */,
 				84F17AE42B0E3B2B00B97B08 /* PasscodeController.swift in Sources */,
 				84D250622B6FA5570046420F /* FindYourAccountService.swift in Sources */,

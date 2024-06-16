@@ -32,7 +32,7 @@ class InApp: UITabBarController {
             
             self.viewControllers = [
                 homeVC,
-                rankVC,
+                addRankingController(),
                 matchVC,
                 tourVC,
                 shopVC
@@ -40,6 +40,16 @@ class InApp: UITabBarController {
         }
          
     }
-    
+
+    private func addRankingController() -> UIViewController {
+        let vc = RankingController()
+        vc.tabBarItem.image = Images.InAppImages.rank_unselected
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+        vc.tabBarItem.selectedImage = Images.InAppImages.rank_selected
+        vc.tabBarItem.title = "RANK"
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:Colors.TabItem.rank], for: .normal)
+        return vc
+    }
+
 
 }
