@@ -491,6 +491,8 @@
 		927FBCAA2C1F369200B90E17 /* RankingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FBCA92C1F369200B90E17 /* RankingController.swift */; };
 		927FBCAE2C1F3BCF00B90E17 /* RankListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927FBCAD2C1F3BCF00B90E17 /* RankListHeaderView.xib */; };
 		927FBCB02C1F3D8F00B90E17 /* RankListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FBCAF2C1F3D8F00B90E17 /* RankListHeaderView.swift */; };
+		92C713B92C21E2D100195738 /* TeamRankingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C713B82C21E2D100195738 /* TeamRankingController.xib */; };
+		92C713BB2C21E3B400195738 /* TeamRankingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C713BA2C21E3B400195738 /* TeamRankingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -999,6 +1001,8 @@
 		927FBCA92C1F369200B90E17 /* RankingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingController.swift; sourceTree = "<group>"; };
 		927FBCAD2C1F3BCF00B90E17 /* RankListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankListHeaderView.xib; sourceTree = "<group>"; };
 		927FBCAF2C1F3D8F00B90E17 /* RankListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankListHeaderView.swift; sourceTree = "<group>"; };
+		92C713B82C21E2D100195738 /* TeamRankingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamRankingController.xib; sourceTree = "<group>"; };
+		92C713BA2C21E3B400195738 /* TeamRankingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankingController.swift; sourceTree = "<group>"; };
 		9D4EA9FEFFBFD2F5BBA8B561 /* Pods-AiOESportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESportsTests.release.xcconfig"; path = "Target Support Files/Pods-AiOESportsTests/Pods-AiOESportsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C2016FB8D88933997BA25624 /* Pods_AiOESportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AiOESportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34498E5D3AEACAB60725DED /* Pods-AiOESports-AiOESportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiOESports-AiOESportsUITests.release.xcconfig"; path = "Target Support Files/Pods-AiOESports-AiOESportsUITests/Pods-AiOESports-AiOESportsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -3868,6 +3872,7 @@
 		927FBCA32C1EE5CF00B90E17 /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
+				92C713B62C21E2B200195738 /* TeamRanking */,
 				927FBCAB2C1F38B800B90E17 /* view */,
 				927FBCA42C1EE5D500B90E17 /* controller */,
 			);
@@ -3898,6 +3903,23 @@
 				927FBCAF2C1F3D8F00B90E17 /* RankListHeaderView.swift */,
 			);
 			path = RankListHeaderView;
+			sourceTree = "<group>";
+		};
+		92C713B62C21E2B200195738 /* TeamRanking */ = {
+			isa = PBXGroup;
+			children = (
+				92C713B72C21E2BB00195738 /* controller */,
+			);
+			path = TeamRanking;
+			sourceTree = "<group>";
+		};
+		92C713B72C21E2BB00195738 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				92C713B82C21E2D100195738 /* TeamRankingController.xib */,
+				92C713BA2C21E3B400195738 /* TeamRankingController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		E7D31D3FDF2B0AC70D518417 /* Frameworks */ = {
@@ -4142,6 +4164,7 @@
 				842FAAC22B2D76EA009231BC /* PlayerRankController.xib in Resources */,
 				849BCE0929E51DB80033C63A /* TeamOverview.storyboard in Resources */,
 				84F6C5E229CA151100D21EE2 /* Onboarding.storyboard in Resources */,
+				92C713B92C21E2D100195738 /* TeamRankingController.xib in Resources */,
 				849BCE1729E523860033C63A /* SocialCollectionViewCell.xib in Resources */,
 				8454D35929F583D300B97EE3 /* Register.storyboard in Resources */,
 				845EE9522B1F282D00F4C3CD /* RankCell.xib in Resources */,
@@ -4389,6 +4412,7 @@
 				840CE68F2B5ADAE40067B474 /* ShieldHistoryController.swift in Sources */,
 				84CC353A2B15C672002B1D35 /* GetPinCodeServiceProtocol.swift in Sources */,
 				840CC75A29F66C9E007F4159 /* LoginRouting.swift in Sources */,
+				92C713BB2C21E3B400195738 /* TeamRankingController.swift in Sources */,
 				84615DDD2B554A8F00A84881 /* CommentTableViewCell.swift in Sources */,
 				84CF0A0E29D9FACB00F87400 /* TourModule.swift in Sources */,
 				84725AD729E1D4EA003658CD /* PlayerObject.swift in Sources */,

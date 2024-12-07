@@ -42,7 +42,7 @@ class InApp: UITabBarController {
     }
 
     private func addRankingController() -> UIViewController {
-        let vc = RankingController()
+        let vc = TeamRankingController()
         vc.tabBarItem.image = Images.InAppImages.rank_unselected
         vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         vc.tabBarItem.selectedImage = Images.InAppImages.rank_selected
