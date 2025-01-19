@@ -48,6 +48,7 @@ class TeamRankingController: UIViewController {
             let section = NSCollectionLayoutSection(group: group)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             return section
+
         }
     }
 
